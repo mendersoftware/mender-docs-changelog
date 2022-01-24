@@ -7,6 +7,134 @@ shortcode-core:
 github: false
 ---
 
+## mender 3.2.0
+
+_Released 01.24.2022_
+
+### Statistics
+
+A total of 4572 lines added, 1819 removed (delta 2753)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 23 (39.0%) |
+| Lluis Campos | 16 (27.1%) |
+| Ole Petter Orhagen | 12 (20.3%) |
+| Fabio Tranchitella | 4 (6.8%) |
+| Zachary T Welch | 1 (1.7%) |
+| Jesus | 1 (1.7%) |
+| Maciej Tomczuk | 1 (1.7%) |
+| Alf-Rune Siqveland | 1 (1.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 2786 (53.9%) |
+| Kristian Amlie | 1295 (25.1%) |
+| Ole Petter Orhagen | 1035 (20.0%) |
+| Fabio Tranchitella | 32 (0.6%) |
+| Alf-Rune Siqveland | 9 (0.2%) |
+| Jesus | 6 (0.1%) |
+| Zachary T Welch | 2 (0.0%) |
+| Maciej Tomczuk | 1 (0.0%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Kristian Amlie | 272 (15.0%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Lluis Campos | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 57 (96.6%) |
+| Timesys Corporation | 1 (1.7%) |
+| wjaxxx@gmail.com | 1 (1.7%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 5158 (99.8%) |
+| wjaxxx@gmail.com | 6 (0.1%) |
+| Timesys Corporation | 2 (0.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 6 (75.0%) |
+| wjaxxx@gmail.com | 1 (12.5%) |
+| Timesys Corporation | 1 (12.5%) |
+
+### Changelogs
+
+#### mender (3.2.0)
+
+New changes in mender since 3.1.0:
+
+* [FIX] Fetch geo location data once per power cycle
+* The client now shows output from scripts executed in the log as regular
+  log messages, prefixed by the filedescriptor they are written to, and the script
+  executed, like this: 'Output (stdout|stderr) from command \"/usr/bin/foo\": bar.'
+  ([MEN-5098](https://tracker.mender.io/browse/MEN-5098))
+* Bump github.com/mendersoftware/mender-artifact to 3.6.1
+* Fix error not finding active partition for systems where /dev/root is a symlink
+* installer/bootenv: support systemd-boot tools
+* Upgrade golang.org/x/crypto to the latest version
+* Title if the update module has not already requested a reboot. This
+  is done, in the case that ArtifactInstall never finished, and hence the reboot
+  information from the update module is never collected.
+  ([MEN-4882](https://tracker.mender.io/browse/MEN-4882))
+* Upgrade from deprecated `golang.org/x/crypto/ssh/terminal` to
+  `golang.org/x/term`
+  ([QA-235](https://tracker.mender.io/browse/QA-235))
+* Mender starts a local HTTP server that will proxy incoming
+  requests to `/api/devices` to the currently authenticated Mender server.
+  The existing D-Bus API endpoints GetJwtToken and JwtTokenStateChange
+  will now return the local address together with the JWT token. Supports
+  also websocket upgrade when calling
+  `/api/devices/v1/deviceconnect/connect` endpoint
+  ([MEN-5216](https://tracker.mender.io/browse/MEN-5216))
+* mender setup: Deprecate `--demo` flag and split its
+  functionality across new flags `--demo-server` to configure the device
+  for a Mender demo server and `--demo-polling` to use demo polling
+  intervals. ([MEN-5138](https://tracker.mender.io/browse/MEN-5138))
+* Client will no longer cache the Authorization token from
+  the server across restarts, meaning that it is no longer possible to
+  end up in the situation where a rootfs update with invalid
+  authorization data succeeds, only to fail authorization later on when
+  the token expires.
+  ([MEN-5217](https://tracker.mender.io/browse/MEN-5217))
+* It is no longer possible to change the identity of a device
+  with a rootfs update. This was not supported before either, but worked
+  in a hacky way by abusing the authorization token to get a rootfs
+  update with new identity data to succeed. Afterwards the device would
+  show up as a new device when the token expired.
+  ([MEN-5217](https://tracker.mender.io/browse/MEN-5217))
+* ubi: Get rid of useless warning: `Could not resolve path link: ubi..`
+* Refresh update control maps before failing an update
+
+  Fix the issue where if a state takes longer than the expiration time
+  for the enabled update control map, then by the time the client checks its
+  control maps, the map is expired, and the update fails.
+
+  Now the client refreshes the update maps from the server before each pause, and
+  hence, this issue will be avoided.
+  ([MEN-5096](https://tracker.mender.io/browse/MEN-5096))
+* Handle the possibility of losing network connectivity when refreshing
+  the update control maps.
+* Fix a race condition which can happen during a reboot if
+  systemd kills the `reboot` command before it kills the Mender client.
+  ([MEN-5340](https://tracker.mender.io/browse/MEN-5340))
+* When an update is paused, the client now queries the server
+  for updates using the `UpdatePollIntervalSeconds` interval if it is
+  shorter than `UpdateControlMapExpirationTimeSeconds`, enabling quicker
+  response when continuing an update.
+* Fix a (possible) file descriptor leak.
+* vendor: Bump mender-artifact to latest master version
+
+
 ## mender 3.1.0
 
 _Released 09.28.2021_
