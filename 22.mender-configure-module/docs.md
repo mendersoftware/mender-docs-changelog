@@ -42,6 +42,8 @@ A total of 10 lines added, 7 removed (delta 3)
 
 ### Changelogs
 
+New changes in mender-configure-module since 1.0.2:
+
 * set default permissions to 0600 on device-config.json
   ([MEN-5357](https://tracker.mender.io/browse/MEN-5357))
 
