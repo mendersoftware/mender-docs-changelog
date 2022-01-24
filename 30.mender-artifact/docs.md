@@ -7,6 +7,106 @@ shortcode-core:
 github: false
 ---
 
+## mender-artifact 3.7.0
+
+_Released 01.24.2022_
+
+### Statistics
+
+A total of 2094 lines added, 588 removed (delta 1506)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 6 (33.3%) |
+| Lluis Campos | 5 (27.8%) |
+| Kristian Amlie | 3 (16.7%) |
+| Alan Alberghini | 3 (16.7%) |
+| Michael Ho | 1 (5.6%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Michael Ho | 1374 (63.5%) |
+| Lluis Campos | 699 (32.3%) |
+| Ole Petter Orhagen | 64 (3.0%) |
+| Alan Alberghini | 14 (0.6%) |
+| Kristian Amlie | 12 (0.6%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 14 (77.8%) |
+| Tiscali S.p.a. | 3 (16.7%) |
+| callmemikeh@gmail.com | 1 (5.6%) |
+
+| Top lines changed by employer | |
+|---|---|
+| callmemikeh@gmail.com | 1374 (63.5%) |
+| Northern.tech | 775 (35.8%) |
+| Tiscali S.p.a. | 14 (0.6%) |
+
+| Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 3 (60.0%) |
+| callmemikeh@gmail.com | 1 (20.0%) |
+| Tiscali S.p.a. | 1 (20.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.7.0)
+
+New changes in mender-artifact since 3.6.1:
+
+* Add missing error description when artifact header can't be written.
+* Makefile: enhance autocomplete scripts install
+* cli: Fix parsing of filenames containing ".mender"
+  ([MEN-5076](https://tracker.mender.io/browse/MEN-5076))
+* Fix the checksum errors encountered in rare cases where the entire byte
+  stream is not consumed during verification, and thus giving wrong checksum errors.
+  ([MEN-5094](https://tracker.mender.io/browse/MEN-5094))
+* Restore SSH snapshot feature on Mac OS
+  ([MEN-4362](https://tracker.mender.io/browse/MEN-4362), [MEN-5082](https://tracker.mender.io/browse/MEN-5082))
+* Create a new signer using GCP's KMS
+
+  This signs and verifies data using GCP's Key Management Service. This
+  allows developers to use mender-artifact without ever accessing the
+  private signing key.
+
+  We add a new gcp-kms-key flag that lets users pass in the KMS key's
+  resource ID.
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.14.0 to 3.14.1.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps alpine from 3.14.1 to 3.14.2.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps alpine from 3.14.2 to 3.14.3.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps alpine from 3.14.3 to 3.15.0.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+
 ## mender-artifact 3.6.1
 
 _Released 09.28.2021_
