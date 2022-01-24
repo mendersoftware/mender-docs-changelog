@@ -7,6 +7,46 @@ shortcode-core:
 github: false
 ---
 
+## mender-configure-module 1.0.3
+
+_Released 01.24.2022_
+
+### Statistics
+
+A total of 10 lines added, 7 removed (delta 3)
+
+| Developers with the most changesets | |
+|---|---|
+| Fabio Tranchitella | 2 (50.0%) |
+| Ole Petter Orhagen | 1 (25.0%) |
+| Lluis Campos | 1 (25.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 7 (70.0%) |
+| Ole Petter Orhagen | 2 (20.0%) |
+| Lluis Campos | 1 (10.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 4 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 10 (100.0%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+
+### Changelogs
+
+New changes in mender-configure-module since 1.0.2:
+
+* set default permissions to 0600 on device-config.json
+  ([MEN-5357](https://tracker.mender.io/browse/MEN-5357))
+
 ## mender-configure-module 1.0.2
 
 _Released 09.28.2021_

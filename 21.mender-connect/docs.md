@@ -7,6 +7,63 @@ shortcode-core:
 github: false
 ---
 
+## mender-connect 2.0.0
+
+_Released 01.24.2022_
+
+### Statistics
+
+A total of 572 lines added, 949 removed (delta -377)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 8 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 996 (100.0%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 377 (39.7%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 8 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 996 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-connect (2.0.0)
+
+New changes in mender-connect since 1.2.0:
+
+* Deprecate configuration fields `ServerURL` , `Servers`,
+  `ServerCertificate`, `ClientProtocol`, `HTTPSClient` and `SkipVerify`.
+  The server configuration is obtained via D-Bus API, for which from
+  Mender 3.2 onwards is a local proxy which uses `mender.conf` client
+  settings to securely authenticate with the backend server, making the
+  client settings in `mender-connect.conf` redundant.
+  ([MEN-5203](https://tracker.mender.io/browse/MEN-5203))
+* Several robustness fixes around re-connection
+
+  * Trigger re-connection when either token or server URL obtained from
+    D-Bus signal has changed. Previously, it was enough with having a
+    token with "some length" for the code to believe the device was
+    authenticated and not trigger a re-connect.
+  * Abort connecting after 10 retries. Previously it would reconnect
+    forever with the same server URL, which will result in a deadlock if
+    the url (or the token) changed while re-connecting.
+  ([MEN-5290](https://tracker.mender.io/browse/MEN-5290))
+
+
 ## mender-connect 1.2.0
 
 _Released 07.14.2021_
