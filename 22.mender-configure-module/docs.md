@@ -7,6 +7,62 @@ shortcode-core:
 github: false
 ---
 
+## mender-configure-module 1.0.3
+
+_Released 01.24.2022_
+
+### Statistics
+
+A total of 2444 lines added, 429 removed (delta 2015)
+
+| Developers with the most changesets | |
+|---|---|
+| Fabio Tranchitella | 26 (41.9%) |
+| Kristian Amlie | 20 (32.3%) |
+| Lluis Campos | 11 (17.7%) |
+| Ole Petter Orhagen | 4 (6.5%) |
+| Krzysztof Jaskiewicz | 1 (1.6%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 1290 (49.3%) |
+| Kristian Amlie | 953 (36.4%) |
+| Lluis Campos | 353 (13.5%) |
+| Krzysztof Jaskiewicz | 16 (0.6%) |
+| Ole Petter Orhagen | 6 (0.2%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Krzysztof Jaskiewicz | 8 (1.9%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 61 (98.4%) |
+| RnDity | 1 (1.6%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 2602 (99.4%) |
+| RnDity | 16 (0.6%) |
+
+| Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 4 (80.0%) |
+| RnDity | 1 (20.0%) |
+
+### Changelogs
+
+#### mender-configure-module (1.0.3)
+
+* include the current JWT token in the reported config checksum
+  ([MEN-4769](https://tracker.mender.io/browse/MEN-4769))
+* Mute the `curl` request progress bar in the
+  `mender-inventory-mender-monitor` script.
+  ([MEN-4949](https://tracker.mender.io/browse/MEN-4949))
+* set default permissions to 0600 on device-config.json
+  ([MEN-5357](https://tracker.mender.io/browse/MEN-5357))
+
+
 ## mender-configure-module 1.0.2
 
 _Released 09.28.2021_
