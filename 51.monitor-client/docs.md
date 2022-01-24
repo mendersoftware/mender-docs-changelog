@@ -11,49 +11,6 @@ github: false
 
 _Released 01.24.2022_
 
-### Statistics
-
-A total of 738 lines added, 182 removed (delta 556)
-
-| Developers with the most changesets | |
-|---|---|
-| Peter Grzybowski | 14 (56.0%) |
-| Lluis Campos | 5 (20.0%) |
-| Ole Petter Orhagen | 4 (16.0%) |
-| Kristian Amlie | 2 (8.0%) |
-
-| Developers with the most changed lines | |
-|---|---|
-| Peter Grzybowski | 341 (40.3%) |
-| Ole Petter Orhagen | 314 (37.1%) |
-| Lluis Campos | 108 (12.8%) |
-| Kristian Amlie | 84 (9.9%) |
-
-| Developers with the most lines removed | |
-|---|---|
-| Kristian Amlie | 48 (26.4%) |
-| Lluis Campos | 1 (0.5%) |
-
-| Developers with the most signoffs (total 1) | |
-|---|---|
-| Lluis Campos | 1 (100.0%) |
-
-| Top changeset contributors by employer | |
-|---|---|
-| Northern.tech | 25 (100.0%) |
-
-| Top lines changed by employer | |
-|---|---|
-| Northern.tech | 847 (100.0%) |
-
-| Employers with the most signoffs (total 1) | |
-|---|---|
-| Northern.tech | 1 (100.0%) |
-
-| Employers with the most hackers (total 4) | |
-|---|---|
-| Northern.tech | 4 (100.0%) |
-
 ### Changelogs
 
 #### monitor-client (1.1.0)
