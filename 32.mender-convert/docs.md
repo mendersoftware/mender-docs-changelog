@@ -7,6 +7,53 @@ shortcode-core:
 github: false
 ---
 
+## mender-convert 2.6.1
+
+_Released 01.24.2022_
+
+### Statistics
+
+A total of 12 lines added, 13 removed (delta -1)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 4 (66.7%) |
+| Kristian Amlie | 1 (16.7%) |
+| Lluis Campos | 1 (16.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 6 (40.0%) |
+| Lluis Campos | 5 (33.3%) |
+| Kristian Amlie | 4 (26.7%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Kristian Amlie | 3 (23.1%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 6 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 15 (100.0%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+      
+### Changelogs
+
+#### mender-convert (2.6.1)
+
+New changes in mender-convert since 2.6.0:
+
+* Modify `ln` calls for data store links to support successive runs
+  ([MEN-5078](https://tracker.mender.io/browse/MEN-5078))
+* Fix "unbound variable" error when using `raspberrypi4_ubuntu_config`.
+
+
 ## mender-convert 2.6.0
 
 _Released 09.28.2021_
