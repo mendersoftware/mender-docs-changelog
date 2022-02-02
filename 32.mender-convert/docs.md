@@ -7,6 +7,50 @@ shortcode-core:
 github: false
 ---
 
+
+## mender-convert 2.6.2
+
+_Released 02.02.2022_
+
+### Statistics
+
+A total of 136 lines added, 70 removed (delta 66)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 5 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 143 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 5 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 143 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-convert (2.6.2)
+
+New changes in mender-convert since 2.6.1:
+
+* Download and install Debian packages taking into account the
+  target OS. Now downloads.mender.io serves four distributions: the two
+  latests releases for Debian and Ubuntu. Probe /etc/os-release to figure
+  out the correct package to install, and fallback to Debian Buster
+  packages which was the previous default.
+  ([MEN-5410](https://tracker.mender.io/browse/MEN-5410))
+* Fix installation of user specified versions for mender-configure add-on
+
+
 ## mender-convert 2.6.1
 
 _Released 01.24.2022_
