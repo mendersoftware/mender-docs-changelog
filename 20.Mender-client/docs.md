@@ -7,6 +7,55 @@ shortcode-core:
 github: false
 ---
 
+## mender 3.2.1
+
+_Released 02.02.2022_
+
+### Statistics
+
+A total of 113 lines added, 22 removed (delta 91)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 2 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 115 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 115 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender (3.2.1)
+
+New changes in mender since 3.2.0:
+
+* fix(client_update): Only fall back to older endpoints on HTTP 404's
+
+  Make the client only fall back to older endpoints on HTTP 404 error codes when
+  polling the `deployments/next` endpoint.
+
+  Previous functionality fell back to older endpoints on all error codes. This in
+  turn meant that when the client got rate-limited by the server on 429's, the
+  client fell back to the older endpoints.
+
+  The problem with this is that only the POSTv2 endpoint supports control maps, so
+  when an update with control maps was in progress, the other endpoints would
+  return 204, and the client would think the deployment was aborted from the server.
+  ([MEN-5421](https://tracker.mender.io/browse/MEN-5421))
+
+
 ## mender 3.2.0
 
 _Released 01.24.2022_
