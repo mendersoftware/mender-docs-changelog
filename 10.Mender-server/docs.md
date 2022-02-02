@@ -7,6 +7,54 @@ shortcode-core:
 github: false
 ---
 
+
+## Mender 3.2.1
+
+_Released 02.02.2022_
+
+### Statistics
+
+A total of 530 lines added, 162 removed (delta 368)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 10 (62.5%) |
+| Kristian Amlie | 4 (25.0%) |
+| Lluis Campos | 2 (12.5%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 386 (71.0%) |
+| Kristian Amlie | 120 (22.1%) |
+| Lluis Campos | 38 (7.0%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 14 (8.6%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 16 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 544 (100.0%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+### Changelogs
+
+#### integration (3.2.1)
+
+New changes in integration since 3.2.0:
+
+* Upgrade integration to 3.2.1.
+* Upgrade mender-connect to 2.0.1.
+* Upgrade mender-convert to 2.6.2.
+* Upgrade mender to 3.2.1.
+
 ## Mender 3.2.0
 
 _Released 01.24.2022_
