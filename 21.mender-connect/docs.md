@@ -7,6 +7,43 @@ shortcode-core:
 github: false
 ---
 
+## mender-connect 2.0.1
+
+_Released 02.02.2022_
+
+### Statistics
+
+A total of 111 lines added, 16 removed (delta 95)
+
+| Developers with the most changesets | |
+|---|---|
+| Peter Grzybowski | 2 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Peter Grzybowski | 111 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 111 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-connect (2.0.1)
+
+New changes in mender-connect since 2.0.0:
+
+* fix: Global spawned shells count is not always decremented.
+
+
 ## mender-connect 2.0.0
 
 _Released 01.24.2022_
