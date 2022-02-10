@@ -11653,6 +11653,106 @@ requests to Mender support
 * Bumps alpine from 3.13.0 to 3.13.1.
 * Bumps alpine from 3.13.1 to 3.13.2.
 
+
+## Mender 2.6.4
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 681 lines added, 873 removed (delta -192)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 15 (40.5%) |
+| Kristian Amlie | 7 (18.9%) |
+| Ole Petter Orhagen | 6 (16.2%) |
+| Alf-Rune Siqveland | 3 (8.1%) |
+| Manuel Zedel | 2 (5.4%) |
+| Fabio Tranchitella | 2 (5.4%) |
+| Jesus | 1 (2.7%) |
+| Krzysztof Jaskiewicz | 1 (2.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 549 (46.5%) |
+| Alf-Rune Siqveland | 249 (21.1%) |
+| Kristian Amlie | 152 (12.9%) |
+| Ole Petter Orhagen | 147 (12.4%) |
+| Manuel Zedel | 45 (3.8%) |
+| Fabio Tranchitella | 20 (1.7%) |
+| Krzysztof Jaskiewicz | 13 (1.1%) |
+| Jesus | 6 (0.5%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 266 (30.5%) |
+| Alf-Rune Siqveland | 134 (15.3%) |
+| Manuel Zedel | 31 (3.6%) |
+| Krzysztof Jaskiewicz | 13 (1.5%) |
+| Fabio Tranchitella | 6 (0.7%) |
+
+| Developers with the most signoffs (total 7) | |
+|---|---|
+| Ole Petter Orhagen | 4 (57.1%) |
+| Lluis Campos | 3 (42.9%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 35 (94.6%) |
+| RnDity | 1 (2.7%) |
+| wjaxxx@gmail.com | 1 (2.7%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 1162 (98.4%) |
+| RnDity | 13 (1.1%) |
+| wjaxxx@gmail.com | 6 (0.5%) |
+
+| Employers with the most signoffs (total 7) | |
+|---|---|
+| Northern.tech | 7 (100.0%) |
+
+| Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 6 (75.0%) |
+| RnDity | 1 (12.5%) |
+| wjaxxx@gmail.com | 1 (12.5%) |
+
+### Changelogs
+
+#### create-artifact-worker (1.0.3)
+
+New changes in create-artifact-worker since 1.0.2:
+
+* Dockerfile: lock base image mendersoftware/workflows to mender-3.1.x
+
+#### integration (2.6.4)
+
+New changes in integration since 2.6.3:
+
+* Unify the docker-compose version check through using the
+  docker-compose version subcommand, as opposed to the --version flag when
+  checking which docker-compose version is compatible with the current demo script.
+* Upgrade create-artifact-worker to 1.0.3.
+* Upgrade mender-connect to 1.0.3.
+* Upgrade mender to 2.5.4.
+* Upgrade mtls-ambassador to 1.0.1.
+
+#### mtls-ambassador (1.0.1)
+
+New changes in mtls-ambassador since 1.0.0:
+
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.14.2 to 3.15.0.
+    ---
+    updated-dependencies:
+    - dependency-name: alpine
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+    ...
+
+
 ## Mender 2.6.2
 
 _Released 07.14.2021_

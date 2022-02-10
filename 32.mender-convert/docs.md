@@ -187,6 +187,63 @@ New changes in mender-convert since 2.5.0:
     ...
 
 
+## mender-convert 2.5.3
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 143 lines added, 78 removed (delta 65)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 6 (75.0%) |
+| Ole Petter Orhagen | 1 (12.5%) |
+| Kristian Amlie | 1 (12.5%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 147 (96.1%) |
+| Kristian Amlie | 4 (2.6%) |
+| Ole Petter Orhagen | 2 (1.3%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Kristian Amlie | 3 (3.8%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 8 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 153 (100.0%) |
+
+| Employers with the most signoffs (total 0) | |
+|---|---|
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+### Changelogs
+
+#### mender-convert (2.5.3)
+
+New changes in mender-convert since 2.5.2:
+
+* Modify `ln` calls for data store links to support successive runs
+  ([MEN-5078](https://tracker.mender.io/browse/MEN-5078))
+* Fix "unbound variable" error when using `raspberrypi4_ubuntu_config`.
+* Download and install Debian packages taking into account the
+  target OS. Now downloads.mender.io serves four distributions: the two
+  latests releases for Debian and Ubuntu. Probe /etc/os-release to figure
+  out the correct package to install, and fallback to Debian Buster
+  packages which was the previous default.
+  ([MEN-5410](https://tracker.mender.io/browse/MEN-5410))
+* Fix installation of user specified versions for mender-configure add-on
+
+
 ## mender-convert 2.5.2
 
 _Released 09.30.2021_
