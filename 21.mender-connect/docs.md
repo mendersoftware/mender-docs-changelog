@@ -101,6 +101,58 @@ New changes in mender-connect since 1.2.0:
   ([MEN-5290](https://tracker.mender.io/browse/MEN-5290))
 
 
+## mender-connect 1.2.1
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 215 lines added, 306 removed (delta -91)
+
+| Developers with the most changesets | |
+|---|---|
+| Peter Grzybowski | 2 (50.0%) |
+| Lluis Campos | 2 (50.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 290 (72.3%) |
+| Peter Grzybowski | 111 (27.7%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 186 (60.8%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 4 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 401 (100.0%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+### Changelogs
+
+#### mender-connect (1.2.1)
+
+New changes in mender-connect since 1.2.0:
+
+* Several robustness fixes around re-connection
+  * Trigger re-connection when either token or server URL obtained from
+    D-Bus signal has changed. Previously, it was enough with having a
+    token with "some length" for the code to believe the device was
+    authenticated and not trigger a re-connect.
+  * Abort connecting after 10 retries. Previously it would reconnect
+    forever with the same server URL, which will result in a deadlock if
+    the url (or the token) changed while re-connecting.
+  ([MEN-5290](https://tracker.mender.io/browse/MEN-5290))
+* fix: Global spawned shells count is not always decremented.
+
+
 ## mender-connect 1.2.0
 
 _Released 07.14.2021_
@@ -222,6 +274,55 @@ New changes in mender-connect since 1.0.0:
 * New feature: TCP and UDP port-forwarding
 * stat(2) file path and verify conditions before starting upload
 * Add option to pass src_path to file upload requests
+
+## mender-connect 1.0.3
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 122 lines added, 428 removed (delta -306)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 3 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 428 (100.0%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 306 (71.5%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 428 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-connect (1.0.3)
+
+New changes in mender-connect since 1.0.2:
+
+* Several robustness fixes around re-connection
+  * Trigger re-connection when either token or server URL obtained from
+    D-Bus signal has changed. Previously, it was enough with having a
+    token with "some length" for the code to believe the device was
+    authenticated and not trigger a re-connect.
+  * Abort connecting after 10 retries. Previously it would reconnect
+    forever with the same server URL, which will result in a deadlock if
+    the url (or the token) changed while re-connecting.
+  ([MEN-5290](https://tracker.mender.io/browse/MEN-5290))
+
 
 ## mender-connect 1.0.2
 

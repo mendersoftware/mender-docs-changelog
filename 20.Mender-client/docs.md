@@ -184,6 +184,78 @@ New changes in mender since 3.1.0:
 * vendor: Bump mender-artifact to latest master version
 
 
+## mender 3.1.1
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 430 lines added, 58 removed (delta 372)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 7 (41.2%) |
+| Ole Petter | 6 (35.3%) |
+| Lluis Campos | 3 (17.6%) |
+| Jesus | 1 (5.9%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter | 259 (60.1%) |
+| Kristian Amlie | 151 (35.0%) |
+| Lluis Campos | 15 (3.5%) |
+| Jesus | 6 (1.4%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Ole Petter | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 16 (94.1%) |
+| wjaxxx@gmail.com | 1 (5.9%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 425 (98.6%) |
+| wjaxxx@gmail.com | 6 (1.4%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 3 (75.0%) |
+| wjaxxx@gmail.com | 1 (25.0%) |
+
+### Changelogs
+
+#### mender (3.1.1)
+
+New changes in mender since 3.1.0:
+
+* Fix error not finding active partition for systems where /dev/root is a symlink
+* Title if the update module has not already requested a reboot. This
+  is done, in the case that ArtifactInstall never finished, and hence the reboot
+  information from the update module is never collected.
+  ([MEN-4882](https://tracker.mender.io/browse/MEN-4882))
+* Refresh update control maps before failing an update
+  Fix the issue where if a state takes longer than the expiration time
+  for the enabled update control map, then by the time the client checks its
+  control maps, the map is expired, and the update fails.
+  Now the client refreshes the update maps from the server before each pause, and
+  hence, this issue will be avoided.
+  ([MEN-5096](https://tracker.mender.io/browse/MEN-5096))
+* Handle the possibility of losing network connectivity when refreshing
+  the update control maps.
+* Fix a race condition which can happen during a reboot if
+  systemd kills the `reboot` command before it kills the Mender client.
+  ([MEN-5340](https://tracker.mender.io/browse/MEN-5340))
+* Fix a (possible) file descriptor leak.
+* Bump github.com/mendersoftware/mender-artifact to 3.6.x
+
+
 ## mender 3.1.0
 
 _Released 09.28.2021_
@@ -292,6 +364,79 @@ New changes in mender since 3.0.0:
   expire, which was the old functionality.
   ([MEN-3420](https://tracker.mender.io/browse/MEN-3420))
 * [FIX] Fetch geo location data once per power cycle
+
+
+## mender 3.0.2
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 430 lines added, 58 removed (delta 372)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 7 (41.2%) |
+| Ole Petter | 6 (35.3%) |
+| Lluis Campos | 3 (17.6%) |
+| Jesus | 1 (5.9%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter | 259 (60.1%) |
+| Kristian Amlie | 151 (35.0%) |
+| Lluis Campos | 15 (3.5%) |
+| Jesus | 6 (1.4%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Ole Petter | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 16 (94.1%) |
+| wjaxxx@gmail.com | 1 (5.9%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 425 (98.6%) |
+| wjaxxx@gmail.com | 6 (1.4%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 3 (75.0%) |
+| wjaxxx@gmail.com | 1 (25.0%) |
+
+#### mender (3.0.2)
+
+### Changelogs
+
+New changes in mender since 3.0.1:
+
+* Fix error not finding active partition for systems where /dev/root is a symlink
+* Title if the update module has not already requested a reboot. This
+  is done, in the case that ArtifactInstall never finished, and hence the reboot
+  information from the update module is never collected.
+  ([MEN-4882](https://tracker.mender.io/browse/MEN-4882))
+* Refresh update control maps before failing an update
+  Fix the issue where if a state takes longer than the expiration time
+  for the enabled update control map, then by the time the client checks its
+  control maps, the map is expired, and the update fails.
+  Now the client refreshes the update maps from the server before each pause, and
+  hence, this issue will be avoided.
+  ([MEN-5096](https://tracker.mender.io/browse/MEN-5096))
+* Handle the possibility of losing network connectivity when refreshing
+  the update control maps.
+* Fix a race condition which can happen during a reboot if
+  systemd kills the `reboot` command before it kills the Mender client.
+  ([MEN-5340](https://tracker.mender.io/browse/MEN-5340))
+* Fix a (possible) file descriptor leak.
+* Bump github.com/mendersoftware/mender-artifact to 3.6.x
+
 
 ## mender 3.0.1
 
@@ -633,6 +778,71 @@ Mender server without extra configuration.
 * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.6.1 to 1.7.0.
 - [Release notes](https://github.com/stretchr/testify/releases)
 - [Commits](https://github.com/stretchr/testify/compare/v1.6.1...v1.7.0)
+
+
+## mender 2.5.4
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 297 lines added, 52 removed (delta 245)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 7 (53.8%) |
+| Lluis Campos | 3 (23.1%) |
+| Ole Petter | 2 (15.4%) |
+| Jesus | 1 (7.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 152 (49.8%) |
+| Ole Petter | 125 (41.0%) |
+| Lluis Campos | 22 (7.2%) |
+| Jesus | 6 (2.0%) |
+
+| Developers with the most signoffs (total 2) | |
+|---|---|
+| Lluis Campos | 1 (50.0%) |
+| Ole Petter | 1 (50.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 12 (92.3%) |
+| wjaxxx@gmail.com | 1 (7.7%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 299 (98.0%) |
+| wjaxxx@gmail.com | 6 (2.0%) |
+
+| Employers with the most signoffs (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 3 (75.0%) |
+| wjaxxx@gmail.com | 1 (25.0%) |
+
+### Changelogs
+
+#### mender (2.5.4)
+
+New changes in mender since 2.5.3:
+
+* Fix error not finding active partition for systems where /dev/root is a symlink
+* Title if the update module has not already requested a reboot. This
+  is done, in the case that ArtifactInstall never finished, and hence the reboot
+  information from the update module is never collected.
+  ([MEN-4882](https://tracker.mender.io/browse/MEN-4882))
+* Fix a race condition which can happen during a reboot if
+  systemd kills the `reboot` command before it kills the Mender client.
+  ([MEN-5340](https://tracker.mender.io/browse/MEN-5340))
+* Fix a (possible) file descriptor leak.
+* Bump github.com/mendersoftware/mender-artifact to 3.5.x
+
 
 ## mender 2.5.2
 
