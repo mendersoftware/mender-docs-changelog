@@ -5676,6 +5676,168 @@ New changes in integration since 3.1.0:
       ```
 
 
+## Mender 3.1.1
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 733 lines added, 495 removed (delta 238)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 12 (34.3%) |
+| Ole Petter Orhagen | 6 (17.1%) |
+| Alf-Rune Siqveland | 5 (14.3%) |
+| Fabio Tranchitella | 4 (11.4%) |
+| Manuel Zedel | 4 (11.4%) |
+| Peter Grzybowski | 2 (5.7%) |
+| Emilio Rodríguez | 1 (2.9%) |
+| Krzysztof Jaskiewicz | 1 (2.9%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Alf-Rune Siqveland | 307 (33.2%) |
+| Fabio Tranchitella | 195 (21.1%) |
+| Lluis Campos | 160 (17.3%) |
+| Ole Petter Orhagen | 120 (13.0%) |
+| Manuel Zedel | 65 (7.0%) |
+| Peter Grzybowski | 50 (5.4%) |
+| Emilio Rodríguez | 14 (1.5%) |
+| Krzysztof Jaskiewicz | 13 (1.4%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Alf-Rune Siqveland | 97 (19.6%) |
+| Manuel Zedel | 34 (6.9%) |
+| Krzysztof Jaskiewicz | 13 (2.6%) |
+
+| Developers with the most signoffs (total 6) | |
+|---|---|
+| Ole Petter Orhagen | 3 (50.0%) |
+| Lluis Campos | 2 (33.3%) |
+| Fabio Tranchitella | 1 (16.7%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 33 (94.3%) |
+| RnDity | 1 (2.9%) |
+| Sentinel.tech | 1 (2.9%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 897 (97.1%) |
+| Sentinel.tech | 14 (1.5%) |
+| RnDity | 13 (1.4%) |
+
+| Employers with the most signoffs (total 6) | |
+|---|---|
+| Northern.tech | 6 (100.0%) |
+
+| Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 6 (75.0%) |
+| Sentinel.tech | 1 (12.5%) |
+| RnDity | 1 (12.5%) |
+
+## Changelogs
+
+#### create-artifact-worker (1.0.3)
+
+New changes in create-artifact-worker since 1.0.2:
+
+* Dockerfile: lock base image mendersoftware/workflows to mender-3.1.x
+
+#### deployments (4.0.1)
+
+New changes in deployments since 4.0.0:
+
+* Fix bucket initialization
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.14.2 to 3.15.0.
+    ---
+    updated-dependencies:
+    - dependency-name: alpine
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+    ...
+
+#### deployments-enterprise (4.0.1)
+
+New changes in deployments-enterprise since 4.0.0:
+
+* Fix bucket initialization
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.14.2 to 3.15.0.
+    ---
+    updated-dependencies:
+    - dependency-name: alpine
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+    ...
+
+#### devicemonitor (1.0.1)
+
+New changes in devicemonitor since 1.0.0:
+
+* [] Allow alerts to contain empty log lines
+  ([MEN-5256](https://tracker.mender.io/browse/MEN-5256))
+
+#### gui (3.1.1)
+
+New changes in gui since 3.1.0:
+
+* xtermjs interprets string as UTF-16
+  ([MEN-4771](https://tracker.mender.io/browse/MEN-4771))
+* fixed an issue that could prevent creating phased deployments for dynamic groups
+* Restore support for Open Source Production setups in bash
+  snippets used during on-boarding and on "Connect a Device" dialog.
+  ([MEN-5107](https://tracker.mender.io/browse/MEN-5107))
+* fixed an issue that limited profile edits to passwords, now editing the own email address is possible again
+
+#### inventory-enterprise (4.0.1)
+
+New changes in inventory-enterprise since 4.0.0:
+
+* fix filtering by datetime values (e.g. `updated_ts`)
+  ([MEN-4644](https://tracker.mender.io/browse/MEN-4644))
+
+#### mtls-ambassador (1.0.1)
+
+New changes in mtls-ambassador since 1.0.0:
+
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.14.2 to 3.15.0.
+    ---
+    updated-dependencies:
+    - dependency-name: alpine
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+    ...
+
+#### integration (3.1.1)
+
+New changes in integration since 3.1.0:
+
+* [] Fix demo script user creation race condition
+  ([MEN-4852](https://tracker.mender.io/browse/MEN-4852))
+* Unify the docker-compose version check through using the
+  docker-compose version subcommand, as opposed to the --version flag when
+  checking which docker-compose version is compatible with the current demo script.
+* Upgrade create-artifact-worker to 1.0.3.
+* Upgrade deployments-enterprise to 4.0.1.
+* Upgrade deployments to 4.0.1.
+* Upgrade devicemonitor to 1.0.1.
+* Upgrade gui to 3.1.1.
+* Upgrade integration to 3.1.1.
+* Upgrade inventory-enterprise to 4.0.1.
+* Upgrade inventory to 4.0.1.
+* Upgrade mender-connect to 1.2.1.
+* Upgrade mender to 3.1.1.
+* Upgrade monitor-client to 1.0.1.
+* Upgrade mtls-ambassador to 1.0.1.
+
+
 ## Mender 3.1.0
 
 _Released 09.28.2021_

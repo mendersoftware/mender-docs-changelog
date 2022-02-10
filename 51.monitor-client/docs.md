@@ -62,6 +62,31 @@ New changes in monitor-client since 1.0.0:
 * Handle exiting commands in the streamline logs case.
 
 
+## monitor-client 1.0.1
+
+_Released 02.09.2022_
+
+### Changelogs
+
+#### monitor-client (1.0.1)
+
+New changes in monitor-client since 1.0.0:
+
+* monitorctl: warn on non-existent command.
+* Clean excessive warning from the periodical alert store check.
+* Fix failure when sending many stored alerts. Previously, an attempt to send large local alert store could trigger `126 Argument list too long` error and  no alerts would be sent.
+  ([MEN-5133](https://tracker.mender.io/browse/MEN-5133))
+* Correctly escape especial characters when saving alerts in the local store.
+  ([MEN-5133](https://tracker.mender.io/browse/MEN-5133))
+* Move local store unlock calls away from the trap, which may lead to races
+* monitorctl: report error and exit when enabling/disabling non available checks
+  ([MEN-5190](https://tracker.mender.io/browse/MEN-5190))
+* monitorctl: Return the exit code properly and no output on successful execution. Previously monitorctl would always exit with code 0 even on errors
+  ([MEN-5172](https://tracker.mender.io/browse/MEN-5172))
+* monitorctl: Fix the issue with enable, disable, delete and create commands not returning the exit code correctly, which in turn leads to improper exit code of monitorctl tool
+  ([MEN-5172](https://tracker.mender.io/browse/MEN-5172))
+
+
 ## monitor-client 1.0.0
 
 _Released 09.28.2021_
