@@ -7996,6 +7996,117 @@ New changes in integration since 3.0.0:
     ...
 
 
+## Mender 3.0.2
+
+_Released 02.09.2022_
+
+### Statistics
+
+A total of 568 lines added, 460 removed (delta 108)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 9 (31.0%) |
+| Ole Petter Orhagen | 7 (24.1%) |
+| Fabio Tranchitella | 5 (17.2%) |
+| Manuel Zedel | 3 (10.3%) |
+| Alf-Rune Siqveland | 3 (10.3%) |
+| Peter Grzybowski | 1 (3.4%) |
+| Krzysztof Jaskiewicz | 1 (3.4%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Alf-Rune Siqveland | 249 (32.8%) |
+| Fabio Tranchitella | 220 (29.0%) |
+| Ole Petter Orhagen | 123 (16.2%) |
+| Lluis Campos | 100 (13.2%) |
+| Manuel Zedel | 53 (7.0%) |
+| Krzysztof Jaskiewicz | 13 (1.7%) |
+| Peter Grzybowski | 1 (0.1%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Alf-Rune Siqveland | 134 (29.1%) |
+| Manuel Zedel | 35 (7.6%) |
+| Krzysztof Jaskiewicz | 13 (2.8%) |
+
+| Developers with the most signoffs (total 5) | |
+|---|---|
+| Ole Petter Orhagen | 3 (60.0%) |
+| Lluis Campos | 2 (40.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 28 (96.6%) |
+| RnDity | 1 (3.4%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 746 (98.3%) |
+| RnDity | 13 (1.7%) |
+
+| Employers with the most signoffs (total 5) | |
+|---|---|
+| Northern.tech | 5 (100.0%) |
+
+| Employers with the most hackers (total 7) | |
+|---|---|
+| Northern.tech | 6 (85.7%) |
+| RnDity | 1 (14.3%) |
+
+### Changelogs
+
+#### create-artifact-worker (1.0.3)
+
+New changes in create-artifact-worker since 1.0.2:
+
+* Dockerfile: lock base image mendersoftware/workflows to mender-3.1.x
+
+#### gui (3.0.2)
+
+New changes in gui since 3.0.1:
+
+* xtermjs interprets string as UTF-16
+  ([MEN-4771](https://tracker.mender.io/browse/MEN-4771))
+* fixed an issue that could prevent creating phased deployments for dynamic groups
+
+#### inventory-enterprise (3.0.1)
+
+New changes in inventory-enterprise since 3.0.0:
+
+* fix filtering by datetime values (e.g. `updated_ts`)
+  ([MEN-4644](https://tracker.mender.io/browse/MEN-4644))
+
+#### mtls-ambassador (1.0.1)
+
+New changes in mtls-ambassador since 1.0.0:
+
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.14.2 to 3.15.0.
+    ---
+    updated-dependencies:
+    - dependency-name: alpine
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+    ...
+
+#### integration (3.0.2)
+
+New changes in integration since 3.0.1:
+
+* Unify the docker-compose version check through using the
+  docker-compose version subcommand, as opposed to the --version flag when
+  checking which docker-compose version is compatible with the current demo script.
+* Upgrade create-artifact-worker to 1.0.3.
+* Upgrade gui to 3.0.2.
+* Upgrade integration to 3.0.2.
+* Upgrade inventory-enterprise to 3.0.1.
+* Upgrade inventory to 3.0.1.
+* Upgrade mender-connect to 1.2.1.
+* Upgrade mender to 3.0.2.
+* Upgrade mtls-ambassador to 1.0.1.
+
+
 ## Mender 3.0.1
 
 _Release date 09.29.2021_
