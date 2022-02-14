@@ -844,6 +844,65 @@ New changes in mender since 2.5.3:
 * Bump github.com/mendersoftware/mender-artifact to 3.5.x
 
 
+## mender 2.5.3
+
+_Release date 09.29.2021_
+
+### Statistics
+
+A total of 97 lines added, 51 removed (delta 46)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 5 (55.6%) |
+| Prashanth Joseph Babu | 2 (22.2%) |
+| Alf-Rune Siqveland | 1 (11.1%) |
+| Lluis Campos | 1 (11.1%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Prashanth Joseph Babu | 46 (47.4%) |
+| Kristian Amlie | 34 (35.1%) |
+| Alf-Rune Siqveland | 9 (9.3%) |
+| Lluis Campos | 8 (8.2%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Kristian Amlie | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 7 (77.8%) |
+| prashanthjbabu@gmail.com | 2 (22.2%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 51 (52.6%) |
+| prashanthjbabu@gmail.com | 46 (47.4%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 3 (75.0%) |
+| prashanthjbabu@gmail.com | 1 (25.0%) |
+
+### Changelogs
+
+#### mender (2.5.3)
+
+New changes in mender since 2.5.2:
+
+* Add artifact_name to device provides if not found in store
+* Add missing filesystem sync which could produce an empty or
+  corrupted Update Module file tree in
+  `/var/lib/mender/modules/v3/payloads/0000/tree/files/` after an
+  unexpected reboot.
+* [FIX] Fetch geo location data once per power cycle
+
+
 ## mender 2.5.2
 
 _Released 07.14.2021_
