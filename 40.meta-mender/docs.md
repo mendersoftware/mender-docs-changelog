@@ -7,6 +7,76 @@ shortcode-core:
 github: false
 ---
 
+
+## meta-mender dunfell-v2022.02
+
+_Released 02.16.2022_
+
+### Statistics
+
+A total of 674 lines added, 133 removed (delta 541)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 10 (37.0%) |
+| Ole Petter Orhagen | 9 (33.3%) |
+| Kristian Amlie | 6 (22.2%) |
+| Marek Belisko | 2 (7.4%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 611 (87.8%) |
+| Ole Petter Orhagen | 44 (6.3%) |
+| Kristian Amlie | 31 (4.5%) |
+| Marek Belisko | 10 (1.4%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Ole Petter Orhagen | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 25 (92.6%) |
+| open-nandra | 2 (7.4%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 686 (98.6%) |
+| open-nandra | 10 (1.4%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 3 (75.0%) |
+| open-nandra | 1 (25.0%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2022.02)
+
+New changes in meta-mender since dunfell-v2021.12:
+
+* mender-setup-image: Add swap partition to fstab
+* Enable demo functionality for the monitor-client
+  ([MEN-5137](https://tracker.mender.io/browse/MEN-5137))
+* release-3.2.0: add mender-artifact 3.7.0
+* release-3.2.0: add mender-client 3.2.0
+* release-3.2.0: add mender-connect 2.0.0
+* release-3.2.0: add mender-monitor 1.1.0
+* release-3.2.0: add mender-configure 1.0.3 recipe
+* Add the mender-connect 2.0.1 recipe
+* Add the mender-client 3.2.1 recipe
+* Add recipe for mender-client 3.1.1
+* Add recipe for mender-connect 1.2.1
+* Add recipe for mender-monitor 1.0.1
+* Add recipe for mender-client 3.0.2
+* Add recipe for mender-client 2.5.4
+* Add recipe for mender-connect 1.0.3
+
+
 ## meta-mender zeus-v2021.12
 
 _Released 12.20.2021_
