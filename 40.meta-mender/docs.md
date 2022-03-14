@@ -77,29 +77,6 @@ New changes in meta-mender since dunfell-v2022.02:
 
 _Released 02.28.2022_
 
-### Changelogs
-
-#### meta-mender (zeus-v2022.02)
-
-New changes in meta-mender since zeus-v2021.12:
-
-* mender-setup-image: Add swap partition to fstab
-* Enable demo functionality for the monitor-client
-  ([MEN-5137](https://tracker.mender.io/browse/MEN-5137))
-* release-3.2.0: add mender-artifact 3.7.0
-* release-3.2.0: add mender-client 3.2.0
-* release-3.2.0: add mender-connect 2.0.0
-* release-3.2.0: add mender-monitor 1.1.0
-* release-3.2.0: add mender-configure 1.0.3 recipe
-* Add the mender-connect 2.0.1 recipe
-* Add the mender-client 3.2.1 recipe
-* Add recipe for mender-client 3.1.1
-* Add recipe for mender-connect 1.2.1
-* Add recipe for mender-monitor 1.0.1
-* Add recipe for mender-client 3.0.2
-* Add recipe for mender-client 2.5.4
-* Add recipe for mender-connect 1.0.3
-
 ### Statistics
 
 A total of 681 lines added, 137 removed (delta 544)
@@ -140,6 +117,29 @@ A total of 681 lines added, 137 removed (delta 544)
 |---|---|
 | Northern.tech | 3 (75.0%) |
 | open-nandra | 1 (25.0%) |
+
+### Changelogs
+
+#### meta-mender (zeus-v2022.02)
+
+New changes in meta-mender since zeus-v2021.12:
+
+* mender-setup-image: Add swap partition to fstab
+* Enable demo functionality for the monitor-client
+  ([MEN-5137](https://tracker.mender.io/browse/MEN-5137))
+* release-3.2.0: add mender-artifact 3.7.0
+* release-3.2.0: add mender-client 3.2.0
+* release-3.2.0: add mender-connect 2.0.0
+* release-3.2.0: add mender-monitor 1.1.0
+* release-3.2.0: add mender-configure 1.0.3 recipe
+* Add the mender-connect 2.0.1 recipe
+* Add the mender-client 3.2.1 recipe
+* Add recipe for mender-client 3.1.1
+* Add recipe for mender-connect 1.2.1
+* Add recipe for mender-monitor 1.0.1
+* Add recipe for mender-client 3.0.2
+* Add recipe for mender-client 2.5.4
+* Add recipe for mender-connect 1.0.3
 
 
 ## meta-mender dunfell-v2022.02
