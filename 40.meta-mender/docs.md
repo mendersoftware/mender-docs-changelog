@@ -8,6 +8,71 @@ github: false
 ---
 
 
+## meta-mender dunfell-v2022.03
+
+_Released: 03.14.2022_
+
+### Statistics
+
+A total of 217 lines added, 121 removed (delta 96)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 6 (40.0%) |
+| Josef Holzmayr | 4 (26.7%) |
+| Kristian Amlie | 2 (13.3%) |
+| Leon Anavi | 1 (6.7%) |
+| Ole Petter Orhagen | 1 (6.7%) |
+| Corey Cothrum | 1 (6.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 109 (50.2%) |
+| Lluis Campos | 69 (31.8%) |
+| Josef Holzmayr | 24 (11.1%) |
+| Kristian Amlie | 9 (4.1%) |
+| Leon Anavi | 4 (1.8%) |
+| Corey Cothrum | 2 (0.9%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Lluis Campos | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 13 (86.7%) |
+| Konsulko Group | 1 (6.7%) |
+| contact@coreycothrum.com | 1 (6.7%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 211 (97.2%) |
+| Konsulko Group | 4 (1.8%) |
+| contact@coreycothrum.com | 2 (0.9%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 6) | |
+|---|---|
+| Northern.tech | 4 (66.7%) |
+| Konsulko Group | 1 (16.7%) |
+| contact@coreycothrum.com | 1 (16.7%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2022.03)
+
+New changes in meta-mender since dunfell-v2022.02:
+
+* prevent pseudo inode mismatch w/ efi-secure-boot
+* Add recipe for mender-gateway_git
+  ([MEN-5300](https://tracker.mender.io/browse/MEN-5300))
+* Add testing image mender-gateway-image-full-cmdline
+  ([MEN-5300](https://tracker.mender.io/browse/MEN-5300))
+* Avoid lib64/*.a issues with lsb-ld on multilib systems
+
 ## meta-mender zeus-v2022.02
 
 _Released 02.28.2022_
