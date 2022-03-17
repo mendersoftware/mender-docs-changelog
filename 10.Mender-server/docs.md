@@ -265,9 +265,50 @@ New changes in deployments since 4.0.0:
 
 #### deployments-enterprise (4.1.0)
 
-First release of deployments-enterprise
+New changes in deployments-enterprise since 4.0.0:
 
-_Released 20.01.2022_
+* deprecate `/deployments/releases` and `/artifacts` end-points
+  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+* implement end-points to get a paginated list of releases and artifacts
+  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+* add filtering of releases and artifacts by device type
+  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+* fix single device deployment handling
+* Fix bucket initialization
+* add back /deployments/devices/{id} end-point to management
+  ([MEN-5259](https://tracker.mender.io/browse/MEN-5259))
+* Add configuration option for the maximum artifact size
+  ([MEN-4184](https://tracker.mender.io/browse/MEN-4184))
+* Aggregated Dependabot Changelogs:
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.2 to 1.7.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.2...v1.7.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/aws/aws-sdk-go](https://github.com/aws/aws-sdk-go) from 1.40.37 to 1.40.59.
+      - [Release notes](https://github.com/aws/aws-sdk-go/releases)
+      - [Changelog](https://github.com/aws/aws-sdk-go/blob/main/CHANGELOG.md)
+      - [Commits](https://github.com/aws/aws-sdk-go/compare/v1.40.37...v1.40.59)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/aws/aws-sdk-go
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps alpine from 3.14.2 to 3.15.0.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
 
 #### deviceauth (3.2.0)
 
@@ -333,63 +374,7 @@ New changes in deviceauth since 3.1.0:
 
 #### deviceauth-enterprise (3.2.0)
 
-New changes in deviceauth-enterprise
-
-* Provision and accept device from external provider
-  ([MEN-5148](https://tracker.mender.io/browse/MEN-5148))
-* add (optional) support for triggering reporting reindex
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
-* extend the internal end-point for searching devices to allow filtering by device IDs
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
-* Unused settings cleanup: SettingDevAdmAddr
-* Aggregated Dependabot Changelogs:
-  * Bumps alpine from 3.14.0 to 3.14.2.
-
-      ```
-      updated-dependencies:
-      - dependency-name: alpine
-        dependency-type: direct:production
-        update-type: version-update:semver-patch
-      ```
-  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.2 to 1.7.3.
-      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
-      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.2...v1.7.3)
-
-      ```
-      updated-dependencies:
-      - dependency-name: go.mongodb.org/mongo-driver
-        dependency-type: direct:production
-        update-type: version-update:semver-patch
-      ```
-  * Bumps [github.com/go-redis/redis/v8](https://github.com/go-redis/redis) from 8.11.0 to 8.11.4.
-      - [Release notes](https://github.com/go-redis/redis/releases)
-      - [Changelog](https://github.com/go-redis/redis/blob/master/CHANGELOG.md)
-      - [Commits](https://github.com/go-redis/redis/compare/v8.11.0...v8.11.4)
-
-      ```
-      updated-dependencies:
-      - dependency-name: github.com/go-redis/redis/v8
-        dependency-type: direct:production
-        update-type: version-update:semver-patch
-      ```
-  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.3 to 1.7.4.
-      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
-      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.3...v1.7.4)
-
-      ```
-      updated-dependencies:
-      - dependency-name: go.mongodb.org/mongo-driver
-        dependency-type: direct:production
-        update-type: version-update:semver-patch
-      ```
-  * Bumps alpine from 3.14.2 to 3.15.0.
-
-      ```
-      updated-dependencies:
-      - dependency-name: alpine
-        dependency-type: direct:production
-        update-type: version-update:semver-minor
-      ```
+_Released 20.01.2022_
 
 #### deviceconfig (1.2.0)
 
