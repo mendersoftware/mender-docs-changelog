@@ -8,6 +8,53 @@ github: false
 ---
 
 
+## meta-mender zeus-v2022.03
+
+_Released: 03.25.2022_
+
+### Statistics
+
+A total of 30 lines added, 4 removed (delta 26)
+
+| Developers with the most changesets | |
+|---|---|
+| Josef Holzmayr | 4 (66.7%) |
+| Leon Anavi | 1 (16.7%) |
+| Corey Cothrum | 1 (16.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Josef Holzmayr | 24 (80.0%) |
+| Leon Anavi | 4 (13.3%) |
+| Corey Cothrum | 2 (6.7%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 4 (66.7%) |
+| Konsulko Group | 1 (16.7%) |
+| contact@coreycothrum.com | 1 (16.7%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 24 (80.0%) |
+| Konsulko Group | 4 (13.3%) |
+| contact@coreycothrum.com | 2 (6.7%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 1 (33.3%) |
+| Konsulko Group | 1 (33.3%) |
+| contact@coreycothrum.com | 1 (33.3%) |
+
+### Changelogs
+
+#### meta-mender (zeus-v2022.03)
+
+New changes in meta-mender since zeus-v2022.02:
+
+* prevent pseudo inode mismatch w/ efi-secure-boot
+* Avoid lib64/*.a issues with lsb-ld on multilib systems
+
 ## meta-mender dunfell-v2022.03
 
 _Released: 03.14.2022_
