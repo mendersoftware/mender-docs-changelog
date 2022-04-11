@@ -7,6 +7,62 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender dunfell-v2022.04
+
+_Released: 04.11.2022_
+
+### Statistics
+
+A total of 27 lines added, 11 removed (delta 16)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 4 (80.0%) |
+| Leon Anavi | 1 (20.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 27 (77.1%) |
+| Leon Anavi | 8 (22.9%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 4 (80.0%) |
+| Konsulko Group | 1 (20.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 27 (77.1%) |
+| Konsulko Group | 8 (22.9%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 1 (50.0%) |
+| Konsulko Group | 1 (50.0%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2022.04)
+
+New changes in meta-mender since dunfell-v2022.03:
+
+* Support F2FS for the data partition
+* Merge pull request #1652 from lluiscampos/qemu-docker-update-alpine
+
+  Bump alpine in /meta-mender-qemu/docker/qemux86-64
+* meta-mender-demo: Add demo functionality for mender-gateway
+
+  Requires the user to extend SRC_URI of mender-gateway with the location
+  of the examples tarball:
+  ```
+  SRC_URI_pn-mender-gateway_append = " file:///<download-path>/mender-gateway-examples-1.0.0.tar"
+  ```
+
+  Download the tarball from https://docs.mender.io/downloads
+  ([MEN-5475](https://tracker.mender.io/browse/MEN-5475))
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.12.3 to 3.15.0.
+
 
 ## meta-mender zeus-v2022.03
 
