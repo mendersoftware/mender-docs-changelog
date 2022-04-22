@@ -7,6 +7,47 @@ shortcode-core:
 github: false
 ---
 
+## mender-artifact 3.7.1
+
+_Released 04.21.2022_
+
+### Statistics
+
+A total of 76 lines added, 4 removed (delta 72)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 1 (50.0%) |
+| Lluis Campos | 1 (50.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 74 (97.4%) |
+| Lluis Campos | 2 (2.6%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 76 (100.0%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.7.1)
+
+New changes in mender-artifact since 3.7.0:
+
+* Fix: signing not working together with `module-image`.
+
+  This affects all update module generators.
+
+
 ## mender-artifact 3.7.0
 
 _Released 01.24.2022_

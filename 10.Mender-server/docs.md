@@ -8,6 +8,84 @@ github: false
 ---
 
 
+## Mender 3.2.2
+
+_Released 04.21.2022_
+
+### Statistics
+
+A total of 803 lines added, 358 removed (delta 445)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 19 (65.5%) |
+| Alf-Rune Siqveland | 6 (20.7%) |
+| Lluis Campos | 4 (13.8%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 430 (48.8%) |
+| Alf-Rune Siqveland | 303 (34.4%) |
+| Lluis Campos | 148 (16.8%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 52 (14.5%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 29 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 881 (100.0%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+### Changelogs
+
+#### create-artifact-worker (1.1.1)
+
+New changes in create-artifact-worker since 1.1.0:
+
+* Switch to stable components in create-artifact-worker 1.1.x.
+
+#### deviceconnect (1.3.1)
+
+New changes in deviceconnect since 1.3.0:
+
+* fix(security): Add cross-site origin checks for websocket endpoint
+
+#### integration (3.2.2)
+
+New changes in integration since 3.2.1:
+
+* Upgrade create-artifact-worker to 1.1.1.
+* Upgrade deviceconnect to 1.3.1.
+* Upgrade integration to 3.2.2.
+* Upgrade iot-manager to 1.0.1.
+* Upgrade mender-artifact to 3.7.1.
+
+#### iot-manager (1.0.1)
+
+New changes in iot-manager since 1.0.0:
+
+* fix: Add domain whitelist configuration for authorizing external domains
+* fix: Do not follow redirects serving integration hooks
+
+#### integration (3.2.2)
+
+New changes in integration since 3.2.1:
+
+* Upgrade create-artifact-worker to 1.1.1.
+* Upgrade deviceconnect to 1.3.1.
+* Upgrade integration to 3.2.2.
+* Upgrade iot-manager to 1.0.1.
+* Upgrade mender-artifact to 3.7.1.
+
+
 ## Mender 3.2.1
 
 _Released 02.02.2022_
