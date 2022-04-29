@@ -56,7 +56,7 @@ New changes in create-artifact-worker since 1.1.0:
 
 New changes in deviceconnect since 1.3.0:
 
-* fix(security): Add cross-site origin checks for websocket endpoint
+* fix(security): Add cross-site origin checks for websocket endpoint ([CVE-2022-29555](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29555))
 
 #### integration (3.2.2)
 
@@ -73,7 +73,7 @@ New changes in integration since 3.2.1:
 New changes in iot-manager since 1.0.0:
 
 * fix: Add domain whitelist configuration for authorizing external domains
-* fix: Do not follow redirects serving integration hooks
+* fix: Do not follow redirects serving integration hooks ([CVE-2022-29556](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29556))
 
 #### integration (3.2.2)
 
