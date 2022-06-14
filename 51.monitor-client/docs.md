@@ -7,6 +7,87 @@ shortcode-core:
 github: false
 ---
 
+
+## monitor-client 1.2.0
+
+_Released 06.14.2022_
+
+### Statistics
+
+A total of 168 lines added, 114 removed (delta 54)
+
+| Developers with the most changesets | |
+|---|---|
+| Peter Grzybowski | 14 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Peter Grzybowski | 241 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 14 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 241 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### monitor-client (1.2.0)
+
+New changes in monitor-client since 1.1.0:
+
+##### Bug Fixes
+
+* Use and honour ALERT_OFFLINE_STORE_MAX_COUNT setting.
+* Increasing read timeout in the pattern expiration worker.
+* Clean the variables each time the main loop continues. This was a bug, which manifested itself only when a certain order of sourced files came to be. As we use find for gathering of the files, special cirtumstances must occur for it to be triggered.
+  ([MEN-5508](https://tracker.mender.io/browse/MEN-5508))
+* Include log pattern and log path in the alert emails.
+  ([MEN-5600](https://tracker.mender.io/browse/MEN-5600))
+
+##### Features
+
+* Make the log subssytem general enough to be a base for any user-defined subsystem.
+  ([MEN-5508](https://tracker.mender.io/browse/MEN-5508))
+* Use the core log subsystem to create a pseudo subsystem: dockerevents.
+  ([MEN-5508](https://tracker.mender.io/browse/MEN-5508))
+
+##### Other
+
+* Handle exiting commands in the streamline logs case.
+* Do not alert when daemon is being shutdown.
+
+  After the introduction of the proxy, on shutdown the device is always
+  considered to be offline. That in combination with the aletrs storing
+  and service monitoring means that all monitored services will report
+  CRITICAL on the next boot. Those criticals will never disapear
+  (without restarting a given service), since on boot everything
+  is in an OK state again.
+
+  When daemon is being shutdown, now we will not monitor any services.
+* Return from monitor_send_alert immediately if shutdown is in progress.
+
+  It is possible that during the shutdown we are in the middle of a check,
+  in that case monitor_send_alert can be called while the daemon is being
+  shutdown. This closes the possibility of sending the alerts at that time.
+* Do not alert when log check is already in CRITICAL state.
+
+  If log check is in the critical state: do not send the alert.
+  This means that once the pattern is present in the logs,
+  only one alert will be sent. Note: the behaviour can be further
+  configured with LOG_PATTERN_EXPIRATION setting, to trigger
+  OK/CRITICAL chain as needed.
+  ([MEN-5458](https://tracker.mender.io/browse/MEN-5458))
+* dockerevents is moved away from examples directory, it is now based on the log subsystem.
+  ([MEN-5508](https://tracker.mender.io/browse/MEN-5508))
+
+
 ## monitor-client 1.1.0
 
 _Released 01.24.2022_

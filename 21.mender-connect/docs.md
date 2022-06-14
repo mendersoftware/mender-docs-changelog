@@ -7,6 +7,14 @@ shortcode-core:
 github: false
 ---
 
+
+## mender-connect 2.0.2
+
+_Released 06.14.2022_
+
+For internal consumption only.
+
+
 ## mender-connect 2.0.1
 
 _Released 02.02.2022_

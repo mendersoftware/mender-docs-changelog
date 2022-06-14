@@ -7,6 +7,16 @@ shortcode-core:
 github: false
 ---
 
+
+## mender-configure-module 1.0.4
+
+_Released 06.14.2022_
+
+For internal consumption only.
+
+### Changelogs
+
+
 ## mender-configure-module 1.0.3
 
 _Released 01.24.2022_

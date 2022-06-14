@@ -8,6 +8,158 @@ github: false
 ---
 
 
+## mender-convert 3.0.0
+
+_Released 06.14.2022_
+
+### Statistics
+
+A total of 1475 lines added, 474 removed (delta 1001)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 21 (39.6%) |
+| Ole Petter Orhagen | 16 (30.2%) |
+| Lluis Campos | 8 (15.1%) |
+| Josef Holzmayr | 4 (7.5%) |
+| Simon Ensslen | 2 (3.8%) |
+| Mikael Torp-Holte | 1 (1.9%) |
+| Peter Grzybowski | 1 (1.9%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 690 (44.9%) |
+| Ole Petter Orhagen | 479 (31.2%) |
+| Lluis Campos | 173 (11.3%) |
+| Simon Ensslen | 123 (8.0%) |
+| Josef Holzmayr | 46 (3.0%) |
+| Peter Grzybowski | 23 (1.5%) |
+| Mikael Torp-Holte | 2 (0.1%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 51 (96.2%) |
+| Griesser AG | 2 (3.8%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 1413 (92.0%) |
+| Griesser AG | 123 (8.0%) |
+
+| Employers with the most hackers (total 7) | |
+|---|---|
+| Northern.tech | 6 (85.7%) |
+| Griesser AG | 1 (14.3%) |
+
+### Changelogs
+
+#### mender-convert (3.0.0)
+
+New changes in mender-convert since 2.6.2:
+
+* Modify `ln` calls for data store links to support successive runs
+  ([MEN-5078](https://tracker.mender.io/browse/MEN-5078))
+* Fix "unbound variable" error when using `raspberrypi4_ubuntu_config`.
+* Download and install Debian packages taking into account the
+  target OS. Now downloads.mender.io serves four distributions: the two
+  latests releases for Debian and Ubuntu. Probe /etc/os-release to figure
+  out the correct package to install, and fallback to Debian Buster
+  packages which was the previous default.
+  ([MEN-5410](https://tracker.mender.io/browse/MEN-5410))
+* Fix installation of user specified versions for mender-configure add-on
+* Debian 11 tests support.
+  ([MEN-5257](https://tracker.mender.io/browse/MEN-5257))
+* The fstab file from the image being converted is now preserved across convertions, with the Mender specific additions merged with the existing fstab file, as opposed to replacing it completely. Which was the previous approach.
+* fix compatibility of docker-mender-convert with macOS/*BSD
+* Keep the UUID of the original first partition on the boot partition
+  of the converted image when the partition table is GPT.
+  ([MEN-5221](https://tracker.mender.io/browse/MEN-5221))
+* clarify supported development platforms
+* clarify Raspbian compatibility
+* README: add compatibility tables for configurations
+* The mender-convert docker image does now contain the mender-convert application and does no longer need companion checkouts.
+* All input files passed to docker-mender-convert must be located within the input directory as opposed to anywhere in the mender-convert checkout directory
+* If `grub*.efi` preexists on the EFI partition, keep it
+  instead of installing our own. In all other cases, we fall back to the
+  old functionality of installing mender-grub and nuking the existing
+  bootloader.
+* Integrate with `grub.d` framework.
+
+  This means that `grub-install` and `update-grub` no longer risk
+  bricking the device, but will produce boot scripts with Mender support
+  integrated. It also means that the standard GRUB menu will be
+  available.
+
+  It is supported on x86_64 platforms where `grub.d` is available, and
+  can be turned on and off with `MENDER_GRUB_D_INTEGRATION`. The default
+  is to use it if available.
+
+  Devices that did not previously use `grub.d` integration won't be
+  upgraded correctly with it turned on, so it is advised to set
+  `MENDER_GRUB_D_INTEGRATION=n` if you are upgrading existing devices.
+  ([MEN-5219](https://tracker.mender.io/browse/MEN-5219))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [jsdom](https://github.com/jsdom/jsdom) from 17.0.0 to 18.0.0.
+      - [Release notes](https://github.com/jsdom/jsdom/releases)
+      - [Changelog](https://github.com/jsdom/jsdom/blob/master/Changelog.md)
+      - [Commits](https://github.com/jsdom/jsdom/compare/17.0.0...18.0.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: jsdom
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps [jsdom](https://github.com/jsdom/jsdom) from 18.0.0 to 18.0.1.
+      - [Release notes](https://github.com/jsdom/jsdom/releases)
+      - [Changelog](https://github.com/jsdom/jsdom/blob/master/Changelog.md)
+      - [Commits](https://github.com/jsdom/jsdom/compare/18.0.0...18.0.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: jsdom
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [jsdom](https://github.com/jsdom/jsdom) from 18.0.1 to 18.1.0.
+      - [Release notes](https://github.com/jsdom/jsdom/releases)
+      - [Changelog](https://github.com/jsdom/jsdom/blob/master/Changelog.md)
+      - [Commits](https://github.com/jsdom/jsdom/compare/18.0.1...18.1.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: jsdom
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [jsdom](https://github.com/jsdom/jsdom) from 18.1.0 to 18.1.1.
+      - [Release notes](https://github.com/jsdom/jsdom/releases)
+      - [Changelog](https://github.com/jsdom/jsdom/blob/master/Changelog.md)
+      - [Commits](https://github.com/jsdom/jsdom/compare/18.1.0...18.1.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: jsdom
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [jsdom](https://github.com/jsdom/jsdom) from 18.1.1 to 19.0.0.
+      - [Release notes](https://github.com/jsdom/jsdom/releases)
+      - [Changelog](https://github.com/jsdom/jsdom/blob/master/Changelog.md)
+      - [Commits](https://github.com/jsdom/jsdom/compare/18.1.1...19.0.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: jsdom
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+
+
+
 ## mender-convert 2.6.2
 
 _Released 02.02.2022_
