@@ -7,6 +7,87 @@ shortcode-core:
 github: false
 ---
 
+
+## mender-artifact 3.8.0
+
+_Released 06.14.2022_
+
+### Statistics
+
+A total of 1326 lines added, 66 removed (delta 1260)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 2 (33.3%) |
+| Mikael Torp-Holte | 1 (16.7%) |
+| Kristian Amlie | 1 (16.7%) |
+| Lluis Campos | 1 (16.7%) |
+| Tobias Zimmerer | 1 (16.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Tobias Zimmerer | 1165 (87.9%) |
+| Ole Petter Orhagen | 83 (6.3%) |
+| Kristian Amlie | 73 (5.5%) |
+| Lluis Campos | 3 (0.2%) |
+| Mikael Torp-Holte | 2 (0.2%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 5 (83.3%) |
+| ZF | 1 (16.7%) |
+
+| Top lines changed by employer | |
+|---|---|
+| ZF | 1165 (87.9%) |
+| Northern.tech | 161 (12.1%) |
+
+| Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 4 (80.0%) |
+| ZF | 1 (20.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.8.0)
+
+New changes in mender-artifact since 3.7.1:
+
+##### Bug Fixes
+
+* signing not working together with `module-image`.
+
+  This affects all update module generators.
+* The mender-artifact modification commands (modify, cp, cat, rm) now
+  handles sparse partitions in the SD-images it modifies.
+  ([MEN-5462](https://tracker.mender.io/browse/MEN-5462))
+
+##### Other
+
+* Add signer using Hashicorp Vault's Transit Engine
+
+  This signer signs and verifies data using Hashicorp Vault's Transit Engine.
+  The implementation is based on the GCP KMS signer.
+  A new vault-transit-key flag was added to specify the key name in Vault.
+  Additionally, the mount path of the used Transit Engine within Vault needs to be specified via VAULT_MOUNT_PATH environment variable.
+  If key rotation in Vault is used, the key version can be specified with VAULT_KEY_VERSION environment variable.
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [cloud.google.com/go/kms](https://github.com/googleapis/google-cloud-go) from 1.1.0 to 1.3.0.
+      - [Release notes](https://github.com/googleapis/google-cloud-go/releases)
+      - [Changelog](https://github.com/googleapis/google-cloud-go/blob/main/CHANGES.md)
+      - [Commits](https://github.com/googleapis/google-cloud-go/compare/dlp/v1.1.0...kms/v1.3.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: cloud.google.com/go/kms
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+
 ## mender-artifact 3.7.1
 
 _Released 04.21.2022_

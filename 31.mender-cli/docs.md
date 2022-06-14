@@ -7,6 +7,183 @@ shortcode-core:
 github: false
 ---
 
+
+## mender-cli 1.8.0
+
+_Released 06.14.2022_
+
+### Statistics
+
+A total of 484 lines added, 172 removed (delta 312)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 4 (36.4%) |
+| Fabio Tranchitella | 2 (18.2%) |
+| Ruben Schwarz | 2 (18.2%) |
+| Mikael Torp-Holte | 1 (9.1%) |
+| Maciej Tomczuk | 1 (9.1%) |
+| Kristian Amlie | 1 (9.1%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 199 (40.6%) |
+| Fabio Tranchitella | 115 (23.5%) |
+| Ruben Schwarz | 114 (23.3%) |
+| Maciej Tomczuk | 59 (12.0%) |
+| Mikael Torp-Holte | 2 (0.4%) |
+| Kristian Amlie | 1 (0.2%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 9 (81.8%) |
+| SOTEC | 2 (18.2%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 376 (76.7%) |
+| SOTEC | 114 (23.3%) |
+
+| Employers with the most hackers (total 6) | |
+|---|---|
+| Northern.tech | 5 (83.3%) |
+| SOTEC | 1 (16.7%) |
+
+### Changelogs
+
+#### mender-cli (1.8.0)
+
+New changes in mender-cli since 1.7.0:
+
+* New command `mender-cli artifacts delete ID` to delete an
+  artifact
+* Raw mode for devices list command
+* disable `Failed to parse flags: unknown flag` error messages
+  ([MEN-5428](https://tracker.mender.io/browse/MEN-5428))
+* improve auth and device error messages for the troubleshoot commands
+  ([MEN-5428](https://tracker.mender.io/browse/MEN-5428))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps golang from 1.16.2-alpine3.12 to 1.16.3-alpine3.12.
+  * Bumps [github.com/cheggaaa/pb/v3](https://github.com/cheggaaa/pb) from 3.0.7 to 3.0.8.
+      - [Release notes](https://github.com/cheggaaa/pb/releases)
+      - [Commits](https://github.com/cheggaaa/pb/compare/v3.0.7...v3.0.8)
+  * Bumps golang from 1.16.3-alpine3.12 to 1.16.4-alpine3.12.
+  * Bumps golang from 1.16.4-alpine3.12 to 1.16.5-alpine3.12.
+
+      ```
+      updated-dependencies:
+      - dependency-name: golang
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.7.1 to 1.8.0.
+      - [Release notes](https://github.com/spf13/viper/releases)
+      - [Commits](https://github.com/spf13/viper/compare/v1.7.1...v1.8.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/viper
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.8.0 to 1.8.1.
+      - [Release notes](https://github.com/spf13/viper/releases)
+      - [Commits](https://github.com/spf13/viper/compare/v1.8.0...v1.8.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/viper
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/spf13/cobra](https://github.com/spf13/cobra) from 1.1.3 to 1.2.1.
+      - [Release notes](https://github.com/spf13/cobra/releases)
+      - [Changelog](https://github.com/spf13/cobra/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/spf13/cobra/compare/v1.1.3...v1.2.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/cobra
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/google/uuid](https://github.com/google/uuid) from 1.2.0 to 1.3.0.
+      - [Release notes](https://github.com/google/uuid/releases)
+      - [Commits](https://github.com/google/uuid/compare/v1.2.0...v1.3.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/google/uuid
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.8.1 to 1.9.0.
+      - [Release notes](https://github.com/spf13/viper/releases)
+      - [Commits](https://github.com/spf13/viper/compare/v1.8.1...v1.9.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/viper
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.9.0 to 1.10.0.
+      - [Release notes](https://github.com/spf13/viper/releases)
+      - [Commits](https://github.com/spf13/viper/compare/v1.9.0...v1.10.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/viper
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/spf13/cobra](https://github.com/spf13/cobra) from 1.2.1 to 1.3.0.
+      - [Release notes](https://github.com/spf13/cobra/releases)
+      - [Changelog](https://github.com/spf13/cobra/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/spf13/cobra/compare/v1.2.1...v1.3.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/cobra
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.10.0 to 1.10.1.
+      - [Release notes](https://github.com/spf13/viper/releases)
+      - [Commits](https://github.com/spf13/viper/compare/v1.10.0...v1.10.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/viper
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/gorilla/websocket](https://github.com/gorilla/websocket) from 1.4.2 to 1.5.0.
+      - [Release notes](https://github.com/gorilla/websocket/releases)
+      - [Commits](https://github.com/gorilla/websocket/compare/v1.4.2...v1.5.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gorilla/websocket
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/spf13/cobra](https://github.com/spf13/cobra) from 1.3.0 to 1.4.0.
+      - [Release notes](https://github.com/spf13/cobra/releases)
+      - [Changelog](https://github.com/spf13/cobra/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/spf13/cobra/compare/v1.3.0...v1.4.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/cobra
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+
 ## mender-cli 1.7.0
 
 _Released 04.16.2021_

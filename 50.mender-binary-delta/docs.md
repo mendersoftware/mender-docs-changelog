@@ -7,6 +7,13 @@ shortcode-core:
 github: false
 ---
 
+
+## mender-binary-delta 1.3.1
+
+_Released 06.14.2022_
+
+For internal consumption only.
+
 ## mender-binary-delta 1.3.0
 
 _Released 09.28.2021_

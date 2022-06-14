@@ -7,6 +7,146 @@ shortcode-core:
 github: false
 ---
 
+
+## mender 3.3.0
+
+_Released 06.14.2022_
+
+### Statistics
+
+A total of 928 lines added, 608 removed (delta 320)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 13 (43.3%) |
+| Peter Grzybowski | 6 (20.0%) |
+| Kristian Amlie | 4 (13.3%) |
+| Domenic Rodriguez | 2 (6.7%) |
+| Fabio Tranchitella | 1 (3.3%) |
+| Mikael Torp-Holte | 1 (3.3%) |
+| Sven Schermer | 1 (3.3%) |
+| Lluis Campos | 1 (3.3%) |
+| Adam Duskett | 1 (3.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 507 (46.6%) |
+| Kristian Amlie | 284 (26.1%) |
+| Peter Grzybowski | 249 (22.9%) |
+| Domenic Rodriguez | 20 (1.8%) |
+| Sven Schermer | 16 (1.5%) |
+| Lluis Campos | 9 (0.8%) |
+| Fabio Tranchitella | 2 (0.2%) |
+| Mikael Torp-Holte | 1 (0.1%) |
+| Adam Duskett | 1 (0.1%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Kristian Amlie | 54 (8.9%) |
+| Lluis Campos | 2 (0.3%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 26 (86.7%) |
+| Gecko Robotics | 2 (6.7%) |
+| Disruptive Technologies | 1 (3.3%) |
+| aduskett@gmail.com | 1 (3.3%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 1052 (96.6%) |
+| Gecko Robotics | 20 (1.8%) |
+| Disruptive Technologies | 16 (1.5%) |
+| aduskett@gmail.com | 1 (0.1%) |
+
+| Employers with the most hackers (total 9) | |
+|---|---|
+| Northern.tech | 6 (66.7%) |
+| Gecko Robotics | 1 (11.1%) |
+| Disruptive Technologies | 1 (11.1%) |
+| aduskett@gmail.com | 1 (11.1%) |
+
+### Changelogs
+
+#### mender (3.3.0)
+
+New changes in mender since 3.2.1:
+
+##### Bug Fixes
+
+* Only fall back to older endpoints on HTTP 404's
+
+
+
+  Make the client only fall back to older endpoints on HTTP 404 error codes when
+  polling the `deployments/next` endpoint.
+
+  Previous functionality fell back to older endpoints on all error codes. This in
+  turn meant that when the client got rate-limited by the server on 429's, the
+  client fell back to the older endpoints.
+
+  The problem with this is that only the POSTv2 endpoint supports control maps, so
+  when an update with control maps was in progress, the other endpoints would
+  return 204, and the client would think the deployment was aborted from the server.
+  ([MEN-5421](https://tracker.mender.io/browse/MEN-5421))
+* Fixed an issue in which long-running systems, with a long time
+  between reboots, and multiple updates encountered the `Tried maximum amount of
+  times` error, due to an error in the retry logic.
+* Log the fallback to the `artifact_info` file at log level Warn, when
+  the Artifact name can not be retrieved from the database.
+* add an After systemd dependency on mender-client-data-dir
+* The `mender-client.service` file now has an explicit `After`
+  dependency on the `data.mount` target, to make sure it is mounted, before the
+  client commences operation.
+* Fix Git error when installing after the fix for the
+  [CVE-2022-24765 Git
+  vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2022-24765)
+  ([Github's description of the
+  issue](https://github.blog/2022-04-12-git-security-vulnerability-announced/)).
+  This also fixes a subtle "pseudo abort" issue which can occur in the
+  Yocto build environment.
+* the HTTP proxy must bind on localhost, not on all the interfaces
+  ([MEN-5642](https://tracker.mender.io/browse/MEN-5642))
+* Don't accumulate zombies when command output parsing fails.
+  ([MEN-5587](https://tracker.mender.io/browse/MEN-5587))
+* Only capture module stdout when requested
+  ([MEN-5098](https://tracker.mender.io/browse/MEN-5098))
+* Fix printing of update module stdout in real-time
+
+##### Features
+
+* Allow to disable HTTP Keep-Alive from config, set idle timeout.
+* Inventory push retries and backoff.
+
+  We use RetryPollIntervalSeconds in inventory with the exponential
+  backoff via GetExponentialBackoffTime together with a new setting:
+  * RetryPollCount -- the max number of tries
+  * inventory by default tries 3 times with one minute intervals
+    (GetExponentialBackoffTime defaults)
+* RetryPollCount applies to all places where backoff is present
+
+##### Other
+
+* Add alternate EFI path to mender-inventory-bootloader-integration
+* Add alternate EFI path to mender-inventory-bootloader-inte…
+* Add support for the `GET /v2/deployments/device/deployments/{id}/update_control_map` endpoint.
+  ([MEN-5542](https://tracker.mender.io/browse/MEN-5542))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+
 ## mender 3.2.1
 
 _Released 02.02.2022_
