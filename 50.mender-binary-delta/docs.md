@@ -7,6 +7,49 @@ shortcode-core:
 github: false
 ---
 
+## mender-binary-delta (1.4.0)
+
+_Released 07.06.2022_
+
+### Changelogs
+
+#### mender-binary-delta (1.4.0)
+
+New changes in mender-binary-delta since 1.3.1:
+
+##### Bug Fixes
+
+* Delta Artifacts should now be significantly faster to apply, since
+  the extra checksum check done by Mender has been removed, and only the checksum
+  done by the xdelta3 algorithm is used. Therefore, there is no double read of the
+  newly written partititon, which speeds up the installation significantly.
+  ([MEN-5607](https://tracker.mender.io/browse/MEN-5607))
+
+##### Other
+
+* Additional arguments to xdelta3 with -D/--decoder-arguments
+  ([MEN-5193](https://tracker.mender.io/browse/MEN-5193))
+* style: Extra log for the decoder arguments.
+* Passing all the arguments to the xdelta3 for decoder.
+  ([MEN-5491](https://tracker.mender.io/browse/MEN-5491))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps tests/unit/cmocka from `5a4b158` to `59f4792`.
+
+      ```
+      updated-dependencies:
+      - dependency-name: tests/unit/cmocka
+        dependency-type: direct:production
+      ```
+  * Bumps tests/unit/cmocka from `59f4792` to `6066c5c`.
+
+      ```
+      updated-dependencies:
+      - dependency-name: tests/unit/cmocka
+        dependency-type: direct:production
+      ```
 
 ## mender-binary-delta 1.3.1
 
