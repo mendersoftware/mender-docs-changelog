@@ -7,6 +7,128 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender dunfell-v2022.09
+
+### Statistics
+
+A total of 799 lines added, 175 removed (delta 624)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 12 (30.8%) |
+| Kristian Amlie | 11 (28.2%) |
+| Peter Grzybowski | 5 (12.8%) |
+| Colin Finck | 3 (7.7%) |
+| Fabio Tranchitella | 2 (5.1%) |
+| Josef Holzmayr | 2 (5.1%) |
+| Leon Anavi | 2 (5.1%) |
+| Lluis Campos | 1 (2.6%) |
+| Sebastian Suesens | 1 (2.6%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 547 (64.6%) |
+| Peter Grzybowski | 181 (21.4%) |
+| Ole Petter Orhagen | 65 (7.7%) |
+| Colin Finck | 23 (2.7%) |
+| Josef Holzmayr | 12 (1.4%) |
+| Leon Anavi | 10 (1.2%) |
+| Fabio Tranchitella | 4 (0.5%) |
+| Lluis Campos | 3 (0.4%) |
+| Sebastian Suesens | 2 (0.2%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Josef Holzmayr | 2 (1.1%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 33 (84.6%) |
+| ENLYZE GMBH | 3 (7.7%) |
+| Konsulko Group | 2 (5.1%) |
+| Basler AG | 1 (2.6%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 812 (95.9%) |
+| ENLYZE GMBH | 23 (2.7%) |
+| Konsulko Group | 10 (1.2%) |
+| Basler AG | 2 (0.2%) |
+
+| Employers with the most hackers (total 9) | |
+|---|---|
+| Northern.tech | 6 (66.7%) |
+| ENLYZE GMBH | 1 (11.1%) |
+| Konsulko Group | 1 (11.1%) |
+| Basler AG | 1 (11.1%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2022.09)
+
+New changes in meta-mender since dunfell-v2022.04:
+
+##### Bug Fixes
+
+* Add mender-artifact 3.7.1 recipe.
+* Force building in separate build directory, even with `externalsrc`.
+* Automatically rebuild is tags have changed.
+* Make mender-client-resize-data-part compatible with "partuuid" setups.
+  ([MEN-3701](https://tracker.mender.io/browse/MEN-3701))
+* Race condition in mender-client-resize-data-part
+  ([MEN-5717](https://tracker.mender.io/browse/MEN-5717))
+* Added mender-configure-module 1.0.4
+* Better error message when Enterprise components can't be found.
+* Add a systemd Before dependency on the `mender-client-data-dir`
+  service file.
+* repeated grub build with different MENDER_STORAGE_DEVICE
+
+  If a variable in do_configure task changed do_configure task is triggered
+  again but not do_compile.This patch clean the build folder and triggered
+  do_compile task again to get a fresh grub.cfg file with the fresh generated
+  data from do_configure task.
+
+##### Features
+
+* Add mender-artifact version 3.8.0.
+* add the mender-client 3.3.0 recipe
+* Add the mender-monitor 1.2.0 recipe
+* Add the mender-gateway 1.0.0 recipe
+* Add recipe for mender-binary-delta 1.4.0
+* Implemented proper license tracking for commercial
+  components. This was necessary for several reasons:
+  * Licenses were not being correctly generated inside
+    `$BUILDDIR/tmp/deploy/licenses`.
+  * Because they were not generated correctly, it wasn't previously
+    possible to bind a particular version of a commercial component to
+    a specific license. Hence, if Northern.tech were to change the
+    license, this online version would be the only available copy. It
+    thus would become unclear exactly what terms the user had accepted.
+    This has been fixed by including the license with the software.
+  This requires all users to re-accept the license (the license text can
+  be found in
+  `meta-mender-commercial/files/licenses/Mender-Yocto-Layer-License.md`),
+  by adding this to their `local.conf`:
+  ```
+  LICENSE_FLAGS_ACCEPTED:append = " commercial_mender-yocto-layer-license"
+  ```
+  Previous assignments of `LICENSE_FLAGS_ACCEPTED` mentioning "mender"
+  software can be removed.
+  ([MEN-5517](https://tracker.mender.io/browse/MEN-5517))
+* mender-artifact: Add OpenSSL dependency
+  ([MEN-5759](https://tracker.mender.io/browse/MEN-5759))
+
+##### Other
+
+* dataimg: Load Mender files on F2FS
+
+  Bug fix to load Mender configuration files to the data partition
+  when using F2FS through sload.f2fs.
+* mender-part-images: f2fs-tools-native if using F2FS
+
+  Add a dependency to f2fs-tools-native if using F2FS for the data
+  partition.
+
 ## meta-mender dunfell-v2022.04
 
 _Released: 04.11.2022_
