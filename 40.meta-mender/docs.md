@@ -7,7 +7,832 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender (kirkstone-v2022.09)
+
+_Released: 09.12.2022_
+
+### Statistics
+
+A total of 12574 lines added, 14375 removed (delta -1801)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 172 (35.1%) |
+| Lluis Campos | 126 (25.7%) |
+| Ole Petter Orhagen | 55 (11.2%) |
+| Drew Moseley | 28 (5.7%) |
+| Fabio Tranchitella | 24 (4.9%) |
+| Josef Holzmayr | 18 (3.7%) |
+| Peter Grzybowski | 14 (2.9%) |
+| Clément Péron | 9 (1.8%) |
+| Manuel Zedel | 5 (1.0%) |
+| Leon Anavi | 5 (1.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 13064 (56.5%) |
+| Lluis Campos | 3857 (16.7%) |
+| Ole Petter Orhagen | 3030 (13.1%) |
+| Drew Reed | 653 (2.8%) |
+| Drew Moseley | 561 (2.4%) |
+| Fabio Tranchitella | 527 (2.3%) |
+| Liam White McShane | 401 (1.7%) |
+| Josef Holzmayr | 336 (1.5%) |
+| Peter Grzybowski | 275 (1.2%) |
+| Marek Belisko | 141 (0.6%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Ole Petter Orhagen | 1655 (11.5%) |
+| Kristian Amlie | 1260 (8.8%) |
+| Drew Moseley | 178 (1.2%) |
+| Marek Belisko | 54 (0.4%) |
+| Drew Reed | 4 (0.0%) |
+| Maciej Tomczuk | 1 (0.0%) |
+
+| Developers with the most signoffs (total 21) | |
+|---|---|
+| Lluis Campos | 8 (38.1%) |
+| Kristian Amlie | 2 (9.5%) |
+| Mirza Krak | 2 (9.5%) |
+| Maciej Borzecki | 2 (9.5%) |
+| Vikas Katariya | 2 (9.5%) |
+| Zachary T Welch | 2 (9.5%) |
+| Ole Petter Orhagen | 1 (4.8%) |
+| Drew Moseley | 1 (4.8%) |
+| Drew Reed | 1 (4.8%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 447 (91.2%) |
+| peron.clem@gmail.com | 9 (1.8%) |
+| Konsulko Group | 5 (1.0%) |
+| open-nandra | 5 (1.0%) |
+| Timesys Corporation | 4 (0.8%) |
+| Arm | 4 (0.8%) |
+| Chora | 3 (0.6%) |
+| ENLYZE GMBH | 3 (0.6%) |
+| contact@coreycothrum.com | 2 (0.4%) |
+| kekiefer@gmail.com | 2 (0.4%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 21714 (94.0%) |
+| Arm | 685 (3.0%) |
+| Timesys Corporation | 431 (1.9%) |
+| open-nandra | 141 (0.6%) |
+| peron.clem@gmail.com | 59 (0.3%) |
+| Konsulko Group | 28 (0.1%) |
+| ENLYZE GMBH | 22 (0.1%) |
+| Chora | 7 (0.0%) |
+| kekiefer@gmail.com | 4 (0.0%) |
+| contact@coreycothrum.com | 3 (0.0%) |
+
+| Employers with the most signoffs (total 21) | |
+|---|---|
+| Northern.tech | 12 (57.1%) |
+| Arm | 3 (14.3%) |
+| Timesys Corporation | 2 (9.5%) |
+| RnDity | 2 (9.5%) |
+| mirza.krak@gmail.com | 2 (9.5%) |
+
+| Employers with the most hackers (total 30) | |
+|---|---|
+| Northern.tech | 13 (43.3%) |
+| Arm | 2 (6.7%) |
+| Timesys Corporation | 2 (6.7%) |
+| open-nandra | 1 (3.3%) |
+| peron.clem@gmail.com | 1 (3.3%) |
+| Konsulko Group | 1 (3.3%) |
+| ENLYZE GMBH | 1 (3.3%) |
+| Chora | 1 (3.3%) |
+| kekiefer@gmail.com | 1 (3.3%) |
+| contact@coreycothrum.com | 1 (3.3%) |
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2022.09)
+
+New changes in meta-mender since dunfell-v2022.09:
+
+##### Bug Fixes
+
+* bootfiles renamed to rpi-bootfiles in upstream
+  ([MEN-5689](https://tracker.mender.io/browse/MEN-5689))
+* Remove mender-client versions before 3.3
+  ([MEN-5698](https://tracker.mender.io/browse/MEN-5698))
+* select buildable OpenSSL binding for mender-client
+  ([MEN-5700](https://tracker.mender.io/browse/MEN-5700))
+* Remove lmdb recipe, which meta-openembedded/kirkstone already has.
+  ([MEN-4937](https://tracker.mender.io/browse/MEN-4937))
+* Generate correct licenses in `$BUILDDIR/tmp/deploy/licenses`.
+  ([MEN-3604](https://tracker.mender.io/browse/MEN-3604))
+* Make `read-only-rootfs` tweaks dependent on `mender-image` feature flag.
+* Fix occasional pseudo abort issue when building certain
+  images, especially in parallel. The symptom was this message:
+  ```
+  abort()ing pseudo client by server request.
+  See https://wiki.yoctoproject.org/wiki/Pseudo_Abort for more details on this
+  ```
+  ([MEN-5857](https://tracker.mender.io/browse/MEN-5857))
+* initramfs-module-install-efi: Ensure variable changes are reflected on rebuild
+* bootimg: Respect MENDER_BOOT_PART_FSTYPE.
+* Auto patching: Fix error `Unable to add definition
+  MTDIDS_DEFAULT`, which happens on U-Boot v2020.10 and later.
+* meta-mender-ci: Custom logging level for daemons with MENDER_CI_LOGLEVEL
+* use mender-efi-boot feature in EFI-related overlays
+* mender-core: refresh patch to be compatible with e2fsprogs 1.46.x
+* core: only patch systemd-boot when mender-systemd-boot is enabled
+* Adapt to new kernel which puts QEMU storage at sda, not hda.
+* Fix many dangerous uses of regexes in Python.
+* meta-mender-raspberrypi: update-firmware-state-script: Make
+  copies of firmware binaries safer. On VFAT file-systems `mv` is not
+  atomic, but still using it narrows the time window in which the files
+  could be corrupted.
+* rpi-bootfiles: rename to match upstream
+
+##### Features
+
+* Introduce `MENDER_EFI_LOADER`. This can be used to specify
+  which bootloader is used to load other EFI apps, such as the grub-efi
+  bootloader. This is normally provided by firmware on x86, and is
+  therefore empty, but on ARM it is often set to u-boot or edk2.
+* set LAYERCOMPAT to kirkstone only
+  ([MEN-5681](https://tracker.mender.io/browse/MEN-5681))
+* mender-monitor conditionally available depending on meta-oe
+* The `mender-binary-delta` recipe now takes a tarball as
+  input instead of a folder containing unpacked files. Remove the line
+  starting with `FILESEXTRAPATHS`, and instead insert this line:
+  ```
+  SRC_URI:pn-mender-binary-delta = "file://${HOME}/mender-binary-delta-1.4.0.tar.xz"
+  ```
+  where the path points to the downloaded tarball.
+  ([MEN-4980](https://tracker.mender.io/browse/MEN-4980))
+* Install standard Mender Update Modules by default. These
+  are:
+  * deb
+  * directory
+  * docker
+  * rpm
+  * script
+  * single-file
+  To disable the automatic installation of these Update Modules, add
+  `PACKAGECONFIG_remove = "modules"` to your `mender_%.bbappend` file,
+  or set `PACKAGECONFIG` explicitly.
+* Make DBus support optional in Mender client with `PACKAGECONFIG`.
+
+  It defaults to on, but can be turned off with:
+
+  ```
+  PACKAGECONFIG_remove = "dbus"
+  ```
+  ([MEN-4014](https://tracker.mender.io/browse/MEN-4014))
+* Features that are added or removed using
+  `MENDER_FEATURES_ENABLE` or `MENDER_FEATURES_DISABLE` now end up in
+  the `MENDER_FEATURES` variable instead of the `DISTRO_FEATURES`
+  variable. Code of the kind:
+  ```
+  ${@bb.utils.contains('DISTRO_FEATURES', 'mender-uboot', 'true', 'false', d)}
+  ```
+  needs to change to look in `MENDER_FEATURES` instead.
+* New recipe `mender-server-certificate` to install a
+  self-signed Mender server certificate to be trusted by all services
+  running in the device. To use it create a `.bbappend` recipe in your
+  layer fetching the certificate into `file://server.crt`
+  ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+* meta-mender-demo: install demo server certificate with
+  `mender-server-certificate` recipe to be used by `mender-client`,
+  `mender-shell`, and further services that could be added.
+  ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+* Variable `MENDER_CERT_LOCATION` deprecated. See note about
+  `mender-server-certificate` for more details
+  ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+* mender-server-certificate: Split concatenated certificates.
+
+  Multiple certificates in one file are necessary to split in
+  order for `update-ca-certificates` to produce a hashed symlink to
+  them, which is required by some programs, such as curl.
+  ([MEN-4580](https://tracker.mender.io/browse/MEN-4580))
+* mender-client: New native package mender-modules-gen to
+  install the Mender demo Update Module Artifact generators.
+  ([MEN-4671](https://tracker.mender.io/browse/MEN-4671))
+* grub-mender-grubenv: User space tools, "fw_printenv" and
+  "fw_setenv" have been renamed to "grub-mender-grubenv-print" and
+  "grub-mender-grubenv-set", respectively. This has been done in order
+  to avoid conflict with U-Boot's user space tools, which have the same
+  names.
+* Add support for using systemd-boot with meta-mender
+* Fix error message `ERROR: It's not possible to create empty
+  squashfs partition 'None'` when using "squashfs" filesystem type.
+  ([MEN-5285](https://tracker.mender.io/browse/MEN-5285))
+* use data/boot label variable
+* Add feature to detect boot and data partition based on their label.
+* The grub-mender-grubenv default environment location has
+  moved from `/boot/efi/EFI/BOOT/mender_grubenv*` to
+  `/boot/efi/grub-mender-grubenv/mender_grubenv*`. This change is
+  backwards compatible; existing devices will keep the environment in
+  the original location and the `grub-mender-grubenv-*` tools will
+  handle either location, by
+  auto-detection. `/etc/mender_grubenv.config` is no longer installed by
+  default, but it is still supported if installed manually.
+
+##### Other
+
+* deleted the mender-binary-delta_1.1.1 recipe
+* deleted the mender-binary-delta_1.1.2 recipe
+* deleted the mender-monitor_1.0.0 recipe
+* deleted the mender-monitor_1.0.1 recipe
+* deleted the mender-monitor_1.1.0 recipe
+* deleted the mender-artifact_3.5.0 recipe
+* deleted the mender-artifact_3.5.1 recipe
+* deleted the mender-artifact_3.5.2 recipe
+* deleted the mender-artifact_3.7.0 recipe
+* deleted the mender-artifact_3.7.1 recipe
+* deleted the mender-client_3.1.0 recipe
+* deleted the mender-client_3.2.0 recipe
+* deleted the mender-client_3.2.1 recipe
+* deleted the mender-connect_1.0.0 recipe
+* deleted the mender-connect_1.0.1 recipe
+* deleted the mender-connect_1.0.2 recipe
+* deleted the mender-connect_1.0.3 recipe
+* deleted the mender-connect_1.1.0 recipe
+* deleted the mender-connect_1.1.1 recipe
+* Remove mender-client 2.2.1 recipe
+* Remove mender-artifact 3.3.0 recipe
+* Remove mender-artifact 3.3.1 recipe
+* Remove mender-client recipes for 2.4.x series.
+* Remove mender-artifact_3.4.* and mender-client_2.3.* recipes.
+* Remove mender-client recipes pre 3.1.x series
+  ([MEN-3978](https://tracker.mender.io/browse/MEN-3978))
+* linux-raspberrypi-rt: drop support
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.12.3 to 3.13.0.
+  * Bumps [fabric](http://fabfile.org) from 2.5.0 to 2.6.0.
+  * Bumps [pyyaml](https://github.com/yaml/pyyaml) from 5.3.1 to 5.4.1.
+      - [Release notes](https://github.com/yaml/pyyaml/releases)
+      - [Changelog](https://github.com/yaml/pyyaml/blob/master/CHANGES)
+      - [Commits](https://github.com/yaml/pyyaml/compare/5.3.1...5.4.1)
+  * Bumps alpine from 3.13.0 to 3.13.1.
+  * Bumps [pytest](https://github.com/pytest-dev/pytest) from 6.2.1 to 6.2.2.
+      - [Release notes](https://github.com/pytest-dev/pytest/releases)
+      - [Changelog](https://github.com/pytest-dev/pytest/blob/master/CHANGELOG.rst)
+      - [Commits](https://github.com/pytest-dev/pytest/compare/6.2.1...6.2.2)
+  * Bumps alpine from 3.13.1 to 3.13.2.
+  * Bumps [cryptography](https://github.com/pyca/cryptography) from 3.3.2 to 3.4.6.
+      - [Release notes](https://github.com/pyca/cryptography/releases)
+      - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pyca/cryptography/compare/3.3.2...3.4.6)
+  * Bumps [cryptography](https://github.com/pyca/cryptography) from 3.4.6 to 3.4.7.
+      - [Release notes](https://github.com/pyca/cryptography/releases)
+      - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pyca/cryptography/compare/3.4.6...3.4.7)
+  * Bumps alpine from 3.13.2 to 3.13.3.
+  * Bumps alpine from 3.13.3 to 3.13.4.
+  * Bumps [pytest](https://github.com/pytest-dev/pytest) from 6.2.2 to 6.2.3.
+      - [Release notes](https://github.com/pytest-dev/pytest/releases)
+      - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pytest-dev/pytest/compare/6.2.2...6.2.3)
+  * Bumps alpine from 3.13.4 to 3.13.5.
+  * Bumps [six](https://github.com/benjaminp/six) from 1.15.0 to 1.16.0.
+      - [Release notes](https://github.com/benjaminp/six/releases)
+      - [Changelog](https://github.com/benjaminp/six/blob/master/CHANGES)
+      - [Commits](https://github.com/benjaminp/six/compare/1.15.0...1.16.0)
+  * Bumps [attrs](https://github.com/python-attrs/attrs) from 20.3.0 to 21.2.0.
+      - [Release notes](https://github.com/python-attrs/attrs/releases)
+      - [Changelog](https://github.com/python-attrs/attrs/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/python-attrs/attrs/compare/20.3.0...21.2.0)
+  * Bumps [pytest](https://github.com/pytest-dev/pytest) from 6.2.3 to 6.2.4.
+      - [Release notes](https://github.com/pytest-dev/pytest/releases)
+      - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pytest-dev/pytest/compare/6.2.3...6.2.4)
+  * Bumps [certifi](https://github.com/certifi/python-certifi) from 2020.12.5 to 2021.5.30.
+      - [Release notes](https://github.com/certifi/python-certifi/releases)
+      - [Commits](https://github.com/certifi/python-certifi/compare/2020.12.05...2021.05.30)
+  * Bumps [urllib3](https://github.com/urllib3/urllib3) from 1.26.4 to 1.26.5.
+      - [Release notes](https://github.com/urllib3/urllib3/releases)
+      - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+      - [Commits](https://github.com/urllib3/urllib3/compare/1.26.4...1.26.5)
+  * Bumps alpine from 3.13.5 to 3.14.0.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [urllib3](https://github.com/urllib3/urllib3) from 1.26.5 to 1.26.6.
+      - [Release notes](https://github.com/urllib3/urllib3/releases)
+      - [Changelog](https://github.com/urllib3/urllib3/blob/1.26.6/CHANGES.rst)
+      - [Commits](https://github.com/urllib3/urllib3/compare/1.26.5...1.26.6)
+
+      ```
+      updated-dependencies:
+      - dependency-name: urllib3
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [pathlib2](https://github.com/mcmtroffaes/pathlib2) from 2.3.5 to 2.3.6.
+      - [Release notes](https://github.com/mcmtroffaes/pathlib2/releases)
+      - [Changelog](https://github.com/mcmtroffaes/pathlib2/blob/develop/CHANGELOG.rst)
+      - [Commits](https://github.com/mcmtroffaes/pathlib2/compare/2.3.5...2.3.6)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pathlib2
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [packaging](https://github.com/pypa/packaging) from 20.9 to 21.0.
+      - [Release notes](https://github.com/pypa/packaging/releases)
+      - [Changelog](https://github.com/pypa/packaging/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pypa/packaging/compare/20.9...21.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: packaging
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps [invoke](https://github.com/bitprophet/alabaster) from 1.5.0 to 1.6.0.
+      - [Release notes](https://github.com/bitprophet/alabaster/releases)
+      - [Changelog](https://github.com/bitprophet/alabaster/blob/master/docs/changelog.rst)
+      - [Commits](https://github.com/bitprophet/alabaster/commits)
+
+      ```
+      updated-dependencies:
+      - dependency-name: invoke
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [cffi](http://cffi.readthedocs.org) from 1.14.5 to 1.14.6.
+
+      ```
+      updated-dependencies:
+      - dependency-name: cffi
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [requests](https://github.com/psf/requests) from 2.25.1 to 2.26.0.
+      - [Release notes](https://github.com/psf/requests/releases)
+      - [Changelog](https://github.com/psf/requests/blob/master/HISTORY.md)
+      - [Commits](https://github.com/psf/requests/compare/v2.25.1...v2.26.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: requests
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps alpine from 3.14.0 to 3.14.1.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps alpine from 3.14.1 to 3.14.2.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [pluggy](https://github.com/pytest-dev/pluggy) from 0.13.1 to 1.0.0.
+      - [Release notes](https://github.com/pytest-dev/pluggy/releases)
+      - [Changelog](https://github.com/pytest-dev/pluggy/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pytest-dev/pluggy/compare/0.13.1...1.0.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pluggy
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps [cryptography](https://github.com/pyca/cryptography) from 3.4.7 to 3.4.8.
+      - [Release notes](https://github.com/pyca/cryptography/releases)
+      - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pyca/cryptography/compare/3.4.7...3.4.8)
+
+      ```
+      updated-dependencies:
+      - dependency-name: cryptography
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [pytest](https://github.com/pytest-dev/pytest) from 6.2.4 to 6.2.5.
+      - [Release notes](https://github.com/pytest-dev/pytest/releases)
+      - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pytest-dev/pytest/compare/6.2.4...6.2.5)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pytest
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [filelock](https://github.com/tox-dev/py-filelock) from 3.0.12 to 3.1.0.
+      - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+      - [Commits](https://github.com/tox-dev/py-filelock/compare/v3.0.12...3.1.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: filelock
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [urllib3](https://github.com/urllib3/urllib3) from 1.26.6 to 1.26.7.
+      - [Release notes](https://github.com/urllib3/urllib3/releases)
+      - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+      - [Commits](https://github.com/urllib3/urllib3/compare/1.26.6...1.26.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: urllib3
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [filelock](https://github.com/tox-dev/py-filelock) from 3.1.0 to 3.3.0.
+      - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+      - [Commits](https://github.com/tox-dev/py-filelock/compare/3.1.0...3.3.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: filelock
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [cryptography](https://github.com/pyca/cryptography) from 3.4.8 to 35.0.0.
+      - [Release notes](https://github.com/pyca/cryptography/releases)
+      - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pyca/cryptography/compare/3.4.8...35.0.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: cryptography
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps [certifi](https://github.com/certifi/python-certifi) from 2021.5.30 to 2021.10.8.
+      - [Release notes](https://github.com/certifi/python-certifi/releases)
+      - [Commits](https://github.com/certifi/python-certifi/compare/2021.05.30...2021.10.08)
+
+      ```
+      updated-dependencies:
+      - dependency-name: certifi
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [paramiko](https://github.com/paramiko/paramiko) from 2.7.2 to 2.8.0.
+      - [Release notes](https://github.com/paramiko/paramiko/releases)
+      - [Changelog](https://github.com/paramiko/paramiko/blob/main/NEWS)
+      - [Commits](https://github.com/paramiko/paramiko/compare/2.7.2...2.8.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: paramiko
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [cffi](http://cffi.readthedocs.org) from 1.14.6 to 1.15.0.
+
+      ```
+      updated-dependencies:
+      - dependency-name: cffi
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [pyyaml](https://github.com/yaml/pyyaml) from 5.4.1 to 6.0.
+      - [Release notes](https://github.com/yaml/pyyaml/releases)
+      - [Changelog](https://github.com/yaml/pyyaml/blob/master/CHANGES)
+      - [Commits](https://github.com/yaml/pyyaml/compare/5.4.1...6.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pyyaml
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps [filelock](https://github.com/tox-dev/py-filelock) from 3.3.0 to 3.3.1.
+      - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+      - [Changelog](https://github.com/tox-dev/py-filelock/blob/main/docs/changelog.rst)
+      - [Commits](https://github.com/tox-dev/py-filelock/compare/3.3.0...3.3.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: filelock
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [idna](https://github.com/kjd/idna) from 2.10 to 3.3.
+      - [Release notes](https://github.com/kjd/idna/releases)
+      - [Changelog](https://github.com/kjd/idna/blob/master/HISTORY.rst)
+      - [Commits](https://github.com/kjd/idna/compare/v2.10...v3.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: idna
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps [pyparsing](https://github.com/pyparsing/pyparsing) from 2.4.7 to 3.0.1.
+      - [Release notes](https://github.com/pyparsing/pyparsing/releases)
+      - [Changelog](https://github.com/pyparsing/pyparsing/blob/master/CHANGES)
+      - [Commits](https://github.com/pyparsing/pyparsing/compare/pyparsing_2.4.7...pyparsing_3.0.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pyparsing
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps [filelock](https://github.com/tox-dev/py-filelock) from 3.3.1 to 3.3.2.
+      - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+      - [Changelog](https://github.com/tox-dev/py-filelock/blob/main/docs/changelog.rst)
+      - [Commits](https://github.com/tox-dev/py-filelock/compare/3.3.1...3.3.2)
+
+      ```
+      updated-dependencies:
+      - dependency-name: filelock
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [py](https://github.com/pytest-dev/py) from 1.10.0 to 1.11.0.
+      - [Release notes](https://github.com/pytest-dev/py/releases)
+      - [Changelog](https://github.com/pytest-dev/py/blob/master/CHANGELOG.rst)
+      - [Commits](https://github.com/pytest-dev/py/compare/1.10.0...1.11.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: py
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [pycparser](https://github.com/eliben/pycparser) from 2.20 to 2.21.
+      - [Release notes](https://github.com/eliben/pycparser/releases)
+      - [Changelog](https://github.com/eliben/pycparser/blob/master/CHANGES)
+      - [Commits](https://github.com/eliben/pycparser/compare/release_v2.20...release_v2.21)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pycparser
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps alpine from 3.14.2 to 3.14.3.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [pyparsing](https://github.com/pyparsing/pyparsing) from 3.0.1 to 3.0.6.
+      - [Release notes](https://github.com/pyparsing/pyparsing/releases)
+      - [Changelog](https://github.com/pyparsing/pyparsing/blob/master/CHANGES)
+      - [Commits](https://github.com/pyparsing/pyparsing/compare/pyparsing_3.0.1...pyparsing_3.0.6)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pyparsing
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [packaging](https://github.com/pypa/packaging) from 21.0 to 21.3.
+      - [Release notes](https://github.com/pypa/packaging/releases)
+      - [Changelog](https://github.com/pypa/packaging/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pypa/packaging/compare/21.0...21.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: packaging
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [filelock](https://github.com/tox-dev/py-filelock) from 3.3.2 to 3.4.0.
+      - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+      - [Changelog](https://github.com/tox-dev/py-filelock/blob/main/docs/changelog.rst)
+      - [Commits](https://github.com/tox-dev/py-filelock/compare/3.3.2...3.4.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: filelock
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [cryptography](https://github.com/pyca/cryptography) from 35.0.0 to 36.0.0.
+      - [Release notes](https://github.com/pyca/cryptography/releases)
+      - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pyca/cryptography/compare/35.0.0...36.0.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: cryptography
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps alpine from 3.14.3 to 3.15.0.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [paramiko](https://github.com/paramiko/paramiko) from 2.8.0 to 2.8.1.
+      - [Release notes](https://github.com/paramiko/paramiko/releases)
+      - [Changelog](https://github.com/paramiko/paramiko/blob/main/NEWS)
+      - [Commits](https://github.com/paramiko/paramiko/compare/2.8.0...2.8.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: paramiko
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [cryptography](https://github.com/pyca/cryptography) from 36.0.0 to 36.0.1.
+      - [Release notes](https://github.com/pyca/cryptography/releases)
+      - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pyca/cryptography/compare/36.0.0...36.0.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: cryptography
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [python-lzo](https://github.com/jd-boyd/python-lzo) from 1.12 to 1.14.
+      - [Release notes](https://github.com/jd-boyd/python-lzo/releases)
+      - [Changelog](https://github.com/jd-boyd/python-lzo/blob/master/NEWS)
+      - [Commits](https://github.com/jd-boyd/python-lzo/compare/v1.12...v1.14)
+
+      ```
+      updated-dependencies:
+      - dependency-name: python-lzo
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [paramiko](https://github.com/paramiko/paramiko) from 2.8.1 to 2.9.1.
+      - [Release notes](https://github.com/paramiko/paramiko/releases)
+      - [Changelog](https://github.com/paramiko/paramiko/blob/main/NEWS)
+      - [Commits](https://github.com/paramiko/paramiko/compare/2.8.1...2.9.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: paramiko
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [attrs](https://github.com/python-attrs/attrs) from 21.2.0 to 21.4.0.
+      - [Release notes](https://github.com/python-attrs/attrs/releases)
+      - [Changelog](https://github.com/python-attrs/attrs/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/python-attrs/attrs/compare/21.2.0...21.4.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: attrs
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [psutil](https://github.com/giampaolo/psutil) from 5.8.0 to 5.9.0.
+      - [Release notes](https://github.com/giampaolo/psutil/releases)
+      - [Changelog](https://github.com/giampaolo/psutil/blob/master/HISTORY.rst)
+      - [Commits](https://github.com/giampaolo/psutil/compare/release-5.8.0...release-5.9.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: psutil
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [requests](https://github.com/psf/requests) from 2.26.0 to 2.27.0.
+      - [Release notes](https://github.com/psf/requests/releases)
+      - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+      - [Commits](https://github.com/psf/requests/compare/v2.26.0...v2.27.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: requests
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [requests](https://github.com/psf/requests) from 2.27.0 to 2.27.1.
+      - [Release notes](https://github.com/psf/requests/releases)
+      - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+      - [Commits](https://github.com/psf/requests/compare/v2.27.0...v2.27.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: requests
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [pynacl](https://github.com/pyca/pynacl) from 1.4.0 to 1.5.0.
+      - [Release notes](https://github.com/pyca/pynacl/releases)
+      - [Changelog](https://github.com/pyca/pynacl/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pyca/pynacl/compare/1.4.0...1.5.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pynacl
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [paramiko](https://github.com/paramiko/paramiko) from 2.9.1 to 2.9.2.
+      - [Release notes](https://github.com/paramiko/paramiko/releases)
+      - [Changelog](https://github.com/paramiko/paramiko/blob/main/NEWS)
+      - [Commits](https://github.com/paramiko/paramiko/compare/2.9.1...2.9.2)
+
+      ```
+      updated-dependencies:
+      - dependency-name: paramiko
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [urllib3](https://github.com/urllib3/urllib3) from 1.26.7 to 1.26.8.
+      - [Release notes](https://github.com/urllib3/urllib3/releases)
+      - [Changelog](https://github.com/urllib3/urllib3/blob/1.26.8/CHANGES.rst)
+      - [Commits](https://github.com/urllib3/urllib3/compare/1.26.7...1.26.8)
+
+      ```
+      updated-dependencies:
+      - dependency-name: urllib3
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [ubi-reader](https://github.com/jrspruitt/ubi_reader) from 0.7.0 to 0.7.2.
+      - [Release notes](https://github.com/jrspruitt/ubi_reader/releases)
+      - [Commits](https://github.com/jrspruitt/ubi_reader/commits)
+
+      ```
+      updated-dependencies:
+      - dependency-name: ubi-reader
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [pyparsing](https://github.com/pyparsing/pyparsing) from 3.0.6 to 3.0.7.
+      - [Release notes](https://github.com/pyparsing/pyparsing/releases)
+      - [Changelog](https://github.com/pyparsing/pyparsing/blob/master/CHANGES)
+      - [Commits](https://github.com/pyparsing/pyparsing/compare/pyparsing_3.0.6...pyparsing_3.0.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pyparsing
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [pytest](https://github.com/pytest-dev/pytest) from 6.2.5 to 7.0.0.
+      - [Release notes](https://github.com/pytest-dev/pytest/releases)
+      - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pytest-dev/pytest/compare/6.2.5...7.0.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pytest
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+  * Bumps [pathlib2](https://github.com/jazzband/pathlib2) from 2.3.6 to 2.3.7.post1.
+      - [Release notes](https://github.com/jazzband/pathlib2/releases)
+      - [Changelog](https://github.com/jazzband/pathlib2/blob/develop/CHANGELOG.rst)
+      - [Commits](https://github.com/jazzband/pathlib2/compare/2.3.6...2.3.7-post1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pathlib2
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [pytest](https://github.com/pytest-dev/pytest) from 7.0.0 to 7.0.1.
+      - [Release notes](https://github.com/pytest-dev/pytest/releases)
+      - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+      - [Commits](https://github.com/pytest-dev/pytest/compare/7.0.0...7.0.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: pytest
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [paramiko](https://github.com/paramiko/paramiko) from 2.9.2 to 2.10.2.
+      - [Release notes](https://github.com/paramiko/paramiko/releases)
+      - [Changelog](https://github.com/paramiko/paramiko/blob/main/NEWS)
+      - [Commits](https://github.com/paramiko/paramiko/compare/2.9.2...2.10.2)
+
+      ```
+      updated-dependencies:
+      - dependency-name: paramiko
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
 ## meta-mender dunfell-v2022.09
+
+_Released: 09.07.2022_
 
 ### Statistics
 
