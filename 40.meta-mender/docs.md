@@ -9,6 +9,8 @@ github: false
 
 ## meta-mender (kirkstone-v2022.09)
 
+_Released: 09.12.2022_
+
 ### Statistics
 
 A total of 12574 lines added, 14375 removed (delta -1801)
@@ -829,6 +831,8 @@ New changes in meta-mender since dunfell-v2022.09:
       ```
 
 ## meta-mender dunfell-v2022.09
+
+_Released: 09.07.2022_
 
 ### Statistics
 
