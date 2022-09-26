@@ -8,6 +8,1314 @@ github: false
 ---
 
 
+## Mender 3.4.0
+
+_Released 09.25.2022_
+
+### Statistics
+
+A total of 52469 lines added, 19890 removed (delta 32579)
+
+| Developers with the most changesets | |
+|---|---|
+| Manuel Zedel | 250 (32.7%) |
+| Fabio Tranchitella | 110 (14.4%) |
+| Alf-Rune Siqveland | 86 (11.2%) |
+| Krzysztof Jaskiewicz | 80 (10.5%) |
+| Maciej Tomczuk | 55 (7.2%) |
+| Peter Grzybowski | 51 (6.7%) |
+| Ole Petter Orhagen | 39 (5.1%) |
+| Lluis Campos | 35 (4.6%) |
+| Kristian Amlie | 26 (3.4%) |
+| Alex Miliukov | 18 (2.4%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 12030 (21.3%) |
+| Manuel Zedel | 11324 (20.0%) |
+| Peter Grzybowski | 10349 (18.3%) |
+| Alf-Rune Siqveland | 9959 (17.6%) |
+| Krzysztof Jaskiewicz | 6353 (11.2%) |
+| Maciej Tomczuk | 3036 (5.4%) |
+| Lluis Campos | 1415 (2.5%) |
+| Alex Miliukov | 1075 (1.9%) |
+| Kristian Amlie | 484 (0.9%) |
+| Ole Petter Orhagen | 183 (0.3%) |
+
+| Developers with the most signoffs (total 5) | |
+|---|---|
+| Ole Petter Orhagen | 4 (80.0%) |
+| Manuel Zedel | 1 (20.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 764 (99.9%) |
+| benjamin.texier@outlook.com | 1 (0.1%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 56481 (99.8%) |
+| benjamin.texier@outlook.com | 120 (0.2%) |
+
+| Employers with the most signoffs (total 5) | |
+|---|---|
+| Northern.tech | 5 (100.0%) |
+
+| Employers with the most hackers (total 13) | |
+|---|---|
+| Northern.tech | 12 (92.3%) |
+| benjamin.texier@outlook.com | 1 (7.7%) |
+
+### Changelogs
+
+#### auditlogs (3.0.2)
+
+New changes in auditlogs since 3.0.1:
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
+  ([MEN-5506](https://tracker.mender.io/browse/MEN-5506))
+
+#### create-artifact-worker (1.2.0)
+
+New changes in create-artifact-worker since 1.1.2:
+
+* fix CVEs rebuilding using the latest `workflows:master`
+* Update mender-artifact tool to latest
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.8.1 to 1.10.1.
+      - [Release notes](https://github.com/spf13/viper/releases)
+      - [Commits](https://github.com/spf13/viper/compare/v1.8.1...v1.10.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/viper
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/spf13/cobra](https://github.com/spf13/cobra) from 1.2.1 to 1.4.0.
+      - [Release notes](https://github.com/spf13/cobra/releases)
+      - [Changelog](https://github.com/spf13/cobra/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/spf13/cobra/compare/v1.2.1...v1.4.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/cobra
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps golang from 1.17.8-alpine3.15 to 1.18.1-alpine3.15.
+
+      ```
+      updated-dependencies:
+      - dependency-name: golang
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.10.1 to 1.11.0.
+      - [Release notes](https://github.com/spf13/viper/releases)
+      - [Commits](https://github.com/spf13/viper/compare/v1.10.1...v1.11.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/spf13/viper
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+#### deployments (4.3.0)
+
+New changes in deployments since 4.2.0:
+
+##### Bug Fixes
+
+* Fix bad indexing from database versions 1.2.8 and 1.2.9
+  ([MEN-5695](https://tracker.mender.io/browse/MEN-5695))
+* Escape configuration download URL path and support '.' in parameter
+  ([MEN-5712](https://tracker.mender.io/browse/MEN-5712))
+
+##### Features
+
+* migration 1.2.11 to index devices logs
+  ([MEN-5710](https://tracker.mender.io/browse/MEN-5710))
+* Upgrade mender-artifact library to latest to support parsing
+  empty Artifacts, such as the bootstrap Artifact used to initialize
+  devices' local database.
+  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+* `ArtifactTypeInfo` object returned in `/artifacts` or
+  `/deployments/releases` can now return `nil` as its type. This would be
+  the case for bootstrap Artifacts.
+  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+* omit configuration values in the deployment details
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### deployments-enterprise (4.3.0)
+
+New changes in deployments-enterprise since 4.2.0:
+
+##### Bug Fixes
+
+* Fix bad indexing from database versions 1.2.8 and 1.2.9
+  ([MEN-5695](https://tracker.mender.io/browse/MEN-5695))
+* Escape configuration download URL path and support '.' in parameter
+  ([MEN-5712](https://tracker.mender.io/browse/MEN-5712))
+
+##### Features
+
+* migration 1.2.11 to index devices logs
+  ([MEN-5710](https://tracker.mender.io/browse/MEN-5710))
+* Upgrade mender-artifact library to latest to support parsing
+  empty Artifacts, such as the bootstrap Artifact used to initialize
+  devices' local database.
+  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+* introduce limit for maximum number of active deployments per tenant
+  ([MEN-5696](https://tracker.mender.io/browse/MEN-5696))
+* `ArtifactTypeInfo` object returned in `/artifacts` or
+  `/deployments/releases` can now return `nil` as its type. This would be
+  the case for bootstrap Artifacts.
+  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+* do not limit number of configuration deployments
+  ([MEN-5696](https://tracker.mender.io/browse/MEN-5696))
+* omit configuration values in the deployment details
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### deviceauth (3.3.0)
+
+New changes in deviceauth since 3.2.1:
+
+##### Bug Fixes
+
+* Support PKCS#8 PEM format for JWT Signing key
+  ([MEN-5673](https://tracker.mender.io/browse/MEN-5673))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* Missing hash in inventory client
+
+##### Other
+
+* refactor: do not store the public key in the device document
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5471](https://tracker.mender.io/browse/MEN-5471))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bump alpine from 3.14.2 to 3.15.0
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/golang-jwt/jwt/v4](https://github.com/golang-jwt/jwt) from 4.2.0 to 4.4.1.
+      - [Release notes](https://github.com/golang-jwt/jwt/releases)
+      - [Changelog](https://github.com/golang-jwt/jwt/blob/main/VERSION_HISTORY.md)
+      - [Commits](https://github.com/golang-jwt/jwt/compare/v4.2.0...v4.4.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/golang-jwt/jwt/v4
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/go-redis/redis/v8](https://github.com/go-redis/redis) from 8.11.4 to 8.11.5.
+      - [Release notes](https://github.com/go-redis/redis/releases)
+      - [Changelog](https://github.com/go-redis/redis/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/go-redis/redis/compare/v8.11.4...v8.11.5)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/go-redis/redis/v8
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### deviceauth-enterprise (3.3.0)
+
+New changes in deviceauth-enterprise since 3.2.1:
+
+##### Bug Fixes
+
+* Support PKCS#8 PEM format for JWT Signing key
+  ([MEN-5673](https://tracker.mender.io/browse/MEN-5673))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* Missing hash in inventory client
+
+##### Other
+
+* refactor: do not store the public key in the device document
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5471](https://tracker.mender.io/browse/MEN-5471))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bump alpine from 3.14.2 to 3.15.0
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/golang-jwt/jwt/v4](https://github.com/golang-jwt/jwt) from 4.2.0 to 4.4.1.
+      - [Release notes](https://github.com/golang-jwt/jwt/releases)
+      - [Changelog](https://github.com/golang-jwt/jwt/blob/main/VERSION_HISTORY.md)
+      - [Commits](https://github.com/golang-jwt/jwt/compare/v4.2.0...v4.4.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/golang-jwt/jwt/v4
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/go-redis/redis/v8](https://github.com/go-redis/redis) from 8.11.4 to 8.11.5.
+      - [Release notes](https://github.com/go-redis/redis/releases)
+      - [Changelog](https://github.com/go-redis/redis/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/go-redis/redis/compare/v8.11.4...v8.11.5)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/go-redis/redis/v8
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### deviceconfig (1.2.2)
+
+New changes in deviceconfig since 1.2.1:
+
+##### Bug Fixes
+
+* Fix borken migration.
+  ([MEN-5719](https://tracker.mender.io/browse/MEN-5719))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
+  ([MEN-5504](https://tracker.mender.io/browse/MEN-5504))
+
+#### deviceconnect (1.3.3)
+
+New changes in deviceconnect since 1.3.2:
+
+##### Bug Fixes
+
+* Correct broken document migration in 2.0.0
+  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+* Apply migration to all databases prior to 2.0.0
+  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+* New migration (2.0.1) patching 2.0.0 document migration
+  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
+  ([MEN-5505](https://tracker.mender.io/browse/MEN-5505))
+
+#### devicemonitor (1.3.0)
+
+New changes in devicemonitor since 1.2.0:
+
+##### Bug Fixes
+
+* Reduce the maximum number of alerts/configurations per request
+  ([MEN-5854](https://tracker.mender.io/browse/MEN-5854))
+
+##### Features
+
+* Static device group in alert emails Subject:
+  ([MEN-5379](https://tracker.mender.io/browse/MEN-5379))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### gui (3.4.0)
+
+New changes in gui since 3.3.0:
+
+##### Bug Fixes
+
+* prevented scheduling deployments earlier in the day
+  ([MEN-5639](https://tracker.mender.io/browse/MEN-5639))
+* fixed an issue that caused dynamic groups with a "doesn't exist" filter to not show up properly
+  ([MEN-5640](https://tracker.mender.io/browse/MEN-5640))
+* ensured deployment release information doesn't overflow list info
+  ([MEN-5620](https://tracker.mender.io/browse/MEN-5620))
+* fixed an issue that caused the device list to crash on group selection if a device was selected at the time
+* added missing check for plan availability for auditlogs
+  ([MEN-5686](https://tracker.mender.io/browse/MEN-5686))
+* ensured dynamic group filters are used on group device retrieval
+  ([MEN-5668](https://tracker.mender.io/browse/MEN-5668))
+* made use of derived permissions when creating group based roles too
+  ([MEN-5706](https://tracker.mender.io/browse/MEN-5706))
+* fixed an issue that prevented single device deployment creation
+  ([MEN-5728](https://tracker.mender.io/browse/MEN-5728))
+* fixed an issue that caused a faulty deployment creator to be shown in the deployment details
+  ([MEN-5729](https://tracker.mender.io/browse/MEN-5729))
+* prevented nginx from preloading version info file
+  ([MEN-5707](https://tracker.mender.io/browse/MEN-5707))
+* fixed an issue that might prevent pagination through active deployments
+  ([MEN-5730](https://tracker.mender.io/browse/MEN-5730))
+* added password validation for email changes
+* fixed an issue that prevented group selection urls from working
+  ([MEN-5741](https://tracker.mender.io/browse/MEN-5741))
+* removed effect cascade in order to fix an issue when opening a device as a RO user
+  ([MEN-5770](https://tracker.mender.io/browse/MEN-5770))
+* addressed an issue that caused showing device details to crash the UI
+  ([MEN-5770](https://tracker.mender.io/browse/MEN-5770))
+* prevented concurrent uploads to align with UI setup
+  ([MEN-5811](https://tracker.mender.io/browse/MEN-5811))
+* fixed an issue that prevented direct device links from working
+  ([MEN-5781](https://tracker.mender.io/browse/MEN-5781))
+* remove references to `pi` user.
+  ([MEN-5582](https://tracker.mender.io/browse/MEN-5582))
+* aligned final onboarding snackbar rendering with onboarding progress
+  ([MEN-5909](https://tracker.mender.io/browse/MEN-5909))
+
+##### Features
+
+* added per user access token functionality to the user settings page
+  ([MEN-5525](https://tracker.mender.io/browse/MEN-5525))
+* improved alignment between device list page & browser url
+  ([MEN-4989](https://tracker.mender.io/browse/MEN-4989))
+* improved alignment between auditlogs page & browser url
+  ([MEN-4989](https://tracker.mender.io/browse/MEN-4989))
+* improved alignment between deployment pages & browser url
+  ([MEN-4989](https://tracker.mender.io/browse/MEN-4989))
+* made 2fa setup available for all plans
+  ([MEN-5679](https://tracker.mender.io/browse/MEN-5679))
+* made device id shown in deployment context also take selected device id into account
+* added a way to configure an AWS IoT core connection
+  ([MEN-5453](https://tracker.mender.io/browse/MEN-5453))
+* made retry selection accept custom values between 0 & 100
+  ([MEN-5739](https://tracker.mender.io/browse/MEN-5739))
+* added downloads section to ease downloading packages + tools
+  ([MEN-5624](https://tracker.mender.io/browse/MEN-5624))
+* made it possible to configure SAML connection to ease SSO setup
+  ([MEN-5103](https://tracker.mender.io/browse/MEN-5103))
+* allowed creation of passwordless users to support SSO scenarios
+  ([MEN-5104](https://tracker.mender.io/browse/MEN-5104))
+* made dark mode available for everyone
+  ([MEN-5516](https://tracker.mender.io/browse/MEN-5516))
+* made deployment creation easier to review by moving it to a single view
+  ([MEN-5647](https://tracker.mender.io/browse/MEN-5647))
+* made device configure a separate rbac config option
+  ([MEN-5821](https://tracker.mender.io/browse/MEN-5821))
+* added webhook integration option
+  ([MEN-57231](https://tracker.mender.io/browse/MEN-57231))
+
+#### integration (3.4.0)
+
+New changes in integration since 3.3.0:
+
+##### Bug Fixes
+
+* don't allow to use openssl lower than v.1.1.1
+  ([MEN-5746](https://tracker.mender.io/browse/MEN-5746))
+* Correctly pass mender client version to GUI env
+  ([MEN-5901](https://tracker.mender.io/browse/MEN-5901))
+
+##### Other
+
+* feat(traefik conf): add SAML SSO endpoints exposed without authentication
+  ([MEN-5102](https://tracker.mender.io/browse/MEN-5102))
+* Upgrade auditlogs to 3.0.2.
+* Upgrade create-artifact-worker to 1.2.0.
+* Upgrade deployments-enterprise to 4.3.0.
+* Upgrade deployments to 4.3.0.
+* Upgrade deviceauth-enterprise to 3.3.0.
+* Upgrade deviceauth to 3.3.0.
+* Upgrade deviceconfig to 1.2.2.
+* Upgrade deviceconnect to 1.3.3.
+* Upgrade devicemonitor to 1.3.0.
+* Upgrade gui to 3.4.0.
+* Upgrade integration to 3.4.0.
+* Upgrade inventory-enterprise to 4.2.1.
+* Upgrade inventory to 4.2.1.
+* Upgrade iot-manager to 1.1.0.
+* Upgrade mender-artifact to 3.9.0.
+* Upgrade mender-binary-delta to 1.4.1.
+* Upgrade mender-cli to 1.9.0.
+* Upgrade mender-connect to 2.1.0.
+* Upgrade mender-convert to 3.0.1.
+* Upgrade mender-gateway to 1.0.1.
+* Upgrade mender to 3.4.0.
+* Upgrade monitor-client to 1.2.1.
+* Upgrade mtls-ambassador to 1.1.0.
+* Upgrade tenantadm to 3.5.0.
+* Upgrade useradm-enterprise to 1.19.0.
+* Upgrade useradm to 1.19.0.
+* Upgrade workflows-enterprise to 2.3.0.
+* Upgrade workflows to 2.3.0.
+
+#### inventory (4.2.1)
+
+New changes in inventory since 4.2.0:
+
+##### Bug Fixes
+
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+
+#### inventory-enterprise (4.2.1)
+
+New changes in inventory-enterprise since 4.2.0:
+
+##### Bug Fixes
+
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+
+#### iot-manager (1.1.0)
+
+New changes in iot-manager since 1.0.2:
+
+##### Bug Fixes
+
+* fix GET /integrations returned object definition
+* Fire webhook independent if device was provisioned
+  ([MEN-5832](https://tracker.mender.io/browse/MEN-5832))
+
+##### Features
+
+* add support for a new integration type: AWS IoT Core
+  ([MEN-5447](https://tracker.mender.io/browse/MEN-5447))
+* AWS IoT Core device lifecycle integration
+  ([MEN-5449](https://tracker.mender.io/browse/MEN-5449))
+* migrate from aws-go-sdk to aws-go-sdk-v2
+  ([MEN-5448](https://tracker.mender.io/browse/MEN-5448))
+* introduce AWS IoT Device Shadow support
+  ([MEN-5448](https://tracker.mender.io/browse/MEN-5448))
+* Add support for IoT Core for 'sync-devices' commandline job
+  ([MEN-5450](https://tracker.mender.io/browse/MEN-5450))
+* store device lifecycle events
+  ([MEN-5714](https://tracker.mender.io/browse/MEN-5714))
+* new API endpoint for retrieving events
+  ([MEN-5714](https://tracker.mender.io/browse/MEN-5714))
+* Add webhooks to the integrations API
+
+  This commit expands the configuration API to specify webhooks endpoint
+  and HMAC256 secret.
+  ([MEN-5715](https://tracker.mender.io/browse/MEN-5715))
+* Fire webhooks when device changes status
+
+  A webhook fires when a device is provisioned, decommission or the
+  authentication data changes status.
+  ([MEN-5715](https://tracker.mender.io/browse/MEN-5715))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5467](https://tracker.mender.io/browse/MEN-5467))
+* test(IoTCore): extend AWS IoT core tests with device shadow related tests
+  ([MEN-5448](https://tracker.mender.io/browse/MEN-5448))
+* docs: document the endpoint for returning list of events
+  ([MEN-5714](https://tracker.mender.io/browse/MEN-5714))
+* Add xAWS endpoint information to the device credentials
+  ([MEN-5778](https://tracker.mender.io/browse/MEN-5778))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.4 to 1.7.7.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.7.4...v1.7.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/urfave/cli](https://github.com/urfave/cli) from 1.22.5 to 1.22.9.
+      - [Release notes](https://github.com/urfave/cli/releases)
+      - [Changelog](https://github.com/urfave/cli/blob/main/docs/CHANGELOG.md)
+      - [Commits](https://github.com/urfave/cli/compare/v1.22.5...v1.22.9)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/urfave/cli
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.8.3 to 1.9.1.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.8.3...v1.9.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+#### mtls-ambassador (1.1.0)
+
+New changes in mtls-ambassador since 1.0.2:
+
+##### Bug Fixes
+
+* Improve public certificate key comparison
+
+  This commit deserializes the request public key before comparing it with
+  the certificate to make it insensitive to whitespace and newlines.
+
+##### Features
+
+* Configuration for setting Mender Server CA certificate
+  ([MEN-5818](https://tracker.mender.io/browse/MEN-5818))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps alpine from 3.12 to 3.14.0.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/urfave/cli](https://github.com/urfave/cli) from 1.22.4 to 1.22.5.
+      - [Release notes](https://github.com/urfave/cli/releases)
+      - [Changelog](https://github.com/urfave/cli/blob/master/docs/CHANGELOG.md)
+      - [Commits](https://github.com/urfave/cli/compare/v1.22.4...v1.22.5)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/urfave/cli
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps golang from 1.14-alpine3.12 to 1.16.5-alpine3.12.
+
+      ```
+      updated-dependencies:
+      - dependency-name: golang
+        dependency-type: direct:production
+      ```
+  * Bumps [github.com/sirupsen/logrus](https://github.com/sirupsen/logrus) from 1.6.0 to 1.8.1.
+      - [Release notes](https://github.com/sirupsen/logrus/releases)
+      - [Changelog](https://github.com/sirupsen/logrus/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/sirupsen/logrus/compare/v1.6.0...v1.8.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/sirupsen/logrus
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.6.3 to 1.7.2.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.6.3...v1.7.2)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.6.1 to 1.7.0.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.6.1...v1.7.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.6.1 to 1.7.0.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.6.1...v1.7.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.2 to 1.7.4.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.7.2...v1.7.4)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps alpine from 3.14.0 to 3.14.2.
+
+      ```
+      updated-dependencies:
+      - dependency-name: alpine
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/fsnotify/fsnotify](https://github.com/fsnotify/fsnotify) from 1.4.9 to 1.5.1.
+      - [Release notes](https://github.com/fsnotify/fsnotify/releases)
+      - [Changelog](https://github.com/fsnotify/fsnotify/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/fsnotify/fsnotify/compare/v1.4.9...v1.5.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/fsnotify/fsnotify
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.4 to 1.7.7.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.7.4...v1.7.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/gofrs/uuid](https://github.com/gofrs/uuid) from 3.3.0+incompatible to 4.2.0+incompatible.
+      - [Release notes](https://github.com/gofrs/uuid/releases)
+      - [Commits](https://github.com/gofrs/uuid/compare/v3.3.0...v4.2.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gofrs/uuid
+        dependency-type: direct:production
+        update-type: version-update:semver-major
+      ```
+
+#### tenantadm (3.5.0)
+
+New changes in tenantadm since 3.4.0:
+
+##### Bug Fixes
+
+* Make username/emails case insensitive
+  ([MEN-3524](https://tracker.mender.io/browse/MEN-3524))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/golang-jwt/jwt/v4](https://github.com/golang-jwt/jwt) from 4.3.0 to 4.4.1.
+      - [Release notes](https://github.com/golang-jwt/jwt/releases)
+      - [Changelog](https://github.com/golang-jwt/jwt/blob/main/VERSION_HISTORY.md)
+      - [Commits](https://github.com/golang-jwt/jwt/compare/v4.3.0...v4.4.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/golang-jwt/jwt/v4
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+#### useradm (1.19.0)
+
+New changes in useradm since 1.18.0:
+
+##### Bug Fixes
+
+* delete user tokens when deleting user
+* Make username/email case-insensitive
+
+  This commit forces the internal representation of the username/email
+  addresses to be lowercase. This means that any users that signed up with
+  an email containing uppercase characters will be locked out from their
+  account. To fix this issue, the server maintainer should run the
+  following mongodb migration script:
+  ```
+  let tAdm = db.getSiblingDB("tenantadm");
+  tAdm.users.find({}).forEach((doc) => {
+    if (doc.name.toLowerCase() != doc.name) {
+      print(
+        "Converting to lower case (<tenantid>/<userid>): " +
+          doc.tenant_id +
+          "/" +
+          doc._id
+      );
+      tAdm.users.updateOne(
+        { _id: doc._id },
+        { $set: { name: doc.name.toLowerCase() } }
+      );
+      let usrAdm = db.getSiblingDB("useradm-" + doc.tenant_id);
+      usrAdm.users.updateOne(
+        { _id: doc._id },
+        { $set: { email: doc.name.toLowerCase() } }
+      );
+    }
+  });
+  let usrAdm = db.getSiblingDB("useradm");
+  usrAdm.users.find({}).forEach((doc) => {
+    if (doc.email.toLowerCase() != doc.email) {
+      print("Converting to lower case (<userid>):" + doc._id);
+      usrAdm.updateOne(
+        { _id: doc._id },
+        { $set: { email: doc.email.toLowerCase() } }
+      );
+    }
+  });
+  ```
+  ([MEN-3524](https://tracker.mender.io/browse/MEN-3524))
+* Add support for PKCS#8 private key format
+  ([MEN-5672](https://tracker.mender.io/browse/MEN-5672))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* invalidate user sessions but the current one on user updates
+  ([MEN-5731](https://tracker.mender.io/browse/MEN-5731))
+* require password prompt for changing email
+  ([MEN-5738](https://tracker.mender.io/browse/MEN-5738))
+* allow privileged users to change email address of another user
+  ([MEN-5829](https://tracker.mender.io/browse/MEN-5829))
+
+##### Features
+
+* new endpoints for managing Personal Access Tokens
+
+  New endpoints:
+  POST /api/management/v1/useradm/settings/tokens
+  GET /api/management/v1/useradm/settings/tokens
+  DELETE /api/management/v1/useradm/settings/tokens/:id
+
+  ,
+  ([MEN-5522](https://tracker.mender.io/browse/MEN-5522), [MEN-5523](https://tracker.mender.io/browse/MEN-5523))
+* make maximum expiration time of Personal Access Tokens configurable
+  ([MEN-5522](https://tracker.mender.io/browse/MEN-5522), [MEN-5523](https://tracker.mender.io/browse/MEN-5523))
+* change multi-tenancy data model
+  ([MEN-4749](https://tracker.mender.io/browse/MEN-4749))
+* support for ETag and If-Match for the GET/POST settings end-points
+  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+* end-points to save user-specific settings for the current user
+  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+* migration (2.0.1) to move the user settings to a dedicated collection
+  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/golang-jwt/jwt/v4](https://github.com/golang-jwt/jwt) from 4.2.0 to 4.4.1.
+      - [Release notes](https://github.com/golang-jwt/jwt/releases)
+      - [Changelog](https://github.com/golang-jwt/jwt/blob/main/VERSION_HISTORY.md)
+      - [Commits](https://github.com/golang-jwt/jwt/compare/v4.2.0...v4.4.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/golang-jwt/jwt/v4
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+#### useradm-enterprise (1.19.0)
+
+New changes in useradm-enterprise since 1.18.0:
+
+##### Bug Fixes
+
+* delete user tokens when deleting user
+* Make username/email case-insensitive
+
+  This commit forces the internal representation of the username/email
+  addresses to be lowercase. This means that any users that signed up with
+  an email containing uppercase characters will be locked out from their
+  account. To fix this issue, the server maintainer should run the
+  following mongodb migration script:
+  ```
+  let tAdm = db.getSiblingDB("tenantadm");
+  tAdm.users.find({}).forEach((doc) => {
+    if (doc.name.toLowerCase() != doc.name) {
+      print(
+        "Converting to lower case (<tenantid>/<userid>): " +
+          doc.tenant_id +
+          "/" +
+          doc._id
+      );
+      tAdm.users.updateOne(
+        { _id: doc._id },
+        { $set: { name: doc.name.toLowerCase() } }
+      );
+      let usrAdm = db.getSiblingDB("useradm-" + doc.tenant_id);
+      usrAdm.users.updateOne(
+        { _id: doc._id },
+        { $set: { email: doc.name.toLowerCase() } }
+      );
+    }
+  });
+  let usrAdm = db.getSiblingDB("useradm");
+  usrAdm.users.find({}).forEach((doc) => {
+    if (doc.email.toLowerCase() != doc.email) {
+      print("Converting to lower case (<userid>):" + doc._id);
+      usrAdm.updateOne(
+        { _id: doc._id },
+        { $set: { email: doc.email.toLowerCase() } }
+      );
+    }
+  });
+  ```
+  ([MEN-3524](https://tracker.mender.io/browse/MEN-3524))
+* increase default limit for a number of permission sets in the role definition
+* add PATCH inventory/* permission to "manage devices" permission set
+* Add support for PKCS#8 private key format
+  ([MEN-5672](https://tracker.mender.io/browse/MEN-5672))
+* failed to update RBAC roles
+  ([MEN-5694](https://tracker.mender.io/browse/MEN-5694))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* invalidate user sessions but the current one on user updates
+  ([MEN-5731](https://tracker.mender.io/browse/MEN-5731))
+* OAuth users cant issue personal access tokens.
+  ([MEN-5723](https://tracker.mender.io/browse/MEN-5723))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* Forbid oauth logins for suspended tenants.
+* require password prompt for changing email
+  ([MEN-5738](https://tracker.mender.io/browse/MEN-5738))
+* SAML Metadata endpoint returns id instead of _id.
+* allow privileged users to change email address of another user
+  ([MEN-5829](https://tracker.mender.io/browse/MEN-5829))
+* restrict access to GET /events endpoint to Admin users only
+  ([MEN-5831](https://tracker.mender.io/browse/MEN-5831))
+* remove access to deviceconfig from ReadDevices permission set
+  ([MEN-5817](https://tracker.mender.io/browse/MEN-5817))
+* remove permision for downloading artifact from ReadReleases permission set
+  ([MEN-5816](https://tracker.mender.io/browse/MEN-5816))
+* DeployToDevices permission set should grant access to deployments only
+  ([MEN-5816](https://tracker.mender.io/browse/MEN-5816), [MEN-5817](https://tracker.mender.io/browse/MEN-5817))
+* update Deployments Manager role
+
+  The role should grant basic access and access to read releases, read devices and
+  deploy to devices.
+  ([MEN-5816](https://tracker.mender.io/browse/MEN-5816))
+* Read Devices permission should not grant access to artifacts
+  ([MEN-5816](https://tracker.mender.io/browse/MEN-5816))
+* Connect permission should allow downloaing files from the device
+  ([MEN-5839](https://tracker.mender.io/browse/MEN-5839))
+* Read Access role should grant access to device state in the iot-manager
+* Read Access role should grant access to view deployments
+* clear location of the Single Logout Service
+  ([MEN-5886](https://tracker.mender.io/browse/MEN-5886))
+* clear location of the Single Logout Service
+  ([MEN-5886](https://tracker.mender.io/browse/MEN-5886))
+
+##### Features
+
+* new endpoints for managing Personal Access Tokens
+
+  New endpoints:
+  POST /api/management/v1/useradm/settings/tokens
+  GET /api/management/v1/useradm/settings/tokens
+  DELETE /api/management/v1/useradm/settings/tokens/:id
+
+  ,
+  ([MEN-5522](https://tracker.mender.io/browse/MEN-5522), [MEN-5523](https://tracker.mender.io/browse/MEN-5523))
+* make maximum expiration time of Personal Access Tokens configurable
+  ([MEN-5522](https://tracker.mender.io/browse/MEN-5522), [MEN-5523](https://tracker.mender.io/browse/MEN-5523))
+* Update single sign-on schema for user objects
+  ([MEN-5649](https://tracker.mender.io/browse/MEN-5649))
+* SAML metadata management endpoints.
+  ([MEN-5100](https://tracker.mender.io/browse/MEN-5100))
+* GET service provider meta data
+  ([MEN-5101](https://tracker.mender.io/browse/MEN-5101))
+* change multi-tenancy data model
+  ([MEN-4749](https://tracker.mender.io/browse/MEN-4749))
+* change multi-tenancy data model
+  ([MEN-4749](https://tracker.mender.io/browse/MEN-4749))
+* support for ETag and If-Match for the GET/POST settings end-points
+  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+* end-points to save user-specific settings for the current user
+  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+* migration (2.0.1) to move the user settings to a dedicated collection
+  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+* 2FA is now available in all plans
+  ([MEN-5727](https://tracker.mender.io/browse/MEN-5727))
+* SAML SSO login and assertion endpoints.
+  ([MEN-5102](https://tracker.mender.io/browse/MEN-5102))
+* Only SAML configured users are allowed to use SAML login, and fixes.
+  ([MEN-5750](https://tracker.mender.io/browse/MEN-5750), [MEN-5752](https://tracker.mender.io/browse/MEN-5752))
+* introduce ConfigureDevices permission set
+  ([MEN-5817](https://tracker.mender.io/browse/MEN-5817))
+* save raw representation of the IDP Metadata
+  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+* endpoint for getting xml with configured IDP metadata
+  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+* save raw representation of the IDP Metadata
+  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+* endpoint for getting xml with configured IDP metadata
+  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+
+##### Other
+
+* upgrade crewjam/saml
+  ([MEN-5102](https://tracker.mender.io/browse/MEN-5102))
+* docs(SAML): document endpoint for getting Identity Provider Metadata
+  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+* test(SAML): test endpoint for getting IDP matadata
+  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+* docs(SAML): document endpoint for getting Identity Provider Metadata
+  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+* test(SAML): test endpoint for getting IDP matadata
+  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/golang-jwt/jwt/v4](https://github.com/golang-jwt/jwt) from 4.2.0 to 4.4.1.
+      - [Release notes](https://github.com/golang-jwt/jwt/releases)
+      - [Changelog](https://github.com/golang-jwt/jwt/blob/main/VERSION_HISTORY.md)
+      - [Commits](https://github.com/golang-jwt/jwt/compare/v4.2.0...v4.4.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/golang-jwt/jwt/v4
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/go-redis/redis/v8](https://github.com/go-redis/redis) from 8.11.4 to 8.11.5.
+      - [Release notes](https://github.com/go-redis/redis/releases)
+      - [Changelog](https://github.com/go-redis/redis/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/go-redis/redis/compare/v8.11.4...v8.11.5)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/go-redis/redis/v8
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### workflows (2.3.0)
+
+New changes in workflows since 2.2.1:
+
+##### Bug Fixes
+
+* Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
+  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+* All workflows use encoding=url in the input variables passed in the URIs.
+  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5473](https://tracker.mender.io/browse/MEN-5473))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.4 to 1.7.7.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.7.4...v1.7.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+#### workflows-enterprise (2.3.0)
+
+New changes in workflows-enterprise since 2.2.1:
+
+##### Bug Fixes
+
+* aligned ui links with updated url scheme
+  ([MEN-5734](https://tracker.mender.io/browse/MEN-5734))
+* Update mender-artifact download URL
+* Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
+  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+* All workflows use encoding=url in the input variables passed in the URIs.
+  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+
+##### Features
+
+* Static device group in alert emails Subject:
+  ([MEN-5379](https://tracker.mender.io/browse/MEN-5379))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5473](https://tracker.mender.io/browse/MEN-5473))
+* update Python dependencies for create_artifacts.py
+* fix: create temporary files in the /tmp directory to avoid permission issues when running the service as a non-root user
+  ([MEN-5809](https://tracker.mender.io/browse/MEN-5809))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.4 to 1.7.7.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.7.4...v1.7.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.4 to 1.7.7.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.7.4...v1.7.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [google.golang.org/api](https://github.com/googleapis/google-api-go-client) from 0.60.0 to 0.66.0.
+      - [Release notes](https://github.com/googleapis/google-api-go-client/releases)
+      - [Changelog](https://github.com/googleapis/google-api-go-client/blob/main/CHANGES.md)
+      - [Commits](https://github.com/googleapis/google-api-go-client/compare/v0.60.0...v0.66.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: google.golang.org/api
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [google.golang.org/api](https://github.com/googleapis/google-api-go-client) from 0.66.0 to 0.67.0.
+      - [Release notes](https://github.com/googleapis/google-api-go-client/releases)
+      - [Changelog](https://github.com/googleapis/google-api-go-client/blob/main/CHANGES.md)
+      - [Commits](https://github.com/googleapis/google-api-go-client/compare/v0.66.0...v0.67.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: google.golang.org/api
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [google.golang.org/api](https://github.com/googleapis/google-api-go-client) from 0.67.0 to 0.69.0.
+      - [Release notes](https://github.com/googleapis/google-api-go-client/releases)
+      - [Changelog](https://github.com/googleapis/google-api-go-client/blob/main/CHANGES.md)
+      - [Commits](https://github.com/googleapis/google-api-go-client/compare/v0.67.0...v0.69.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: google.golang.org/api
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+#### integration (3.4.0)
+
+New changes in integration since 3.3.0:
+
+##### Bug Fixes
+
+* don't allow to use openssl lower than v.1.1.1
+  ([MEN-5746](https://tracker.mender.io/browse/MEN-5746))
+* Correctly pass mender client version to GUI env
+  ([MEN-5901](https://tracker.mender.io/browse/MEN-5901))
+
+##### Other
+
+* feat(traefik conf): add SAML SSO endpoints exposed without authentication
+  ([MEN-5102](https://tracker.mender.io/browse/MEN-5102))
+* Upgrade auditlogs to 3.0.2.
+* Upgrade create-artifact-worker to 1.2.0.
+* Upgrade deployments-enterprise to 4.3.0.
+* Upgrade deployments to 4.3.0.
+* Upgrade deviceauth-enterprise to 3.3.0.
+* Upgrade deviceauth to 3.3.0.
+* Upgrade deviceconfig to 1.2.2.
+* Upgrade deviceconnect to 1.3.3.
+* Upgrade devicemonitor to 1.3.0.
+* Upgrade gui to 3.4.0.
+* Upgrade integration to 3.4.0.
+* Upgrade inventory-enterprise to 4.2.1.
+* Upgrade inventory to 4.2.1.
+* Upgrade iot-manager to 1.1.0.
+* Upgrade mender-artifact to 3.9.0.
+* Upgrade mender-binary-delta to 1.4.1.
+* Upgrade mender-cli to 1.9.0.
+* Upgrade mender-connect to 2.1.0.
+* Upgrade mender-convert to 3.0.1.
+* Upgrade mender-gateway to 1.0.1.
+* Upgrade mender to 3.4.0.
+* Upgrade monitor-client to 1.2.1.
+* Upgrade mtls-ambassador to 1.1.0.
+* Upgrade tenantadm to 3.5.0.
+* Upgrade useradm-enterprise to 1.19.0.
+* Upgrade useradm to 1.19.0.
+* Upgrade workflows-enterprise to 2.3.0.
+* Upgrade workflows to 2.3.0.
+
+
 ## Mender 3.3.0
 
 _Released 06.14.2022_

@@ -8,6 +8,67 @@ github: false
 ---
 
 
+## mender-cli 1.9.0
+
+_Released 09.25.2022_
+
+### Statistics
+
+A total of 171 lines added, 188 removed (delta -17)
+
+| Developers with the most changesets | |
+|---|---|
+| Fabio Tranchitella | 4 (44.4%) |
+| Ole Petter Orhagen | 2 (22.2%) |
+| Lluis Campos | 1 (11.1%) |
+| Alex Miliukov | 1 (11.1%) |
+| Manuel Zedel | 1 (11.1%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 204 (85.7%) |
+| Ole Petter Orhagen | 14 (5.9%) |
+| Alex Miliukov | 13 (5.5%) |
+| Manuel Zedel | 6 (2.5%) |
+| Lluis Campos | 1 (0.4%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Fabio Tranchitella | 39 (20.7%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 9 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 238 (100.0%) |
+
+| Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 5 (100.0%) |
+
+### Changelogs
+
+#### mender-cli (1.9.0)
+
+New changes in mender-cli since 1.8.0:
+
+##### Bug Fixes
+
+* stop the port-forward command on errors when reading the websocket
+  ([MEN-5565](https://tracker.mender.io/browse/MEN-5565))
+* automatically handle reconnections in port-forward
+  ([MEN-5565](https://tracker.mender.io/browse/MEN-5565))
+* use a mutex lock per connection instead of a global one
+  ([MEN-5565](https://tracker.mender.io/browse/MEN-5565))
+
+##### Features
+
+* add option to specify a JWT or personal access token
+  ([MEN-5660](https://tracker.mender.io/browse/MEN-5660))
+
+
 ## mender-cli 1.8.0
 
 _Released 06.14.2022_

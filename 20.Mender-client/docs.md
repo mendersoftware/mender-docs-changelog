@@ -8,6 +8,105 @@ github: false
 ---
 
 
+## mender 3.4.0
+
+_Released 09.25.2022_
+
+### Statistics
+
+A total of 1308 lines added, 668 removed (delta 640)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 7 (22.6%) |
+| Mikael Torp-Holte | 4 (12.9%) |
+| Alf-Rune Siqveland | 3 (9.7%) |
+| Lluis Campos | 2 (6.5%) |
+| Ole Petter Orhagen | 2 (6.5%) |
+| Fabio Tranchitella | 2 (6.5%) |
+| Maciej Tomczuk | 2 (6.5%) |
+| Domenic Rodriguez | 2 (6.5%) |
+| Peter Grzybowski | 2 (6.5%) |
+| Drew Moseley | 2 (6.5%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 721 (51.8%) |
+| Kristian Amlie | 362 (26.0%) |
+| Alf-Rune Siqveland | 128 (9.2%) |
+| Ole Petter Orhagen | 57 (4.1%) |
+| Maciej Tomczuk | 43 (3.1%) |
+| Mikael Torp-Holte | 24 (1.7%) |
+| Domenic Rodriguez | 20 (1.4%) |
+| Peter Grzybowski | 11 (0.8%) |
+| Drew Moseley | 8 (0.6%) |
+| Michael Ho | 8 (0.6%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Ole Petter Orhagen | 24 (3.6%) |
+| Jonas Vautherin | 3 (0.4%) |
+| Kristian Amlie | 2 (0.3%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 25 (80.6%) |
+| Gecko Robotics | 2 (6.5%) |
+| drew@moseleynet.net | 2 (6.5%) |
+| callmemikeh@gmail.com | 1 (3.2%) |
+| jonas.vautherin@protonmail.ch | 1 (3.2%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 1350 (97.1%) |
+| Gecko Robotics | 20 (1.4%) |
+| drew@moseleynet.net | 8 (0.6%) |
+| callmemikeh@gmail.com | 8 (0.6%) |
+| jonas.vautherin@protonmail.ch | 5 (0.4%) |
+
+| Employers with the most hackers (total 13) | |
+|---|---|
+| Northern.tech | 9 (69.2%) |
+| Gecko Robotics | 1 (7.7%) |
+| drew@moseleynet.net | 1 (7.7%) |
+| callmemikeh@gmail.com | 1 (7.7%) |
+| jonas.vautherin@protonmail.ch | 1 (7.7%) |
+
+### Changelogs
+
+#### mender (3.4.0)
+
+New changes in mender since 3.3.0:
+
+##### Bug Fixes
+
+* setenv: Fix script input syntax.
+* rootfs-image-v2: Make sure to set mender_boot_part_hex
+* By default we bind to 127.0.0.1:0 instead of localhost.
+* Over D-Bus we return the ProxyHost equal to 127.0.0.1
+* Upgrade openssl dependency to fix cast error in recent Go.
+* If paused before ArtifactReboot, and then manually
+  rebooting the device outside of Mender, the client will properly
+  resume the update now, instead of failing and rolling back.
+  ([MEN-5709](https://tracker.mender.io/browse/MEN-5709))
+* Append log entries to syslog at the correct level
+* The client update and inventory checks are now unaffected by the use
+  of the `check-update` and `send-inventory` commands. While previously, this
+  would both move the intervals at which checks we're done, and also extend them
+  beyond the expected polling intervals configured.
+  ([MEN-5547](https://tracker.mender.io/browse/MEN-5547))
+* Resolve symlinks for /dev/disk/by-partlabel
+
+##### Features
+
+* Add DaemonLogLevel parameter in configuration file
+  ([MEN-5583](https://tracker.mender.io/browse/MEN-5583))
+
+##### Other
+
+* Upgrade mender-artifact library to v0.0.0-20220913084855-9ed8ad0d53d0
+
+
 ## mender 3.3.0
 
 _Released 06.14.2022_

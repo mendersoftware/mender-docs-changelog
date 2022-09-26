@@ -7,6 +7,23 @@ shortcode-core:
 github: false
 ---
 
+
+## mender-binary-delta 1.4.1
+
+_Released 09.25.2022_
+
+### Changelogs
+
+#### mender-binary-delta (1.4.1)
+
+New changes in mender-binary-delta since 1.4.0:
+
+##### Features
+
+* Licenses are now available in the package, instead of only
+  online. ([MEN-5517](https://tracker.mender.io/browse/MEN-5517))
+
+
 ## mender-binary-delta (1.4.0)
 
 _Released 07.06.2022_
