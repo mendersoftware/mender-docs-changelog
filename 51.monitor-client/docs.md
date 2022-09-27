@@ -8,6 +8,27 @@ github: false
 ---
 
 
+## monitor-client 1.2.1
+
+_Released 09.25.2022_
+
+### Changelogs
+
+#### monitor-client (1.2.1)
+
+New changes in monitor-client since 1.2.0:
+
+##### Bug Fixes
+
+* `mender-monitord` detects not valid patterns when calling any log related checks. `mender-monitorctl` prevents creation of checks that lead to errors in pattern matching.
+  ([MEN-5748](https://tracker.mender.io/browse/MEN-5748))
+
+##### Other
+
+* Licenses are now available in the package, instead of only
+  online. ([MEN-5517](https://tracker.mender.io/browse/MEN-5517))
+
+
 ## monitor-client 1.2.0
 
 _Released 06.14.2022_

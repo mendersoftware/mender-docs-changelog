@@ -8,6 +8,76 @@ github: false
 ---
 
 
+## mender-artifact 3.9.0
+
+_Released 09.25.2022_
+
+### Statistics
+
+A total of 1702 lines added, 381 removed (delta 1321)
+
+| Developers with the most changesets | |
+|---|---|
+| Maciej Tomczuk | 8 (40.0%) |
+| Fabio Tranchitella | 4 (20.0%) |
+| Manuel Zedel | 3 (15.0%) |
+| Lluis Campos | 2 (10.0%) |
+| Ole Petter Orhagen | 2 (10.0%) |
+| Peter Grzybowski | 1 (5.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Maciej Tomczuk | 1490 (87.3%) |
+| Peter Grzybowski | 164 (9.6%) |
+| Fabio Tranchitella | 27 (1.6%) |
+| Ole Petter Orhagen | 15 (0.9%) |
+| Manuel Zedel | 6 (0.4%) |
+| Lluis Campos | 5 (0.3%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 20 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 1707 (100.0%) |
+
+| Employers with the most hackers (total 6) | |
+|---|---|
+| Northern.tech | 6 (100.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.9.0)
+
+New changes in mender-artifact since 3.8.0:
+
+##### Features
+
+* Implement write for empty payload artifacts
+  ([MEN-2586](https://tracker.mender.io/browse/MEN-2586))
+* Add possibility to read bootstrap artifacts
+  ([MEN-2586](https://tracker.mender.io/browse/MEN-2586))
+* Add support for provides and depends flags in write and read
+  ([MEN-2586](https://tracker.mender.io/browse/MEN-2586))
+* Add PKCS#11 standard support for artifacts signing
+  ([MEN-5759](https://tracker.mender.io/browse/MEN-5759))
+
+##### Dependency updates
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+
 ## mender-artifact 3.8.0
 
 _Released 06.14.2022_

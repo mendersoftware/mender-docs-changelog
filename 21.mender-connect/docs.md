@@ -8,6 +8,54 @@ github: false
 ---
 
 
+## mender-connect 2.1.0
+
+_Released 09.25.2022_
+
+### Statistics
+
+A total of 130 lines added, 20 removed (delta 110)
+
+| Developers with the most changesets | |
+|---|---|
+| Peter Grzybowski | 4 (57.1%) |
+| Uri Ishon | 1 (14.3%) |
+| Fabio Tranchitella | 1 (14.3%) |
+| Manuel Zedel | 1 (14.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Peter Grzybowski | 115 (88.5%) |
+| Manuel Zedel | 8 (6.2%) |
+| Uri Ishon | 5 (3.8%) |
+| Fabio Tranchitella | 2 (1.5%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 6 (85.7%) |
+| uishon@gmail.com | 1 (14.3%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 125 (96.2%) |
+| uishon@gmail.com | 5 (3.8%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 3 (75.0%) |
+| uishon@gmail.com | 1 (25.0%) |
+
+### Changelogs
+
+#### mender-connect (2.1.0)
+
+New changes in mender-connect since 2.0.2:
+
+##### Features
+
+* if the `/etc/shells` file does not exit, fall back to the default shell
+
+
 ## mender-connect 2.0.2
 
 _Released 06.14.2022_

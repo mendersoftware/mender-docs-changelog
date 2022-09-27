@@ -8,6 +8,55 @@ github: false
 ---
 
 
+## mender-convert 3.0.1
+
+_Released 09.25.2022_
+
+### Statistics
+
+A total of 269 lines added, 203 removed (delta 66)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 2 (33.3%) |
+| Kristian Amlie | 2 (33.3%) |
+| Alin Alexandru | 1 (16.7%) |
+| Ole Petter Orhagen | 1 (16.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 220 (81.8%) |
+| Lluis Campos | 33 (12.3%) |
+| Kristian Amlie | 13 (4.8%) |
+| Alin Alexandru | 3 (1.1%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 5 (83.3%) |
+| INNOBYTE | 1 (16.7%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 266 (98.9%) |
+| INNOBYTE | 3 (1.1%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 3 (75.0%) |
+| INNOBYTE | 1 (25.0%) |
+
+### Changelogs
+
+#### mender-convert (3.0.1)
+
+New changes in mender-convert since 3.0.0:
+
+##### Bug Fixes
+
+* Detect when EFI is not available and disable grub.d integration.
+* Amend error message for optional parameters
+
+
 ## mender-convert 3.0.0
 
 _Released 06.14.2022_
