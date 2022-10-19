@@ -1316,6 +1316,318 @@ New changes in integration since 3.3.0:
 * Upgrade workflows to 2.3.0.
 
 
+## Mender 3.3.1
+
+_Released 10.19.2022_
+
+### Statistics
+
+A total of 4148 lines added, 2523 removed (delta 1625)
+
+| Developers with the most changesets | |
+|---|---|
+| Peter Grzybowski | 23 (19.5%) |
+| Fabio Tranchitella | 19 (16.1%) |
+| Ole Petter Orhagen | 15 (12.7%) |
+| Lluis Campos | 14 (11.9%) |
+| Alf-Rune Siqveland | 14 (11.9%) |
+| Kristian Amlie | 13 (11.0%) |
+| Manuel Zedel | 9 (7.6%) |
+| Maciej Tomczuk | 6 (5.1%) |
+| Alex Miliukov | 3 (2.5%) |
+| Mikael Torp-Holte | 2 (1.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 1003 (21.4%) |
+| Peter Grzybowski | 843 (18.0%) |
+| Alf-Rune Siqveland | 821 (17.5%) |
+| Fabio Tranchitella | 677 (14.4%) |
+| Kristian Amlie | 674 (14.4%) |
+| Maciej Tomczuk | 236 (5.0%) |
+| Alex Miliukov | 236 (5.0%) |
+| Ole Petter Orhagen | 81 (1.7%) |
+| Mikael Torp-Holte | 67 (1.4%) |
+| Manuel Zedel | 50 (1.1%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Kristian Amlie | 188 (7.5%) |
+
+| Developers with the most signoffs (total 4) | |
+|---|---|
+| Ole Petter Orhagen | 2 (50.0%) |
+| Kristian Amlie | 1 (25.0%) |
+| Fabio Tranchitella | 1 (25.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 118 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 4688 (100.0%) |
+
+| Employers with the most signoffs (total 4) | |
+|---|---|
+| Northern.tech | 4 (100.0%) |
+
+| Employers with the most hackers (total 10) | |
+|---|---|
+| Northern.tech | 10 (100.0%) |
+
+### Changelogs
+
+#### auditlogs (3.0.2)
+
+New changes in auditlogs since 3.0.1:
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
+  ([MEN-5506](https://tracker.mender.io/browse/MEN-5506))
+
+#### deployments (4.2.1)
+
+New changes in deployments since 4.2.0:
+
+##### Bug Fixes
+
+* Fix bad indexing from database versions 1.2.8 and 1.2.9
+  ([MEN-5695](https://tracker.mender.io/browse/MEN-5695))
+* Escape configuration download URL path and support '.' in parameter
+  ([MEN-5712](https://tracker.mender.io/browse/MEN-5712))
+* Multipart upload not working when loading s3 settings from env
+  ([MEN-5939](https://tracker.mender.io/browse/MEN-5939))
+
+#### deployments-enterprise (4.2.1)
+
+New changes in deployments-enterprise since 4.2.0:
+
+##### Bug Fixes
+
+* Fix bad indexing from database versions 1.2.8 and 1.2.9
+  ([MEN-5695](https://tracker.mender.io/browse/MEN-5695))
+* Escape configuration download URL path and support '.' in parameter
+  ([MEN-5712](https://tracker.mender.io/browse/MEN-5712))
+* Multipart upload not working when loading s3 settings from env
+  ([MEN-5939](https://tracker.mender.io/browse/MEN-5939))
+
+#### deviceauth (3.2.2)
+
+New changes in deviceauth since 3.2.1:
+
+##### Bug Fixes
+
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* Missing hash in inventory client
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220302103938-7561c751e1fd
+  ([MEN-5471](https://tracker.mender.io/browse/MEN-5471))
+
+#### deviceauth-enterprise (3.2.2)
+
+New changes in deviceauth-enterprise since 3.2.1:
+
+##### Bug Fixes
+
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* Missing hash in inventory client
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220302103938-7561c751e1fd
+  ([MEN-5471](https://tracker.mender.io/browse/MEN-5471))
+
+#### deviceconfig (1.2.2)
+
+New changes in deviceconfig since 1.2.1:
+
+##### Bug Fixes
+
+* Fix borken migration.
+  ([MEN-5719](https://tracker.mender.io/browse/MEN-5719))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
+  ([MEN-5504](https://tracker.mender.io/browse/MEN-5504))
+
+#### deviceconnect (1.3.3)
+
+New changes in deviceconnect since 1.3.2:
+
+##### Bug Fixes
+
+* Correct broken document migration in 2.0.0
+  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+* Apply migration to all databases prior to 2.0.0
+  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+* New migration (2.0.1) patching 2.0.0 document migration
+  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
+  ([MEN-5505](https://tracker.mender.io/browse/MEN-5505))
+
+#### devicemonitor (1.2.1)
+
+New changes in devicemonitor since 1.2.0:
+
+##### Bug Fixes
+
+* Reduce the maximum number of alerts/configurations per request
+  ([MEN-5854](https://tracker.mender.io/browse/MEN-5854))
+
+#### gui (3.3.1)
+
+New changes in gui since 3.3.0:
+
+##### Bug Fixes
+
+* fixed an issue that caused the device list to crash on group selection if a device was selected at the time
+* added missing check for plan availability for auditlogs
+  ([MEN-5686](https://tracker.mender.io/browse/MEN-5686))
+* ensured dynamic group filters are used on group device retrieval
+  ([MEN-5668](https://tracker.mender.io/browse/MEN-5668))
+* prevented nginx from preloading version info file
+  ([MEN-5707](https://tracker.mender.io/browse/MEN-5707))
+* aligned final onboarding snackbar rendering with onboarding progress
+  ([MEN-5909](https://tracker.mender.io/browse/MEN-5909))
+
+#### integration (3.3.1)
+
+New changes in integration since 3.3.0:
+
+##### Bug Fixes
+
+* Correctly pass mender client version to GUI env
+  ([MEN-5901](https://tracker.mender.io/browse/MEN-5901))
+* Do not double count integration in changelogs and statistics.
+
+##### Other
+
+* Upgrade auditlogs to 3.0.2.
+* Upgrade deployments-enterprise to 4.2.1.
+* Upgrade deployments to 4.2.1.
+* Upgrade deviceauth-enterprise to 3.2.2.
+* Upgrade deviceauth to 3.2.2.
+* Upgrade deviceconfig to 1.2.2.
+* Upgrade deviceconnect to 1.3.3.
+* Upgrade devicemonitor to 1.2.1.
+* Upgrade gui to 3.3.1.
+* Upgrade integration to 3.3.1.
+* Upgrade inventory-enterprise to 4.2.1.
+* Upgrade inventory to 4.2.1.
+* Upgrade iot-manager to 1.0.3.
+* Upgrade mender-artifact to 3.8.1.
+* Upgrade mender-binary-delta to 1.4.1.
+* Upgrade mender-cli to 1.8.1.
+* Upgrade mender-convert to 3.0.1.
+* Upgrade mender-gateway to 1.0.1.
+* Upgrade mender to 3.3.1.
+* Upgrade monitor-client to 1.2.1.
+* Upgrade tenantadm to 3.4.1.
+* Upgrade useradm-enterprise to 1.18.1.
+* Upgrade useradm to 1.18.1.
+* Upgrade workflows-enterprise to 2.2.2.
+* Upgrade workflows to 2.2.2.
+
+#### inventory (4.2.1)
+
+New changes in inventory since 4.2.0:
+
+##### Bug Fixes
+
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+
+#### inventory-enterprise (4.2.1)
+
+New changes in inventory-enterprise since 4.2.0:
+
+##### Bug Fixes
+
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+
+#### iot-manager (1.0.3)
+
+New changes in iot-manager since 1.0.2:
+
+* upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
+  ([MEN-5467](https://tracker.mender.io/browse/MEN-5467))
+
+#### tenantadm (3.4.1)
+
+New changes in tenantadm since 3.4.0:
+
+##### Bug Fixes
+
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+
+#### useradm (1.18.1)
+
+New changes in useradm since 1.18.0:
+
+##### Bug Fixes
+
+* invalidate user sessions but the current one on user updates
+  ([MEN-5731](https://tracker.mender.io/browse/MEN-5731))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+
+#### useradm-enterprise (1.18.1)
+
+New changes in useradm-enterprise since 1.18.0:
+
+##### Bug Fixes
+
+* invalidate user sessions but the current one on user updates
+  ([MEN-5731](https://tracker.mender.io/browse/MEN-5731))
+* replace colon with hash for path params modifiers in URLs
+  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+* Forbid oauth logins for suspended tenants.
+
+#### workflows (2.2.2)
+
+New changes in workflows since 2.2.1:
+
+##### Bug Fixes
+
+* Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
+  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+* All workflows use encoding=url in the input variables passed in the URIs.
+  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5473](https://tracker.mender.io/browse/MEN-5473))
+
+#### workflows-enterprise (2.2.2)
+
+New changes in workflows-enterprise since 2.2.1:
+
+##### Bug Fixes
+
+* Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
+  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+* All workflows use encoding=url in the input variables passed in the URIs.
+  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5473](https://tracker.mender.io/browse/MEN-5473))
+
+
 ## Mender 3.3.0
 
 _Released 06.14.2022_
