@@ -78,6 +78,58 @@ New changes in mender-artifact since 3.8.0:
       ```
 
 
+## mender-artifact 3.8.1
+
+_Released 10.19.2022_
+
+### Statistics
+
+A total of 21 lines added, 9 removed (delta 12)
+
+| Developers with the most changesets | |
+|---|---|
+| Manuel Zedel | 3 (60.0%) |
+| Ole Petter Orhagen | 2 (40.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 15 (71.4%) |
+| Manuel Zedel | 6 (28.6%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Fabio Tranchitella | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 5 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 21 (100.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.8.1)
+
+New changes in mender-artifact since 3.8.0:
+
+##### Bug Fixes
+
+* fixed an issue that prevented the makefile from working
+  with newer docker versions
+* fixed an issue that prevented running mender-artifact in a
+  container
+
+
 ## mender-artifact 3.8.0
 
 _Released 06.14.2022_

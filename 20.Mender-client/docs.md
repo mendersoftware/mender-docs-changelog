@@ -107,6 +107,81 @@ New changes in mender since 3.3.0:
 * Upgrade mender-artifact library to v0.0.0-20220913084855-9ed8ad0d53d0
 
 
+## mender 3.3.1
+
+_Released 10.19.2022_
+
+### Statistics
+
+A total of 628 lines added, 238 removed (delta 390)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 5 (31.2%) |
+| Kristian Amlie | 5 (31.2%) |
+| Peter Grzybowski | 2 (12.5%) |
+| Michael Ho | 1 (6.2%) |
+| Mikael Torp-Holte | 1 (6.2%) |
+| Lluis Campos | 1 (6.2%) |
+| Maciej Tomczuk | 1 (6.2%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 418 (64.0%) |
+| Ole Petter Orhagen | 92 (14.1%) |
+| Kristian Amlie | 82 (12.6%) |
+| Maciej Tomczuk | 40 (6.1%) |
+| Peter Grzybowski | 11 (1.7%) |
+| Michael Ho | 8 (1.2%) |
+| Mikael Torp-Holte | 2 (0.3%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Ole Petter Orhagen | 2 (0.8%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 15 (93.8%) |
+| callmemikeh@gmail.com | 1 (6.2%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 645 (98.8%) |
+| callmemikeh@gmail.com | 8 (1.2%) |
+
+| Employers with the most hackers (total 7) | |
+|---|---|
+| Northern.tech | 6 (85.7%) |
+| callmemikeh@gmail.com | 1 (14.3%) |
+
+### Changelogs
+
+#### mender (3.3.1)
+
+New changes in mender since 3.3.0:
+
+##### Bug Fixes
+
+* Upgrade openssl dependency to fix cast error in recent Go.
+* If paused before ArtifactReboot, and then manually
+  rebooting the device outside of Mender, the client will properly
+  resume the update now, instead of failing and rolling back.
+  ([MEN-5709](https://tracker.mender.io/browse/MEN-5709))
+* The client update and inventory checks are now unaffected by the use
+  of the `check-update` and `send-inventory` commands. While previously, this
+  would both move the intervals at which checks we're done, and also extend them
+  beyond the expected polling intervals configured.
+  ([MEN-5547](https://tracker.mender.io/browse/MEN-5547))
+* Append log entries to syslog at the correct level
+* By default we bind to 127.0.0.1:0 instead of localhost.
+* Over D-Bus we return the ProxyHost equal to 127.0.0.1
+* Resolve symlinks for /dev/disk/by-partlabel
+* The daemon no longer exits in the edge case where it cannot bring
+  down the proxy server due to timeouts.
+* The websockets are no longer left trying to open a connection to the
+  server, when the proxy server is shut down.
+
+
 ## mender 3.3.0
 
 _Released 06.14.2022_
