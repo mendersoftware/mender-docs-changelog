@@ -7,6 +7,70 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender (kirkstone-v2022.10)
+
+_Released: 10.27.2022_
+
+### Statistics
+
+A total of 432 lines added, 113 removed (delta 319)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 5 (45.5%) |
+| Ole Petter Orhagen | 4 (36.4%) |
+| Lluis Campos | 2 (18.2%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 313 (68.3%) |
+| Kristian Amlie | 93 (20.3%) |
+| Lluis Campos | 52 (11.4%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 7 (6.2%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 11 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 458 (100.0%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2022.10)
+
+New changes in meta-mender since kirkstone-v2022.09:
+
+##### Bug Fixes
+
+* Upgrade grub-mender-grubenv to include the XFS module in the default installation.
+* Pre-3.5 mender-client recipes needs dependency on mender-artifact-info.
+* Fix build error when building image using mender-artifact
+  older than 3.10.0.
+* Add recipe for mender-binary-delta 1.4.1
+* Add recipe for mender-monitor 1.2.1
+* Add recipe for mender-gateway 1.0.1
+* Add mender-client_3.3.1 and mender-artifact_3.8.1 recipes.
+
+##### Features
+
+* Add a bootstrap Artifact to the generated images in
+  /var/lib/mender/bootstrap.mender, so that the client can bootstrap it's database
+  without having to first run an update.
+  ([MEN-2585](https://tracker.mender.io/browse/MEN-2585))
+* Add recipe for mender-client 3.4.0
+* Add recipe for mender-artifact 3.9.0
+* Add recipe for mender-connect 2.1.0
+
+
 ## meta-mender (kirkstone-v2022.09)
 
 _Released: 09.12.2022_
@@ -829,6 +893,78 @@ New changes in meta-mender since dunfell-v2022.09:
         dependency-type: direct:production
         update-type: version-update:semver-minor
       ```
+
+## meta-mender (dunfell-v2022.10)
+
+_Released: 10.27.2022_
+
+### Statistics
+
+A total of 461 lines added, 62 removed (delta 399)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 7 (70.0%) |
+| Ole Petter Orhagen | 1 (10.0%) |
+| Lluis Campos | 1 (10.0%) |
+| Peter Grzybowski | 1 (10.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 284 (59.3%) |
+| Kristian Amlie | 161 (33.6%) |
+| Lluis Campos | 32 (6.7%) |
+| Peter Grzybowski | 2 (0.4%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 18 (29.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 10 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 479 (100.0%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 4 (100.0%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2022.10)
+
+New changes in meta-mender since dunfell-v2022.09:
+
+##### Bug Fixes
+
+* Fix occasional pseudo abort issue when building certain
+  images, especially in parallel. The symptom was this message:
+  ```
+  abort()ing pseudo client by server request.
+  See https://wiki.yoctoproject.org/wiki/Pseudo_Abort for more details on this
+  ```
+  ([MEN-5857](https://tracker.mender.io/browse/MEN-5857))
+* Pre-3.5 mender-client recipes needs dependency on mender-artifact-info.
+* Fix build error when building image using mender-artifact
+  older than 3.10.0.
+* Add recipe for mender-binary-delta 1.4.1
+* Add recipe for mender-monitor 1.2.1
+* Add recipe for mender-gateway 1.0.1
+* Add mender-client_3.3.1 and mender-artifact_3.8.1 recipes.
+
+##### Features
+
+* Add a bootstrap Artifact to the generated images in
+  /var/lib/mender/bootstrap.mender, so that the client can bootstrap it's database
+  without having to first run an update.
+  ([MEN-2585](https://tracker.mender.io/browse/MEN-2585))
+* Add recipe for mender-client 3.4.0
+* Add recipe for mender-artifact 3.9.0
+* Add recipe for mender-connect 2.1.0
+
 
 ## meta-mender dunfell-v2022.09
 
