@@ -894,6 +894,61 @@ New changes in meta-mender since dunfell-v2022.09:
         update-type: version-update:semver-minor
       ```
 
+
+## meta-mender (dunfell-v2022.11)
+
+_Released: 11.22.2022_
+
+### Statistics
+
+A total of 157 lines added, 18 removed (delta 139)
+
+| Developers with the most changesets | |
+|---|---|
+| Marek Belisko | 6 (75.0%) |
+| Lluis Campos | 2 (25.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 110 (70.1%) |
+| Marek Belisko | 47 (29.9%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| open-nandra | 6 (75.0%) |
+| Northern.tech | 2 (25.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 110 (70.1%) |
+| open-nandra | 47 (29.9%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 1 (50.0%) |
+| open-nandra | 1 (50.0%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2022.11)
+
+New changes in meta-mender since dunfell-v2022.10:
+
+##### Bug Fixes
+
+* Add missing licenses checksums and set right preference for
+  mender-client 3.3.1 recipe
+* Add missing licenses checksums, set right preference, and
+  add missing license for mender-artifact 3.8.1 recipe
+* Fix issues found during testing when mender-partuuid is not set
+
+##### Features
+
+* Update UUID for all extra partitions
+* Update fstab swap entry with UUID when feature is enabled
+* Added variables for extra and swap parts UUID
+
+
 ## meta-mender (dunfell-v2022.10)
 
 _Released: 10.27.2022_
