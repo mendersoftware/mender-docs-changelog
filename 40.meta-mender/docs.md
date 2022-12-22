@@ -895,6 +895,48 @@ New changes in meta-mender since dunfell-v2022.09:
       ```
 
 
+## meta-mender (dunfell-v2022.12)
+
+_Released: 12.22.2022_
+
+### Statistics
+
+A total of 1 lines added, 1 removed (delta 0)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 1 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2022.12)
+
+New changes in meta-mender since dunfell-v2022.11:
+
+##### Bug Fixes
+
+* Fix the regression in which Dunfell started providing the 3.3.x
+  client as the default. This was an unintentional change, and this
+  re-downprioritizes it, so that the `2.x` client is once again the default.
+  ([MEN-6122](https://tracker.mender.io/browse/MEN-6122))
+
+
 ## meta-mender (dunfell-v2022.11)
 
 _Released: 11.22.2022_
