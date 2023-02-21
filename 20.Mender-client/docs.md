@@ -8,6 +8,165 @@ github: false
 ---
 
 
+## mender 3.5.0
+
+_Released 02.20.2023_
+
+### Statistics
+
+A total of 2751 lines added, 849 removed (delta 1902)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 16 (34.0%) |
+| Kristian Amlie | 8 (17.0%) |
+| Ole Petter Orhagen | 7 (14.9%) |
+| Mikael Torp-Holte | 4 (8.5%) |
+| Fabio Tranchitella | 3 (6.4%) |
+| Josef Holzmayr | 2 (4.3%) |
+| Alan | 2 (4.3%) |
+| Marcin Pasinski | 1 (2.1%) |
+| Alf-Rune Siqveland | 1 (2.1%) |
+| Uri Ishon | 1 (2.1%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 1543 (53.4%) |
+| Mikael Torp-Holte | 522 (18.0%) |
+| Kristian Amlie | 381 (13.2%) |
+| Michael Ho | 154 (5.3%) |
+| Fabio Tranchitella | 97 (3.4%) |
+| Marcin Pasinski | 72 (2.5%) |
+| Ole Petter Orhagen | 58 (2.0%) |
+| Josef Holzmayr | 26 (0.9%) |
+| Uri Ishon | 20 (0.7%) |
+| Alan | 12 (0.4%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Fabio Tranchitella | 43 (5.1%) |
+
+| Developers with the most signoffs (total 3) | |
+|---|---|
+| Lluis Campos | 2 (66.7%) |
+| Esteban Aguero Perez | 1 (33.3%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 45 (95.7%) |
+| uishon@gmail.com | 1 (2.1%) |
+| callmemikeh@gmail.com | 1 (2.1%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 2718 (94.0%) |
+| callmemikeh@gmail.com | 154 (5.3%) |
+| uishon@gmail.com | 20 (0.7%) |
+
+| Employers with the most signoffs (total 3) | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+| Employers with the most hackers (total 12) | |
+|---|---|
+| Northern.tech | 10 (83.3%) |
+| callmemikeh@gmail.com | 1 (8.3%) |
+| uishon@gmail.com | 1 (8.3%) |
+
+### Changelogs
+
+#### mender (3.5.0)
+
+New changes in mender since 3.4.0:
+
+##### Bug Fixes
+
+* The daemon no longer exits in the edge case where it cannot bring
+  down the proxy server due to timeouts.
+  ([ME-3](https://tracker.mender.io/browse/ME-3))
+* The websockets are no longer left trying to open a connection to the
+  server, when the proxy server is shut down.
+  ([ME-3](https://tracker.mender.io/browse/ME-3))
+* Expand the check for new openssl version
+* systemd: Always try restarting the client if it exits.
+  ([ME-33](https://tracker.mender.io/browse/ME-33))
+* websocket connectivity through http-proxy if configured
+
+  Enables websocket connections to be established through an
+  http-proxy configurable by setting the `HTTPS_PROXY` environment
+  variable. This renders services that relies on websocket
+  connections, such as `mender-connect`, compatible with
+  http-proxying. ([ME-5](https://tracker.mender.io/browse/ME-5))
+* client not to skip custom TLS if an http-proxy is configured
+
+  Previously, Mender client supported http-proxying but ignored
+  custom TLS client configuration if present. This change renders
+  any custom TLS configurations, such as Mutual TLS, compatible with
+  http-proxying.
+  ([MEN-6009](https://tracker.mender.io/browse/MEN-6009))
+* do not ignore software versioning opts in the module artifact gens
+  ([MEN-6026](https://tracker.mender.io/browse/MEN-6026))
+* Add `--no-syslog` to the service file to ensure no
+  duplicate log messages in the journal.
+  ([MEN-6070](https://tracker.mender.io/browse/MEN-6070))
+* change mender-inventory-hostinfo to use the output of hostname
+
+##### Features
+
+* Install bootstrap Artifact on first start-up.
+
+  On start-up, Mender checks for the existence of an special bootstrap
+  Artifact in path `/var/lib/mender/bootstrap.mender` and installs it in
+  order to initialize the device database.
+
+  This applies both for `daemon` start and cli commands `bootstrap` and
+  `install`.
+
+  The Artifact is not installed if the device already has a database. When
+  the Artifact is not found (and the database is empty) the database is
+  initialized with `artifact-name=unknown`.
+
+  In addition, Mender can also understand other kinds of "empty" Artifacts
+  and install them either in managed or standalone modes.
+  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+* Remove support for `artifact_info` file. The initial artifact
+  name will be populated in the database using a bootstrap Artifact.
+  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+* do not check if the artifact is already installed
+  ([MEN-6129](https://tracker.mender.io/browse/MEN-6129))
+* Support multiple verifications keys
+
+  https://hub.mender.io/t/multiple-artifactverifykeys/4309/6
+
+  Creates a new client config parameter called ArtifactVerifyKeys that is
+  a list of paths to keys. Any matching key can be used to verify an
+  artifact - e.g. if 5 verification keys are provided, only 1 needs to
+  match to verify the artifact.
+* Add a thread: <proxy> field to the proxy logger
+
+  Now the proxy logger stands out in the logs more, and can thus be filtered
+  easier with tools parsing structured logs. This means that a log line from the
+  `proxy` thread goes from looking like:
+
+  ```
+  Oct 05 08:50:06 qemux86-64 mender[259]: time="2022-10-05T08:50:06Z" level=error msg="error forwarding from client to backend: websocket: close 1006 (abnormal closure): unexpected EOF"
+  ```
+
+  To:
+
+  ```
+  Oct 05 08:50:06 qemux86-64 mender[259]: time="2022-10-05T08:50:06Z" level=error thread="proxy" msg="error forwarding from client to backend: websocket: close 1006 (abnormal closure): unexpected EOF"
+  ```
+* The default folders (`/etc/mender`, `/usr/share/mender` and
+  `/var/lib/mender`) can now be overridden through the environment
+  variables: `MENDER_CONF_DIR`, `MENDER_DATA_DIR`, `MENDER_DATASTORE_DIR`.
+* Add zstd compression support
+
+##### Other
+
+* Replace obsolescent `egrep` with `grep -E` in inventory script
+
+
 ## mender 3.4.0
 
 _Released 09.25.2022_

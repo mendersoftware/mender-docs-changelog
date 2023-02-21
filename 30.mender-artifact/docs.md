@@ -8,6 +8,85 @@ github: false
 ---
 
 
+## mender-artifact 3.10.0
+
+_Released 02.20.2023_
+
+### Statistics
+
+A total of 287 lines added, 107 removed (delta 180)
+
+| Developers with the most changesets | |
+|---|---|
+| Alex Miliukov | 6 (31.6%) |
+| Lluis Campos | 5 (26.3%) |
+| Fabio Tranchitella | 5 (26.3%) |
+| Peter Grzybowski | 1 (5.3%) |
+| Michael Ho | 1 (5.3%) |
+| Ole Petter Orhagen | 1 (5.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Michael Ho | 99 (34.0%) |
+| Alex Miliukov | 80 (27.5%) |
+| Lluis Campos | 41 (14.1%) |
+| Ole Petter Orhagen | 35 (12.0%) |
+| Fabio Tranchitella | 34 (11.7%) |
+| Peter Grzybowski | 2 (0.7%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 18 (94.7%) |
+| callmemikeh@gmail.com | 1 (5.3%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 192 (66.0%) |
+| callmemikeh@gmail.com | 99 (34.0%) |
+
+| Employers with the most hackers (total 6) | |
+|---|---|
+| Northern.tech | 5 (83.3%) |
+| callmemikeh@gmail.com | 1 (16.7%) |
+
+### Changelogs
+
+#### mender-artifact (3.10.0)
+
+New changes in mender-artifact since 3.9.0:
+
+##### Features
+
+* support zstd compression
+
+  This adds 4 new --compression options for mender-artifact: zstd,
+  zstd_fastest_compression, zstd_better_compression,
+  zstd_best_compression.
+  The corresponding compression levels are subject to change based on the
+  version of klauspost/compress:
+  pkg.go.dev/github.com/klauspost/compress/zstd#EncoderLevel
+
+  I opted for these semantic zstd level names instead of exposing the
+  numeric levels because 1) it provides some guidance to normal users of
+  mender-artifact. 2) There isn't a way to currently pass parameters to
+  compressors, and I wanted this change to be pretty minimal.
+
+  zstd provides higher compression than gzip, at faster compression and
+  decompression rates.
+
+  engineering.fb.com/2016/08/31/core-data/smaller-and-faster-data-compression-with-zstandard
+
+  In general, zstd outperforms gzip with speed and compression ratio. It
+  doesn't get as good compression compared to lzma, however zstd has
+  different compression levels that can get it close to lzma, at pretty
+  reasonable speeds.
+
+##### Other
+
+* Use best gzip compression by default.
+  ([MEN-6249](https://tracker.mender.io/browse/MEN-6249))
+
+
 ## mender-artifact 3.9.0
 
 _Released 09.25.2022_

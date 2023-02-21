@@ -8,6 +8,776 @@ github: false
 ---
 
 
+## Mender 3.5.0
+
+_Released 02.20.2023_
+
+### Statistics
+
+A total of 44757 lines added, 18182 removed (delta 26575)
+
+| Developers with the most changesets | |
+|---|---|
+| Manuel Zedel | 194 (30.5%) |
+| Alf-Rune Siqveland | 110 (17.3%) |
+| Fabio Tranchitella | 93 (14.6%) |
+| Lluis Campos | 73 (11.5%) |
+| Krzysztof Jaskiewicz | 48 (7.5%) |
+| Peter Grzybowski | 41 (6.4%) |
+| Ole Petter Orhagen | 26 (4.1%) |
+| Maciej Tomczuk | 21 (3.3%) |
+| Alex Miliukov | 13 (2.0%) |
+| Kristian Amlie | 12 (1.9%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Manuel Zedel | 13129 (27.4%) |
+| Krzysztof Jaskiewicz | 9564 (19.9%) |
+| Alf-Rune Siqveland | 7652 (15.9%) |
+| Fabio Tranchitella | 7147 (14.9%) |
+| Peter Grzybowski | 4569 (9.5%) |
+| Maciej Tomczuk | 2617 (5.5%) |
+| Lluis Campos | 1223 (2.5%) |
+| Kristian Amlie | 1148 (2.4%) |
+| Ole Petter Orhagen | 604 (1.3%) |
+| Alex Miliukov | 322 (0.7%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Manuel Zedel | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 636 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 47985 (100.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 12) | |
+|---|---|
+| Northern.tech | 12 (100.0%) |
+
+### Changelogs
+
+#### auditlogs (3.1.0)
+
+New changes in auditlogs since 3.0.2:
+
+##### Bug Fixes
+
+* update API specs and validation to accept all object types as filters
+  ([MEN-6247](https://tracker.mender.io/browse/MEN-6247))
+
+##### Other
+
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5506](https://tracker.mender.io/browse/MEN-5506))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.4 to 1.7.7.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.7.4...v1.7.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### create-artifact-worker (1.3.0)
+
+New changes in create-artifact-worker since 1.2.0:
+
+##### Features
+
+* accept more single-file-artifact-gen arguments
+  ([MEN-6046](https://tracker.mender.io/browse/MEN-6046))
+
+##### Other
+
+* Update mender-artifact tool to latest
+
+#### deployments (4.4.0)
+
+New changes in deployments since 4.3.0:
+
+##### Bug Fixes
+
+* Enforce setting validation constraints for internal PUT settings endpoint
+  ([MEN-5908](https://tracker.mender.io/browse/MEN-5908))
+* use correct artifact size for multipart uploads
+* Internal storage API not following PUT semantics
+* Content-Disposition of artifacts set to artifact name instead of ID
+  ([MEN-6025](https://tracker.mender.io/browse/MEN-6025))
+* reindex device deployments when resetting device deployments history
+  ([MEN-6253](https://tracker.mender.io/browse/MEN-6253))
+
+##### Features
+
+* Include HTTP method in link objects
+* Add support for Azure Blob Storage
+
+  The storage configurations have been refactored to gather storage settings
+  that are not specific to vendors; the old configuration settings are
+  aliases to the new settings.
+  ([MEN-5871](https://tracker.mender.io/browse/MEN-5871))
+* Allow arbitrary storage backend per tenant
+  ([MEN-5942](https://tracker.mender.io/browse/MEN-5942))
+* change image (aka artifact) schema
+
+  With the new schema it will be possible to query by artifact provides.
+  ([MEN-6107](https://tracker.mender.io/browse/MEN-6107))
+* use scratch as base image, run as non-root user
+  ([MEN-5658](https://tracker.mender.io/browse/MEN-5658))
+* endpoint for returning the deployments history for a given device
+  ([MEN-6045](https://tracker.mender.io/browse/MEN-6045))
+* add newly uploaded artifacts to existing deployments
+
+  If newly uploaded artifact has same name as artifacts in some of the
+  pending deployments, the artifact will become part of these deployments.
+  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+* new deployment's option to force the installation of the Artifacts
+  ([MEN-6131](https://tracker.mender.io/browse/MEN-6131))
+* end-point to the delete device deployments history
+  ([MEN-6134](https://tracker.mender.io/browse/MEN-6134))
+* ignore deleted device deployments in all end-points
+  ([MEN-6135](https://tracker.mender.io/browse/MEN-6135))
+* expose the image object in the device deployment API endpoints
+  ([MEN-6138](https://tracker.mender.io/browse/MEN-6138))
+* internal end-point to retrieve the device deployments history
+  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+* trigger a device reindex in reporting when a device deployment finishes
+  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+* add support to filter device deployments by status `finished`
+  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+* internal end point to get device deployments by ID
+  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+* trigger the deployment reindex workflow on deployment completion
+  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+* add special representation of artifact provides to artifact object
+* Add support for zstd compressed artifacts.
+* CLI command to reindex to the reporting service all the device deployments
+  ([MEN-6252](https://tracker.mender.io/browse/MEN-6252))
+
+##### Other
+
+* chore(go mod): Bump required Golang version to 1.18
+* Upgrade github.com/Azure/azure-sdk-for-go/sdk/storage/azblob to v0.6.1
+  ([MEN-6187](https://tracker.mender.io/browse/MEN-6187))
+* fix(workflows client): do not fail when identity is not present in the context
+  ([MEN-6252](https://tracker.mender.io/browse/MEN-6252))
+
+#### deployments-enterprise (4.4.0)
+
+New changes in deployments-enterprise since 4.3.0:
+
+##### Bug Fixes
+
+* Enforce setting validation constraints for internal PUT settings endpoint
+  ([MEN-5908](https://tracker.mender.io/browse/MEN-5908))
+* use correct artifact size for multipart uploads
+* Internal storage API not following PUT semantics
+* Content-Disposition of artifacts set to artifact name instead of ID
+  ([MEN-6025](https://tracker.mender.io/browse/MEN-6025))
+* autogenerate delta fixes
+
+  Changes:
+  - fix binary delta module version key
+  - improve error handling
+  - get generate delta job timeout from the right place from configuration
+  - fix generate delta job status URL
+  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+* change error handling in configuration related endpoints
+
+  Changes:
+  - when there is no per tenant configuration, return empty object instead
+  of 404
+  - on attempt of changing binary delta configuration:
+   - when the configuration does not exists at all - return 404
+   - when the delta generation is disabled for the given tenant return 409
+* reindex device deployments when resetting device deployments history
+  ([MEN-6253](https://tracker.mender.io/browse/MEN-6253))
+* get full configuration in the deployments/next handler
+  ([MEN-6299](https://tracker.mender.io/browse/MEN-6299))
+
+##### Features
+
+* Include HTTP method in link objects
+* Add support for Azure Blob Storage
+
+  The storage configurations have been refactored to gather storage settings
+  that are not specific to vendors; the old configuration settings are
+  aliases to the new settings.
+  ([MEN-5871](https://tracker.mender.io/browse/MEN-5871))
+* endpoints for getting and setting per tenant configuration
+  ([MEN-5804](https://tracker.mender.io/browse/MEN-5804))
+* add possibility to enable autogeneration of delta artifacts for a given deploymnet
+  ([MEN-5844](https://tracker.mender.io/browse/MEN-5844))
+* introduce timeout limits for xdelta job generation
+  ([MEN-5804](https://tracker.mender.io/browse/MEN-5804))
+* Allow arbitrary storage backend per tenant
+  ([MEN-5942](https://tracker.mender.io/browse/MEN-5942))
+* handle strict schema for binary delta arguments
+  ([MEN-5940](https://tracker.mender.io/browse/MEN-5940))
+* handle auto-generation of delta artifacts
+  ([MEN-5805](https://tracker.mender.io/browse/MEN-5805))
+* internal endpoint for updating generate delta jobs
+  ([MEN-5850](https://tracker.mender.io/browse/MEN-5850))
+* change image (aka artifact) schema
+
+  With the new schema it will be possible to query by artifact provides.
+  ([MEN-6107](https://tracker.mender.io/browse/MEN-6107))
+* use scratch as base image, run as non-root user
+  ([MEN-5658](https://tracker.mender.io/browse/MEN-5658))
+* endpoint for returning the deployments history for a given device
+  ([MEN-6045](https://tracker.mender.io/browse/MEN-6045))
+* adjust query to new image/artifact schema
+  ([MEN-6107](https://tracker.mender.io/browse/MEN-6107))
+* add newly uploaded artifacts to existing deployments
+
+  If newly uploaded artifact has same name as artifacts in some of the
+  pending deployments, the artifact will become part of these deployments.
+  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+* add newly uploaded artifacts to existing deployments
+
+  If newly uploaded artifact has same name as artifacts in some of the
+  pending deployments, the artifact will become part of these deployments.
+  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+* new deployment's option to force the installation of the Artifacts
+  ([MEN-6131](https://tracker.mender.io/browse/MEN-6131))
+* end-point to the delete device deployments history
+  ([MEN-6134](https://tracker.mender.io/browse/MEN-6134))
+* ignore deleted device deployments in all end-points
+  ([MEN-6135](https://tracker.mender.io/browse/MEN-6135))
+* expose the image object in the device deployment API endpoints
+  ([MEN-6138](https://tracker.mender.io/browse/MEN-6138))
+* expose the image object in the device deployment API endpoints
+  ([MEN-6138](https://tracker.mender.io/browse/MEN-6138))
+* internal end-point to retrieve the device deployments history
+  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+* trigger a device reindex in reporting when a device deployment finishes
+  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+* add support to filter device deployments by status `finished`
+  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+* internal end point to get device deployments by ID
+  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+* trigger the deployment reindex workflow on deployment completion
+  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+* add special representation of artifact provides to artifact object
+* add special representation of artifact provides to artifact object
+* decide if the artifact has already been installed based on provides
+  ([MEN-6096](https://tracker.mender.io/browse/MEN-6096))
+* chagnge in checking if artifact has already been installed
+
+  if the device provides only artifact name and the device type
+  fall back to simple check - compare artifact name from the request with
+  artifact name from the deployment
+  ([MEN-6096](https://tracker.mender.io/browse/MEN-6096))
+* Add support for zstd compressed artifacts.
+* CLI command to reindex to the reporting service all the device deployments
+  ([MEN-6252](https://tracker.mender.io/browse/MEN-6252))
+
+##### Other
+
+* chore(go mod): Bump required Golang version to 1.18
+* feat(workflows client): new methods introduced
+
+  Methods for starting workflow for generating delta artifact
+  and for checking workflow status.
+  ([MEN-5803](https://tracker.mender.io/browse/MEN-5803))
+* docs: strict schema for binary delta configuration
+  ([MEN-5940](https://tracker.mender.io/browse/MEN-5940))
+* fix(delta generation): select rootfs-image as a base image for delta
+
+  It is possible to have more than one image with the same rootfs version
+  and rootfs checksum. In fact this is a normal situation when you will
+  generate delta image.
+  To be able to autogenerate delta for the device, the deployments service
+  has to find artifact which is installed on the device, and this artifact
+  has to be of "rootfs-image" type.
+* fix(delta generation): fix endpoint for updating delta generation job status
+* feat(delta configuration): introduce default configuration
+* Upgrade github.com/Azure/azure-sdk-for-go/sdk/storage/azblob to v0.6.1
+  ([MEN-6187](https://tracker.mender.io/browse/MEN-6187))
+* fix(workflows client): do not fail when identity is not present in the context
+  ([MEN-6252](https://tracker.mender.io/browse/MEN-6252))
+
+#### deviceauth (3.4.0)
+
+New changes in deviceauth since 3.3.0:
+
+##### Bug Fixes
+
+* data inconsistency
+  ([ME-41](https://tracker.mender.io/browse/ME-41))
+* trigger reporting reindex on device decommissioning
+  ([MEN-6211](https://tracker.mender.io/browse/MEN-6211))
+
+##### Features
+
+* CLI command to reindex to the reporting service all the devices
+  ([MEN-6183](https://tracker.mender.io/browse/MEN-6183))
+
+#### deviceauth-enterprise (3.4.0)
+
+New changes in deviceauth-enterprise since 3.3.0:
+
+##### Bug Fixes
+
+* data inconsistency
+  ([ME-41](https://tracker.mender.io/browse/ME-41))
+* trigger reporting reindex on device decommissioning
+  ([MEN-6211](https://tracker.mender.io/browse/MEN-6211))
+
+##### Features
+
+* License check: accepted device count and signature and endpoint
+  ([MEN-5896](https://tracker.mender.io/browse/MEN-5896), [MEN-5897](https://tracker.mender.io/browse/MEN-5897))
+* CLI command to reindex to the reporting service all the devices
+  ([MEN-6183](https://tracker.mender.io/browse/MEN-6183))
+
+#### deviceconfig (1.3.0)
+
+New changes in deviceconfig since 1.2.2:
+
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5504](https://tracker.mender.io/browse/MEN-5504))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.4 to 1.7.7.
+      - [Release notes](https://github.com/gin-gonic/gin/releases)
+      - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/gin-gonic/gin/compare/v1.7.4...v1.7.7)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gin-gonic/gin
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### deviceconnect (1.4.0)
+
+New changes in deviceconnect since 1.3.3:
+
+* upgrade mendersoftware/go-lib-micro to the latest
+  ([MEN-5505](https://tracker.mender.io/browse/MEN-5505))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.4 to 1.8.3.
+      - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
+      - [Commits](https://github.com/mongodb/mongo-go-driver/compare/v1.7.4...v1.8.3)
+
+      ```
+      updated-dependencies:
+      - dependency-name: go.mongodb.org/mongo-driver
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+  * Bumps [github.com/gorilla/websocket](https://github.com/gorilla/websocket) from 1.4.2 to 1.5.0.
+      - [Release notes](https://github.com/gorilla/websocket/releases)
+      - [Commits](https://github.com/gorilla/websocket/compare/v1.4.2...v1.5.0)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/gorilla/websocket
+        dependency-type: direct:production
+        update-type: version-update:semver-minor
+      ```
+
+#### generate-delta-worker (1.0.0)
+
+##### Bug Fixes
+
+* missing publish stage after move to custom docker build
+* ci: correct image reference.
+* align exec name
+* remove default output path setting
+
+##### Features
+
+* cmd implementation
+  ([MEN-5801](https://tracker.mender.io/browse/MEN-5801))
+* call status endpoint.
+  ([MEN-6113](https://tracker.mender.io/browse/MEN-6113))
+
+#### gui (3.5.0)
+
+New changes in gui since 3.4.0:
+
+##### Bug Fixes
+
+* fixed an issue that caused retrying deployments to not work for non-enterprise users
+* fixed an issue that prevented config of users using SSO to log in
+* aligned deployments manager role in ui with backend
+  ([MEN-5949](https://tracker.mender.io/browse/MEN-5949))
+* allowed "Stay logged in" setting to work for sso users as well
+* prevented navigation history from being overwritten when using the dashboard
+  ([ME-18](https://tracker.mender.io/browse/ME-18))
+* removed assumption devices could always show a mac address in their details
+* aligned device auditlog links with current param naming to allow navigating to the auditlog
+* reverted react-idle-timer to known working version to try fix unexpected log out issue
+  ([MEN-6061](https://tracker.mender.io/browse/MEN-6061))
+* fixed an issue that prevented offline devices on the dashboard from using any custom offline time limits
+* fixed device offline notifications in device monitoring section
+* moved state toggling calls to updater functions to stop stale state from preventing UI updates
+  ([ME-26](https://tracker.mender.io/browse/ME-26))
+* fixed an issue that would cause the UI to crash when showing device details of a device that's only partially initialized
+* fixed an issue that occurred when accessing authenticated devices without inventory
+* fixed an issue that would prevent the device issue widget from being initialized
+* made session expiration prevention part of the login flow to prevent it from getting removed by a failed 2fa login
+  ([MEN-6061](https://tracker.mender.io/browse/MEN-6061))
+* User not being able to change email with two-factor authentication
+  ([ME-46](https://tracker.mender.io/browse/ME-46))
+* fixed an issue that would crash the auditlogs page when clearing a url tracked selection
+  ([MEN-6246](https://tracker.mender.io/browse/MEN-6246))
+* fixed an issue that prevented finished deployments from settling on their deployment data
+* fixed an issue that would make the device list appear scrambled
+  ([ME-38](https://tracker.mender.io/browse/ME-38))
+
+##### Features
+
+* made device offline threshold setting configurable
+  ([MEN-5923](https://tracker.mender.io/browse/MEN-5923))
+* added possibility to add extra confirmation step on deployment creation
+  ([MEN-5283](https://tracker.mender.io/browse/MEN-5283))
+* made it possible to upload multiple files in parallel
+  ([MEN-5744](https://tracker.mender.io/browse/MEN-5744))
+* added an easy access to the JWT for api/ cli usage
+  ([MEN-5966](https://tracker.mender.io/browse/MEN-5966))
+* added support for multiple levels of device software information in device details
+  ([MEN-5875](https://tracker.mender.io/browse/MEN-5875))
+* added way to retrieve license information about on prem deployments
+  ([MEN-5899](https://tracker.mender.io/browse/MEN-5899))
+* added devices with issues widget to allow ease access to devices that require attention
+  ([MEN-5919](https://tracker.mender.io/browse/MEN-5919))
+* refactored deployments dashboard widgets to ease direct access to recent deployments
+  ([MEN-5920](https://tracker.mender.io/browse/MEN-5920))
+* prevented elements limited by RBAC permissions from showing up
+  ([ME-17](https://tracker.mender.io/browse/ME-17))
+* moved device details to tabbed layout to ease information display
+  ([MEN-6034](https://tracker.mender.io/browse/MEN-6034))
+* allowed selecting a Mender region on signup to help keep data where it supposed to reside
+  ([MEN-5948](https://tracker.mender.io/browse/MEN-5948))
+* Show a welcome message in the console.
+* added information about reporting limits + attributes in use
+  ([MEN-6088](https://tracker.mender.io/browse/MEN-6088))
+* added safeguard to prevent rbac limited users from logging in
+  ([ME-47](https://tracker.mender.io/browse/ME-47))
+* added an option to force deployment installation on deployment creation
+  ([MEN-6130](https://tracker.mender.io/browse/MEN-6130))
+* expanded artifact upload form to allow more options to be sent
+  ([MEN-6085](https://tracker.mender.io/browse/MEN-6085))
+* added configuration option for delta artifact generation
+  ([MEN-5847](https://tracker.mender.io/browse/MEN-5847))
+* enabled automatic delta deployment on deployment creation
+  ([MEN-5847](https://tracker.mender.io/browse/MEN-5847))
+* added information about device system in deployment + device details
+  ([MEN-6035](https://tracker.mender.io/browse/MEN-6035))
+* added device deployment history in device details
+  ([MEN-6051](https://tracker.mender.io/browse/MEN-6051))
+* added support for bar chart software distributions
+  ([MEN-5921](https://tracker.mender.io/browse/MEN-5921))
+
+#### integration (3.5.0)
+
+New changes in integration since 3.4.0:
+
+##### Bug Fixes
+
+* Do not double count integration in changelogs and statistics.
+
+##### Features
+
+* add qemu commercial image to the setup
+  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+* add reporting service as a default component in the docker composition
+* bump file format version to 2.3 in all docker compose files
+
+  This is because the start_period option which we're started to use
+  was added in file format 2.3.
+
+##### Other
+
+* Enable the reporting service and the related tests
+  ([MEN-5971](https://tracker.mender.io/browse/MEN-5971))
+* upgrade elasticsearch to version 7.17.7
+  ([MEN-5971](https://tracker.mender.io/browse/MEN-5971))
+* test(autogenerate delta): introduce test for autogenerate delta feature
+  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+* version bump to 2021-04-22T15-44-28Z
+* Upgrade auditlogs to 3.1.0.
+* Upgrade create-artifact-worker to 1.3.0.
+* Upgrade deployments-enterprise to 4.4.0.
+* Upgrade deployments to 4.4.0.
+* Upgrade deviceauth-enterprise to 3.4.0.
+* Upgrade deviceauth to 3.4.0.
+* Upgrade deviceconfig to 1.3.0.
+* Upgrade deviceconnect to 1.4.0.
+* Upgrade devicemonitor to 1.4.0.
+* Add generate-delta-worker 1.0.0.
+* Upgrade gui to 3.5.0.
+* Upgrade integration to 3.5.0.
+* Upgrade inventory-enterprise to 4.3.0.
+* Upgrade inventory to 4.3.0.
+* Upgrade iot-manager to 1.2.0.
+* Upgrade mender-artifact to 3.10.0.
+* Upgrade mender-cli to 1.10.0.
+* Upgrade mender-convert to 4.0.0.
+* Upgrade mender-gateway to 1.1.0.
+* Upgrade mender to 3.5.0.
+* Upgrade mtls-ambassador to 1.2.0.
+* Upgrade reporting to 1.0.0.
+* Upgrade tenantadm to 4.0.0.
+* Upgrade useradm-enterprise to 1.20.0.
+* Upgrade useradm to 1.20.0.
+* Upgrade workflows-enterprise to 2.4.0.
+* Upgrade workflows to 2.4.0.
+
+#### inventory (4.3.0)
+
+New changes in inventory since 4.2.1:
+
+##### Bug Fixes
+
+* update_ts field when searching devices and selecting attributes
+  ([ME-50](https://tracker.mender.io/browse/ME-50))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### inventory-enterprise (4.3.0)
+
+New changes in inventory-enterprise since 4.2.1:
+
+##### Bug Fixes
+
+* update_ts field when searching devices and selecting attributes
+  ([ME-50](https://tracker.mender.io/browse/ME-50))
+
+##### Dependabot bumps
+
+* Aggregated Dependabot Changelogs:
+  * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.7.0 to 1.7.1.
+      - [Release notes](https://github.com/stretchr/testify/releases)
+      - [Commits](https://github.com/stretchr/testify/compare/v1.7.0...v1.7.1)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/stretchr/testify
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+  * Bumps [github.com/go-redis/redis/v8](https://github.com/go-redis/redis) from 8.11.4 to 8.11.5.
+      - [Release notes](https://github.com/go-redis/redis/releases)
+      - [Changelog](https://github.com/go-redis/redis/blob/master/CHANGELOG.md)
+      - [Commits](https://github.com/go-redis/redis/compare/v8.11.4...v8.11.5)
+
+      ```
+      updated-dependencies:
+      - dependency-name: github.com/go-redis/redis/v8
+        dependency-type: direct:production
+        update-type: version-update:semver-patch
+      ```
+
+#### iot-manager (1.2.0)
+
+New changes in iot-manager since 1.1.0:
+
+##### Bug Fixes
+
+* wait for principal detachment to propagate when deleting device
+
+  DetachThingPrincipal operation is asynchronous.
+  According to the docs, it might take several seconds for the detachment to propagate.
+  With this change we will wait up to 10 seconds for the detachment to propagate,
+  and if some principals are still not detached from the Thing, we'll retrun an error.
+  ([MEN-6001](https://tracker.mender.io/browse/MEN-6001))
+* wrong capitalization for `Type`
+  ([QA-481](https://tracker.mender.io/browse/QA-481))
+
+#### mtls-ambassador (1.2.0)
+
+New changes in mtls-ambassador since 1.1.0:
+
+##### Features
+
+* switch to `scratch` and run as non-root user
+
+##### Other
+
+* bump github.com/mendersoftware/go-lib-micro to v0.0.0-20221025103319-e1f941fb3145
+  ([QA-524](https://tracker.mender.io/browse/QA-524))
+
+#### tenantadm (4.0.0)
+
+New changes in tenantadm since 3.5.0:
+
+##### Features
+
+* disable addons by default when creating tenants
+  ([MEN-6292](https://tracker.mender.io/browse/MEN-6292))
+
+##### Other
+
+* remove the create-user CLI command as it was designed to act on the tenantadm service only, without propagating the data to useradm; use the `useradm-enterprise create-user` CLI command to create new users instead.
+  ([MEN-5924](https://tracker.mender.io/browse/MEN-5924))
+
+#### useradm (1.20.0)
+
+New changes in useradm since 1.19.0:
+
+##### Bug Fixes
+
+* Protect user updates from concurrent updates
+  ([MEN-6003](https://tracker.mender.io/browse/MEN-6003))
+* Updating existing users is blocked by ETag check
+  ([MEN-6087](https://tracker.mender.io/browse/MEN-6087))
+* Make user updates default to skip ETag checks (wildcard match)
+  ([MEN-6106](https://tracker.mender.io/browse/MEN-6106))
+
+##### Features
+
+* do not check the JWT issuer.
+  ([MEN-5969](https://tracker.mender.io/browse/MEN-5969))
+
+#### useradm-enterprise (1.20.0)
+
+New changes in useradm-enterprise since 1.19.0:
+
+##### Bug Fixes
+
+* Proper parsing of XFF header with configurable depth strategy
+  ([MEN-5980](https://tracker.mender.io/browse/MEN-5980))
+* Protect user updates from concurrent updates
+  ([MEN-6003](https://tracker.mender.io/browse/MEN-6003))
+* Changing email makes the user email unverified
+  ([MEN-5974](https://tracker.mender.io/browse/MEN-5974))
+* user should not be able to modify all his data
+  ([MEN-6012](https://tracker.mender.io/browse/MEN-6012))
+* Remove ability to modify internal parameters of the user object
+  ([MEN-6037](https://tracker.mender.io/browse/MEN-6037))
+* BaseURL illegal settings can lead to service exiting with 0 due to wrapping of nil errors.
+  ([ME-39](https://tracker.mender.io/browse/ME-39))
+* Updating existing users is blocked by ETag check
+  ([MEN-6087](https://tracker.mender.io/browse/MEN-6087))
+* apply plan based restriction to permission_sets endpoints
+  ([MEN-6093](https://tracker.mender.io/browse/MEN-6093))
+* Make user updates default to skip ETag checks (wildcard match)
+  ([MEN-6106](https://tracker.mender.io/browse/MEN-6106))
+
+##### Features
+
+* do not check the JWT issuer.
+  ([MEN-5969](https://tracker.mender.io/browse/MEN-5969))
+* added possibility to login via short lived magic link
+  ([MEN-5948](https://tracker.mender.io/browse/MEN-5948))
+
+#### workflows (2.4.0)
+
+New changes in workflows since 2.3.0:
+
+##### Bug Fixes
+
+* Remove hard-coded default read/write concern
+  ([MEN-6029](https://tracker.mender.io/browse/MEN-6029))
+* call internal delete device api endpoint
+  ([ME-41](https://tracker.mender.io/browse/ME-41))
+
+##### Features
+
+* reindex_reporting_deployment workflow to index device deployments
+  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+
+##### Other
+
+* Workflows version increment for updated workflows definitions
+
+#### workflows-enterprise (2.4.0)
+
+New changes in workflows-enterprise since 2.3.0:
+
+##### Bug Fixes
+
+* Remove hard-coded default read/write concern
+  ([MEN-6029](https://tracker.mender.io/browse/MEN-6029))
+* call internal delete device api endpoint
+  ([ME-41](https://tracker.mender.io/browse/ME-41))
+
+##### Features
+
+* reindex_reporting_deployment workflow to index device deployments
+  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+
+##### Other
+
+* Workflows version increment for updated workflows definitions
+
+
 ## Mender 3.4.0
 
 _Released 09.25.2022_
