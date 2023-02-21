@@ -55,7 +55,7 @@ A total of 10 lines added, 7 removed (delta 3)
 New changes in mender-configure-module since 1.0.2:
 
 * set default permissions to 0600 on device-config.json
-  ([MEN-5357](https://tracker.mender.io/browse/MEN-5357))
+  ([MEN-5357](https://northerntech.atlassian.net/browse/MEN-5357))
 
 ## mender-configure-module 1.0.2
 
@@ -95,7 +95,7 @@ New changes in mender-configure-module since 1.0.1:
 
 * Mute the `curl` request progress bar in the
   `mender-inventory-mender-configure` script.
-  ([MEN-4949](https://tracker.mender.io/browse/MEN-4949))
+  ([MEN-4949](https://northerntech.atlassian.net/browse/MEN-4949))
 
 
 ## mender-configure-module 1.0.1
@@ -136,7 +136,7 @@ A total of 39 lines added, 10 removed (delta 29)
 New changes in mender-configure-module since 1.0.0:
 
 * include the current JWT token in the reported config checksum
-  ([MEN-4769](https://tracker.mender.io/browse/MEN-4769))
+  ([MEN-4769](https://northerntech.atlassian.net/browse/MEN-4769))
 
 ## mender-configure-module 1.0.0
 

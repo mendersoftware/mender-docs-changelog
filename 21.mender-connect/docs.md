@@ -144,7 +144,7 @@ New changes in mender-connect since 1.2.0:
   Mender 3.2 onwards is a local proxy which uses `mender.conf` client
   settings to securely authenticate with the backend server, making the
   client settings in `mender-connect.conf` redundant.
-  ([MEN-5203](https://tracker.mender.io/browse/MEN-5203))
+  ([MEN-5203](https://northerntech.atlassian.net/browse/MEN-5203))
 * Several robustness fixes around re-connection
 
   * Trigger re-connection when either token or server URL obtained from
@@ -154,7 +154,7 @@ New changes in mender-connect since 1.2.0:
   * Abort connecting after 10 retries. Previously it would reconnect
     forever with the same server URL, which will result in a deadlock if
     the url (or the token) changed while re-connecting.
-  ([MEN-5290](https://tracker.mender.io/browse/MEN-5290))
+  ([MEN-5290](https://northerntech.atlassian.net/browse/MEN-5290))
 
 
 ## mender-connect 1.2.1
@@ -205,7 +205,7 @@ New changes in mender-connect since 1.2.0:
   * Abort connecting after 10 retries. Previously it would reconnect
     forever with the same server URL, which will result in a deadlock if
     the url (or the token) changed while re-connecting.
-  ([MEN-5290](https://tracker.mender.io/browse/MEN-5290))
+  ([MEN-5290](https://northerntech.atlassian.net/browse/MEN-5290))
 * fix: Global spawned shells count is not always decremented.
 
 
@@ -259,10 +259,10 @@ New changes in mender-connect since 1.1.0:
   starting a 'login' shell with the '--login' option. This can be controlled
   through the new configuration field 'ShellArguments', which you can set to
   whatever arguments you want passed to the shell on startup.
-  ([MEN-4505](https://tracker.mender.io/browse/MEN-4505))
+  ([MEN-4505](https://northerntech.atlassian.net/browse/MEN-4505))
 * Handle the re-connection request even if there is
   no new JWT token from the Mender client
-  ([MEN-4694](https://tracker.mender.io/browse/MEN-4694))
+  ([MEN-4694](https://northerntech.atlassian.net/browse/MEN-4694))
 
 ## mender-connect 1.1.1
 
@@ -307,10 +307,10 @@ New changes in mender-connect since 1.1.0:
   starting a 'login' shell with the '--login' option. This can be controlled
   through the new configuration field 'ShellArguments', which you can set to
   whatever arguments you want passed to the shell on startup.
-  ([MEN-4505](https://tracker.mender.io/browse/MEN-4505))
+  ([MEN-4505](https://northerntech.atlassian.net/browse/MEN-4505))
 * Handle the re-connection request even if there is
   no new JWT token from the Mender client
-  ([MEN-4694](https://tracker.mender.io/browse/MEN-4694))
+  ([MEN-4694](https://northerntech.atlassian.net/browse/MEN-4694))
 
 ## mender-connect 1.1.0
 
@@ -325,7 +325,7 @@ New changes in mender-connect since 1.0.0:
 * Add remote triggers for Mender client's check-update and send-inventory
 * [examples/mender-connect.conf] Remove unnecessary ServerURL
 * Add handler for File Transfer protocol.
-([MEN-4322](https://tracker.mender.io/browse/MEN-4322))
+([MEN-4322](https://northerntech.atlassian.net/browse/MEN-4322))
 * filetransfer: Add handler for fetching file and file info
 * New feature: TCP and UDP port-forwarding
 * stat(2) file path and verify conditions before starting upload
@@ -377,7 +377,7 @@ New changes in mender-connect since 1.0.2:
   * Abort connecting after 10 retries. Previously it would reconnect
     forever with the same server URL, which will result in a deadlock if
     the url (or the token) changed while re-connecting.
-  ([MEN-5290](https://tracker.mender.io/browse/MEN-5290))
+  ([MEN-5290](https://northerntech.atlassian.net/browse/MEN-5290))
 
 
 ## mender-connect 1.0.2
@@ -423,10 +423,10 @@ New changes in mender-connect since 1.0.1:
   starting a 'login' shell with the '--login' option. This can be controlled
   through the new configuration field 'ShellArguments', which you can set to
   whatever arguments you want passed to the shell on startup.
-  ([MEN-4505](https://tracker.mender.io/browse/MEN-4505))
+  ([MEN-4505](https://northerntech.atlassian.net/browse/MEN-4505))
 * Handle the re-connection request even if there is
   no new JWT token from the Mender client
-  ([MEN-4694](https://tracker.mender.io/browse/MEN-4694))
+  ([MEN-4694](https://northerntech.atlassian.net/browse/MEN-4694))
 
 ## mender-connect 1.0.1
 

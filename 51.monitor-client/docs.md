@@ -21,12 +21,12 @@ New changes in monitor-client since 1.2.0:
 ##### Bug Fixes
 
 * `mender-monitord` detects not valid patterns when calling any log related checks. `mender-monitorctl` prevents creation of checks that lead to errors in pattern matching.
-  ([MEN-5748](https://tracker.mender.io/browse/MEN-5748))
+  ([MEN-5748](https://northerntech.atlassian.net/browse/MEN-5748))
 
 ##### Other
 
 * Licenses are now available in the package, instead of only
-  online. ([MEN-5517](https://tracker.mender.io/browse/MEN-5517))
+  online. ([MEN-5517](https://northerntech.atlassian.net/browse/MEN-5517))
 
 
 ## monitor-client 1.2.0
@@ -68,16 +68,16 @@ New changes in monitor-client since 1.1.0:
 * Use and honour ALERT_OFFLINE_STORE_MAX_COUNT setting.
 * Increasing read timeout in the pattern expiration worker.
 * Clean the variables each time the main loop continues. This was a bug, which manifested itself only when a certain order of sourced files came to be. As we use find for gathering of the files, special cirtumstances must occur for it to be triggered.
-  ([MEN-5508](https://tracker.mender.io/browse/MEN-5508))
+  ([MEN-5508](https://northerntech.atlassian.net/browse/MEN-5508))
 * Include log pattern and log path in the alert emails.
-  ([MEN-5600](https://tracker.mender.io/browse/MEN-5600))
+  ([MEN-5600](https://northerntech.atlassian.net/browse/MEN-5600))
 
 ##### Features
 
 * Make the log subssytem general enough to be a base for any user-defined subsystem.
-  ([MEN-5508](https://tracker.mender.io/browse/MEN-5508))
+  ([MEN-5508](https://northerntech.atlassian.net/browse/MEN-5508))
 * Use the core log subsystem to create a pseudo subsystem: dockerevents.
-  ([MEN-5508](https://tracker.mender.io/browse/MEN-5508))
+  ([MEN-5508](https://northerntech.atlassian.net/browse/MEN-5508))
 
 ##### Other
 
@@ -104,9 +104,9 @@ New changes in monitor-client since 1.1.0:
   only one alert will be sent. Note: the behaviour can be further
   configured with LOG_PATTERN_EXPIRATION setting, to trigger
   OK/CRITICAL chain as needed.
-  ([MEN-5458](https://tracker.mender.io/browse/MEN-5458))
+  ([MEN-5458](https://northerntech.atlassian.net/browse/MEN-5458))
 * dockerevents is moved away from examples directory, it is now based on the log subsystem.
-  ([MEN-5508](https://tracker.mender.io/browse/MEN-5508))
+  ([MEN-5508](https://northerntech.atlassian.net/browse/MEN-5508))
 
 
 ## monitor-client 1.1.0
@@ -122,22 +122,22 @@ New changes in monitor-client since 1.0.0:
 * monitorctl: warn on non-existent command.
 * Clean excessive warning from the periodical alert store check.
 * Fix failure when sending many stored alerts. Previously, an attempt to send large local alert store could trigger `126 Argument list too long` error and  no alerts would be sent.
-  ([MEN-5133](https://tracker.mender.io/browse/MEN-5133))
+  ([MEN-5133](https://northerntech.atlassian.net/browse/MEN-5133))
 * Correctly escape especial characters when saving alerts in the local store.
-  ([MEN-5133](https://tracker.mender.io/browse/MEN-5133))
+  ([MEN-5133](https://northerntech.atlassian.net/browse/MEN-5133))
 * Move local store unlock calls away from the trap, which may lead to races
 * monitorctl: report error and exit when enabling/disabling non available checks
-  ([MEN-5190](https://tracker.mender.io/browse/MEN-5190))
+  ([MEN-5190](https://northerntech.atlassian.net/browse/MEN-5190))
 * monitorctl: Return the exit code properly and no output on successful execution. Previously monitorctl would always exit with code 0 even on errors
-  ([MEN-5172](https://tracker.mender.io/browse/MEN-5172))
+  ([MEN-5172](https://northerntech.atlassian.net/browse/MEN-5172))
 * monitorctl: Fix the issue with enable, disable, delete and create commands not returning the exit code correctly, which in turn leads to improper exit code of monitorctl tool
-  ([MEN-5172](https://tracker.mender.io/browse/MEN-5172))
+  ([MEN-5172](https://northerntech.atlassian.net/browse/MEN-5172))
 * Store configuration data on enabled checks.
-  ([MEN-5185](https://tracker.mender.io/browse/MEN-5185))
+  ([MEN-5185](https://northerntech.atlassian.net/browse/MEN-5185))
 * Remove device_online check, treating all errors to reach the
   Mender server as "device is offline", saving the alerts in the store for
   later re-send.
-  ([MEN-5216](https://tracker.mender.io/browse/MEN-5216))
+  ([MEN-5216](https://northerntech.atlassian.net/browse/MEN-5216))
 * Add a variable for permanent in-memory key-values for subsystems
 
   This is then used in the subsystems like so:
@@ -156,11 +156,11 @@ New changes in monitor-client since 1.0.0:
   container subsystem for monitoring container actions as given by docker events,
   and a subsystem for monitoring disk usage of an optional disk, and warn on a
   given treshold, if the disk starts filling up.
-  ([MEN-5137](https://tracker.mender.io/browse/MEN-5137))
+  ([MEN-5137](https://northerntech.atlassian.net/browse/MEN-5137))
 * Remove records older than given time from alerts store.
-  ([MEN-5336](https://tracker.mender.io/browse/MEN-5336))
+  ([MEN-5336](https://northerntech.atlassian.net/browse/MEN-5336))
 * Increase the log lines sent within alerts
-  ([MEN-5361](https://tracker.mender.io/browse/MEN-5361))
+  ([MEN-5361](https://northerntech.atlassian.net/browse/MEN-5361))
 * Handle exiting commands in the streamline logs case.
 
 
@@ -177,16 +177,16 @@ New changes in monitor-client since 1.0.0:
 * monitorctl: warn on non-existent command.
 * Clean excessive warning from the periodical alert store check.
 * Fix failure when sending many stored alerts. Previously, an attempt to send large local alert store could trigger `126 Argument list too long` error and  no alerts would be sent.
-  ([MEN-5133](https://tracker.mender.io/browse/MEN-5133))
+  ([MEN-5133](https://northerntech.atlassian.net/browse/MEN-5133))
 * Correctly escape especial characters when saving alerts in the local store.
-  ([MEN-5133](https://tracker.mender.io/browse/MEN-5133))
+  ([MEN-5133](https://northerntech.atlassian.net/browse/MEN-5133))
 * Move local store unlock calls away from the trap, which may lead to races
 * monitorctl: report error and exit when enabling/disabling non available checks
-  ([MEN-5190](https://tracker.mender.io/browse/MEN-5190))
+  ([MEN-5190](https://northerntech.atlassian.net/browse/MEN-5190))
 * monitorctl: Return the exit code properly and no output on successful execution. Previously monitorctl would always exit with code 0 even on errors
-  ([MEN-5172](https://tracker.mender.io/browse/MEN-5172))
+  ([MEN-5172](https://northerntech.atlassian.net/browse/MEN-5172))
 * monitorctl: Fix the issue with enable, disable, delete and create commands not returning the exit code correctly, which in turn leads to improper exit code of monitorctl tool
-  ([MEN-5172](https://tracker.mender.io/browse/MEN-5172))
+  ([MEN-5172](https://northerntech.atlassian.net/browse/MEN-5172))
 
 
 ## monitor-client 1.0.0

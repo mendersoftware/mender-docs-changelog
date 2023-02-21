@@ -71,12 +71,12 @@ New changes in auditlogs since 3.0.2:
 ##### Bug Fixes
 
 * update API specs and validation to accept all object types as filters
-  ([MEN-6247](https://tracker.mender.io/browse/MEN-6247))
+  ([MEN-6247](https://northerntech.atlassian.net/browse/MEN-6247))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5506](https://tracker.mender.io/browse/MEN-5506))
+  ([MEN-5506](https://northerntech.atlassian.net/browse/MEN-5506))
 
 ##### Dependabot bumps
 
@@ -120,7 +120,7 @@ New changes in create-artifact-worker since 1.2.0:
 ##### Features
 
 * accept more single-file-artifact-gen arguments
-  ([MEN-6046](https://tracker.mender.io/browse/MEN-6046))
+  ([MEN-6046](https://northerntech.atlassian.net/browse/MEN-6046))
 
 ##### Other
 
@@ -133,13 +133,13 @@ New changes in deployments since 4.3.0:
 ##### Bug Fixes
 
 * Enforce setting validation constraints for internal PUT settings endpoint
-  ([MEN-5908](https://tracker.mender.io/browse/MEN-5908))
+  ([MEN-5908](https://northerntech.atlassian.net/browse/MEN-5908))
 * use correct artifact size for multipart uploads
 * Internal storage API not following PUT semantics
 * Content-Disposition of artifacts set to artifact name instead of ID
-  ([MEN-6025](https://tracker.mender.io/browse/MEN-6025))
+  ([MEN-6025](https://northerntech.atlassian.net/browse/MEN-6025))
 * reindex device deployments when resetting device deployments history
-  ([MEN-6253](https://tracker.mender.io/browse/MEN-6253))
+  ([MEN-6253](https://northerntech.atlassian.net/browse/MEN-6253))
 
 ##### Features
 
@@ -149,52 +149,52 @@ New changes in deployments since 4.3.0:
   The storage configurations have been refactored to gather storage settings
   that are not specific to vendors; the old configuration settings are
   aliases to the new settings.
-  ([MEN-5871](https://tracker.mender.io/browse/MEN-5871))
+  ([MEN-5871](https://northerntech.atlassian.net/browse/MEN-5871))
 * Allow arbitrary storage backend per tenant
-  ([MEN-5942](https://tracker.mender.io/browse/MEN-5942))
+  ([MEN-5942](https://northerntech.atlassian.net/browse/MEN-5942))
 * change image (aka artifact) schema
 
   With the new schema it will be possible to query by artifact provides.
-  ([MEN-6107](https://tracker.mender.io/browse/MEN-6107))
+  ([MEN-6107](https://northerntech.atlassian.net/browse/MEN-6107))
 * use scratch as base image, run as non-root user
-  ([MEN-5658](https://tracker.mender.io/browse/MEN-5658))
+  ([MEN-5658](https://northerntech.atlassian.net/browse/MEN-5658))
 * endpoint for returning the deployments history for a given device
-  ([MEN-6045](https://tracker.mender.io/browse/MEN-6045))
+  ([MEN-6045](https://northerntech.atlassian.net/browse/MEN-6045))
 * add newly uploaded artifacts to existing deployments
 
   If newly uploaded artifact has same name as artifacts in some of the
   pending deployments, the artifact will become part of these deployments.
-  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+  ([MEN-5806](https://northerntech.atlassian.net/browse/MEN-5806))
 * new deployment's option to force the installation of the Artifacts
-  ([MEN-6131](https://tracker.mender.io/browse/MEN-6131))
+  ([MEN-6131](https://northerntech.atlassian.net/browse/MEN-6131))
 * end-point to the delete device deployments history
-  ([MEN-6134](https://tracker.mender.io/browse/MEN-6134))
+  ([MEN-6134](https://northerntech.atlassian.net/browse/MEN-6134))
 * ignore deleted device deployments in all end-points
-  ([MEN-6135](https://tracker.mender.io/browse/MEN-6135))
+  ([MEN-6135](https://northerntech.atlassian.net/browse/MEN-6135))
 * expose the image object in the device deployment API endpoints
-  ([MEN-6138](https://tracker.mender.io/browse/MEN-6138))
+  ([MEN-6138](https://northerntech.atlassian.net/browse/MEN-6138))
 * internal end-point to retrieve the device deployments history
-  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+  ([MEN-5911](https://northerntech.atlassian.net/browse/MEN-5911))
 * trigger a device reindex in reporting when a device deployment finishes
-  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+  ([MEN-5911](https://northerntech.atlassian.net/browse/MEN-5911))
 * add support to filter device deployments by status `finished`
-  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+  ([MEN-5911](https://northerntech.atlassian.net/browse/MEN-5911))
 * internal end point to get device deployments by ID
-  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+  ([MEN-5930](https://northerntech.atlassian.net/browse/MEN-5930))
 * trigger the deployment reindex workflow on deployment completion
-  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+  ([MEN-5930](https://northerntech.atlassian.net/browse/MEN-5930))
 * add special representation of artifact provides to artifact object
 * Add support for zstd compressed artifacts.
 * CLI command to reindex to the reporting service all the device deployments
-  ([MEN-6252](https://tracker.mender.io/browse/MEN-6252))
+  ([MEN-6252](https://northerntech.atlassian.net/browse/MEN-6252))
 
 ##### Other
 
 * chore(go mod): Bump required Golang version to 1.18
 * Upgrade github.com/Azure/azure-sdk-for-go/sdk/storage/azblob to v0.6.1
-  ([MEN-6187](https://tracker.mender.io/browse/MEN-6187))
+  ([MEN-6187](https://northerntech.atlassian.net/browse/MEN-6187))
 * fix(workflows client): do not fail when identity is not present in the context
-  ([MEN-6252](https://tracker.mender.io/browse/MEN-6252))
+  ([MEN-6252](https://northerntech.atlassian.net/browse/MEN-6252))
 
 #### deployments-enterprise (4.4.0)
 
@@ -203,11 +203,11 @@ New changes in deployments-enterprise since 4.3.0:
 ##### Bug Fixes
 
 * Enforce setting validation constraints for internal PUT settings endpoint
-  ([MEN-5908](https://tracker.mender.io/browse/MEN-5908))
+  ([MEN-5908](https://northerntech.atlassian.net/browse/MEN-5908))
 * use correct artifact size for multipart uploads
 * Internal storage API not following PUT semantics
 * Content-Disposition of artifacts set to artifact name instead of ID
-  ([MEN-6025](https://tracker.mender.io/browse/MEN-6025))
+  ([MEN-6025](https://northerntech.atlassian.net/browse/MEN-6025))
 * autogenerate delta fixes
 
   Changes:
@@ -215,7 +215,7 @@ New changes in deployments-enterprise since 4.3.0:
   - improve error handling
   - get generate delta job timeout from the right place from configuration
   - fix generate delta job status URL
-  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+  ([MEN-5806](https://northerntech.atlassian.net/browse/MEN-5806))
 * change error handling in configuration related endpoints
 
   Changes:
@@ -225,9 +225,9 @@ New changes in deployments-enterprise since 4.3.0:
    - when the configuration does not exists at all - return 404
    - when the delta generation is disabled for the given tenant return 409
 * reindex device deployments when resetting device deployments history
-  ([MEN-6253](https://tracker.mender.io/browse/MEN-6253))
+  ([MEN-6253](https://northerntech.atlassian.net/browse/MEN-6253))
 * get full configuration in the deployments/next handler
-  ([MEN-6299](https://tracker.mender.io/browse/MEN-6299))
+  ([MEN-6299](https://northerntech.atlassian.net/browse/MEN-6299))
 
 ##### Features
 
@@ -237,74 +237,74 @@ New changes in deployments-enterprise since 4.3.0:
   The storage configurations have been refactored to gather storage settings
   that are not specific to vendors; the old configuration settings are
   aliases to the new settings.
-  ([MEN-5871](https://tracker.mender.io/browse/MEN-5871))
+  ([MEN-5871](https://northerntech.atlassian.net/browse/MEN-5871))
 * endpoints for getting and setting per tenant configuration
-  ([MEN-5804](https://tracker.mender.io/browse/MEN-5804))
+  ([MEN-5804](https://northerntech.atlassian.net/browse/MEN-5804))
 * add possibility to enable autogeneration of delta artifacts for a given deploymnet
-  ([MEN-5844](https://tracker.mender.io/browse/MEN-5844))
+  ([MEN-5844](https://northerntech.atlassian.net/browse/MEN-5844))
 * introduce timeout limits for xdelta job generation
-  ([MEN-5804](https://tracker.mender.io/browse/MEN-5804))
+  ([MEN-5804](https://northerntech.atlassian.net/browse/MEN-5804))
 * Allow arbitrary storage backend per tenant
-  ([MEN-5942](https://tracker.mender.io/browse/MEN-5942))
+  ([MEN-5942](https://northerntech.atlassian.net/browse/MEN-5942))
 * handle strict schema for binary delta arguments
-  ([MEN-5940](https://tracker.mender.io/browse/MEN-5940))
+  ([MEN-5940](https://northerntech.atlassian.net/browse/MEN-5940))
 * handle auto-generation of delta artifacts
-  ([MEN-5805](https://tracker.mender.io/browse/MEN-5805))
+  ([MEN-5805](https://northerntech.atlassian.net/browse/MEN-5805))
 * internal endpoint for updating generate delta jobs
-  ([MEN-5850](https://tracker.mender.io/browse/MEN-5850))
+  ([MEN-5850](https://northerntech.atlassian.net/browse/MEN-5850))
 * change image (aka artifact) schema
 
   With the new schema it will be possible to query by artifact provides.
-  ([MEN-6107](https://tracker.mender.io/browse/MEN-6107))
+  ([MEN-6107](https://northerntech.atlassian.net/browse/MEN-6107))
 * use scratch as base image, run as non-root user
-  ([MEN-5658](https://tracker.mender.io/browse/MEN-5658))
+  ([MEN-5658](https://northerntech.atlassian.net/browse/MEN-5658))
 * endpoint for returning the deployments history for a given device
-  ([MEN-6045](https://tracker.mender.io/browse/MEN-6045))
+  ([MEN-6045](https://northerntech.atlassian.net/browse/MEN-6045))
 * adjust query to new image/artifact schema
-  ([MEN-6107](https://tracker.mender.io/browse/MEN-6107))
+  ([MEN-6107](https://northerntech.atlassian.net/browse/MEN-6107))
 * add newly uploaded artifacts to existing deployments
 
   If newly uploaded artifact has same name as artifacts in some of the
   pending deployments, the artifact will become part of these deployments.
-  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+  ([MEN-5806](https://northerntech.atlassian.net/browse/MEN-5806))
 * add newly uploaded artifacts to existing deployments
 
   If newly uploaded artifact has same name as artifacts in some of the
   pending deployments, the artifact will become part of these deployments.
-  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+  ([MEN-5806](https://northerntech.atlassian.net/browse/MEN-5806))
 * new deployment's option to force the installation of the Artifacts
-  ([MEN-6131](https://tracker.mender.io/browse/MEN-6131))
+  ([MEN-6131](https://northerntech.atlassian.net/browse/MEN-6131))
 * end-point to the delete device deployments history
-  ([MEN-6134](https://tracker.mender.io/browse/MEN-6134))
+  ([MEN-6134](https://northerntech.atlassian.net/browse/MEN-6134))
 * ignore deleted device deployments in all end-points
-  ([MEN-6135](https://tracker.mender.io/browse/MEN-6135))
+  ([MEN-6135](https://northerntech.atlassian.net/browse/MEN-6135))
 * expose the image object in the device deployment API endpoints
-  ([MEN-6138](https://tracker.mender.io/browse/MEN-6138))
+  ([MEN-6138](https://northerntech.atlassian.net/browse/MEN-6138))
 * expose the image object in the device deployment API endpoints
-  ([MEN-6138](https://tracker.mender.io/browse/MEN-6138))
+  ([MEN-6138](https://northerntech.atlassian.net/browse/MEN-6138))
 * internal end-point to retrieve the device deployments history
-  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+  ([MEN-5911](https://northerntech.atlassian.net/browse/MEN-5911))
 * trigger a device reindex in reporting when a device deployment finishes
-  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+  ([MEN-5911](https://northerntech.atlassian.net/browse/MEN-5911))
 * add support to filter device deployments by status `finished`
-  ([MEN-5911](https://tracker.mender.io/browse/MEN-5911))
+  ([MEN-5911](https://northerntech.atlassian.net/browse/MEN-5911))
 * internal end point to get device deployments by ID
-  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+  ([MEN-5930](https://northerntech.atlassian.net/browse/MEN-5930))
 * trigger the deployment reindex workflow on deployment completion
-  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+  ([MEN-5930](https://northerntech.atlassian.net/browse/MEN-5930))
 * add special representation of artifact provides to artifact object
 * add special representation of artifact provides to artifact object
 * decide if the artifact has already been installed based on provides
-  ([MEN-6096](https://tracker.mender.io/browse/MEN-6096))
+  ([MEN-6096](https://northerntech.atlassian.net/browse/MEN-6096))
 * chagnge in checking if artifact has already been installed
 
   if the device provides only artifact name and the device type
   fall back to simple check - compare artifact name from the request with
   artifact name from the deployment
-  ([MEN-6096](https://tracker.mender.io/browse/MEN-6096))
+  ([MEN-6096](https://northerntech.atlassian.net/browse/MEN-6096))
 * Add support for zstd compressed artifacts.
 * CLI command to reindex to the reporting service all the device deployments
-  ([MEN-6252](https://tracker.mender.io/browse/MEN-6252))
+  ([MEN-6252](https://northerntech.atlassian.net/browse/MEN-6252))
 
 ##### Other
 
@@ -313,9 +313,9 @@ New changes in deployments-enterprise since 4.3.0:
 
   Methods for starting workflow for generating delta artifact
   and for checking workflow status.
-  ([MEN-5803](https://tracker.mender.io/browse/MEN-5803))
+  ([MEN-5803](https://northerntech.atlassian.net/browse/MEN-5803))
 * docs: strict schema for binary delta configuration
-  ([MEN-5940](https://tracker.mender.io/browse/MEN-5940))
+  ([MEN-5940](https://northerntech.atlassian.net/browse/MEN-5940))
 * fix(delta generation): select rootfs-image as a base image for delta
 
   It is possible to have more than one image with the same rootfs version
@@ -327,9 +327,9 @@ New changes in deployments-enterprise since 4.3.0:
 * fix(delta generation): fix endpoint for updating delta generation job status
 * feat(delta configuration): introduce default configuration
 * Upgrade github.com/Azure/azure-sdk-for-go/sdk/storage/azblob to v0.6.1
-  ([MEN-6187](https://tracker.mender.io/browse/MEN-6187))
+  ([MEN-6187](https://northerntech.atlassian.net/browse/MEN-6187))
 * fix(workflows client): do not fail when identity is not present in the context
-  ([MEN-6252](https://tracker.mender.io/browse/MEN-6252))
+  ([MEN-6252](https://northerntech.atlassian.net/browse/MEN-6252))
 
 #### deviceauth (3.4.0)
 
@@ -338,14 +338,14 @@ New changes in deviceauth since 3.3.0:
 ##### Bug Fixes
 
 * data inconsistency
-  ([ME-41](https://tracker.mender.io/browse/ME-41))
+  ([ME-41](https://northerntech.atlassian.net/browse/ME-41))
 * trigger reporting reindex on device decommissioning
-  ([MEN-6211](https://tracker.mender.io/browse/MEN-6211))
+  ([MEN-6211](https://northerntech.atlassian.net/browse/MEN-6211))
 
 ##### Features
 
 * CLI command to reindex to the reporting service all the devices
-  ([MEN-6183](https://tracker.mender.io/browse/MEN-6183))
+  ([MEN-6183](https://northerntech.atlassian.net/browse/MEN-6183))
 
 #### deviceauth-enterprise (3.4.0)
 
@@ -354,23 +354,23 @@ New changes in deviceauth-enterprise since 3.3.0:
 ##### Bug Fixes
 
 * data inconsistency
-  ([ME-41](https://tracker.mender.io/browse/ME-41))
+  ([ME-41](https://northerntech.atlassian.net/browse/ME-41))
 * trigger reporting reindex on device decommissioning
-  ([MEN-6211](https://tracker.mender.io/browse/MEN-6211))
+  ([MEN-6211](https://northerntech.atlassian.net/browse/MEN-6211))
 
 ##### Features
 
 * License check: accepted device count and signature and endpoint
-  ([MEN-5896](https://tracker.mender.io/browse/MEN-5896), [MEN-5897](https://tracker.mender.io/browse/MEN-5897))
+  ([MEN-5896](https://northerntech.atlassian.net/browse/MEN-5896), [MEN-5897](https://northerntech.atlassian.net/browse/MEN-5897))
 * CLI command to reindex to the reporting service all the devices
-  ([MEN-6183](https://tracker.mender.io/browse/MEN-6183))
+  ([MEN-6183](https://northerntech.atlassian.net/browse/MEN-6183))
 
 #### deviceconfig (1.3.0)
 
 New changes in deviceconfig since 1.2.2:
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5504](https://tracker.mender.io/browse/MEN-5504))
+  ([MEN-5504](https://northerntech.atlassian.net/browse/MEN-5504))
 
 ##### Dependabot bumps
 
@@ -412,7 +412,7 @@ New changes in deviceconfig since 1.2.2:
 New changes in deviceconnect since 1.3.3:
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5505](https://tracker.mender.io/browse/MEN-5505))
+  ([MEN-5505](https://northerntech.atlassian.net/browse/MEN-5505))
 
 ##### Dependabot bumps
 
@@ -450,9 +450,9 @@ New changes in deviceconnect since 1.3.3:
 ##### Features
 
 * cmd implementation
-  ([MEN-5801](https://tracker.mender.io/browse/MEN-5801))
+  ([MEN-5801](https://northerntech.atlassian.net/browse/MEN-5801))
 * call status endpoint.
-  ([MEN-6113](https://tracker.mender.io/browse/MEN-6113))
+  ([MEN-6113](https://northerntech.atlassian.net/browse/MEN-6113))
 
 #### gui (3.5.0)
 
@@ -463,74 +463,74 @@ New changes in gui since 3.4.0:
 * fixed an issue that caused retrying deployments to not work for non-enterprise users
 * fixed an issue that prevented config of users using SSO to log in
 * aligned deployments manager role in ui with backend
-  ([MEN-5949](https://tracker.mender.io/browse/MEN-5949))
+  ([MEN-5949](https://northerntech.atlassian.net/browse/MEN-5949))
 * allowed "Stay logged in" setting to work for sso users as well
 * prevented navigation history from being overwritten when using the dashboard
-  ([ME-18](https://tracker.mender.io/browse/ME-18))
+  ([ME-18](https://northerntech.atlassian.net/browse/ME-18))
 * removed assumption devices could always show a mac address in their details
 * aligned device auditlog links with current param naming to allow navigating to the auditlog
 * reverted react-idle-timer to known working version to try fix unexpected log out issue
-  ([MEN-6061](https://tracker.mender.io/browse/MEN-6061))
+  ([MEN-6061](https://northerntech.atlassian.net/browse/MEN-6061))
 * fixed an issue that prevented offline devices on the dashboard from using any custom offline time limits
 * fixed device offline notifications in device monitoring section
 * moved state toggling calls to updater functions to stop stale state from preventing UI updates
-  ([ME-26](https://tracker.mender.io/browse/ME-26))
+  ([ME-26](https://northerntech.atlassian.net/browse/ME-26))
 * fixed an issue that would cause the UI to crash when showing device details of a device that's only partially initialized
 * fixed an issue that occurred when accessing authenticated devices without inventory
 * fixed an issue that would prevent the device issue widget from being initialized
 * made session expiration prevention part of the login flow to prevent it from getting removed by a failed 2fa login
-  ([MEN-6061](https://tracker.mender.io/browse/MEN-6061))
+  ([MEN-6061](https://northerntech.atlassian.net/browse/MEN-6061))
 * User not being able to change email with two-factor authentication
-  ([ME-46](https://tracker.mender.io/browse/ME-46))
+  ([ME-46](https://northerntech.atlassian.net/browse/ME-46))
 * fixed an issue that would crash the auditlogs page when clearing a url tracked selection
-  ([MEN-6246](https://tracker.mender.io/browse/MEN-6246))
+  ([MEN-6246](https://northerntech.atlassian.net/browse/MEN-6246))
 * fixed an issue that prevented finished deployments from settling on their deployment data
 * fixed an issue that would make the device list appear scrambled
-  ([ME-38](https://tracker.mender.io/browse/ME-38))
+  ([ME-38](https://northerntech.atlassian.net/browse/ME-38))
 
 ##### Features
 
 * made device offline threshold setting configurable
-  ([MEN-5923](https://tracker.mender.io/browse/MEN-5923))
+  ([MEN-5923](https://northerntech.atlassian.net/browse/MEN-5923))
 * added possibility to add extra confirmation step on deployment creation
-  ([MEN-5283](https://tracker.mender.io/browse/MEN-5283))
+  ([MEN-5283](https://northerntech.atlassian.net/browse/MEN-5283))
 * made it possible to upload multiple files in parallel
-  ([MEN-5744](https://tracker.mender.io/browse/MEN-5744))
+  ([MEN-5744](https://northerntech.atlassian.net/browse/MEN-5744))
 * added an easy access to the JWT for api/ cli usage
-  ([MEN-5966](https://tracker.mender.io/browse/MEN-5966))
+  ([MEN-5966](https://northerntech.atlassian.net/browse/MEN-5966))
 * added support for multiple levels of device software information in device details
-  ([MEN-5875](https://tracker.mender.io/browse/MEN-5875))
+  ([MEN-5875](https://northerntech.atlassian.net/browse/MEN-5875))
 * added way to retrieve license information about on prem deployments
-  ([MEN-5899](https://tracker.mender.io/browse/MEN-5899))
+  ([MEN-5899](https://northerntech.atlassian.net/browse/MEN-5899))
 * added devices with issues widget to allow ease access to devices that require attention
-  ([MEN-5919](https://tracker.mender.io/browse/MEN-5919))
+  ([MEN-5919](https://northerntech.atlassian.net/browse/MEN-5919))
 * refactored deployments dashboard widgets to ease direct access to recent deployments
-  ([MEN-5920](https://tracker.mender.io/browse/MEN-5920))
+  ([MEN-5920](https://northerntech.atlassian.net/browse/MEN-5920))
 * prevented elements limited by RBAC permissions from showing up
-  ([ME-17](https://tracker.mender.io/browse/ME-17))
+  ([ME-17](https://northerntech.atlassian.net/browse/ME-17))
 * moved device details to tabbed layout to ease information display
-  ([MEN-6034](https://tracker.mender.io/browse/MEN-6034))
+  ([MEN-6034](https://northerntech.atlassian.net/browse/MEN-6034))
 * allowed selecting a Mender region on signup to help keep data where it supposed to reside
-  ([MEN-5948](https://tracker.mender.io/browse/MEN-5948))
+  ([MEN-5948](https://northerntech.atlassian.net/browse/MEN-5948))
 * Show a welcome message in the console.
 * added information about reporting limits + attributes in use
-  ([MEN-6088](https://tracker.mender.io/browse/MEN-6088))
+  ([MEN-6088](https://northerntech.atlassian.net/browse/MEN-6088))
 * added safeguard to prevent rbac limited users from logging in
-  ([ME-47](https://tracker.mender.io/browse/ME-47))
+  ([ME-47](https://northerntech.atlassian.net/browse/ME-47))
 * added an option to force deployment installation on deployment creation
-  ([MEN-6130](https://tracker.mender.io/browse/MEN-6130))
+  ([MEN-6130](https://northerntech.atlassian.net/browse/MEN-6130))
 * expanded artifact upload form to allow more options to be sent
-  ([MEN-6085](https://tracker.mender.io/browse/MEN-6085))
+  ([MEN-6085](https://northerntech.atlassian.net/browse/MEN-6085))
 * added configuration option for delta artifact generation
-  ([MEN-5847](https://tracker.mender.io/browse/MEN-5847))
+  ([MEN-5847](https://northerntech.atlassian.net/browse/MEN-5847))
 * enabled automatic delta deployment on deployment creation
-  ([MEN-5847](https://tracker.mender.io/browse/MEN-5847))
+  ([MEN-5847](https://northerntech.atlassian.net/browse/MEN-5847))
 * added information about device system in deployment + device details
-  ([MEN-6035](https://tracker.mender.io/browse/MEN-6035))
+  ([MEN-6035](https://northerntech.atlassian.net/browse/MEN-6035))
 * added device deployment history in device details
-  ([MEN-6051](https://tracker.mender.io/browse/MEN-6051))
+  ([MEN-6051](https://northerntech.atlassian.net/browse/MEN-6051))
 * added support for bar chart software distributions
-  ([MEN-5921](https://tracker.mender.io/browse/MEN-5921))
+  ([MEN-5921](https://northerntech.atlassian.net/browse/MEN-5921))
 
 #### integration (3.5.0)
 
@@ -543,7 +543,7 @@ New changes in integration since 3.4.0:
 ##### Features
 
 * add qemu commercial image to the setup
-  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+  ([MEN-5806](https://northerntech.atlassian.net/browse/MEN-5806))
 * add reporting service as a default component in the docker composition
 * bump file format version to 2.3 in all docker compose files
 
@@ -553,11 +553,11 @@ New changes in integration since 3.4.0:
 ##### Other
 
 * Enable the reporting service and the related tests
-  ([MEN-5971](https://tracker.mender.io/browse/MEN-5971))
+  ([MEN-5971](https://northerntech.atlassian.net/browse/MEN-5971))
 * upgrade elasticsearch to version 7.17.7
-  ([MEN-5971](https://tracker.mender.io/browse/MEN-5971))
+  ([MEN-5971](https://northerntech.atlassian.net/browse/MEN-5971))
 * test(autogenerate delta): introduce test for autogenerate delta feature
-  ([MEN-5806](https://tracker.mender.io/browse/MEN-5806))
+  ([MEN-5806](https://northerntech.atlassian.net/browse/MEN-5806))
 * version bump to 2021-04-22T15-44-28Z
 * Upgrade auditlogs to 3.1.0.
 * Upgrade create-artifact-worker to 1.3.0.
@@ -594,7 +594,7 @@ New changes in inventory since 4.2.1:
 ##### Bug Fixes
 
 * update_ts field when searching devices and selecting attributes
-  ([ME-50](https://tracker.mender.io/browse/ME-50))
+  ([ME-50](https://northerntech.atlassian.net/browse/ME-50))
 
 ##### Dependabot bumps
 
@@ -617,7 +617,7 @@ New changes in inventory-enterprise since 4.2.1:
 ##### Bug Fixes
 
 * update_ts field when searching devices and selecting attributes
-  ([ME-50](https://tracker.mender.io/browse/ME-50))
+  ([ME-50](https://northerntech.atlassian.net/browse/ME-50))
 
 ##### Dependabot bumps
 
@@ -656,9 +656,9 @@ New changes in iot-manager since 1.1.0:
   According to the docs, it might take several seconds for the detachment to propagate.
   With this change we will wait up to 10 seconds for the detachment to propagate,
   and if some principals are still not detached from the Thing, we'll retrun an error.
-  ([MEN-6001](https://tracker.mender.io/browse/MEN-6001))
+  ([MEN-6001](https://northerntech.atlassian.net/browse/MEN-6001))
 * wrong capitalization for `Type`
-  ([QA-481](https://tracker.mender.io/browse/QA-481))
+  ([QA-481](https://northerntech.atlassian.net/browse/QA-481))
 
 #### mtls-ambassador (1.2.0)
 
@@ -671,7 +671,7 @@ New changes in mtls-ambassador since 1.1.0:
 ##### Other
 
 * bump github.com/mendersoftware/go-lib-micro to v0.0.0-20221025103319-e1f941fb3145
-  ([QA-524](https://tracker.mender.io/browse/QA-524))
+  ([QA-524](https://northerntech.atlassian.net/browse/QA-524))
 
 #### tenantadm (4.0.0)
 
@@ -680,12 +680,12 @@ New changes in tenantadm since 3.5.0:
 ##### Features
 
 * disable addons by default when creating tenants
-  ([MEN-6292](https://tracker.mender.io/browse/MEN-6292))
+  ([MEN-6292](https://northerntech.atlassian.net/browse/MEN-6292))
 
 ##### Other
 
 * remove the create-user CLI command as it was designed to act on the tenantadm service only, without propagating the data to useradm; use the `useradm-enterprise create-user` CLI command to create new users instead.
-  ([MEN-5924](https://tracker.mender.io/browse/MEN-5924))
+  ([MEN-5924](https://northerntech.atlassian.net/browse/MEN-5924))
 
 #### useradm (1.20.0)
 
@@ -694,16 +694,16 @@ New changes in useradm since 1.19.0:
 ##### Bug Fixes
 
 * Protect user updates from concurrent updates
-  ([MEN-6003](https://tracker.mender.io/browse/MEN-6003))
+  ([MEN-6003](https://northerntech.atlassian.net/browse/MEN-6003))
 * Updating existing users is blocked by ETag check
-  ([MEN-6087](https://tracker.mender.io/browse/MEN-6087))
+  ([MEN-6087](https://northerntech.atlassian.net/browse/MEN-6087))
 * Make user updates default to skip ETag checks (wildcard match)
-  ([MEN-6106](https://tracker.mender.io/browse/MEN-6106))
+  ([MEN-6106](https://northerntech.atlassian.net/browse/MEN-6106))
 
 ##### Features
 
 * do not check the JWT issuer.
-  ([MEN-5969](https://tracker.mender.io/browse/MEN-5969))
+  ([MEN-5969](https://northerntech.atlassian.net/browse/MEN-5969))
 
 #### useradm-enterprise (1.20.0)
 
@@ -712,30 +712,30 @@ New changes in useradm-enterprise since 1.19.0:
 ##### Bug Fixes
 
 * Proper parsing of XFF header with configurable depth strategy
-  ([MEN-5980](https://tracker.mender.io/browse/MEN-5980))
+  ([MEN-5980](https://northerntech.atlassian.net/browse/MEN-5980))
 * Protect user updates from concurrent updates
-  ([MEN-6003](https://tracker.mender.io/browse/MEN-6003))
+  ([MEN-6003](https://northerntech.atlassian.net/browse/MEN-6003))
 * Changing email makes the user email unverified
-  ([MEN-5974](https://tracker.mender.io/browse/MEN-5974))
+  ([MEN-5974](https://northerntech.atlassian.net/browse/MEN-5974))
 * user should not be able to modify all his data
-  ([MEN-6012](https://tracker.mender.io/browse/MEN-6012))
+  ([MEN-6012](https://northerntech.atlassian.net/browse/MEN-6012))
 * Remove ability to modify internal parameters of the user object
-  ([MEN-6037](https://tracker.mender.io/browse/MEN-6037))
+  ([MEN-6037](https://northerntech.atlassian.net/browse/MEN-6037))
 * BaseURL illegal settings can lead to service exiting with 0 due to wrapping of nil errors.
-  ([ME-39](https://tracker.mender.io/browse/ME-39))
+  ([ME-39](https://northerntech.atlassian.net/browse/ME-39))
 * Updating existing users is blocked by ETag check
-  ([MEN-6087](https://tracker.mender.io/browse/MEN-6087))
+  ([MEN-6087](https://northerntech.atlassian.net/browse/MEN-6087))
 * apply plan based restriction to permission_sets endpoints
-  ([MEN-6093](https://tracker.mender.io/browse/MEN-6093))
+  ([MEN-6093](https://northerntech.atlassian.net/browse/MEN-6093))
 * Make user updates default to skip ETag checks (wildcard match)
-  ([MEN-6106](https://tracker.mender.io/browse/MEN-6106))
+  ([MEN-6106](https://northerntech.atlassian.net/browse/MEN-6106))
 
 ##### Features
 
 * do not check the JWT issuer.
-  ([MEN-5969](https://tracker.mender.io/browse/MEN-5969))
+  ([MEN-5969](https://northerntech.atlassian.net/browse/MEN-5969))
 * added possibility to login via short lived magic link
-  ([MEN-5948](https://tracker.mender.io/browse/MEN-5948))
+  ([MEN-5948](https://northerntech.atlassian.net/browse/MEN-5948))
 
 #### workflows (2.4.0)
 
@@ -744,14 +744,14 @@ New changes in workflows since 2.3.0:
 ##### Bug Fixes
 
 * Remove hard-coded default read/write concern
-  ([MEN-6029](https://tracker.mender.io/browse/MEN-6029))
+  ([MEN-6029](https://northerntech.atlassian.net/browse/MEN-6029))
 * call internal delete device api endpoint
-  ([ME-41](https://tracker.mender.io/browse/ME-41))
+  ([ME-41](https://northerntech.atlassian.net/browse/ME-41))
 
 ##### Features
 
 * reindex_reporting_deployment workflow to index device deployments
-  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+  ([MEN-5930](https://northerntech.atlassian.net/browse/MEN-5930))
 
 ##### Other
 
@@ -764,14 +764,14 @@ New changes in workflows-enterprise since 2.3.0:
 ##### Bug Fixes
 
 * Remove hard-coded default read/write concern
-  ([MEN-6029](https://tracker.mender.io/browse/MEN-6029))
+  ([MEN-6029](https://northerntech.atlassian.net/browse/MEN-6029))
 * call internal delete device api endpoint
-  ([ME-41](https://tracker.mender.io/browse/ME-41))
+  ([ME-41](https://northerntech.atlassian.net/browse/ME-41))
 
 ##### Features
 
 * reindex_reporting_deployment workflow to index device deployments
-  ([MEN-5930](https://tracker.mender.io/browse/MEN-5930))
+  ([MEN-5930](https://northerntech.atlassian.net/browse/MEN-5930))
 
 ##### Other
 
@@ -843,7 +843,7 @@ A total of 52469 lines added, 19890 removed (delta 32579)
 New changes in auditlogs since 3.0.1:
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
-  ([MEN-5506](https://tracker.mender.io/browse/MEN-5506))
+  ([MEN-5506](https://northerntech.atlassian.net/browse/MEN-5506))
 
 #### create-artifact-worker (1.2.0)
 
@@ -912,22 +912,22 @@ New changes in deployments since 4.2.0:
 ##### Bug Fixes
 
 * Fix bad indexing from database versions 1.2.8 and 1.2.9
-  ([MEN-5695](https://tracker.mender.io/browse/MEN-5695))
+  ([MEN-5695](https://northerntech.atlassian.net/browse/MEN-5695))
 * Escape configuration download URL path and support '.' in parameter
-  ([MEN-5712](https://tracker.mender.io/browse/MEN-5712))
+  ([MEN-5712](https://northerntech.atlassian.net/browse/MEN-5712))
 
 ##### Features
 
 * migration 1.2.11 to index devices logs
-  ([MEN-5710](https://tracker.mender.io/browse/MEN-5710))
+  ([MEN-5710](https://northerntech.atlassian.net/browse/MEN-5710))
 * Upgrade mender-artifact library to latest to support parsing
   empty Artifacts, such as the bootstrap Artifact used to initialize
   devices' local database.
-  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+  ([MEN-2583](https://northerntech.atlassian.net/browse/MEN-2583))
 * `ArtifactTypeInfo` object returned in `/artifacts` or
   `/deployments/releases` can now return `nil` as its type. This would be
   the case for bootstrap Artifacts.
-  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+  ([MEN-2583](https://northerntech.atlassian.net/browse/MEN-2583))
 * omit configuration values in the deployment details
 
 ##### Dependency updates
@@ -951,26 +951,26 @@ New changes in deployments-enterprise since 4.2.0:
 ##### Bug Fixes
 
 * Fix bad indexing from database versions 1.2.8 and 1.2.9
-  ([MEN-5695](https://tracker.mender.io/browse/MEN-5695))
+  ([MEN-5695](https://northerntech.atlassian.net/browse/MEN-5695))
 * Escape configuration download URL path and support '.' in parameter
-  ([MEN-5712](https://tracker.mender.io/browse/MEN-5712))
+  ([MEN-5712](https://northerntech.atlassian.net/browse/MEN-5712))
 
 ##### Features
 
 * migration 1.2.11 to index devices logs
-  ([MEN-5710](https://tracker.mender.io/browse/MEN-5710))
+  ([MEN-5710](https://northerntech.atlassian.net/browse/MEN-5710))
 * Upgrade mender-artifact library to latest to support parsing
   empty Artifacts, such as the bootstrap Artifact used to initialize
   devices' local database.
-  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+  ([MEN-2583](https://northerntech.atlassian.net/browse/MEN-2583))
 * introduce limit for maximum number of active deployments per tenant
-  ([MEN-5696](https://tracker.mender.io/browse/MEN-5696))
+  ([MEN-5696](https://northerntech.atlassian.net/browse/MEN-5696))
 * `ArtifactTypeInfo` object returned in `/artifacts` or
   `/deployments/releases` can now return `nil` as its type. This would be
   the case for bootstrap Artifacts.
-  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+  ([MEN-2583](https://northerntech.atlassian.net/browse/MEN-2583))
 * do not limit number of configuration deployments
-  ([MEN-5696](https://tracker.mender.io/browse/MEN-5696))
+  ([MEN-5696](https://northerntech.atlassian.net/browse/MEN-5696))
 * omit configuration values in the deployment details
 
 ##### Dependency updates
@@ -994,16 +994,16 @@ New changes in deviceauth since 3.2.1:
 ##### Bug Fixes
 
 * Support PKCS#8 PEM format for JWT Signing key
-  ([MEN-5673](https://tracker.mender.io/browse/MEN-5673))
+  ([MEN-5673](https://northerntech.atlassian.net/browse/MEN-5673))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * Missing hash in inventory client
 
 ##### Other
 
 * refactor: do not store the public key in the device document
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5471](https://tracker.mender.io/browse/MEN-5471))
+  ([MEN-5471](https://northerntech.atlassian.net/browse/MEN-5471))
 
 ##### Dependency updates
 
@@ -1059,16 +1059,16 @@ New changes in deviceauth-enterprise since 3.2.1:
 ##### Bug Fixes
 
 * Support PKCS#8 PEM format for JWT Signing key
-  ([MEN-5673](https://tracker.mender.io/browse/MEN-5673))
+  ([MEN-5673](https://northerntech.atlassian.net/browse/MEN-5673))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * Missing hash in inventory client
 
 ##### Other
 
 * refactor: do not store the public key in the device document
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5471](https://tracker.mender.io/browse/MEN-5471))
+  ([MEN-5471](https://northerntech.atlassian.net/browse/MEN-5471))
 
 ##### Dependency updates
 
@@ -1134,12 +1134,12 @@ New changes in deviceconfig since 1.2.1:
 ##### Bug Fixes
 
 * Fix borken migration.
-  ([MEN-5719](https://tracker.mender.io/browse/MEN-5719))
+  ([MEN-5719](https://northerntech.atlassian.net/browse/MEN-5719))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
-  ([MEN-5504](https://tracker.mender.io/browse/MEN-5504))
+  ([MEN-5504](https://northerntech.atlassian.net/browse/MEN-5504))
 
 #### deviceconnect (1.3.3)
 
@@ -1148,16 +1148,16 @@ New changes in deviceconnect since 1.3.2:
 ##### Bug Fixes
 
 * Correct broken document migration in 2.0.0
-  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+  ([MEN-5718](https://northerntech.atlassian.net/browse/MEN-5718))
 * Apply migration to all databases prior to 2.0.0
-  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+  ([MEN-5718](https://northerntech.atlassian.net/browse/MEN-5718))
 * New migration (2.0.1) patching 2.0.0 document migration
-  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+  ([MEN-5718](https://northerntech.atlassian.net/browse/MEN-5718))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
-  ([MEN-5505](https://tracker.mender.io/browse/MEN-5505))
+  ([MEN-5505](https://northerntech.atlassian.net/browse/MEN-5505))
 
 #### devicemonitor (1.3.0)
 
@@ -1166,12 +1166,12 @@ New changes in devicemonitor since 1.2.0:
 ##### Bug Fixes
 
 * Reduce the maximum number of alerts/configurations per request
-  ([MEN-5854](https://tracker.mender.io/browse/MEN-5854))
+  ([MEN-5854](https://northerntech.atlassian.net/browse/MEN-5854))
 
 ##### Features
 
 * Static device group in alert emails Subject:
-  ([MEN-5379](https://tracker.mender.io/browse/MEN-5379))
+  ([MEN-5379](https://northerntech.atlassian.net/browse/MEN-5379))
 
 ##### Dependency updates
 
@@ -1194,73 +1194,73 @@ New changes in gui since 3.3.0:
 ##### Bug Fixes
 
 * prevented scheduling deployments earlier in the day
-  ([MEN-5639](https://tracker.mender.io/browse/MEN-5639))
+  ([MEN-5639](https://northerntech.atlassian.net/browse/MEN-5639))
 * fixed an issue that caused dynamic groups with a "doesn't exist" filter to not show up properly
-  ([MEN-5640](https://tracker.mender.io/browse/MEN-5640))
+  ([MEN-5640](https://northerntech.atlassian.net/browse/MEN-5640))
 * ensured deployment release information doesn't overflow list info
-  ([MEN-5620](https://tracker.mender.io/browse/MEN-5620))
+  ([MEN-5620](https://northerntech.atlassian.net/browse/MEN-5620))
 * fixed an issue that caused the device list to crash on group selection if a device was selected at the time
 * added missing check for plan availability for auditlogs
-  ([MEN-5686](https://tracker.mender.io/browse/MEN-5686))
+  ([MEN-5686](https://northerntech.atlassian.net/browse/MEN-5686))
 * ensured dynamic group filters are used on group device retrieval
-  ([MEN-5668](https://tracker.mender.io/browse/MEN-5668))
+  ([MEN-5668](https://northerntech.atlassian.net/browse/MEN-5668))
 * made use of derived permissions when creating group based roles too
-  ([MEN-5706](https://tracker.mender.io/browse/MEN-5706))
+  ([MEN-5706](https://northerntech.atlassian.net/browse/MEN-5706))
 * fixed an issue that prevented single device deployment creation
-  ([MEN-5728](https://tracker.mender.io/browse/MEN-5728))
+  ([MEN-5728](https://northerntech.atlassian.net/browse/MEN-5728))
 * fixed an issue that caused a faulty deployment creator to be shown in the deployment details
-  ([MEN-5729](https://tracker.mender.io/browse/MEN-5729))
+  ([MEN-5729](https://northerntech.atlassian.net/browse/MEN-5729))
 * prevented nginx from preloading version info file
-  ([MEN-5707](https://tracker.mender.io/browse/MEN-5707))
+  ([MEN-5707](https://northerntech.atlassian.net/browse/MEN-5707))
 * fixed an issue that might prevent pagination through active deployments
-  ([MEN-5730](https://tracker.mender.io/browse/MEN-5730))
+  ([MEN-5730](https://northerntech.atlassian.net/browse/MEN-5730))
 * added password validation for email changes
 * fixed an issue that prevented group selection urls from working
-  ([MEN-5741](https://tracker.mender.io/browse/MEN-5741))
+  ([MEN-5741](https://northerntech.atlassian.net/browse/MEN-5741))
 * removed effect cascade in order to fix an issue when opening a device as a RO user
-  ([MEN-5770](https://tracker.mender.io/browse/MEN-5770))
+  ([MEN-5770](https://northerntech.atlassian.net/browse/MEN-5770))
 * addressed an issue that caused showing device details to crash the UI
-  ([MEN-5770](https://tracker.mender.io/browse/MEN-5770))
+  ([MEN-5770](https://northerntech.atlassian.net/browse/MEN-5770))
 * prevented concurrent uploads to align with UI setup
-  ([MEN-5811](https://tracker.mender.io/browse/MEN-5811))
+  ([MEN-5811](https://northerntech.atlassian.net/browse/MEN-5811))
 * fixed an issue that prevented direct device links from working
-  ([MEN-5781](https://tracker.mender.io/browse/MEN-5781))
+  ([MEN-5781](https://northerntech.atlassian.net/browse/MEN-5781))
 * remove references to `pi` user.
-  ([MEN-5582](https://tracker.mender.io/browse/MEN-5582))
+  ([MEN-5582](https://northerntech.atlassian.net/browse/MEN-5582))
 * aligned final onboarding snackbar rendering with onboarding progress
-  ([MEN-5909](https://tracker.mender.io/browse/MEN-5909))
+  ([MEN-5909](https://northerntech.atlassian.net/browse/MEN-5909))
 
 ##### Features
 
 * added per user access token functionality to the user settings page
-  ([MEN-5525](https://tracker.mender.io/browse/MEN-5525))
+  ([MEN-5525](https://northerntech.atlassian.net/browse/MEN-5525))
 * improved alignment between device list page & browser url
-  ([MEN-4989](https://tracker.mender.io/browse/MEN-4989))
+  ([MEN-4989](https://northerntech.atlassian.net/browse/MEN-4989))
 * improved alignment between auditlogs page & browser url
-  ([MEN-4989](https://tracker.mender.io/browse/MEN-4989))
+  ([MEN-4989](https://northerntech.atlassian.net/browse/MEN-4989))
 * improved alignment between deployment pages & browser url
-  ([MEN-4989](https://tracker.mender.io/browse/MEN-4989))
+  ([MEN-4989](https://northerntech.atlassian.net/browse/MEN-4989))
 * made 2fa setup available for all plans
-  ([MEN-5679](https://tracker.mender.io/browse/MEN-5679))
+  ([MEN-5679](https://northerntech.atlassian.net/browse/MEN-5679))
 * made device id shown in deployment context also take selected device id into account
 * added a way to configure an AWS IoT core connection
-  ([MEN-5453](https://tracker.mender.io/browse/MEN-5453))
+  ([MEN-5453](https://northerntech.atlassian.net/browse/MEN-5453))
 * made retry selection accept custom values between 0 & 100
-  ([MEN-5739](https://tracker.mender.io/browse/MEN-5739))
+  ([MEN-5739](https://northerntech.atlassian.net/browse/MEN-5739))
 * added downloads section to ease downloading packages + tools
-  ([MEN-5624](https://tracker.mender.io/browse/MEN-5624))
+  ([MEN-5624](https://northerntech.atlassian.net/browse/MEN-5624))
 * made it possible to configure SAML connection to ease SSO setup
-  ([MEN-5103](https://tracker.mender.io/browse/MEN-5103))
+  ([MEN-5103](https://northerntech.atlassian.net/browse/MEN-5103))
 * allowed creation of passwordless users to support SSO scenarios
-  ([MEN-5104](https://tracker.mender.io/browse/MEN-5104))
+  ([MEN-5104](https://northerntech.atlassian.net/browse/MEN-5104))
 * made dark mode available for everyone
-  ([MEN-5516](https://tracker.mender.io/browse/MEN-5516))
+  ([MEN-5516](https://northerntech.atlassian.net/browse/MEN-5516))
 * made deployment creation easier to review by moving it to a single view
-  ([MEN-5647](https://tracker.mender.io/browse/MEN-5647))
+  ([MEN-5647](https://northerntech.atlassian.net/browse/MEN-5647))
 * made device configure a separate rbac config option
-  ([MEN-5821](https://tracker.mender.io/browse/MEN-5821))
+  ([MEN-5821](https://northerntech.atlassian.net/browse/MEN-5821))
 * added webhook integration option
-  ([MEN-57231](https://tracker.mender.io/browse/MEN-57231))
+  ([MEN-57231](https://northerntech.atlassian.net/browse/MEN-57231))
 
 #### integration (3.4.0)
 
@@ -1269,14 +1269,14 @@ New changes in integration since 3.3.0:
 ##### Bug Fixes
 
 * don't allow to use openssl lower than v.1.1.1
-  ([MEN-5746](https://tracker.mender.io/browse/MEN-5746))
+  ([MEN-5746](https://northerntech.atlassian.net/browse/MEN-5746))
 * Correctly pass mender client version to GUI env
-  ([MEN-5901](https://tracker.mender.io/browse/MEN-5901))
+  ([MEN-5901](https://northerntech.atlassian.net/browse/MEN-5901))
 
 ##### Other
 
 * feat(traefik conf): add SAML SSO endpoints exposed without authentication
-  ([MEN-5102](https://tracker.mender.io/browse/MEN-5102))
+  ([MEN-5102](https://northerntech.atlassian.net/browse/MEN-5102))
 * Upgrade auditlogs to 3.0.2.
 * Upgrade create-artifact-worker to 1.2.0.
 * Upgrade deployments-enterprise to 4.3.0.
@@ -1313,7 +1313,7 @@ New changes in inventory since 4.2.0:
 ##### Bug Fixes
 
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 
 #### inventory-enterprise (4.2.1)
 
@@ -1322,7 +1322,7 @@ New changes in inventory-enterprise since 4.2.0:
 ##### Bug Fixes
 
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 
 #### iot-manager (1.1.0)
 
@@ -1332,45 +1332,45 @@ New changes in iot-manager since 1.0.2:
 
 * fix GET /integrations returned object definition
 * Fire webhook independent if device was provisioned
-  ([MEN-5832](https://tracker.mender.io/browse/MEN-5832))
+  ([MEN-5832](https://northerntech.atlassian.net/browse/MEN-5832))
 
 ##### Features
 
 * add support for a new integration type: AWS IoT Core
-  ([MEN-5447](https://tracker.mender.io/browse/MEN-5447))
+  ([MEN-5447](https://northerntech.atlassian.net/browse/MEN-5447))
 * AWS IoT Core device lifecycle integration
-  ([MEN-5449](https://tracker.mender.io/browse/MEN-5449))
+  ([MEN-5449](https://northerntech.atlassian.net/browse/MEN-5449))
 * migrate from aws-go-sdk to aws-go-sdk-v2
-  ([MEN-5448](https://tracker.mender.io/browse/MEN-5448))
+  ([MEN-5448](https://northerntech.atlassian.net/browse/MEN-5448))
 * introduce AWS IoT Device Shadow support
-  ([MEN-5448](https://tracker.mender.io/browse/MEN-5448))
+  ([MEN-5448](https://northerntech.atlassian.net/browse/MEN-5448))
 * Add support for IoT Core for 'sync-devices' commandline job
-  ([MEN-5450](https://tracker.mender.io/browse/MEN-5450))
+  ([MEN-5450](https://northerntech.atlassian.net/browse/MEN-5450))
 * store device lifecycle events
-  ([MEN-5714](https://tracker.mender.io/browse/MEN-5714))
+  ([MEN-5714](https://northerntech.atlassian.net/browse/MEN-5714))
 * new API endpoint for retrieving events
-  ([MEN-5714](https://tracker.mender.io/browse/MEN-5714))
+  ([MEN-5714](https://northerntech.atlassian.net/browse/MEN-5714))
 * Add webhooks to the integrations API
 
   This commit expands the configuration API to specify webhooks endpoint
   and HMAC256 secret.
-  ([MEN-5715](https://tracker.mender.io/browse/MEN-5715))
+  ([MEN-5715](https://northerntech.atlassian.net/browse/MEN-5715))
 * Fire webhooks when device changes status
 
   A webhook fires when a device is provisioned, decommission or the
   authentication data changes status.
-  ([MEN-5715](https://tracker.mender.io/browse/MEN-5715))
+  ([MEN-5715](https://northerntech.atlassian.net/browse/MEN-5715))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5467](https://tracker.mender.io/browse/MEN-5467))
+  ([MEN-5467](https://northerntech.atlassian.net/browse/MEN-5467))
 * test(IoTCore): extend AWS IoT core tests with device shadow related tests
-  ([MEN-5448](https://tracker.mender.io/browse/MEN-5448))
+  ([MEN-5448](https://northerntech.atlassian.net/browse/MEN-5448))
 * docs: document the endpoint for returning list of events
-  ([MEN-5714](https://tracker.mender.io/browse/MEN-5714))
+  ([MEN-5714](https://northerntech.atlassian.net/browse/MEN-5714))
 * Add xAWS endpoint information to the device credentials
-  ([MEN-5778](https://tracker.mender.io/browse/MEN-5778))
+  ([MEN-5778](https://northerntech.atlassian.net/browse/MEN-5778))
 
 ##### Dependency updates
 
@@ -1442,7 +1442,7 @@ New changes in mtls-ambassador since 1.0.2:
 ##### Features
 
 * Configuration for setting Mender Server CA certificate
-  ([MEN-5818](https://tracker.mender.io/browse/MEN-5818))
+  ([MEN-5818](https://northerntech.atlassian.net/browse/MEN-5818))
 
 ##### Dependency updates
 
@@ -1574,9 +1574,9 @@ New changes in tenantadm since 3.4.0:
 ##### Bug Fixes
 
 * Make username/emails case insensitive
-  ([MEN-3524](https://tracker.mender.io/browse/MEN-3524))
+  ([MEN-3524](https://northerntech.atlassian.net/browse/MEN-3524))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 
 ##### Dependency updates
 
@@ -1649,17 +1649,17 @@ New changes in useradm since 1.18.0:
     }
   });
   ```
-  ([MEN-3524](https://tracker.mender.io/browse/MEN-3524))
+  ([MEN-3524](https://northerntech.atlassian.net/browse/MEN-3524))
 * Add support for PKCS#8 private key format
-  ([MEN-5672](https://tracker.mender.io/browse/MEN-5672))
+  ([MEN-5672](https://northerntech.atlassian.net/browse/MEN-5672))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * invalidate user sessions but the current one on user updates
-  ([MEN-5731](https://tracker.mender.io/browse/MEN-5731))
+  ([MEN-5731](https://northerntech.atlassian.net/browse/MEN-5731))
 * require password prompt for changing email
-  ([MEN-5738](https://tracker.mender.io/browse/MEN-5738))
+  ([MEN-5738](https://northerntech.atlassian.net/browse/MEN-5738))
 * allow privileged users to change email address of another user
-  ([MEN-5829](https://tracker.mender.io/browse/MEN-5829))
+  ([MEN-5829](https://northerntech.atlassian.net/browse/MEN-5829))
 
 ##### Features
 
@@ -1671,17 +1671,17 @@ New changes in useradm since 1.18.0:
   DELETE /api/management/v1/useradm/settings/tokens/:id
 
   ,
-  ([MEN-5522](https://tracker.mender.io/browse/MEN-5522), [MEN-5523](https://tracker.mender.io/browse/MEN-5523))
+  ([MEN-5522](https://northerntech.atlassian.net/browse/MEN-5522), [MEN-5523](https://northerntech.atlassian.net/browse/MEN-5523))
 * make maximum expiration time of Personal Access Tokens configurable
-  ([MEN-5522](https://tracker.mender.io/browse/MEN-5522), [MEN-5523](https://tracker.mender.io/browse/MEN-5523))
+  ([MEN-5522](https://northerntech.atlassian.net/browse/MEN-5522), [MEN-5523](https://northerntech.atlassian.net/browse/MEN-5523))
 * change multi-tenancy data model
-  ([MEN-4749](https://tracker.mender.io/browse/MEN-4749))
+  ([MEN-4749](https://northerntech.atlassian.net/browse/MEN-4749))
 * support for ETag and If-Match for the GET/POST settings end-points
-  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+  ([MEN-5666](https://northerntech.atlassian.net/browse/MEN-5666))
 * end-points to save user-specific settings for the current user
-  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+  ([MEN-5666](https://northerntech.atlassian.net/browse/MEN-5666))
 * migration (2.0.1) to move the user settings to a dedicated collection
-  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+  ([MEN-5666](https://northerntech.atlassian.net/browse/MEN-5666))
 
 ##### Dependency updates
 
@@ -1754,50 +1754,50 @@ New changes in useradm-enterprise since 1.18.0:
     }
   });
   ```
-  ([MEN-3524](https://tracker.mender.io/browse/MEN-3524))
+  ([MEN-3524](https://northerntech.atlassian.net/browse/MEN-3524))
 * increase default limit for a number of permission sets in the role definition
 * add PATCH inventory/* permission to "manage devices" permission set
 * Add support for PKCS#8 private key format
-  ([MEN-5672](https://tracker.mender.io/browse/MEN-5672))
+  ([MEN-5672](https://northerntech.atlassian.net/browse/MEN-5672))
 * failed to update RBAC roles
-  ([MEN-5694](https://tracker.mender.io/browse/MEN-5694))
+  ([MEN-5694](https://northerntech.atlassian.net/browse/MEN-5694))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * invalidate user sessions but the current one on user updates
-  ([MEN-5731](https://tracker.mender.io/browse/MEN-5731))
+  ([MEN-5731](https://northerntech.atlassian.net/browse/MEN-5731))
 * OAuth users cant issue personal access tokens.
-  ([MEN-5723](https://tracker.mender.io/browse/MEN-5723))
+  ([MEN-5723](https://northerntech.atlassian.net/browse/MEN-5723))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * Forbid oauth logins for suspended tenants.
 * require password prompt for changing email
-  ([MEN-5738](https://tracker.mender.io/browse/MEN-5738))
+  ([MEN-5738](https://northerntech.atlassian.net/browse/MEN-5738))
 * SAML Metadata endpoint returns id instead of _id.
 * allow privileged users to change email address of another user
-  ([MEN-5829](https://tracker.mender.io/browse/MEN-5829))
+  ([MEN-5829](https://northerntech.atlassian.net/browse/MEN-5829))
 * restrict access to GET /events endpoint to Admin users only
-  ([MEN-5831](https://tracker.mender.io/browse/MEN-5831))
+  ([MEN-5831](https://northerntech.atlassian.net/browse/MEN-5831))
 * remove access to deviceconfig from ReadDevices permission set
-  ([MEN-5817](https://tracker.mender.io/browse/MEN-5817))
+  ([MEN-5817](https://northerntech.atlassian.net/browse/MEN-5817))
 * remove permision for downloading artifact from ReadReleases permission set
-  ([MEN-5816](https://tracker.mender.io/browse/MEN-5816))
+  ([MEN-5816](https://northerntech.atlassian.net/browse/MEN-5816))
 * DeployToDevices permission set should grant access to deployments only
-  ([MEN-5816](https://tracker.mender.io/browse/MEN-5816), [MEN-5817](https://tracker.mender.io/browse/MEN-5817))
+  ([MEN-5816](https://northerntech.atlassian.net/browse/MEN-5816), [MEN-5817](https://northerntech.atlassian.net/browse/MEN-5817))
 * update Deployments Manager role
 
   The role should grant basic access and access to read releases, read devices and
   deploy to devices.
-  ([MEN-5816](https://tracker.mender.io/browse/MEN-5816))
+  ([MEN-5816](https://northerntech.atlassian.net/browse/MEN-5816))
 * Read Devices permission should not grant access to artifacts
-  ([MEN-5816](https://tracker.mender.io/browse/MEN-5816))
+  ([MEN-5816](https://northerntech.atlassian.net/browse/MEN-5816))
 * Connect permission should allow downloaing files from the device
-  ([MEN-5839](https://tracker.mender.io/browse/MEN-5839))
+  ([MEN-5839](https://northerntech.atlassian.net/browse/MEN-5839))
 * Read Access role should grant access to device state in the iot-manager
 * Read Access role should grant access to view deployments
 * clear location of the Single Logout Service
-  ([MEN-5886](https://tracker.mender.io/browse/MEN-5886))
+  ([MEN-5886](https://northerntech.atlassian.net/browse/MEN-5886))
 * clear location of the Single Logout Service
-  ([MEN-5886](https://tracker.mender.io/browse/MEN-5886))
+  ([MEN-5886](https://northerntech.atlassian.net/browse/MEN-5886))
 
 ##### Features
 
@@ -1809,54 +1809,54 @@ New changes in useradm-enterprise since 1.18.0:
   DELETE /api/management/v1/useradm/settings/tokens/:id
 
   ,
-  ([MEN-5522](https://tracker.mender.io/browse/MEN-5522), [MEN-5523](https://tracker.mender.io/browse/MEN-5523))
+  ([MEN-5522](https://northerntech.atlassian.net/browse/MEN-5522), [MEN-5523](https://northerntech.atlassian.net/browse/MEN-5523))
 * make maximum expiration time of Personal Access Tokens configurable
-  ([MEN-5522](https://tracker.mender.io/browse/MEN-5522), [MEN-5523](https://tracker.mender.io/browse/MEN-5523))
+  ([MEN-5522](https://northerntech.atlassian.net/browse/MEN-5522), [MEN-5523](https://northerntech.atlassian.net/browse/MEN-5523))
 * Update single sign-on schema for user objects
-  ([MEN-5649](https://tracker.mender.io/browse/MEN-5649))
+  ([MEN-5649](https://northerntech.atlassian.net/browse/MEN-5649))
 * SAML metadata management endpoints.
-  ([MEN-5100](https://tracker.mender.io/browse/MEN-5100))
+  ([MEN-5100](https://northerntech.atlassian.net/browse/MEN-5100))
 * GET service provider meta data
-  ([MEN-5101](https://tracker.mender.io/browse/MEN-5101))
+  ([MEN-5101](https://northerntech.atlassian.net/browse/MEN-5101))
 * change multi-tenancy data model
-  ([MEN-4749](https://tracker.mender.io/browse/MEN-4749))
+  ([MEN-4749](https://northerntech.atlassian.net/browse/MEN-4749))
 * change multi-tenancy data model
-  ([MEN-4749](https://tracker.mender.io/browse/MEN-4749))
+  ([MEN-4749](https://northerntech.atlassian.net/browse/MEN-4749))
 * support for ETag and If-Match for the GET/POST settings end-points
-  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+  ([MEN-5666](https://northerntech.atlassian.net/browse/MEN-5666))
 * end-points to save user-specific settings for the current user
-  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+  ([MEN-5666](https://northerntech.atlassian.net/browse/MEN-5666))
 * migration (2.0.1) to move the user settings to a dedicated collection
-  ([MEN-5666](https://tracker.mender.io/browse/MEN-5666))
+  ([MEN-5666](https://northerntech.atlassian.net/browse/MEN-5666))
 * 2FA is now available in all plans
-  ([MEN-5727](https://tracker.mender.io/browse/MEN-5727))
+  ([MEN-5727](https://northerntech.atlassian.net/browse/MEN-5727))
 * SAML SSO login and assertion endpoints.
-  ([MEN-5102](https://tracker.mender.io/browse/MEN-5102))
+  ([MEN-5102](https://northerntech.atlassian.net/browse/MEN-5102))
 * Only SAML configured users are allowed to use SAML login, and fixes.
-  ([MEN-5750](https://tracker.mender.io/browse/MEN-5750), [MEN-5752](https://tracker.mender.io/browse/MEN-5752))
+  ([MEN-5750](https://northerntech.atlassian.net/browse/MEN-5750), [MEN-5752](https://northerntech.atlassian.net/browse/MEN-5752))
 * introduce ConfigureDevices permission set
-  ([MEN-5817](https://tracker.mender.io/browse/MEN-5817))
+  ([MEN-5817](https://northerntech.atlassian.net/browse/MEN-5817))
 * save raw representation of the IDP Metadata
-  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+  ([MEN-5887](https://northerntech.atlassian.net/browse/MEN-5887))
 * endpoint for getting xml with configured IDP metadata
-  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+  ([MEN-5887](https://northerntech.atlassian.net/browse/MEN-5887))
 * save raw representation of the IDP Metadata
-  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+  ([MEN-5887](https://northerntech.atlassian.net/browse/MEN-5887))
 * endpoint for getting xml with configured IDP metadata
-  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+  ([MEN-5887](https://northerntech.atlassian.net/browse/MEN-5887))
 
 ##### Other
 
 * upgrade crewjam/saml
-  ([MEN-5102](https://tracker.mender.io/browse/MEN-5102))
+  ([MEN-5102](https://northerntech.atlassian.net/browse/MEN-5102))
 * docs(SAML): document endpoint for getting Identity Provider Metadata
-  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+  ([MEN-5887](https://northerntech.atlassian.net/browse/MEN-5887))
 * test(SAML): test endpoint for getting IDP matadata
-  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+  ([MEN-5887](https://northerntech.atlassian.net/browse/MEN-5887))
 * docs(SAML): document endpoint for getting Identity Provider Metadata
-  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+  ([MEN-5887](https://northerntech.atlassian.net/browse/MEN-5887))
 * test(SAML): test endpoint for getting IDP matadata
-  ([MEN-5887](https://tracker.mender.io/browse/MEN-5887))
+  ([MEN-5887](https://northerntech.atlassian.net/browse/MEN-5887))
 
 ##### Dependency updates
 
@@ -1901,14 +1901,14 @@ New changes in workflows since 2.2.1:
 ##### Bug Fixes
 
 * Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
-  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+  ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
 * All workflows use encoding=url in the input variables passed in the URIs.
-  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+  ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5473](https://tracker.mender.io/browse/MEN-5473))
+  ([MEN-5473](https://northerntech.atlassian.net/browse/MEN-5473))
 
 ##### Dependency updates
 
@@ -1942,25 +1942,25 @@ New changes in workflows-enterprise since 2.2.1:
 ##### Bug Fixes
 
 * aligned ui links with updated url scheme
-  ([MEN-5734](https://tracker.mender.io/browse/MEN-5734))
+  ([MEN-5734](https://northerntech.atlassian.net/browse/MEN-5734))
 * Update mender-artifact download URL
 * Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
-  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+  ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
 * All workflows use encoding=url in the input variables passed in the URIs.
-  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+  ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
 
 ##### Features
 
 * Static device group in alert emails Subject:
-  ([MEN-5379](https://tracker.mender.io/browse/MEN-5379))
+  ([MEN-5379](https://northerntech.atlassian.net/browse/MEN-5379))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5473](https://tracker.mender.io/browse/MEN-5473))
+  ([MEN-5473](https://northerntech.atlassian.net/browse/MEN-5473))
 * update Python dependencies for create_artifacts.py
 * fix: create temporary files in the /tmp directory to avoid permission issues when running the service as a non-root user
-  ([MEN-5809](https://tracker.mender.io/browse/MEN-5809))
+  ([MEN-5809](https://northerntech.atlassian.net/browse/MEN-5809))
 
 ##### Dependency updates
 
@@ -2048,14 +2048,14 @@ New changes in integration since 3.3.0:
 ##### Bug Fixes
 
 * don't allow to use openssl lower than v.1.1.1
-  ([MEN-5746](https://tracker.mender.io/browse/MEN-5746))
+  ([MEN-5746](https://northerntech.atlassian.net/browse/MEN-5746))
 * Correctly pass mender client version to GUI env
-  ([MEN-5901](https://tracker.mender.io/browse/MEN-5901))
+  ([MEN-5901](https://northerntech.atlassian.net/browse/MEN-5901))
 
 ##### Other
 
 * feat(traefik conf): add SAML SSO endpoints exposed without authentication
-  ([MEN-5102](https://tracker.mender.io/browse/MEN-5102))
+  ([MEN-5102](https://northerntech.atlassian.net/browse/MEN-5102))
 * Upgrade auditlogs to 3.0.2.
 * Upgrade create-artifact-worker to 1.2.0.
 * Upgrade deployments-enterprise to 4.3.0.
@@ -2153,7 +2153,7 @@ A total of 4148 lines added, 2523 removed (delta 1625)
 New changes in auditlogs since 3.0.1:
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
-  ([MEN-5506](https://tracker.mender.io/browse/MEN-5506))
+  ([MEN-5506](https://northerntech.atlassian.net/browse/MEN-5506))
 
 #### deployments (4.2.1)
 
@@ -2162,11 +2162,11 @@ New changes in deployments since 4.2.0:
 ##### Bug Fixes
 
 * Fix bad indexing from database versions 1.2.8 and 1.2.9
-  ([MEN-5695](https://tracker.mender.io/browse/MEN-5695))
+  ([MEN-5695](https://northerntech.atlassian.net/browse/MEN-5695))
 * Escape configuration download URL path and support '.' in parameter
-  ([MEN-5712](https://tracker.mender.io/browse/MEN-5712))
+  ([MEN-5712](https://northerntech.atlassian.net/browse/MEN-5712))
 * Multipart upload not working when loading s3 settings from env
-  ([MEN-5939](https://tracker.mender.io/browse/MEN-5939))
+  ([MEN-5939](https://northerntech.atlassian.net/browse/MEN-5939))
 
 #### deployments-enterprise (4.2.1)
 
@@ -2175,11 +2175,11 @@ New changes in deployments-enterprise since 4.2.0:
 ##### Bug Fixes
 
 * Fix bad indexing from database versions 1.2.8 and 1.2.9
-  ([MEN-5695](https://tracker.mender.io/browse/MEN-5695))
+  ([MEN-5695](https://northerntech.atlassian.net/browse/MEN-5695))
 * Escape configuration download URL path and support '.' in parameter
-  ([MEN-5712](https://tracker.mender.io/browse/MEN-5712))
+  ([MEN-5712](https://northerntech.atlassian.net/browse/MEN-5712))
 * Multipart upload not working when loading s3 settings from env
-  ([MEN-5939](https://tracker.mender.io/browse/MEN-5939))
+  ([MEN-5939](https://northerntech.atlassian.net/browse/MEN-5939))
 
 #### deviceauth (3.2.2)
 
@@ -2188,13 +2188,13 @@ New changes in deviceauth since 3.2.1:
 ##### Bug Fixes
 
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * Missing hash in inventory client
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220302103938-7561c751e1fd
-  ([MEN-5471](https://tracker.mender.io/browse/MEN-5471))
+  ([MEN-5471](https://northerntech.atlassian.net/browse/MEN-5471))
 
 #### deviceauth-enterprise (3.2.2)
 
@@ -2203,15 +2203,15 @@ New changes in deviceauth-enterprise since 3.2.1:
 ##### Bug Fixes
 
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * Missing hash in inventory client
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220302103938-7561c751e1fd
-  ([MEN-5471](https://tracker.mender.io/browse/MEN-5471))
+  ([MEN-5471](https://northerntech.atlassian.net/browse/MEN-5471))
 
 #### deviceconfig (1.2.2)
 
@@ -2220,12 +2220,12 @@ New changes in deviceconfig since 1.2.1:
 ##### Bug Fixes
 
 * Fix borken migration.
-  ([MEN-5719](https://tracker.mender.io/browse/MEN-5719))
+  ([MEN-5719](https://northerntech.atlassian.net/browse/MEN-5719))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
-  ([MEN-5504](https://tracker.mender.io/browse/MEN-5504))
+  ([MEN-5504](https://northerntech.atlassian.net/browse/MEN-5504))
 
 #### deviceconnect (1.3.3)
 
@@ -2234,16 +2234,16 @@ New changes in deviceconnect since 1.3.2:
 ##### Bug Fixes
 
 * Correct broken document migration in 2.0.0
-  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+  ([MEN-5718](https://northerntech.atlassian.net/browse/MEN-5718))
 * Apply migration to all databases prior to 2.0.0
-  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+  ([MEN-5718](https://northerntech.atlassian.net/browse/MEN-5718))
 * New migration (2.0.1) patching 2.0.0 document migration
-  ([MEN-5718](https://tracker.mender.io/browse/MEN-5718))
+  ([MEN-5718](https://northerntech.atlassian.net/browse/MEN-5718))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
-  ([MEN-5505](https://tracker.mender.io/browse/MEN-5505))
+  ([MEN-5505](https://northerntech.atlassian.net/browse/MEN-5505))
 
 #### devicemonitor (1.2.1)
 
@@ -2252,7 +2252,7 @@ New changes in devicemonitor since 1.2.0:
 ##### Bug Fixes
 
 * Reduce the maximum number of alerts/configurations per request
-  ([MEN-5854](https://tracker.mender.io/browse/MEN-5854))
+  ([MEN-5854](https://northerntech.atlassian.net/browse/MEN-5854))
 
 #### gui (3.3.1)
 
@@ -2262,13 +2262,13 @@ New changes in gui since 3.3.0:
 
 * fixed an issue that caused the device list to crash on group selection if a device was selected at the time
 * added missing check for plan availability for auditlogs
-  ([MEN-5686](https://tracker.mender.io/browse/MEN-5686))
+  ([MEN-5686](https://northerntech.atlassian.net/browse/MEN-5686))
 * ensured dynamic group filters are used on group device retrieval
-  ([MEN-5668](https://tracker.mender.io/browse/MEN-5668))
+  ([MEN-5668](https://northerntech.atlassian.net/browse/MEN-5668))
 * prevented nginx from preloading version info file
-  ([MEN-5707](https://tracker.mender.io/browse/MEN-5707))
+  ([MEN-5707](https://northerntech.atlassian.net/browse/MEN-5707))
 * aligned final onboarding snackbar rendering with onboarding progress
-  ([MEN-5909](https://tracker.mender.io/browse/MEN-5909))
+  ([MEN-5909](https://northerntech.atlassian.net/browse/MEN-5909))
 
 #### integration (3.3.1)
 
@@ -2277,7 +2277,7 @@ New changes in integration since 3.3.0:
 ##### Bug Fixes
 
 * Correctly pass mender client version to GUI env
-  ([MEN-5901](https://tracker.mender.io/browse/MEN-5901))
+  ([MEN-5901](https://northerntech.atlassian.net/browse/MEN-5901))
 * Do not double count integration in changelogs and statistics.
 
 ##### Other
@@ -2315,7 +2315,7 @@ New changes in inventory since 4.2.0:
 ##### Bug Fixes
 
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 
 #### inventory-enterprise (4.2.1)
 
@@ -2324,14 +2324,14 @@ New changes in inventory-enterprise since 4.2.0:
 ##### Bug Fixes
 
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 
 #### iot-manager (1.0.3)
 
 New changes in iot-manager since 1.0.2:
 
 * upgrade mendersoftware/go-lib-micro to v0.0.0-20220304124258-d8414885f1c3
-  ([MEN-5467](https://tracker.mender.io/browse/MEN-5467))
+  ([MEN-5467](https://northerntech.atlassian.net/browse/MEN-5467))
 
 #### tenantadm (3.4.1)
 
@@ -2340,7 +2340,7 @@ New changes in tenantadm since 3.4.0:
 ##### Bug Fixes
 
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 
 #### useradm (1.18.1)
 
@@ -2349,9 +2349,9 @@ New changes in useradm since 1.18.0:
 ##### Bug Fixes
 
 * invalidate user sessions but the current one on user updates
-  ([MEN-5731](https://tracker.mender.io/browse/MEN-5731))
+  ([MEN-5731](https://northerntech.atlassian.net/browse/MEN-5731))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 
 #### useradm-enterprise (1.18.1)
 
@@ -2360,9 +2360,9 @@ New changes in useradm-enterprise since 1.18.0:
 ##### Bug Fixes
 
 * invalidate user sessions but the current one on user updates
-  ([MEN-5731](https://tracker.mender.io/browse/MEN-5731))
+  ([MEN-5731](https://northerntech.atlassian.net/browse/MEN-5731))
 * replace colon with hash for path params modifiers in URLs
-  ([MEN-5713](https://tracker.mender.io/browse/MEN-5713))
+  ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
 * Forbid oauth logins for suspended tenants.
 
 #### workflows (2.2.2)
@@ -2372,14 +2372,14 @@ New changes in workflows since 2.2.1:
 ##### Bug Fixes
 
 * Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
-  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+  ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
 * All workflows use encoding=url in the input variables passed in the URIs.
-  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+  ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5473](https://tracker.mender.io/browse/MEN-5473))
+  ([MEN-5473](https://northerntech.atlassian.net/browse/MEN-5473))
 
 #### workflows-enterprise (2.2.2)
 
@@ -2388,14 +2388,14 @@ New changes in workflows-enterprise since 2.2.1:
 ##### Bug Fixes
 
 * Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
-  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+  ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
 * All workflows use encoding=url in the input variables passed in the URIs.
-  ([MEN-5819](https://tracker.mender.io/browse/MEN-5819))
+  ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5473](https://tracker.mender.io/browse/MEN-5473))
+  ([MEN-5473](https://northerntech.atlassian.net/browse/MEN-5473))
 
 
 ## Mender 3.3.0
@@ -2497,18 +2497,18 @@ New changes in deployments since 4.1.0:
 ##### Features
 
 * extend deployments instruction with artifact id
-  ([MEN-5314](https://tracker.mender.io/browse/MEN-5314))
+  ([MEN-5314](https://northerntech.atlassian.net/browse/MEN-5314))
 * Allow to use S3 Exernal URI
-  ([MEN-5280](https://tracker.mender.io/browse/MEN-5280))
+  ([MEN-5280](https://northerntech.atlassian.net/browse/MEN-5280))
 
 ##### Other
 
 * perf: optimize the database lookups for new deployments
-  ([MEN-5443](https://tracker.mender.io/browse/MEN-5443))
+  ([MEN-5443](https://northerntech.atlassian.net/browse/MEN-5443))
 * replace `satori/go.uuid` with `google/uuid`
-  ([MEN-5468](https://tracker.mender.io/browse/MEN-5468))
+  ([MEN-5468](https://northerntech.atlassian.net/browse/MEN-5468))
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5468](https://tracker.mender.io/browse/MEN-5468))
+  ([MEN-5468](https://northerntech.atlassian.net/browse/MEN-5468))
 * perf: Optimize mongodb query for finding the next deployment for device
 
 ##### Dependabot bumps
@@ -2580,7 +2580,7 @@ New changes in deployments-enterprise since 4.1.0:
 * assign artifact to the device deployment only if it was not assigned previously
 * improve error handling in the /deployments/next handlers
 * wrong detection of empty update control maps
-  ([MEN-5626](https://tracker.mender.io/browse/MEN-5626))
+  ([MEN-5626](https://northerntech.atlassian.net/browse/MEN-5626))
 
 ##### Features
 
@@ -2592,20 +2592,20 @@ New changes in deployments-enterprise since 4.1.0:
   In case the deployment does not contain update control map, service will
   return 409 Conflict on attempt to patch update control map.
 * extend deployments instruction with artifact id
-  ([MEN-5314](https://tracker.mender.io/browse/MEN-5314))
+  ([MEN-5314](https://northerntech.atlassian.net/browse/MEN-5314))
 * Allow to use S3 Exernal URI
-  ([MEN-5280](https://tracker.mender.io/browse/MEN-5280))
+  ([MEN-5280](https://northerntech.atlassian.net/browse/MEN-5280))
 * Allow to use S3 Exernal URI
-  ([MEN-5280](https://tracker.mender.io/browse/MEN-5280))
+  ([MEN-5280](https://northerntech.atlassian.net/browse/MEN-5280))
 
 ##### Other
 
 * perf: optimize the database lookups for new deployments
-  ([MEN-5443](https://tracker.mender.io/browse/MEN-5443))
+  ([MEN-5443](https://northerntech.atlassian.net/browse/MEN-5443))
 * replace `satori/go.uuid` with `google/uuid`
-  ([MEN-5468](https://tracker.mender.io/browse/MEN-5468))
+  ([MEN-5468](https://northerntech.atlassian.net/browse/MEN-5468))
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5468](https://tracker.mender.io/browse/MEN-5468))
+  ([MEN-5468](https://northerntech.atlassian.net/browse/MEN-5468))
 * perf: Optimize mongodb query for finding the next deployment for device
 
 ##### Dependabot bumps
@@ -2673,14 +2673,14 @@ New changes in devicemonitor since 1.1.0:
 ##### Features
 
 * extend the device APIs validation of requests
-  ([MEN-5427](https://tracker.mender.io/browse/MEN-5427))
+  ([MEN-5427](https://northerntech.atlassian.net/browse/MEN-5427))
 
 ##### Other
 
 * add internal end-point to list tenant devices and their latest alerts
-  ([MEN-4966](https://tracker.mender.io/browse/MEN-4966))
+  ([MEN-4966](https://northerntech.atlassian.net/browse/MEN-4966))
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5472](https://tracker.mender.io/browse/MEN-5472))
+  ([MEN-5472](https://northerntech.atlassian.net/browse/MEN-5472))
 
 ##### Dependabot bumps
 
@@ -2703,51 +2703,51 @@ New changes in gui since 3.2.0:
 ##### Bug Fixes
 
 * disable the update control map control if not enterprise
-  ([MEN-5424](https://tracker.mender.io/browse/MEN-5424))
+  ([MEN-5424](https://northerntech.atlassian.net/browse/MEN-5424))
 * the group selection is no longer changed on group creation
 * prevented an issue that allowed to create a group that could not be removed
-  ([MEN-5562](https://tracker.mender.io/browse/MEN-5562))
+  ([MEN-5562](https://northerntech.atlassian.net/browse/MEN-5562))
 * fixed an issue that caused device list selections to not work
 * fixed an issue that made pagination unreliable in auditlogs
 * fixed an issue that caused final onboarding notification to stay visible
-  ([MEN-5382](https://tracker.mender.io/browse/MEN-5382))
+  ([MEN-5382](https://northerntech.atlassian.net/browse/MEN-5382))
 * fixed a faulty notification access that might cause a crash when filtering devices
 * prevented file upload dialog popping up when clicking on remote terminal
 * fixed an issue that prevented dismissing multiple devices
-  ([MEN-5615](https://tracker.mender.io/browse/MEN-5615))
+  ([MEN-5615](https://northerntech.atlassian.net/browse/MEN-5615))
 * fixed an issue that prevented device ids from showing when added as custom column
-  ([MEN-5612](https://tracker.mender.io/browse/MEN-5612))
+  ([MEN-5612](https://northerntech.atlassian.net/browse/MEN-5612))
 * fixed an issue that would prevent creating deployments from releases with url components in their name
-  ([MEN-5625](https://tracker.mender.io/browse/MEN-5625))
+  ([MEN-5625](https://northerntech.atlassian.net/browse/MEN-5625))
 * fixed an issue that prevented device names from showing up in deployment report
-  ([MEN-5616](https://tracker.mender.io/browse/MEN-5616))
+  ([MEN-5616](https://northerntech.atlassian.net/browse/MEN-5616))
 * fixed an issue that let device searches show non-group devices in a group focused search
-  ([MEN-5608](https://tracker.mender.io/browse/MEN-5608))
+  ([MEN-5608](https://northerntech.atlassian.net/browse/MEN-5608))
 * fixed an issue that could cause device lists to show a wrong device id attribute
 * fixed an issue that caused the ui to crash when using a custom role
 * fixed an issue that in some cases prevent reducing permissions of a role
 * fixed an issue in evaluating ui permissions that would prevent users from creating a deployment when not given full deploy rights
-  ([MEN-5663](https://tracker.mender.io/browse/MEN-5663))
+  ([MEN-5663](https://northerntech.atlassian.net/browse/MEN-5663))
 * fixed an issue that allowed device expansion only once
-  ([MEN-5665](https://tracker.mender.io/browse/MEN-5665))
+  ([MEN-5665](https://northerntech.atlassian.net/browse/MEN-5665))
 
 ##### Features
 
 * added possibility to configure device list columns
 * added column customization capability in device list
-  ([MEN-5233](https://tracker.mender.io/browse/MEN-5233))
+  ([MEN-5233](https://northerntech.atlassian.net/browse/MEN-5233))
 * simplified pagination controls
 * added a way to promote a device to become a Mender gateway
-  ([MEN-5476](https://tracker.mender.io/browse/MEN-5476))
+  ([MEN-5476](https://northerntech.atlassian.net/browse/MEN-5476))
 * Update Help topics and content #5580
 * aligned device action access on details with the device list -> in the lower right corner
-  ([MEN-5563](https://tracker.mender.io/browse/MEN-5563))
+  ([MEN-5563](https://northerntech.atlassian.net/browse/MEN-5563))
 * added support for new and improved RBAC backend
-  ([MEN-5214](https://tracker.mender.io/browse/MEN-5214))
+  ([MEN-5214](https://northerntech.atlassian.net/browse/MEN-5214))
 * made UI element visibility depend more on access rights
-  ([MEN-5214](https://tracker.mender.io/browse/MEN-5214))
+  ([MEN-5214](https://northerntech.atlassian.net/browse/MEN-5214))
 * added device search capability to ease device access from around the app
-  ([MEN-5191](https://tracker.mender.io/browse/MEN-5191))
+  ([MEN-5191](https://northerntech.atlassian.net/browse/MEN-5191))
 * adjusted the layout of the devices page to make better use of the new search capabilities
 * Aggregated Dependabot Changelogs:
   * Bumps [eslint](https://github.com/eslint/eslint) from 8.13.0 to 8.14.0.
@@ -2968,9 +2968,9 @@ New changes in gui since 3.2.0:
 * Moved theme-manager.js into a new MUI theme light+dark variants
 * made retrying failed group deployments more defensive
 * let device monitoring alerts stay in  distinct section
-  ([MEN-5174](https://tracker.mender.io/browse/MEN-5174))
+  ([MEN-5174](https://northerntech.atlassian.net/browse/MEN-5174))
 * switched to production intervals when starting mender setup from the UI once onboarding is completed
-  ([MEN-5139](https://tracker.mender.io/browse/MEN-5139))
+  ([MEN-5139](https://northerntech.atlassian.net/browse/MEN-5139))
 
 ##### Dependabot bumps
 
@@ -5151,12 +5151,12 @@ New changes in integration since 3.2.2:
 ##### Bug Fixes
 
 * wrong path for the useradm private key in the prod yaml templates
-  ([MEN-5641](https://tracker.mender.io/browse/MEN-5641))
+  ([MEN-5641](https://northerntech.atlassian.net/browse/MEN-5641))
 
 ##### Features
 
 * make use of the S3 external URI configuration for deployments
-  ([MEN-5280](https://tracker.mender.io/browse/MEN-5280))
+  ([MEN-5280](https://northerntech.atlassian.net/browse/MEN-5280))
 
 ##### Other
 
@@ -5375,14 +5375,14 @@ New changes in inventory since 4.1.0:
 ##### Features
 
 * enhance the filtering API to support device full-text search
-  ([MEN-5527](https://tracker.mender.io/browse/MEN-5527))
+  ([MEN-5527](https://northerntech.atlassian.net/browse/MEN-5527))
 * add database migration to reindex the devices for the full-text search
-  ([MEN-5527](https://tracker.mender.io/browse/MEN-5527))
+  ([MEN-5527](https://northerntech.atlassian.net/browse/MEN-5527))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5492](https://tracker.mender.io/browse/MEN-5492))
+  ([MEN-5492](https://northerntech.atlassian.net/browse/MEN-5492))
 
 ##### Dependabot bumps
 
@@ -5415,14 +5415,14 @@ New changes in inventory-enterprise since 4.1.0:
 ##### Features
 
 * enhance the filtering API to support device full-text search
-  ([MEN-5527](https://tracker.mender.io/browse/MEN-5527))
+  ([MEN-5527](https://northerntech.atlassian.net/browse/MEN-5527))
 * add database migration to reindex the devices for the full-text search
-  ([MEN-5527](https://tracker.mender.io/browse/MEN-5527))
+  ([MEN-5527](https://northerntech.atlassian.net/browse/MEN-5527))
 
 ##### Other
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5492](https://tracker.mender.io/browse/MEN-5492))
+  ([MEN-5492](https://northerntech.atlassian.net/browse/MEN-5492))
 
 ##### Dependabot bumps
 
@@ -5475,7 +5475,7 @@ New changes in mtls-ambassador since 1.0.1:
 ##### Bug Fixes
 
 * replace host header when proxying requests
-  ([MEN-5495](https://tracker.mender.io/browse/MEN-5495))
+  ([MEN-5495](https://northerntech.atlassian.net/browse/MEN-5495))
 
 #### tenantadm (3.4.0)
 
@@ -5489,9 +5489,9 @@ New changes in tenantadm since 3.3.0:
 
 * Upgrade from deprecated `golang.org/x/crypto/ssh/terminal` to
   `golang.org/x/term`
-  ([QA-235](https://tracker.mender.io/browse/QA-235))
+  ([QA-235](https://northerntech.atlassian.net/browse/QA-235))
 * migrate to community maintained jwt package
-  ([MEN-5469](https://tracker.mender.io/browse/MEN-5469))
+  ([MEN-5469](https://northerntech.atlassian.net/browse/MEN-5469))
 
 ##### Dependabot bumps
 
@@ -5558,7 +5558,7 @@ New changes in tenantadm since 3.3.0:
 New changes in useradm since 1.17.0:
 
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5470](https://tracker.mender.io/browse/MEN-5470))
+  ([MEN-5470](https://northerntech.atlassian.net/browse/MEN-5470))
 
 ##### Dependabot bumps
 
@@ -5581,18 +5581,18 @@ New changes in useradm-enterprise since 1.17.0:
 ##### Bug Fixes
 
 * extend the RBAC roles to support iot-manager
-  ([MEN-5386](https://tracker.mender.io/browse/MEN-5386))
+  ([MEN-5386](https://northerntech.atlassian.net/browse/MEN-5386))
 * make it impossible to update user with empty list of roles
-  ([MEN-5613](https://tracker.mender.io/browse/MEN-5613))
+  ([MEN-5613](https://northerntech.atlassian.net/browse/MEN-5613))
 * extend basic permissions with access to permission_set definitions
 * extend read releases permission with access to statistics/list
 
 ##### Features
 
 * introduce limits in user and roles creation
-  ([MEN-5546](https://tracker.mender.io/browse/MEN-5546))
+  ([MEN-5546](https://northerntech.atlassian.net/browse/MEN-5546))
 * update endpoing for getting list of emails with access to given device
-  ([MEN-5274](https://tracker.mender.io/browse/MEN-5274))
+  ([MEN-5274](https://northerntech.atlassian.net/browse/MEN-5274))
 
 ##### Other
 
@@ -5604,7 +5604,7 @@ New changes in useradm-enterprise since 1.17.0:
 * store/mongo: migrate roles
 * RBAC: pagination support for GET /roles endpoint
 * upgrade mendersoftware/go-lib-micro to the latest
-  ([MEN-5470](https://tracker.mender.io/browse/MEN-5470))
+  ([MEN-5470](https://northerntech.atlassian.net/browse/MEN-5470))
 
 ##### Dependabot bumps
 
@@ -5648,12 +5648,12 @@ New changes in integration since 3.2.2:
 ##### Bug Fixes
 
 * wrong path for the useradm private key in the prod yaml templates
-  ([MEN-5641](https://tracker.mender.io/browse/MEN-5641))
+  ([MEN-5641](https://northerntech.atlassian.net/browse/MEN-5641))
 
 ##### Features
 
 * make use of the S3 external URI configuration for deployments
-  ([MEN-5280](https://tracker.mender.io/browse/MEN-5280))
+  ([MEN-5280](https://northerntech.atlassian.net/browse/MEN-5280))
 
 ##### Other
 
@@ -6062,7 +6062,7 @@ A total of 77976 lines added, 32213 removed (delta 45763)
 New changes in auditlogs since 2.0.0:
 
 * Move the service to one database for all tenants
-  ([MEN-4743](https://tracker.mender.io/browse/MEN-4743))
+  ([MEN-4743](https://northerntech.atlassian.net/browse/MEN-4743))
 * Remove the internal end-point for provisioning tenants
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.2 to 1.7.3.
@@ -6089,18 +6089,18 @@ New changes in auditlogs since 2.0.0:
 New changes in create-artifact-worker since 1.0.2:
 
 * increase download and upload time-outs to 15 minutes
-  ([MEN-3539](https://tracker.mender.io/browse/MEN-3539))
+  ([MEN-3539](https://northerntech.atlassian.net/browse/MEN-3539))
 * handle multiple device types as comma-separated values
-  ([MEN-3771](https://tracker.mender.io/browse/MEN-3771))
+  ([MEN-3771](https://northerntech.atlassian.net/browse/MEN-3771))
 * bugfix to allow spaces in artifact names
-  ([MEN-4179](https://tracker.mender.io/browse/MEN-4179))
+  ([MEN-4179](https://northerntech.atlassian.net/browse/MEN-4179))
 * upgrade mender-artifact to version 3.5.0.
   This enables the create-artifact-worker to generate artifacts that
   implement the provides and clear provides fields.
-  ([MEN-4409](https://tracker.mender.io/browse/MEN-4409))
+  ([MEN-4409](https://northerntech.atlassian.net/browse/MEN-4409))
 * Rebuild to upgrade to the latest back-incompatible workflows
 * Enhance the nats client, add logging for reconnection events
-  ([MEN-5289](https://tracker.mender.io/browse/MEN-5289))
+  ([MEN-5289](https://northerntech.atlassian.net/browse/MEN-5289))
 * Aggregated Dependabot Changelogs:
   * Bumps [github.com/spf13/cobra](https://github.com/spf13/cobra) from 1.0.0 to 1.1.1.
       - [Release notes](https://github.com/spf13/cobra/releases)
@@ -6159,17 +6159,17 @@ New changes in create-artifact-worker since 1.0.2:
 New changes in deployments since 4.0.0:
 
 * deprecate `/deployments/releases` and `/artifacts` end-points
-  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+  ([MEN-5170](https://northerntech.atlassian.net/browse/MEN-5170))
 * implement end-points to get a paginated list of releases and artifacts
-  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+  ([MEN-5170](https://northerntech.atlassian.net/browse/MEN-5170))
 * add filtering of releases and artifacts by device type
-  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+  ([MEN-5170](https://northerntech.atlassian.net/browse/MEN-5170))
 * fix single device deployment handling
 * Fix bucket initialization
 * add back /deployments/devices/{id} end-point to management
-  ([MEN-5259](https://tracker.mender.io/browse/MEN-5259))
+  ([MEN-5259](https://northerntech.atlassian.net/browse/MEN-5259))
 * Add configuration option for the maximum artifact size
-  ([MEN-4184](https://tracker.mender.io/browse/MEN-4184))
+  ([MEN-4184](https://northerntech.atlassian.net/browse/MEN-4184))
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.2 to 1.7.3.
       - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
@@ -6206,17 +6206,17 @@ New changes in deployments since 4.0.0:
 New changes in deployments-enterprise since 4.0.0:
 
 * deprecate `/deployments/releases` and `/artifacts` end-points
-  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+  ([MEN-5170](https://northerntech.atlassian.net/browse/MEN-5170))
 * implement end-points to get a paginated list of releases and artifacts
-  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+  ([MEN-5170](https://northerntech.atlassian.net/browse/MEN-5170))
 * add filtering of releases and artifacts by device type
-  ([MEN-5170](https://tracker.mender.io/browse/MEN-5170))
+  ([MEN-5170](https://northerntech.atlassian.net/browse/MEN-5170))
 * fix single device deployment handling
 * Fix bucket initialization
 * add back /deployments/devices/{id} end-point to management
-  ([MEN-5259](https://tracker.mender.io/browse/MEN-5259))
+  ([MEN-5259](https://northerntech.atlassian.net/browse/MEN-5259))
 * Add configuration option for the maximum artifact size
-  ([MEN-4184](https://tracker.mender.io/browse/MEN-4184))
+  ([MEN-4184](https://northerntech.atlassian.net/browse/MEN-4184))
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.7.2 to 1.7.3.
       - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
@@ -6253,13 +6253,13 @@ New changes in deployments-enterprise since 4.0.0:
 New changes in deviceauth since 3.1.0:
 
 * do not hard-code the email sender, rely on workflows' default
-  ([MEN-5124](https://tracker.mender.io/browse/MEN-5124))
+  ([MEN-5124](https://northerntech.atlassian.net/browse/MEN-5124))
 * [] Provision and accept device from external provider
-  ([MEN-5148](https://tracker.mender.io/browse/MEN-5148))
+  ([MEN-5148](https://northerntech.atlassian.net/browse/MEN-5148))
 * add (optional) support for triggering reporting reindex
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
+  ([MEN-4843](https://northerntech.atlassian.net/browse/MEN-4843))
 * extend the internal end-point for searching devices to allow filtering by device IDs
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
+  ([MEN-4843](https://northerntech.atlassian.net/browse/MEN-4843))
 * Unused settings cleanup: SettingDevAdmAddr
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.14.0 to 3.14.2.
@@ -6319,9 +6319,9 @@ _Released 20.01.2022_
 New changes in deviceconfig since 1.1.0:
 
 * Move to single db: go.mod, go.sum, vendor, LIC_FILES
-  ([MEN-4746](https://tracker.mender.io/browse/MEN-4746))
+  ([MEN-4746](https://northerntech.atlassian.net/browse/MEN-4746))
 * Move to single db.
-  ([MEN-4746](https://tracker.mender.io/browse/MEN-4746))
+  ([MEN-4746](https://northerntech.atlassian.net/browse/MEN-4746))
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.5.3 to 1.5.4.
       - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
@@ -6406,11 +6406,11 @@ New changes in deviceconfig since 1.1.0:
 New changes in deviceconnect since 1.2.1:
 
 * store the correct offset in the recordings control messages
-  ([MEN-4770](https://tracker.mender.io/browse/MEN-4770))
+  ([MEN-4770](https://northerntech.atlassian.net/browse/MEN-4770))
 * Move to single db.
-  ([MEN-4747](https://tracker.mender.io/browse/MEN-4747))
+  ([MEN-4747](https://northerntech.atlassian.net/browse/MEN-4747))
 * Move to single db: go.mod, go.sum, vendor, LIC_FILES
-  ([MEN-4747](https://tracker.mender.io/browse/MEN-4747))
+  ([MEN-4747](https://northerntech.atlassian.net/browse/MEN-4747))
 * Enhance the nats client, add logging for reconnection events
 * Remove the internal end-point for provisioning tenants
 * Aggregated Dependabot Changelogs:
@@ -6540,13 +6540,13 @@ New changes in deviceconnect since 1.2.1:
 New changes in devicemonitor since 1.0.0:
 
 * do not hard-code the email sender, rely on workflows' default
-  ([MEN-5124](https://tracker.mender.io/browse/MEN-5124))
+  ([MEN-5124](https://northerntech.atlassian.net/browse/MEN-5124))
 * add (optional) support for triggering reporting reindex
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
+  ([MEN-4843](https://northerntech.atlassian.net/browse/MEN-4843))
 * Store and retrieve device monitor configuration
-  ([MEN-5184](https://tracker.mender.io/browse/MEN-5184))
+  ([MEN-5184](https://northerntech.atlassian.net/browse/MEN-5184))
 * [] Allow alerts to contain empty log lines
-  ([MEN-5256](https://tracker.mender.io/browse/MEN-5256))
+  ([MEN-5256](https://northerntech.atlassian.net/browse/MEN-5256))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.14.0 to 3.14.2.
 
@@ -6603,13 +6603,13 @@ New changes in gui since 3.1.0:
 * fixed an issue that prevented getting to devices based on their software in the overall device distribution
 * fixed an issue that prevented filter selections from being persisted
 * fixed an issue that prevented changes in monitoring issues from being reflected in the devicelist
-  ([MEN-5113](https://tracker.mender.io/browse/MEN-5113))
+  ([MEN-5113](https://northerntech.atlassian.net/browse/MEN-5113))
 * fixed an issue that caused artifact downloads to only be available for a short time
 * fixed an issue that could prevent newly uploaded releases to be available for deployment
 * fixed an issue that prevented the 2fa qr code to show on email verification
 * added device offline tag to device list to ease finding offline devices
 * xtermjs interprets string as UTF-16
-  ([MEN-4771](https://tracker.mender.io/browse/MEN-4771))
+  ([MEN-4771](https://northerntech.atlassian.net/browse/MEN-4771))
 * made offline devices filtering available in the device list for all professional and up users
 * fixed an issue that could prevent creating phased deployments for dynamic groups
 * improved static group removal to better support larger groups
@@ -6645,16 +6645,16 @@ New changes in gui since 3.1.0:
   Bump react and react-dom
 * Restore support for Open Source Production setups in bash
   snippets used during on-boarding and on "Connect a Device" dialog.
-  ([MEN-5107](https://tracker.mender.io/browse/MEN-5107))
+  ([MEN-5107](https://northerntech.atlassian.net/browse/MEN-5107))
 * fixed an issue that allowed proceeding with deployment creation without selecting a target device or group
 * added scope information in filter selection to ease distinguishing duplicate attribute names
-  ([MEN-5260](https://tracker.mender.io/browse/MEN-5260))
+  ([MEN-5260](https://northerntech.atlassian.net/browse/MEN-5260))
 * fixed an issue that prevented retrying deployments for single devices
 * added sorting to list of device authsets, so that the most relevant should be at the top
 * fixed an issue that limited profile edits to passwords, now editing the own email address is possible again
 * added device twin display in device details
 * added device monitor notification in device details to ease setting up monitors
-  ([MEN-5292](https://tracker.mender.io/browse/MEN-5292))
+  ([MEN-5292](https://northerntech.atlassian.net/browse/MEN-5292))
 * Aggregated Dependabot Changelogs:
   * Bumps [webpack](https://github.com/webpack/webpack) from 5.52.1 to 5.53.0.
       - [Release notes](https://github.com/webpack/webpack/releases)
@@ -9295,9 +9295,9 @@ New changes in gui since 3.1.0:
 New changes in integration since 3.1.0:
 
 * [] Fix demo script user creation race condition
-  ([MEN-4852](https://tracker.mender.io/browse/MEN-4852))
+  ([MEN-4852](https://northerntech.atlassian.net/browse/MEN-4852))
 * Azure Get/Set settings backend integration test.
-  ([MEN-5150](https://tracker.mender.io/browse/MEN-5150))
+  ([MEN-5150](https://northerntech.atlassian.net/browse/MEN-5150))
 * workflows requires nats, move the container to the main docker-compose.yml
 * Unify the docker-compose version check through using the
   docker-compose version subcommand, as opposed to the --version flag when
@@ -10256,9 +10256,9 @@ New changes in integration since 3.1.0:
 New changes in inventory since 4.0.0:
 
 * add support for filtering datetimes (e.g. `updated_ts`)
-  ([MEN-4644](https://tracker.mender.io/browse/MEN-4644))
+  ([MEN-4644](https://northerntech.atlassian.net/browse/MEN-4644))
 * new API end-point to remove a static group
-  ([MEN-4826](https://tracker.mender.io/browse/MEN-4826))
+  ([MEN-4826](https://northerntech.atlassian.net/browse/MEN-4826))
 * Aggregated Dependabot Changelogs:
   * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.8.1 to 1.9.0.
       - [Release notes](https://github.com/spf13/viper/releases)
@@ -10304,9 +10304,9 @@ New changes in inventory since 4.0.0:
 New changes in inventory-enterprise since 4.0.0:
 
 * new API end-point to remove a static group
-  ([MEN-4826](https://tracker.mender.io/browse/MEN-4826))
+  ([MEN-4826](https://northerntech.atlassian.net/browse/MEN-4826))
 * fix filtering by datetime values (e.g. `updated_ts`)
-  ([MEN-4644](https://tracker.mender.io/browse/MEN-4644))
+  ([MEN-4644](https://northerntech.atlassian.net/browse/MEN-4644))
 * Aggregated Dependabot Changelogs:
   * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.8.1 to 1.9.0.
       - [Release notes](https://github.com/spf13/viper/releases)
@@ -10425,16 +10425,16 @@ New changes in useradm since 1.16.0:
 New changes in useradm-enterprise since 1.16.0:
 
 * do not hard-code the email sender, rely on workflows' default
-  ([MEN-5124](https://tracker.mender.io/browse/MEN-5124))
+  ([MEN-5124](https://northerntech.atlassian.net/browse/MEN-5124))
 * [] Implement OpenID Connect authentication flow
-  ([MEN-5117](https://tracker.mender.io/browse/MEN-5117))
+  ([MEN-5117](https://northerntech.atlassian.net/browse/MEN-5117))
 * Upgrade from deprecated `golang.org/x/crypto/ssh/terminal` to
   `golang.org/x/term`
-  ([QA-235](https://tracker.mender.io/browse/QA-235))
+  ([QA-235](https://northerntech.atlassian.net/browse/QA-235))
 * invalidate active JWT tokens on password reset
-  ([MEN-5266](https://tracker.mender.io/browse/MEN-5266))
+  ([MEN-5266](https://northerntech.atlassian.net/browse/MEN-5266))
 * fix: extend the RBAC roles to support iot-manager
-  ([MEN-5386](https://tracker.mender.io/browse/MEN-5386))
+  ([MEN-5386](https://northerntech.atlassian.net/browse/MEN-5386))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.14.0 to 3.14.2.
 
@@ -10489,15 +10489,15 @@ New changes in useradm-enterprise since 1.16.0:
 New changes in workflows since 2.1.0:
 
 * add support for `Name <email@example.com>` mail sender/recipients
-  ([MEN-5124](https://tracker.mender.io/browse/MEN-5124))
+  ([MEN-5124](https://northerntech.atlassian.net/browse/MEN-5124))
 * Version as optional parameter via X-Workflows-Min-Version.
-  ([MEN-4554](https://tracker.mender.io/browse/MEN-4554))
+  ([MEN-4554](https://northerntech.atlassian.net/browse/MEN-4554))
 * Fix: do not add empty RFC822 headers (To, Cc, Bcc) in email messages
 * Explicitly set type of Job.Status to int32 to avoid document growth
 * new end-point to start a batch of workflow's jobs
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
+  ([MEN-4843](https://northerntech.atlassian.net/browse/MEN-4843))
 * new task type "NATS" to send messages over a NATS stream
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
+  ([MEN-4843](https://northerntech.atlassian.net/browse/MEN-4843))
 * Aggregated Dependabot Changelogs:
   * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.2 to 1.7.4.
       - [Release notes](https://github.com/gin-gonic/gin/releases)
@@ -10552,19 +10552,19 @@ New changes in workflows since 2.1.0:
 New changes in workflows-enterprise since 2.1.0:
 
 * do not hard-code the email sender, use env WORKFLOWS_EMAIL_SENDER
-  ([MEN-5124](https://tracker.mender.io/browse/MEN-5124))
+  ([MEN-5124](https://northerntech.atlassian.net/browse/MEN-5124))
 * add support for `Name <email@example.com>` mail sender/recipients
-  ([MEN-5124](https://tracker.mender.io/browse/MEN-5124))
+  ([MEN-5124](https://northerntech.atlassian.net/browse/MEN-5124))
 * Version as optional parameter via X-Workflows-Min-Version.
-  ([MEN-4554](https://tracker.mender.io/browse/MEN-4554))
+  ([MEN-4554](https://northerntech.atlassian.net/browse/MEN-4554))
 * Unit tests alignment.
-  ([MEN-4554](https://tracker.mender.io/browse/MEN-4554))
+  ([MEN-4554](https://northerntech.atlassian.net/browse/MEN-4554))
 * Fix: do not add empty RFC822 headers (To, Cc, Bcc) in email messages
 * Explicitly set type of Job.Status to int32 to avoid document growth
 * new end-point to start a batch of workflow's jobs
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
+  ([MEN-4843](https://northerntech.atlassian.net/browse/MEN-4843))
 * new task type "NATS" to send messages over a NATS stream
-  ([MEN-4843](https://tracker.mender.io/browse/MEN-4843))
+  ([MEN-4843](https://northerntech.atlassian.net/browse/MEN-4843))
 * Remove provisioning of tenants for deviceconnect and auditlogs
 * Aggregated Dependabot Changelogs:
   * Bumps [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) from 1.7.2 to 1.7.4.
@@ -10642,9 +10642,9 @@ New changes in workflows-enterprise since 2.1.0:
 New changes in integration since 3.1.0:
 
 * [] Fix demo script user creation race condition
-  ([MEN-4852](https://tracker.mender.io/browse/MEN-4852))
+  ([MEN-4852](https://northerntech.atlassian.net/browse/MEN-4852))
 * Azure Get/Set settings backend integration test.
-  ([MEN-5150](https://tracker.mender.io/browse/MEN-5150))
+  ([MEN-5150](https://northerntech.atlassian.net/browse/MEN-5150))
 * workflows requires nats, move the container to the main docker-compose.yml
 * Unify the docker-compose version check through using the
   docker-compose version subcommand, as opposed to the --version flag when
@@ -11704,18 +11704,18 @@ New changes in deployments-enterprise since 4.0.0:
 New changes in devicemonitor since 1.0.0:
 
 * [] Allow alerts to contain empty log lines
-  ([MEN-5256](https://tracker.mender.io/browse/MEN-5256))
+  ([MEN-5256](https://northerntech.atlassian.net/browse/MEN-5256))
 
 #### gui (3.1.1)
 
 New changes in gui since 3.1.0:
 
 * xtermjs interprets string as UTF-16
-  ([MEN-4771](https://tracker.mender.io/browse/MEN-4771))
+  ([MEN-4771](https://northerntech.atlassian.net/browse/MEN-4771))
 * fixed an issue that could prevent creating phased deployments for dynamic groups
 * Restore support for Open Source Production setups in bash
   snippets used during on-boarding and on "Connect a Device" dialog.
-  ([MEN-5107](https://tracker.mender.io/browse/MEN-5107))
+  ([MEN-5107](https://northerntech.atlassian.net/browse/MEN-5107))
 * fixed an issue that limited profile edits to passwords, now editing the own email address is possible again
 
 #### inventory-enterprise (4.0.1)
@@ -11723,7 +11723,7 @@ New changes in gui since 3.1.0:
 New changes in inventory-enterprise since 4.0.0:
 
 * fix filtering by datetime values (e.g. `updated_ts`)
-  ([MEN-4644](https://tracker.mender.io/browse/MEN-4644))
+  ([MEN-4644](https://northerntech.atlassian.net/browse/MEN-4644))
 
 #### mtls-ambassador (1.0.1)
 
@@ -11743,7 +11743,7 @@ New changes in mtls-ambassador since 1.0.0:
 New changes in integration since 3.1.0:
 
 * [] Fix demo script user creation race condition
-  ([MEN-4852](https://tracker.mender.io/browse/MEN-4852))
+  ([MEN-4852](https://northerntech.atlassian.net/browse/MEN-4852))
 * Unify the docker-compose version check through using the
   docker-compose version subcommand, as opposed to the --version flag when
   checking which docker-compose version is compatible with the current demo script.
@@ -11874,11 +11874,11 @@ New changes in deployments since 3.0.0:
 
 * datastore_mongo: fix nil pointer dereference
 * remove the CORS middleware, rely on the API gateway instead
-  ([MEN-4921](https://tracker.mender.io/browse/MEN-4921))
+  ([MEN-4921](https://northerntech.atlassian.net/browse/MEN-4921))
 * move the /deployments/devices/{id} end-point to internal
-  ([MEN-4525](https://tracker.mender.io/browse/MEN-4525))
+  ([MEN-4525](https://northerntech.atlassian.net/browse/MEN-4525))
 * [] Listing devices in deployment sorts by statuses
-  ([MEN-4847](https://tracker.mender.io/browse/MEN-4847))
+  ([MEN-4847](https://northerntech.atlassian.net/browse/MEN-4847))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.13.5 to 3.14.0.
     ---
@@ -11958,13 +11958,13 @@ New changes in deployments-enterprise since 3.0.0:
 
 * datastore_mongo: fix nil pointer dereference
 * add update control map evaluation
-  ([MEN-4906](https://tracker.mender.io/browse/MEN-4906))
+  ([MEN-4906](https://northerntech.atlassian.net/browse/MEN-4906))
 * remove the CORS middleware, rely on the API gateway instead
-  ([MEN-4921](https://tracker.mender.io/browse/MEN-4921))
+  ([MEN-4921](https://northerntech.atlassian.net/browse/MEN-4921))
 * move the /deployments/devices/{id} end-point to internal
-  ([MEN-4525](https://tracker.mender.io/browse/MEN-4525))
+  ([MEN-4525](https://northerntech.atlassian.net/browse/MEN-4525))
 * [] Listing devices in deployment sorts by statuses
-  ([MEN-4847](https://tracker.mender.io/browse/MEN-4847))
+  ([MEN-4847](https://northerntech.atlassian.net/browse/MEN-4847))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.13.5 to 3.14.0.
     ---
@@ -12071,11 +12071,11 @@ New changes in deployments-enterprise since 3.0.0:
 New changes in deviceauth since 3.0.0:
 
 * add support for fallback RSA private key
-  ([MEN-3152](https://tracker.mender.io/browse/MEN-3152))
+  ([MEN-3152](https://northerntech.atlassian.net/browse/MEN-3152))
 * remove the CORS middleware, rely on the API gateway instead
-  ([MEN-4921](https://tracker.mender.io/browse/MEN-4921))
+  ([MEN-4921](https://northerntech.atlassian.net/browse/MEN-4921))
 * [] Restrict access to monitor APIs to devices with monitor add-on
-  ([MEN-5077](https://tracker.mender.io/browse/MEN-5077))
+  ([MEN-5077](https://northerntech.atlassian.net/browse/MEN-5077))
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.5.3 to 1.5.4.
     - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
@@ -12102,7 +12102,7 @@ New changes in deviceauth since 3.0.0:
 New changes in deviceconnect since 1.2.0:
 
 * store the correct offset in the recordings control messages
-  ([MEN-4770](https://tracker.mender.io/browse/MEN-4770))
+  ([MEN-4770](https://northerntech.atlassian.net/browse/MEN-4770))
 
 #### devicemonitor (1.0.0)
 
@@ -12113,35 +12113,35 @@ New changes in deviceconnect since 1.2.0:
 New changes in gui since 3.0.0:
 
 * added copy capabilities & sha checksum to device authset information
-  ([MEN-4791](https://tracker.mender.io/browse/MEN-4791))
+  ([MEN-4791](https://northerntech.atlassian.net/browse/MEN-4791))
 * fixed an issue that caused the deployment report to crash due to missing update control information
 * added role dependent (admin only) notification muting to global settings
-  ([MEN-4757](https://tracker.mender.io/browse/MEN-4757))
+  ([MEN-4757](https://northerntech.atlassian.net/browse/MEN-4757))
 * device details now show monitoring information if monitor add-on is enabled
-  ([MEN-4787](https://tracker.mender.io/browse/MEN-4787))
+  ([MEN-4787](https://northerntech.atlassian.net/browse/MEN-4787))
 * added monitor to addon selection
-  ([MEN-4836](https://tracker.mender.io/browse/MEN-4836))
+  ([MEN-4836](https://northerntech.atlassian.net/browse/MEN-4836))
 * fixed an issue that caused the page selection in the device list to change unintended
 * fixed an issue that caused release tab to crash when release generation takes longer than releases retrieval
 * added device list tag display & editing capabilties to device details
-  ([MEN-4755](https://tracker.mender.io/browse/MEN-4755))
+  ([MEN-4755](https://northerntech.atlassian.net/browse/MEN-4755))
 * made artifact creation more restrictive to not allow creation without device types or invalid paths
-  ([MEN-4933](https://tracker.mender.io/browse/MEN-4933))
+  ([MEN-4933](https://northerntech.atlassian.net/browse/MEN-4933))
 * fixed an issue that caused the device list to misbehave when quickly changing pages
-  ([MEN-4932](https://tracker.mender.io/browse/MEN-4932))
+  ([MEN-4932](https://northerntech.atlassian.net/browse/MEN-4932))
 * Adjust help text to say that RPi image is merely Mender ready.
 * require the current one when updating the user's password
-  ([MEN-4922](https://tracker.mender.io/browse/MEN-4922))
+  ([MEN-4922](https://northerntech.atlassian.net/browse/MEN-4922))
 * Install Mender commercial add-ons (namely: mender-monitor)
   during user on-boarding.
-  ([MEN-4759](https://tracker.mender.io/browse/MEN-4759))
+  ([MEN-4759](https://northerntech.atlassian.net/browse/MEN-4759))
 * switched device deployment progress to no longer show assumed progress
-  ([MEN-5025](https://tracker.mender.io/browse/MEN-5025))
+  ([MEN-5025](https://northerntech.atlassian.net/browse/MEN-5025))
 * ensure copied authset pubkey contains empty newline if it exists already
 * fixed an issue that prevented getting to devices based on their software in the overall device distribution
 * fixed an issue that prevented filter selections from being persisted
 * fixed an issue that prevented changes in monitoring issues from being reflected in the devicelist
-  ([MEN-5113](https://tracker.mender.io/browse/MEN-5113))
+  ([MEN-5113](https://northerntech.atlassian.net/browse/MEN-5113))
 * Aggregated Dependabot Changelogs:
   * Bumps nginx from 1.21.0-alpine to 1.21.1-alpine.
     ---
@@ -13252,13 +13252,13 @@ New changes in gui since 3.0.0:
 New changes in inventory since 3.0.0:
 
 * PUT and PATCH device tags management endpoints
-  ([MEN-2342](https://tracker.mender.io/browse/MEN-2342))
+  ([MEN-2342](https://northerntech.atlassian.net/browse/MEN-2342))
 * apply configurable limits to tags (20) and inventory (100)
-  ([MEN-4781](https://tracker.mender.io/browse/MEN-4781))
+  ([MEN-4781](https://northerntech.atlassian.net/browse/MEN-4781))
 * remove the CORS middleware, rely on the API gateway instead
-  ([MEN-4921](https://tracker.mender.io/browse/MEN-4921))
+  ([MEN-4921](https://northerntech.atlassian.net/browse/MEN-4921))
 * improve device decommissioning and inventory data reset
-  ([MEN-4525](https://tracker.mender.io/browse/MEN-4525))
+  ([MEN-4525](https://northerntech.atlassian.net/browse/MEN-4525))
 * internal endpoint for reindexing monitor data
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.5.3 to 1.5.4.
@@ -13310,13 +13310,13 @@ New changes in inventory since 3.0.0:
 New changes in inventory-enterprise since 3.0.0:
 
 * PUT and PATCH device tags management endpoints
-  ([MEN-2342](https://tracker.mender.io/browse/MEN-2342))
+  ([MEN-2342](https://northerntech.atlassian.net/browse/MEN-2342))
 * apply configurable limits to tags (20) and inventory (100)
-  ([MEN-4781](https://tracker.mender.io/browse/MEN-4781))
+  ([MEN-4781](https://northerntech.atlassian.net/browse/MEN-4781))
 * remove the CORS middleware, rely on the API gateway instead
-  ([MEN-4921](https://tracker.mender.io/browse/MEN-4921))
+  ([MEN-4921](https://northerntech.atlassian.net/browse/MEN-4921))
 * improve device decommissioning and inventory data reset
-  ([MEN-4525](https://tracker.mender.io/browse/MEN-4525))
+  ([MEN-4525](https://northerntech.atlassian.net/browse/MEN-4525))
 * internal endpoint for reindexing monitor data
 * Aggregated Dependabot Changelogs:
   * Bumps [github.com/spf13/viper](https://github.com/spf13/viper) from 1.8.0 to 1.8.1.
@@ -13419,15 +13419,15 @@ New changes in inventory-enterprise since 3.0.0:
 New changes in tenantadm since 3.2.0:
 
 * update API docs and/or API implementation to make it congruent
-  ([MEN-4670](https://tracker.mender.io/browse/MEN-4670))
+  ([MEN-4670](https://northerntech.atlassian.net/browse/MEN-4670))
 * default tenant API limits, overridable with env variable
-  ([MEN-4661](https://tracker.mender.io/browse/MEN-4661))
+  ([MEN-4661](https://northerntech.atlassian.net/browse/MEN-4661))
 * add-on plan change requests saved data to spreadsheet
-  ([MEN-4890](https://tracker.mender.io/browse/MEN-4890))
+  ([MEN-4890](https://northerntech.atlassian.net/browse/MEN-4890))
 * add support for the monitor add-on
-  ([MEN-4831](https://tracker.mender.io/browse/MEN-4831))
+  ([MEN-4831](https://northerntech.atlassian.net/browse/MEN-4831))
 * remove the CORS middleware, rely on the API gateway instead
-  ([MEN-4921](https://tracker.mender.io/browse/MEN-4921))
+  ([MEN-4921](https://northerntech.atlassian.net/browse/MEN-4921))
 * FIX: Token invalidation when updating add-ons
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.13.5 to 3.14.0.
@@ -13461,11 +13461,11 @@ New changes in tenantadm since 3.2.0:
 New changes in useradm since 1.15.0:
 
 * add support for fallback RSA private key
-  ([MEN-3153](https://tracker.mender.io/browse/MEN-3153))
+  ([MEN-3153](https://northerntech.atlassian.net/browse/MEN-3153))
 * remove the CORS middleware, rely on the API gateway instead
-  ([MEN-4921](https://tracker.mender.io/browse/MEN-4921))
+  ([MEN-4921](https://northerntech.atlassian.net/browse/MEN-4921))
 * require the current one when updating the user's password
-  ([MEN-4922](https://tracker.mender.io/browse/MEN-4922))
+  ([MEN-4922](https://northerntech.atlassian.net/browse/MEN-4922))
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.5.3 to 1.5.4.
     - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
@@ -13482,32 +13482,32 @@ New changes in useradm since 1.15.0:
 New changes in useradm-enterprise since 1.15.0:
 
 * update the RemoteTerminal role, fix download url whitelisting
-  ([MEN-4675](https://tracker.mender.io/browse/MEN-4675))
+  ([MEN-4675](https://northerntech.atlassian.net/browse/MEN-4675))
 * add rate limit protection to the password reset end-point
-  ([MEN-4884](https://tracker.mender.io/browse/MEN-4884))
+  ([MEN-4884](https://northerntech.atlassian.net/browse/MEN-4884))
 * add rate limit protection to the email verification end-point
-  ([MEN-4884](https://tracker.mender.io/browse/MEN-4884))
+  ([MEN-4884](https://northerntech.atlassian.net/browse/MEN-4884))
 * new internal endpoint for getting users' email addresses of users with access to a given device
-  ([MEN-4833](https://tracker.mender.io/browse/MEN-4833))
+  ([MEN-4833](https://northerntech.atlassian.net/browse/MEN-4833))
 * Fix authorization control in useradm (read-only role)
-  ([MEN-4918](https://tracker.mender.io/browse/MEN-4918))
+  ([MEN-4918](https://northerntech.atlassian.net/browse/MEN-4918))
 * add support for fallback RSA private key
-  ([MEN-3153](https://tracker.mender.io/browse/MEN-3153))
+  ([MEN-3153](https://northerntech.atlassian.net/browse/MEN-3153))
 * remove the CORS middleware, rely on the API gateway instead
-  ([MEN-4921](https://tracker.mender.io/browse/MEN-4921))
+  ([MEN-4921](https://northerntech.atlassian.net/browse/MEN-4921))
 * require the current one when updating the user's password
-  ([MEN-4922](https://tracker.mender.io/browse/MEN-4922))
+  ([MEN-4922](https://northerntech.atlassian.net/browse/MEN-4922))
 * forbid updates to OAuth 2 users
-  ([MEN-4920](https://tracker.mender.io/browse/MEN-4920))
+  ([MEN-4920](https://northerntech.atlassian.net/browse/MEN-4920))
 * make it possible to re-enable 2FA
   It is possible to enable 2FA and leave the page (or refresh) without
   finishing the process. In that case the 2FA will stuck in the unverified
   state. Attempt to re-enabling 2FA will be unsuccessfull (the server will
   return HTTP 400 Bad Request).
   With this change it will be possible to easily recover from 2FA unverified
-  state. ([MEN-5026](https://tracker.mender.io/browse/MEN-5026))
+  state. ([MEN-5026](https://northerntech.atlassian.net/browse/MEN-5026))
 * [] Restrict access to monitor APIs to users with monitor add-on
-  ([MEN-5071](https://tracker.mender.io/browse/MEN-5071))
+  ([MEN-5071](https://northerntech.atlassian.net/browse/MEN-5071))
 * extend observer role with permission to access devicemonitor endpoints
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.5.3 to 1.5.4.
@@ -13544,11 +13544,11 @@ New changes in useradm-enterprise since 1.15.0:
 New changes in workflows since 2.0.0:
 
 * do not use upsert when acquiring jobs
-  ([MEN-4923](https://tracker.mender.io/browse/MEN-4923))
+  ([MEN-4923](https://northerntech.atlassian.net/browse/MEN-4923))
 * BCC support and CC fixes
-  ([MEN-4998](https://tracker.mender.io/browse/MEN-4998))
+  ([MEN-4998](https://northerntech.atlassian.net/browse/MEN-4998))
 * use internal end-points to provision and decommission devices
-  ([MEN-4525](https://tracker.mender.io/browse/MEN-4525))
+  ([MEN-4525](https://northerntech.atlassian.net/browse/MEN-4525))
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.5.3 to 1.5.4.
     - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
@@ -13565,18 +13565,18 @@ New changes in workflows since 2.0.0:
 New changes in workflows-enterprise since 2.0.0:
 
 * do not use upsert when acquiring jobs
-  ([MEN-4923](https://tracker.mender.io/browse/MEN-4923))
+  ([MEN-4923](https://northerntech.atlassian.net/browse/MEN-4923))
 * Year increment in the emails footers
 * Monitoring: official email templates.
-  ([MEN-4935](https://tracker.mender.io/browse/MEN-4935))
+  ([MEN-4935](https://northerntech.atlassian.net/browse/MEN-4935))
 * BCC support and CC fixes
-  ([MEN-4998](https://tracker.mender.io/browse/MEN-4998))
+  ([MEN-4998](https://northerntech.atlassian.net/browse/MEN-4998))
 * use internal end-points to provision and decommission devices
-  ([MEN-4525](https://tracker.mender.io/browse/MEN-4525))
+  ([MEN-4525](https://northerntech.atlassian.net/browse/MEN-4525))
 * Monitoring align the email templates.
-  ([MEN-5036](https://tracker.mender.io/browse/MEN-5036))
+  ([MEN-5036](https://northerntech.atlassian.net/browse/MEN-5036))
 * Monitoring: log pattern and file path in the emails
-  ([MEN-4979](https://tracker.mender.io/browse/MEN-4979))
+  ([MEN-4979](https://northerntech.atlassian.net/browse/MEN-4979))
 * Aggregated Dependabot Changelogs:
   * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.5.3 to 1.5.4.
     - [Release notes](https://github.com/mongodb/mongo-go-driver/releases)
@@ -13990,7 +13990,7 @@ New changes in create-artifact-worker since 1.0.2:
 New changes in gui since 3.0.1:
 
 * xtermjs interprets string as UTF-16
-  ([MEN-4771](https://tracker.mender.io/browse/MEN-4771))
+  ([MEN-4771](https://northerntech.atlassian.net/browse/MEN-4771))
 * fixed an issue that could prevent creating phased deployments for dynamic groups
 
 #### inventory-enterprise (3.0.1)
@@ -13998,7 +13998,7 @@ New changes in gui since 3.0.1:
 New changes in inventory-enterprise since 3.0.0:
 
 * fix filtering by datetime values (e.g. `updated_ts`)
-  ([MEN-4644](https://tracker.mender.io/browse/MEN-4644))
+  ([MEN-4644](https://northerntech.atlassian.net/browse/MEN-4644))
 
 #### mtls-ambassador (1.0.1)
 
@@ -14082,14 +14082,14 @@ Bumped version to align with the enterprise fork.
 New changes in deployments-enterprise since 3.0.0:
 
 * add update control map evaluation
-  ([MEN-4906](https://tracker.mender.io/browse/MEN-4906))
+  ([MEN-4906](https://northerntech.atlassian.net/browse/MEN-4906))
 
 #### deviceconnect (1.2.1)
 
 New changes in deviceconnect since 1.2.0:
 
 * store the correct offset in the recordings control messages
-  ([MEN-4770](https://tracker.mender.io/browse/MEN-4770))
+  ([MEN-4770](https://northerntech.atlassian.net/browse/MEN-4770))
 
 #### gui (3.0.1)
 
@@ -14099,7 +14099,7 @@ New changes in gui since 3.0.0:
 * fixed an issue that caused the deployment report to crash due to missing update control information
 * fixed an issue that caused the page selection in the device list to change unintended
 * require the current one when updating the user's password
-  ([MEN-4922](https://tracker.mender.io/browse/MEN-4922))
+  ([MEN-4922](https://northerntech.atlassian.net/browse/MEN-4922))
 * fixed an issue that prevented getting to devices based on their software in the overall device distribution
 
 #### integration (3.0.1)
@@ -14108,7 +14108,7 @@ New changes in integration since 3.0.0:
 
 * Fix: Traefik is proxying minio requests on (80,443) ports, not on 9000
 * [] Fix demo script user creation race condition
-  ([MEN-4852](https://tracker.mender.io/browse/MEN-4852))
+  ([MEN-4852](https://northerntech.atlassian.net/browse/MEN-4852))
 * Upgrade deployments-enterprise to 3.0.1.
 * Upgrade deployments to 3.0.1.
 * Upgrade deviceconnect to 1.2.1.
@@ -14187,15 +14187,15 @@ A total of 33744 lines added, 22372 removed (delta 11372)
 New changes in auditlogs since 1.1.0:
 
 * Redact sensitive information from logs
-  ([MEN-4332](https://tracker.mender.io/browse/MEN-4332), [MEN-4491](https://tracker.mender.io/browse/MEN-4491))
+  ([MEN-4332](https://northerntech.atlassian.net/browse/MEN-4332), [MEN-4491](https://northerntech.atlassian.net/browse/MEN-4491))
 * Allow filtering logs by object_type='device'
-  ([MEN-4332](https://tracker.mender.io/browse/MEN-4332), [MEN-4491](https://tracker.mender.io/browse/MEN-4491))
+  ([MEN-4332](https://northerntech.atlassian.net/browse/MEN-4332), [MEN-4491](https://northerntech.atlassian.net/browse/MEN-4491))
 * New audit log actions: 'open_portforward',
   'close_portforward', 'download_file', 'upload_file',
   'set_configuration', 'deploy_configuration'.
-  ([MEN-4332](https://tracker.mender.io/browse/MEN-4332), [MEN-4491](https://tracker.mender.io/browse/MEN-4491))
+  ([MEN-4332](https://northerntech.atlassian.net/browse/MEN-4332), [MEN-4491](https://northerntech.atlassian.net/browse/MEN-4491))
 * Audit log uploading and deleting atifacts
-  ([MEN-4047](https://tracker.mender.io/browse/MEN-4047))
+  ([MEN-4047](https://northerntech.atlassian.net/browse/MEN-4047))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.13.0 to 3.13.3.
   * Bumps golang from 1.16.2-alpine3.12 to 1.16.3-alpine3.12.
@@ -14237,15 +14237,15 @@ New changes in auditlogs since 1.1.0:
 New changes in deployments since 2.3.0:
 
 * device status update handles 'pause' states
-  ([MEN-4570](https://tracker.mender.io/browse/MEN-4570))
+  ([MEN-4570](https://northerntech.atlassian.net/browse/MEN-4570))
 * Sort parameter for get deployments endpoint
-  ([MEN-4665](https://tracker.mender.io/browse/MEN-4665))
+  ([MEN-4665](https://northerntech.atlassian.net/browse/MEN-4665))
 * add support for AWS S3 Transfer Acceleration
-  ([MEN-3966](https://tracker.mender.io/browse/MEN-3966))
+  ([MEN-3966](https://northerntech.atlassian.net/browse/MEN-3966))
 * Deployments devices endpoint deprecation
-  ([MEN-3993](https://tracker.mender.io/browse/MEN-3993))
+  ([MEN-3993](https://northerntech.atlassian.net/browse/MEN-3993))
 * new deployment devices list endpoint
-  ([MEN-3993](https://tracker.mender.io/browse/MEN-3993))
+  ([MEN-3993](https://northerntech.atlassian.net/browse/MEN-3993))
 * store information about device groups with the deployment
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.13.1 to 3.13.3.
@@ -14286,24 +14286,24 @@ New changes in deployments-enterprise since 2.3.0:
 * docs: Fix naming conflict in v1 and v2 NewDeployment definitions.
 * docs: Document missing parameters for NewDeploymentForGroup schema.
 * device status update handles 'pause' states
-  ([MEN-4570](https://tracker.mender.io/browse/MEN-4570))
+  ([MEN-4570](https://northerntech.atlassian.net/browse/MEN-4570))
 * introduce audit log for deployment aborting
 * Added new PATCH endpoint for updating update_control_map
 * [] Support update_control_map in /deployments/next devices API
-  ([MEN-4555](https://tracker.mender.io/browse/MEN-4555))
+  ([MEN-4555](https://northerntech.atlassian.net/browse/MEN-4555))
 * extend configuration deployment with update control map
 * Sort parameter for get deployments endpoint
-  ([MEN-4665](https://tracker.mender.io/browse/MEN-4665))
+  ([MEN-4665](https://northerntech.atlassian.net/browse/MEN-4665))
 * add support for AWS S3 Transfer Acceleration
-  ([MEN-3966](https://tracker.mender.io/browse/MEN-3966))
+  ([MEN-3966](https://northerntech.atlassian.net/browse/MEN-3966))
 * Sort parameter for get deployments endpoint
-  ([MEN-4665](https://tracker.mender.io/browse/MEN-4665))
+  ([MEN-4665](https://northerntech.atlassian.net/browse/MEN-4665))
 * Deployments devices endpoint deprecation
-  ([MEN-3993](https://tracker.mender.io/browse/MEN-3993))
+  ([MEN-3993](https://northerntech.atlassian.net/browse/MEN-3993))
 * new deployment devices list endpoint
-  ([MEN-3993](https://tracker.mender.io/browse/MEN-3993))
+  ([MEN-3993](https://northerntech.atlassian.net/browse/MEN-3993))
 * new end-point: deployments/next v2
-  ([MEN-4784](https://tracker.mender.io/browse/MEN-4784))
+  ([MEN-4784](https://northerntech.atlassian.net/browse/MEN-4784))
 * store information about device groups with the deployment
 * extend RBAC support
 * Aggregated Dependabot Changelogs:
@@ -14494,7 +14494,7 @@ New changes in deviceconfig since 1.0.0:
 New changes in deviceconnect since 1.1.0:
 
 * [] Limit size of messages transferred over websockets
-  ([MEN-4803](https://tracker.mender.io/browse/MEN-4803))
+  ([MEN-4803](https://northerntech.atlassian.net/browse/MEN-4803))
 * Delay HTTP 200 response to the first file chunk received to
   support errors due to file transfer limits set on the device.
 * Aggregated Dependabot Changelogs:
@@ -14555,11 +14555,11 @@ New changes in gui since 2.7.0:
 
 * refactored upgrade page + added support for plan & addon changes
 * ensured ungrouped group won't suggest removing device from group
-  ([MEN-4609](https://tracker.mender.io/browse/MEN-4609))
+  ([MEN-4609](https://northerntech.atlassian.net/browse/MEN-4609))
 * fixed an issue that could prevent cleaning up an expanded device + leak memory
 * limited processing of retrieved device attributes to 100
 * added port forwarding tooltip to ease access to the feature
-  ([MEN-4477](https://tracker.mender.io/browse/MEN-4477))
+  ([MEN-4477](https://northerntech.atlassian.net/browse/MEN-4477))
 * made initial past deployment time frame selection depend on most recent deployments
 * fixed an issue that prevented automatic redirect to pending/ inprogress deployments after deployment creation
 * fixed an issue that caused releases to disappear on deployment creation
@@ -14568,29 +14568,29 @@ New changes in gui since 2.7.0:
 * fixed an issue that could crash the deployment page when closing
 * fixed a potential memory leak in the deployments list
 * fixed an issue that prevented RBAC group based role modifications
-  ([MEN-4713](https://tracker.mender.io/browse/MEN-4713))
+  ([MEN-4713](https://northerntech.atlassian.net/browse/MEN-4713))
 * made deployments fitlerable by deployment type
-  ([MEN-4667](https://tracker.mender.io/browse/MEN-4667))
+  ([MEN-4667](https://northerntech.atlassian.net/browse/MEN-4667))
 * Adjustments to height and signup/login padding for display on small screens
 * fixed an issue that caused deployment type selection to reset by itself
 * fixed an issue that could prevent deployment creation after switching to a lower plan
-  ([MEN-4765](https://tracker.mender.io/browse/MEN-4765))
+  ([MEN-4765](https://northerntech.atlassian.net/browse/MEN-4765))
 * fixed an issue that might prevent importing a default configuration
-  ([MEN-4750](https://tracker.mender.io/browse/MEN-4750))
+  ([MEN-4750](https://northerntech.atlassian.net/browse/MEN-4750))
 * added support for synchronized deployments and deployment pause states
-  ([MEN-4711](https://tracker.mender.io/browse/MEN-4711))
+  ([MEN-4711](https://northerntech.atlassian.net/browse/MEN-4711))
 * fixed an issue that could prevent enterprise users from setting up a phased deployment
 * fixed an issue that prevented a previously set default retry value from being used
 * fixed an issue that prevented running deployments from being updated
-  ([MEN-4802](https://tracker.mender.io/browse/MEN-4802))
+  ([MEN-4802](https://northerntech.atlassian.net/browse/MEN-4802))
 * enabled device filtering with multiple values for the same attribute
-  ([MEN-4674](https://tracker.mender.io/browse/MEN-4674))
+  ([MEN-4674](https://northerntech.atlassian.net/browse/MEN-4674))
 * added device list shortcut filter to ease device list filtering on id-attributes
 * migrated tab based device list layout to single filtered list layout
-  ([MEN-4662](https://tracker.mender.io/browse/MEN-4662))
+  ([MEN-4662](https://northerntech.atlassian.net/browse/MEN-4662))
 * fixed an issue that prevented automatic update of detailed device info
 * restored individual scrolling in device list etc.
-  ([MEN-4828](https://tracker.mender.io/browse/MEN-4828))
+  ([MEN-4828](https://northerntech.atlassian.net/browse/MEN-4828))
 * Aggregated Dependabot Changelogs:
   * Bumps [core-js](https://github.com/zloirock/core-js/tree/HEAD/packages/core-js) from 3.10.0 to 3.10.1.
     - [Release notes](https://github.com/zloirock/core-js/releases)
@@ -15671,7 +15671,7 @@ New changes in inventory since 2.3.0:
 New changes in inventory-enterprise since 2.3.0:
 
 * fix RBAC group logic always filtering by group names
-  ([MEN-4728](https://tracker.mender.io/browse/MEN-4728))
+  ([MEN-4728](https://northerntech.atlassian.net/browse/MEN-4728))
 * New internal endpoint for getting device's groups
 * Modify internal endpoint `/devices/:status` to
   `/devices/status/:status`
@@ -15784,9 +15784,9 @@ New changes in inventory-enterprise since 2.3.0:
 New changes in tenantadm since 3.1.0:
 
 * Suspend the tenant on trial cancellation by the user
-  ([MEN-4606](https://tracker.mender.io/browse/MEN-4606))
+  ([MEN-4606](https://northerntech.atlassian.net/browse/MEN-4606))
 * add suspend-tenants-expired-trial CLI command
-  ([MEN-4602](https://tracker.mender.io/browse/MEN-4602))
+  ([MEN-4602](https://northerntech.atlassian.net/browse/MEN-4602))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.13.2 to 3.13.3.
   * Bumps golang from 1.16.2-alpine3.12 to 1.16.3-alpine3.12.
@@ -15821,7 +15821,7 @@ New changes in tenantadm since 3.1.0:
 New changes in useradm since 1.14.0:
 
 * internal API end-point to remove users
-  ([MEN-4628](https://tracker.mender.io/browse/MEN-4628))
+  ([MEN-4628](https://northerntech.atlassian.net/browse/MEN-4628))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.13.2 to 3.13.3.
   * Bumps alpine from 3.13.3 to 3.13.4.
@@ -15863,13 +15863,13 @@ New changes in useradm since 1.14.0:
 New changes in useradm-enterprise since 1.14.0:
 
 * internal API end-point to remove users
-  ([MEN-4628](https://tracker.mender.io/browse/MEN-4628))
+  ([MEN-4628](https://northerntech.atlassian.net/browse/MEN-4628))
 * internal API end-point to remove users
-  ([MEN-4628](https://tracker.mender.io/browse/MEN-4628))
+  ([MEN-4628](https://northerntech.atlassian.net/browse/MEN-4628))
 * fix duplicated user email address handling
 * 2fa enable/disable endpoints
 * security fix: invalidate user JWT token cache on logout
-  ([MEN-4754](https://tracker.mender.io/browse/MEN-4754))
+  ([MEN-4754](https://northerntech.atlassian.net/browse/MEN-4754))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.13.2 to 3.13.3.
   * Bumps alpine from 3.13.2 to 3.13.3.
@@ -16025,10 +16025,10 @@ New changes in workflows since 1.4.0:
 New changes in workflows-enterprise since 1.4.0:
 
 * Send alert email workflow for Monitoring
-  ([MEN-4650](https://tracker.mender.io/browse/MEN-4650))
+  ([MEN-4650](https://northerntech.atlassian.net/browse/MEN-4650))
 * extend deploy device configuration workflow with update control map
 * append tenant cancellation data to Google Sheets
-  ([MEN-4705](https://tracker.mender.io/browse/MEN-4705))
+  ([MEN-4705](https://northerntech.atlassian.net/browse/MEN-4705))
 * update device status workflow: update the path of the status
   endpoint
 * Aggregated Dependabot Changelogs:
@@ -16132,11 +16132,11 @@ New changes in integration since 2.7.0:
 
 * Remove nginx-based api-gateway and replace with Traefik.
 * fix auth verification on useradm APIs
-  ([MEN-4623](https://tracker.mender.io/browse/MEN-4623))
+  ([MEN-4623](https://northerntech.atlassian.net/browse/MEN-4623))
 * Enforce userauth middleware on non-signup tenantadm endpoints
-  ([MEN-4657](https://tracker.mender.io/browse/MEN-4657))
+  ([MEN-4657](https://northerntech.atlassian.net/browse/MEN-4657))
 * Full integration test for file limits
-  ([MEN-4588](https://tracker.mender.io/browse/MEN-4588))
+  ([MEN-4588](https://northerntech.atlassian.net/browse/MEN-4588))
 * [Træfik] Change dynamic config provider from "Docker" to "File"
 * Fix mender-configure install in Docker image
   mendersoftware/mender-client-docker-addons
@@ -16405,7 +16405,7 @@ A total of 255 lines added, 98 removed (delta 157)
 New changes in inventory-enterprise since 2.3.0:
 
 * fix filtering by datetime values (e.g. `updated_ts`)
-  ([MEN-4644](https://tracker.mender.io/browse/MEN-4644))
+  ([MEN-4644](https://northerntech.atlassian.net/browse/MEN-4644))
 
 #### integration (2.7.2)
 
@@ -16473,32 +16473,32 @@ A total of 779 lines added, 504 removed (delta 275)
 New changes in deviceauth since 2.6.0:
 
 * Increase robustness when propagating status to inventory for pending devices, making sure the database remains consistent
-  ([MEN-4604](https://tracker.mender.io/browse/MEN-4604))
+  ([MEN-4604](https://northerntech.atlassian.net/browse/MEN-4604))
 
 #### deviceconnect (1.1.1)
 
 New changes in deviceconnect since 1.1.0:
 
 * [] Limit size of messages transferred over websockets
-  ([MEN-4803](https://tracker.mender.io/browse/MEN-4803))
+  ([MEN-4803](https://northerntech.atlassian.net/browse/MEN-4803))
 
 #### useradm-enterprise (1.14.1)
 
 New changes in useradm-enterprise since 1.14.0:
 
 * security fix: invalidate user JWT token cache on logout
-  ([MEN-4754](https://tracker.mender.io/browse/MEN-4754))
+  ([MEN-4754](https://northerntech.atlassian.net/browse/MEN-4754))
 
 #### integration (2.7.1)
 
 New changes in integration since 2.7.0:
 
 * Enforce userauth middleware on non-signup tenantadm endpoints
-  ([MEN-4657](https://tracker.mender.io/browse/MEN-4657))
+  ([MEN-4657](https://northerntech.atlassian.net/browse/MEN-4657))
 * Fix mender-configure install in Docker image
   mendersoftware/mender-client-docker-addons
 * fix ad improve the the production template
-  ([MEN-4790](https://tracker.mender.io/browse/MEN-4790))
+  ([MEN-4790](https://northerntech.atlassian.net/browse/MEN-4790))
 * Upgrade deviceauth to 2.6.1.
 * Upgrade deviceconnect to 1.1.1.
 * Upgrade integration to 2.7.1.
@@ -16538,11 +16538,11 @@ New changes in auditlogs since 1.0.0:
 New changes in create-artifact-worker since 1.0.1:
 
 * bugfix to allow spaces in artifact names
-([MEN-4179](https://tracker.mender.io/browse/MEN-4179))
+([MEN-4179](https://northerntech.atlassian.net/browse/MEN-4179))
 * upgrade mender-artifact to version 3.5.0.
 This enables the create-artifact-worker to generate artifacts that
 implement the provides and clear provides fields.
-([MEN-4409](https://tracker.mender.io/browse/MEN-4409))
+([MEN-4409](https://northerntech.atlassian.net/browse/MEN-4409))
 
 #### deployments (2.3.0)
 
@@ -16750,7 +16750,7 @@ New changes in deviceconnect since 1.0.0:
 * New API end-points to trigger check-update and send-inventory on device
 * New internal API end-points to trigger check-update and send-inventory
 * , implement file upload and download end-points
-([MEN-4418](https://tracker.mender.io/browse/MEN-4418), [MEN-4482](https://tracker.mender.io/browse/MEN-4482))
+([MEN-4418](https://northerntech.atlassian.net/browse/MEN-4418), [MEN-4482](https://northerntech.atlassian.net/browse/MEN-4482))
 * Aggregated Dependabot Changelogs:
 * Bumps alpine from 3.12 to 3.13.0.
 * Bumps [go.mongodb.org/mongo-driver](https://github.com/mongodb/mongo-go-driver) from 1.4.4 to 1.4.6.
@@ -16766,20 +16766,20 @@ New changes in gui since 2.6.0:
 
 * Rename Retry deployment to Recreate deployment.
 * fix page number on rowsPerPage change
-([MEN-4364](https://tracker.mender.io/browse/MEN-4364))
+([MEN-4364](https://northerntech.atlassian.net/browse/MEN-4364))
 * fixed an issue that prevented existing user roles from being removed
 * fixed an issue that prevented loading dynamic group devices when navigating to device groups
 * fixed an issue that prevented the deployment attempt count from being shown in the deployment report
-([MEN-4399](https://tracker.mender.io/browse/MEN-4399))
+([MEN-4399](https://northerntech.atlassian.net/browse/MEN-4399))
 * added single device configuration editor
 * fixed onboarding tips dismissal not being saved right away
 * switched auditlogs to drawer interaction for details
-([MEN-4313](https://tracker.mender.io/browse/MEN-4313))
+([MEN-4313](https://northerntech.atlassian.net/browse/MEN-4313))
 * onboarding: Pass `--demo` flag to `get.mender.io` script.
-([MEN-4461](https://tracker.mender.io/browse/MEN-4461))
+([MEN-4461](https://northerntech.atlassian.net/browse/MEN-4461))
 * extend RBAC with "Deployments Manager" role
 * added user verification requirement for 2fa activation
-([MEN-4484](https://tracker.mender.io/browse/MEN-4484))
+([MEN-4484](https://northerntech.atlassian.net/browse/MEN-4484))
 * improved deployment creation for large device fleets
 * fixed an error that prevented deployment timeframe selection
 * prevented enter press on 2fa code entry causing a redirect
@@ -17182,14 +17182,14 @@ New changes in gui since 2.6.0:
 New changes in integration since 2.6.0:
 
 * demo script, include docker-compose.connect.yml by default
-([MEN-4357](https://tracker.mender.io/browse/MEN-4357))
+([MEN-4357](https://northerntech.atlassian.net/browse/MEN-4357))
 * Add auditlogs and deviceconnect to production templates
 * migrated gateway service to use traefik
 * production template: configure mender-api-gateway as a storage proxy
 * Include the configuration add-on in the demo script
 * Remove nginx-based api-gateway and replace with Traefik.
 * fix auth verification on useradm APIs
-([MEN-4623](https://tracker.mender.io/browse/MEN-4623))
+([MEN-4623](https://northerntech.atlassian.net/browse/MEN-4623))
 * Upgrade auditlogs to 1.1.0.
 * Upgrade create-artifact-worker to 1.0.2.
 * Upgrade deployments to 2.3.0.
@@ -17378,7 +17378,7 @@ New changes in inventory-enterprise since 2.2.0:
 New changes in tenantadm since 3.0.0:
 
 * Return Add-ons in GET user/tenant
-([MEN-4306](https://tracker.mender.io/browse/MEN-4306))
+([MEN-4306](https://northerntech.atlassian.net/browse/MEN-4306))
 * internal api: PUT /tenant/:id accepts addons
 * Aggregated Dependabot Changelogs:
 * Bumps alpine from 3.12 to 3.13.0.
@@ -17525,11 +17525,11 @@ New changes in workflows since 1.3.0:
 
 * Update workflow definitions for
 provisioning/decomissioning devices in deviceconfig service
-([MEN-4383](https://tracker.mender.io/browse/MEN-4383), [MEN-4429](https://tracker.mender.io/browse/MEN-4429))
+([MEN-4383](https://northerntech.atlassian.net/browse/MEN-4383), [MEN-4429](https://northerntech.atlassian.net/browse/MEN-4429))
 * New workflow deploy_device_configuration
-([MEN-4383](https://tracker.mender.io/browse/MEN-4383), [MEN-4429](https://tracker.mender.io/browse/MEN-4429))
+([MEN-4383](https://northerntech.atlassian.net/browse/MEN-4383), [MEN-4429](https://northerntech.atlassian.net/browse/MEN-4429))
 * Configuration deployment triggers device update check
-([MEN-4383](https://tracker.mender.io/browse/MEN-4383), [MEN-4429](https://tracker.mender.io/browse/MEN-4429))
+([MEN-4383](https://northerntech.atlassian.net/browse/MEN-4383), [MEN-4429](https://northerntech.atlassian.net/browse/MEN-4429))
 * Aggregated Dependabot Changelogs:
 * Bumps alpine from 3.12 to 3.13.0.
 * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.6.1 to 1.7.0.
@@ -17545,11 +17545,11 @@ New changes in workflows-enterprise since 1.3.0:
 
 * Update workflow definitions for
 provisioning/decomissioning devices in deviceconfig service
-([MEN-4383](https://tracker.mender.io/browse/MEN-4383), [MEN-4429](https://tracker.mender.io/browse/MEN-4429))
+([MEN-4383](https://northerntech.atlassian.net/browse/MEN-4383), [MEN-4429](https://northerntech.atlassian.net/browse/MEN-4429))
 * New workflow deploy_device_configuration
-([MEN-4383](https://tracker.mender.io/browse/MEN-4383), [MEN-4429](https://tracker.mender.io/browse/MEN-4429))
+([MEN-4383](https://northerntech.atlassian.net/browse/MEN-4383), [MEN-4429](https://northerntech.atlassian.net/browse/MEN-4429))
 * Configuration deployment triggers device update check
-([MEN-4383](https://tracker.mender.io/browse/MEN-4383), [MEN-4429](https://tracker.mender.io/browse/MEN-4429))
+([MEN-4383](https://northerntech.atlassian.net/browse/MEN-4383), [MEN-4429](https://northerntech.atlassian.net/browse/MEN-4429))
 * Fix password reset button text
 * Add workflow for sending password verification email
 * New workflow contact_support for handling inbound email
@@ -17751,12 +17751,12 @@ New changes in mender-artifact since 3.5.2:
 
 * Add missing error description when artifact header can't be written.
 * cli: Fix parsing of filenames containing ".mender"
-  ([MEN-5076](https://tracker.mender.io/browse/MEN-5076))
+  ([MEN-5076](https://northerntech.atlassian.net/browse/MEN-5076))
 * Fix the checksum errors encountered in rare cases where the entire byte
   stream is not consumed during verification, and thus giving wrong checksum errors.
-  ([MEN-5094](https://tracker.mender.io/browse/MEN-5094))
+  ([MEN-5094](https://northerntech.atlassian.net/browse/MEN-5094))
 * Restore SSH snapshot feature on Mac OS
-  ([MEN-4362](https://tracker.mender.io/browse/MEN-4362), [MEN-5082](https://tracker.mender.io/browse/MEN-5082))
+  ([MEN-4362](https://northerntech.atlassian.net/browse/MEN-4362), [MEN-5082](https://northerntech.atlassian.net/browse/MEN-5082))
 
 
 ## Mender 2.6.2
@@ -17819,14 +17819,14 @@ New changes in deployments-enterprise since 2.2.1:
 New changes in deviceconnect since 1.0.0:
 
 * [] Limit size of messages transferred over websockets
-  ([MEN-4803](https://tracker.mender.io/browse/MEN-4803))
+  ([MEN-4803](https://northerntech.atlassian.net/browse/MEN-4803))
 
 #### useradm-enterprise (1.13.1)
 
 New changes in useradm-enterprise since 1.13.0:
 
 * security fix: invalidate user JWT token cache on logout
-  ([MEN-4754](https://tracker.mender.io/browse/MEN-4754))
+  ([MEN-4754](https://northerntech.atlassian.net/browse/MEN-4754))
 
 #### integration (2.6.2)
 
@@ -17852,11 +17852,11 @@ _Released 16.04.2021_
 New changes in create-artifact-worker since 1.0.1:
 
 * bugfix to allow spaces in artifact names
-([MEN-4179](https://tracker.mender.io/browse/MEN-4179))
+([MEN-4179](https://northerntech.atlassian.net/browse/MEN-4179))
 * upgrade mender-artifact to version 3.5.0.
 This enables the create-artifact-worker to generate artifacts that
 implement the provides and clear provides fields.
-([MEN-4409](https://tracker.mender.io/browse/MEN-4409))
+([MEN-4409](https://northerntech.atlassian.net/browse/MEN-4409))
 
 #### deployments-enterprise (2.2.1)
 
@@ -17892,13 +17892,13 @@ _Released 01.20.2021_
 New changes in deployments since 2.1.0:
 
 * Vendor mender-artifact with `clears_artifact_provides` support.
-([MEN-3480](https://tracker.mender.io/browse/MEN-3480))
+([MEN-3480](https://northerntech.atlassian.net/browse/MEN-3480))
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * include clears_artifact_provides in Artifact objects
-([MEN-4050](https://tracker.mender.io/browse/MEN-4050))
+([MEN-4050](https://northerntech.atlassian.net/browse/MEN-4050))
 * add the possibility of creating deployments for all accepted devices
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/urfave/cli](https://github.com/urfave/cli) from 1.22.4 to 1.22.5.
@@ -17946,15 +17946,15 @@ New changes in deployments since 2.1.0:
 New changes in deployments-enterprise since 2.1.0:
 
 * Vendor mender-artifact with `clears_artifact_provides` support.
-([MEN-3480](https://tracker.mender.io/browse/MEN-3480))
+([MEN-3480](https://northerntech.atlassian.net/browse/MEN-3480))
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * include clears_artifact_provides in Artifact objects
-([MEN-4050](https://tracker.mender.io/browse/MEN-4050))
+([MEN-4050](https://northerntech.atlassian.net/browse/MEN-4050))
 * include clears_artifact_provides in Artifact objects
-([MEN-4050](https://tracker.mender.io/browse/MEN-4050))
+([MEN-4050](https://northerntech.atlassian.net/browse/MEN-4050))
 * add the possibility of creating deployments for all accepted devices
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/urfave/cli](https://github.com/urfave/cli) from 1.22.4 to 1.22.5.
@@ -18047,12 +18047,12 @@ New changes in deviceauth since 2.4.0:
 
 * New query parameter id for GET /api/management/v1/devices
 * add internal end-point to retrieve the count of devices
-([MEN-3923](https://tracker.mender.io/browse/MEN-3923))
+([MEN-3923](https://northerntech.atlassian.net/browse/MEN-3923))
 * New command for warning tenants approaching their device limit
 * propagate device identity using workflows
-([MEN-3979](https://tracker.mender.io/browse/MEN-3979))
+([MEN-3979](https://northerntech.atlassian.net/browse/MEN-3979))
 * ignore tenant claim in single tenant setup
-([MEN-3972](https://tracker.mender.io/browse/MEN-3972))
+([MEN-3972](https://northerntech.atlassian.net/browse/MEN-3972))
 * New device auth query endpoint POST /api/management/v2/devauth/devices/search
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/urfave/cli](https://github.com/urfave/cli) from 1.22.4 to 1.22.5.
@@ -18089,39 +18089,39 @@ New changes in deviceauth since 2.4.0:
 New changes in gui since 2.5.0:
 
 * added additional password validation to prevent email reuse
-([MEN-3948](https://tracker.mender.io/browse/MEN-3948))
+([MEN-3948](https://northerntech.atlassian.net/browse/MEN-3948))
 * added security measures to prevent clickjacking
 * isolated single authset handling to prevent confusing authstate notifications
-([MEN-3988](https://tracker.mender.io/browse/MEN-3988))
+([MEN-3988](https://northerntech.atlassian.net/browse/MEN-3988))
 * implemented auditloglist to reflect user & deployment changes
 * fixed a navigation issue that prevented deployment report navigation
 * fixed an error caused by showing timeframe selection for a longer time
 * removed sorting limitations for device id column
-([MEN-3879](https://tracker.mender.io/browse/MEN-3879))
+([MEN-3879](https://northerntech.atlassian.net/browse/MEN-3879))
 * disabled sorting for status column in devices list
-([MEN-3969](https://tracker.mender.io/browse/MEN-3969))
+([MEN-3969](https://northerntech.atlassian.net/browse/MEN-3969))
 * allowed setting equality filters through url to ease navigation
-([MEN-3991](https://tracker.mender.io/browse/MEN-3991))
+([MEN-3991](https://northerntech.atlassian.net/browse/MEN-3991))
 * fixed an issue that prevented admin access to user management settings
 * added possibility to update credit card in organization settings
-([MEN-3823](https://tracker.mender.io/browse/MEN-3823))
+([MEN-3823](https://northerntech.atlassian.net/browse/MEN-3823))
 * fixed an issue that lead certain update module configurations to crash the app
 * switched device attributes from local deducation to backend retrieval
 * Update "Connect a device" onboarding dialog
-([MEN-3999](https://tracker.mender.io/browse/MEN-3999))
+([MEN-3999](https://northerntech.atlassian.net/browse/MEN-3999))
 * device remote shell/terminal
-([MEN-4091](https://tracker.mender.io/browse/MEN-4091))
+([MEN-4091](https://northerntech.atlassian.net/browse/MEN-4091))
 * fixed an error that prevented phased dynamic deployments + scheduled single device deployments
-([MEN-4122](https://tracker.mender.io/browse/MEN-4122))
+([MEN-4122](https://northerntech.atlassian.net/browse/MEN-4122))
 * fixed deployment creation not using single devices as deployment name
-([MEN-4182](https://tracker.mender.io/browse/MEN-4182))
+([MEN-4182](https://northerntech.atlassian.net/browse/MEN-4182))
 * fixed an issue that prevented deployment device count from being shown in single device deployments
 * ensured settings show also after stripe initialization
-([MEN-4275](https://tracker.mender.io/browse/MEN-4275))
+([MEN-4275](https://northerntech.atlassian.net/browse/MEN-4275))
 * fixed cookie paths to work with ui redirect to subpath
 * Rename Retry deployment to Recreate deployment.
 * fix page number on rowsPerPage change
-([MEN-4364](https://tracker.mender.io/browse/MEN-4364))
+([MEN-4364](https://northerntech.atlassian.net/browse/MEN-4364))
 * fixed an issue that prevented existing user roles from being removed
 * fixed an issue that prevented loading dynamic group devices when navigating to device groups
 * Aggregated Dependabot Changelogs:
@@ -18645,7 +18645,7 @@ New changes in integration since 2.5.0:
 * New compose file to optionally add deviceconnect service to the backend
 * New compose file to optionally add deviceconnect service to the backend
 * demo script, include docker-compose.connect.yml by default
-([MEN-4357](https://tracker.mender.io/browse/MEN-4357))
+([MEN-4357](https://northerntech.atlassian.net/browse/MEN-4357))
 * Add auditlogs and deviceconnect to production templates
 * Add auditlogs 1.0.0.
 * Upgrade deployments to 2.2.0.
@@ -18851,9 +18851,9 @@ New changes in integration since 2.5.0:
 New changes in inventory since 2.1.0:
 
 * new device API end-point to replace inventory attributes
-([MEN-4001](https://tracker.mender.io/browse/MEN-4001))
+([MEN-4001](https://northerntech.atlassian.net/browse/MEN-4001))
 * new API end-point to return the list of filterable attributes
-([MEN-3510](https://tracker.mender.io/browse/MEN-3510))
+([MEN-3510](https://northerntech.atlassian.net/browse/MEN-3510))
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/urfave/cli](https://github.com/urfave/cli) from 1.22.4 to 1.22.5.
 - [Release notes](https://github.com/urfave/cli/releases)
@@ -18870,11 +18870,11 @@ New changes in inventory since 2.1.0:
 New changes in inventory-enterprise since 2.1.0:
 
 * new device API end-point to replace inventory attributes
-([MEN-4001](https://tracker.mender.io/browse/MEN-4001))
+([MEN-4001](https://northerntech.atlassian.net/browse/MEN-4001))
 * new API end-point to return the list of filterable attributes
-([MEN-3510](https://tracker.mender.io/browse/MEN-3510))
+([MEN-3510](https://northerntech.atlassian.net/browse/MEN-3510))
 * optional redis cache to get filterable attributes
-([MEN-3510](https://tracker.mender.io/browse/MEN-3510))
+([MEN-3510](https://northerntech.atlassian.net/browse/MEN-3510))
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/go-redis/redis/v8](https://github.com/go-redis/redis) from 8.3.2 to 8.3.3.
 - [Release notes](https://github.com/go-redis/redis/releases)
@@ -18925,9 +18925,9 @@ New changes in inventory-enterprise since 2.1.0:
 New changes in mender-api-gateway-docker since 2.3.0:
 
 * expose the management end-point to verify the user's plan
-([MEN-3953](https://tracker.mender.io/browse/MEN-3953))
+([MEN-3953](https://northerntech.atlassian.net/browse/MEN-3953))
 * restore ALLOWED_ORIGIN_HOSTS regex match when checking Origin
-([MEN-4118](https://tracker.mender.io/browse/MEN-4118))
+([MEN-4118](https://northerntech.atlassian.net/browse/MEN-4118))
 
 #### tenantadm (3.0.0)
 
@@ -18935,7 +18935,7 @@ New changes in tenantadm since 2.1.0:
 
 * credit card update endpoints
 * enhance /billing end-point to retrieve current subscription
-([MEN-3821](https://tracker.mender.io/browse/MEN-3821))
+([MEN-3821](https://northerntech.atlassian.net/browse/MEN-3821))
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/sirupsen/logrus](https://github.com/sirupsen/logrus) from 1.6.0 to 1.7.0.
 - [Release notes](https://github.com/sirupsen/logrus/releases)
@@ -18961,11 +18961,11 @@ New changes in useradm since 1.12.0:
 
 * GET /users accepts query parameters for filtering users
 * new API end-point logout
-([MEN-3943](https://tracker.mender.io/browse/MEN-3943))
+([MEN-3943](https://northerntech.atlassian.net/browse/MEN-3943))
 * remove JWT all user tokens but the current one on password change
-([MEN-3950](https://tracker.mender.io/browse/MEN-3950))
+([MEN-3950](https://northerntech.atlassian.net/browse/MEN-3950))
 * Allow JWT to be passed as a cookie
-([MEN-4042](https://tracker.mender.io/browse/MEN-4042))
+([MEN-4042](https://northerntech.atlassian.net/browse/MEN-4042))
 * Add last login timestamp to user object
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/urfave/cli](https://github.com/urfave/cli) from 1.22.4 to 1.22.5.
@@ -18988,15 +18988,15 @@ New changes in useradm-enterprise since 1.12.0:
 
 * GET /users accepts query parameters for filtering users
 * new API end-point logout
-([MEN-3943](https://tracker.mender.io/browse/MEN-3943))
+([MEN-3943](https://northerntech.atlassian.net/browse/MEN-3943))
 * remove JWT all user tokens but the current one on password change
-([MEN-3950](https://tracker.mender.io/browse/MEN-3950))
+([MEN-3950](https://northerntech.atlassian.net/browse/MEN-3950))
 * Useradm reports audit logs on create/delete user and updating
 roles
 * , new management end-point to verify user's plan
-([MEN-3275](https://tracker.mender.io/browse/MEN-3275), [MEN-3953](https://tracker.mender.io/browse/MEN-3953))
+([MEN-3275](https://northerntech.atlassian.net/browse/MEN-3275), [MEN-3953](https://northerntech.atlassian.net/browse/MEN-3953))
 * Allow JWT to be passed as a cookie
-([MEN-4042](https://tracker.mender.io/browse/MEN-4042))
+([MEN-4042](https://northerntech.atlassian.net/browse/MEN-4042))
 * Add last login timestamp to user object
 * introduce "REMOTE_TERMINAL" permission
 * Add the Remote Terminal RBAC role
@@ -19049,7 +19049,7 @@ roles
 New changes in workflows since 1.2.0:
 
 * add support for JSON body in HTTP tasks
-([MEN-4110](https://tracker.mender.io/browse/MEN-4110))
+([MEN-4110](https://northerntech.atlassian.net/browse/MEN-4110))
 * New properties: `requires` for Tasks, `skippped` for TaskResult
 * Add support for default values in expressions
 * Update workflow definitions to allow services' addresses override
@@ -19071,7 +19071,7 @@ New changes in workflows-enterprise since 1.2.0:
 
 * Change welcome email to contain self-service password reset link.
 * add support for JSON body in HTTP tasks
-([MEN-4110](https://tracker.mender.io/browse/MEN-4110))
+([MEN-4110](https://northerntech.atlassian.net/browse/MEN-4110))
 * New properties: `requires` for Tasks, `skippped` for TaskResult
 * Add support for default values in expressions
 * Update workflow definitions to allow services' addresses override
@@ -19102,24 +19102,24 @@ _Released 01.21.2021_
 New changes in deployments since 2.1.0:
 
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * api: Generate artifact doesn't load entire request upon parsing
 * api: Generate artifact endpoint accepts form values with whitespaces
 * Deploy to group for os onprem fix.
-([MEN-4029](https://tracker.mender.io/browse/MEN-4029))
+([MEN-4029](https://northerntech.atlassian.net/browse/MEN-4029))
 
 #### deployments-enterprise (2.1.1)
 
 New changes in deployments-enterprise since 2.1.0:
 
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * api: Generate artifact doesn't load entire request upon parsing
 * api: Generate artifact endpoint accepts form values with whitespaces
 * Deploy to group for os onprem fix.
-([MEN-4029](https://tracker.mender.io/browse/MEN-4029))
+([MEN-4029](https://northerntech.atlassian.net/browse/MEN-4029))
 
 #### deviceauth (2.4.1)
 
@@ -19127,7 +19127,7 @@ New changes in deviceauth since 2.4.0:
 
 * New query parameter id for GET /api/management/v1/devices
 * ignore tenant claim in single tenant setup
-([MEN-3972](https://tracker.mender.io/browse/MEN-3972))
+([MEN-3972](https://northerntech.atlassian.net/browse/MEN-3972))
 
 #### gui (2.5.1)
 
@@ -19155,21 +19155,21 @@ New changes in integration since 2.5.0:
 New changes in inventory since 2.1.0:
 
 * Deploy to group for os onprem fix.
-([MEN-4029](https://tracker.mender.io/browse/MEN-4029))
+([MEN-4029](https://northerntech.atlassian.net/browse/MEN-4029))
 
 #### inventory-enterprise (2.1.1)
 
 New changes in inventory-enterprise since 2.1.0:
 
 * Deploy to group for os onprem fix.
-([MEN-4029](https://tracker.mender.io/browse/MEN-4029))
+([MEN-4029](https://northerntech.atlassian.net/browse/MEN-4029))
 
 #### mender-api-gateway-docker (2.3.1)
 
 New changes in mender-api-gateway-docker since 2.3.0:
 
 * restore ALLOWED_ORIGIN_HOSTS regex match when checking Origin
-([MEN-4118](https://tracker.mender.io/browse/MEN-4118))
+([MEN-4118](https://northerntech.atlassian.net/browse/MEN-4118))
 ## Mender 2.5.0
 
 _Released 09.11.2020_
@@ -19182,14 +19182,14 @@ New changes in deployments since 2.0.0:
 
 * Remove mongodb write/read concerns, let the connection string set them
 * override file name in artifact download links
-([MEN-3417](https://tracker.mender.io/browse/MEN-3417))
+([MEN-3417](https://northerntech.atlassian.net/browse/MEN-3417))
 * New endpoint to deploy to group of devices
 `POST /deployments/group/:name`
-([MEN-3411](https://tracker.mender.io/browse/MEN-3411))
+([MEN-3411](https://northerntech.atlassian.net/browse/MEN-3411))
 * New internal health check and liveliness endpoints
 `GET /api/internal/v1/deployments/health`
 `GET /api/internal/v1/deployments/alive`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 #### deployments-enterprise (2.1.0)
 
@@ -19197,29 +19197,29 @@ New changes in deployments-enterprise since 2.0.0:
 
 * Remove mongodb write/read concerns, let the connection string set them
 * override file name in artifact download links
-([MEN-3417](https://tracker.mender.io/browse/MEN-3417))
+([MEN-3417](https://northerntech.atlassian.net/browse/MEN-3417))
 * New endpoint to deploy to group of devices
 `POST /deployments/group/:name`
-([MEN-3411](https://tracker.mender.io/browse/MEN-3411))
+([MEN-3411](https://northerntech.atlassian.net/browse/MEN-3411))
 * New internal health check and liveliness endpoints
 `GET /api/internal/v1/deployments/health`
 `GET /api/internal/v1/deployments/alive`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 #### deviceauth (2.4.0)
 
 New changes in deviceauth since 2.3.0:
 
 * internal API end-point to delete tenant limits
-([MC-4040](https://tracker.mender.io/browse/MC-4040))
+([MC-4040](https://northerntech.atlassian.net/browse/MC-4040))
 * Add support for ED25519 and ECDSA public keys in auth requests
-([MEN-3728](https://tracker.mender.io/browse/MEN-3728))
+([MEN-3728](https://northerntech.atlassian.net/browse/MEN-3728))
 * New internal health check and liveliness endpoints
 `GET /api/internal/v1/deviceauth/health`
 `GET /api/internal/v1/deviceauth/alive`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 * device preauthorization: in case of conflict return conflicting device
-([MEN-3813](https://tracker.mender.io/browse/MEN-3813))
+([MEN-3813](https://northerntech.atlassian.net/browse/MEN-3813))
 
 #### gui (2.5.0)
 
@@ -19227,12 +19227,12 @@ New changes in gui since 2.4.0:
 
 * added roles management to settings to allow adding group based roles
 * fixed identity attribute filtering on authorized devices
-([MEN-3517](https://tracker.mender.io/browse/MEN-3517))
+([MEN-3517](https://northerntech.atlassian.net/browse/MEN-3517))
 * enabled automatic selection on filter autocomplete
-([MEN-3518](https://tracker.mender.io/browse/MEN-3518))
+([MEN-3518](https://northerntech.atlassian.net/browse/MEN-3518))
 * ensured onboarding tooltip shows up after custom artifact is uploaded
 * add cancel subscription form in organization page
-([MEN-3306](https://tracker.mender.io/browse/MEN-3306))
+([MEN-3306](https://northerntech.atlassian.net/browse/MEN-3306))
 * fixed an issue that caused unexpected deployment device states to crash the deployment report
 * fixed an issue that prevented exists filter from working
 * combined bulk device actions in speed dial on device selection
@@ -19572,7 +19572,7 @@ New changes in inventory since 2.0.0:
 * New internal health check and liveliness endpoints
 `GET /api/internal/v1/inventory/health`
 `GET /api/internal/v1/inventory/alive`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 #### inventory-enterprise (2.1.0)
 
@@ -19580,14 +19580,14 @@ New changes in inventory-enterprise since 2.0.0:
 
 * New endpoints for managing devices' group in bulk.
 * RBAC dynamic groups
-([MEN-3626](https://tracker.mender.io/browse/MEN-3626))
+([MEN-3626](https://northerntech.atlassian.net/browse/MEN-3626))
 * Introduce the $regex filter operator
 * Add $nin ("not in") operator for searching devices
 * Add status query parameter to GET /groups
 * New internal health check and liveliness endpoints
 `GET /api/internal/v1/inventory/health`
 `GET /api/internal/v1/inventory/alive`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 #### mender-api-gateway-docker (2.3.0)
 
@@ -19595,7 +19595,7 @@ New changes in mender-api-gateway-docker since 2.2.0:
 
 * Return valid JSON documents as error pages' payloads
 * , expose password-reset end-points without auth
-([MEN-3544](https://tracker.mender.io/browse/MEN-3544), [MEN-3546](https://tracker.mender.io/browse/MEN-3546))
+([MEN-3544](https://northerntech.atlassian.net/browse/MEN-3544), [MEN-3546](https://northerntech.atlassian.net/browse/MEN-3546))
 
 #### mtls-ambassador (1.0.0)
 
@@ -19607,22 +19607,22 @@ New changes in mender-api-gateway-docker since 2.2.0:
 New changes in tenantadm since 2.0.0:
 
 * new management end-point to request tenant's cancellation
-([MEN-3305](https://tracker.mender.io/browse/MEN-3305))
+([MEN-3305](https://northerntech.atlassian.net/browse/MEN-3305))
 * Remove mongodb write/read concerns, let the connection string set them
 * introduce a new end-point to create trial tenants
-([MEN-3613](https://tracker.mender.io/browse/MEN-3613))
+([MEN-3613](https://northerntech.atlassian.net/browse/MEN-3613))
 * new end-points to upgrade a trial tenant to a paid plan
-([MEN-3615](https://tracker.mender.io/browse/MEN-3615))
+([MEN-3615](https://northerntech.atlassian.net/browse/MEN-3615))
 * internal API end-point to update tenants
-([MC-4040](https://tracker.mender.io/browse/MC-4040))
+([MC-4040](https://northerntech.atlassian.net/browse/MC-4040))
 * Store marketing consent from the sign up form in stripe
 * OAuth2 signup support for GitHub and Google
 * add support for the + character in the email address
-([MEN-1969](https://tracker.mender.io/browse/MEN-1969))
+([MEN-1969](https://northerntech.atlassian.net/browse/MEN-1969))
 * New internal health check and liveliness endpoints
 `GET /api/internal/v1/tenantadm/health`
 `GET /api/internal/v1/tenantadm/alive`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 #### useradm (1.12.0)
 
@@ -19630,11 +19630,11 @@ New changes in useradm since 1.11.0:
 
 * Remove mongodb write concern, let the connection string set them
 * add support for the + character in the email address
-([MEN-1969](https://tracker.mender.io/browse/MEN-1969))
+([MEN-1969](https://northerntech.atlassian.net/browse/MEN-1969))
 * New internal health check and liveliness endpoints
 `GET /api/internal/v1/useradm/health`
 `GET /api/internal/v1/useradm/alive`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 #### useradm-enterprise (1.12.0)
 
@@ -19643,44 +19643,44 @@ New changes in useradm-enterprise since 1.11.0:
 * Remove mongodb write concern, let the connection string set them
 * Remove mongodb write concern, let the connection string set them
 * Separate RBAC of visibility and deployments.
-([MEN-3629](https://tracker.mender.io/browse/MEN-3629))
+([MEN-3629](https://northerntech.atlassian.net/browse/MEN-3629))
 * OAuth2: Login using GitHub and Google account
 * add support for the + character in the email address
-([MEN-1969](https://tracker.mender.io/browse/MEN-1969))
+([MEN-1969](https://northerntech.atlassian.net/browse/MEN-1969))
 * add support for the + character in the email address
-([MEN-1969](https://tracker.mender.io/browse/MEN-1969))
+([MEN-1969](https://northerntech.atlassian.net/browse/MEN-1969))
 * New internal health check and liveliness endpoints
 `GET /api/internal/v1/useradm/health`
 `GET /api/internal/v1/useradm/alive`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 #### workflows (1.2.0)
 
 New changes in workflows since 1.1.0:
 
 * add support for sending html (mime/alternative) messages
-([MEN-3509](https://tracker.mender.io/browse/MEN-3509))
+([MEN-3509](https://northerntech.atlassian.net/browse/MEN-3509))
 * Add Go Template processing of http task's request body
 * Add support for yaml workflow definitions
 * New internal health check endpoint
 `GET /api/internal/v1/workflows/health`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 #### workflows-enterprise (1.2.0)
 
 New changes in workflows-enterprise since 1.1.0:
 
 * Add new workflow cancel_tenant to send cancellation request email
-([MEN-3305](https://tracker.mender.io/browse/MEN-3305))
+([MEN-3305](https://northerntech.atlassian.net/browse/MEN-3305))
 * add support for sending html (mime/alternative) messages
-([MEN-3509](https://tracker.mender.io/browse/MEN-3509))
+([MEN-3509](https://northerntech.atlassian.net/browse/MEN-3509))
 * Add Go Template processing of http task's request body
 * Add support for yaml workflow definitions
 * new workflow send_password_reset_email for password resets
-([MEN-3545](https://tracker.mender.io/browse/MEN-3545))
+([MEN-3545](https://northerntech.atlassian.net/browse/MEN-3545))
 * New internal health check endpoint
 `GET /api/internal/v1/workflows/health`
-([MEN-3024](https://tracker.mender.io/browse/MEN-3024))
+([MEN-3024](https://northerntech.atlassian.net/browse/MEN-3024))
 
 ## Mender 2.4.3
 
@@ -19693,11 +19693,11 @@ _Released 16.04.2021_
 New changes in create-artifact-worker since 1.0.1:
 
 * bugfix to allow spaces in artifact names
-([MEN-4179](https://tracker.mender.io/browse/MEN-4179))
+([MEN-4179](https://northerntech.atlassian.net/browse/MEN-4179))
 * upgrade mender-artifact to version 3.5.0.
 This enables the create-artifact-worker to generate artifacts that
 implement the provides and clear provides fields.
-([MEN-4409](https://tracker.mender.io/browse/MEN-4409))
+([MEN-4409](https://northerntech.atlassian.net/browse/MEN-4409))
 
 #### integration (2.4.3)
 
@@ -19718,7 +19718,7 @@ _Released 01.21.2021_
 New changes in deployments since 2.0.0:
 
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * api: Generate artifact doesn't load entire request upon parsing
 * api: Generate artifact endpoint accepts form values with whitespaces
 
@@ -19727,9 +19727,9 @@ New changes in deployments since 2.0.0:
 New changes in deployments-enterprise since 2.0.0:
 
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * document artifact_provides and artifact_depends in API docs
-([MEN-4051](https://tracker.mender.io/browse/MEN-4051))
+([MEN-4051](https://northerntech.atlassian.net/browse/MEN-4051))
 * api: Generate artifact doesn't load entire request upon parsing
 * api: Generate artifact endpoint accepts form values with whitespaces
 
@@ -19738,7 +19738,7 @@ New changes in deployments-enterprise since 2.0.0:
 New changes in deviceauth since 2.3.0:
 
 * ignore tenant claim in single tenant setup
-([MEN-3972](https://tracker.mender.io/browse/MEN-3972))
+([MEN-3972](https://northerntech.atlassian.net/browse/MEN-3972))
 
 #### integration (2.4.2)
 
@@ -19758,7 +19758,7 @@ New changes in integration since 2.4.1:
 New changes in mender-api-gateway-docker since 2.2.0:
 
 * restore ALLOWED_ORIGIN_HOSTS regex match when checking Origin
-([MEN-4118](https://tracker.mender.io/browse/MEN-4118))
+([MEN-4118](https://northerntech.atlassian.net/browse/MEN-4118))
 
 #### useradm (1.11.1)
 
@@ -19829,7 +19829,7 @@ New changes in inventory-enterprise since 2.0.0:
 
 * Bugfix: Rejected devices remain listed in static
 groups, even after rejection.
-([MEN-3793](https://tracker.mender.io/browse/MEN-3793))
+([MEN-3793](https://northerntech.atlassian.net/browse/MEN-3793))
 
 ## Mender 2.4.0
 
@@ -19842,9 +19842,9 @@ _Released 07.15.2020_
 New changes in create-artifact-worker since 1.0.1b1:
 
 * increase download and upload time-outs to 15 minutes
-([MEN-3539](https://tracker.mender.io/browse/MEN-3539))
+([MEN-3539](https://northerntech.atlassian.net/browse/MEN-3539))
 * handle multiple device types as comma-separated values
-([MEN-3771](https://tracker.mender.io/browse/MEN-3771))
+([MEN-3771](https://northerntech.atlassian.net/browse/MEN-3771))
 
 New changes in create-artifact-worker since 1.0.0:
 
@@ -19866,7 +19866,7 @@ devices are asking for the deployment.
 * New method for listing IDs of devices being part of particular deployment.
 * GET /deployments returns total count in the header
 * add configuration option to enable/disable path-style AWS S3 URIs
-([MEN-2499](https://tracker.mender.io/browse/MEN-2499))
+([MEN-2499](https://northerntech.atlassian.net/browse/MEN-2499))
 
 #### deployments-enterprise (2.0.0)
 
@@ -19894,7 +19894,7 @@ Changes:
 - adjust status calculation;
 * GET /deployments returns total count in the header
 * add configuration option to enable/disable path-style AWS S3 URIs
-([MEN-2499](https://tracker.mender.io/browse/MEN-2499))
+([MEN-2499](https://northerntech.atlassian.net/browse/MEN-2499))
 
 #### deviceauth (2.3.0)
 
@@ -19926,7 +19926,7 @@ New changes in gui since 2.3.0:
 * fixed an issue that prevented deployments from being possible
 * reverted limit to 10 most popular device inventory attributes
 * Docker HEALTHCHECK added
-([MEN-2855](https://tracker.mender.io/browse/MEN-2855))
+([MEN-2855](https://northerntech.atlassian.net/browse/MEN-2855))
 * refactored group creation dialog to support device additions
 * added support for non-expandable device lists
 + improved rendering speed for device lists
@@ -19954,9 +19954,9 @@ by reusing existing device information if possible
 * refactored deployment counting to use count header, reducing request load
 * fixed an issue that might prevent OS users from changing their settings
 * fixed identity attribute filtering on authorized devices
-([MEN-3517](https://tracker.mender.io/browse/MEN-3517))
+([MEN-3517](https://northerntech.atlassian.net/browse/MEN-3517))
 * enabled automatic selection on filter autocomplete
-([MEN-3518](https://tracker.mender.io/browse/MEN-3518))
+([MEN-3518](https://northerntech.atlassian.net/browse/MEN-3518))
 * ensured onboarding tooltip shows up after custom artifact is uploaded
 
 #### integration (2.4.0)
@@ -19984,18 +19984,18 @@ New changes in integration since 2.4.0b1:
 New changes in integration since 2.3.0:
 
 * Fix broken artifact creation in the UI.
-([MEN-3166](https://tracker.mender.io/browse/MEN-3166))
+([MEN-3166](https://northerntech.atlassian.net/browse/MEN-3166))
 * device-auth: call mender-workflows-server
-([MEN-2963](https://tracker.mender.io/browse/MEN-2963))
+([MEN-2963](https://northerntech.atlassian.net/browse/MEN-2963))
 * use workflows-server in tenantadm
-([MEN-2965](https://tracker.mender.io/browse/MEN-2965))
+([MEN-2965](https://northerntech.atlassian.net/browse/MEN-2965))
 * Update backend images to use version mender-master
 Introducing a new versioning schema, from this release on the Docker
 images for the backend repositories will be published in their
 corresponding registries following the Mender product version.
 This means tags `<service>:mender-<mender-version>` instead of the old
 tags `<service>:<service-version>`, which will eventually be deprecated.
-([MEN-3466](https://tracker.mender.io/browse/MEN-3466))
+([MEN-3466](https://northerntech.atlassian.net/browse/MEN-3466))
 * Upgrade create-artifact-worker to 1.0.1b1.
 * Upgrade deployments to 2.0.0b1.
 * Upgrade deployments-enterprise to 2.0.0b1.
@@ -20033,7 +20033,7 @@ New changes in mender-api-gateway-docker since 2.2.0b1:
 New changes in mender-api-gateway-docker since 2.1.0:
 
 * RBAC: per device group restrictions support
-([MEN-3240](https://tracker.mender.io/browse/MEN-3240))
+([MEN-3240](https://northerntech.atlassian.net/browse/MEN-3240))
 * Increased timeouts to handle longer requests processing.
 
 #### tenantadm (2.0.0)
@@ -20070,23 +20070,23 @@ New changes in useradm-enterprise since 1.11.0b1:
 New changes in useradm-enterprise since 1.10.0:
 
 * extend UserUpdate endpoint with array of roles
-([MEN-3451](https://tracker.mender.io/browse/MEN-3451))
+([MEN-3451](https://northerntech.atlassian.net/browse/MEN-3451))
 * Allow updating of roles via UpdateUser
-([MEN-3452](https://tracker.mender.io/browse/MEN-3452))
+([MEN-3452](https://northerntech.atlassian.net/browse/MEN-3452))
 * RBAC: per device group restrictions support
-([MEN-3240](https://tracker.mender.io/browse/MEN-3240))
+([MEN-3240](https://northerntech.atlassian.net/browse/MEN-3240))
 * set-roles command creates default roles
 * Roles management API calls
-([MEN-3447](https://tracker.mender.io/browse/MEN-3447))
+([MEN-3447](https://northerntech.atlassian.net/browse/MEN-3447))
 
 #### workflows (1.1.0)
 
 New changes in workflows since 1.0.0:
 
 * decommision and provision device workflows
-([MEN-2963](https://tracker.mender.io/browse/MEN-2963))
+([MEN-2963](https://northerntech.atlassian.net/browse/MEN-2963))
 * replace all values in processJobString
-([MEN-2965](https://tracker.mender.io/browse/MEN-2965))
+([MEN-2965](https://northerntech.atlassian.net/browse/MEN-2965))
 * list-jobs comand, extra logging and go fmt
 
 #### workflows-enterprise (1.1.0)
@@ -20105,9 +20105,9 @@ New changes in create-artifact-worker since 1.0.0:
 
 * Limit the workflows create-artifact-worker can process
 * increase download and upload time-outs to 15 minutes
-([MEN-3539](https://tracker.mender.io/browse/MEN-3539))
+([MEN-3539](https://northerntech.atlassian.net/browse/MEN-3539))
 * handle multiple device types as comma-separated values
-([MEN-3771](https://tracker.mender.io/browse/MEN-3771))
+([MEN-3771](https://northerntech.atlassian.net/browse/MEN-3771))
 
 #### gui (2.3.1)
 
@@ -20136,11 +20136,11 @@ _Released 03.05.2020_
 New changes in deployments since 1.8.1:
 
 * run migrations on startup like other services do
-([MC-1144](https://tracker.mender.io/browse/MC-1144))
+([MC-1144](https://northerntech.atlassian.net/browse/MC-1144))
 * fix device count for get deployment id
 * Set a timeout (5 seconds) for CreateBucket at start up
 * index deployments database
-([MEN-2019](https://tracker.mender.io/browse/MEN-2019))
+([MEN-2019](https://northerntech.atlassian.net/browse/MEN-2019))
 * store: Migrate to official MongoDB driver
 
 #### deployments-enterprise (1.9.0)
@@ -20153,22 +20153,22 @@ to the formula used in the calculation for the number of devices which
 is based on extracting a percentage number of devices from the total. Thus
 if the total is so small, that a percentage below some number rounds to zero,
 the batch would be empty. Now that same input will return an error.
-([MEN-2810](https://tracker.mender.io/browse/MEN-2810))
+([MEN-2810](https://northerntech.atlassian.net/browse/MEN-2810))
 * FIX: Concurrent updates to phase device counter are made atomic
 * run migrations on startup like other services do
-([MC-1144](https://tracker.mender.io/browse/MC-1144))
+([MC-1144](https://northerntech.atlassian.net/browse/MC-1144))
 * fix device count for get deployment id
 * Migration to official mongodb driver
 * Set a timeout (5 seconds) for CreateBucket at start up
 * index deployments database
-([MEN-2019](https://tracker.mender.io/browse/MEN-2019))
+([MEN-2019](https://northerntech.atlassian.net/browse/MEN-2019))
 
 #### deviceauth (2.2.0)
 
 New changes in deviceauth since 2.1.0:
 
 * Return device id to a POST /devauth/devices call
-([MEN-2605](https://tracker.mender.io/browse/MEN-2605))
+([MEN-2605](https://northerntech.atlassian.net/browse/MEN-2605))
 * additional mongodb index added
 * store/mongo: migrate to official mongodb driver
 
@@ -20205,7 +20205,7 @@ New changes in gui since 2.2.1:
 New changes in integration since 2.3.0b1:
 
 * Fix broken artifact creation in the UI.
-([MEN-3166](https://tracker.mender.io/browse/MEN-3166))
+([MEN-3166](https://northerntech.atlassian.net/browse/MEN-3166))
 * Upgrade create-artifact-worker to 1.0.0.
 * Upgrade deployments to 1.9.0.
 * Upgrade deployments-enterprise to 1.9.0.
@@ -20231,9 +20231,9 @@ or "." characters.
 * Add enterprise enabling flag to enterprise composition GUI
 container, so that the enterprise features are shown in the Frontend.
 * Fix - Make sure the demo-script subprocess has a stdin fd
-([MEN-2836](https://tracker.mender.io/browse/MEN-2836))
+([MEN-2836](https://northerntech.atlassian.net/browse/MEN-2836))
 * Fix - Create explicit exitcond for the demo setup fixture
-([MEN-2836](https://tracker.mender.io/browse/MEN-2836))
+([MEN-2836](https://northerntech.atlassian.net/browse/MEN-2836))
 * Change Enterprise Docker links to registry.mender.io.
 This will be our gateway to serve the Enterprise images, not Docker
 Hub. Those who are using Enterprise will need to log into this
@@ -20247,7 +20247,7 @@ will be prompted for the password.
 Added a test for verifying that deployments-enterprise returns a 400 error
 in case of the number of devices in a batch being empty due to rounding
 errors in relation to the formula used for determining the number of devices
-in a batch. ([MEN-2838](https://tracker.mender.io/browse/MEN-2838))
+in a batch. ([MEN-2838](https://northerntech.atlassian.net/browse/MEN-2838))
 * Backend Integration tests always print "tests failed"; fix.
 * Remove the Python dependency in the demo script
 Remove the Python dependency in the demo script, to decrease the dependency
@@ -20255,18 +20255,18 @@ surface of the demo script.
 Now the Mender-Artifact and Mender versions are parsed from the
 docker-compose.client.yml and other-components.yml files through a simple AWK
 script instead.
-([MEN-2817](https://tracker.mender.io/browse/MEN-2817))
+([MEN-2817](https://northerntech.atlassian.net/browse/MEN-2817))
 * Unskip the Pre-Auth tests
-([MEN-1797](https://tracker.mender.io/browse/MEN-1797))
+([MEN-1797](https://northerntech.atlassian.net/browse/MEN-1797))
 * Enable logging for minio
-([MEN-2922](https://tracker.mender.io/browse/MEN-2922))
+([MEN-2922](https://northerntech.atlassian.net/browse/MEN-2922))
 * [tests/run.sh] Enable passing on quoted arguments to pytest
 * Run workflows with automigrate in production
-([QA-139](https://tracker.mender.io/browse/QA-139))
+([QA-139](https://northerntech.atlassian.net/browse/QA-139))
 * workflows server fixing demo command
-([QA-139](https://tracker.mender.io/browse/QA-139))
+([QA-139](https://northerntech.atlassian.net/browse/QA-139))
 * Upgrade elasticsearch to version 6
-([MEN-2985](https://tracker.mender.io/browse/MEN-2985))
+([MEN-2985](https://northerntech.atlassian.net/browse/MEN-2985))
 * Fix setup for running without SSL termination
 * Add create-artifact-worker 1.0.0b1.
 * Upgrade deployments to 1.9.0b1.
@@ -20290,7 +20290,7 @@ script instead.
 New changes in inventory since 1.6.0:
 
 * support for new mongo-driver
-([MEN-2454](https://tracker.mender.io/browse/MEN-2454), [MEN-2801](https://tracker.mender.io/browse/MEN-2801))
+([MEN-2454](https://northerntech.atlassian.net/browse/MEN-2454), [MEN-2801](https://northerntech.atlassian.net/browse/MEN-2801))
 
 #### mender-api-gateway-docker (2.1.0)
 
@@ -20305,7 +20305,7 @@ New changes in mender-conductor since 1.5.0:
 
 * Bugfixes for send_email conductor worker
 * Prepare ES6 enabled conductor image
-([MC-1296](https://tracker.mender.io/browse/MC-1296), [MEN-2987](https://tracker.mender.io/browse/MEN-2987))
+([MC-1296](https://northerntech.atlassian.net/browse/MC-1296), [MEN-2987](https://northerntech.atlassian.net/browse/MEN-2987))
 
 #### mender-conductor-enterprise (1.6.0)
 
@@ -20342,9 +20342,9 @@ New changes in useradm-enterprise since 1.9.1:
 * Refactor repo and added metadata endpoints
 * docker: Initialized docker files workflows
 * fixing entrypoint to match other services
-([QA-139](https://tracker.mender.io/browse/QA-139))
+([QA-139](https://northerntech.atlassian.net/browse/QA-139))
 * default mongo url fix
-([MEN-3060](https://tracker.mender.io/browse/MEN-3060))
+([MEN-3060](https://northerntech.atlassian.net/browse/MEN-3060))
 
 ## Mender 2.2.2
 
@@ -20379,22 +20379,22 @@ _Released 12.05.2019_
 New changes in deployments since 1.8.0:
 
 * run migrations on startup like other services do
-([MC-1144](https://tracker.mender.io/browse/MC-1144))
+([MC-1144](https://northerntech.atlassian.net/browse/MC-1144))
 * index deployments database
-([MEN-2019](https://tracker.mender.io/browse/MEN-2019))
+([MEN-2019](https://northerntech.atlassian.net/browse/MEN-2019))
 * added unit tests: indices created.
-([MEN-2019](https://tracker.mender.io/browse/MEN-2019))
+([MEN-2019](https://northerntech.atlassian.net/browse/MEN-2019))
 
 #### deployments-enterprise (1.8.1)
 
 New changes in deployments-enterprise since 1.8.0:
 
 * run migrations on startup like other services do
-([MC-1144](https://tracker.mender.io/browse/MC-1144))
+([MC-1144](https://northerntech.atlassian.net/browse/MC-1144))
 * index deployments database
-([MEN-2019](https://tracker.mender.io/browse/MEN-2019))
+([MEN-2019](https://northerntech.atlassian.net/browse/MEN-2019))
 * added unit tests: indices created.
-([MEN-2019](https://tracker.mender.io/browse/MEN-2019))
+([MEN-2019](https://northerntech.atlassian.net/browse/MEN-2019))
 
 #### gui (2.2.1)
 
@@ -20423,7 +20423,7 @@ New changes in useradm-enterprise since 1.9.0:
 
 * Support for older Google authenticators on iOS, trimming secret length
 * Two factor authentication API docs
-([MEN-2884](https://tracker.mender.io/browse/MEN-2884))
+([MEN-2884](https://northerntech.atlassian.net/browse/MEN-2884))
 
 ## Mender 2.2.0
 
@@ -20450,7 +20450,7 @@ to the formula used in the calculation for the number of devices which
 is based on extracting a percentage number of devices from the total. Thus
 if the total is so small, that a percentage below some number rounds to zero,
 the batch would be empty. Now that same input will return an error.
-([MEN-2810](https://tracker.mender.io/browse/MEN-2810))
+([MEN-2810](https://northerntech.atlassian.net/browse/MEN-2810))
 
 #### deviceauth (2.1.0)
 
@@ -20465,7 +20465,7 @@ It can be used to allow devices that don't have a tenant token to be
 allowed into a specific tenant's list of devices. Enable it either
 using the `DEVICEAUTH_DEFAULT_TENANT_TOKEN` environment variable, or
 the `default_tenant_token` setting in `config.yaml`.
-([MEN-2705](https://tracker.mender.io/browse/MEN-2705), [MEN-2706](https://tracker.mender.io/browse/MEN-2706))
+([MEN-2705](https://northerntech.atlassian.net/browse/MEN-2705), [MEN-2706](https://northerntech.atlassian.net/browse/MEN-2706))
 
 #### gui (2.2.0)
 
@@ -20473,7 +20473,7 @@ New changes in gui since 2.2.0b1:
 
 * disabled onboarding steps in enterprise environments
 * added frontend validation to disable empty batches in phased deployments
-([MEN-2820](https://tracker.mender.io/browse/MEN-2820))
+([MEN-2820](https://northerntech.atlassian.net/browse/MEN-2820))
 * prevented an error in finished deployments view
 * fixed phased deployment progress calculation
 * added support for raspberrypi4 during onboarding
@@ -20496,7 +20496,7 @@ New changes in gui since 2.1.0:
 New changes in integration since 2.2.0b1:
 
 * Fix - Create explicit exitcond for the demo setup fixture
-([MEN-2836](https://tracker.mender.io/browse/MEN-2836))
+([MEN-2836](https://northerntech.atlassian.net/browse/MEN-2836))
 * Change Enterprise Docker links to registry.mender.io.
 This will be our gateway to serve the Enterprise images, not Docker
 Hub. Those who are using Enterprise will need to log into this
@@ -20519,7 +20519,7 @@ container, so that the enterprise features are shown in the Frontend.
 * Upgrade useradm to 1.9.0.
 * Upgrade useradm-enterprise to 1.9.0.
 * Fix - Make sure the demo-script subprocess has a stdin fd
-([MEN-2836](https://tracker.mender.io/browse/MEN-2836))
+([MEN-2836](https://northerntech.atlassian.net/browse/MEN-2836))
 
 New changes in integration since 2.1.0:
 
@@ -20568,7 +20568,7 @@ New changes in mender-conductor-enterprise since 1.4.0:
 
 * update task configs to work with conductor 2.11.0
 * fixing U+2014 'EM DASH' character
-([MC-1016](https://tracker.mender.io/browse/MC-1016))
+([MC-1016](https://northerntech.atlassian.net/browse/MC-1016))
 
 ## Mender 2.1.1
 
@@ -20596,9 +20596,9 @@ New changes in integration since 2.1.0:
 for logs. The issue only showed up when the folder name contained "-"
 or "." characters.
 * Fix - Make sure the demo-script subprocess has a stdin fd
-([MEN-2836](https://tracker.mender.io/browse/MEN-2836))
+([MEN-2836](https://northerntech.atlassian.net/browse/MEN-2836))
 * Fix - Create explicit exitcond for the demo setup fixture
-([MEN-2836](https://tracker.mender.io/browse/MEN-2836))
+([MEN-2836](https://northerntech.atlassian.net/browse/MEN-2836))
 * Upgrade deviceauth to 2.0.1.
 * Upgrade gui to 2.1.1.
 * Upgrade mender to 2.1.2.
@@ -20630,14 +20630,14 @@ New changes in gui since 2.1.0b1:
 * onboarding: Don't require Enter after copy/paste operation.
 * Fix installation of mender-artifact missing sudo in onboarding.
 * Fix sudo password messing up commands in onboarding.
-([MEN-2700](https://tracker.mender.io/browse/MEN-2700))
+([MEN-2700](https://northerntech.atlassian.net/browse/MEN-2700))
 
 New changes in gui since 2.0.1:
 
 * Device list times no longer change on expansion
-([MEN-2366](https://tracker.mender.io/browse/MEN-2366))
+([MEN-2366](https://northerntech.atlassian.net/browse/MEN-2366))
 * Fix onboarding install instructions for HM and demo server
-([MEN-2571](https://tracker.mender.io/browse/MEN-2571))
+([MEN-2571](https://northerntech.atlassian.net/browse/MEN-2571))
 * newly uploaded releases are now autoselected to ease deployment
 * total artifact size in a release is now shown instead of signing state
 * Updated Help pages with new structure and content for Update Modules
@@ -20664,18 +20664,18 @@ New changes in integration since 2.0.1:
 A client can be launched by giving the `--client` argument to the
 `demo` script, either at the same time as launching the servers, or
 later after the servers have already been launched.
-([MEN-2363](https://tracker.mender.io/browse/MEN-2363))
+([MEN-2363](https://northerntech.atlassian.net/browse/MEN-2363))
 * Automate upload of demo application artifact in demo server
-([MEN-2433](https://tracker.mender.io/browse/MEN-2433))
+([MEN-2433](https://northerntech.atlassian.net/browse/MEN-2433))
 * Fix Mender version not showing up in production.
-([MEN-2690](https://tracker.mender.io/browse/MEN-2690))
+([MEN-2690](https://northerntech.atlassian.net/browse/MEN-2690))
 * Allow demo script to run with existing demo user
-([MEN-2682](https://tracker.mender.io/browse/MEN-2682))
+([MEN-2682](https://northerntech.atlassian.net/browse/MEN-2682))
 * demo: Fix broken detection with no arguments and `--help` argument.
 * Fixes for demo wget to work on Alpine Linux using latest download
-([MEN-2654](https://tracker.mender.io/browse/MEN-2654))
+([MEN-2654](https://northerntech.atlassian.net/browse/MEN-2654))
 * Adding deployments enterprise _REV
-([MEN-2652](https://tracker.mender.io/browse/MEN-2652))
+([MEN-2652](https://northerntech.atlassian.net/browse/MEN-2652))
 * Upgrade deployments to 1.7.1b1.
 * Upgrade gui to 2.1.0b1.
 * Upgrade mender to 2.1.0b1.
@@ -20685,7 +20685,7 @@ later after the servers have already been launched.
 * Upgrade mender-conductor-enterprise to 1.4.0b1.
 * Upgrade useradm to 1.8.0b1.
 * Unify demo scripts by removing all except the one called 'demo'.
-([MEN-2571](https://tracker.mender.io/browse/MEN-2571))
+([MEN-2571](https://northerntech.atlassian.net/browse/MEN-2571))
 
 #### mender-conductor (1.4.0)
 
@@ -20707,7 +20707,7 @@ New changes in mender-conductor-enterprise since 1.3.1:
 New changes in useradm since 1.7.0:
 
 * unauthorized for empty username logins
-([MEN-2375](https://tracker.mender.io/browse/MEN-2375))
+([MEN-2375](https://northerntech.atlassian.net/browse/MEN-2375))
 
 ## Mender 2.0.1
 
@@ -20724,7 +20724,7 @@ New changes in gui since 2.0.0:
 * Bugfix for innaccurate offline devices on dashboard
 * Bugfix to ensure pending device checkboxes work as expected
 * Prevented blank page on no result release search
-([MEN-2572](https://tracker.mender.io/browse/MEN-2572))
+([MEN-2572](https://northerntech.atlassian.net/browse/MEN-2572))
 
 #### integration (2.0.1)
 
@@ -20759,10 +20759,10 @@ New changes in deployments since 1.7.0b1:
 New changes in deployments since 1.6.0:
 
 * Adjust go test files to reflect changes in API
-([MEN-2309](https://tracker.mender.io/browse/MEN-2309))
+([MEN-2309](https://northerntech.atlassian.net/browse/MEN-2309))
 * Updated the vendor dependency on mender-artifact
 * Update deployments service with mender artifact v3 format changes
-([MEN-2309](https://tracker.mender.io/browse/MEN-2309))
+([MEN-2309](https://northerntech.atlassian.net/browse/MEN-2309))
 * The Dockerfile has been changed to build using the multi-stage container build
 pattern, and now builds the deployments binary in one build step, and then
 copies the binary over to the production environment based on alpine:3.6. This
@@ -20779,7 +20779,7 @@ New changes in deviceauth since 1.7.0:
 New changes in gui since 2.0.0b1:
 
 * Device list times no longer change on expansion
-([MEN-2366](https://tracker.mender.io/browse/MEN-2366))
+([MEN-2366](https://northerntech.atlassian.net/browse/MEN-2366))
 * show total artifact size in ui + clarify uncompressed size
 
 New changes in gui since 1.7.0:
@@ -20818,13 +20818,13 @@ New changes in integration since 2.0.0b1:
 * Upgrade mender-conductor to 1.3.0.
 * Upgrade mender-conductor-enterprise to 1.3.0.
 * Resolve docker credentials problems in integration
-([MEN-2408](https://tracker.mender.io/browse/MEN-2408))
+([MEN-2408](https://northerntech.atlassian.net/browse/MEN-2408))
 
 New changes in integration since 1.7.0:
 
 * Add statistics generator script, and start doing statistics
 on code development for each release.
-([MEN-2206](https://tracker.mender.io/browse/MEN-2206))
+([MEN-2206](https://northerntech.atlassian.net/browse/MEN-2206))
 * logo pushed as in the case of mendersoftware/mender repo
 * Upgrade deployments to 1.7.0b1.
 * Upgrade deviceauth to 2.0.0b1.
@@ -20836,11 +20836,11 @@ on code development for each release.
 * Upgrade mender-conductor-enterprise to 1.3.0b1.
 * Ignore author's own signoff when generating release statistics.
 * Integration tests for client DB migration.
-([MEN-2311](https://tracker.mender.io/browse/MEN-2311))
+([MEN-2311](https://northerntech.atlassian.net/browse/MEN-2311))
 * update conductor dependencies - elasticsearch and redis
 * Fix docker version detection
 * Added integration test for an Artifact without any compression.
-([MEN-2224](https://tracker.mender.io/browse/MEN-2224))
+([MEN-2224](https://northerntech.atlassian.net/browse/MEN-2224))
 * docker-compose: add mender-conductor to mender-device-auth dependencies
 
 #### inventory (1.6.0)
@@ -20978,7 +20978,7 @@ New changes in deployments since 1.5.0:
 
 * Change image download link validity to 24h from 1h.
 * Change image download link validity to 24h from 1h.
-([MEN-2054](https://tracker.mender.io/browse/MEN-2054))
+([MEN-2054](https://northerntech.atlassian.net/browse/MEN-2054))
 
 #### deviceauth (1.7.0)
 
@@ -21035,7 +21035,7 @@ New changes in integration since 1.7.0b1:
 * Upgrade useradm to 1.7.0.
 * Add statistics generator script, and start doing statistics
 on code development for each release.
-([MEN-2206](https://tracker.mender.io/browse/MEN-2206))
+([MEN-2206](https://northerntech.atlassian.net/browse/MEN-2206))
 
 New changes in integration since 1.6.0:
 
@@ -21093,7 +21093,7 @@ New changes in integration since 1.6.0:
 * Upgrade mender-artifact to 2.3.1.
 * Add statistics generator script, and start doing statistics
 on code development for each release.
-([MEN-2206](https://tracker.mender.io/browse/MEN-2206))
+([MEN-2206](https://northerntech.atlassian.net/browse/MEN-2206))
 * Fix docker version detection
 ## Mender 1.6.0
 
@@ -21118,7 +21118,7 @@ New changes in gui since 1.5.0:
 
 * Add preauthorize devices section
 * Cleaned up URL for filtering device list by ID or group:
-([MEN-1875](https://tracker.mender.io/browse/MEN-1875))
+([MEN-1875](https://northerntech.atlassian.net/browse/MEN-1875))
 * Add a global setting to store and use user-selected device identity attribute throughout UI
 * Fixup: Add a link to mender docs for enabling wifi in hosted image
 
@@ -21188,7 +21188,7 @@ _Released 05.15.2018_
 #### deployments (1.5.0b1)
 * display number of devices targeted when listing deployments
 * possible to upload artifacts to specific tenant via internal API
-([MEN-1775](https://tracker.mender.io/browse/MEN-1775))
+([MEN-1775](https://northerntech.atlassian.net/browse/MEN-1775))
 * add ability to filter on deployment creation timestamps
 
 #### deviceauth (1.5.0b1)
@@ -21207,7 +21207,7 @@ _Released 05.15.2018_
 * Switched to using Intel x86_64 hardware accelerated client
 instead of ARM emulator.
 * Make the integration version available to the UI
-([MEN-1767](https://tracker.mender.io/browse/MEN-1767))
+([MEN-1767](https://northerntech.atlassian.net/browse/MEN-1767))
 * mender-conductor container is now based on
 github.com/mendersoftware/mender-conductor repository.
 * Add --kvm option to demo scripts to run client VM hardware accelerated.
@@ -21288,13 +21288,13 @@ _Released 02.09.2018_
 #### gui (1.4.0b1)
 * Add checkbox option to remain logged in
 * add progress bar for individual devices updates
-([MEN-1558](https://tracker.mender.io/browse/MEN-1558))
+([MEN-1558](https://northerntech.atlassian.net/browse/MEN-1558))
 * make it possible to decommission a device that has never sent inventory
 * add request ID to snackbar
 * Added deployments in progress to header bar
 * Add Device notifications to top bar
 * Fix for showing incorrect device IDs
-([MEN-1536](https://tracker.mender.io/browse/MEN-1536))
+([MEN-1536](https://northerntech.atlassian.net/browse/MEN-1536))
 
 #### integration (1.4.0b1)
 * Upgrade Conductor to 1.8.1
@@ -21314,7 +21314,7 @@ _Released 02.09.2018_
 
 #### inventory (1.3.0b1)
 * Get all devices in a group with a single api-call.
-([MEN-811](https://tracker.mender.io/browse/MEN-811))
+([MEN-811](https://northerntech.atlassian.net/browse/MEN-811))
 
 #### mender-api-gateway-docker (1.4.0b1)
 * reload-when-hosts-changed: silence cmp output
@@ -21366,7 +21366,7 @@ _Released 11.14.2017_
 * deployments: make artifact download links valid for 1 hour only
 * Prevent artifacts with invalid checksums from
 being uploaded to the server.
-([MEN-1412](https://tracker.mender.io/browse/MEN-1412))
+([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
 * docs/internal: spec for GET /tenants/:id/limits/storage
 * Additional MongoDB configuration options: mongo_ssl, mongo…
 * docs: document that expire on /artifacts/{id}/download is silently ignored
@@ -21386,7 +21386,7 @@ being uploaded to the server.
 When accepting an auth set, reject all other accepted auth sets of a particular
 device. This way we make sure that only one auth set is accepted at a time. In
 case when key rotation is used, old key cannot be used to obtain the token.
-([MEN-1417](https://tracker.mender.io/browse/MEN-1417))
+([MEN-1417](https://northerntech.atlassian.net/browse/MEN-1417))
 * store/mongo: properly setup context for migrations in multi tenant
 * api/http: support for internal endpoint for setting per-tenant limits
 Add support for PUT operation on a new internal endpoint
@@ -21416,7 +21416,7 @@ rejected. Device is expected to request a new token.
 #### gui (1.3.0b1)
 * Fix logout issues, only timeout user when inactive
 * Fix for showing incorrect device IDs
-([MEN-1536](https://tracker.mender.io/browse/MEN-1536))
+([MEN-1536](https://northerntech.atlassian.net/browse/MEN-1536))
 * Added onboarding helptips that toggle on/off per user
 * Added API connection error messaging and timeouts to Deployments tab
 * Added API timeouts and disconnection error retry messages to devices and artifacts tabs
@@ -21429,7 +21429,7 @@ Ensure that inventory service starts in daemon mode and automatically applies DB
 migrations.
 * Fix Missing restart policy for some containers in
 docker-compose setup.
-([MEN-1556](https://tracker.mender.io/browse/MEN-1556))
+([MEN-1556](https://northerntech.atlassian.net/browse/MEN-1556))
 * Update conductor to 1.7.7
 * allow access to https://localhost in test environment
 * Update conductor to 1.7.7
@@ -21465,7 +21465,7 @@ otherwise then a migration is needed the service will exit logging an error.
 * Introduce static content caching for /ui routing.
 * deployments service routing
 * gateway dns cache reloading for improved recovery from service restarts
-([MEN-1227](https://tracker.mender.io/browse/MEN-1227))
+([MEN-1227](https://northerntech.atlassian.net/browse/MEN-1227))
 * Include request time in gateway access logs.
 
 #### useradm (1.3.0b1)
@@ -21479,7 +21479,7 @@ the token is assigned to a user and a 'sub' claim corresponds to user ID.
 * store/mongo: With*() helpers return a new instance of store with correct property modified
 * docs: spec for an endpoint for setting up tenants
 * commands: propagate new user to tenantadm
-([MEN-1311](https://tracker.mender.io/browse/MEN-1311))
+([MEN-1311](https://northerntech.atlassian.net/browse/MEN-1311))
 * store/mongo: move migration of single tenant to separate func
 * api/http: update internal URLs, align them with API URL schema
 Internal URLs are now available with /api/internal/v1/useradm/ prefix
@@ -21518,7 +21518,7 @@ _Released 11.14.2017_
 * Upgrade mender-api-gateway-docker to 1.2.1.
 * Fix Missing restart policy for some containers in
 docker-compose setup.
-([MEN-1556](https://tracker.mender.io/browse/MEN-1556))
+([MEN-1556](https://northerntech.atlassian.net/browse/MEN-1556))
 
 #### mender-api-gateway-docker (1.2.1)
 * nginx: separate HTTP and HTTPS server scopes, redirect all HTTP requests to HTTPS
@@ -21530,7 +21530,7 @@ _Released 10.02.2017_
 #### deployments (1.2.1)
 * Prevent artifacts with invalid checksums from
 being uploaded to the server.
-([MEN-1412](https://tracker.mender.io/browse/MEN-1412))
+([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
 
 #### integration (1.2.1)
 * Upgrade deployments to 1.2.1.
@@ -21559,7 +21559,7 @@ assigned to device deployments on update request handling.
 * Added user management edit functionality
 * Updated node modules
 * Remove shortened device IDs, now useless due to incremental SHAs
-* create deployment from single device ([MEN-1233](https://tracker.mender.io/browse/MEN-1233))
+* create deployment from single device ([MEN-1233](https://northerntech.atlassian.net/browse/MEN-1233))
 * Allow user to remove artifacts via the GUI
 * Added self user management
 
@@ -21570,15 +21570,15 @@ dev containers.
 * allow access to https://localhost in test environment
 
 #### mender-api-gateway-docker (1.2.0)
-* Return additional headers for improved security: X-XSS-Protection, Cache-Control, Pragma. ([MEN-1316](https://tracker.mender.io/browse/MEN-1316))
-* Validate Origin header if present. ([MEN-1287](https://tracker.mender.io/browse/MEN-1287))
-* Add a configurable Host whitelist to gateway configuration, denying requests with unknown Hosts. Configured through ALLOWED_HOSTS env var on gateway startup. ([MEN-1262](https://tracker.mender.io/browse/MEN-1262))
+* Return additional headers for improved security: X-XSS-Protection, Cache-Control, Pragma. ([MEN-1316](https://northerntech.atlassian.net/browse/MEN-1316))
+* Validate Origin header if present. ([MEN-1287](https://northerntech.atlassian.net/browse/MEN-1287))
+* Add a configurable Host whitelist to gateway configuration, denying requests with unknown Hosts. Configured through ALLOWED_HOSTS env var on gateway startup. ([MEN-1262](https://northerntech.atlassian.net/browse/MEN-1262))
 
 #### useradm (1.2.0)
 * Improve log messages when opening connection to MongoDB.
 * Additional MongoDB configuration options: mongo_ssl, mongo_ssl_skipverify, mongo_username, mongo_password
-* Remove 'initial user' login logic, including 'POST /users/initial' API. Now initial user need to be created by administrator using cli ([MEN-1034](https://tracker.mender.io/browse/MEN-1034))
-* New cli subcommand for creating users: 'useradm create-user. ([MEN-1034](https://tracker.mender.io/browse/MEN-1034))
+* Remove 'initial user' login logic, including 'POST /users/initial' API. Now initial user need to be created by administrator using cli ([MEN-1034](https://northerntech.atlassian.net/browse/MEN-1034))
+* New cli subcommand for creating users: 'useradm create-user. ([MEN-1034](https://northerntech.atlassian.net/browse/MEN-1034))
 * New API for listing users: 'GET https://localhost/api/management/v1/useradm/users' and 'GET https://localhost/api/management/v1/useradm/users/:userid'
 * New API for creating additional users: 'POST https://localhost/api/management/v1/useradm/users'
 * New API for editing user email and password: 'PUT https://localhost/api/management/v1/useradm/users/:userid'
@@ -21598,7 +21598,7 @@ _(Never released publicly)_
 #### deployments (1.1.1)
 * Prevent artifacts with invalid checksums from
 being uploaded to the server.
-([MEN-1412](https://tracker.mender.io/browse/MEN-1412))
+([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
 
 #### integration (1.1.2)
 * Upgrade deployments to 1.1.1.
@@ -21610,23 +21610,23 @@ _Released 09.05.2017_
 
 #### mender
 * Fix - Now throws an error when committing nothing.
-([MEN-505](https://tracker.mender.io/browse/MEN-505))
+([MEN-505](https://northerntech.atlassian.net/browse/MEN-505))
 * Changed the errormessage to more closely reflect the issue.
-([MEN-1215](https://tracker.mender.io/browse/MEN-1215))
+([MEN-1215](https://northerntech.atlassian.net/browse/MEN-1215))
 * Improve error message when manifest field/file cannot be read.
 * Logs an error when device_type file not found.
-([MEN-505](https://tracker.mender.io/browse/MEN-505))
+([MEN-505](https://northerntech.atlassian.net/browse/MEN-505))
 * Fixed behaviour when no sys-cert is available on the system.
-([MEN-1151](https://tracker.mender.io/browse/MEN-1151))
+([MEN-1151](https://northerntech.atlassian.net/browse/MEN-1151))
 * installer: improve incompatible image error message
 
 #### mender-artifact
 * Sign existing artifacts using mender-artifact CLI
-([MEN-1220](https://tracker.mender.io/browse/MEN-1220))
+([MEN-1220](https://northerntech.atlassian.net/browse/MEN-1220))
 * mender-artifact now fails with whitespace in the artifact-name
-([MEN-1355](https://tracker.mender.io/browse/MEN-1355))
+([MEN-1355](https://northerntech.atlassian.net/browse/MEN-1355))
 * Mender-Artifact now returns an error code to the os on cli errors
-([MEN-1328](https://tracker.mender.io/browse/MEN-1328))
+([MEN-1328](https://northerntech.atlassian.net/browse/MEN-1328))
 
 ## Mender v1.1.0
 
@@ -21635,11 +21635,11 @@ _Released 06.16.2017_
 #### gui
 
 * Remove shortened device IDs, now useless due to incremental SHAs
-* Fix for [MEN-1233](https://tracker.mender.io/browse/MEN-1233) - create deployment from single device
+* Fix for [MEN-1233](https://northerntech.atlassian.net/browse/MEN-1233) - create deployment from single device
 
 #### mender
 
-* Fix misleading version being displayed for non-tagged builds. ([MEN-1178](https://tracker.mender.io/browse/MEN-1178))
+* Fix misleading version being displayed for non-tagged builds. ([MEN-1178](https://northerntech.atlassian.net/browse/MEN-1178))
 
 ## Mender v1.1.0 Beta 1
 
@@ -21649,12 +21649,12 @@ _Released 05.24.2017_
 * Increase file upload request validity when pushing artifact to remote file storage.
 * Update artifact handling reflecting changes in mender-artifact.
 * Support for signed images introduced, but with no signature
-verification yet. ([MEN-1022](https://tracker.mender.io/browse/MEN-1022))
+verification yet. ([MEN-1022](https://northerntech.atlassian.net/browse/MEN-1022))
 * Add device decommissioning support in the deployments service.
 * Update artifact description when updating artifact data.
 * images/s3: unmarshal S3 errors when uploading image
 * Artifact upload error handling fixed.
-* Update artifact description when updating artifact data. ([MEN-1093](https://tracker.mender.io/browse/MEN-1093))
+* Update artifact description when updating artifact data. ([MEN-1093](https://northerntech.atlassian.net/browse/MEN-1093))
 * travis: bump required Go version to 1.8
 
 #### deviceadm
@@ -21670,10 +21670,10 @@ decommission job submit).
 * api: add tenant_token as an optional attribute in authentication request
 
 #### gui
-* Artifact signed field and improvements ([MEN-230](https://tracker.mender.io/browse/MEN-230))
-* Bugfix: hide placeholder when past deployments is not empty ([MEN-229](https://tracker.mender.io/browse/MEN-229))
-* Device blocking & decommissioning ([MEN-226](https://tracker.mender.io/browse/MEN-226))
-* Implement pagination UI on pending & in progress deployment lists ([MEN-222](https://tracker.mender.io/browse/MEN-222))
+* Artifact signed field and improvements ([MEN-230](https://northerntech.atlassian.net/browse/MEN-230))
+* Bugfix: hide placeholder when past deployments is not empty ([MEN-229](https://northerntech.atlassian.net/browse/MEN-229))
+* Device blocking & decommissioning ([MEN-226](https://northerntech.atlassian.net/browse/MEN-226))
+* Implement pagination UI on pending & in progress deployment lists ([MEN-222](https://northerntech.atlassian.net/browse/MEN-222))
 
 #### integration
 * Upgrade all server components to 1.1 series
@@ -21687,7 +21687,7 @@ decommission job submit).
 * nginx: log and pass X-MEN-RequestID
 
 #### mender-artifact
-* Switch default artifact format version to 2. ([MEN-1183](https://tracker.mender.io/browse/MEN-1183))
+* Switch default artifact format version to 2. ([MEN-1183](https://northerntech.atlassian.net/browse/MEN-1183))
 * Add CLI support for signing and verifying images.
 * Add implementation of RSA and ECDSA signatures.
 * Fix returning and printing errors form artifact library.
@@ -21696,7 +21696,7 @@ decommission job submit).
 
 #### mender
 * Add support for using signed mender-artifact library.
-* Add support for verifying artifact signature. ([MEN-1020](https://tracker.mender.io/browse/MEN-1020))
+* Add support for verifying artifact signature. ([MEN-1020](https://northerntech.atlassian.net/browse/MEN-1020))
 
 #### useradm
 * Added `create-user` and `server` commands to useradm. Running

@@ -83,32 +83,32 @@ New changes in mender since 3.4.0:
 
 * The daemon no longer exits in the edge case where it cannot bring
   down the proxy server due to timeouts.
-  ([ME-3](https://tracker.mender.io/browse/ME-3))
+  ([ME-3](https://northerntech.atlassian.net/browse/ME-3))
 * The websockets are no longer left trying to open a connection to the
   server, when the proxy server is shut down.
-  ([ME-3](https://tracker.mender.io/browse/ME-3))
+  ([ME-3](https://northerntech.atlassian.net/browse/ME-3))
 * Expand the check for new openssl version
 * systemd: Always try restarting the client if it exits.
-  ([ME-33](https://tracker.mender.io/browse/ME-33))
+  ([ME-33](https://northerntech.atlassian.net/browse/ME-33))
 * websocket connectivity through http-proxy if configured
 
   Enables websocket connections to be established through an
   http-proxy configurable by setting the `HTTPS_PROXY` environment
   variable. This renders services that relies on websocket
   connections, such as `mender-connect`, compatible with
-  http-proxying. ([ME-5](https://tracker.mender.io/browse/ME-5))
+  http-proxying. ([ME-5](https://northerntech.atlassian.net/browse/ME-5))
 * client not to skip custom TLS if an http-proxy is configured
 
   Previously, Mender client supported http-proxying but ignored
   custom TLS client configuration if present. This change renders
   any custom TLS configurations, such as Mutual TLS, compatible with
   http-proxying.
-  ([MEN-6009](https://tracker.mender.io/browse/MEN-6009))
+  ([MEN-6009](https://northerntech.atlassian.net/browse/MEN-6009))
 * do not ignore software versioning opts in the module artifact gens
-  ([MEN-6026](https://tracker.mender.io/browse/MEN-6026))
+  ([MEN-6026](https://northerntech.atlassian.net/browse/MEN-6026))
 * Add `--no-syslog` to the service file to ensure no
   duplicate log messages in the journal.
-  ([MEN-6070](https://tracker.mender.io/browse/MEN-6070))
+  ([MEN-6070](https://northerntech.atlassian.net/browse/MEN-6070))
 * change mender-inventory-hostinfo to use the output of hostname
 
 ##### Features
@@ -128,12 +128,12 @@ New changes in mender since 3.4.0:
 
   In addition, Mender can also understand other kinds of "empty" Artifacts
   and install them either in managed or standalone modes.
-  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+  ([MEN-2583](https://northerntech.atlassian.net/browse/MEN-2583))
 * Remove support for `artifact_info` file. The initial artifact
   name will be populated in the database using a bootstrap Artifact.
-  ([MEN-2583](https://tracker.mender.io/browse/MEN-2583))
+  ([MEN-2583](https://northerntech.atlassian.net/browse/MEN-2583))
 * do not check if the artifact is already installed
-  ([MEN-6129](https://tracker.mender.io/browse/MEN-6129))
+  ([MEN-6129](https://northerntech.atlassian.net/browse/MEN-6129))
 * Support multiple verifications keys
 
   https://hub.mender.io/t/multiple-artifactverifykeys/4309/6
@@ -247,19 +247,19 @@ New changes in mender since 3.3.0:
 * If paused before ArtifactReboot, and then manually
   rebooting the device outside of Mender, the client will properly
   resume the update now, instead of failing and rolling back.
-  ([MEN-5709](https://tracker.mender.io/browse/MEN-5709))
+  ([MEN-5709](https://northerntech.atlassian.net/browse/MEN-5709))
 * Append log entries to syslog at the correct level
 * The client update and inventory checks are now unaffected by the use
   of the `check-update` and `send-inventory` commands. While previously, this
   would both move the intervals at which checks we're done, and also extend them
   beyond the expected polling intervals configured.
-  ([MEN-5547](https://tracker.mender.io/browse/MEN-5547))
+  ([MEN-5547](https://northerntech.atlassian.net/browse/MEN-5547))
 * Resolve symlinks for /dev/disk/by-partlabel
 
 ##### Features
 
 * Add DaemonLogLevel parameter in configuration file
-  ([MEN-5583](https://tracker.mender.io/browse/MEN-5583))
+  ([MEN-5583](https://northerntech.atlassian.net/browse/MEN-5583))
 
 ##### Other
 
@@ -325,12 +325,12 @@ New changes in mender since 3.3.0:
 * If paused before ArtifactReboot, and then manually
   rebooting the device outside of Mender, the client will properly
   resume the update now, instead of failing and rolling back.
-  ([MEN-5709](https://tracker.mender.io/browse/MEN-5709))
+  ([MEN-5709](https://northerntech.atlassian.net/browse/MEN-5709))
 * The client update and inventory checks are now unaffected by the use
   of the `check-update` and `send-inventory` commands. While previously, this
   would both move the intervals at which checks we're done, and also extend them
   beyond the expected polling intervals configured.
-  ([MEN-5547](https://tracker.mender.io/browse/MEN-5547))
+  ([MEN-5547](https://northerntech.atlassian.net/browse/MEN-5547))
 * Append log entries to syslog at the correct level
 * By default we bind to 127.0.0.1:0 instead of localhost.
 * Over D-Bus we return the ProxyHost equal to 127.0.0.1
@@ -421,7 +421,7 @@ New changes in mender since 3.2.1:
   The problem with this is that only the POSTv2 endpoint supports control maps, so
   when an update with control maps was in progress, the other endpoints would
   return 204, and the client would think the deployment was aborted from the server.
-  ([MEN-5421](https://tracker.mender.io/browse/MEN-5421))
+  ([MEN-5421](https://northerntech.atlassian.net/browse/MEN-5421))
 * Fixed an issue in which long-running systems, with a long time
   between reboots, and multiple updates encountered the `Tried maximum amount of
   times` error, due to an error in the retry logic.
@@ -439,11 +439,11 @@ New changes in mender since 3.2.1:
   This also fixes a subtle "pseudo abort" issue which can occur in the
   Yocto build environment.
 * the HTTP proxy must bind on localhost, not on all the interfaces
-  ([MEN-5642](https://tracker.mender.io/browse/MEN-5642))
+  ([MEN-5642](https://northerntech.atlassian.net/browse/MEN-5642))
 * Don't accumulate zombies when command output parsing fails.
-  ([MEN-5587](https://tracker.mender.io/browse/MEN-5587))
+  ([MEN-5587](https://northerntech.atlassian.net/browse/MEN-5587))
 * Only capture module stdout when requested
-  ([MEN-5098](https://tracker.mender.io/browse/MEN-5098))
+  ([MEN-5098](https://northerntech.atlassian.net/browse/MEN-5098))
 * Fix printing of update module stdout in real-time
 
 ##### Features
@@ -463,7 +463,7 @@ New changes in mender since 3.2.1:
 * Add alternate EFI path to mender-inventory-bootloader-integration
 * Add alternate EFI path to mender-inventory-bootloader-inte…
 * Add support for the `GET /v2/deployments/device/deployments/{id}/update_control_map` endpoint.
-  ([MEN-5542](https://tracker.mender.io/browse/MEN-5542))
+  ([MEN-5542](https://northerntech.atlassian.net/browse/MEN-5542))
 
 ##### Dependabot bumps
 
@@ -526,7 +526,7 @@ New changes in mender since 3.2.0:
   The problem with this is that only the POSTv2 endpoint supports control maps, so
   when an update with control maps was in progress, the other endpoints would
   return 204, and the client would think the deployment was aborted from the server.
-  ([MEN-5421](https://tracker.mender.io/browse/MEN-5421))
+  ([MEN-5421](https://northerntech.atlassian.net/browse/MEN-5421))
 
 
 ## mender 3.2.0
@@ -599,7 +599,7 @@ New changes in mender since 3.1.0:
 * The client now shows output from scripts executed in the log as regular
   log messages, prefixed by the filedescriptor they are written to, and the script
   executed, like this: 'Output (stdout|stderr) from command \"/usr/bin/foo\": bar.'
-  ([MEN-5098](https://tracker.mender.io/browse/MEN-5098))
+  ([MEN-5098](https://northerntech.atlassian.net/browse/MEN-5098))
 * Bump github.com/mendersoftware/mender-artifact to 3.6.1
 * Fix error not finding active partition for systems where /dev/root is a symlink
 * installer/bootenv: support systemd-boot tools
@@ -607,33 +607,33 @@ New changes in mender since 3.1.0:
 * Title if the update module has not already requested a reboot. This
   is done, in the case that ArtifactInstall never finished, and hence the reboot
   information from the update module is never collected.
-  ([MEN-4882](https://tracker.mender.io/browse/MEN-4882))
+  ([MEN-4882](https://northerntech.atlassian.net/browse/MEN-4882))
 * Upgrade from deprecated `golang.org/x/crypto/ssh/terminal` to
   `golang.org/x/term`
-  ([QA-235](https://tracker.mender.io/browse/QA-235))
+  ([QA-235](https://northerntech.atlassian.net/browse/QA-235))
 * Mender starts a local HTTP server that will proxy incoming
   requests to `/api/devices` to the currently authenticated Mender server.
   The existing D-Bus API endpoints GetJwtToken and JwtTokenStateChange
   will now return the local address together with the JWT token. Supports
   also websocket upgrade when calling
   `/api/devices/v1/deviceconnect/connect` endpoint
-  ([MEN-5216](https://tracker.mender.io/browse/MEN-5216))
+  ([MEN-5216](https://northerntech.atlassian.net/browse/MEN-5216))
 * mender setup: Deprecate `--demo` flag and split its
   functionality across new flags `--demo-server` to configure the device
   for a Mender demo server and `--demo-polling` to use demo polling
-  intervals. ([MEN-5138](https://tracker.mender.io/browse/MEN-5138))
+  intervals. ([MEN-5138](https://northerntech.atlassian.net/browse/MEN-5138))
 * Client will no longer cache the Authorization token from
   the server across restarts, meaning that it is no longer possible to
   end up in the situation where a rootfs update with invalid
   authorization data succeeds, only to fail authorization later on when
   the token expires.
-  ([MEN-5217](https://tracker.mender.io/browse/MEN-5217))
+  ([MEN-5217](https://northerntech.atlassian.net/browse/MEN-5217))
 * It is no longer possible to change the identity of a device
   with a rootfs update. This was not supported before either, but worked
   in a hacky way by abusing the authorization token to get a rootfs
   update with new identity data to succeed. Afterwards the device would
   show up as a new device when the token expired.
-  ([MEN-5217](https://tracker.mender.io/browse/MEN-5217))
+  ([MEN-5217](https://northerntech.atlassian.net/browse/MEN-5217))
 * ubi: Get rid of useless warning: `Could not resolve path link: ubi..`
 * Refresh update control maps before failing an update
 
@@ -643,12 +643,12 @@ New changes in mender since 3.1.0:
 
   Now the client refreshes the update maps from the server before each pause, and
   hence, this issue will be avoided.
-  ([MEN-5096](https://tracker.mender.io/browse/MEN-5096))
+  ([MEN-5096](https://northerntech.atlassian.net/browse/MEN-5096))
 * Handle the possibility of losing network connectivity when refreshing
   the update control maps.
 * Fix a race condition which can happen during a reboot if
   systemd kills the `reboot` command before it kills the Mender client.
-  ([MEN-5340](https://tracker.mender.io/browse/MEN-5340))
+  ([MEN-5340](https://northerntech.atlassian.net/browse/MEN-5340))
 * When an update is paused, the client now queries the server
   for updates using the `UpdatePollIntervalSeconds` interval if it is
   shorter than `UpdateControlMapExpirationTimeSeconds`, enabling quicker
@@ -712,19 +712,19 @@ New changes in mender since 3.1.0:
 * Title if the update module has not already requested a reboot. This
   is done, in the case that ArtifactInstall never finished, and hence the reboot
   information from the update module is never collected.
-  ([MEN-4882](https://tracker.mender.io/browse/MEN-4882))
+  ([MEN-4882](https://northerntech.atlassian.net/browse/MEN-4882))
 * Refresh update control maps before failing an update
   Fix the issue where if a state takes longer than the expiration time
   for the enabled update control map, then by the time the client checks its
   control maps, the map is expired, and the update fails.
   Now the client refreshes the update maps from the server before each pause, and
   hence, this issue will be avoided.
-  ([MEN-5096](https://tracker.mender.io/browse/MEN-5096))
+  ([MEN-5096](https://northerntech.atlassian.net/browse/MEN-5096))
 * Handle the possibility of losing network connectivity when refreshing
   the update control maps.
 * Fix a race condition which can happen during a reboot if
   systemd kills the `reboot` command before it kills the Mender client.
-  ([MEN-5340](https://tracker.mender.io/browse/MEN-5340))
+  ([MEN-5340](https://northerntech.atlassian.net/browse/MEN-5340))
 * Fix a (possible) file descriptor leak.
 * Bump github.com/mendersoftware/mender-artifact to 3.6.x
 
@@ -803,13 +803,13 @@ New changes in mender since 3.0.0:
   update to the server. Doing this is not correct according to the state
   flow, and can have unexpected consequences depending on the
   combination of Update Modules and State Scripts.
-  ([MEN-4830](https://tracker.mender.io/browse/MEN-4830))
+  ([MEN-4830](https://northerntech.atlassian.net/browse/MEN-4830))
 * mender-inventory-network: Fix incompatibility with busybox,
   by using short command line options in grep command.
-  ([MEN-4851](https://tracker.mender.io/browse/MEN-4851))
+  ([MEN-4851](https://northerntech.atlassian.net/browse/MEN-4851))
 * Do not put useless and sometimes even incorrect zero values
   in the configuration file when running `mender setup`.
-  ([MEN-4857](https://tracker.mender.io/browse/MEN-4857))
+  ([MEN-4857](https://northerntech.atlassian.net/browse/MEN-4857))
 * Extend logs for docker module
 * Add artifact_name to device provides if not found in store
 * Support passing docker run CLI arguments when deploying
@@ -826,7 +826,7 @@ New changes in mender since 3.0.0:
   names. If no names are set, then the default is to try the
   grub-mender-grubenv tools first, followed by the "fw_" tools if the
   former are not found.
-  ([MEN-3978](https://tracker.mender.io/browse/MEN-3978))
+  ([MEN-3978](https://northerntech.atlassian.net/browse/MEN-3978))
 * Add missing filesystem sync which could produce an empty or
   corrupted Update Module file tree in
   `/var/lib/mender/modules/v3/payloads/0000/tree/files/` after an
@@ -835,7 +835,7 @@ New changes in mender since 3.0.0:
   client will now remove the cached authorization token upon the next restart of
   the dameon, and hence respect the new configuration, as opposed to letting it
   expire, which was the old functionality.
-  ([MEN-3420](https://tracker.mender.io/browse/MEN-3420))
+  ([MEN-3420](https://northerntech.atlassian.net/browse/MEN-3420))
 * [FIX] Fetch geo location data once per power cycle
 
 
@@ -894,19 +894,19 @@ New changes in mender since 3.0.1:
 * Title if the update module has not already requested a reboot. This
   is done, in the case that ArtifactInstall never finished, and hence the reboot
   information from the update module is never collected.
-  ([MEN-4882](https://tracker.mender.io/browse/MEN-4882))
+  ([MEN-4882](https://northerntech.atlassian.net/browse/MEN-4882))
 * Refresh update control maps before failing an update
   Fix the issue where if a state takes longer than the expiration time
   for the enabled update control map, then by the time the client checks its
   control maps, the map is expired, and the update fails.
   Now the client refreshes the update maps from the server before each pause, and
   hence, this issue will be avoided.
-  ([MEN-5096](https://tracker.mender.io/browse/MEN-5096))
+  ([MEN-5096](https://northerntech.atlassian.net/browse/MEN-5096))
 * Handle the possibility of losing network connectivity when refreshing
   the update control maps.
 * Fix a race condition which can happen during a reboot if
   systemd kills the `reboot` command before it kills the Mender client.
-  ([MEN-5340](https://tracker.mender.io/browse/MEN-5340))
+  ([MEN-5340](https://northerntech.atlassian.net/browse/MEN-5340))
 * Fix a (possible) file descriptor leak.
 * Bump github.com/mendersoftware/mender-artifact to 3.6.x
 
@@ -1048,22 +1048,22 @@ New changes in mender since 2.6.0:
   certificate, install the certificate in the local trust store so that
   all components in the system (namely, Mender addons) can trust the
   Mender server without extra configuration.
-  ([MEN-4580](https://tracker.mender.io/browse/MEN-4580))
+  ([MEN-4580](https://northerntech.atlassian.net/browse/MEN-4580))
 * Warn in the log when the system certificates contain the demo cert.
 * Dont Verify SSL if skip verify is set
   If skip verify is set , then we shouldnt call VerifyResult
 * Fix infinite carriage return output when running in ADB shell
 * Add a DBus endpoint for the UpdateControlMap, which allows
   a user to set the `ID` and `Priority` of a given update process.
-  ([MEN-4535](https://tracker.mender.io/browse/MEN-4535))
+  ([MEN-4535](https://northerntech.atlassian.net/browse/MEN-4535))
 * The daemon will no longer crash if mender check-update or send-inventory is used before the daemon has finished its set up.
-  ([MEN-4074](https://tracker.mender.io/browse/MEN-4074))
+  ([MEN-4074](https://northerntech.atlassian.net/browse/MEN-4074))
 * Update Modules Artifact generators: correct --software-version flag
 * single-file-artifact-gen: Support concurrent executions
 * single-file Update Module: fix rollback functionality
 * Add UpdateControlMapBootExpirationTimeSeconds to mender.conf.
 * The location of the device type file is now determined by the mender.conf file. If the device type file is not used in mender.conf, the device type file is determined by the --data flag and if the flag is not used, the device type file is set to default. In addition, the scripts and modules directories location is consistent with the --data flag now.
-  ([MEN-4669](https://tracker.mender.io/browse/MEN-4669))
+  ([MEN-4669](https://northerntech.atlassian.net/browse/MEN-4669))
 * Implement the continue/pause/fail state machine logic
   This adds support for the explit control of the Mender state machine through the
   update control maps functionality.
@@ -1072,11 +1072,11 @@ New changes in mender since 2.6.0:
   * ArtifactInstall_Enter
   * ArtifactCommit_Enter
   * ArtifactReboot_Enter
-  ([MEN-4549](https://tracker.mender.io/browse/MEN-4549))
+  ([MEN-4549](https://northerntech.atlassian.net/browse/MEN-4549))
 * Fix D-Bus timeout on errors by finishing handling
-  ([MEN-4703](https://tracker.mender.io/browse/MEN-4703))
+  ([MEN-4703](https://northerntech.atlassian.net/browse/MEN-4703))
 * Report to deployments/status when pausing in any state
-  ([MEN-4624](https://tracker.mender.io/browse/MEN-4624))
+  ([MEN-4624](https://northerntech.atlassian.net/browse/MEN-4624))
 * Fix race condition in menderAuthManagerService due to
   concurrent map access. This could manifest either as a crash, or as a
   failure to deliver the JwtToken to dependent processes, such as
@@ -1096,27 +1096,27 @@ New changes in mender since 2.6.0:
   Now default to showing all output from the child processes called in
   the client logs.
 * The client now supports the HTTP Device API v2.
-  ([MEN-4785](https://tracker.mender.io/browse/MEN-4785))
+  ([MEN-4785](https://northerntech.atlassian.net/browse/MEN-4785))
 * Mark deployment as failed on bad signature instead of retrying.
 * CLI commands prefixed with hyphen are now deprecated, use
   instead directly the command name. For example `mender daemon`, `mender
   commit`, `mender show-artifact`, etc.
-  ([MEN-4808](https://tracker.mender.io/browse/MEN-4808))
+  ([MEN-4808](https://northerntech.atlassian.net/browse/MEN-4808))
 * Remove deprecated flag --log-modules
-  ([MEN-4808](https://tracker.mender.io/browse/MEN-4808))
+  ([MEN-4808](https://northerntech.atlassian.net/browse/MEN-4808))
 * Fix a bug which could sometimes lead the client to do a
   rollback after it had already committed. This could happen if the
   client happened to spontaneously reboot or fail during the status
   update to the server. Doing this is not correct according to the state
   flow, and can have unexpected consequences depending on the
   combination of Update Modules and State Scripts.
-  ([MEN-4830](https://tracker.mender.io/browse/MEN-4830))
+  ([MEN-4830](https://northerntech.atlassian.net/browse/MEN-4830))
 * mender-inventory-network: Fix incompatibility with busybox,
   by using short command line options in grep command.
-  ([MEN-4851](https://tracker.mender.io/browse/MEN-4851))
+  ([MEN-4851](https://northerntech.atlassian.net/browse/MEN-4851))
 * Do not put useless and sometimes even incorrect zero values
   in the configuration file when running `mender setup`.
-  ([MEN-4857](https://tracker.mender.io/browse/MEN-4857))
+  ([MEN-4857](https://northerntech.atlassian.net/browse/MEN-4857))
 
 ## mender 2.6.1
 
@@ -1181,11 +1181,11 @@ New changes in mender since 2.6.0:
 * single-file-artifact-gen: Support concurrent executions
 * single-file Update Module: fix rollback functionality
 * The daemon will no longer crash if mender check-update or send-inventory is used before the daemon has finished its set up.
-  ([MEN-4074](https://tracker.mender.io/browse/MEN-4074))
+  ([MEN-4074](https://northerntech.atlassian.net/browse/MEN-4074))
 * Fix D-Bus timeout on errors by finishing handling
-  ([MEN-4703](https://tracker.mender.io/browse/MEN-4703))
+  ([MEN-4703](https://northerntech.atlassian.net/browse/MEN-4703))
 * The location of the device type file is now determined by the mender.conf file. If the device type file is not used in mender.conf, the device type file is determined by the --data flag and if the flag is not used, the device type file is set to default. In addition, the scripts and modules directories location is consistent with the --data flag now.
-  ([MEN-4669](https://tracker.mender.io/browse/MEN-4669))
+  ([MEN-4669](https://northerntech.atlassian.net/browse/MEN-4669))
 * Fix race condition in menderAuthManagerService due to
   concurrent map access. This could manifest either as a crash, or as a
   failure to deliver the JwtToken to dependent processes, such as
@@ -1202,10 +1202,10 @@ New changes in mender since 2.6.0:
   update to the server. Doing this is not correct according to the state
   flow, and can have unexpected consequences depending on the
   combination of Update Modules and State Scripts.
-  ([MEN-4830](https://tracker.mender.io/browse/MEN-4830))
+  ([MEN-4830](https://northerntech.atlassian.net/browse/MEN-4830))
 * mender-inventory-network: Fix incompatibility with busybox,
   by using short command line options in grep command.
-  ([MEN-4851](https://tracker.mender.io/browse/MEN-4851))
+  ([MEN-4851](https://northerntech.atlassian.net/browse/MEN-4851))
 
 ## mender 2.6.0
 
@@ -1218,7 +1218,7 @@ _Released 04.16.2021_
 New changes in mender since 2.5.0:
 
 * fix, support white spaces in single-file artifacts' names
-([MEN-4179](https://tracker.mender.io/browse/MEN-4179))
+([MEN-4179](https://northerntech.atlassian.net/browse/MEN-4179))
 * Change provider in inventory-geo script to ipinfo.io
 * Cache geo-location inventory data in volatile memory
 * Log which scripts are run at the info level
@@ -1231,21 +1231,21 @@ by default, so that docker network interfaces do not flood the inventory on
 hosts running a lot of docker containers.
 If re-adding this functionality is required, set the environment variable:
 * INCLUDE_DOCKER_INTERFACES=true
-([MEN-4487](https://tracker.mender.io/browse/MEN-4487))
+([MEN-4487](https://northerntech.atlassian.net/browse/MEN-4487))
 * single-file: Use atomic file operations.
 * single-file: Use stderr for all error messages.
 * Remove deprecated field HttpsClient from config file (gets
 the rid of bogus SSL warnings on `mender show-artifact` and any other
 cli operation).
-([MEN-4398](https://tracker.mender.io/browse/MEN-4398))
+([MEN-4398](https://northerntech.atlassian.net/browse/MEN-4398))
 * Send the inventory after a successful deployment, even though the
 device has not rebooted.
-([MEN-4518](https://tracker.mender.io/browse/MEN-4518))
+([MEN-4518](https://northerntech.atlassian.net/browse/MEN-4518))
 * mender setup: when configuring for demo using self-signed
 certificate, install the certificate in the local trust store so that
 all components in the system (namely, Mender addons) can trust the
 Mender server without extra configuration.
-([MEN-4580](https://tracker.mender.io/browse/MEN-4580))
+([MEN-4580](https://northerntech.atlassian.net/browse/MEN-4580))
 * Warn in the log when the system certificates contain the demo cert.
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.6.1 to 1.7.0.
@@ -1309,10 +1309,10 @@ New changes in mender since 2.5.3:
 * Title if the update module has not already requested a reboot. This
   is done, in the case that ArtifactInstall never finished, and hence the reboot
   information from the update module is never collected.
-  ([MEN-4882](https://tracker.mender.io/browse/MEN-4882))
+  ([MEN-4882](https://northerntech.atlassian.net/browse/MEN-4882))
 * Fix a race condition which can happen during a reboot if
   systemd kills the `reboot` command before it kills the Mender client.
-  ([MEN-5340](https://tracker.mender.io/browse/MEN-5340))
+  ([MEN-5340](https://northerntech.atlassian.net/browse/MEN-5340))
 * Fix a (possible) file descriptor leak.
 * Bump github.com/mendersoftware/mender-artifact to 3.5.x
 
@@ -1439,11 +1439,11 @@ New changes in mender since 2.5.1:
 * single-file-artifact-gen: Support concurrent executions
 * single-file Update Module: fix rollback functionality
 * The daemon will no longer crash if mender check-update or send-inventory is used before the daemon has finished its set up.
-  ([MEN-4074](https://tracker.mender.io/browse/MEN-4074))
+  ([MEN-4074](https://northerntech.atlassian.net/browse/MEN-4074))
 * Fix D-Bus timeout on errors by finishing handling
-  ([MEN-4703](https://tracker.mender.io/browse/MEN-4703))
+  ([MEN-4703](https://northerntech.atlassian.net/browse/MEN-4703))
 * The location of the device type file is now determined by the mender.conf file. If the device type file is not used in mender.conf, the device type file is determined by the --data flag and if the flag is not used, the device type file is set to default. In addition, the scripts and modules directories location is consistent with the --data flag now.
-  ([MEN-4669](https://tracker.mender.io/browse/MEN-4669))
+  ([MEN-4669](https://northerntech.atlassian.net/browse/MEN-4669))
 * Fix race condition in menderAuthManagerService due to
   concurrent map access. This could manifest either as a crash, or as a
   failure to deliver the JwtToken to dependent processes, such as
@@ -1460,7 +1460,7 @@ New changes in mender since 2.5.1:
   update to the server. Doing this is not correct according to the state
   flow, and can have unexpected consequences depending on the
   combination of Update Modules and State Scripts.
-  ([MEN-4830](https://tracker.mender.io/browse/MEN-4830))
+  ([MEN-4830](https://northerntech.atlassian.net/browse/MEN-4830))
 
 ## mender 2.5.1
 
@@ -1477,12 +1477,12 @@ New changes in mender since 2.5.0:
 * Remove deprecated field HttpsClient from config file (gets
 the rid of bogus SSL warnings on `mender show-artifact` and any other
 cli operation).
-([MEN-4398](https://tracker.mender.io/browse/MEN-4398))
+([MEN-4398](https://northerntech.atlassian.net/browse/MEN-4398))
 * single-file: Use atomic file operations.
 * single-file: Use stderr for all error messages.
 * Send the inventory after a successful deployment, even though the
 device has not rebooted.
-([MEN-4518](https://tracker.mender.io/browse/MEN-4518))
+([MEN-4518](https://northerntech.atlassian.net/browse/MEN-4518))
 
 ## mender 2.5.0
 
@@ -1499,53 +1499,53 @@ New changes in mender since 2.4.0:
 * Fixed wrong error produced by rootfs-image commit
 * Gracefully shutdown on SIGTERM
 * implement "show-provides" command on client
-([MEN-3074](https://tracker.mender.io/browse/MEN-3074))
+([MEN-3074](https://northerntech.atlassian.net/browse/MEN-3074))
 * add inventory script to list the artifact provides data
-([MEN-3073](https://tracker.mender.io/browse/MEN-3073))
+([MEN-3073](https://northerntech.atlassian.net/browse/MEN-3073))
 * add support for software version flags in artifact generators
-([MEN-3481](https://tracker.mender.io/browse/MEN-3481))
+([MEN-3481](https://northerntech.atlassian.net/browse/MEN-3481))
 * Support for `clears_artifact_provides` field in Artifacts.
-([MEN-3075](https://tracker.mender.io/browse/MEN-3075))
+([MEN-3075](https://northerntech.atlassian.net/browse/MEN-3075))
 * switch to the new PUT endpoint to update inventory attributes
-([MEN-4001](https://tracker.mender.io/browse/MEN-4001))
+([MEN-4001](https://northerntech.atlassian.net/browse/MEN-4001))
 * Add Glib's GIO dependency for D-Bus interface. It can be
 opt-out using `nodbus` at compile time.
-([MEN-4032](https://tracker.mender.io/browse/MEN-4032))
+([MEN-4032](https://northerntech.atlassian.net/browse/MEN-4032))
 * Add support for probing the U-Boot environment separator
-([MEN-3970](https://tracker.mender.io/browse/MEN-3970))
+([MEN-3970](https://northerntech.atlassian.net/browse/MEN-3970))
 * Allow to load private key from the Security configuration section
-([MEN-3924](https://tracker.mender.io/browse/MEN-3924))
+([MEN-3924](https://northerntech.atlassian.net/browse/MEN-3924))
 * artifact-gen: Improve error message when mender-artifact is not found.
-([MEN-4044](https://tracker.mender.io/browse/MEN-4044))
+([MEN-4044](https://northerntech.atlassian.net/browse/MEN-4044))
 * Fix: Do not switch boot partitions on installation errors on the
 active partition.
-([MEN-3980](https://tracker.mender.io/browse/MEN-3980))
+([MEN-3980](https://northerntech.atlassian.net/browse/MEN-3980))
 * Correctly log the error message from the server on failed update
 download attempts.
 * mender-inventory-geo: Set connection timeout to 10s.
 * Decrease the verbosity of 'Authorization requests failed' errors in
 the log output.
 * service API to register object interfaces over System DBus
-([MEN-4009](https://tracker.mender.io/browse/MEN-4009))
+([MEN-4009](https://northerntech.atlassian.net/browse/MEN-4009))
 * Add DBus support to AuthManager implementing WithDBus
 * implement DBus signal ValidJwtTokenAvailable
-([MEN-4017](https://tracker.mender.io/browse/MEN-4017))
+([MEN-4017](https://northerntech.atlassian.net/browse/MEN-4017))
 * Add an inventory script for reporting the update-modules currently
 installed on a device.
 * Add busconfig file for DBus API to install steps.
-([MEN-4030](https://tracker.mender.io/browse/MEN-4030))
+([MEN-4030](https://northerntech.atlassian.net/browse/MEN-4030))
 * Replace the current progressbar with a minimalistic and less verbose implementation.
 * The 'inventory-geo-script' now has a separate install target:
 'install-inventory-network-scripts'. Note however that it is still installed by
 the default 'install-inventory-scripts' target.
 * When available, enable D-Bus interface by default
 * Exit with code 0 on a received SIGTERM signal.
-([MEN-4170](https://tracker.mender.io/browse/MEN-4170))
+([MEN-4170](https://northerntech.atlassian.net/browse/MEN-4170))
 * Add passphrase-file global option.
 * Fix error parsing response for getting tenant token on setup
-([MEN-4245](https://tracker.mender.io/browse/MEN-4245))
+([MEN-4245](https://northerntech.atlassian.net/browse/MEN-4245))
 * Extend the D-Bus API to return the server URL
-([MEN-4360](https://tracker.mender.io/browse/MEN-4360))
+([MEN-4360](https://northerntech.atlassian.net/browse/MEN-4360))
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/mendersoftware/openssl](https://github.com/mendersoftware/openssl) from 1.0.9 to 1.0.10.
 - [Release notes](https://github.com/mendersoftware/openssl/releases)
@@ -1567,15 +1567,15 @@ _Released 01.21.2021_
 New changes in mender since 2.4.0:
 
 * Add support for probing the U-Boot environment separator
-([MEN-3970](https://tracker.mender.io/browse/MEN-3970))
+([MEN-3970](https://northerntech.atlassian.net/browse/MEN-3970))
 * Fix: Do not switch boot partitions on installation errors on the
 active partition.
-([MEN-3980](https://tracker.mender.io/browse/MEN-3980))
+([MEN-3980](https://northerntech.atlassian.net/browse/MEN-3980))
 * Allow to load private key from the Security configuration section
-([MEN-3924](https://tracker.mender.io/browse/MEN-3924))
+([MEN-3924](https://northerntech.atlassian.net/browse/MEN-3924))
 * mender-inventory-geo: Set connection timeout to 10s.
 * Fix error parsing response for getting tenant token on setup
-([MEN-4245](https://tracker.mender.io/browse/MEN-4245))
+([MEN-4245](https://northerntech.atlassian.net/browse/MEN-4245))
 
 ## mender 2.4.1
 
@@ -1618,12 +1618,12 @@ A total of 397 lines added, 161 removed (delta 236)
 New changes in mender since 2.4.0:
 
 * Add support for probing the U-Boot environment separator
-([MEN-3970](https://tracker.mender.io/browse/MEN-3970))
+([MEN-3970](https://northerntech.atlassian.net/browse/MEN-3970))
 * Fix: Do not switch boot partitions on installation errors on the
 active partition.
-([MEN-3980](https://tracker.mender.io/browse/MEN-3980))
+([MEN-3980](https://northerntech.atlassian.net/browse/MEN-3980))
 * Allow to load private key from the Security configuration section
-([MEN-3924](https://tracker.mender.io/browse/MEN-3924))
+([MEN-3924](https://northerntech.atlassian.net/browse/MEN-3924))
 
 ## mender 2.4.0
 
@@ -1646,24 +1646,24 @@ Switch to a fork which has the logger removed.
 This patch can hopefully be reverted someday, when the logger
 removal has been mainlined.
 * Log state-script stderr as info, not error
-([MEN-3316](https://tracker.mender.io/browse/MEN-3316))
+([MEN-3316](https://northerntech.atlassian.net/browse/MEN-3316))
 * mender-inventory-geo script to return geo localization data
 * Add support for libubootenv as boot loader user space tools
-provider. ([MEN-3684](https://tracker.mender.io/browse/MEN-3684))
+provider. ([MEN-3684](https://northerntech.atlassian.net/browse/MEN-3684))
 * Remove Server config warn on mender setup command
-([MEN-3652](https://tracker.mender.io/browse/MEN-3652))
+([MEN-3652](https://northerntech.atlassian.net/browse/MEN-3652))
 * Fix broken logging to syslogger.
-([MEN-3676](https://tracker.mender.io/browse/MEN-3676))
+([MEN-3676](https://northerntech.atlassian.net/browse/MEN-3676))
 * chmod 600 on config file
-([MEN-3762](https://tracker.mender.io/browse/MEN-3762))
+([MEN-3762](https://northerntech.atlassian.net/browse/MEN-3762))
 * mender-device-identity: skip dummyX interfaces
 * mender.service: update to run after network-online.target
 * Switch to OpenSSL for all server communication.
-([MEN-3730](https://tracker.mender.io/browse/MEN-3730))
+([MEN-3730](https://northerntech.atlassian.net/browse/MEN-3730))
 * keystore: support ed25519 keys
 * Add the ability to configure the client with a client certificate and
 private key in order to enable mTLS in the client communication setup.
-([MEN-3115](https://tracker.mender.io/browse/MEN-3115))
+([MEN-3115](https://northerntech.atlassian.net/browse/MEN-3115))
 
 ## mender 2.3.3
 
@@ -1679,9 +1679,9 @@ New changes in mender since 2.3.2:
 * single-file: Use stderr for all error messages.
 * Send the inventory after a successful deployment, even though the
 device has not rebooted.
-([MEN-4518](https://tracker.mender.io/browse/MEN-4518))
+([MEN-4518](https://northerntech.atlassian.net/browse/MEN-4518))
 * fix, support white spaces in single-file artifacts' names
-([MEN-4179](https://tracker.mender.io/browse/MEN-4179))
+([MEN-4179](https://northerntech.atlassian.net/browse/MEN-4179))
 
 ## mender 2.3.2
 
@@ -1694,12 +1694,12 @@ _Released 01.21.2021_
 New changes in mender since 2.3.0:
 
 * Add support for probing the U-Boot environment separator
-([MEN-3970](https://tracker.mender.io/browse/MEN-3970))
+([MEN-3970](https://northerntech.atlassian.net/browse/MEN-3970))
 * Fix: Do not switch boot partitions on installation errors on the
 active partition.
-([MEN-3980](https://tracker.mender.io/browse/MEN-3980))
+([MEN-3980](https://northerntech.atlassian.net/browse/MEN-3980))
 * Fix error parsing response for getting tenant token on setup
-([MEN-4245](https://tracker.mender.io/browse/MEN-4245))
+([MEN-4245](https://northerntech.atlassian.net/browse/MEN-4245))
 
 ## mender 2.3.1
 
@@ -1740,10 +1740,10 @@ A total of 211 lines added, 26 removed (delta 185)
 New changes in mender since 2.3.0:
 
 * Add support for probing the U-Boot environment separator
-([MEN-3970](https://tracker.mender.io/browse/MEN-3970))
+([MEN-3970](https://northerntech.atlassian.net/browse/MEN-3970))
 * Fix: Do not switch boot partitions on installation errors on the
 active partition.
-([MEN-3980](https://tracker.mender.io/browse/MEN-3980))
+([MEN-3980](https://northerntech.atlassian.net/browse/MEN-3980))
 
 ## mender 2.3.0
 
@@ -1759,16 +1759,16 @@ New changes in mender since 2.2.0:
 * Remove text/template dependency from the cli library reducing
 mender client binary size by approximately 20%
 * Renamed systemd mender.service -> mender-client.service
-([MEN-2948](https://tracker.mender.io/browse/MEN-2948))
+([MEN-2948](https://northerntech.atlassian.net/browse/MEN-2948))
 * Fixes various logging nitpicks
 * Deprecated the log-modules cli commandline flag
-([MEN-3251](https://tracker.mender.io/browse/MEN-3251))
+([MEN-3251](https://northerntech.atlassian.net/browse/MEN-3251))
 * Make the system logger respect the global log level
-([MEN-3135](https://tracker.mender.io/browse/MEN-3135))
+([MEN-3135](https://northerntech.atlassian.net/browse/MEN-3135))
 * Make the system logger write to the LOG_USER facility by default
 * Fix Stat_t.Dev/Rdev type assumption
 * Send Provides in the deployments API call
-([MEN-2587](https://tracker.mender.io/browse/MEN-2587))
+([MEN-2587](https://northerntech.atlassian.net/browse/MEN-2587))
 * Report function caller on all logs when loglevel=Debug
 
 ## mender 2.2.1
@@ -1782,16 +1782,16 @@ _Released 07.15.2020_
 New changes in mender since 2.2.0:
 
 * Fix check-update and send-inventory options on deb install
-([MEN-3277](https://tracker.mender.io/browse/MEN-3277))
+([MEN-3277](https://northerntech.atlassian.net/browse/MEN-3277))
 * Fix Stat_t.Dev/Rdev type assumption
 * Log state-script stderr as info, not error
-([MEN-3316](https://tracker.mender.io/browse/MEN-3316))
+([MEN-3316](https://northerntech.atlassian.net/browse/MEN-3316))
 * Fix broken logging to syslogger.
-([MEN-3676](https://tracker.mender.io/browse/MEN-3676))
+([MEN-3676](https://northerntech.atlassian.net/browse/MEN-3676))
 * Add support for libubootenv as boot loader user space tools
-provider. ([MEN-3684](https://tracker.mender.io/browse/MEN-3684))
+provider. ([MEN-3684](https://northerntech.atlassian.net/browse/MEN-3684))
 * Make interactive setup device type default to configured device type
-([MEN-3777](https://tracker.mender.io/browse/MEN-3777))
+([MEN-3777](https://northerntech.atlassian.net/browse/MEN-3777))
 
 ## mender 2.2.0
 
@@ -1810,29 +1810,29 @@ mender client binary size by approximately 20%
 New changes in mender since 2.1.2:
 
 * mender setup cli command and new CLI package
-([MEN-2418](https://tracker.mender.io/browse/MEN-2418), [MEN-2806](https://tracker.mender.io/browse/MEN-2806))
+([MEN-2418](https://northerntech.atlassian.net/browse/MEN-2418), [MEN-2806](https://northerntech.atlassian.net/browse/MEN-2806))
 * Fix UBI device size calculation
 * store: Save artifact provides for dependency verifications
 * app: Verify artifact (version >= 3) dependencies with current artifact
 * store/app{standalone}: Artifact dependency checking for artifact v3
 * app/store{standalone}: Unit tests Artifact v3 depends and provides
 * Enable the usage of the full Mender-Artifact version 3 format
-([MEN-2642](https://tracker.mender.io/browse/MEN-2642))
+([MEN-2642](https://northerntech.atlassian.net/browse/MEN-2642))
 * support: modules-artifact-gen: Fix typo in default name of output file
 * Rename --mender-professional flag to --hosted-mender
 * Add --quiet flag and remove --run-daemon option and confirm device
 * Now the client stores Artifact provides parameters across reboots in
 standalone mode. Previously this data was ignored, and hence upgrading with an
 Artifact with provides parameters these were lost.
-([MEN-2969](https://tracker.mender.io/browse/MEN-2969))
+([MEN-2969](https://northerntech.atlassian.net/browse/MEN-2969))
 * Set default device type to hostname for interactive setup
 * New command: `snapshot dump` to dump current rootfs
 * Skip special device "rootfs" when determining rootfs type
 * Report 'Unknown' rootfs type if we can't detect it
 * Optimize rootfs-update image writes
-([MEN-2939](https://tracker.mender.io/browse/MEN-2939))
+([MEN-2939](https://northerntech.atlassian.net/browse/MEN-2939))
 * Make `single-file-artifact-gen` script POSIX compliant.
-([MEN-3049](https://tracker.mender.io/browse/MEN-3049))
+([MEN-3049](https://northerntech.atlassian.net/browse/MEN-3049))
 * Fix segfault when running `mender setup` on a read-only
 filesystem.
 * Fix crash when specified certificate can't be opened.
@@ -1841,12 +1841,12 @@ now optional, in the sense that the client will run without them.
 However, the client will not be able to connect without the right
 certificates, so the main usecase of this change is to have a workable
 client that will roll back if connections can't be made, instead of
-exiting. ([MEN-3047](https://tracker.mender.io/browse/MEN-3047))
+exiting. ([MEN-3047](https://northerntech.atlassian.net/browse/MEN-3047))
 * Add warning message when server certificate can't be parsed.
 * snapshot: Added watchdog timer to keep system from freezing
 * snapshot: Add compression options to speed up transfer
 * Improved error message when an update-module is missing
-([MEN-3007](https://tracker.mender.io/browse/MEN-3007))
+([MEN-3007](https://northerntech.atlassian.net/browse/MEN-3007))
 * snapshot: New flag `--source` specifying the source
 filesystem to snapshot
 
@@ -1866,7 +1866,7 @@ now optional, in the sense that the client will run without them.
 However, the client will not be able to connect without the right
 certificates, so the main usecase of this change is to have a workable
 client that will roll back if connections can't be made, instead of
-exiting. ([MEN-3047](https://tracker.mender.io/browse/MEN-3047))
+exiting. ([MEN-3047](https://northerntech.atlassian.net/browse/MEN-3047))
 * Add warning message when server certificate can't be parsed.
 
 
@@ -1899,7 +1899,7 @@ This fixes an issue where the maxSendingAttemps in
 updateReportRetry state could be set real high, since it is calculated
 as UpdatePollIntervalSeconds / RetryPollIntervalSeconds. This adds a
 hard upper limit of 10 retries for the client in any case.
-([MEN-2676](https://tracker.mender.io/browse/MEN-2676))
+([MEN-2676](https://northerntech.atlassian.net/browse/MEN-2676))
 
 ## mender 2.1.2
 
@@ -1918,7 +1918,7 @@ This fixes an issue where the maxSendingAttemps in
 updateReportRetry state could be set real high, since it is calculated
 as UpdatePollIntervalSeconds / RetryPollIntervalSeconds. This adds a
 hard upper limit of 10 retries for the client in any case.
-([MEN-2676](https://tracker.mender.io/browse/MEN-2676))
+([MEN-2676](https://northerntech.atlassian.net/browse/MEN-2676))
 * Fix UBI device size calculation
 
 ## mender 2.1.0
@@ -1944,7 +1944,7 @@ All possible errors must be checked across all code base.
 If an error is intentionally ignored it should be done explicitly.
 * add state-scripts example scripts to wait for network connectivity
 before trying to connect to the Mender server.
-([MEN-2457](https://tracker.mender.io/browse/MEN-2457))
+([MEN-2457](https://northerntech.atlassian.net/browse/MEN-2457))
 * Artifact gen: Support argument passthrough to `mender-artifact`.
 Use `--` to signal that remaining arguments should be passed directly
 to `mender-artifact`.
@@ -1956,11 +1956,11 @@ https://golang.org/pkg/os/signal/#Notify
 Also there is no need to reallocate channel and defer signal.Stop(...)
 each time user signal is received. Thus less resources are used.
 * standalone: Fix artifact committing not working after upgrading from 1.x.
-([MEN-2465](https://tracker.mender.io/browse/MEN-2465))
+([MEN-2465](https://northerntech.atlassian.net/browse/MEN-2465))
 * Print warning on an invalid server certificate.
-([MEN-2378](https://tracker.mender.io/browse/MEN-2378))
+([MEN-2378](https://northerntech.atlassian.net/browse/MEN-2378))
 * add state-script example to preserve ssh keys accross updates
-([MEN-2457](https://tracker.mender.io/browse/MEN-2457))
+([MEN-2457](https://northerntech.atlassian.net/browse/MEN-2457))
 * Fix `/bin/lsb_release` not being picked up by inventory script.
 * Fix misspells in comments and error messages
 * Make sure ARM64 is included in bootloader integration inventory.
@@ -1968,9 +1968,9 @@ each time user signal is received. Thus less resources are used.
 * single-file module: Make sure permissions are preserved.
 Also make sure that backup preserves permissions.
 * add state-script example to utilize dbus to broadcast
-Mender states ([MEN-2457](https://tracker.mender.io/browse/MEN-2457))
+Mender states ([MEN-2457](https://northerntech.atlassian.net/browse/MEN-2457))
 * Provide command line interface to force inventory update.
-([MEN-2131](https://tracker.mender.io/browse/MEN-2131))
+([MEN-2131](https://northerntech.atlassian.net/browse/MEN-2131))
 
 ## mender 2.0.1
 
@@ -2004,68 +2004,68 @@ New changes in mender since 2.0.0b1:
 some minor changes, as readVersion now accepts an io.Reader, and files are
 opened outside of the function. This means that the error message is now
 consistent for all the uses of readVersion.
-([MEN-2318](https://tracker.mender.io/browse/MEN-2318))
+([MEN-2318](https://northerntech.atlassian.net/browse/MEN-2318))
 * file-install modules: Don't destroy original before we know we have a backup.
 * Fix File Install UM to not wipe out dest_dir on single file installs
 * standalone: Fix artifact committing not working after upgrading from 1.x.
-([MEN-2465](https://tracker.mender.io/browse/MEN-2465))
+([MEN-2465](https://northerntech.atlassian.net/browse/MEN-2465))
 * Deprecate old file-install Update Module and create instead
 two new ones: single-file-install and file-tree-install. These have a
 simpler logic and clearer scope. See for details.
-([MEN-2442](https://tracker.mender.io/browse/MEN-2442))
+([MEN-2442](https://northerntech.atlassian.net/browse/MEN-2442))
 * Don't push network interfaces without a mac address to inventory
 * Disallow installing file trees on root destination dir for
 File Install Update Module
 * Make sure ARM64 is included in bootloader integration inventory.
 * Mender no longer misidentifies LVM volumes.
-([MEN-2302](https://tracker.mender.io/browse/MEN-2302))
+([MEN-2302](https://northerntech.atlassian.net/browse/MEN-2302))
 * Update modules: Implement `NeedsArtifactReboot` -> `Automatic`.
-([MEN-2011](https://tracker.mender.io/browse/MEN-2011))
+([MEN-2011](https://northerntech.atlassian.net/browse/MEN-2011))
 
 New changes in mender since 1.7.0:
 
 * Bugfix: State-script error code in Sync-Enter causes infinite loop
-([MEN-2195](https://tracker.mender.io/browse/MEN-2195))
+([MEN-2195](https://northerntech.atlassian.net/browse/MEN-2195))
 * Allow rootfsPartA and rootfsPartB to be symlinks
 * Rewrite AuthorizeWaitState to fix an infinite loop bug
-([MEN-2195](https://tracker.mender.io/browse/MEN-2195))
+([MEN-2195](https://northerntech.atlassian.net/browse/MEN-2195))
 * Modify design for exec.Cmd stdout/stderr logging
 * Place UM generator scripts in a dedicated folder
-([MEN-2371](https://tracker.mender.io/browse/MEN-2371))
+([MEN-2371](https://northerntech.atlassian.net/browse/MEN-2371))
 * Write Update Module to do file(s) install
-([MEN-2371](https://tracker.mender.io/browse/MEN-2371))
+([MEN-2371](https://northerntech.atlassian.net/browse/MEN-2371))
 * Set StateScriptTimeout default to 1h
-([MEN-2409](https://tracker.mender.io/browse/MEN-2409))
+([MEN-2409](https://northerntech.atlassian.net/browse/MEN-2409))
 * Add source-installation instructions to README.md.
 * Add `rootfs-image-v2` as a demonstration of how to
 reimplement Mender's `rootfs-image` update type as an update module.
 It's also useful as inspiration if users want to make their own
 slightly tweaked rootfs-image type.
-([MEN-2392](https://tracker.mender.io/browse/MEN-2392))
+([MEN-2392](https://northerntech.atlassian.net/browse/MEN-2392))
 * Swapped definition of StateScriptRetryTimeout and
 StateScriptRetryInterval for the names to represent what they are
 actually doing. This change breaks compatibility with current usage of
 these configurable parameters. See documentation for correct usage.
-([MEN-2409](https://tracker.mender.io/browse/MEN-2409))
+([MEN-2409](https://northerntech.atlassian.net/browse/MEN-2409))
 * Updated the copyright year to 2019 in LICENSE.
 * Write update module for doing container setup
-([MEN-2232](https://tracker.mender.io/browse/MEN-2232))
+([MEN-2232](https://northerntech.atlassian.net/browse/MEN-2232))
 * Add example update modules for shell commands and pkg installs.
 * Remove misleading warning message when ServerCert is missing.
 * Remove jq dependency for file-install Update Module
 * Implement initial version of update modules.
-([MEN-2000](https://tracker.mender.io/browse/MEN-2000))
+([MEN-2000](https://northerntech.atlassian.net/browse/MEN-2000))
 * Add support for Mender Artifact format version 3.
-([MEN-2000](https://tracker.mender.io/browse/MEN-2000))
+([MEN-2000](https://northerntech.atlassian.net/browse/MEN-2000))
 * Artifact name is now stored in the local database, and
 `/etc/mender/artifact_info` acts only as a fallback if no name has
 been stored yet. This is typically the case for devices provisioned
 directly from a disk image. Scripts should use the client
 `-show-artifact` argument instead of parsing the file.
-([MEN-2000](https://tracker.mender.io/browse/MEN-2000))
+([MEN-2000](https://northerntech.atlassian.net/browse/MEN-2000))
 * `-rootfs` argument has been removed and replaced with the
 `-install` argument, which works the same way.
-([MEN-2000](https://tracker.mender.io/browse/MEN-2000))
+([MEN-2000](https://northerntech.atlassian.net/browse/MEN-2000))
 * Mender now runs a stripped down set of state scripts when
 installing artifacts in standalone mode, and the `-f` flag is no
 longer required to install such artifacts, nor is it valid. The
@@ -2077,25 +2077,25 @@ scripts that run are:
 * `ArtifactFailure` scripts
 Reboot scripts do not run, so these must be handled manually in
 standalone mode.
-([MEN-2000](https://tracker.mender.io/browse/MEN-2000))
+([MEN-2000](https://northerntech.atlassian.net/browse/MEN-2000))
 * Behavior change: `ArtifactCommit_Error` scripts now run
 after an `ArtifactCommit_Leave` script has returned an error.
-([MEN-2000](https://tracker.mender.io/browse/MEN-2000))
+([MEN-2000](https://northerntech.atlassian.net/browse/MEN-2000))
 * Bugfix in killing mechanism for State Scripts
-timing out ([MEN-2409](https://tracker.mender.io/browse/MEN-2409))
+timing out ([MEN-2409](https://northerntech.atlassian.net/browse/MEN-2409))
 * Update vendored dependency net/http2 to latest version
 * Support installing most files using Makefile `install` target.
 The device_type file is not supported, since it is highly hardware
 specific. Also the configuration will be very bare bones, and will
 require changes unless Hosted Mender is being used.
-([MEN-2383](https://tracker.mender.io/browse/MEN-2383))
+([MEN-2383](https://northerntech.atlassian.net/browse/MEN-2383))
 * Make output from `-show-artifact` easier to consume by limiting logging.
 * Fix state logic for the case of actual wait
-([MEN-2195](https://tracker.mender.io/browse/MEN-2195))
+([MEN-2195](https://northerntech.atlassian.net/browse/MEN-2195))
 * Properly fail the update when writes to the underlying storage fail.
-([MEN-2285](https://tracker.mender.io/browse/MEN-2285))
+([MEN-2285](https://northerntech.atlassian.net/browse/MEN-2285))
 * Work around occasional OOM bug in mmc driver.
-([MEN-2285](https://tracker.mender.io/browse/MEN-2285))
+([MEN-2285](https://northerntech.atlassian.net/browse/MEN-2285))
 * Make sure state directory is created if it doesn't exist.
 
 ## mender 1.7.1
@@ -2110,15 +2110,15 @@ New changes in mender since 1.7.0:
 
 * Remove misleading warning message when ServerCert is missing.
 * Bugfix: State-script error code in Sync-Enter causes infinite loop
-([MEN-2195](https://tracker.mender.io/browse/MEN-2195))
+([MEN-2195](https://northerntech.atlassian.net/browse/MEN-2195))
 * Update vendored dependency net/http2 to latest version
 * Rewrite AuthorizeWaitState to fix an infinite loop bug
-([MEN-2195](https://tracker.mender.io/browse/MEN-2195))
+([MEN-2195](https://northerntech.atlassian.net/browse/MEN-2195))
 * Fix state logic for the case of actual wait
-([MEN-2195](https://tracker.mender.io/browse/MEN-2195))
+([MEN-2195](https://northerntech.atlassian.net/browse/MEN-2195))
 * Make sure ARM64 is included in bootloader integration inventory.
 * Mender no longer misidentifies LVM volumes.
-([MEN-2302](https://tracker.mender.io/browse/MEN-2302))
+([MEN-2302](https://northerntech.atlassian.net/browse/MEN-2302))
 * Updated the copyright year to 2019 in LICENSE.
 
 ## mender 1.7.0
@@ -2139,28 +2139,28 @@ New changes in mender since 1.6.0:
 * Fix active partition detection when using non-native
 filesystems.
 * Add inventory scripts for rootfs type and bootloader integration.
-([MEN-2059](https://tracker.mender.io/browse/MEN-2059))
+([MEN-2059](https://northerntech.atlassian.net/browse/MEN-2059))
 * New feature: Fail-over Mender server(s)
-([MEN-1972](https://tracker.mender.io/browse/MEN-1972))
+([MEN-1972](https://northerntech.atlassian.net/browse/MEN-1972))
 * New inventory script for "os" attribute, installed by default.
-([MEN-2060](https://tracker.mender.io/browse/MEN-2060))
+([MEN-2060](https://northerntech.atlassian.net/browse/MEN-2060))
 * Mender client now loads configuration settings from
 both /etc/mender/mender.conf and (if it exists)
 /var/lib/mender/mender.conf. The second file is located
 on the data partition, so it allows any subset of configuration
 changes to survive upgrades.
-([MEN-2073](https://tracker.mender.io/browse/MEN-2073))
+([MEN-2073](https://northerntech.atlassian.net/browse/MEN-2073))
 * Print a message to the mender log when the
 mender client has confirmed the authenticity of an
 artifact's digital signature.
-([MEN-2152](https://tracker.mender.io/browse/MEN-2152))
+([MEN-2152](https://northerntech.atlassian.net/browse/MEN-2152))
 * Fix update check not working under BusyBox.
-([MEN-2159](https://tracker.mender.io/browse/MEN-2159))
+([MEN-2159](https://northerntech.atlassian.net/browse/MEN-2159))
 * Add Community Code of Conduct
 * Detect if inactive part is mounted and unmount
-([MEN-2084](https://tracker.mender.io/browse/MEN-2084))
+([MEN-2084](https://northerntech.atlassian.net/browse/MEN-2084))
 * Improve error message when running mender as non-root user
-([MEN-2083](https://tracker.mender.io/browse/MEN-2083))
+([MEN-2083](https://northerntech.atlassian.net/browse/MEN-2083))
 
 ## mender 1.6.1
 
@@ -2173,11 +2173,11 @@ _Released 12.13.2018_
 New changes in mender since 1.6.0:
 
 * Fix update check not working under BusyBox.
-([MEN-2159](https://tracker.mender.io/browse/MEN-2159))
+([MEN-2159](https://northerntech.atlassian.net/browse/MEN-2159))
 * Print a message to the mender log when the
 mender client has confirmed the authenticity of an
 artifact's digital signature.
-([MEN-2152](https://tracker.mender.io/browse/MEN-2152))
+([MEN-2152](https://northerntech.atlassian.net/browse/MEN-2152))
 
 ## mender 1.6.0
 
@@ -2192,28 +2192,28 @@ New changes in mender since 1.6.0b1:
 * Fix active partition detection when using non-native
 filesystems.
 * New inventory script for "os" attribute, installed by default.
-([MEN-2060](https://tracker.mender.io/browse/MEN-2060))
+([MEN-2060](https://northerntech.atlassian.net/browse/MEN-2060))
 * FIX: Enabling compiling ppc64le
 * Add inventory scripts for rootfs type and bootloader integration.
-([MEN-2059](https://tracker.mender.io/browse/MEN-2059))
+([MEN-2059](https://northerntech.atlassian.net/browse/MEN-2059))
 
 New changes in mender since 1.5.0:
 
 * FIXED: HTTP error 401 is not handled by all states
-([MEN-1854](https://tracker.mender.io/browse/MEN-1854))
+([MEN-1854](https://northerntech.atlassian.net/browse/MEN-1854))
 * ArtifactReboot_Enter scripts are no longer rerun
 if interrupted by an unexpected reboot. It will be treated
 as if Mender itself rebooted.
 * Enable user to force an update-check locally
 The user can now force an update check by either running mender with the
 -check-update option, or send a signal [SIGUSR1] to the running mender process.
-([MEN-1905](https://tracker.mender.io/browse/MEN-1905))
+([MEN-1905](https://northerntech.atlassian.net/browse/MEN-1905))
 * Add automatic check for canary value in U-Boot environment
 to try to detect if there is a problem in the environment setup of
 U-Boot and/or the u-boot-fw-utils tools.
 * Mender client key generator script
 * log active partition before and after reboot.
-([MEN-1880](https://tracker.mender.io/browse/MEN-1880))
+([MEN-1880](https://northerntech.atlassian.net/browse/MEN-1880))
 
 ## mender 1.5.1
 
@@ -2238,18 +2238,18 @@ _Released 05.15.2018_
 
 #### mender (1.5.0b1)
 * Regenerate keys on all key errors, not just when keys are missing.
-([MEN-1823](https://tracker.mender.io/browse/MEN-1823))
+([MEN-1823](https://northerntech.atlassian.net/browse/MEN-1823))
 * cli: New client option to show installed artifact name
-([MEN-1806](https://tracker.mender.io/browse/MEN-1806))
+([MEN-1806](https://northerntech.atlassian.net/browse/MEN-1806))
 * Spontaneous-reboot hardening of the client
-([MEN-1187](https://tracker.mender.io/browse/MEN-1187))
+([MEN-1187](https://northerntech.atlassian.net/browse/MEN-1187))
 * FIXED: Log writes not flushed from memory
-([MEN-1726](https://tracker.mender.io/browse/MEN-1726))
+([MEN-1726](https://northerntech.atlassian.net/browse/MEN-1726))
 * Allow multiple digit partition numbers.
 * log request-id in case of bad API requests
-([MEN-1738](https://tracker.mender.io/browse/MEN-1738))
+([MEN-1738](https://northerntech.atlassian.net/browse/MEN-1738))
 * Abort upgrade if artifact name is not retrievable from artifact_info
-([MEN-1824](https://tracker.mender.io/browse/MEN-1824))
+([MEN-1824](https://northerntech.atlassian.net/browse/MEN-1824))
 
 ## mender 1.5.0
 
@@ -2259,7 +2259,7 @@ _Released 06.07.2018_
 
 #### mender (1.5.0)
 * FIXED: HTTP error 401 is not handled by all states
-([MEN-1854](https://tracker.mender.io/browse/MEN-1854))
+([MEN-1854](https://northerntech.atlassian.net/browse/MEN-1854))
 * Mender client key generator script
 
 
@@ -2271,9 +2271,9 @@ _Released 06.04.2018_
 
 #### mender (1.4.1)
 * FIXED: Log writes not flushed from memory
-([MEN-1726](https://tracker.mender.io/browse/MEN-1726))
+([MEN-1726](https://northerntech.atlassian.net/browse/MEN-1726))
 * Regenerate keys on all key errors, not just when keys are missing.
-([MEN-1823](https://tracker.mender.io/browse/MEN-1823))
+([MEN-1823](https://northerntech.atlassian.net/browse/MEN-1823))
 * Mender client key generator script
 
 
@@ -2285,16 +2285,16 @@ _Released 02.09.2018_
 
 #### mender (1.4.0b1)
 * Report update status for scripts and states
-([MEN-1015](https://tracker.mender.io/browse/MEN-1015))
+([MEN-1015](https://northerntech.atlassian.net/browse/MEN-1015))
 * Print detailed logs about authorization errors.
-([MEN-1660](https://tracker.mender.io/browse/MEN-1660), [MEN-1661](https://tracker.mender.io/browse/MEN-1661))
+([MEN-1660](https://northerntech.atlassian.net/browse/MEN-1660), [MEN-1661](https://northerntech.atlassian.net/browse/MEN-1661))
 * mender-device-identity: Check if file exists before reading
 Mender on orangepi fails to run because identity script exit with error like:
 /usr/share/mender/identity/mender-device-identity
 cat: can't open '/sys/class/net/bonding_masters/type': Not a directory
 Add check before reading type to avoid problems.
 * Remove trailing slash from server URL configuration.
-([MEN-1620](https://tracker.mender.io/browse/MEN-1620))
+([MEN-1620](https://northerntech.atlassian.net/browse/MEN-1620))
 
 ## mender 1.4.0
 
@@ -2314,7 +2314,7 @@ _Released 02.09.2018_
 
 #### mender (1.3.1)
 * Print detailed logs about authorization errors.
-([MEN-1660](https://tracker.mender.io/browse/MEN-1660), [MEN-1661](https://tracker.mender.io/browse/MEN-1661))
+([MEN-1660](https://northerntech.atlassian.net/browse/MEN-1660), [MEN-1661](https://northerntech.atlassian.net/browse/MEN-1661))
 
 ## mender 1.3.0b1
 
@@ -2324,13 +2324,13 @@ _Released 11.14.2017_
 
 #### mender (1.3.0b1)
 * Mender now logs whatever a state-script outputs to stderr
-([MEN-1349](https://tracker.mender.io/browse/MEN-1349))
+([MEN-1349](https://northerntech.atlassian.net/browse/MEN-1349))
 * mender-device-identity: only collect MAC from ARPHRD_ETHER types
 * Fix 'unexpected EOF' error when downloading large updates.
-([MEN-1511](https://tracker.mender.io/browse/MEN-1511))
+([MEN-1511](https://northerntech.atlassian.net/browse/MEN-1511))
 * Implement ability for client to resume a download from
 where it left off if the connection is broken.
-([MEN-1511](https://tracker.mender.io/browse/MEN-1511))
+([MEN-1511](https://northerntech.atlassian.net/browse/MEN-1511))
 * Improve error messages for state scripts errors.
 Rely on the full error description instead of just the error code.
 * Fix compile for ARM64.
@@ -2350,7 +2350,7 @@ _Released 12.21.2017_
 
 #### mender (1.3.0)
 * Remove trailing slash from server URL configuration.
-([MEN-1620](https://tracker.mender.io/browse/MEN-1620))
+([MEN-1620](https://northerntech.atlassian.net/browse/MEN-1620))
 
 
 ## mender 1.2.1
@@ -2363,7 +2363,7 @@ _Released 10.02.2017_
 * Improve error messages for state scripts errors.
 Rely on the full error description instead of just the error code.
 * Fix checksum not being verified for headers, only
-payload. ([MEN-1412](https://tracker.mender.io/browse/MEN-1412))
+payload. ([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
 
 ## mender 1.2.0
 
@@ -2375,27 +2375,27 @@ _Released 09.05.2017_
 * Refactored all store implementations into /store
 * Improve error message when manifest field/file cannot be read.
 * Fixed format check to conform to the expected artifact-file-format
-([MEN-1289](https://tracker.mender.io/browse/MEN-1289))
+([MEN-1289](https://northerntech.atlassian.net/browse/MEN-1289))
 * installer: improve incompatible image error message
 * Client will not run state scripts from cmd-line except when forced.
-([MEN-1235](https://tracker.mender.io/browse/MEN-1235))
+([MEN-1235](https://northerntech.atlassian.net/browse/MEN-1235))
 * Fixed behaviour when no sys-cert is available on the system.
-([MEN-1151](https://tracker.mender.io/browse/MEN-1151))
+([MEN-1151](https://northerntech.atlassian.net/browse/MEN-1151))
 * Mender now logs whatever a state-script outputs to stderr
-([MEN-1349](https://tracker.mender.io/browse/MEN-1349))
+([MEN-1349](https://northerntech.atlassian.net/browse/MEN-1349))
 * Fix misleading version being displayed for non-tagged builds.
-([MEN-1178](https://tracker.mender.io/browse/MEN-1178))
+([MEN-1178](https://northerntech.atlassian.net/browse/MEN-1178))
 * Changed the errormessage to more closely reflect the issue.
-([MEN-1215](https://tracker.mender.io/browse/MEN-1215))
+([MEN-1215](https://northerntech.atlassian.net/browse/MEN-1215))
 * Removed the DeviceKey option in menderConfig.
 * Fix - Now throws an error when committing nothing.
-([MEN-505](https://tracker.mender.io/browse/MEN-505))
+([MEN-505](https://northerntech.atlassian.net/browse/MEN-505))
 * Introduction of state script feature. State scripts can be
 used to execute scripts at various stages of Mender's execution. See
 documentation for more information.
 * Introduce experimental support for writing to UBI volumes
 * Logs an error when device_type file not found.
-([MEN-505](https://tracker.mender.io/browse/MEN-505))
+([MEN-505](https://northerntech.atlassian.net/browse/MEN-505))
 * remove no longer referenced client certificate code
 
 ## mender 1.1.2
@@ -2406,5 +2406,5 @@ _(Never released publicly)_
 
 #### mender (1.1.2)
 * Fix checksum not being verified for headers, only
-payload. ([MEN-1412](https://tracker.mender.io/browse/MEN-1412))
+payload. ([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
 
