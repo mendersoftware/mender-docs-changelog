@@ -8,6 +8,56 @@ github: false
 ---
 
 
+## mender-cli 1.10.0
+
+_Released 02.20.2023_
+
+### Statistics
+
+A total of 11 lines added, 10 removed (delta 1)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 4 (66.7%) |
+| Clément Péron | 1 (16.7%) |
+| Alex Miliukov | 1 (16.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 6 (50.0%) |
+| Clément Péron | 4 (33.3%) |
+| Alex Miliukov | 2 (16.7%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 1 (10.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 5 (83.3%) |
+| peron.clem@gmail.com | 1 (16.7%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 8 (66.7%) |
+| peron.clem@gmail.com | 4 (33.3%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 2 (66.7%) |
+| peron.clem@gmail.com | 1 (33.3%) |
+
+### Changelogs
+
+#### mender-cli (1.10.0)
+
+New changes in mender-cli since 1.9.0:
+
+##### Bug Fixes
+
+* allow to get the server from mender-clirc configuration file
+
+
 ## mender-cli 1.9.0
 
 _Released 09.25.2022_
