@@ -107,16 +107,16 @@ New changes in mender-cli since 1.8.0:
 ##### Bug Fixes
 
 * stop the port-forward command on errors when reading the websocket
-  ([MEN-5565](https://tracker.mender.io/browse/MEN-5565))
+  ([MEN-5565](https://northerntech.atlassian.net/browse/MEN-5565))
 * automatically handle reconnections in port-forward
-  ([MEN-5565](https://tracker.mender.io/browse/MEN-5565))
+  ([MEN-5565](https://northerntech.atlassian.net/browse/MEN-5565))
 * use a mutex lock per connection instead of a global one
-  ([MEN-5565](https://tracker.mender.io/browse/MEN-5565))
+  ([MEN-5565](https://northerntech.atlassian.net/browse/MEN-5565))
 
 ##### Features
 
 * add option to specify a JWT or personal access token
-  ([MEN-5660](https://tracker.mender.io/browse/MEN-5660))
+  ([MEN-5660](https://northerntech.atlassian.net/browse/MEN-5660))
 
 
 ## mender-cli 1.8.0
@@ -170,9 +170,9 @@ New changes in mender-cli since 1.7.0:
   artifact
 * Raw mode for devices list command
 * disable `Failed to parse flags: unknown flag` error messages
-  ([MEN-5428](https://tracker.mender.io/browse/MEN-5428))
+  ([MEN-5428](https://northerntech.atlassian.net/browse/MEN-5428))
 * improve auth and device error messages for the troubleshoot commands
-  ([MEN-5428](https://tracker.mender.io/browse/MEN-5428))
+  ([MEN-5428](https://northerntech.atlassian.net/browse/MEN-5428))
 
 ##### Dependabot bumps
 
@@ -308,10 +308,10 @@ New changes in mender-cli since 1.6.0:
 * Fix: Respect the --server flag from config everywhere
 * `mender-cli --record <my-file> terminal <DEVICE-ID>` records
 the terminal session into a local file.
-([MEN-4318](https://tracker.mender.io/browse/MEN-4318))
+([MEN-4318](https://northerntech.atlassian.net/browse/MEN-4318))
 * `mender-cli --playback <my-file> terminal` playbacks the
 previously recorded terminal session from a local file.
-([MEN-4318](https://tracker.mender.io/browse/MEN-4318))
+([MEN-4318](https://northerntech.atlassian.net/browse/MEN-4318))
 * New command `mender-cli devices list` to list all devices
 from /devauth/devices endpoint. The amount of detail can be controlled
 using cli parameter `-d/--detail`, same as for other commands.
@@ -320,7 +320,7 @@ errors, when the autocomplete directory was not present. This explicitly logs
 the errors returned during autocomplete script generation.
 * New command port-forward: port-forward TCP and UDP ports from the device
 * Add filetransfer upload and download support
-([MEN-4323](https://tracker.mender.io/browse/MEN-4323))
+([MEN-4323](https://northerntech.atlassian.net/browse/MEN-4323))
 * Aggregated Dependabot Changelogs:
 * Bumps golang from 1.15.6-alpine3.12 to 1.15.8-alpine3.12.
 * Bumps [github.com/spf13/cobra](https://github.com/spf13/cobra) from 1.1.1 to 1.1.3.
@@ -463,7 +463,7 @@ _Released 07.15.2020_
 New changes in mender-cli since 1.3.0:
 
 * Support for two factor authentication token for login
-([MEN-3176](https://tracker.mender.io/browse/MEN-3176))
+([MEN-3176](https://northerntech.atlassian.net/browse/MEN-3176))
 * Change the name of the two-factor auth option.
 
 ## mender-cli 1.3.0
@@ -489,5 +489,5 @@ _Released 09.16.2019_
 New changes in mender-cli since 1.1.0:
 
 * Store login token in XDG Basedir Spec Cache-directory
-([MEN-2387](https://tracker.mender.io/browse/MEN-2387))
+([MEN-2387](https://northerntech.atlassian.net/browse/MEN-2387))
 

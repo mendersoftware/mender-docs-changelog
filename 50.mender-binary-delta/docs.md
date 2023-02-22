@@ -21,7 +21,7 @@ New changes in mender-binary-delta since 1.4.0:
 ##### Features
 
 * Licenses are now available in the package, instead of only
-  online. ([MEN-5517](https://tracker.mender.io/browse/MEN-5517))
+  online. ([MEN-5517](https://northerntech.atlassian.net/browse/MEN-5517))
 
 
 ## mender-binary-delta (1.4.0)
@@ -40,15 +40,15 @@ New changes in mender-binary-delta since 1.3.1:
   the extra checksum check done by Mender has been removed, and only the checksum
   done by the xdelta3 algorithm is used. Therefore, there is no double read of the
   newly written partititon, which speeds up the installation significantly.
-  ([MEN-5607](https://tracker.mender.io/browse/MEN-5607))
+  ([MEN-5607](https://northerntech.atlassian.net/browse/MEN-5607))
 
 ##### Other
 
 * Additional arguments to xdelta3 with -D/--decoder-arguments
-  ([MEN-5193](https://tracker.mender.io/browse/MEN-5193))
+  ([MEN-5193](https://northerntech.atlassian.net/browse/MEN-5193))
 * style: Extra log for the decoder arguments.
 * Passing all the arguments to the xdelta3 for decoder.
-  ([MEN-5491](https://tracker.mender.io/browse/MEN-5491))
+  ([MEN-5491](https://northerntech.atlassian.net/browse/MEN-5491))
 
 ##### Dependabot bumps
 
@@ -89,10 +89,10 @@ New changes in mender-binary-delta since 1.2.0:
 * Fix integer overflow bug in the Artifact creation logic, where the
   `rootfs_image_checksum` would get truncated through the use of the 32-bit
   interface for JSON values in the JSON libary used.
-  ([MEN-4516](https://tracker.mender.io/browse/MEN-4516))
+  ([MEN-4516](https://northerntech.atlassian.net/browse/MEN-4516))
 * Detect mismatches between `mender_boot_part` and `RootfsPart(A|B)` variables.
 * Support for new grub-mender-grubenv tool names.
-  ([MEN-3978](https://tracker.mender.io/browse/MEN-3978))
+  ([MEN-3978](https://northerntech.atlassian.net/browse/MEN-3978))
 * Aggregated Dependabot Changelogs:
   * Bumps tests/unit/cmocka from `314602b` to `5a4b158`.
   * Bumps [libntech](https://github.com/cfengine/libntech) from `4b59844` to `f49189e`.
@@ -121,7 +121,7 @@ New changes in mender-binary-delta since 1.2.0:
 * Fix integer overflow bug in the Artifact creation logic, where the
 `rootfs_image_checksum` would get truncated through the use of the 32-bit
 interface for JSON values in the JSON libary used.
-([MEN-4516](https://tracker.mender.io/browse/MEN-4516))
+([MEN-4516](https://northerntech.atlassian.net/browse/MEN-4516))
 
 ## mender-binary-delta 1.2.0
 
@@ -134,19 +134,19 @@ _Released 01.11.2021_
 New changes in mender-binary-delta since 1.1.0:
 
 * Improve error message when mender-artifact is not found.
-([MEN-4044](https://tracker.mender.io/browse/MEN-4044))
+([MEN-4044](https://northerntech.atlassian.net/browse/MEN-4044))
 * Mender-binary-delta and its Artifact generator now supports
 the new "Provides" fields for individial application software names.
-([MEN-3483](https://tracker.mender.io/browse/MEN-3483), [MEN-3484](https://tracker.mender.io/browse/MEN-3484))
+([MEN-3483](https://northerntech.atlassian.net/browse/MEN-3483), [MEN-3484](https://northerntech.atlassian.net/browse/MEN-3484))
 * The format of the Artifact checksum field has been changed
 in mender-artifact 3.5.0, from `rootfs_image_checksum` to
 `rootfs-image.checksum`, to conform to the namespaced "Provides"
 fields. Mender-binary-delta now supports this new field. This should
 not have any practical effect, but will cause meta data of delta
 Artifacts to look different.
-([MEN-3483](https://tracker.mender.io/browse/MEN-3483), [MEN-3484](https://tracker.mender.io/browse/MEN-3484))
+([MEN-3483](https://northerntech.atlassian.net/browse/MEN-3483), [MEN-3484](https://northerntech.atlassian.net/browse/MEN-3484))
 * Probe U-Boot env before use to support libubootenv fw tools
-([MEN-4246](https://tracker.mender.io/browse/MEN-4246))
+([MEN-4246](https://northerntech.atlassian.net/browse/MEN-4246))
 
 ## mender-binary-delta 1.1.2
 
@@ -157,7 +157,7 @@ _Released 16.04.2021_
 New changes in mender-binary-delta since 1.1.0:
 
 * Probe U-Boot env before use to support libubootenv fw tools
-([MEN-4246](https://tracker.mender.io/browse/MEN-4246))
+([MEN-4246](https://northerntech.atlassian.net/browse/MEN-4246))
 * Remove harmless warning message about unhandled states.
 * Fix failed rollback status when bootloader is the one to roll back.
 * Detect mismatches between `mender_boot_part` and `RootfsPart(A|B)` variables.
@@ -173,7 +173,7 @@ _Released 01.11.2021_
 New changes in mender-binary-delta since 1.1.0:
 
 * Probe U-Boot env before use to support libubootenv fw tools
-([MEN-4246](https://tracker.mender.io/browse/MEN-4246))
+([MEN-4246](https://northerntech.atlassian.net/browse/MEN-4246))
 
 ## mender-binary-delta 1.1.0
 
@@ -184,11 +184,11 @@ _Released 07.15.2020_
 New changes in mender-binary-delta since 1.0.1:
 
 * Make the CLI artifact-name argument optional
-([MEN-2642](https://tracker.mender.io/browse/MEN-2642))
+([MEN-2642](https://northerntech.atlassian.net/browse/MEN-2642))
 * Now the binary delta tools supports depends and provides
-([MEN-2642](https://tracker.mender.io/browse/MEN-2642))
+([MEN-2642](https://northerntech.atlassian.net/browse/MEN-2642))
 * Add the ability to write transitional artifacts
-([MEN-2948](https://tracker.mender.io/browse/MEN-2948))
+([MEN-2948](https://northerntech.atlassian.net/browse/MEN-2948))
 
 ## mender-binary-delta 1.0.1
 
@@ -201,7 +201,7 @@ _Released 12.06.2019_
 New changes in mender-binary-delta since 1.0.0:
 
 * MEN-2928: Fix: Enable file-systems larger than approx 2-GiGs
-([MEN-2928](https://tracker.mender.io/browse/MEN-2928))
+([MEN-2928](https://northerntech.atlassian.net/browse/MEN-2928))
 
 ## mender-binary-delta 1.0.0
 

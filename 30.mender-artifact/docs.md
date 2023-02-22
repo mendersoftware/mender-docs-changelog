@@ -84,7 +84,7 @@ New changes in mender-artifact since 3.9.0:
 ##### Other
 
 * Use best gzip compression by default.
-  ([MEN-6249](https://tracker.mender.io/browse/MEN-6249))
+  ([MEN-6249](https://northerntech.atlassian.net/browse/MEN-6249))
 
 
 ## mender-artifact 3.9.0
@@ -134,13 +134,13 @@ New changes in mender-artifact since 3.8.0:
 ##### Features
 
 * Implement write for empty payload artifacts
-  ([MEN-2586](https://tracker.mender.io/browse/MEN-2586))
+  ([MEN-2586](https://northerntech.atlassian.net/browse/MEN-2586))
 * Add possibility to read bootstrap artifacts
-  ([MEN-2586](https://tracker.mender.io/browse/MEN-2586))
+  ([MEN-2586](https://northerntech.atlassian.net/browse/MEN-2586))
 * Add support for provides and depends flags in write and read
-  ([MEN-2586](https://tracker.mender.io/browse/MEN-2586))
+  ([MEN-2586](https://northerntech.atlassian.net/browse/MEN-2586))
 * Add PKCS#11 standard support for artifacts signing
-  ([MEN-5759](https://tracker.mender.io/browse/MEN-5759))
+  ([MEN-5759](https://northerntech.atlassian.net/browse/MEN-5759))
 
 ##### Dependency updates
 
@@ -261,7 +261,7 @@ New changes in mender-artifact since 3.7.1:
   This affects all update module generators.
 * The mender-artifact modification commands (modify, cp, cat, rm) now
   handles sparse partitions in the SD-images it modifies.
-  ([MEN-5462](https://tracker.mender.io/browse/MEN-5462))
+  ([MEN-5462](https://northerntech.atlassian.net/browse/MEN-5462))
 
 ##### Other
 
@@ -381,12 +381,12 @@ New changes in mender-artifact since 3.6.1:
 * Add missing error description when artifact header can't be written.
 * Makefile: enhance autocomplete scripts install
 * cli: Fix parsing of filenames containing ".mender"
-  ([MEN-5076](https://tracker.mender.io/browse/MEN-5076))
+  ([MEN-5076](https://northerntech.atlassian.net/browse/MEN-5076))
 * Fix the checksum errors encountered in rare cases where the entire byte
   stream is not consumed during verification, and thus giving wrong checksum errors.
-  ([MEN-5094](https://tracker.mender.io/browse/MEN-5094))
+  ([MEN-5094](https://northerntech.atlassian.net/browse/MEN-5094))
 * Restore SSH snapshot feature on Mac OS
-  ([MEN-4362](https://tracker.mender.io/browse/MEN-4362), [MEN-5082](https://tracker.mender.io/browse/MEN-5082))
+  ([MEN-4362](https://northerntech.atlassian.net/browse/MEN-4362), [MEN-5082](https://northerntech.atlassian.net/browse/MEN-5082))
 * Create a new signer using GCP's KMS
 
   This signs and verifies data using GCP's Key Management Service. This
@@ -470,12 +470,12 @@ New changes in mender-artifact since 3.6.0:
 
 * Add missing error description when artifact header can't be written.
 * cli: Fix parsing of filenames containing ".mender"
-  ([MEN-5076](https://tracker.mender.io/browse/MEN-5076))
+  ([MEN-5076](https://northerntech.atlassian.net/browse/MEN-5076))
 * Fix the checksum errors encountered in rare cases where the entire byte
   stream is not consumed during verification, and thus giving wrong checksum errors.
-  ([MEN-5094](https://tracker.mender.io/browse/MEN-5094))
+  ([MEN-5094](https://northerntech.atlassian.net/browse/MEN-5094))
 * Restore SSH snapshot feature on Mac OS
-  ([MEN-4362](https://tracker.mender.io/browse/MEN-4362), [MEN-5082](https://tracker.mender.io/browse/MEN-5082))
+  ([MEN-4362](https://northerntech.atlassian.net/browse/MEN-4362), [MEN-5082](https://northerntech.atlassian.net/browse/MEN-5082))
 
 
 ## mender-artifact 3.6.0
@@ -537,7 +537,7 @@ New changes in mender-artifact since 3.5.1:
   but rather prints a warning, that the flag is ignored. If you want to change the
   compression of your Artifact, run `mender-artifact modify <Artifact>
   --compression <type>`
-  ([MEN-4502](https://tracker.mender.io/browse/MEN-4502))
+  ([MEN-4502](https://northerntech.atlassian.net/browse/MEN-4502))
 * Add a note about the proper usage of the 'compression' flag in the
   global help text.
 * In case of a user trying to add a script with an invalid name, the
@@ -545,7 +545,7 @@ New changes in mender-artifact since 3.5.1:
 * Remove the 'scripter' prefix in the error messages when adding a
   State Script to an Artifact.
 * [] Fix sending on closed signal channel
-  ([MEN-4832](https://tracker.mender.io/browse/MEN-4832))
+  ([MEN-4832](https://northerntech.atlassian.net/browse/MEN-4832))
 * Aggregated Dependabot Changelogs:
   * Bumps [github.com/stretchr/testify](https://github.com/stretchr/testify) from 1.6.1 to 1.7.0.
     - [Release notes](https://github.com/stretchr/testify/releases)
@@ -604,12 +604,12 @@ New changes in mender-artifact since 3.5.2:
 
 * Add missing error description when artifact header can't be written.
 * cli: Fix parsing of filenames containing ".mender"
-  ([MEN-5076](https://tracker.mender.io/browse/MEN-5076))
+  ([MEN-5076](https://northerntech.atlassian.net/browse/MEN-5076))
 * Fix the checksum errors encountered in rare cases where the entire byte
   stream is not consumed during verification, and thus giving wrong checksum errors.
-  ([MEN-5094](https://tracker.mender.io/browse/MEN-5094))
+  ([MEN-5094](https://northerntech.atlassian.net/browse/MEN-5094))
 * Restore SSH snapshot feature on Mac OS
-  ([MEN-4362](https://tracker.mender.io/browse/MEN-4362), [MEN-5082](https://tracker.mender.io/browse/MEN-5082))
+  ([MEN-4362](https://northerntech.atlassian.net/browse/MEN-4362), [MEN-5082](https://northerntech.atlassian.net/browse/MEN-5082))
 
 
 ## mender-artifact 3.5.2
@@ -648,7 +648,7 @@ A total of 45 lines added, 40 removed (delta 5)
 New changes in mender-artifact since 3.5.1:
 
 * [] Fix sending on closed signal channel
-  ([MEN-4832](https://tracker.mender.io/browse/MEN-4832))
+  ([MEN-4832](https://northerntech.atlassian.net/browse/MEN-4832))
 
 ## mender-artifact 3.5.1
 
@@ -679,7 +679,7 @@ for `mender-artifact modify` which can override the existing compression when re
 but rather prints a warning, that the flag is ignored. If you want to change the
 compression of your Artifact, run `mender-artifact modify <Artifact>
 --compression <type>`
-([MEN-4502](https://tracker.mender.io/browse/MEN-4502))
+([MEN-4502](https://northerntech.atlassian.net/browse/MEN-4502))
 * Add a note about the proper usage of the 'compression' flag in the
 global help text.
 
@@ -712,7 +712,7 @@ for `mender-artifact modify` which can override the existing compression when re
 but rather prints a warning, that the flag is ignored. If you want to change the
 compression of your Artifact, run `mender-artifact modify <Artifact>
 --compression <type>`
-([MEN-4502](https://tracker.mender.io/browse/MEN-4502))
+([MEN-4502](https://northerntech.atlassian.net/browse/MEN-4502))
 * Add a note about the proper usage of the 'compression' flag in the
 global help text.
 
@@ -727,9 +727,9 @@ _Released 01.20.2021_
 New changes in mender-artifact since 3.4.0:
 
 * Fix segfault on mender-artifact dump for v2 Artifacts
-([MEN-3967](https://tracker.mender.io/browse/MEN-3967))
+([MEN-3967](https://northerntech.atlassian.net/browse/MEN-3967))
 * Change rootfs_image_checksum over to use namespaced provides
-([MEN-3482](https://tracker.mender.io/browse/MEN-3482))
+([MEN-3482](https://northerntech.atlassian.net/browse/MEN-3482))
 * Implement `clears_artifact_provides` field in Artifact
 format. This field can be used to control how Artifacts modify the
 record of existing software on the device. For example, a rootfs-image
@@ -738,19 +738,19 @@ single-file update can preserve the records. See the Mender
 documentation for more information on how to use this, or refer to
 `Documentation/artifact-format-v3.md` in the mender-artifact
 repository for the reference.
-([MEN-3479](https://tracker.mender.io/browse/MEN-3479))
+([MEN-3479](https://northerntech.atlassian.net/browse/MEN-3479))
 * Add `--print0-cmdline` argument to `dump` command.
 Works exactly like `--print-cmdline` but prints null bytes between
 arguments instead of spaces. This mirrors the `-print0` argument of
 find and complements the `-0` argument of xargs.
-([MEN-3483](https://tracker.mender.io/browse/MEN-3483))
+([MEN-3483](https://northerntech.atlassian.net/browse/MEN-3483))
 * use sudo for snapshots if required.
-([MEN-3987](https://tracker.mender.io/browse/MEN-3987))
+([MEN-3987](https://northerntech.atlassian.net/browse/MEN-3987))
 * Add progress indication to the mender-artifact read and write
 commands. So now progress is reported on the terminal TTY when reading and
 writing Artifacts.
 * run fsck on fs image created via SSH snapshot
-([MEN-4362](https://tracker.mender.io/browse/MEN-4362))
+([MEN-4362](https://northerntech.atlassian.net/browse/MEN-4362))
 * Aggregated Dependabot Changelogs:
 * Bumps [github.com/pkg/errors](https://github.com/pkg/errors) from 0.8.1 to 0.9.1.
 - [Release notes](https://github.com/pkg/errors/releases)
@@ -788,9 +788,9 @@ _Released 01.21.2021_
 New changes in mender-artifact since 3.4.0:
 
 * Fix segfault on mender-artifact dump for v2 Artifacts
-([MEN-3967](https://tracker.mender.io/browse/MEN-3967))
+([MEN-3967](https://northerntech.atlassian.net/browse/MEN-3967))
 * use sudo for snapshots if required.
-([MEN-3987](https://tracker.mender.io/browse/MEN-3987))
+([MEN-3987](https://northerntech.atlassian.net/browse/MEN-3987))
 
 ## mender-artifact 3.4.2
 
@@ -803,7 +803,7 @@ _Released 16.04.2021_
 New changes in mender-artifact since 3.4.1:
 
 * run fsck on fs image created via SSH snapshot
-([MEN-4362](https://tracker.mender.io/browse/MEN-4362))
+([MEN-4362](https://northerntech.atlassian.net/browse/MEN-4362))
 
 ## mender-artifact 3.4.1
 
@@ -816,9 +816,9 @@ _Released 01.21.2021_
 New changes in mender-artifact since 3.4.0:
 
 * Fix segfault on mender-artifact dump for v2 Artifacts
-([MEN-3967](https://tracker.mender.io/browse/MEN-3967))
+([MEN-3967](https://northerntech.atlassian.net/browse/MEN-3967))
 * use sudo for snapshots if required.
-([MEN-3987](https://tracker.mender.io/browse/MEN-3987))
+([MEN-3987](https://northerntech.atlassian.net/browse/MEN-3987))
 
 ## mender-artifact 3.4.0
 
@@ -833,9 +833,9 @@ New changes in mender-artifact since 3.3.0:
 * Accept suffix '.img' for mender-artifact modifiable images
 * Fix: Update `rootfs_image_checksum` provide when repacking Artifact.
 * Improved error message when an update-module is missing
-([MEN-3007](https://tracker.mender.io/browse/MEN-3007))
+([MEN-3007](https://northerntech.atlassian.net/browse/MEN-3007))
 * Bugfix: ignored signals no longer cause a signal-loop
-([MEN-3276](https://tracker.mender.io/browse/MEN-3276))
+([MEN-3276](https://northerntech.atlassian.net/browse/MEN-3276))
 * Add ability for artifact install to create directories
 * Enabled autocompletion of mender-artifact sub-commands in bash & zsh
 Now, following the instructions in the Readme file, auto-completion of
@@ -893,7 +893,7 @@ _Released 07.15.2020_
 New changes in mender-artifact since 3.3.0:
 
 * Bugfix: ignored signals no longer cause a signal-loop
-([MEN-3276](https://tracker.mender.io/browse/MEN-3276))
+([MEN-3276](https://northerntech.atlassian.net/browse/MEN-3276))
 
 
 ## mender-artifact 3.3.0
@@ -907,20 +907,20 @@ _Released 03.05.2020_
 New changes in mender-artifact since 3.2.1:
 
 * Adds API for returning all Artifact provides and depends
-([MEN-2549](https://tracker.mender.io/browse/MEN-2549))
+([MEN-2549](https://northerntech.atlassian.net/browse/MEN-2549))
 * Enables Artifact Provides and Depends for write rootfs-img
 Previously, the `write rootfs-image` command did not have the ability
 to set Provides and Depends in the artifact. This was only enabled for
 the `write module-image` command. Now the `rootfs-image` update can
 also set Provides and Depends. However, please note that meta-data
 and augmented Provides and Depends still are unsupported.
-([MEN-2812](https://tracker.mender.io/browse/MEN-2812))
+([MEN-2812](https://northerntech.atlassian.net/browse/MEN-2812))
 * Fix bug that destroys Artifact if any copy/modify command
 is used on a non-rootfs-image Artifact.
-([MEN-2592](https://tracker.mender.io/browse/MEN-2592))
+([MEN-2592](https://northerntech.atlassian.net/browse/MEN-2592))
 * The `modify` subcommand has gained the `-k`/`--key`
 argument to automatically sign the Artifact after modification.
-([MEN-2592](https://tracker.mender.io/browse/MEN-2592))
+([MEN-2592](https://northerntech.atlassian.net/browse/MEN-2592))
 * Remove superfluous "Files" header from `read` output.
 * Fix incorrect help string for signed artifacts.
 If no key was provided, it said that the signature verification
@@ -929,13 +929,13 @@ failed, but it should instruct the user to provide a key.
 * One can now use `mender-artifact modify` to change artifact
 Depends, Provides and Meta-data attributes. See the help screen for
 more information.
-([MEN-1669](https://tracker.mender.io/browse/MEN-1669))
+([MEN-1669](https://northerntech.atlassian.net/browse/MEN-1669))
 * `mender-artifact modify --name` argument renamed to
 `--artifact-name` to match the rest of the tool's flags. The old flag
 is still kept for compatibility.
-([MEN-1669](https://tracker.mender.io/browse/MEN-1669))
+([MEN-1669](https://northerntech.atlassian.net/browse/MEN-1669))
 * Make artifact install respect the given file permissions
-([MEN-2880](https://tracker.mender.io/browse/MEN-2880))
+([MEN-2880](https://northerntech.atlassian.net/browse/MEN-2880))
 * Added the writing of the `rootfs_image_checksum` provide parameter as
 a default to `rootfs-image` Artifacts. This means that now, the
 `rootfs_image_checksum` will be written as a provide parameter to the Mender
@@ -943,7 +943,7 @@ client's database upon an update with the given Artifact. Please note that for
 older clients (i.e. <= 2.1.x) this will not work, and the functionality should
 be disabled by the user through the `--no-checksum-provide` flag when writing a
 rootfs-image Artifact.
-([MEN-2956](https://tracker.mender.io/browse/MEN-2956))
+([MEN-2956](https://northerntech.atlassian.net/browse/MEN-2956))
 * Create artifact from device snapshot
 
 ## mender-artifact 3.2.1
@@ -957,7 +957,7 @@ _Released 12.05.2019_
 New changes in mender-artifact since 3.2.0:
 
 * Make artifact install respect the given file permissions
-([MEN-2880](https://tracker.mender.io/browse/MEN-2880))
+([MEN-2880](https://northerntech.atlassian.net/browse/MEN-2880))
 
 ## mender-artifact 3.2.0
 
@@ -970,13 +970,13 @@ _Released 10.23.2019_
 New changes in mender-artifact since 3.1.0:
 
 * 'mender-artifact cp' now requires '-' in order to read stdin
-([MEN-2745](https://tracker.mender.io/browse/MEN-2745))
+([MEN-2745](https://northerntech.atlassian.net/browse/MEN-2745))
 * Fix error where files larger than the buffer used by
 io.Copy() was not buffered when mender-artifact cp read from stdin.
 This means that now, ``` mender-artfact cp - mender.artifact:/in/img/path```
 will successfully copy larger files.
 * fix erroneously report of "-dirty" in the version
-string. ([MEN-2800](https://tracker.mender.io/browse/MEN-2800))
+string. ([MEN-2800](https://northerntech.atlassian.net/browse/MEN-2800))
 * Fix build-contained Makefile: image was missing make install
 * Update the type-info documentation in the version 3 artifact format
 This commit updates the description of the values allowed in the type-info
@@ -992,14 +992,14 @@ to contain a single key `rootfs-image-checksum`. This restriction has now
 been lifted, and the key can now contain arbitrary string, and []string values.
 * Fix: mender-artifact modify did not clean up the
 temp-files created
-([MEN-2758](https://tracker.mender.io/browse/MEN-2758))
+([MEN-2758](https://northerntech.atlassian.net/browse/MEN-2758))
 * Mender-Artifact format version 1 is hereby no longer supported,
 and neither reading or writing the version 1 of the format is no longer
 supported. Please move to using a newer version.
-([MEN-2156](https://tracker.mender.io/browse/MEN-2156))
+([MEN-2156](https://northerntech.atlassian.net/browse/MEN-2156))
 * mender-artifact will now fail to validate a signed Artifact
 if no validation key is specified. No behaviour change for unsigned
-Artifacts. ([MEN-2802](https://tracker.mender.io/browse/MEN-2802))
+Artifacts. ([MEN-2802](https://northerntech.atlassian.net/browse/MEN-2802))
 
 ## mender-artifact 3.1.1
 
@@ -1012,12 +1012,12 @@ _Released 12.05.2019_
 New changes in mender-artifact since 3.1.0:
 
 * fix erroneously report of "-dirty" in the version
-string. ([MEN-2800](https://tracker.mender.io/browse/MEN-2800))
+string. ([MEN-2800](https://northerntech.atlassian.net/browse/MEN-2800))
 * Fix: mender-artifact modify did not clean up the temp-files created
-([MEN-2758](https://tracker.mender.io/browse/MEN-2758))
+([MEN-2758](https://northerntech.atlassian.net/browse/MEN-2758))
 * Fix build-contained Makefile: image was missing make install
 * Make artifact install respect the given file permissions
-([MEN-2880](https://tracker.mender.io/browse/MEN-2880))
+([MEN-2880](https://northerntech.atlassian.net/browse/MEN-2880))
 
 
 ## mender-artifact 3.1.0
@@ -1031,20 +1031,20 @@ _Released 09.16.2019_
 New changes in mender-artifact since 3.0.1:
 
 * Fix non-rootfs Artifacts being destroyed when signing them.
-([MEN-2573](https://tracker.mender.io/browse/MEN-2573))
+([MEN-2573](https://northerntech.atlassian.net/browse/MEN-2573))
 * The mender-artifact tool now checks whether the required
 external binaries can be found on the system, and if not, returns an appropriate
 error message.
-([MEN-2180](https://tracker.mender.io/browse/MEN-2180))
+([MEN-2180](https://northerntech.atlassian.net/browse/MEN-2180))
 * Fix name modify command for rootfs-image Artifacts
-([MEN-2488](https://tracker.mender.io/browse/MEN-2488))
+([MEN-2488](https://northerntech.atlassian.net/browse/MEN-2488))
 * Remove documentation for artifact format v1, which is now unsupported.
 * `mender-convert` modify for Update Module Artifacts will only
 work for options that change the headers or meta-data of the Artifact;
 curently only the Artifact name.
-([MEN-2487](https://tracker.mender.io/browse/MEN-2487))
+([MEN-2487](https://northerntech.atlassian.net/browse/MEN-2487))
 * Enable signing of artifacts larger than 1MiB
-([MEN-2631](https://tracker.mender.io/browse/MEN-2631))
+([MEN-2631](https://northerntech.atlassian.net/browse/MEN-2631))
 * Fix "unexpected EOF" errors when the source of the artifact
 is a slow network stream.
 * Fix spurious upload errors due to wrong EOF handling.
@@ -1054,12 +1054,12 @@ It takes an artifact as input, some optional dumping directories, and
 writes the various raw files from the artifact into those directories.
 The parameter `--print-cmdline` can be used to generate a command line
 which can be used to recreate the same artifact from the dumped files.
-([MEN-2580](https://tracker.mender.io/browse/MEN-2580))
+([MEN-2580](https://northerntech.atlassian.net/browse/MEN-2580))
 * Added a build step for macOS to the Travis build.
 * `mender-artifact modify` does not support anymore signing the
 Artifact after the modification. Use `mender-convert sign` after the
 modification to sign the Artifact.
-([MEN-2486](https://tracker.mender.io/browse/MEN-2486))
+([MEN-2486](https://northerntech.atlassian.net/browse/MEN-2486))
 
 ## mender-artifact 3.0.1
 
@@ -1072,7 +1072,7 @@ _Released 06.24.2019_
 New changes in mender-artifact since 3.0.0:
 
 * Fix non-rootfs Artifacts being destroyed when signing them.
-([MEN-2573](https://tracker.mender.io/browse/MEN-2573))
+([MEN-2573](https://northerntech.atlassian.net/browse/MEN-2573))
 
 ## mender-artifact 3.0.0
 
@@ -1086,37 +1086,37 @@ New changes in mender-artifact since 3.0.0b1:
 
 * checking if fsck is on path and returing error if not.
 * Fix name modify command for rootfs-image Artifacts
-([MEN-2488](https://tracker.mender.io/browse/MEN-2488))
+([MEN-2488](https://northerntech.atlassian.net/browse/MEN-2488))
 * `mender-convert` modify for Update Module Artifacts will only
 work for options that change the headers or meta-data of the Artifact;
 curently only the Artifact name.
-([MEN-2487](https://tracker.mender.io/browse/MEN-2487))
+([MEN-2487](https://northerntech.atlassian.net/browse/MEN-2487))
 * `mender-artifact modify` does not support anymore signing the
 Artifact after the modification. Use `mender-convert sign` after the
 modification to sign the Artifact.
-([MEN-2486](https://tracker.mender.io/browse/MEN-2486))
+([MEN-2486](https://northerntech.atlassian.net/browse/MEN-2486))
 
 New changes in mender-artifact since 2.4.0:
 
 * add support for uncompressed updates
-([MEN-2224](https://tracker.mender.io/browse/MEN-2224))
+([MEN-2224](https://northerntech.atlassian.net/browse/MEN-2224))
 * mender-artifact tool now supports removing a file in either an sdimg,
 or in a Mender Artifact, with the rm command.
-([MEN-2331](https://tracker.mender.io/browse/MEN-2331))
+([MEN-2331](https://northerntech.atlassian.net/browse/MEN-2331))
 * FIX: mender-artifact cat now cleans up resources on write-errors.
 * Implement reading and writing support for update modules.
-([MEN-2004](https://tracker.mender.io/browse/MEN-2004))
+([MEN-2004](https://northerntech.atlassian.net/browse/MEN-2004))
 * Change rootfs-image `-u` argument to `-f`.
 Similarly, change `--update` to `--file`.
-([MEN-2286](https://tracker.mender.io/browse/MEN-2286))
+([MEN-2286](https://northerntech.atlassian.net/browse/MEN-2286))
 * Due to some faulty logic in modify.go:modifyArtifact, the sdimg's
 provided were modified, but not repacked. This fix updates the logic, and added
 a test specifically for sdimg, as they we're non-existent.
-([MEN-2294](https://tracker.mender.io/browse/MEN-2294))
+([MEN-2294](https://northerntech.atlassian.net/browse/MEN-2294))
 * fixes issue when binary dependencies are not in PATH
-([MEN-2180](https://tracker.mender.io/browse/MEN-2180))
+([MEN-2180](https://northerntech.atlassian.net/browse/MEN-2180))
 * Validate the data update files names in payload filename
-([MEN-2319](https://tracker.mender.io/browse/MEN-2319))
+([MEN-2319](https://northerntech.atlassian.net/browse/MEN-2319))
 * Mender-artifactV3: Bump the artifact-version protocol to version 3.
 * Report a human readable error in case the artifact payload is not ext4.
 * Add support for compressing artifacts using LZMA.
@@ -1154,14 +1154,14 @@ was incorrectly succeeding for an unsigned artifact when a public key
 was supplied. Supplying a public key indicates that the caller requires
 the artifact to contain a signature that matches that key.
 Now this command fails (exits with a nonzero value) as expected.
-([MEN-2155](https://tracker.mender.io/browse/MEN-2155))
+([MEN-2155](https://northerntech.atlassian.net/browse/MEN-2155))
 * FIX: Renaming a file across devices now works.
-([MEN-2166](https://tracker.mender.io/browse/MEN-2166))
+([MEN-2166](https://northerntech.atlassian.net/browse/MEN-2166))
 * FIX: mender-artifact cat,cp,modify etc no longer removes the update.
 Previously an update present in a directory, with the same name as the
 update present in an update would be removed as a result of what the
 functions thought was tmp-files.
-([MEN-2171](https://tracker.mender.io/browse/MEN-2171))
+([MEN-2171](https://northerntech.atlassian.net/browse/MEN-2171))
 * Fixed a bug that caused a command like
 "mender-artifact cat signed.mender:/etc/mender/artifact_info"
 to fail with the error:
@@ -1181,12 +1181,12 @@ _Released 12.13.2018_
 New changes in mender-artifact since 2.3.0:
 
 * FIX: Renaming a file across devices now works.
-([MEN-2166](https://tracker.mender.io/browse/MEN-2166))
+([MEN-2166](https://northerntech.atlassian.net/browse/MEN-2166))
 * FIX: mender-artifact cat,cp,modify etc no longer removes the update.
 Previously an update present in a directory, with the same name as the
 update present in an update would be removed as a result of what the
 functions thought was tmp-files.
-([MEN-2171](https://tracker.mender.io/browse/MEN-2171))
+([MEN-2171](https://northerntech.atlassian.net/browse/MEN-2171))
 
 
 
@@ -1214,14 +1214,14 @@ makes it easier for the tooling.
 * Install function added
 * Added uefiimg as an option to the cp and cat commands
 * modify any file using the mender-artifact tool
-([MEN-1741](https://tracker.mender.io/browse/MEN-1741))
+([MEN-1741](https://northerntech.atlassian.net/browse/MEN-1741))
 * add testify/require to vendor
 * modify any file using the mender-artifact tool
-([MEN-1741](https://tracker.mender.io/browse/MEN-1741))
+([MEN-1741](https://northerntech.atlassian.net/browse/MEN-1741))
 * Mender-artifact can now copy to and read from the data partition
-([MEN-1953](https://tracker.mender.io/browse/MEN-1953))
+([MEN-1953](https://northerntech.atlassian.net/browse/MEN-1953))
 * run fsck before modifying image.
-([MEN-1798](https://tracker.mender.io/browse/MEN-1798))
+([MEN-1798](https://northerntech.atlassian.net/browse/MEN-1798))
 
 ## mender-artifact 2.2.0b1
 
@@ -1231,17 +1231,17 @@ _Released 02.09.2018_
 
 #### mender-artifact (2.2.0b1)
 * Fix ECDSA failures while signing and verifying artifact.
-([MEN-1470](https://tracker.mender.io/browse/MEN-1470))
+([MEN-1470](https://northerntech.atlassian.net/browse/MEN-1470))
 * Fix broken header checksum verification.
-([MEN-1412](https://tracker.mender.io/browse/MEN-1412))
+([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
 * Add modify existing images and artifacts functionality.
-([MEN-1213](https://tracker.mender.io/browse/MEN-1213))
+([MEN-1213](https://northerntech.atlassian.net/browse/MEN-1213))
 * Artifact version 3 format documentation
-([MEN-1667](https://tracker.mender.io/browse/MEN-1667))
+([MEN-1667](https://northerntech.atlassian.net/browse/MEN-1667))
 * Mender-Artifact now returns an error code to the os on cli errors
-([MEN-1328](https://tracker.mender.io/browse/MEN-1328))
+([MEN-1328](https://northerntech.atlassian.net/browse/MEN-1328))
 * mender-artifact now fails with whitespace in the artifact-name
-([MEN-1355](https://tracker.mender.io/browse/MEN-1355))
+([MEN-1355](https://northerntech.atlassian.net/browse/MEN-1355))
 
 ## mender-artifact 2.1.2
 
@@ -1251,7 +1251,7 @@ _Released 02.09.2018_
 
 #### mender-artifact (2.1.2)
 * Fix ECDSA failures while signing and verifying artifact.
-([MEN-1470](https://tracker.mender.io/browse/MEN-1470))
+([MEN-1470](https://northerntech.atlassian.net/browse/MEN-1470))
 
 
 ## mender-artifact 2.1.1
@@ -1262,7 +1262,7 @@ _Released 10.02.2017_
 
 #### mender-artifact (2.1.1)
 * Fix broken header checksum verification.
-([MEN-1412](https://tracker.mender.io/browse/MEN-1412))
+([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
 
 
 ## mender-artifact 2.1.0
@@ -1273,14 +1273,14 @@ _Released 09.05.2017_
 
 #### mender-artifact (2.1.0)
 * Sign existing artifacts using mender-artifact CLI
-([MEN-1220](https://tracker.mender.io/browse/MEN-1220))
+([MEN-1220](https://northerntech.atlassian.net/browse/MEN-1220))
 * Improve error message when private signing key can't be loaded.
 * Fix misleading version being displayed for non-tagged builds.
-([MEN-1178](https://tracker.mender.io/browse/MEN-1178))
+([MEN-1178](https://northerntech.atlassian.net/browse/MEN-1178))
 * Mender-Artifact now returns an error code to the os on cli errors
-([MEN-1328](https://tracker.mender.io/browse/MEN-1328))
+([MEN-1328](https://northerntech.atlassian.net/browse/MEN-1328))
 * mender-artifact now fails with whitespace in the artifact-name
-([MEN-1355](https://tracker.mender.io/browse/MEN-1355))
+([MEN-1355](https://northerntech.atlassian.net/browse/MEN-1355))
 
 ## mender-artifact 2.0.2
 
@@ -1290,6 +1290,6 @@ _(Never released publicly)_
 
 #### mender-artifact (2.0.2)
 * Fix broken header checksum verification.
-([MEN-1412](https://tracker.mender.io/browse/MEN-1412))
+([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
 
 

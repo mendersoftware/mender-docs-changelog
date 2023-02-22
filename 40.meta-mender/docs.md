@@ -65,7 +65,7 @@ New changes in meta-mender since kirkstone-v2022.09:
 * Add a bootstrap Artifact to the generated images in
   /var/lib/mender/bootstrap.mender, so that the client can bootstrap it's database
   without having to first run an update.
-  ([MEN-2585](https://tracker.mender.io/browse/MEN-2585))
+  ([MEN-2585](https://northerntech.atlassian.net/browse/MEN-2585))
 * Add recipe for mender-client 3.4.0
 * Add recipe for mender-artifact 3.9.0
 * Add recipe for mender-connect 2.1.0
@@ -182,15 +182,15 @@ New changes in meta-mender since dunfell-v2022.09:
 ##### Bug Fixes
 
 * bootfiles renamed to rpi-bootfiles in upstream
-  ([MEN-5689](https://tracker.mender.io/browse/MEN-5689))
+  ([MEN-5689](https://northerntech.atlassian.net/browse/MEN-5689))
 * Remove mender-client versions before 3.3
-  ([MEN-5698](https://tracker.mender.io/browse/MEN-5698))
+  ([MEN-5698](https://northerntech.atlassian.net/browse/MEN-5698))
 * select buildable OpenSSL binding for mender-client
-  ([MEN-5700](https://tracker.mender.io/browse/MEN-5700))
+  ([MEN-5700](https://northerntech.atlassian.net/browse/MEN-5700))
 * Remove lmdb recipe, which meta-openembedded/kirkstone already has.
-  ([MEN-4937](https://tracker.mender.io/browse/MEN-4937))
+  ([MEN-4937](https://northerntech.atlassian.net/browse/MEN-4937))
 * Generate correct licenses in `$BUILDDIR/tmp/deploy/licenses`.
-  ([MEN-3604](https://tracker.mender.io/browse/MEN-3604))
+  ([MEN-3604](https://northerntech.atlassian.net/browse/MEN-3604))
 * Make `read-only-rootfs` tweaks dependent on `mender-image` feature flag.
 * Fix occasional pseudo abort issue when building certain
   images, especially in parallel. The symptom was this message:
@@ -198,7 +198,7 @@ New changes in meta-mender since dunfell-v2022.09:
   abort()ing pseudo client by server request.
   See https://wiki.yoctoproject.org/wiki/Pseudo_Abort for more details on this
   ```
-  ([MEN-5857](https://tracker.mender.io/browse/MEN-5857))
+  ([MEN-5857](https://northerntech.atlassian.net/browse/MEN-5857))
 * initramfs-module-install-efi: Ensure variable changes are reflected on rebuild
 * bootimg: Respect MENDER_BOOT_PART_FSTYPE.
 * Auto patching: Fix error `Unable to add definition
@@ -222,7 +222,7 @@ New changes in meta-mender since dunfell-v2022.09:
   bootloader. This is normally provided by firmware on x86, and is
   therefore empty, but on ARM it is often set to u-boot or edk2.
 * set LAYERCOMPAT to kirkstone only
-  ([MEN-5681](https://tracker.mender.io/browse/MEN-5681))
+  ([MEN-5681](https://northerntech.atlassian.net/browse/MEN-5681))
 * mender-monitor conditionally available depending on meta-oe
 * The `mender-binary-delta` recipe now takes a tarball as
   input instead of a folder containing unpacked files. Remove the line
@@ -231,7 +231,7 @@ New changes in meta-mender since dunfell-v2022.09:
   SRC_URI:pn-mender-binary-delta = "file://${HOME}/mender-binary-delta-1.4.0.tar.xz"
   ```
   where the path points to the downloaded tarball.
-  ([MEN-4980](https://tracker.mender.io/browse/MEN-4980))
+  ([MEN-4980](https://northerntech.atlassian.net/browse/MEN-4980))
 * Install standard Mender Update Modules by default. These
   are:
   * deb
@@ -250,7 +250,7 @@ New changes in meta-mender since dunfell-v2022.09:
   ```
   PACKAGECONFIG_remove = "dbus"
   ```
-  ([MEN-4014](https://tracker.mender.io/browse/MEN-4014))
+  ([MEN-4014](https://northerntech.atlassian.net/browse/MEN-4014))
 * Features that are added or removed using
   `MENDER_FEATURES_ENABLE` or `MENDER_FEATURES_DISABLE` now end up in
   the `MENDER_FEATURES` variable instead of the `DISTRO_FEATURES`
@@ -263,23 +263,23 @@ New changes in meta-mender since dunfell-v2022.09:
   self-signed Mender server certificate to be trusted by all services
   running in the device. To use it create a `.bbappend` recipe in your
   layer fetching the certificate into `file://server.crt`
-  ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+  ([MEN-4273](https://northerntech.atlassian.net/browse/MEN-4273))
 * meta-mender-demo: install demo server certificate with
   `mender-server-certificate` recipe to be used by `mender-client`,
   `mender-shell`, and further services that could be added.
-  ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+  ([MEN-4273](https://northerntech.atlassian.net/browse/MEN-4273))
 * Variable `MENDER_CERT_LOCATION` deprecated. See note about
   `mender-server-certificate` for more details
-  ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+  ([MEN-4273](https://northerntech.atlassian.net/browse/MEN-4273))
 * mender-server-certificate: Split concatenated certificates.
 
   Multiple certificates in one file are necessary to split in
   order for `update-ca-certificates` to produce a hashed symlink to
   them, which is required by some programs, such as curl.
-  ([MEN-4580](https://tracker.mender.io/browse/MEN-4580))
+  ([MEN-4580](https://northerntech.atlassian.net/browse/MEN-4580))
 * mender-client: New native package mender-modules-gen to
   install the Mender demo Update Module Artifact generators.
-  ([MEN-4671](https://tracker.mender.io/browse/MEN-4671))
+  ([MEN-4671](https://northerntech.atlassian.net/browse/MEN-4671))
 * grub-mender-grubenv: User space tools, "fw_printenv" and
   "fw_setenv" have been renamed to "grub-mender-grubenv-print" and
   "grub-mender-grubenv-set", respectively. This has been done in order
@@ -288,7 +288,7 @@ New changes in meta-mender since dunfell-v2022.09:
 * Add support for using systemd-boot with meta-mender
 * Fix error message `ERROR: It's not possible to create empty
   squashfs partition 'None'` when using "squashfs" filesystem type.
-  ([MEN-5285](https://tracker.mender.io/browse/MEN-5285))
+  ([MEN-5285](https://northerntech.atlassian.net/browse/MEN-5285))
 * use data/boot label variable
 * Add feature to detect boot and data partition based on their label.
 * The grub-mender-grubenv default environment location has
@@ -327,7 +327,7 @@ New changes in meta-mender since dunfell-v2022.09:
 * Remove mender-client recipes for 2.4.x series.
 * Remove mender-artifact_3.4.* and mender-client_2.3.* recipes.
 * Remove mender-client recipes pre 3.1.x series
-  ([MEN-3978](https://tracker.mender.io/browse/MEN-3978))
+  ([MEN-3978](https://northerntech.atlassian.net/browse/MEN-3978))
 * linux-raspberrypi-rt: drop support
 
 ##### Dependabot bumps
@@ -934,7 +934,7 @@ New changes in meta-mender since dunfell-v2022.11:
 * Fix the regression in which Dunfell started providing the 3.3.x
   client as the default. This was an unintentional change, and this
   re-downprioritizes it, so that the `2.x` client is once again the default.
-  ([MEN-6122](https://tracker.mender.io/browse/MEN-6122))
+  ([MEN-6122](https://northerntech.atlassian.net/browse/MEN-6122))
 
 
 ## meta-mender (dunfell-v2022.11)
@@ -1043,7 +1043,7 @@ New changes in meta-mender since dunfell-v2022.09:
   abort()ing pseudo client by server request.
   See https://wiki.yoctoproject.org/wiki/Pseudo_Abort for more details on this
   ```
-  ([MEN-5857](https://tracker.mender.io/browse/MEN-5857))
+  ([MEN-5857](https://northerntech.atlassian.net/browse/MEN-5857))
 * Pre-3.5 mender-client recipes needs dependency on mender-artifact-info.
 * Fix build error when building image using mender-artifact
   older than 3.10.0.
@@ -1057,7 +1057,7 @@ New changes in meta-mender since dunfell-v2022.09:
 * Add a bootstrap Artifact to the generated images in
   /var/lib/mender/bootstrap.mender, so that the client can bootstrap it's database
   without having to first run an update.
-  ([MEN-2585](https://tracker.mender.io/browse/MEN-2585))
+  ([MEN-2585](https://northerntech.atlassian.net/browse/MEN-2585))
 * Add recipe for mender-client 3.4.0
 * Add recipe for mender-artifact 3.9.0
 * Add recipe for mender-connect 2.1.0
@@ -1132,9 +1132,9 @@ New changes in meta-mender since dunfell-v2022.04:
 * Force building in separate build directory, even with `externalsrc`.
 * Automatically rebuild is tags have changed.
 * Make mender-client-resize-data-part compatible with "partuuid" setups.
-  ([MEN-3701](https://tracker.mender.io/browse/MEN-3701))
+  ([MEN-3701](https://northerntech.atlassian.net/browse/MEN-3701))
 * Race condition in mender-client-resize-data-part
-  ([MEN-5717](https://tracker.mender.io/browse/MEN-5717))
+  ([MEN-5717](https://northerntech.atlassian.net/browse/MEN-5717))
 * Added mender-configure-module 1.0.4
 * Better error message when Enterprise components can't be found.
 * Add a systemd Before dependency on the `mender-client-data-dir`
@@ -1172,9 +1172,9 @@ New changes in meta-mender since dunfell-v2022.04:
   ```
   Previous assignments of `LICENSE_FLAGS_ACCEPTED` mentioning "mender"
   software can be removed.
-  ([MEN-5517](https://tracker.mender.io/browse/MEN-5517))
+  ([MEN-5517](https://northerntech.atlassian.net/browse/MEN-5517))
 * mender-artifact: Add OpenSSL dependency
-  ([MEN-5759](https://tracker.mender.io/browse/MEN-5759))
+  ([MEN-5759](https://northerntech.atlassian.net/browse/MEN-5759))
 
 ##### Other
 
@@ -1239,7 +1239,7 @@ New changes in meta-mender since dunfell-v2022.03:
   ```
 
   Download the tarball from https://docs.mender.io/downloads
-  ([MEN-5475](https://tracker.mender.io/browse/MEN-5475))
+  ([MEN-5475](https://northerntech.atlassian.net/browse/MEN-5475))
 * Aggregated Dependabot Changelogs:
   * Bumps alpine from 3.12.3 to 3.15.0.
 
@@ -1351,9 +1351,9 @@ New changes in meta-mender since dunfell-v2022.02:
 
 * prevent pseudo inode mismatch w/ efi-secure-boot
 * Add recipe for mender-gateway_git
-  ([MEN-5300](https://tracker.mender.io/browse/MEN-5300))
+  ([MEN-5300](https://northerntech.atlassian.net/browse/MEN-5300))
 * Add testing image mender-gateway-image-full-cmdline
-  ([MEN-5300](https://tracker.mender.io/browse/MEN-5300))
+  ([MEN-5300](https://northerntech.atlassian.net/browse/MEN-5300))
 * Avoid lib64/*.a issues with lsb-ld on multilib systems
 
 ## meta-mender zeus-v2022.02
@@ -1409,7 +1409,7 @@ New changes in meta-mender since zeus-v2021.12:
 
 * mender-setup-image: Add swap partition to fstab
 * Enable demo functionality for the monitor-client
-  ([MEN-5137](https://tracker.mender.io/browse/MEN-5137))
+  ([MEN-5137](https://northerntech.atlassian.net/browse/MEN-5137))
 * release-3.2.0: add mender-artifact 3.7.0
 * release-3.2.0: add mender-client 3.2.0
 * release-3.2.0: add mender-connect 2.0.0
@@ -1478,7 +1478,7 @@ New changes in meta-mender since dunfell-v2021.12:
 
 * mender-setup-image: Add swap partition to fstab
 * Enable demo functionality for the monitor-client
-  ([MEN-5137](https://tracker.mender.io/browse/MEN-5137))
+  ([MEN-5137](https://northerntech.atlassian.net/browse/MEN-5137))
 * release-3.2.0: add mender-artifact 3.7.0
 * release-3.2.0: add mender-client 3.2.0
 * release-3.2.0: add mender-connect 2.0.0
@@ -1538,7 +1538,7 @@ New changes in meta-mender since zeus-v2021.11:
 * Switch git:// links to https:// links since Github disabled them.
 * Avoid populating rootfs partition B to save space when compressing.
 * mender-connect master: depend on mender 3.2
-  ([MEN-5203](https://tracker.mender.io/browse/MEN-5203))
+  ([MEN-5203](https://northerntech.atlassian.net/browse/MEN-5203))
 * Fix installation when cross-compiling mender-artifact
 
 
@@ -1592,7 +1592,7 @@ New changes in meta-mender since dunfell-v2021.11:
 * Switch git:// links to https:// links since Github disabled them.
 * Avoid populating rootfs partition B to save space when compressing.
 * mender-connect master: depend on mender 3.2
-  ([MEN-5203](https://tracker.mender.io/browse/MEN-5203))
+  ([MEN-5203](https://northerntech.atlassian.net/browse/MEN-5203))
 * Fix installation when cross-compiling mender-artifact
 
 ## meta-mender zeus-v2021.11
@@ -1759,18 +1759,18 @@ New changes in meta-mender since zeus-v2021.07:
 
 * Fix: mender-client-dev package contains D-Bus interface files
   only when "dbus" is enabled in PACKAGECONFIG.
-  ([MEN-4811](https://tracker.mender.io/browse/MEN-4811))
+  ([MEN-4811](https://northerntech.atlassian.net/browse/MEN-4811))
 * meta-mender-commercial: Add mender-monitor git recipe
-  ([MEN-4712](https://tracker.mender.io/browse/MEN-4712))
+  ([MEN-4712](https://northerntech.atlassian.net/browse/MEN-4712))
 * Add new image mender-monitor-image-full-cmdline for internal testing
-  ([MEN-4712](https://tracker.mender.io/browse/MEN-4712))
+  ([MEN-4712](https://northerntech.atlassian.net/browse/MEN-4712))
 * Monitoring wrapper alignment
-  ([MEN-4737](https://tracker.mender.io/browse/MEN-4737))
+  ([MEN-4737](https://northerntech.atlassian.net/browse/MEN-4737))
 * Use ${localstatedir} in mender-configure
 * Monitoring: ln -s /data/mender-monitor /var/lib/mender-monitor
-  ([MEN-4710](https://tracker.mender.io/browse/MEN-4710))
+  ([MEN-4710](https://northerntech.atlassian.net/browse/MEN-4710))
 * Include mender-monitorctl in mender-monitor recipe.
-  ([MEN-4893](https://tracker.mender.io/browse/MEN-4893))
+  ([MEN-4893](https://northerntech.atlassian.net/browse/MEN-4893))
 * Add lmdb as a runtime depency to the mender-monitor recipe
 * Add recipe for mender-client 3.1.0
 * Add recipe for mender-artifact 3.6.1
@@ -1834,9 +1834,9 @@ New changes in meta-mender since dunfell-v2021.08:
 
 * Use ${localstatedir} in mender-configure
 * Monitoring: ln -s /data/mender-monitor /var/lib/mender-monitor
-  ([MEN-4710](https://tracker.mender.io/browse/MEN-4710))
+  ([MEN-4710](https://northerntech.atlassian.net/browse/MEN-4710))
 * Include mender-monitorctl in mender-monitor recipe.
-  ([MEN-4893](https://tracker.mender.io/browse/MEN-4893))
+  ([MEN-4893](https://northerntech.atlassian.net/browse/MEN-4893))
 * Add lmdb as a runtime depency to the mender-monitor recipe
 * Add recipe for mender-client 3.1.0
 * Add recipe for mender-artifact 3.6.1
@@ -1889,13 +1889,13 @@ New changes in meta-mender since dunfell-v2021.07.02:
 
 * Fix: mender-client-dev package contains D-Bus interface files
   only when "dbus" is enabled in PACKAGECONFIG.
-  ([MEN-4811](https://tracker.mender.io/browse/MEN-4811))
+  ([MEN-4811](https://northerntech.atlassian.net/browse/MEN-4811))
 * meta-mender-commercial: Add mender-monitor git recipe
-  ([MEN-4712](https://tracker.mender.io/browse/MEN-4712))
+  ([MEN-4712](https://northerntech.atlassian.net/browse/MEN-4712))
 * Add new image mender-monitor-image-full-cmdline for internal testing
-  ([MEN-4712](https://tracker.mender.io/browse/MEN-4712))
+  ([MEN-4712](https://northerntech.atlassian.net/browse/MEN-4712))
 * Monitoring wrapper alignment
-  ([MEN-4737](https://tracker.mender.io/browse/MEN-4737))
+  ([MEN-4737](https://northerntech.atlassian.net/browse/MEN-4737))
 
 ## meta-mender zeus-v2021.07
 
@@ -1959,7 +1959,7 @@ New changes in meta-mender since zeus-v2021.04:
 
 * Add meta-oe as dependency to mender-demo
 * mender-client-dev package to distribute D-Bus API specs
-  ([MEN-4106](https://tracker.mender.io/browse/MEN-4106))
+  ([MEN-4106](https://northerntech.atlassian.net/browse/MEN-4106))
 * fix grub chownboot task ordering
 * Add io.mender.UpdateManager to D-Bus policy files.
 * Fix build error when trying to build mender-configure
@@ -2155,7 +2155,7 @@ A total of 55 lines added, 1 removed (delta 54)
 New changes in meta-mender since dunfell-v2021.04:
 
 * mender-client-dev package to distribute D-Bus API specs
-  ([MEN-4106](https://tracker.mender.io/browse/MEN-4106))
+  ([MEN-4106](https://northerntech.atlassian.net/browse/MEN-4106))
 
 
 ## meta-mender zeus-v2021.04
@@ -2219,9 +2219,9 @@ New changes in meta-mender since zeus-v2021.02:
   This is due to an error in older versions, which can leave the Vfat boot
   partitions bricked.
   See for more information.
-  ([MEN-4497](https://tracker.mender.io/browse/MEN-4497))
+  ([MEN-4497](https://northerntech.atlassian.net/browse/MEN-4497))
 * Add mender-configure git recipe
-  ([MEN-4420](https://tracker.mender.io/browse/MEN-4420))
+  ([MEN-4420](https://northerntech.atlassian.net/browse/MEN-4420))
 * Add mender-configure-scripts package, which provides
   timezone configuration out of the box.
 * Add mender-configure-demo package, which provides led
@@ -2230,12 +2230,12 @@ New changes in meta-mender since zeus-v2021.02:
   mender-configure now provides a service file for systemd which will
   automatically apply the stored configuration on startup.
 * Prepopulate the device config in mender-configure-demo.
-  ([MEN-4594](https://tracker.mender.io/browse/MEN-4594))
+  ([MEN-4594](https://northerntech.atlassian.net/browse/MEN-4594))
 * mender-client: Split concatenated certificates in ca-certificates.
   Multiple certificates in one file are necessary to split in
   order for `update-ca-certificates` to produce a hashed symlink to
   them, which is required by some programs, such as curl.
-  ([MEN-4580](https://tracker.mender.io/browse/MEN-4580))
+  ([MEN-4580](https://northerntech.atlassian.net/browse/MEN-4580))
 * Add mender-client 2.6.0.
 * Add mender-connect 1.1.0.
 * Add mender-artifact 3.5.1.
@@ -2247,7 +2247,7 @@ New changes in meta-mender since zeus-v2021.02:
 * Add mender-client 2.3.3
 * Add mender-artifact 3.4.2
 * chmod 600 on mender.conf
-  ([MEN-3762](https://tracker.mender.io/browse/MEN-3762))
+  ([MEN-3762](https://northerntech.atlassian.net/browse/MEN-3762))
 
 ## meta-mender warrior-v2021.04
 
@@ -2310,9 +2310,9 @@ New changes in meta-mender since warrior-v2021.02:
   This is due to an error in older versions, which can leave the Vfat boot
   partitions bricked.
   See for more information.
-  ([MEN-4497](https://tracker.mender.io/browse/MEN-4497))
+  ([MEN-4497](https://northerntech.atlassian.net/browse/MEN-4497))
 * Add mender-configure git recipe
-  ([MEN-4420](https://tracker.mender.io/browse/MEN-4420))
+  ([MEN-4420](https://northerntech.atlassian.net/browse/MEN-4420))
 * Add mender-configure-scripts package, which provides
   timezone configuration out of the box.
 * Add mender-configure-demo package, which provides led
@@ -2321,12 +2321,12 @@ New changes in meta-mender since warrior-v2021.02:
   mender-configure now provides a service file for systemd which will
   automatically apply the stored configuration on startup.
 * Prepopulate the device config in mender-configure-demo.
-  ([MEN-4594](https://tracker.mender.io/browse/MEN-4594))
+  ([MEN-4594](https://northerntech.atlassian.net/browse/MEN-4594))
 * mender-client: Split concatenated certificates in ca-certificates.
   Multiple certificates in one file are necessary to split in
   order for `update-ca-certificates` to produce a hashed symlink to
   them, which is required by some programs, such as curl.
-  ([MEN-4580](https://tracker.mender.io/browse/MEN-4580))
+  ([MEN-4580](https://northerntech.atlassian.net/browse/MEN-4580))
 * Add mender 2.6.0.
 * Add mender-connect 1.1.0.
 * Add mender-artifact 3.5.1.
@@ -2338,7 +2338,7 @@ New changes in meta-mender since warrior-v2021.02:
 * Add mender 2.3.3
 * Add mender-artifact 3.4.2
 * chmod 600 on mender.conf
-  ([MEN-3762](https://tracker.mender.io/browse/MEN-3762))
+  ([MEN-3762](https://northerntech.atlassian.net/browse/MEN-3762))
 
 ## meta-mender dunfell-v2021.04
 
@@ -2379,12 +2379,12 @@ A total of 271 lines added, 85 removed (delta 186)
 New changes in meta-mender since dunfell-v2021.03:
 
 * Add mender-configure git recipe
-([MEN-4420](https://tracker.mender.io/browse/MEN-4420))
+([MEN-4420](https://northerntech.atlassian.net/browse/MEN-4420))
 * Include a recipe for building dosfstools 4.2
 This is due to an error in older versions, which can leave the Vfat boot
 partitions bricked.
 See for more information.
-([MEN-4497](https://tracker.mender.io/browse/MEN-4497))
+([MEN-4497](https://northerntech.atlassian.net/browse/MEN-4497))
 * Add mender-configure-scripts package, which provides
 timezone configuration out of the box.
 * Add mender-configure-demo package, which provides led
@@ -2394,12 +2394,12 @@ mender-configure now provides a service file for systemd which will
 automatically apply the stored configuration on startup.
 * Fix `EFI_PROVIDER` being set incorrectly when using certain layers.
 * Prepopulate the device config in mender-configure-demo.
-([MEN-4594](https://tracker.mender.io/browse/MEN-4594))
+([MEN-4594](https://northerntech.atlassian.net/browse/MEN-4594))
 * mender-client: Split concatenated certificates in ca-certificates.
 Multiple certificates in one file are necessary to split in
 order for `update-ca-certificates` to produce a hashed symlink to
 them, which is required by some programs, such as curl.
-([MEN-4580](https://tracker.mender.io/browse/MEN-4580))
+([MEN-4580](https://northerntech.atlassian.net/browse/MEN-4580))
 * Add mender-client 2.6.0.
 * Add mender-connect 1.1.0.
 * Add mender-artifact 3.5.1.
@@ -2520,16 +2520,16 @@ It defaults to on, but can be turned off with:
 PACKAGECONFIG_remove = "dbus"
 ```
 Backported to dunfell, modifying the PACKAGECONFIG defaults and amending
-the test. ([MEN-4014](https://tracker.mender.io/browse/MEN-4014))
+the test. ([MEN-4014](https://northerntech.atlassian.net/browse/MEN-4014))
 * mender-client: Add DBus busconfig files.
-([MEN-4030](https://tracker.mender.io/browse/MEN-4030))
+([MEN-4030](https://northerntech.atlassian.net/browse/MEN-4030))
 * mender-client: The self-signed Mender server certificate, if
 present, is copied to ca-certificates in addition to
 `MENDER_CERT_LOCATION` to be trusted by other services running in the
-device. ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+device. ([MEN-4273](https://northerntech.atlassian.net/browse/MEN-4273))
 * mender-client: fix QA Issue: invalid PACKAGECONFIG: inventory-network-scripts
 * Rename mender-shell to mender-connect
-([MEN-4292](https://tracker.mender.io/browse/MEN-4292))
+([MEN-4292](https://northerntech.atlassian.net/browse/MEN-4292))
 * Add mender-binary-delta 1.1.1 and 1.2.0.
 * Add the MENDER_CONNECT_SHELL to meta-mender-core, defaults to /bin/sh
 * Add recipe mender-connect 1.0.0
@@ -2594,16 +2594,16 @@ PACKAGECONFIG_remove = "dbus"
 Backported to dunfell, modifying the PACKAGECONFIG defaults and amending
 the test.
 Backported to warrior, removing the test.
-([MEN-4014](https://tracker.mender.io/browse/MEN-4014))
+([MEN-4014](https://northerntech.atlassian.net/browse/MEN-4014))
 * mender-client: Add DBus busconfig files.
-([MEN-4030](https://tracker.mender.io/browse/MEN-4030))
+([MEN-4030](https://northerntech.atlassian.net/browse/MEN-4030))
 * mender-client: The self-signed Mender server certificate, if
 present, is copied to ca-certificates in addition to
 `MENDER_CERT_LOCATION` to be trusted by other services running in the
-device. ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+device. ([MEN-4273](https://northerntech.atlassian.net/browse/MEN-4273))
 * mender-client: fix QA Issue: invalid PACKAGECONFIG: inventory-network-scripts
 * Rename mender-shell to mender-connect
-([MEN-4292](https://tracker.mender.io/browse/MEN-4292))
+([MEN-4292](https://northerntech.atlassian.net/browse/MEN-4292))
 * Add mender-binary-delta 1.1.1 and 1.2.0.
 * Add the MENDER_CONNECT_SHELL to meta-mender-core, defaults to /bin/sh
 * Add recipe mender-connect 1.0.0
@@ -2675,29 +2675,29 @@ It defaults to on, but can be turned off with:
 PACKAGECONFIG_remove = "dbus"
 ```
 Backported to dunfell, modifying the PACKAGECONFIG defaults and amending
-the test. ([MEN-4014](https://tracker.mender.io/browse/MEN-4014))
+the test. ([MEN-4014](https://northerntech.atlassian.net/browse/MEN-4014))
 * mender-client: Add DBus busconfig files.
-([MEN-4030](https://tracker.mender.io/browse/MEN-4030))
+([MEN-4030](https://northerntech.atlassian.net/browse/MEN-4030))
 * mender-client: The self-signed Mender server certificate, if
 present, is copied to ca-certificates in addition to
 `MENDER_CERT_LOCATION` to be trusted by other services running in the
-device. ([MEN-4273](https://tracker.mender.io/browse/MEN-4273))
+device. ([MEN-4273](https://northerntech.atlassian.net/browse/MEN-4273))
 * meta-mender-demo: install mender-shell
-([MEN-4187](https://tracker.mender.io/browse/MEN-4187))
+([MEN-4187](https://northerntech.atlassian.net/browse/MEN-4187))
 * Revert "mender: Reestablish labels on the root filesystems."
 * mender-client: fix QA Issue: invalid PACKAGECONFIG: inventory-network-scripts
 * mender-shell: generate and install mender-shell.conf with
 required fields. `ServerURL` can be configured setting yocto variable
 `MENDER_SERVER_URL`, same as used by mender-client recipe. If a
 `mender-shell.conf` file is found in the `SRC_URI` the contents will be
-merged. ([MEN-4242](https://tracker.mender.io/browse/MEN-4242))
+merged. ([MEN-4242](https://northerntech.atlassian.net/browse/MEN-4242))
 * mender-shell: Add `User` to generated mender-shell.conf. The
 value of it is configured using `MENDER_SHELL_USER` variable, which
 defaults to `nobody` for meta-mender-core and `root` for
 meta-mender-demo.
-([MEN-4242](https://tracker.mender.io/browse/MEN-4242))
+([MEN-4242](https://northerntech.atlassian.net/browse/MEN-4242))
 * Rename mender-shell to mender-connect
-([MEN-4292](https://tracker.mender.io/browse/MEN-4292))
+([MEN-4292](https://northerntech.atlassian.net/browse/MEN-4292))
 * mender-raspberrypi: Make kernel settings conditional
 * Remove mender-binary-delta 1.0.0, 1.0.1, and 1.1.0.
 All three of these have turned out to be incompatible with
@@ -2838,7 +2838,7 @@ New changes in meta-mender since zeus-v2020.10:
 
 * Disable filesystem journal on read-only-rootfs, which
 sometimes causes unstable rootfs checksum together with fsck.
-([MEN-3912](https://tracker.mender.io/browse/MEN-3912))
+([MEN-3912](https://northerntech.atlassian.net/browse/MEN-3912))
 * mender: Fix broken patch for mender-systemd-machine-id.
 * Remove recipe mender-client 2.3.0
 * Add recipe mender-client 2.3.1
@@ -2854,24 +2854,24 @@ included unless overridded. To remove it, add
 'PACKAGECONFIG_remove_pn-mender-client = "inventory-network-scripts"' to your
 local.conf file.
 * mender-client: Do not keep resizing if a little space is left unused
-([MEN-4176](https://tracker.mender.io/browse/MEN-4176))
+([MEN-4176](https://northerntech.atlassian.net/browse/MEN-4176))
 * mender-client: Ensure growfs works on GPT filesystems
-([MEN-4176](https://tracker.mender.io/browse/MEN-4176))
+([MEN-4176](https://northerntech.atlassian.net/browse/MEN-4176))
 * mender-client: Update LICENSE to include OpenSSL
 * Add a recipe for building 'mender-connect', remote shell support.
-([MEN-4083](https://tracker.mender.io/browse/MEN-4083))
+([MEN-4083](https://northerntech.atlassian.net/browse/MEN-4083))
 * meta-mender-demo: install mender-connect
-([MEN-4187](https://tracker.mender.io/browse/MEN-4187))
+([MEN-4187](https://northerntech.atlassian.net/browse/MEN-4187))
 * mender-connect: generate and install mender-connect.conf with
 required fields. `ServerURL` can be configured setting yocto variable
 `MENDER_SERVER_URL`, same as used by mender-client recipe. If a
 `mender-connect.conf` file is found in the `SRC_URI` the contents will be
-merged. ([MEN-4242](https://tracker.mender.io/browse/MEN-4242))
+merged. ([MEN-4242](https://northerntech.atlassian.net/browse/MEN-4242))
 * mender-connect: Add `User` to generated mender-connect.conf. The
 value of it is configured using `MENDER_CONNECT_USER` variable, which
 defaults to `nobody` for meta-mender-core and `root` for
 meta-mender-demo.
-([MEN-4242](https://tracker.mender.io/browse/MEN-4242))
+([MEN-4242](https://northerntech.atlassian.net/browse/MEN-4242))
 
 ## meta-mender warrior-v2020.12
 
@@ -2934,10 +2934,10 @@ A total of 750 lines added, 94 removed (delta 656)
 New changes in meta-mender since warrior-v2020.10:
 
 * Disable `64bit` ext4 filesystem feature.
-([MEN-3513](https://tracker.mender.io/browse/MEN-3513))
+([MEN-3513](https://northerntech.atlassian.net/browse/MEN-3513))
 * Disable filesystem journal on read-only-rootfs, which
 sometimes causes unstable rootfs checksum together with fsck.
-([MEN-3912](https://tracker.mender.io/browse/MEN-3912))
+([MEN-3912](https://northerntech.atlassian.net/browse/MEN-3912))
 * mender: Fix broken patch for mender-systemd-machine-id.
 * Remove recipe mender-client 2.3.0
 * Add recipe mender-client 2.3.1
@@ -2953,24 +2953,24 @@ included unless overridded. To remove it, add
 'PACKAGECONFIG_remove_pn-mender-client = "inventory-network-scripts"' to your
 local.conf file.
 * mender-client: Do not keep resizing if a little space is left unused
-([MEN-4176](https://tracker.mender.io/browse/MEN-4176))
+([MEN-4176](https://northerntech.atlassian.net/browse/MEN-4176))
 * mender-client: Ensure growfs works on GPT filesystems
-([MEN-4176](https://tracker.mender.io/browse/MEN-4176))
+([MEN-4176](https://northerntech.atlassian.net/browse/MEN-4176))
 * mender-client: Update LICENSE to include OpenSSL
 * Add a recipe for building 'mender-connect', remote shell support.
-([MEN-4083](https://tracker.mender.io/browse/MEN-4083))
+([MEN-4083](https://northerntech.atlassian.net/browse/MEN-4083))
 * meta-mender-demo: install mender-connect
-([MEN-4187](https://tracker.mender.io/browse/MEN-4187))
+([MEN-4187](https://northerntech.atlassian.net/browse/MEN-4187))
 * mender-connect: generate and install mender-connect.conf with
 required fields. `ServerURL` can be configured setting yocto variable
 `MENDER_SERVER_URL`, same as used by mender-client recipe. If a
 `mender-connect.conf` file is found in the `SRC_URI` the contents will be
-merged. ([MEN-4242](https://tracker.mender.io/browse/MEN-4242))
+merged. ([MEN-4242](https://northerntech.atlassian.net/browse/MEN-4242))
 * mender-connect: Add `User` to generated mender-connect.conf. The
 value of it is configured using `MENDER_CONNECT_USER` variable, which
 defaults to `nobody` for meta-mender-core and `root` for
 meta-mender-demo.
-([MEN-4242](https://tracker.mender.io/browse/MEN-4242))
+([MEN-4242](https://northerntech.atlassian.net/browse/MEN-4242))
 
 ## meta-mender dunfell-v2020.12
 
@@ -3040,13 +3040,13 @@ included unless overridded. To remove it, add
 'PACKAGECONFIG_remove_pn-mender-client = "inventory-network-scripts"' to your
 local.conf file.
 * mender-client: Do not keep resizing if a little space is left unused
-([MEN-4176](https://tracker.mender.io/browse/MEN-4176))
+([MEN-4176](https://northerntech.atlassian.net/browse/MEN-4176))
 * mender-client: Ensure growfs works on GPT filesystems
-([MEN-4176](https://tracker.mender.io/browse/MEN-4176))
+([MEN-4176](https://northerntech.atlassian.net/browse/MEN-4176))
 * mender-client: Update LICENSE to include OpenSSL
 * mender-client: Include OpenSSL license from 2.4.x onwards.
 * Add a recipe for building 'mender-connect', remote shell support.
-([MEN-4083](https://tracker.mender.io/browse/MEN-4083))
+([MEN-4083](https://northerntech.atlassian.net/browse/MEN-4083))
 * Fix a parsing issue where `inherit` could not be used with
 variables that had been defined with overrides that depended on
 `MENDER_FEATURES_ENABLE`. One example would be:
@@ -3168,7 +3168,7 @@ New changes in meta-mender since dunfell-v2020.09:
 
 * Disable filesystem journal on read-only-rootfs, which
 sometimes causes unstable rootfs checksum together with fsck.
-([MEN-3912](https://tracker.mender.io/browse/MEN-3912))
+([MEN-3912](https://northerntech.atlassian.net/browse/MEN-3912))
 * mender: Make Mender settings conditional.
 * meta-mender-demo: Make Mender settings conditional.
 * meta-mender-raspberrypi-demo: Make Mender settings conditional.
@@ -3258,16 +3258,16 @@ A total of 86545 lines added, 31 removed (delta 86514)
 New changes in meta-mender since zeus-v2020.07:
 
 * []MBR systems don't have a backup header, so always return true
-([MEN-3761](https://tracker.mender.io/browse/MEN-3761))
+([MEN-3761](https://northerntech.atlassian.net/browse/MEN-3761))
 * u-boot: Fix raspberrypi-cm3 u-boot hang
 * mender-client: fix install of systemd-machine-id.service
 * initramfs-module-install-efi: Ensure variable changes are reflected on rebuild
 * mender-commercial: Cleanup BBFILES.
 * Warn when detecting U-Boot version without script '=' support.
-([MEN-3851](https://tracker.mender.io/browse/MEN-3851))
+([MEN-3851](https://northerntech.atlassian.net/browse/MEN-3851))
 * Add mender-client 2.4.0 recipe.
 * OpenSSL: qemu: set SECLEVEL=2 in /etc/ssl/openssl.cnf
-([MEN-3730](https://tracker.mender.io/browse/MEN-3730))
+([MEN-3730](https://northerntech.atlassian.net/browse/MEN-3730))
 * Fixed key extraction by skipping new lines in defconfig.
 The `add_kconfig_option_with_depends.py` file throws `Not sure how to
 handle Kconfig option that doesn't start with 'CONFIG_'` when the
@@ -3345,10 +3345,10 @@ New changes in meta-mender since warrior-v2020.07:
 * mender-commercial: Cleanup BBFILES.
 * mender: Add additonal x86 arch to partuuid sanity check
 * Warn when detecting U-Boot version without script '=' support.
-([MEN-3851](https://tracker.mender.io/browse/MEN-3851))
+([MEN-3851](https://northerntech.atlassian.net/browse/MEN-3851))
 * Add mender-client 2.4.0 recipe.
 * OpenSSL: qemu: set SECLEVEL=2 in /etc/ssl/openssl.cnf
-([MEN-3730](https://tracker.mender.io/browse/MEN-3730))
+([MEN-3730](https://northerntech.atlassian.net/browse/MEN-3730))
 * Add recipe go 1.14 from dunfell
 * Use golang 1.14 in meta-mender-core layer to support Ed25519
 public keys for signing and transport in the Mender client.
@@ -3421,7 +3421,7 @@ New changes in meta-mender since thud-v2019.12:
 * Add mender 2.2.0b1 recipe
 * Add mender-artifact 3.3.0b1 recipe
 * In demo mode, put demo certificate in same directory as Debian package.
-([MEN-3048](https://tracker.mender.io/browse/MEN-3048))
+([MEN-3048](https://northerntech.atlassian.net/browse/MEN-3048))
 * mender-helpers: Error out if copying different files to boot part.
 * Improve warning when multiple DTB files are in KERNEL_DEVICETREE
 * Add MENDER_DTB_NAME_FORCE to mender-vars.json to avoid unrecognized variable warning
@@ -3490,7 +3490,7 @@ New changes in meta-mender since sumo-v2019.12:
 * Add mender 2.2.0b1 recipe
 * Add mender-artifact 3.3.0b1 recipe
 * In demo mode, put demo certificate in same directory as Debian package.
-([MEN-3048](https://tracker.mender.io/browse/MEN-3048))
+([MEN-3048](https://northerntech.atlassian.net/browse/MEN-3048))
 * Improve warning when multiple DTB files are in KERNEL_DEVICETREE
 * Add MENDER_DTB_NAME_FORCE to mender-vars.json to avoid unrecognized variable warning
 * rpi: fix rootfs cmdline trailing space
@@ -3554,7 +3554,7 @@ containing the binary.
 * Remove mender 2.1.0b1 recipe
 * Remove mender-artifact 3.1.0b1 recipe
 * Removes the tests covering Mender-Artifact version 1.
-([MEN-2156](https://tracker.mender.io/browse/MEN-2156))
+([MEN-2156](https://northerntech.atlassian.net/browse/MEN-2156))
 
 ## meta-mender dunfell-v2020.09
 
@@ -3638,7 +3638,7 @@ A total of 70 lines added, 136 removed (delta -66)
 New changes in meta-mender since dunfell-v2020.07:
 
 * []MBR systems don't have a backup header, so always return true
-([MEN-3761](https://tracker.mender.io/browse/MEN-3761))
+([MEN-3761](https://northerntech.atlassian.net/browse/MEN-3761))
 * Fix error that no recipe provides bcm2835-bootfiles.
 * mender-client: fix install of systemd-machine-id.service
 * initramfs-module-install-efi: Ensure variable changes are reflected on rebuild
@@ -3648,7 +3648,7 @@ New changes in meta-mender since dunfell-v2020.07:
 * libubootenv: add RPROVIDES for u-boot-default-env
 * Add mender-client 2.4.0 recipe.
 * OpenSSL: qemu: set SECLEVEL=2 in /etc/ssl/openssl.cnf
-([MEN-3730](https://tracker.mender.io/browse/MEN-3730))
+([MEN-3730](https://northerntech.atlassian.net/browse/MEN-3730))
 * Fixed key extraction by skipping new lines in defconfig.
 The `add_kconfig_option_with_depends.py` file throws `Not sure how to
 handle Kconfig option that doesn't start with 'CONFIG_'` when the
@@ -3722,7 +3722,7 @@ Welcome to GRUB!
 * Add mender-2.2.1 and mender-artifact-3.3.1 recipes.
 * Add mender-binary-delta-1.1.0 release.
 * MBR systems don't have a backup header, so always return true
-([MEN-3761](https://tracker.mender.io/browse/MEN-3761))
+([MEN-3761](https://northerntech.atlassian.net/browse/MEN-3761))
 
 ## meta-mender dunfell-v2020.07
 
@@ -3801,12 +3801,12 @@ you have a "fw-utils" type recipe in your layer, you probably need to
 remove it, particularly if it references `u-boot-mender-common.inc`.
 * Patch broken UBI support in libubootenv_0.2.
 * chmod 600 on mender.conf
-([MEN-3762](https://tracker.mender.io/browse/MEN-3762))
+([MEN-3762](https://northerntech.atlassian.net/browse/MEN-3762))
 * Add mender-2.2.1 and mender-artifact-3.3.1 recipes.
 * Add mender-2.3.0 and mender-artifact-3.4.0 recipes.
 * Add mender-binary-delta-1.1.0 release.
 * Remove mender-client recipes that are incompatible with dunfell.
-([MEN-3764](https://tracker.mender.io/browse/MEN-3764))
+([MEN-3764](https://northerntech.atlassian.net/browse/MEN-3764))
 * Fix incorrect BOOTENV_SIZE value being used in libubootenv
 recipe. The symptom of this was a non-working set of `fw_printenv` and
 `fw_setenv` tools:
@@ -3815,7 +3815,7 @@ root@raspberrypi4:~# fw_printenv
 Cannot read environment, using default
 Cannot read default environment from file
 ```
-([MEN-3834](https://tracker.mender.io/browse/MEN-3834))
+([MEN-3834](https://northerntech.atlassian.net/browse/MEN-3834))
 * Fix fsck running on every boot in dunfell.
 ## meta-mender zeus-v2020.07
 
@@ -3979,7 +3979,7 @@ A total of 7169 lines added, 4936 removed (delta 2233)
 New changes in meta-mender since warrior-v2020.06:
 
 * Removes the tests covering Mender-Artifact version 1.
-([MEN-2156](https://tracker.mender.io/browse/MEN-2156))
+([MEN-2156](https://northerntech.atlassian.net/browse/MEN-2156))
 * Add mender 2.1.1 and mender-artifact 3.2.0b1 recipes.
 * Update recipe for mender-binary-delta beta release v1.0.0b1
 * Remove mender-2.0.x and older, and mender-artifact 3.0.x
@@ -3999,7 +3999,7 @@ MENDER_ARTIFACT_PROVIDES -- Key:Value
 MENDER_ARTIFACT_DEPENDS -- Key:Value
 MENDER_ARTIFACT_PROVIDES_GROUP -- Name
 MENDER_ARTIFACT_DEPENDS_GROUPS -- List of names
-([MEN-1670](https://tracker.mender.io/browse/MEN-1670))
+([MEN-1670](https://northerntech.atlassian.net/browse/MEN-1670))
 * Add mender-artifact 3.2.0 and remove beta.
 * Upgrade client acceptance tests to Python3
 * Update recipe for mender-binary-delta final release v1.0.0
@@ -4028,7 +4028,7 @@ so set the default of `mender-growfs-data` to off if
 `MENDER_EXTRA_PARTS` is being used.
 * Improve warning when multiple DTB files are in KERNEL_DEVICETREE
 * In demo mode, put demo certificate in same directory as Debian package.
-([MEN-3048](https://tracker.mender.io/browse/MEN-3048))
+([MEN-3048](https://northerntech.atlassian.net/browse/MEN-3048))
 * Add mender 2.2.0b1 recipe
 * Add mender-artifact 3.3.0b1 recipe
 * mender: Add signature/secure-boot support.
@@ -4061,7 +4061,7 @@ RPROVIDES_${PN} += "lsb-ld"
 * Add mender-artifact 3.3.0 recipe and remove beta
 * Add mender 2.1.3 recipe
 * raspberrypi4: update U-Boot patches to apply to 2019.07 version
-([MEN-3262](https://tracker.mender.io/browse/MEN-3262))
+([MEN-3262](https://northerntech.atlassian.net/browse/MEN-3262))
 * Renamed mender -> mender-client
 This renaming was done to conform with the new naming introduced. This helps
 seperate Mender (the product), from Mender-client, which is a part of the
@@ -4073,7 +4073,7 @@ The renaming is due in parts:
 * The mender directory holding the mender-client recipe is also renamed 'mender-client'
 * Upgrade to U-Boot 2020.01 and GRUB 2.04 to fix Beaglebone support.
 * Updated the LIC_FILES_CHECKSUM after removing dependencies
-([MEN-3251](https://tracker.mender.io/browse/MEN-3251))
+([MEN-3251](https://northerntech.atlassian.net/browse/MEN-3251))
 * mender-grub: Dynamically determine mender_grub_storage_device.
 * mender-grub: Add regexp module.
 * Deprecate MENDER_GRUB_STORAGE_DEVICE variable.
@@ -4102,14 +4102,14 @@ this is an risky operating which could brick your device.
 * Fix infinite loop which would eat all available memory
 on the build host, when using U-Boot v2020.01 or later together with
 the auto-patcher.
-([MEN-3265](https://tracker.mender.io/browse/MEN-3265))
+([MEN-3265](https://northerntech.atlassian.net/browse/MEN-3265))
 * Updated the LIC_FILES_CHECKSUM after removing dependencies
-([MEN-3251](https://tracker.mender.io/browse/MEN-3251))
+([MEN-3251](https://northerntech.atlassian.net/browse/MEN-3251))
 * mender: Add sanity check for partuuid and uboot.
 * grubenv: Handle debug command prompt when running as EFI
 app.
 * write GPT partition table before resize of data part
-([MEN-3366](https://tracker.mender.io/browse/MEN-3366))
+([MEN-3366](https://northerntech.atlassian.net/browse/MEN-3366))
 * raspberrypi: busybox compatibility for boot firmware state script
 * grub: Move dynamic storage handling into grub-mender-grubenv repository.
 * U-Boot versions from v2020.01 onwards have moved several C
@@ -4136,7 +4136,7 @@ variable. If the values are not as expected, then you will get an
 error during the compile stage.
 * Fix OOM issue on the build host if certain configuration
 options are missing from the defconfig file.
-([MEN-3476](https://tracker.mender.io/browse/MEN-3476))
+([MEN-3476](https://northerntech.atlassian.net/browse/MEN-3476))
 * grub-mender-grubenv: Remove kernel_devicetree.
 The only way to use GRUB 2.04 on ARM is via UEFI, and the
 kernel_devicetree information is not used when loading via UEFI,
@@ -4147,7 +4147,7 @@ instead this is a background process.
 * Add OpenSSL as dependency for Git versions of the Mender client.
 * Fix U-Boot auto-patcher sometimes adding two conflicting
 options to the defconfig file.
-([MEN-3514](https://tracker.mender.io/browse/MEN-3514))
+([MEN-3514](https://northerntech.atlassian.net/browse/MEN-3514))
 * Add mender-client_2.3.0b1 and mender-artifact_3.4.0b1 recipes.
 To use the Beta recipes, add this to `local.conf`:
 ```
@@ -4161,7 +4161,7 @@ To use the beta, add this to `local.conf`:
 PREFERRED_VERSION_pn-mender-binary-delta = "1.1.0b1"
 ```
 * Disable `64bit` ext4 filesystem feature.
-([MEN-3513](https://tracker.mender.io/browse/MEN-3513))
+([MEN-3513](https://northerntech.atlassian.net/browse/MEN-3513))
 * Remove mender-client < 2.2, and mender-artifact < 3.3 recipes.
 
 ## meta-mender warrior-v2020.06
@@ -4293,7 +4293,7 @@ app.
 * raspberrypi: busybox compatibility for boot firmware state script
 * grub: Move dynamic storage handling into grub-mender-grubenv repository.
 * write GPT partition table before resize of data part
-([MEN-3366](https://tracker.mender.io/browse/MEN-3366))
+([MEN-3366](https://northerntech.atlassian.net/browse/MEN-3366))
 
 ## meta-mender warrior-v2020.04
 
@@ -4355,7 +4355,7 @@ New changes in meta-mender since warrior-v2020.03:
 * mender-grub: Add regexp module.
 * Deprecate MENDER_GRUB_STORAGE_DEVICE variable.
 * Updated the LIC_FILES_CHECKSUM after removing dependencies
-([MEN-3251](https://tracker.mender.io/browse/MEN-3251))
+([MEN-3251](https://northerntech.atlassian.net/browse/MEN-3251))
 * raspberrypi: add state script to update boot firmware
 Raspberry Pi boards have a set of boot firmware files that are
 located on the vfat boot part, and these files are not updated
@@ -4567,7 +4567,7 @@ New changes in meta-mender since warrior-v2019.12:
 * Add mender 2.2.0b1 recipe
 * Add mender-artifact 3.3.0b1 recipe
 * In demo mode, put demo certificate in same directory as Debian package.
-([MEN-3048](https://tracker.mender.io/browse/MEN-3048))
+([MEN-3048](https://northerntech.atlassian.net/browse/MEN-3048))
 
 ## meta-mender thud-v2019.12
 
@@ -4662,7 +4662,7 @@ containing the binary.
 * Add mender-artifact 3.2.1 recipe
 * Add mender-binar-delta 1.0.1 recipe
 * Removes the tests covering Mender-Artifact version 1.
-([MEN-2156](https://tracker.mender.io/browse/MEN-2156))
+([MEN-2156](https://northerntech.atlassian.net/browse/MEN-2156))
 
 ## meta-mender sumo-v2019.12
 
@@ -4741,7 +4741,7 @@ containing the binary.
 * Add mender-artifact 3.2.1 recipe
 * Add mender-binar-delta 1.0.1 recipe
 * Removes the tests covering Mender-Artifact version 1.
-([MEN-2156](https://tracker.mender.io/browse/MEN-2156))
+([MEN-2156](https://northerntech.atlassian.net/browse/MEN-2156))
 
 ## meta-mender warrior-v2019.12
 
@@ -4949,7 +4949,7 @@ New changes in meta-mender since thud-v2019.09:
 * Add mender-artifact 2.3.1 and 2.4.0 recipes.
 * Remove unsupported mender 1.5.x series.
 * Fix data directory not being empty on rootfs.
-([MEN-2290](https://tracker.mender.io/browse/MEN-2290))
+([MEN-2290](https://northerntech.atlassian.net/browse/MEN-2290))
 * Add grub-mender-grubenv 1.2.1 recipe.
 * Fix grub-editenv invocation on platforms where it is called
 grub2-editenv.
@@ -4957,18 +4957,18 @@ grub2-editenv.
 * Add support for initramfs when booting using GRUB.
 * mender-helpers.bbclass: Add NVMe support
 * Set inventory poll interval default to 8h
-([MEN-2214](https://tracker.mender.io/browse/MEN-2214))
+([MEN-2214](https://northerntech.atlassian.net/browse/MEN-2214))
 * mender artifact bbclass image name override variable added.
-([MEN-2333](https://tracker.mender.io/browse/MEN-2333))
+([MEN-2333](https://northerntech.atlassian.net/browse/MEN-2333))
 * grub: ensure "test" module is builtin
 * Added bitbake variable to add optional swap partition
-([MEN-2361](https://tracker.mender.io/browse/MEN-2361))
+([MEN-2361](https://northerntech.atlassian.net/browse/MEN-2361))
 * Start using Git SHA based grub-mender-grubenv versions.
 * Adapt to new flags in mender-artifact-3.0.0.
 * Some core update modules can now be installed by adding
 `modules` to the `PACKAGECONFIG` variable of `mender`. They are
 included by default when using the meta-mender-demo layer.
-([MEN-2383](https://tracker.mender.io/browse/MEN-2383))
+([MEN-2383](https://northerntech.atlassian.net/browse/MEN-2383))
 * Install `mender-data-dir.service` to create `/data/mender` directory.
 * Extended MENDER_DATA_PART_FSTYPE to allow it to be used to
 specify the filesystem to be generated. Added support to build the data
@@ -4989,16 +4989,16 @@ correct branches when fetching the source.
 * Add recipes for mender-1.7.1 and mender-artifact-2.4.1.
 * Fix build failing in do_image_ubimg task
 * Demo images now include Yocto LSB package.
-([MEN-2421](https://tracker.mender.io/browse/MEN-2421))
+([MEN-2421](https://northerntech.atlassian.net/browse/MEN-2421))
 * grub-mender-grubenv: Fix broken 'debug-pause' `PACKAGECONFIG`.
 * QEMU: Add inventory script for Docker IP and open port 80.
-([MEN-2574](https://tracker.mender.io/browse/MEN-2574))
+([MEN-2574](https://northerntech.atlassian.net/browse/MEN-2574))
 * u-boot-mender: Add define for MENDER_STORAGE_DEVICE
 * mender: Add support for a bootimg FSTYPE.
 * This new define is to allow builds when no dtb is produced or the dtb is
 * Remap port 85 on host to 85 in qemu
 * Ensure that artifact and partition images' checksums are equal.
-([MEN-2597](https://tracker.mender.io/browse/MEN-2597))
+([MEN-2597](https://northerntech.atlassian.net/browse/MEN-2597))
 * Add recipes for mender 2.0.1 and mender-artifact 3.0.1
 * mender: Setup Live installer with HDDIMG
 * rpi: Fix several assignment bugs regarding `MENDER_BOOTLOADER_DEFAULT`.
@@ -5031,7 +5031,7 @@ done through enabling systemd's growfs feature. Hereforth the feature is enabled
 by default when inheriting from 'mender-full'. The feature can be disabled using
 MENDER_FEATURES_DISABLE_append = " mender-growfs-data".
 Updated commit message:
-([MEN-2337](https://tracker.mender.io/browse/MEN-2337))
+([MEN-2337](https://northerntech.atlassian.net/browse/MEN-2337))
 * `FILESEXTRAPATHS_prepend_pn-mender-binary-delta` now needs
 to point to the folder containing `arm`, `aarch64` and `x86_64`, not the folder
 containing the binary.
@@ -5040,7 +5040,7 @@ containing the binary.
 configuration /etc/mender/mender.conf and a persistent congiguration in
 /data/mender/mender.conf. This split is enabled by default, and it can
 be opt-out by adding `PACKAGECONFIG_remove = "split-mender-config"` to
-local.conf. ([MEN-2757](https://tracker.mender.io/browse/MEN-2757))
+local.conf. ([MEN-2757](https://northerntech.atlassian.net/browse/MEN-2757))
 * Add a new recipe mender-migrate-configuration to ease the
 migration of devices with single mender.conf to the new setup of split
 configuration files. To build an updgrade for such device, add the
@@ -5049,11 +5049,11 @@ disable the split feature (for this update only) with
 `PACKAGECONFIG_remove = " split-mender-config"`, and specify which
 parameters to migrate (at least the partition parameters) with
 `MENDER_PERSISTENT_CONFIGURATION_VARS = "RootfsPartA RootfsPartB"`.
-([MEN-2757](https://tracker.mender.io/browse/MEN-2757))
+([MEN-2757](https://northerntech.atlassian.net/browse/MEN-2757))
 * Fix issue where U-boot is not able to find a valid DTB on Raspberry Pi boards
 * add support for Raspberry Pi 4
 * Removes the tests covering Mender-Artifact version 1.
-([MEN-2156](https://tracker.mender.io/browse/MEN-2156))
+([MEN-2156](https://northerntech.atlassian.net/browse/MEN-2156))
 * Add mender 2.1.1 and mender-artifact 3.2.0b1 recipes.
 * Update recipe for mender-binary-delta beta release v1.0.0b1
 
@@ -5102,7 +5102,7 @@ New changes in meta-mender since thud-v2019.08:
 * `FILESEXTRAPATHS_prepend_pn-mender-binary-delta` now needs
 to point to the folder containing `armhf` and `x86_64`, not the folder
 containing the binary.
-([MEN-2702](https://tracker.mender.io/browse/MEN-2702))
+([MEN-2702](https://northerntech.atlassian.net/browse/MEN-2702))
 * u-boot-fw-utils: set PACKAGE_ARCH as MACHINE_ARCH
 * Update recipe for mender-binary-delta pre-release v0.1.1
 * Add meta-mender-commercial layer.
@@ -5159,9 +5159,9 @@ New changes in meta-mender since rocko-v2019.05:
 
 * Fix build failing in do_image_ubimg task
 * Demo images now include Yocto LSB package.
-([MEN-2421](https://tracker.mender.io/browse/MEN-2421))
+([MEN-2421](https://northerntech.atlassian.net/browse/MEN-2421))
 * QEMU: Add inventory script for Docker IP and open port 80.
-([MEN-2574](https://tracker.mender.io/browse/MEN-2574))
+([MEN-2574](https://northerntech.atlassian.net/browse/MEN-2574))
 * u-boot-mender: Add define for MENDER_STORAGE_DEVICE
 * Add recipes for mender 2.0.1 and mender-artifact 3.0.1
 * Remap port 85 on host to 85 in qemu
@@ -5219,9 +5219,9 @@ New changes in meta-mender since sumo-v2019.05:
 
 * Fix build failing in do_image_ubimg task
 * Demo images now include Yocto LSB package.
-([MEN-2421](https://tracker.mender.io/browse/MEN-2421))
+([MEN-2421](https://northerntech.atlassian.net/browse/MEN-2421))
 * QEMU: Add inventory script for Docker IP and open port 80.
-([MEN-2574](https://tracker.mender.io/browse/MEN-2574))
+([MEN-2574](https://northerntech.atlassian.net/browse/MEN-2574))
 * u-boot-mender: Add define for MENDER_STORAGE_DEVICE
 * Add recipes for mender 2.0.1 and mender-artifact 3.0.1
 * Remap port 85 on host to 85 in qemu
@@ -5337,9 +5337,9 @@ New changes in meta-mender since thud-v2019.05:
 
 * Fix build failing in do_image_ubimg task
 * Demo images now include Yocto LSB package.
-([MEN-2421](https://tracker.mender.io/browse/MEN-2421))
+([MEN-2421](https://northerntech.atlassian.net/browse/MEN-2421))
 * QEMU: Add inventory script for Docker IP and open port 80.
-([MEN-2574](https://tracker.mender.io/browse/MEN-2574))
+([MEN-2574](https://northerntech.atlassian.net/browse/MEN-2574))
 * grub-mender-grubenv: Fix broken 'debug-pause' `PACKAGECONFIG`.
 * u-boot-mender: Add define for MENDER_STORAGE_DEVICE
 * Add recipes for mender 2.0.1 and mender-artifact 3.0.1
@@ -5591,7 +5591,7 @@ A total of 582 lines added, 209 removed (delta 373)
 New changes in meta-mender since rocko-v2018.11.2:
 
 * allow IMAGE_BOOTLOADER_BOOTSECTOR_OFFSET to be aligend to 512 bytes
-([MEN-1845](https://tracker.mender.io/browse/MEN-1845))
+([MEN-1845](https://northerntech.atlassian.net/browse/MEN-1845))
 * Fix missing wpa_supplicant in Raspberry Pi demo images.
 * Add mender 1.6.1 and 1.7.0 recipes.
 * Add mender-artifact 2.3.1 and 2.4.0 recipes.
@@ -5600,7 +5600,7 @@ New changes in meta-mender since rocko-v2018.11.2:
 * Some core update modules can now be installed by adding
 `modules` to the `PACKAGECONFIG` variable of `mender`. They are
 included by default when using the meta-mender-demo layer.
-([MEN-2383](https://tracker.mender.io/browse/MEN-2383))
+([MEN-2383](https://northerntech.atlassian.net/browse/MEN-2383))
 * Install `mender-data-dir.service` to create `/data/mender` directory.
 * Add mender-2.0.0b1 and mender-artifact-3.0.0b1.
 * Add canary value to U-Boot env to catch bootloader/user-space mismatch.
@@ -5683,12 +5683,12 @@ New changes in meta-mender since sumo-v2018.12:
 * mender-helpers.bbclass: Add NVMe support
 * add 'rootwait' to bootargs
 * Fix data directory not being empty on rootfs.
-([MEN-2290](https://tracker.mender.io/browse/MEN-2290))
+([MEN-2290](https://northerntech.atlassian.net/browse/MEN-2290))
 * Adapt to new flags in mender-artifact-3.0.0.
 * Some core update modules can now be installed by adding
 `modules` to the `PACKAGECONFIG` variable of `mender`. They are
 included by default when using the meta-mender-demo layer.
-([MEN-2383](https://tracker.mender.io/browse/MEN-2383))
+([MEN-2383](https://northerntech.atlassian.net/browse/MEN-2383))
 * Install `mender-data-dir.service` to create `/data/mender` directory.
 * Change variable to access ubi dataimg, points now to the symlink to prevent yocto rebuild error when timestamp/name of ubimg have changed
 * Add mender-2.0.0b1 and mender-artifact-3.0.0b1.
@@ -5742,7 +5742,7 @@ New changes in meta-mender since thud-v2019.02:
 * Some core update modules can now be installed by adding
 `modules` to the `PACKAGECONFIG` variable of `mender`. They are
 included by default when using the meta-mender-demo layer.
-([MEN-2383](https://tracker.mender.io/browse/MEN-2383))
+([MEN-2383](https://northerntech.atlassian.net/browse/MEN-2383))
 * Install `mender-data-dir.service` to create `/data/mender` directory.
 * Change variable to access ubi dataimg, points now to the symlink to prevent yocto rebuild error when timestamp/name of ubimg have changed
 * grub: ensure "test" module is builtin
@@ -5851,7 +5851,7 @@ New changes in meta-mender since thud-v2018.12:
 * Fix grub-editenv invocation on platforms where it is called
 grub2-editenv.
 * Fix data directory not being empty on rootfs.
-([MEN-2290](https://tracker.mender.io/browse/MEN-2290))
+([MEN-2290](https://northerntech.atlassian.net/browse/MEN-2290))
 
 ## meta-mender sumo-v2018.12
 
@@ -6022,7 +6022,7 @@ be restored by removing `mender-grub` and adding `mender-uboot` to
 * Increase default u-boot MTD partition size to 1MiB.
 * Fix inability to patch old u-boot variants of MTDPARTS and
 MTDIDS correctly.
-([MEN-1849](https://tracker.mender.io/browse/MEN-1849))
+([MEN-1849](https://northerntech.atlassian.net/browse/MEN-1849))
 * Add mender 1.7.0b1 recipe.
 * Fix images not being modifiable by mender-artifact in thud and later.
 * Add mender 1.5.1 recipe.
@@ -6074,7 +6074,7 @@ count overhead lost to partition table, which is 2 * alignment.
 * mender: Allow overrides for MENDER_STORAGE_TOTAL_SIZE_MB_DEFAULT.
 * Allow boot partition to be populated with normal package recipes.
 * Fix `MENDER_GRUB_STORAGE_DEVICE` variable not being respected.
-([MEN-2048](https://tracker.mender.io/browse/MEN-2048))
+([MEN-2048](https://northerntech.atlassian.net/browse/MEN-2048))
 * GRUB: Make kernel console argument configurable using "console_bootargs".
 One can set this variable in some "xx_*_grub.cfg" script with an index
 lower than 10, in the grub-mender-grubenv recipe.
@@ -6082,7 +6082,7 @@ lower than 10, in the grub-mender-grubenv recipe.
 back to `kernel_addr_r`. This was discussed with U-Boot developers and
 is the proper address variable going forward.
 * Fix incorrect Flash bad PEB calculation which led to wrong total image size.
-([MEN-1849](https://tracker.mender.io/browse/MEN-1849))
+([MEN-1849](https://northerntech.atlassian.net/browse/MEN-1849))
 * Add mender 1.6.1 and 1.7.0 recipes.
 * Add mender-artifact 2.3.1 and 2.4.0 recipes.
 * Auto-select correct `MENDER_STORAGE_DEVICE_BASE` scheme.
@@ -6096,7 +6096,7 @@ will now be called `core-image-minimal-prod_rpi3.sdimg` instead of
 * Fix console logging for systemd on QEMU.
 * Fix build error when using GRUB and /dev/mmcblk storage device.
 * Add specific patches for u-boot-toradex_2016.11.
-([MEN-1849](https://tracker.mender.io/browse/MEN-1849))
+([MEN-1849](https://northerntech.atlassian.net/browse/MEN-1849))
 * grub: Remove restriction that the core.img be at sector 1
 * mender-uboot: Use hex for dev/part numbers in U-Boot.
 * Delete all components from pre-1.5 Mender releases.
@@ -6107,7 +6107,7 @@ in theory, but few board manufacturers implement it in practice.
 Therefore U-Boot is still utilized, but acts only as a UEFI loader,
 and hence no U-Boot integration is needed. All boot scripts are then
 handled by GRUB, which needs no patching.
-([MEN-1595](https://tracker.mender.io/browse/MEN-1595), [MEN-1659](https://tracker.mender.io/browse/MEN-1659))
+([MEN-1595](https://northerntech.atlassian.net/browse/MEN-1595), [MEN-1659](https://northerntech.atlassian.net/browse/MEN-1659))
 * Add support for PARTUUID in grub-mender-grubenv script.
 * Remove colibri-imx7-mender MACHINE type, replaced by colibri-imx7.
 * Fix regression that removed boot flag from boot partition.
@@ -6172,16 +6172,16 @@ New changes in meta-mender since sumo-v2018.09:
 
 * Make sure mtdimg is not truncated, but has its full length.
 * Add specific patches for u-boot-toradex_2016.11.
-([MEN-1849](https://tracker.mender.io/browse/MEN-1849))
+([MEN-1849](https://northerntech.atlassian.net/browse/MEN-1849))
 * Fix incorrect Flash bad PEB calculation which led to wrong total image size.
-([MEN-1849](https://tracker.mender.io/browse/MEN-1849))
+([MEN-1849](https://northerntech.atlassian.net/browse/MEN-1849))
 * Make mkfs.ubifs and ubinize arguments a bit more customizable.
 The new variables `MENDER_FLASH_MINIMUM_IO_UNIT` and
 `MENDER_MAXIMUM_LEB_COUNT` have been introduced, which maps directly
 to the corresponding arguments of the two tools.
 * Fix inability to patch old u-boot variants of MTDPARTS and
 MTDIDS correctly.
-([MEN-1849](https://tracker.mender.io/browse/MEN-1849))
+([MEN-1849](https://northerntech.atlassian.net/browse/MEN-1849))
 * Fix confusing warning flood when MENDER_MTDIDS is unset in a UBI build.
 
 ## meta-mender sumo-v2018.09
@@ -6205,7 +6205,7 @@ in theory, but few board manufacturers implement it in practice.
 Therefore U-Boot is still utilized, but acts only as a UEFI loader,
 and hence no U-Boot integration is needed. All boot scripts are then
 handled by GRUB, which needs no patching.
-([MEN-1595](https://tracker.mender.io/browse/MEN-1595), [MEN-1659](https://tracker.mender.io/browse/MEN-1659))
+([MEN-1595](https://northerntech.atlassian.net/browse/MEN-1595), [MEN-1659](https://northerntech.atlassian.net/browse/MEN-1659))
 * Auto-select correct `MENDER_STORAGE_DEVICE_BASE` scheme.
 This should rarely need to be set by anyone anymore.
 * Add some debug functionality to GRUB booting process.
@@ -6224,7 +6224,7 @@ shorter.
 * Fix build error when using any hard drive besides sda/hda, such as sdb.
 * Fix `IMAGE_ROOTFS_EXCLUDE_PATH` failing when listing a non-existent path.
 * Fix `MENDER_GRUB_STORAGE_DEVICE` variable not being respected.
-([MEN-2048](https://tracker.mender.io/browse/MEN-2048))
+([MEN-2048](https://northerntech.atlassian.net/browse/MEN-2048))
 * Allow disabling auto-generated /etc/fstab
 * Boot script recipe for demoing OTA updates
 * mender: Allow overrides for MENDER_STORAGE_TOTAL_SIZE_MB_DEFAULT.
@@ -6274,7 +6274,7 @@ previously launched and saved QEMU image.
 * meta-mender-orangepi: Fix up u-boot
 * Fix Linux kernel hanging when loaded via U-Boot/UEFI/GRUB
 on vexpress-qemu*.
-([MEN-1657](https://tracker.mender.io/browse/MEN-1657))
+([MEN-1657](https://northerntech.atlassian.net/browse/MEN-1657))
 * Add mender-1.3.1 and mender-artifact-2.1.2 recipes.
 * Implement `IMAGE_ROOTFS_EXCLUDE_PATH` support. It works the
 following way: It contains a space separated list of directories,
@@ -6297,12 +6297,12 @@ it does fix the case where unwanted ifdefs were "hiding" the added
 definitions.
 * rpi_0_w: Setup Mender required defconfigs
 * Implement GRUB and x86-64 support.
-([MEN-1430](https://tracker.mender.io/browse/MEN-1430), [MEN-1432](https://tracker.mender.io/browse/MEN-1432), [MEN-1433](https://tracker.mender.io/browse/MEN-1433), [MEN-1434](https://tracker.mender.io/browse/MEN-1434), [MEN-1435](https://tracker.mender.io/browse/MEN-1435), [MEN-1436](https://tracker.mender.io/browse/MEN-1436))
+([MEN-1430](https://northerntech.atlassian.net/browse/MEN-1430), [MEN-1432](https://northerntech.atlassian.net/browse/MEN-1432), [MEN-1433](https://northerntech.atlassian.net/browse/MEN-1433), [MEN-1434](https://northerntech.atlassian.net/browse/MEN-1434), [MEN-1435](https://northerntech.atlassian.net/browse/MEN-1435), [MEN-1436](https://northerntech.atlassian.net/browse/MEN-1436))
 * Implement qemux86-64 machine target.
-([MEN-1430](https://tracker.mender.io/browse/MEN-1430), [MEN-1432](https://tracker.mender.io/browse/MEN-1432), [MEN-1433](https://tracker.mender.io/browse/MEN-1433), [MEN-1434](https://tracker.mender.io/browse/MEN-1434), [MEN-1435](https://tracker.mender.io/browse/MEN-1435), [MEN-1436](https://tracker.mender.io/browse/MEN-1436))
+([MEN-1430](https://northerntech.atlassian.net/browse/MEN-1430), [MEN-1432](https://northerntech.atlassian.net/browse/MEN-1432), [MEN-1433](https://northerntech.atlassian.net/browse/MEN-1433), [MEN-1434](https://northerntech.atlassian.net/browse/MEN-1434), [MEN-1435](https://northerntech.atlassian.net/browse/MEN-1435), [MEN-1436](https://northerntech.atlassian.net/browse/MEN-1436))
 * mender: Conditionally add /uboot mount only for SDCards.
 * Increased the demo mender-retry-polling interval
-([MEN-1006](https://tracker.mender.io/browse/MEN-1006))
+([MEN-1006](https://northerntech.atlassian.net/browse/MEN-1006))
 * meta-mender-toradex-nxp: Adapt colibri-imx7-mender to U-Boot autopatching
 * Fix 'depends upon non-existent task' error in U-Boot recipes without auto patching.
 * Use timedatectl, if available, to determine with time is synchronized.
@@ -6316,7 +6316,7 @@ Flash device, unlike the ubimg, which should only be flashed to the
 ubi area of the mtd device. Either one can be used depending on need.
 vexpress-nor image, used in QEMU, was also changed to take advantage
 of the new mtdimg image.
-([MEN-1597](https://tracker.mender.io/browse/MEN-1597))
+([MEN-1597](https://northerntech.atlassian.net/browse/MEN-1597))
 * Add LAYERSERIES_COMPAT settings to all Mender layers.
 * Replace `MENDER_PARTITION_ALIGNMENT_KB` with
 `MENDER_PARTITION_ALIGNMENT`, which is in bytes.
@@ -6324,7 +6324,7 @@ of the new mtdimg image.
 `MENDER_RESERVED_SPACE_BOOTLOADER_DATA`, to better reflect what it is
 used for.
 * Enable wifi in the raspberry-pi demo image by default.
-([MEN-1804](https://tracker.mender.io/browse/MEN-1804))
+([MEN-1804](https://northerntech.atlassian.net/browse/MEN-1804))
 * mender: Only create vfat boot partition if size is non-zero
 * meta-mender-toradex-nxp: increase layer priority to 91
 * Fix creating ubifs image.
@@ -6337,14 +6337,14 @@ used for.
 It can be enabled by inheriting the `mender-full-bios` class, or by
 enabling the `mender-grub` and `mender-bios` features using
 `MENDER_FEATURES_ENABLE`.
-([MEN-1845](https://tracker.mender.io/browse/MEN-1845))
+([MEN-1845](https://northerntech.atlassian.net/browse/MEN-1845))
 * Client container init scripts are modified to accept MAC address for qemu through env var, `RANDOM_MAC`.
 * added layer dependency on mender layer
 * uboot_auto_configure: Fail immediately if a define cannot be added.
 Better than failing later at runtime, where the problem is much harder
 to debug.
 * Warn on unused MENDER_.* variables
-([MEN-1603](https://tracker.mender.io/browse/MEN-1603))
+([MEN-1603](https://northerntech.atlassian.net/browse/MEN-1603))
 * uboot_auto_patch: Switch kernel address from `kernel_addr_r` to `loadaddr`.
 * Remove unused IMAGE_UENV_TXT_FILE variable.
 * Add U-Boot auto patching support for Flash based devices.
@@ -6354,11 +6354,11 @@ configuration: the `MENDER_MTDIDS` needs to be set for the board, and
 will normally go in the `conf/machine/<MACHINE>.conf` file for the
 board in question. See documentation for variables `MENDER_MTDIDS`,
 `MENDER_IS_IN_MTDID` and `MENDER_MTDPARTS` for more information.
-([MEN-1597](https://tracker.mender.io/browse/MEN-1597))
+([MEN-1597](https://northerntech.atlassian.net/browse/MEN-1597))
 * Partition alignment (`MENDER_PARTITION_ALIGNMENT`) on Flash
 devices using UBI is now aligned to the UBI LEB size, which in general
 is not a multiple of KiB.
-([MEN-1597](https://tracker.mender.io/browse/MEN-1597))
+([MEN-1597](https://northerntech.atlassian.net/browse/MEN-1597))
 * Add Mender 1.4.1 recipe.
 * Clear IMAGE_NAME_SUFFIX for all image types.
 * Fix "No rule to make target 'envtools'" error in some U-Boot builds.
@@ -6381,7 +6381,7 @@ defines.
 It contains the data partition filesystem which is normally part of
 the complete partitioned image. To enable it, add `dataimg` to
 `IMAGE_FSTYPES`.
-([MEN-1879](https://tracker.mender.io/browse/MEN-1879))
+([MEN-1879](https://northerntech.atlassian.net/browse/MEN-1879))
 * mender: Use only the basename to load DTBs.
 * Add Mender 1.5.0 recipe.
 * Document SDIMG_ROOTFS_TYPE settings for Raspberry Pi.
@@ -6410,7 +6410,7 @@ Backported to Morty. MENDER_PARTITION_ALIGNMENT_KB instead
 of MENDER_PARTITION_ALIGNMENT.
 * Fix Linux kernel hanging when loaded via U-Boot/UEFI/GRUB
 on vexpress-qemu*.
-([MEN-1657](https://tracker.mender.io/browse/MEN-1657))
+([MEN-1657](https://northerntech.atlassian.net/browse/MEN-1657))
 * Fix occasional inode corruption issue when re-launching a
 previously launched and saved QEMU image.
 * QEMU: Limit client setup steps to run on first boot only.
@@ -6432,7 +6432,7 @@ _Released 06.05.2018_
 * Add Mender 1.5.0 recipe.
 * Add Mender 1.4.1 recipe.
 * Enable wifi in the raspberry-pi demo image by default.
-([MEN-1804](https://tracker.mender.io/browse/MEN-1804))
+([MEN-1804](https://northerntech.atlassian.net/browse/MEN-1804))
 
 ## meta-mender rocko-v2018.05
 
@@ -6444,12 +6444,12 @@ _Released 05.09.2018_
 * mender: Copy data partition images to the deploy dir.
 * Fix mender not building if build and host architecture is the same.
 * Increased the demo mender-retry-polling interval
-([MEN-1006](https://tracker.mender.io/browse/MEN-1006))
+([MEN-1006](https://northerntech.atlassian.net/browse/MEN-1006))
 * Fix failed uboot.env install when mender-uboot feature is disabled.
 * Implement GRUB and x86-64 support.
-([MEN-1430](https://tracker.mender.io/browse/MEN-1430), [MEN-1432](https://tracker.mender.io/browse/MEN-1432), [MEN-1433](https://tracker.mender.io/browse/MEN-1433), [MEN-1434](https://tracker.mender.io/browse/MEN-1434), [MEN-1435](https://tracker.mender.io/browse/MEN-1435), [MEN-1436](https://tracker.mender.io/browse/MEN-1436))
+([MEN-1430](https://northerntech.atlassian.net/browse/MEN-1430), [MEN-1432](https://northerntech.atlassian.net/browse/MEN-1432), [MEN-1433](https://northerntech.atlassian.net/browse/MEN-1433), [MEN-1434](https://northerntech.atlassian.net/browse/MEN-1434), [MEN-1435](https://northerntech.atlassian.net/browse/MEN-1435), [MEN-1436](https://northerntech.atlassian.net/browse/MEN-1436))
 * Implement qemux86-64 machine target.
-([MEN-1430](https://tracker.mender.io/browse/MEN-1430), [MEN-1432](https://tracker.mender.io/browse/MEN-1432), [MEN-1433](https://tracker.mender.io/browse/MEN-1433), [MEN-1434](https://tracker.mender.io/browse/MEN-1434), [MEN-1435](https://tracker.mender.io/browse/MEN-1435), [MEN-1436](https://tracker.mender.io/browse/MEN-1436))
+([MEN-1430](https://northerntech.atlassian.net/browse/MEN-1430), [MEN-1432](https://northerntech.atlassian.net/browse/MEN-1432), [MEN-1433](https://northerntech.atlassian.net/browse/MEN-1433), [MEN-1434](https://northerntech.atlassian.net/browse/MEN-1434), [MEN-1435](https://northerntech.atlassian.net/browse/MEN-1435), [MEN-1436](https://northerntech.atlassian.net/browse/MEN-1436))
 * Make sure auto provided fw-utils use virtual/bootloader setting if present.
 * Add Mender 1.5.0 Beta recipe.
 * mender: Use only the basename to load DTBs.
@@ -6507,7 +6507,7 @@ sources under the full GOPATH.
 * Remove meta-mender-beaglebone layer. This layer is not
 needed anymore for compiling for Beaglebone and should be removed from
 all build configurations.
-([MEN-1387](https://tracker.mender.io/browse/MEN-1387))
+([MEN-1387](https://northerntech.atlassian.net/browse/MEN-1387))
 * Add example recipe to show how to deploy files into Mender persistent data partition
 * mender-artifact: Fix build failure due to poky golang support changes.
 * meta-mender-raspberrypi: increase layer priority to 10
@@ -6522,7 +6522,7 @@ bitbake target that can be used to extract the generated patch and use
 it as a basis for a manual patch. It can be invoked with `bitbake -c
 save_mender_auto_configured_patch <u-boot-recipe>`, where
 `<u-boot-recipe>` is either `u-boot` or the fork of U-Boot that your
-board uses. ([MEN-1387](https://tracker.mender.io/browse/MEN-1387))
+board uses. ([MEN-1387](https://northerntech.atlassian.net/browse/MEN-1387))
 * Bump mender and mender-artifact to version 1.1.0 and 2.0.0, respectively.
 * Remove recipes for Mender 1.0.x series.
 * Add Mender 1.3.0 build recipe.
