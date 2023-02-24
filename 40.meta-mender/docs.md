@@ -7,6 +7,117 @@ shortcode-core:
 github: false
 ---
 
+
+## meta-mender (kirkstone-v2023.02)
+
+_Released: 02.24.2023_
+
+### Statistics
+
+A total of 686 lines added, 376 removed (delta 310)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 15 (34.1%) |
+| Lluis Campos | 12 (27.3%) |
+| Ole Petter Orhagen | 6 (13.6%) |
+| Marek Belisko | 6 (13.6%) |
+| Clément Péron | 2 (4.5%) |
+| Justin Verble | 1 (2.3%) |
+| Fabio Tranchitella | 1 (2.3%) |
+| Drew Moseley | 1 (2.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 351 (48.7%) |
+| Kristian Amlie | 250 (34.7%) |
+| Marek Belisko | 47 (6.5%) |
+| Clément Péron | 40 (5.5%) |
+| Ole Petter Orhagen | 25 (3.5%) |
+| Drew Moseley | 4 (0.6%) |
+| Justin Verble | 3 (0.4%) |
+| Fabio Tranchitella | 1 (0.1%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Clément Péron | 24 (6.4%) |
+
+| Developers with the most signoffs (total 2) | |
+|---|---|
+| Ole Petter Orhagen | 1 (50.0%) |
+| Lluis Campos | 1 (50.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 34 (77.3%) |
+| open-nandra | 6 (13.6%) |
+| peron.clem@gmail.com | 2 (4.5%) |
+| Election Systems & Software | 1 (2.3%) |
+| drew@moseleynet.net | 1 (2.3%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 627 (87.0%) |
+| open-nandra | 47 (6.5%) |
+| peron.clem@gmail.com | 40 (5.5%) |
+| drew@moseleynet.net | 4 (0.6%) |
+| Election Systems & Software | 3 (0.4%) |
+
+| Employers with the most signoffs (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+| Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 4 (50.0%) |
+| open-nandra | 1 (12.5%) |
+| peron.clem@gmail.com | 1 (12.5%) |
+| drew@moseleynet.net | 1 (12.5%) |
+| Election Systems & Software | 1 (12.5%) |
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2023.02)
+
+New changes in meta-mender since kirkstone-v2022.10:
+
+##### Bug Fixes
+
+* Add missing licenses checksums, set right preference, and
+  correct dependencies syntax for mender-client 3.3.1 recipe
+* Add missing licenses checksums, set right preference, and
+  add missing license for mender-artifact 3.8.1 recipe
+* Fix issues found during testing when mender-partuuid is not set
+* udev: Rename blacklist to ignorelist.
+* grub-mender-grubenv: Add lock file to prevent data races
+  when accessing boot environment concurrently.
+* grub-mender-grubenv: Fail execution if both environments
+  are corrupt.
+* grub-mender-grubenv: Recompute checksum after restoring
+  environment (new versions of grub-editenv add extra data).
+* mender-qemu: Don't leave temp files around after quitting.
+* Remove grub.efi resource files using pseudo.
+
+##### Features
+
+* Update UUID for all extra partitions
+* Update fstab swap entry with UUID when feature is enabled
+* Added variables for extra and swap parts UUID
+* Mender Artifacts include now information about the installed
+  Update Modules in the image. Specifically, the Artifacts `provide` two
+  pair of keys for each module:
+  `rootfs-image.update-module.<UPDATE_MODULE>.version` and
+  `rootfs-image.update-module.<UPDATE_MODULE>.mender_update_module`. This
+  also applies to the bootstrap Artifact which gets installed on first
+  boot. ([MEN-5845](https://tracker.mender.io/browse/MEN-5845))
+
+##### Other
+
+* Add recipe for mender-client 3.5.0
+* Add recipe for mender-artifact 3.10.0
+* Add recipe for mender-gateway 1.1.0
+
+
 ## meta-mender (kirkstone-v2022.10)
 
 _Released: 10.27.2022_
@@ -893,6 +1004,73 @@ New changes in meta-mender since dunfell-v2022.09:
         dependency-type: direct:production
         update-type: version-update:semver-minor
       ```
+
+
+## meta-mender (dunfell-v2023.02)
+
+_Released: 02.24.2023_
+
+### Statistics
+
+A total of 472 lines added, 61 removed (delta 411)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 6 (60.0%) |
+| Ole Petter Orhagen | 2 (20.0%) |
+| Justin Verble | 1 (10.0%) |
+| Fabio Tranchitella | 1 (10.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 465 (98.5%) |
+| Ole Petter Orhagen | 3 (0.6%) |
+| Justin Verble | 3 (0.6%) |
+| Fabio Tranchitella | 1 (0.2%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 9 (90.0%) |
+| Election Systems & Software | 1 (10.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 469 (99.4%) |
+| Election Systems & Software | 3 (0.6%) |
+
+| Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 3 (75.0%) |
+| Election Systems & Software | 1 (25.0%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2023.02)
+
+New changes in meta-mender since dunfell-v2022.12:
+
+##### Bug Fixes
+
+* Patch `mender-artifact` _next_ recipe to be compatible with
+  `dunfell` which builds with golang 1.14.
+  ([MEN-6142](https://tracker.mender.io/browse/MEN-6142))
+* Remove grub.efi resource files using pseudo.
+
+##### Features
+
+* Mender Artifacts include now information about the installed
+  Update Modules in the image. Specifically, the Artifacts `provide` two
+  pair of keys for each module:
+  `rootfs-image.update-module.<UPDATE_MODULE>.version` and
+  `rootfs-image.update-module.<UPDATE_MODULE>.mender_update_module`. This
+  also applies to the bootstrap Artifact which gets installed on first
+  boot. ([MEN-5845](https://tracker.mender.io/browse/MEN-5845))
+
+##### Other
+
+* Add recipe for mender-client 3.5.0
+* Add recipe for mender-artifact 3.10.0
+* Add recipe for mender-gateway 1.1.0
 
 
 ## meta-mender (dunfell-v2022.12)
