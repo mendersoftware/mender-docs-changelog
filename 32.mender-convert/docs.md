@@ -8,6 +8,46 @@ github: false
 ---
 
 
+## mender-convert 4.0.1
+
+_Released 03.08.2023_
+
+### Statistics
+
+A total of 1 lines added, 1 removed (delta 0)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 1 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-convert (4.0.1)
+
+New changes in mender-convert since 4.0.0:
+
+##### Bug Fixes
+
+* grub-mender-grubenv: Fix boot failure because
+  `mender_grub_storage_device` is not exported correctly.
+
+
 ## mender-convert 4.0.0
 
 _Released 02.20.2023_
