@@ -8,6 +8,98 @@ github: false
 ---
 
 
+## Mender 3.5.1
+
+_Released 03.08.2023_
+
+### Statistics
+
+A total of 279 lines added, 143 removed (delta 136)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 5 (35.7%) |
+| Fabio Tranchitella | 4 (28.6%) |
+| Alf-Rune Siqveland | 2 (14.3%) |
+| Manuel Zedel | 2 (14.3%) |
+| Kristian Amlie | 1 (7.1%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 126 (44.8%) |
+| Kristian Amlie | 63 (22.4%) |
+| Alf-Rune Siqveland | 48 (17.1%) |
+| Lluis Campos | 24 (8.5%) |
+| Manuel Zedel | 20 (7.1%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 14 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 281 (100.0%) |
+
+| Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 5 (100.0%) |
+
+### Changelogs
+
+#### deployments (4.4.1)
+
+New changes in deployments since 4.4.0:
+
+##### Bug Fixes
+
+* Use separate object storage path for raw file and artifact
+  ([MEN-6091](https://northerntech.atlassian.net/browse/MEN-6091))
+
+#### deployments-enterprise (4.4.1)
+
+New changes in deployments-enterprise since 4.4.0:
+
+##### Bug Fixes
+
+* Use separate object storage path for raw file and artifact
+  ([MEN-6091](https://northerntech.atlassian.net/browse/MEN-6091))
+
+#### integration (3.5.1)
+
+New changes in integration since 3.5.0:
+
+* Upgrade deployments-enterprise to 4.4.1.
+* Upgrade deployments to 4.4.1.
+* Upgrade gui to 3.5.1.
+* Upgrade integration to 3.5.1.
+* Upgrade mender-convert to 4.0.1.
+* Upgrade reporting to 1.0.1.
+* Upgrade useradm-enterprise to 1.20.1.
+* Upgrade useradm to 1.20.1.
+
+#### reporting (1.0.1)
+
+New changes in reporting since 1.0.0:
+
+##### Bug Fixes
+
+* update `/deployments` API end-points to `deployments/devices`
+  ([MEN-6331](https://northerntech.atlassian.net/browse/MEN-6331))
+* add `deployment_started` to the mapping
+  ([MEN-6328](https://northerntech.atlassian.net/browse/MEN-6328))
+* filter device deployment records by device and deployment IDs
+  ([MEN-6330](https://northerntech.atlassian.net/browse/MEN-6330))
+
+#### useradm-enterprise (1.20.1)
+
+New changes in useradm-enterprise since 1.20.0:
+
+##### Bug Fixes
+
+* do not allow password reset for SSO users
+  ([ME-60](https://northerntech.atlassian.net/browse/ME-60))
+
+
 ## Mender 3.5.0
 
 _Released 02.20.2023_
