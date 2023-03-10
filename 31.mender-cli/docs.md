@@ -119,6 +119,94 @@ New changes in mender-cli since 1.8.0:
   ([MEN-5660](https://northerntech.atlassian.net/browse/MEN-5660))
 
 
+## mender-cli 1.8.2
+
+_Released 03.10.2023_
+
+### Statistics
+
+A total of 17 lines added, 4 removed (delta 13)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 1 (50.0%) |
+| Clément Péron | 1 (50.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 13 (76.5%) |
+| Clément Péron | 4 (23.5%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (50.0%) |
+| peron.clem@gmail.com | 1 (50.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 13 (76.5%) |
+| peron.clem@gmail.com | 4 (23.5%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 1 (50.0%) |
+| peron.clem@gmail.com | 1 (50.0%) |
+
+### Changelogs
+
+#### mender-cli (1.8.2)
+
+New changes in mender-cli since 1.8.1:
+
+##### Bug Fixes
+
+* allow to get the server from mender-clirc configuration file
+
+
+## mender-cli 1.8.1
+
+_Released 10.19.2022_
+
+### Statistics
+
+A total of 57 lines added, 30 removed (delta 27)
+
+| Developers with the most changesets | |
+|---|---|
+| Fabio Tranchitella | 4 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 58 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 4 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 58 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-cli (1.8.1)
+
+New changes in mender-cli since 1.8.0:
+
+##### Bug Fixes
+
+* stop the port-forward command on errors when reading the websocket
+  ([MEN-5565](https://northerntech.atlassian.net/browse/MEN-5565))
+* automatically handle reconnections in port-forward
+  ([MEN-5565](https://northerntech.atlassian.net/browse/MEN-5565))
+* use a mutex lock per connection instead of a global one
+  ([MEN-5565](https://northerntech.atlassian.net/browse/MEN-5565))
+
+
 ## mender-cli 1.8.0
 
 _Released 06.14.2022_

@@ -2178,6 +2178,161 @@ New changes in integration since 3.3.0:
 * Upgrade workflows to 2.3.0.
 
 
+## Mender 3.3.2
+
+_Released 03.10.2023_
+
+### Statistics
+
+A total of 2694 lines added, 1426 removed (delta 1268)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 21 (32.3%) |
+| Krzysztof Jaskiewicz | 16 (24.6%) |
+| Alf-Rune Siqveland | 12 (18.5%) |
+| Peter Grzybowski | 8 (12.3%) |
+| Fabio Tranchitella | 4 (6.2%) |
+| Kristian Amlie | 2 (3.1%) |
+| Maciej Tomczuk | 2 (3.1%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Peter Grzybowski | 1309 (38.7%) |
+| Alf-Rune Siqveland | 740 (21.9%) |
+| Krzysztof Jaskiewicz | 730 (21.6%) |
+| Lluis Campos | 298 (8.8%) |
+| Maciej Tomczuk | 192 (5.7%) |
+| Kristian Amlie | 57 (1.7%) |
+| Fabio Tranchitella | 54 (1.6%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Peter Grzybowski | 26 (1.8%) |
+
+| Developers with the most signoffs (total 2) | |
+|---|---|
+| Kristian Amlie | 1 (50.0%) |
+| Lluis Campos | 1 (50.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 65 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 3380 (100.0%) |
+
+| Employers with the most signoffs (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+| Employers with the most hackers (total 7) | |
+|---|---|
+| Northern.tech | 7 (100.0%) |
+
+### Changelogs
+
+#### deployments (4.2.2)
+
+New changes in deployments since 4.2.1:
+
+##### Features
+
+* omit configuration values in the deployment details
+
+#### deployments-enterprise (4.2.2)
+
+New changes in deployments-enterprise since 4.2.1:
+
+##### Features
+
+* omit configuration values in the deployment details
+
+#### integration (3.3.2)
+
+New changes in integration since 3.3.1:
+
+* test: adjust integration tests after backporting RBAC fixes
+* Upgrade deployments-enterprise to 4.2.2.
+* Upgrade deployments to 4.2.2.
+* Upgrade integration to 3.3.2.
+* Upgrade iot-manager to 1.0.4.
+* Upgrade mender-cli to 1.8.2.
+* Upgrade mender-convert to 3.0.2.
+* Upgrade mender to 3.3.2.
+* Upgrade useradm-enterprise to 1.18.2.
+* Upgrade useradm to 1.18.2.
+
+#### iot-manager (1.0.4)
+
+New changes in iot-manager since 1.0.3:
+
+##### Bug Fixes
+
+* wrong capitalization for `Type`
+  ([QA-481](https://northerntech.atlassian.net/browse/QA-481))
+
+#### useradm (1.18.2)
+
+New changes in useradm since 1.18.1:
+
+##### Bug Fixes
+
+* allow privileged users to change email address of another user
+  ([MEN-5829](https://northerntech.atlassian.net/browse/MEN-5829))
+* Protect user updates from concurrent updates
+  ([MEN-6003](https://northerntech.atlassian.net/browse/MEN-6003))
+* Updating existing users is blocked by ETag check
+  ([MEN-6087](https://northerntech.atlassian.net/browse/MEN-6087))
+
+#### useradm-enterprise (1.18.2)
+
+New changes in useradm-enterprise since 1.18.1:
+
+##### Bug Fixes
+
+* user should not be able to modify all his data
+  ([MEN-6012](https://northerntech.atlassian.net/browse/MEN-6012))
+* allow privileged users to change email address of another user
+  ([MEN-5829](https://northerntech.atlassian.net/browse/MEN-5829))
+* Protect user updates from concurrent updates
+  ([MEN-6003](https://northerntech.atlassian.net/browse/MEN-6003))
+* Changing email makes the user email unverified
+  ([MEN-5974](https://northerntech.atlassian.net/browse/MEN-5974))
+* Updating existing users is blocked by ETag check
+  ([MEN-6087](https://northerntech.atlassian.net/browse/MEN-6087))
+* Remove ability to modify internal parameters of the user object
+  ([MEN-6037](https://northerntech.atlassian.net/browse/MEN-6037))
+* apply plan based restriction to permission_sets endpoints
+  ([MEN-6093](https://northerntech.atlassian.net/browse/MEN-6093))
+* restrict access to GET /events endpoint to Admin users only
+  ([MEN-5831](https://northerntech.atlassian.net/browse/MEN-5831))
+* remove access to deviceconfig from ReadDevices permission set
+  ([MEN-5817](https://northerntech.atlassian.net/browse/MEN-5817))
+* remove permision for downloading artifact from ReadReleases permission set
+  ([MEN-5816](https://northerntech.atlassian.net/browse/MEN-5816))
+* DeployToDevices permission set should grant access to deployments only
+  ([MEN-5816](https://northerntech.atlassian.net/browse/MEN-5816), [MEN-5817](https://northerntech.atlassian.net/browse/MEN-5817))
+* update Deployments Manager role
+
+  The role should grant basic access and access to read releases, read devices and
+  deploy to devices.
+  ([MEN-5816](https://northerntech.atlassian.net/browse/MEN-5816))
+* Read Devices permission should not grant access to artifacts
+  ([MEN-5816](https://northerntech.atlassian.net/browse/MEN-5816))
+* Connect permission should allow downloaing files from the device
+  ([MEN-5839](https://northerntech.atlassian.net/browse/MEN-5839))
+* Read Access role should grant access to device state in the iot-manager
+* Read Access role should grant access to view deployments
+* extend read releases permission with access to statistics/list
+
+##### Features
+
+* introduce ConfigureDevices permission set
+  ([MEN-5817](https://northerntech.atlassian.net/browse/MEN-5817))
+
+
 ## Mender 3.3.1
 
 _Released 10.19.2022_
