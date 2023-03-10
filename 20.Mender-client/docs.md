@@ -266,6 +266,90 @@ New changes in mender since 3.3.0:
 * Upgrade mender-artifact library to v0.0.0-20220913084855-9ed8ad0d53d0
 
 
+## mender 3.3.2
+
+_Released 03.10.2023_
+
+### Statistics
+
+A total of 599 lines added, 142 removed (delta 457)
+
+| Developers with the most changesets | |
+|---|---|
+| Mikael Torp-Holte | 3 (23.1%) |
+| Kristian Amlie | 2 (15.4%) |
+| Lluis Campos | 2 (15.4%) |
+| Ole Petter Orhagen | 2 (15.4%) |
+| Alf-Rune Siqveland | 1 (7.7%) |
+| Fabio Tranchitella | 1 (7.7%) |
+| Josef Holzmayr | 1 (7.7%) |
+| Alan | 1 (7.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Mikael Torp-Holte | 521 (86.5%) |
+| Lluis Campos | 55 (9.1%) |
+| Ole Petter Orhagen | 8 (1.3%) |
+| Josef Holzmayr | 8 (1.3%) |
+| Kristian Amlie | 3 (0.5%) |
+| Alf-Rune Siqveland | 3 (0.5%) |
+| Fabio Tranchitella | 3 (0.5%) |
+| Alan | 1 (0.2%) |
+
+| Developers with the most signoffs (total 3) | |
+|---|---|
+| Lluis Campos | 3 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 13 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 602 (100.0%) |
+
+| Employers with the most signoffs (total 3) | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+| Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 8 (100.0%) |
+
+### Changelogs
+
+#### mender (3.3.2)
+
+New changes in mender since 3.3.1:
+
+##### Bug Fixes
+
+* Expand the check for new openssl version
+* systemd: Always try restarting the client if it exits.
+  ([ME-33](https://northerntech.atlassian.net/browse/ME-33))
+* websocket connectivity through http-proxy if configured
+
+  Enables websocket connections to be established through an
+  http-proxy configurable by setting the `HTTPS_PROXY` environment
+  variable. This renders services that relies on websocket
+  connections, such as `mender-connect`, compatible with
+  http-proxying.
+  ([ME-5](https://northerntech.atlassian.net/browse/ME-5))
+* client not to skip custom TLS if an http-proxy is configured
+
+  Previously, Mender client supported http-proxying but ignored
+  custom TLS client configuration if present. This change renders
+  any custom TLS configurations, such as Mutual TLS, compatible with
+  http-proxying.
+  ([MEN-6009](https://northerntech.atlassian.net/browse/MEN-6009))
+* do not ignore software versioning opts in the module artifact gens
+  ([MEN-6026](https://northerntech.atlassian.net/browse/MEN-6026))
+
+##### Other
+
+* Replace obsolescent `egrep` with `grep -E` in inventory script
+
+
 ## mender 3.3.1
 
 _Released 10.19.2022_

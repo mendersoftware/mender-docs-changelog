@@ -119,6 +119,50 @@ New changes in mender-cli since 1.8.0:
   ([MEN-5660](https://northerntech.atlassian.net/browse/MEN-5660))
 
 
+## mender-cli 1.8.2
+
+_Released 03.10.2023_
+
+### Statistics
+
+A total of 17 lines added, 4 removed (delta 13)
+
+| Developers with the most changesets | |
+|---|---|
+| Ole Petter Orhagen | 1 (50.0%) |
+| Clément Péron | 1 (50.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Ole Petter Orhagen | 13 (76.5%) |
+| Clément Péron | 4 (23.5%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (50.0%) |
+| peron.clem@gmail.com | 1 (50.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 13 (76.5%) |
+| peron.clem@gmail.com | 4 (23.5%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 1 (50.0%) |
+| peron.clem@gmail.com | 1 (50.0%) |
+
+### Changelogs
+
+#### mender-cli (1.8.2)
+
+New changes in mender-cli since 1.8.1:
+
+##### Bug Fixes
+
+* allow to get the server from mender-clirc configuration file
+
+
 ## mender-cli 1.8.1
 
 _Released 10.19.2022_

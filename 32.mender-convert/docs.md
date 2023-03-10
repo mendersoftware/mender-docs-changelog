@@ -177,6 +177,94 @@ New changes in mender-convert since 3.0.1:
   ([MEN-5943](https://northerntech.atlassian.net/browse/MEN-5943))
 
 
+## mender-convert 3.0.2
+
+_Released 03.10.2023_
+
+### Statistics
+
+A total of 115 lines added, 26 removed (delta 89)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 8 (53.3%) |
+| Kristian Amlie | 4 (26.7%) |
+| Dell Green | 3 (20.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 68 (59.1%) |
+| Kristian Amlie | 39 (33.9%) |
+| Dell Green | 8 (7.0%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Kristian Amlie | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 12 (80.0%) |
+| Ideaworks Ltd | 3 (20.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 107 (93.0%) |
+| Ideaworks Ltd | 8 (7.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| Northern.tech | 2 (66.7%) |
+| Ideaworks Ltd | 1 (33.3%) |
+
+### Changelogs
+
+#### mender-convert (3.0.2)
+
+New changes in mender-convert since 3.0.1:
+
+##### Bug Fixes
+
+* Support Mender integration in
+  `raspberrypi-sys-mods/firstboot` script included in recent Raspberry Pi
+  OS images by modifying the hard-coded mount point for the boot partition
+  from  `/boot` to `/uboot`.
+  ([MEN-5944](https://northerntech.atlassian.net/browse/MEN-5944))
+* Support Mender integration in `userconf-pi/userconf-service`
+  script included in recent Raspberry Pi OS images by modifying the
+  hard-coded mount point for the boot partition from  `/boot` to `/uboot`.
+  ([MEN-5954](https://northerntech.atlassian.net/browse/MEN-5954))
+* Support Mender integration in
+  `raspberrypi-net-mods/wpa_copy` script included in recent Raspberry Pi
+  OS images by modifying the hard-coded mount point for the boot partition
+  from  `/boot` to `/uboot`.
+  ([MEN-5955](https://northerntech.atlassian.net/browse/MEN-5955))
+* Fix grub.d integration when host and target 32/64 bit
+  architectures don't match. Namely: pass the correct `--target` parameter
+  to `grub-install` command instead of relaying on host architecture.
+  ([MEN-5979](https://northerntech.atlassian.net/browse/MEN-5979))
+* grub-mender-grubenv: Add lock file to prevent data races
+  when accessing boot environment concurrently.
+* grub-mender-grubenv: Fail execution if both environments
+  are corrupt.
+* grub-mender-grubenv: Recompute checksum after restoring
+  environment (new versions of grub-editenv add extra data).
+* Add the XFS module to the grub efi binary module list
+* Project can now be used as a git submodule again
+  Ticket: #
+  ([MEN-6305](https://northerntech.atlassian.net/browse/MEN-6305))
+* Added support for installing mender client for ubuntu jammy conversions
+  Ticket: #
+  ([MEN-6306](https://northerntech.atlassian.net/browse/MEN-6306))
+* support added for mender-client deb package data archive compressed with zstd
+  ([MEN-6307](https://northerntech.atlassian.net/browse/MEN-6307))
+* grub-mender-grubenv: Fix boot failure because
+  `mender_grub_storage_device` is not exported correctly.
+
+
 ## mender-convert 3.0.1
 
 _Released 09.25.2022_
