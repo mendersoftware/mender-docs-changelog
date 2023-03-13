@@ -7,6 +7,44 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender (kirkstone-v2023.03)
+
+_Released: 03.10.2023_
+
+### Statistics
+
+A total of 3 lines added, 3 removed (delta 0)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 1 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 3 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2023.03)
+
+New changes in mender-client since kirkstone-v2023.02:
+
+##### Bug Fixes
+
+* Add mender-client 3.3.2 recipe.
+
 
 ## meta-mender (kirkstone-v2023.02)
 
