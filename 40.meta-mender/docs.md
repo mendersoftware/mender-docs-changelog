@@ -1044,6 +1044,53 @@ New changes in meta-mender since dunfell-v2022.09:
       ```
 
 
+## meta-mender (dunfell-v2023.03)
+
+_Released: 03.13.2023_
+
+### Statistics
+
+A total of 23 lines added, 9 removed (delta 14)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 1 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 23 (100.0%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Lluis Campos | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 23 (100.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### meta-mender (dunfell-v2023.03)
+
+New changes in meta-mender since dunfell-v2023.02:
+
+##### Bug Fixes
+
+* Add mender-client 3.3.2 recipe.
+
+
 ## meta-mender (dunfell-v2023.02)
 
 _Released: 02.24.2023_
