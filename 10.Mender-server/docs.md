@@ -8,6 +8,451 @@ github: false
 ---
 
 
+## Mender 3.6.0
+
+_Released 07.28.2023_
+
+### Statistics
+
+A total of 34993 lines added, 21314 removed (delta 13679)
+
+
+Developers with the most changesets
+|---|---|
+| Manuel Zedel | 143 (44.1%) |
+| Krzysztof Jaskiewicz | 48 (14.8%) |
+| Alf-Rune Siqveland | 42 (13.0%) |
+| Fabio Tranchitella | 42 (13.0%) |
+| Peter Grzybowski | 22 (6.8%) |
+| Lluis Campos | 14 (4.3%) |
+| Michael Clelland | 6 (1.9%) |
+| Mender Test Bot | 3 (0.9%) |
+| Alex Miliukov | 2 (0.6%) |
+| Kristian Amlie | 1 (0.3%) |
+
+
+Developers with the most changed lines
+|---|---|
+| Manuel Zedel | 16299 (36.7%) |
+| Krzysztof Jaskiewicz | 7188 (16.2%) |
+| Fabio Tranchitella | 7135 (16.1%) |
+| Peter Grzybowski | 5326 (12.0%) |
+| Alf-Rune Siqveland | 3988 (9.0%) |
+| Mender Test Bot | 3871 (8.7%) |
+| Lluis Campos | 419 (0.9%) |
+| Michael Clelland | 122 (0.3%) |
+| Roman Ondráček | 14 (0.0%) |
+| Alex Miliukov | 12 (0.0%) |
+
+
+Developers with the most lines removed
+|---|---|
+| Fabio Tranchitella | 1622 (7.6%) |
+| Krzysztof Jaskiewicz | 1273 (6.0%) |
+| Lluis Campos | 26 (0.1%) |
+
+
+Top changeset contributors by employer
+|---|---|
+| Northern.tech | 323 (99.7%) |
+| ondracek.roman@centrum.cz | 1 (0.3%) |
+
+
+Top lines changed by employer
+|---|---|
+| Northern.tech | 44371 (100.0%) |
+| ondracek.roman@centrum.cz | 14 (0.0%) |
+| 
+Employers with the most hackers (total 11) | |
+|---|---|
+| Northern.tech | 10 (90.9%) |
+| ondracek.roman@centrum.cz | 1 (9.1%) |
+
+### Changelogs
+
+#### deployments (4.5.0)
+
+New changes in deployments since 4.4.1:
+
+##### Bug Fixes
+
+* increment deployment total size only if new artifact has been assigned
+* add undocumented groups field to deployment object
+* fix model of the last device deployment status request
+* save correct status of last finished deployment
+* Delete device deployment history incorrectly triggering reindex
+
+  The endpoint was missing the reporting feature flag check, which caused
+  it to send reindexing request even though the reporting service is
+  disabled.
+  ([MEN-6614](https://northerntech.atlassian.net/browse/MEN-6614))
+
+##### Features
+
+* add artifact information to deployment device information
+  ([MEN-3995](https://northerntech.atlassian.net/browse/MEN-3995))
+* track and show deployment total size
+  ([MEN-3994](https://northerntech.atlassian.net/browse/MEN-3994))
+* Retrieve signed direct upload URL for artifacts
+
+  This is the first part of the implementation of the direct artifact
+  upload feature. This commit introduce a new API that issues signed
+  upload URLs for transferring artifacts directly to the storage backend
+  without involoving the Mender backend services.
+  POST /api/management/v1/deployments/artifacts/directupload
+  ([MEN-5989](https://northerntech.atlassian.net/browse/MEN-5989))
+* Direct artifact upload API
+
+  Users can upload artifacts asynchronously to the object storage backend
+  using the API to generate a signed upload link:
+  POST /api/management/v1/deployments/artifacts/directupload
+  The response contains a link and an allocated artifact ID. Once the
+  artifact is uploaded, calling another API will make the backend parse
+  the artifact and make it available for devices:
+  POST /api/management/v1/deployments/artifacts/directupload/:id/complete
+  ([MEN-6337](https://northerntech.atlassian.net/browse/MEN-6337))
+* New command 'storage-daemon' for cleaning up expired objects from storage
+  ([MEN-6339](https://northerntech.atlassian.net/browse/MEN-6339))
+* Store device deployments status separately
+  ([MEN-6423](https://northerntech.atlassian.net/browse/MEN-6423))
+* internal endpoint to get the latest device deployment statuses
+  ([MEN-6421](https://northerntech.atlassian.net/browse/MEN-6421))
+* Skip verification and download of the artifact via DEPLYOMENTS_DIRECT_UPLOAD_SKIP_VERIFY
+  ([MEN-6474](https://northerntech.atlassian.net/browse/MEN-6474))
+* Add configuration option to skip signing headers for s3
+  ([MEN-6501](https://northerntech.atlassian.net/browse/MEN-6501))
+
+##### Other
+
+* docs(management API spec): extend device object with image info
+
+  /deployments/{deployment_id}/devices/list endpoint will return list of
+  device objects with info about images assigned to given device;
+  The same is true for deprecated /deployments/{deployment_id}/devices
+  ([MEN-3995](https://northerntech.atlassian.net/browse/MEN-3995))
+* docs(management API spec): extend main deployment object with statistics
+  ([MEN-3994](https://northerntech.atlassian.net/browse/MEN-3994))
+* refac: refactor GetDeploymentForDeviceWithCurrent method
+
+  Changes:
+  - code refactoring
+  - assign artifact to device deployment object even
+    if given artifact has already been installed
+  ([MEN-6363](https://northerntech.atlassian.net/browse/MEN-6363))
+* fix(list device deployments): device ID is not always UUID
+  ([MEN-6376](https://northerntech.atlassian.net/browse/MEN-6376))
+* update of the mender-artifact including zstd compression
+  ([MEN-6617](https://northerntech.atlassian.net/browse/MEN-6617))
+
+#### deployments-enterprise (4.5.0)
+
+New changes in deployments-enterprise since 4.4.1:
+
+##### Bug Fixes
+
+* increment deployment total size only if new artifact has been assigned
+* increment deployment total size only if new artifact has been assigned
+* add undocumented groups field to deployment object
+* add undocumented groups field to deployment object
+* fix model of the last device deployment status request
+* save correct status of last finished deployment
+* fix model of the last device deployment status request
+* save correct status of last finished deployment
+* Delete device deployment history incorrectly triggering reindex
+
+  The endpoint was missing the reporting feature flag check, which caused
+  it to send reindexing request even though the reporting service is
+  disabled.
+  ([MEN-6614](https://northerntech.atlassian.net/browse/MEN-6614))
+
+##### Features
+
+* add artifact information to deployment device information
+  ([MEN-3995](https://northerntech.atlassian.net/browse/MEN-3995))
+* track and show deployment total size
+  ([MEN-3994](https://northerntech.atlassian.net/browse/MEN-3994))
+* Retrieve signed direct upload URL for artifacts
+
+  This is the first part of the implementation of the direct artifact
+  upload feature. This commit introduce a new API that issues signed
+  upload URLs for transferring artifacts directly to the storage backend
+  without involoving the Mender backend services.
+  POST /api/management/v1/deployments/artifacts/directupload
+  ([MEN-5989](https://northerntech.atlassian.net/browse/MEN-5989))
+* Direct artifact upload API
+
+  Users can upload artifacts asynchronously to the object storage backend
+  using the API to generate a signed upload link:
+  POST /api/management/v1/deployments/artifacts/directupload
+  The response contains a link and an allocated artifact ID. Once the
+  artifact is uploaded, calling another API will make the backend parse
+  the artifact and make it available for devices:
+  POST /api/management/v1/deployments/artifacts/directupload/:id/complete
+  ([MEN-6337](https://northerntech.atlassian.net/browse/MEN-6337))
+* New command 'storage-daemon' for cleaning up expired objects from storage
+  ([MEN-6339](https://northerntech.atlassian.net/browse/MEN-6339))
+* Store device deployments status separately
+  ([MEN-6423](https://northerntech.atlassian.net/browse/MEN-6423))
+* internal endpoint to get the latest device deployment statuses
+  ([MEN-6421](https://northerntech.atlassian.net/browse/MEN-6421))
+* Skip verification and download of the artifact via DEPLYOMENTS_DIRECT_UPLOAD_SKIP_VERIFY
+  ([MEN-6474](https://northerntech.atlassian.net/browse/MEN-6474))
+* Add configuration option to skip signing headers for s3
+  ([MEN-6501](https://northerntech.atlassian.net/browse/MEN-6501))
+
+##### Other
+
+* docs(management API spec): extend device object with image info
+
+  /deployments/{deployment_id}/devices/list endpoint will return list of
+  device objects with info about images assigned to given device;
+  The same is true for deprecated /deployments/{deployment_id}/devices
+  ([MEN-3995](https://northerntech.atlassian.net/browse/MEN-3995))
+* docs(management API spec): extend main deployment object with statistics
+  ([MEN-3994](https://northerntech.atlassian.net/browse/MEN-3994))
+* refac: refactor GetDeploymentForDeviceWithCurrent method
+
+  Changes:
+  - code refactoring
+  - assign artifact to device deployment object even
+    if given artifact has already been installed
+  ([MEN-6363](https://northerntech.atlassian.net/browse/MEN-6363))
+* fix(list device deployments): device ID is not always UUID
+  ([MEN-6376](https://northerntech.atlassian.net/browse/MEN-6376))
+* update of the mender-artifact including zstd compression
+  ([MEN-6617](https://northerntech.atlassian.net/browse/MEN-6617))
+
+#### deviceauth (3.5.0)
+
+New changes in deviceauth since 3.4.0:
+
+##### Bug Fixes
+
+* Do not terminate process if Redis is unavailable
+  ([MEN-6399](https://northerntech.atlassian.net/browse/MEN-6399))
+* do not accept device which is being decommissioned
+  ([MEN-6504](https://northerntech.atlassian.net/browse/MEN-6504))
+
+##### Features
+
+* handle device check-in time
+  ([MEN-6372](https://northerntech.atlassian.net/browse/MEN-6372), [MEN-6373](https://northerntech.atlassian.net/browse/MEN-6373), [MEN-6379](https://northerntech.atlassian.net/browse/MEN-6379))
+
+#### deviceauth-enterprise (3.5.0)
+
+New changes in deviceauth-enterprise since 3.4.0:
+
+##### Bug Fixes
+
+* Do not terminate process if Redis is unavailable
+  ([MEN-6399](https://northerntech.atlassian.net/browse/MEN-6399))
+* do not accept device which is being decommissioned
+  ([MEN-6504](https://northerntech.atlassian.net/browse/MEN-6504))
+
+##### Features
+
+* handle device check-in time
+  ([MEN-6372](https://northerntech.atlassian.net/browse/MEN-6372), [MEN-6373](https://northerntech.atlassian.net/browse/MEN-6373), [MEN-6379](https://northerntech.atlassian.net/browse/MEN-6379))
+* handle device check-in time
+  ([MEN-6372](https://northerntech.atlassian.net/browse/MEN-6372), [MEN-6373](https://northerntech.atlassian.net/browse/MEN-6373), [MEN-6379](https://northerntech.atlassian.net/browse/MEN-6379))
+
+#### gui (3.6.0)
+
+New changes in gui since 3.5.1:
+
+##### Bug Fixes
+
+* fixed an issue that would prevent properly clearing device group selection on deployment creation
+* fixed an issue that would cause the devices view to go to device details when filtering multiple devices by id
+* made device group check rely on per device information for more reliable error messages
+  ([ME-64](https://northerntech.atlassian.net/browse/ME-64))
+* fixed an issue that could cause pagination to select a page out of bounds
+* ensured app initialization is done after normal login as well
+* also clear input text when confirming an entry to a chip autocomplete
+  ([MEN-6440](https://northerntech.atlassian.net/browse/MEN-6440))
+* fixed an issue that prevented using some RBAC limited UI features
+  ([MEN-6461](https://northerntech.atlassian.net/browse/MEN-6461))
+* fixed an issue that would result in an infinite loop of navigating between device groups
+  ([ME-89](https://northerntech.atlassian.net/browse/ME-89))
+* fixed an issue that would prevent navigating from a deployment to the target group
+  ([MEN-6416](https://northerntech.atlassian.net/browse/MEN-6416))
+* fixed an issue that could prevent showing the device identity for a fresh deployment
+  ([MEN-6485](https://northerntech.atlassian.net/browse/MEN-6485))
+* fixed an issue that would prevent linking to a specific release
+  ([MEN-6492](https://northerntech.atlassian.net/browse/MEN-6492))
+* fixed an issue that could cause the release selection to be ignored when creating a deployment from a release
+* fixed an issue that would not take device identity selections into account in the deployments lists
+* fixed an issue that would prevent linking to devices filtered by something containing ':'
+* fixed an issue that prevented filtering for details in the audit log
+  ([MEN-6512](https://northerntech.atlassian.net/browse/MEN-6512))
+* fixed issues that prevented navigating to a filtered audit log from device details & from within the audit log
+  ([MEN-6510](https://northerntech.atlassian.net/browse/MEN-6510))
+* added more granular check for device troubleshooting feature
+  ([MEN-6487](https://northerntech.atlassian.net/browse/MEN-6487))
+* extended monitoring issue levels and fixed an issue that would crash the ui
+  ([MEN-6590](https://northerntech.atlassian.net/browse/MEN-6590))
+* healthcheck url adjustment.
+
+##### Features
+
+* enabled scheduling deployments to multiple selected devices
+  ([MEN-5210](https://northerntech.atlassian.net/browse/MEN-5210))
+* added deployment data consumption to completed deployments list
+  ([MEN-3917](https://northerntech.atlassian.net/browse/MEN-3917))
+* added possibility to create never expiring PATs
+  ([ME-59](https://northerntech.atlassian.net/browse/ME-59))
+* updated releases section to ease navigating bigger numbers of releases
+  ([MEN-6347](https://northerntech.atlassian.net/browse/MEN-6347))
+* allowed release navigation by url + query
+* added installation counter for artifacts with non-legacy versioning scheme
+  ([MEN-6345](https://northerntech.atlassian.net/browse/MEN-6345))
+* extended role creation capabilities to allow release tag based role settings
+  ([MEN-6347](https://northerntech.atlassian.net/browse/MEN-6347))
+* made tenant id visible in the settings to prevent accidental tenanttoken submissions
+  ([MEN-6508](https://northerntech.atlassian.net/browse/MEN-6508))
+
+##### Other
+
+* added size + delta information in deployment device table
+  ([MEN-3917](https://northerntech.atlassian.net/browse/MEN-3917))
+
+#### integration (3.6.0)
+
+New changes in integration since 3.5.1:
+
+##### Bug Fixes
+
+* test: test_compat: UTC TZ does not need +hh:mm
+
+##### Features
+
+* add docker-compose v2 support
+
+##### Other
+
+* test: backend test for show artifact download size feature
+  ([MEN-4346](https://northerntech.atlassian.net/browse/MEN-4346))
+* Upgrade auditlogs to 3.1.1.
+* Upgrade create-artifact-worker to 1.3.1.
+* Upgrade deployments-enterprise to 4.5.0.
+* Upgrade deployments to 4.5.0.
+* Upgrade deviceauth-enterprise to 3.5.0.
+* Upgrade deviceauth to 3.5.0.
+* Upgrade deviceconfig to 1.3.1.
+* Upgrade deviceconnect to 1.4.1.
+* Upgrade devicemonitor to 1.4.1.
+* Upgrade generate-delta-worker to 1.0.1.
+* Upgrade gui to 3.6.0.
+* Upgrade integration to 3.6.0.
+* Upgrade inventory-enterprise to 4.3.1.
+* Upgrade inventory to 4.3.1.
+* Upgrade iot-manager to 1.2.1.
+* Upgrade mender-artifact to 3.10.1.
+* Upgrade mender-cli to 1.11.0.
+* Upgrade mender-configure-module to 1.1.0.
+* Upgrade mender to 3.5.1.
+* Upgrade monitor-client to 1.3.0.
+* Upgrade useradm-enterprise to 1.21.0.
+* Upgrade useradm to 1.21.0.
+* Upgrade workflows-enterprise to 2.5.0.
+* Upgrade workflows to 2.5.0.
+
+#### useradm (1.21.0)
+
+New changes in useradm since 1.20.1:
+
+##### Bug Fixes
+
+* Return 400 for malformed JSON schema to POST /auth/login
+  ([MEN-6411](https://northerntech.atlassian.net/browse/MEN-6411))
+* Fix broken TTL index in tokens collection after migration 2.0.0
+  ([MEN-6550](https://northerntech.atlassian.net/browse/MEN-6550))
+
+##### Features
+
+* add support for never expiring PATs
+  ([ME-59](https://northerntech.atlassian.net/browse/ME-59))
+* add support for returning never-expiring JWT tokens when logging in
+  ([MEN-6378](https://northerntech.atlassian.net/browse/MEN-6378))
+* limit the number of JWT tokens (sessions) per user
+  ([MEN-6382](https://northerntech.atlassian.net/browse/MEN-6382))
+
+#### useradm-enterprise (1.21.0)
+
+New changes in useradm-enterprise since 1.20.1:
+
+##### Bug Fixes
+
+* update `login_ts` when logging in using SAML and OAuth2
+  ([ME-66](https://northerntech.atlassian.net/browse/ME-66))
+* fix regular expression for finding device id in the path
+  ([MEN-6405](https://northerntech.atlassian.net/browse/MEN-6405))
+* Return 400 for malformed JSON schema to POST /auth/login
+  ([MEN-6411](https://northerntech.atlassian.net/browse/MEN-6411))
+* Add API for getting two-factor authentication QR to basic permissions
+  ([ME-55](https://northerntech.atlassian.net/browse/ME-55))
+* Fix broken TTL index in tokens collection after migration 2.0.0
+  ([MEN-6550](https://northerntech.atlassian.net/browse/MEN-6550))
+
+##### Features
+
+* add support for never expiring PATs
+  ([ME-59](https://northerntech.atlassian.net/browse/ME-59))
+* add support for returning never-expiring JWT tokens when logging in
+  ([MEN-6378](https://northerntech.atlassian.net/browse/MEN-6378))
+* limit the number of JWT tokens (sessions) per user
+  ([MEN-6382](https://northerntech.atlassian.net/browse/MEN-6382))
+* extend read permission with access to new reporting endpoints
+
+  Read Devices permission set (and thus "observer" role) will grant access to:
+  - /api/management/v1/reporting/devices/search/attributes
+  - /api/management/v1/reporting/devices/attributes
+  - /api/management/v1/reporting/devices/aggregate
+  ([MEN-6405](https://northerntech.atlassian.net/browse/MEN-6405))
+* extend read permission with access to new reporting endpoints
+
+  Read Devices permission set (and thus "observer" role) will grant access to:
+  - /api/management/v1/reporting/deployments/devices/search
+  - /api/management/v1/reporting/deployments/devices/aggregate
+  ([MEN-6405](https://northerntech.atlassian.net/browse/MEN-6405))
+
+#### workflows (2.5.0)
+
+New changes in workflows since 2.4.0:
+
+##### Bug Fixes
+
+* Make Jetstream initialization contextual on `server` and `worker` commands
+  ([MEN-6459](https://northerntech.atlassian.net/browse/MEN-6459))
+
+##### Features
+
+* Expose NATS consumer configuration parameters
+  ([MEN-6450](https://northerntech.atlassian.net/browse/MEN-6450))
+
+#### workflows-enterprise (2.5.0)
+
+New changes in workflows-enterprise since 2.4.0:
+
+##### Bug Fixes
+
+* Make Jetstream initialization contextual on `server` and `worker` commands
+  ([MEN-6459](https://northerntech.atlassian.net/browse/MEN-6459))
+
+##### Features
+
+* Expose NATS consumer configuration parameters
+  ([MEN-6450](https://northerntech.atlassian.net/browse/MEN-6450))
+* workflow: moving to create contacts in HubSpot.
+  ([MEN-6420](https://northerntech.atlassian.net/browse/MEN-6420))
+
+##### Other
+
+* fix: create temporary files in the /tmp directory to avoid permission issues when running the service as a non-root user
+  ([MEN-5809](https://northerntech.atlassian.net/browse/MEN-5809))
+* HubSpot tenant suspension
+
+
 ## Mender 3.5.1
 
 _Released 03.08.2023_
