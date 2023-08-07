@@ -8,6 +8,62 @@ github: false
 ---
 
 
+## monitor-client 1.3.0
+
+_Released 07.28.2023_
+
+### Statistics
+
+A total of 202 lines added, 89 removed (delta 113)
+
+
+Developers with the most changesets
+|---|---|
+| Lluis Campos | 8 (66.7%) |
+| Peter Grzybowski | 2 (16.7%) |
+| Kristian Amlie | 1 (8.3%) |
+| Fabio Tranchitella | 1 (8.3%) |
+
+
+Developers with the most changed lines
+|---|---|
+| Peter Grzybowski | 74 (33.6%) |
+| Kristian Amlie | 66 (30.0%) |
+| Fabio Tranchitella | 49 (22.3%) |
+| Lluis Campos | 31 (14.1%) |
+
+
+Developers with the most lines removed
+|---|---|
+| Lluis Campos | 13 (14.6%) |
+| Fabio Tranchitella | 3 (3.4%) |
+
+
+Top changeset contributors by employer
+|---|---|
+| Northern.tech | 12 (100.0%) |
+
+
+Top lines changed by employer
+|---|---|
+| Northern.tech | 220 (100.0%) |
+| 
+Employers with the most hackers (total 4) | |
+|---|---|
+| Northern.tech | 4 (100.0%) |
+
+### Changelogs
+
+#### monitor-client (1.3.0)
+
+New changes in monitor-client since 1.2.1:
+
+##### Bug Fixes
+
+* do not remove the check for not built in subsystems.
+  ([MEN-6559](https://northerntech.atlassian.net/browse/MEN-6559))
+
+
 ## monitor-client 1.2.1
 
 _Released 09.25.2022_

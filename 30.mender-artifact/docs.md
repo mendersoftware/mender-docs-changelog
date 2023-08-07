@@ -8,6 +8,80 @@ github: false
 ---
 
 
+## mender-artifact 3.10.1
+
+_Released 07.28.2023_
+
+### Statistics
+
+A total of 426 lines added, 608 removed (delta -182)
+
+
+Developers with the most changesets
+|---|---|
+| Fabio Tranchitella | 22 (43.1%) |
+| Lluis Campos | 9 (17.6%) |
+| Krzysztof Jaskiewicz | 6 (11.8%) |
+| Peter Grzybowski | 4 (7.8%) |
+| Ole Petter Orhagen | 4 (7.8%) |
+| Josef Holzmayr | 2 (3.9%) |
+| Manuel Zedel | 2 (3.9%) |
+| Kristian Amlie | 2 (3.9%) |
+
+
+Developers with the most changed lines
+|---|---|
+| Fabio Tranchitella | 536 (60.6%) |
+| Lluis Campos | 136 (15.4%) |
+| Peter Grzybowski | 93 (10.5%) |
+| Josef Holzmayr | 80 (9.0%) |
+| Krzysztof Jaskiewicz | 31 (3.5%) |
+| Ole Petter Orhagen | 6 (0.7%) |
+| Kristian Amlie | 3 (0.3%) |
+
+
+Developers with the most lines removed
+|---|---|
+| Fabio Tranchitella | 445 (73.2%) |
+| 
+Developers with the most report credits (total 2) | |
+|---|---|
+| Johannes Hund | 2 (100.0%) |
+| 
+Developers who gave the most report credits (total 2) | |
+|---|---|
+| Kristian Amlie | 2 (100.0%) |
+
+
+Top changeset contributors by employer
+|---|---|
+| Northern.tech | 51 (100.0%) |
+
+
+Top lines changed by employer
+|---|---|
+| Northern.tech | 885 (100.0%) |
+| 
+Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 8 (100.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.10.1)
+
+New changes in mender-artifact since 3.10.0:
+
+##### Bug Fixes
+
+* Fix path seperator to "/". Restores functionality for
+  windows.
+* load keys with ParsePKCS8PrivateKey.
+* add compilation instructions to README
+* fix zstd compression support
+  ([MEN-6617](https://northerntech.atlassian.net/browse/MEN-6617))
+
+
 ## mender-artifact 3.10.0
 
 _Released 02.20.2023_

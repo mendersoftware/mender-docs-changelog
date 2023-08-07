@@ -8,6 +8,61 @@ github: false
 ---
 
 
+## mender-configure-module 1.1.0
+
+_Released 07.28.2023_
+
+### Statistics
+
+A total of 180 lines added, 97 removed (delta 83)
+
+
+Developers with the most changesets
+|---|---|
+| Lluis Campos | 14 (36.8%) |
+| Ole Petter Orhagen | 8 (21.1%) |
+| Fabio Tranchitella | 7 (18.4%) |
+| Manuel Zedel | 4 (10.5%) |
+| Peter Grzybowski | 2 (5.3%) |
+| Krzysztof Jaskiewicz | 1 (2.6%) |
+| Alf-Rune Siqveland | 1 (2.6%) |
+| Kristian Amlie | 1 (2.6%) |
+
+
+Developers with the most changed lines
+|---|---|
+| Lluis Campos | 67 (30.0%) |
+| Ole Petter Orhagen | 56 (25.1%) |
+| Manuel Zedel | 45 (20.2%) |
+| Fabio Tranchitella | 44 (19.7%) |
+| Alf-Rune Siqveland | 5 (2.2%) |
+| Peter Grzybowski | 4 (1.8%) |
+| Krzysztof Jaskiewicz | 1 (0.4%) |
+| Kristian Amlie | 1 (0.4%) |
+
+
+Developers with the most lines removed
+|---|---|
+| Alf-Rune Siqveland | 4 (4.1%) |
+
+
+Top changeset contributors by employer
+|---|---|
+| Northern.tech | 38 (100.0%) |
+
+
+Top lines changed by employer
+|---|---|
+| Northern.tech | 223 (100.0%) |
+| 
+Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 8 (100.0%) |
+
+### Changelogs
+
+
+
 ## mender-configure-module 1.0.4
 
 _Released 06.14.2022_

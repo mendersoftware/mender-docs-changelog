@@ -8,6 +8,77 @@ github: false
 ---
 
 
+## mender 3.5.1
+
+_Released 07.28.2023_
+
+### Statistics
+
+A total of 1119 lines added, 1075 removed (delta 44)
+
+
+Developers with the most changesets
+|---|---|
+| Peter Grzybowski | 5 (38.5%) |
+| Lluis Campos | 3 (23.1%) |
+| Kristian Amlie | 2 (15.4%) |
+| Alf-Rune Siqveland | 1 (7.7%) |
+| Marcin Pasinski | 1 (7.7%) |
+| Ole Petter Orhagen | 1 (7.7%) |
+
+
+Developers with the most changed lines
+|---|---|
+| Peter Grzybowski | 1024 (88.5%) |
+| Alf-Rune Siqveland | 41 (3.5%) |
+| Lluis Campos | 36 (3.1%) |
+| Ole Petter Orhagen | 24 (2.1%) |
+| Marcin Pasinski | 22 (1.9%) |
+| Kristian Amlie | 10 (0.9%) |
+
+
+Developers with the most lines removed
+|---|---|
+| Ole Petter Orhagen | 23 (2.1%) |
+| Lluis Campos | 2 (0.2%) |
+
+
+Top changeset contributors by employer
+|---|---|
+| Northern.tech | 13 (100.0%) |
+
+
+Top lines changed by employer
+|---|---|
+| Northern.tech | 1157 (100.0%) |
+| 
+Employers with the most hackers (total 6) | |
+|---|---|
+| Northern.tech | 6 (100.0%) |
+
+### Changelogs
+
+#### mender (3.5.1)
+
+New changes in mender since 3.5.0:
+
+##### Bug Fixes
+
+* Authmanager can blocks forever on unbuffered chan
+  ([MEN-6621](https://northerntech.atlassian.net/browse/MEN-6621))
+* do a full commonInit only when needed.
+  ([MEN-6618](https://northerntech.atlassian.net/browse/MEN-6618))
+
+##### Features
+
+* inventory script: parse and support location data.
+  ([MEN-5915](https://northerntech.atlassian.net/browse/MEN-5915))
+
+##### Other
+
+* mender-artifact set to 3.10.x in go.mod
+
+
 ## mender 3.5.0
 
 _Released 02.20.2023_

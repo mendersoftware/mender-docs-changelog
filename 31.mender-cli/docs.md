@@ -8,6 +8,83 @@ github: false
 ---
 
 
+## mender-cli 1.11.0
+
+_Released 07.28.2023_
+
+### Statistics
+
+A total of 494 lines added, 1194 removed (delta -700)
+
+
+Developers with the most changesets
+|---|---|
+| Lluis Campos | 5 (35.7%) |
+| Sven Schermer | 3 (21.4%) |
+| Peter Grzybowski | 3 (21.4%) |
+| Krzysztof Jaskiewicz | 2 (14.3%) |
+| Esteban Agüero Pérez | 1 (7.1%) |
+
+
+Developers with the most changed lines
+|---|---|
+| Krzysztof Jaskiewicz | 979 (67.2%) |
+| Peter Grzybowski | 396 (27.2%) |
+| Lluis Campos | 55 (3.8%) |
+| Sven Schermer | 25 (1.7%) |
+| Esteban Agüero Pérez | 1 (0.1%) |
+
+
+Developers with the most lines removed
+|---|---|
+| Krzysztof Jaskiewicz | 961 (80.5%) |
+
+
+Top changeset contributors by employer
+|---|---|
+| Northern.tech | 10 (71.4%) |
+| Disruptive Technologies | 3 (21.4%) |
+| estape11@gmail.com | 1 (7.1%) |
+
+
+Top lines changed by employer
+|---|---|
+| Northern.tech | 1430 (98.2%) |
+| Disruptive Technologies | 25 (1.7%) |
+| estape11@gmail.com | 1 (0.1%) |
+| 
+Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 3 (60.0%) |
+| Disruptive Technologies | 1 (20.0%) |
+| estape11@gmail.com | 1 (20.0%) |
+
+### Changelogs
+
+#### mender-cli (1.11.0)
+
+New changes in mender-cli since 1.10.0:
+
+##### Bug Fixes
+
+* Hide errors when help flag is present
+  ([MEN-6357](https://northerntech.atlassian.net/browse/MEN-6357))
+* Allow to use --token to specify API token
+  ([MEN-6357](https://northerntech.atlassian.net/browse/MEN-6357))
+* List devices in raw mode not in stdout
+
+##### Features
+
+* direct upload.
+  ([MEN-6338](https://northerntech.atlassian.net/browse/MEN-6338))
+
+##### Other
+
+* Update container base image to golang 1.20
+* formatting (go fmt).
+  ([MEN-6338](https://northerntech.atlassian.net/browse/MEN-6338))
+
+
 ## mender-cli 1.10.0
 
 _Released 02.20.2023_
