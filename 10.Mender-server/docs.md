@@ -16,8 +16,7 @@ _Released 07.28.2023_
 
 A total of 34993 lines added, 21314 removed (delta 13679)
 
-
-Developers with the most changesets
+| Developers with the most changesets | |
 |---|---|
 | Manuel Zedel | 143 (44.1%) |
 | Krzysztof Jaskiewicz | 48 (14.8%) |
@@ -30,8 +29,7 @@ Developers with the most changesets
 | Alex Miliukov | 2 (0.6%) |
 | Kristian Amlie | 1 (0.3%) |
 
-
-Developers with the most changed lines
+| Developers with the most changed lines | |
 |---|---|
 | Manuel Zedel | 16299 (36.7%) |
 | Krzysztof Jaskiewicz | 7188 (16.2%) |
@@ -44,26 +42,23 @@ Developers with the most changed lines
 | Roman Ondráček | 14 (0.0%) |
 | Alex Miliukov | 12 (0.0%) |
 
-
-Developers with the most lines removed
+| Developers with the most lines removed | |
 |---|---|
 | Fabio Tranchitella | 1622 (7.6%) |
 | Krzysztof Jaskiewicz | 1273 (6.0%) |
 | Lluis Campos | 26 (0.1%) |
 
-
-Top changeset contributors by employer
+| Top changeset contributors by employer | |
 |---|---|
 | Northern.tech | 323 (99.7%) |
 | ondracek.roman@centrum.cz | 1 (0.3%) |
 
-
-Top lines changed by employer
+| Top lines changed by employer | |
 |---|---|
 | Northern.tech | 44371 (100.0%) |
 | ondracek.roman@centrum.cz | 14 (0.0%) |
-| 
-Employers with the most hackers (total 11) | |
+
+| Employers with the most hackers (total 11) | |
 |---|---|
 | Northern.tech | 10 (90.9%) |
 | ondracek.roman@centrum.cz | 1 (9.1%) |

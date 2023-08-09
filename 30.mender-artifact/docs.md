@@ -16,8 +16,7 @@ _Released 07.28.2023_
 
 A total of 426 lines added, 608 removed (delta -182)
 
-
-Developers with the most changesets
+| Developers with the most changesets | |
 |---|---|
 | Fabio Tranchitella | 22 (43.1%) |
 | Lluis Campos | 9 (17.6%) |
@@ -28,8 +27,7 @@ Developers with the most changesets
 | Manuel Zedel | 2 (3.9%) |
 | Kristian Amlie | 2 (3.9%) |
 
-
-Developers with the most changed lines
+| Developers with the most changed lines | |
 |---|---|
 | Fabio Tranchitella | 536 (60.6%) |
 | Lluis Campos | 136 (15.4%) |
@@ -39,30 +37,27 @@ Developers with the most changed lines
 | Ole Petter Orhagen | 6 (0.7%) |
 | Kristian Amlie | 3 (0.3%) |
 
-
-Developers with the most lines removed
+| Developers with the most lines removed | |
 |---|---|
 | Fabio Tranchitella | 445 (73.2%) |
-| 
-Developers with the most report credits (total 2) | |
+
+| Developers with the most report credits (total 2) | |
 |---|---|
 | Johannes Hund | 2 (100.0%) |
-| 
-Developers who gave the most report credits (total 2) | |
+
+| Developers who gave the most report credits (total 2) | |
 |---|---|
 | Kristian Amlie | 2 (100.0%) |
 
-
-Top changeset contributors by employer
+| Top changeset contributors by employer | |
 |---|---|
 | Northern.tech | 51 (100.0%) |
 
-
-Top lines changed by employer
+| Top lines changed by employer | |
 |---|---|
 | Northern.tech | 885 (100.0%) |
-| 
-Employers with the most hackers (total 8) | |
+
+| Employers with the most hackers (total 8) | |
 |---|---|
 | Northern.tech | 8 (100.0%) |
 

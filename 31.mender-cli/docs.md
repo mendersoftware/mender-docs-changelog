@@ -16,8 +16,7 @@ _Released 07.28.2023_
 
 A total of 494 lines added, 1194 removed (delta -700)
 
-
-Developers with the most changesets
+| Developers with the most changesets | |
 |---|---|
 | Lluis Campos | 5 (35.7%) |
 | Sven Schermer | 3 (21.4%) |
@@ -25,8 +24,7 @@ Developers with the most changesets
 | Krzysztof Jaskiewicz | 2 (14.3%) |
 | Esteban Agüero Pérez | 1 (7.1%) |
 
-
-Developers with the most changed lines
+| Developers with the most changed lines | |
 |---|---|
 | Krzysztof Jaskiewicz | 979 (67.2%) |
 | Peter Grzybowski | 396 (27.2%) |
@@ -34,28 +32,25 @@ Developers with the most changed lines
 | Sven Schermer | 25 (1.7%) |
 | Esteban Agüero Pérez | 1 (0.1%) |
 
-
-Developers with the most lines removed
+| Developers with the most lines removed | |
 |---|---|
 | Krzysztof Jaskiewicz | 961 (80.5%) |
 
-
-Top changeset contributors by employer
+| Top changeset contributors by employer | |
 |---|---|
 | Northern.tech | 10 (71.4%) |
 | Disruptive Technologies | 3 (21.4%) |
 | estape11@gmail.com | 1 (7.1%) |
 
-
-Top lines changed by employer
+| Top lines changed by employer | |
 |---|---|
 | Northern.tech | 1430 (98.2%) |
 | Disruptive Technologies | 25 (1.7%) |
 | estape11@gmail.com | 1 (0.1%) |
-| 
-Employers with the most hackers (total 5) | |
+
+| Employers with the most hackers (total 5) | |
 |---|---|
-| Northern.tech | 3 (60.0%) |
+| Northern.tech | 4 (60.0%) |
 | Disruptive Technologies | 1 (20.0%) |
 | estape11@gmail.com | 1 (20.0%) |
 
