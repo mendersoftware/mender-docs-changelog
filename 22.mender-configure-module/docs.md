@@ -16,8 +16,7 @@ _Released 07.28.2023_
 
 A total of 180 lines added, 97 removed (delta 83)
 
-
-Developers with the most changesets
+| Developers with the most changesets | |
 |---|---|
 | Lluis Campos | 14 (36.8%) |
 | Ole Petter Orhagen | 8 (21.1%) |
@@ -28,8 +27,7 @@ Developers with the most changesets
 | Alf-Rune Siqveland | 1 (2.6%) |
 | Kristian Amlie | 1 (2.6%) |
 
-
-Developers with the most changed lines
+| Developers with the most changed lines | |
 |---|---|
 | Lluis Campos | 67 (30.0%) |
 | Ole Petter Orhagen | 56 (25.1%) |
@@ -40,22 +38,19 @@ Developers with the most changed lines
 | Krzysztof Jaskiewicz | 1 (0.4%) |
 | Kristian Amlie | 1 (0.4%) |
 
-
-Developers with the most lines removed
+| Developers with the most lines removed | |
 |---|---|
 | Alf-Rune Siqveland | 4 (4.1%) |
 
-
-Top changeset contributors by employer
+| Top changeset contributors by employer | |
 |---|---|
 | Northern.tech | 38 (100.0%) |
 
-
-Top lines changed by employer
+| Top lines changed by employer | |
 |---|---|
 | Northern.tech | 223 (100.0%) |
-| 
-Employers with the most hackers (total 8) | |
+
+| Employers with the most hackers (total 8) | |
 |---|---|
 | Northern.tech | 8 (100.0%) |
 
