@@ -8,6 +8,86 @@ github: false
 ---
 
 
+## Mender 3.6.1
+
+_Released 08.19.2023_
+
+### Statistics
+
+A total of 180 lines added, 100 removed (delta 80)
+
+| Developers with the most changesets | |
+|---|---|
+| Fabio Tranchitella | 5 (55.6%) |
+| Manuel Zedel | 4 (44.4%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 117 (65.0%) |
+| Manuel Zedel | 63 (35.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 9 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 180 (100.0%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+### Changelogs
+
+#### create-artifact-worker (1.3.2)
+
+New changes in create-artifact-worker since 1.3.1:
+
+##### Features
+
+* update mender-artifact to `3.10.1`
+
+#### deployments-enterprise (4.5.1)
+
+New changes in deployments-enterprise since 4.5.0:
+
+##### Bug Fixes
+
+* ignore artifact_name when checking if an artifact is already installed
+  ([MEN-6644](https://northerntech.atlassian.net/browse/MEN-6644))
+
+#### gui (3.6.1)
+
+New changes in gui since 3.6.0:
+
+##### Bug Fixes
+
+* fixed an issue that prevented deselecting a release selection during deployment creation
+* ensured current software alias is more reliably shown in column customization dialog
+  ([MEN-6641](https://northerntech.atlassian.net/browse/MEN-6641))
+
+#### integration (3.6.1)
+
+New changes in integration since 3.6.0:
+
+* Upgrade create-artifact-worker to 1.3.2.
+* Upgrade deployments-enterprise to 4.5.1.
+* Upgrade gui to 3.6.1.
+* Upgrade integration to 3.6.1.
+* Upgrade mender-configure-module to 1.1.1.
+* Upgrade useradm-enterprise to 1.21.1.
+
+#### useradm-enterprise (1.21.1)
+
+New changes in useradm-enterprise since 1.21.0:
+
+##### Bug Fixes
+
+* add directupload API endpoints to the `UploadArtifacts` permission set
+  ([MEN-6642](https://northerntech.atlassian.net/browse/MEN-6642))
+
+
 ## Mender 3.6.0
 
 _Released 07.28.2023_
