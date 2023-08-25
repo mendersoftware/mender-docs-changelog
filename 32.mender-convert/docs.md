@@ -8,6 +8,63 @@ github: false
 ---
 
 
+## mender-convert 4.0.2
+
+_Released 08.25.2023_
+
+### Statistics
+
+A total of 13 lines added, 36 removed (delta -23)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 2 (66.7%) |
+| Tom Callahan | 1 (33.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 37 (94.9%) |
+| Tom Callahan | 2 (5.1%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Kristian Amlie | 23 (63.9%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 2 (66.7%) |
+| 78968887+tcallahan14@users.noreply.github.com | 1 (33.3%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 37 (94.9%) |
+| 78968887+tcallahan14@users.noreply.github.com | 2 (5.1%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 1 (50.0%) |
+| 78968887+tcallahan14@users.noreply.github.com | 1 (50.0%) |
+
+### Changelogs
+
+#### mender-convert (4.0.2)
+
+New changes in mender-convert since 4.0.1:
+
+##### Bug Fixes
+
+* Remove trailing forward slash in overlay path.
+
+  This prevented the overlay from being applied, due to duplicate slashes in the rsync command (mender-convert-modify line 280). The end result was that the /etc/mender/mender.conf file was missing from the final image. Removing the extra forward slash solved the problem.
+* Fix convert error when using `MENDER_GRUB_D_INTEGRATION`
+  and `MENDER_ENABLE_PARTUUID` together.
+  ([MEN-6645](https://northerntech.atlassian.net/browse/MEN-6645))
+
+##### Other
+
+* Drop support for Debian 9 (stretch).
+
+
 ## mender-convert 4.0.1
 
 _Released 03.08.2023_
