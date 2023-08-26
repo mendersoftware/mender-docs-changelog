@@ -8,6 +8,44 @@ github: false
 ---
 
 
+## Mender 3.6.2
+
+_Released 08.25.2023_
+
+### Statistics
+
+A total of 60 lines added, 60 removed (delta 0)
+
+| Developers with the most changesets | |
+|---|---|
+| Fabio Tranchitella | 1 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 60 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 60 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### integration (3.6.2)
+
+New changes in integration since 3.6.1:
+
+* Upgrade integration to 3.6.2.
+* Upgrade mender-convert to 4.0.2.
+
+
 ## Mender 3.6.1
 
 _Released 08.19.2023_
