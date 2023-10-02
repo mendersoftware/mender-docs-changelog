@@ -1,5 +1,5 @@
 ---
-title: mender-connect
+title: mender-snapshot
 taxonomy:
     category: docs
 shortcode-core:
