@@ -8,6 +8,167 @@ github: false
 ---
 
 
+## Mender 3.6.3
+
+_Released 10.18.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Fabio Tranchitella | 15 (42.9%) |
+| Manuel Zedel | 5 (14.3%) |
+| Krzysztof Jaskiewicz | 5 (14.3%) |
+| Peter Grzybowski | 3 (8.6%) |
+| Lluis Campos | 3 (8.6%) |
+| Alf-Rune Siqveland | 2 (5.7%) |
+| Roberto Giovanardi | 1 (2.9%) |
+| Kristian Amlie | 1 (2.9%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Peter Grzybowski | 296 (29.7%) |
+| Fabio Tranchitella | 232 (23.2%) |
+| Krzysztof Jaskiewicz | 227 (22.7%) |
+| Manuel Zedel | 117 (11.7%) |
+| Roberto Giovanardi | 78 (7.8%) |
+| Lluis Campos | 31 (3.1%) |
+| Kristian Amlie | 14 (1.4%) |
+| Alf-Rune Siqveland | 3 (0.3%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Krzysztof Jaskiewicz | 109 (18.8%) |
+| Manuel Zedel | 45 (7.8%) |
+| Kristian Amlie | 7 (1.2%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Lluis Campos | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| | Northern.tech | 35 (100.0%) |
+
+Top lines changed by employer | |
+|---|---|
+| Northern.tech | 998 (100.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 8 (100.0%) |
+
+### Changelogs
+
+#### deployments (4.5.2)
+
+New changes in deployments since 4.5.0:
+
+##### Bug Fixes
+
+* db.Find: look for phrases (escape the $text elements)
+  ([MEN-6730](https://northerntech.atlassian.net/browse/MEN-6730))
+
+##### Features
+
+* direct upload with skip verify: set metadata on complete
+  ([MEN-6696](https://northerntech.atlassian.net/browse/MEN-6696))
+
+#### deployments-enterprise (4.5.2)
+
+New changes in deployments-enterprise since 4.5.1:
+
+##### Bug Fixes
+
+* db.Find: look for phrases (escape the $text elements)
+  ([MEN-6730](https://northerntech.atlassian.net/browse/MEN-6730))
+
+##### Features
+
+* direct upload with skip verify: set metadata on complete
+  ([MEN-6696](https://northerntech.atlassian.net/browse/MEN-6696))
+
+#### integration (3.6.3)
+
+New changes in integration since 3.6.2:
+
+* Upgrade deployments-enterprise to 4.5.2.
+* Upgrade deployments to 4.5.2.
+* Upgrade generate-delta-worker to 1.0.2.
+* Upgrade gui to 3.6.2.
+* Upgrade integration to 3.6.3.
+* Upgrade inventory-enterprise to 4.3.2.
+* Upgrade inventory to 4.3.2.
+* Upgrade mender-artifact to 3.10.2.
+* Upgrade mender-cli to 1.11.1.
+* Upgrade mender-connect to 2.1.1.
+* Upgrade mender-convert to 4.0.3.
+* Upgrade mtls-ambassador to 1.2.1.
+* Upgrade useradm-enterprise to 1.21.2.
+* Upgrade workflows-enterprise to 2.5.1.
+* Upgrade workflows to 2.5.1.
+
+#### inventory (4.3.2)
+
+New changes in inventory since 4.3.1:
+
+##### Bug Fixes
+
+* update `updated_ts` only if we are updating the inventory scope
+  ([MEN-6705](https://northerntech.atlassian.net/browse/MEN-6705))
+
+#### inventory-enterprise (4.3.2)
+
+New changes in inventory-enterprise since 4.3.1:
+
+##### Bug Fixes
+
+* update `updated_ts` only if we are updating the inventory scope
+  ([MEN-6705](https://northerntech.atlassian.net/browse/MEN-6705))
+
+#### mtls-ambassador (1.2.1)
+
+New changes in mtls-ambassador since 1.2.0:
+
+##### Bug Fixes
+
+* update the API docs for the `/status` internal endpoint
+  ([MEN-6700](https://northerntech.atlassian.net/browse/MEN-6700))
+* misleading stack trace on auth errors
+  ([MEN-6746](https://northerntech.atlassian.net/browse/MEN-6746))
+
+#### useradm-enterprise (1.21.2)
+
+New changes in useradm-enterprise since 1.21.1:
+
+##### Bug Fixes
+
+* SAML authentication not case insensitive
+  ([MEN-6750](https://northerntech.atlassian.net/browse/MEN-6750))
+
+#### workflows (2.5.1)
+
+New changes in workflows since 2.5.0:
+
+##### Bug Fixes
+
+* `migrate` command tries to create Jetstream consumer before stream
+  ([MEN-6698](https://northerntech.atlassian.net/browse/MEN-6698))
+
+#### workflows-enterprise (2.5.1)
+
+New changes in workflows-enterprise since 2.5.0:
+
+##### Bug Fixes
+
+* `migrate` command tries to create Jetstream consumer before stream
+  ([MEN-6698](https://northerntech.atlassian.net/browse/MEN-6698))
+
+
 ## Mender 3.6.2
 
 _Released 08.25.2023_

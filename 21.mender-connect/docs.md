@@ -8,6 +8,67 @@ github: false
 ---
 
 
+## mender-connect 2.1.1
+
+_Released 10.18.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Andreas Henriksson | 1 (20.0%) |
+| Lluis Campos | 1 (20.0%) |
+| Krzysztof Jaskiewicz | 1 (20.0%) |
+| Peter Grzybowski | 1 (20.0%) |
+| Kristian Amlie | 1 (20.0%) |
+
+
+| Developers with the most changed lines | |
+|---|---|
+| Peter Grzybowski | 55 (57.9%) |
+| Kristian Amlie | 28 (29.5%) |
+| Krzysztof Jaskiewicz | 7 (7.4%) |
+| Andreas Henriksson | 3 (3.2%) |
+| Lluis Campos | 2 (2.1%) |
+
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Lluis Campos | 1 (100.0%) |
+
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 4 (80.0%) |
+| andreas@fatal.se | 1 (20.0%) |
+
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 92 (96.8%) |
+| andreas@fatal.se | 3 (3.2%) |
+
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 4 (80.0%) |
+| andreas@fatal.se | 1 (20.0%) |
+
+### Changelogs
+
+#### mender-connect (2.1.1)
+
+New changes in mender-connect since 2.1.0:
+
+##### Bug Fixes
+
+* fix unstable unit test
+
+
 ## mender-connect 2.1.0
 
 _Released 09.25.2022_
