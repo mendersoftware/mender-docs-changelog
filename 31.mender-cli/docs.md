@@ -8,6 +8,52 @@ github: false
 ---
 
 
+## mender-cli 1.11.1
+
+_Released 10.18.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Peter Grzybowski | 1 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Peter Grzybowski | 272 (100.0%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Fabio Tranchitella | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 272 (100.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-cli (1.11.1)
+
+New changes in mender-cli since 1.11.0:
+
+##### Features
+
+* post metadata with the direct upload with skip verify
+  ([MEN-6696](https://northerntech.atlassian.net/browse/MEN-6696))
+
+
 ## mender-cli 1.11.0
 
 _Released 07.28.2023_

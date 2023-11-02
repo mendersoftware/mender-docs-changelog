@@ -8,6 +8,54 @@ github: false
 ---
 
 
+## mender-convert 4.0.3
+
+_Released 10.18.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 1 (33.3%) |
+| Michael Mugnai | 1 (33.3%) |
+| Lorenzo Ruffati | 1 (33.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Michael Mugnai | 19 (76.0%) |
+| Lorenzo Ruffati | 5 (20.0%) |
+| Kristian Amlie | 1 (4.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (33.3%) |
+| michael.mugnai@gmail.com | 1 (33.3%) |
+| Unikie Oy | 1 (33.3%) |
+
+| Top lines changed by employer | |
+|---|---|
+| michael.mugnai@gmail.com | 19 (76.0%) |
+| Unikie Oy | 5 (20.0%) |
+| Northern.tech | 1 (4.0%) |
+
+| Employers with the most hackers (total 3) | |
+|---|---|
+| michael.mugnai@gmail.com | 1 (33.3%) |
+| Unikie Oy | 1 (33.3%) |
+| Northern.tech | 1 (33.3%) |
+
+### Changelogs
+
+#### mender-convert (4.0.3)
+
+New changes in mender-convert since 4.0.2:
+
+##### Bug Fixes
+
+* Reorder operation to move data directory before rootfs size is estimated
+* fix: hosted bootstrap support for 'eu' region
+
+
 ## mender-convert 4.0.2
 
 _Released 08.25.2023_

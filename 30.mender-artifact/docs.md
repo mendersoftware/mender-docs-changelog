@@ -7,6 +7,20 @@ shortcode-core:
 github: false
 ---
 
+## mender-artifact 3.10.2
+
+_Released 10.18.2023_
+
+### Changelogs
+
+#### mender-artifact (3.10.2)
+
+New changes in mender-connect since 3.10.1:
+
+##### Other
+
+* Rebuild, no changes.
+
 
 ## mender-artifact 3.10.1
 
