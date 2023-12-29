@@ -7,6 +7,83 @@ shortcode-core:
 github: false
 ---
 
+## mender-connect 2.2.0
+
+_Released 12.28.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 9 (50.0%) |
+| Krzysztof Jaskiewicz | 3 (16.7%) |
+| Andreas Henriksson | 2 (11.1%) |
+| Roberto Giovanardi | 1 (5.6%) |
+| Fabio Tranchitella | 1 (5.6%) |
+| Kristian Amlie | 1 (5.6%) |
+| Peter Grzybowski | 1 (5.6%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Krzysztof Jaskiewicz | 644 (71.6%) |
+| Lluis Campos | 158 (17.6%) |
+| Peter Grzybowski | 55 (6.1%) |
+| Kristian Amlie | 28 (3.1%) |
+| Andreas Henriksson | 9 (1.0%) |
+| Fabio Tranchitella | 3 (0.3%) |
+| Roberto Giovanardi | 2 (0.2%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Fabio Tranchitella | 3 (1.1%) |
+
+| Developers with the most signoffs (total 2) | |
+|---|---|
+| Lluis Campos | 2 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 16 (88.9%) |
+| andreas@fatal.se | 2 (11.1%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 890 (99.0%) |
+| andreas@fatal.se | 9 (1.0%) |
+
+| Employers with the most signoffs (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+| Employers with the most hackers (total 7) | |
+|---|---|
+| Northern.tech | 6 (85.7%) |
+| andreas@fatal.se | 1 (14.3%) |
+
+### Changelogs
+
+#### mender-connect (2.2.0)
+
+New changes in mender-connect since 2.1.1:
+
+##### Bug Fixes
+
+* In Mender client v4.0, the `mender` binary has been split
+  into `mender-update` and `mender-auth`. Modify `mender-connect` to call
+  the right binary to trigger `check-update` and `send-inventory`
+  ([MEN-6827](https://northerntech.atlassian.net/browse/MEN-6827))
+* `mender-connect` systemd service can use either the old
+  `mender-client` service or the new `mender-authd` service, which is the
+  name of the authentication daemon of new Mender client. They are both
+  kept as `Wants` and not `Require` so that `mender-connect` can run with
+  either.
+  ([MEN-6858](https://northerntech.atlassian.net/browse/MEN-6858))
+
+##### Features
+
+* build and test using the latest version of golang (1.21 today)
+  ([QA-614](https://northerntech.atlassian.net/browse/QA-614))
+
 
 ## mender-connect 2.1.1
 

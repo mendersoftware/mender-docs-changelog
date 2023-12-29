@@ -7,6 +7,65 @@ shortcode-core:
 github: false
 ---
 
+## mender-artifact 3.11.0
+
+_Released 12.28.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 8 (57.1%) |
+| Roberto Giovanardi | 3 (21.4%) |
+| Niv Keidan | 1 (7.1%) |
+| Craig Comstock | 1 (7.1%) |
+| Peter Grzybowski | 1 (7.1%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 72 (40.0%) |
+| Roberto Giovanardi | 70 (38.9%) |
+| Niv Keidan | 24 (13.3%) |
+| Peter Grzybowski | 13 (7.2%) |
+| Craig Comstock | 1 (0.6%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Lluis Campos | 20 (18.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 13 (92.9%) |
+| nivkeidan@gmail.com | 1 (7.1%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 156 (86.7%) |
+| nivkeidan@gmail.com | 24 (13.3%) |
+
+| Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 4 (80.0%) |
+| nivkeidan@gmail.com | 1 (20.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.11.0)
+
+New changes in mender-artifact since 3.10.2:
+
+##### Bug Fixes
+
+* `mender-artifact` now detects if the device has an
+  standalone `mender-snapshot`. From Mender client 4.0 onwards, the
+  `mender` binary won't implement `snapshot` command.
+
+##### Features
+
+* For "cp" command, use source file name if destination file name is not supplied
+  ([MEN-5463](https://northerntech.atlassian.net/browse/MEN-5463))
+
+
 ## mender-artifact 3.10.2
 
 _Released 10.18.2023_
@@ -15,7 +74,7 @@ _Released 10.18.2023_
 
 #### mender-artifact (3.10.2)
 
-New changes in mender-connect since 3.10.1:
+New changes in mender-artifact since 3.10.1:
 
 ##### Other
 
