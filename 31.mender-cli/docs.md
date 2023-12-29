@@ -7,6 +7,81 @@ shortcode-core:
 github: false
 ---
 
+## mender-cli 1.12.0
+
+_Released 12.28.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Fredrik Flornes Ellertsen | 2 (20.0%) |
+| Manuel Zedel | 2 (20.0%) |
+| Roberto Giovanardi | 1 (10.0%) |
+| Lluis Campos | 1 (10.0%) |
+| Daniel Skinstad Drabitzius | 1 (10.0%) |
+| Luis Ramirez Vargas | 1 (10.0%) |
+| Peter Grzybowski | 1 (10.0%) |
+| Steven Leadbeater | 1 (10.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Steven Leadbeater | 313 (47.5%) |
+| Peter Grzybowski | 254 (38.5%) |
+| Manuel Zedel | 52 (7.9%) |
+| Daniel Skinstad Drabitzius | 16 (2.4%) |
+| Fredrik Flornes Ellertsen | 13 (2.0%) |
+| Roberto Giovanardi | 4 (0.6%) |
+| Lluis Campos | 4 (0.6%) |
+| Luis Ramirez Vargas | 3 (0.5%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Manuel Zedel | 19 (17.3%) |
+| Fredrik Flornes Ellertsen | 6 (5.5%) |
+
+Developers with the most signoffs (total 1)
+|---|---|
+| Kristian Amlie | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 7 (70.0%) |
+| fellerts@fastmail.com | 2 (20.0%) |
+| stevenleadbeater@live.co.uk | 1 (10.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 333 (50.5%) |
+| stevenleadbeater@live.co.uk | 313 (47.5%) |
+| fellerts@fastmail.com | 13 (2.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 6 (75.0%) |
+| stevenleadbeater@live.co.uk | 1 (12.5%) |
+| fellerts@fastmail.com | 1 (12.5%) |
+
+### Changelogs
+
+#### mender-cli (1.12.0)
+
+New changes in mender-cli since 1.11.1:
+
+##### Bug Fixes
+
+* Keep stdout clean
+* Use term's built-in IsTerminal
+
+##### Features
+
+* Adding artifact downloads to CLI
+* Add meaningful error message for conflict artifact
+
 
 ## mender-cli 1.11.1
 

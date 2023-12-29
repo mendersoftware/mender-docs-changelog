@@ -7,6 +7,59 @@ shortcode-core:
 github: false
 ---
 
+## mender 3.5.2
+
+_Released 12.28.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 1 (33.3%) |
+| Peter Grzybowski | 1 (33.3%) |
+| Kristian Amlie | 1 (33.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Peter Grzybowski | 39 (78.0%) |
+| Kristian Amlie | 10 (20.0%) |
+| Lluis Campos | 1 (2.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 50 (100.0%) |
+
+| Employers with the most hackers (total 3) | | | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+### Changelogs
+
+#### mender (3.5.2)
+
+New changes in mender since 3.5.1:
+
+##### Bug Fixes
+
+* Fix a rare bug which could corrupt the very end of a
+  rootfs-image update on a sudden powerloss. The circumstances where it
+  could happen are quite specific: The filesystem size in the update
+  need to *not* be a multiple of the native sector size, which is very
+  uncommon. The sector size is typically 512 bytes almost everywhere,
+  and hence filesystem also follow this block size, if not bigger. The
+  exception is raw Flash/UBI devices, where the sector size can be much
+  larger, and not a power of two, and hence these platforms may be more
+  susceptible.
+
+##### Features
+
+* recover from a corrupted database renaming it as `broken` and starting with a new empty one
+  ([MEN-6848](https://northerntech.atlassian.net/browse/MEN-6848))
+
 
 ## mender 3.5.1
 

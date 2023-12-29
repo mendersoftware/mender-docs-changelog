@@ -7,6 +7,888 @@ shortcode-core:
 github: false
 ---
 
+## Mender 3.7.0
+
+_Released 12.28.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Manuel Zedel | 261 (32.0%) |
+| Alf-Rune Siqveland | 159 (19.5%) |
+| Krzysztof Jaskiewicz | 122 (15.0%) |
+| Fabio Tranchitella | 85 (10.4%) |
+| Roberto Giovanardi | 78 (9.6%) |
+| Peter Grzybowski | 52 (6.4%) |
+| Lluis Campos | 18 (2.2%) |
+| Kristian Amlie | 11 (1.3%) |
+| Mender Test Bot | 8 (1.0%) |
+| Ihor Aleksandrychiev | 7 (0.9%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 16898 (23.6%) |
+| Krzysztof Jaskiewicz | 15347 (21.4%) |
+| Manuel Zedel | 14491 (20.2%) |
+| Alf-Rune Siqveland | 13023 (18.2%) |
+| Peter Grzybowski | 9439 (13.2%) |
+| Roberto Giovanardi | 1373 (1.9%) |
+| Mender Test Bot | 398 (0.6%) |
+| Lluis Campos | 361 (0.5%) |
+| Kristian Amlie | 104 (0.1%) |
+| Michael Clelland | 99 (0.1%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Fabio Tranchitella | 4236 (10.0%) |
+| Manuel Zedel | 1016 (2.4%) |
+| Lluis Campos | 118 (0.3%) |
+| Michael Clelland | 18 (0.0%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Fabio Tranchitella | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 815 (99.9%) |
+| ondracek.roman@centrum.cz | 1 (0.1%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 71717 (100.0%) |
+| ondracek.roman@centrum.cz | 14 (0.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 16) | |
+|---|---|
+| Northern.tech | 15 (93.8%) |
+| ondracek.roman@centrum.cz | 1 (6.2%) |
+
+### Changelogs
+
+#### auditlogs (3.2.0)
+
+New changes in auditlogs since 3.1.1:
+
+##### Bug Fixes
+
+* Terminate application on unexpected server shutdown
+  ([MEN-6596](https://northerntech.atlassian.net/browse/MEN-6596))
+
+##### Features
+
+* enable multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* feat: limit the audit logs list and export end-points to non-enterprise to a configurable interval, by default two days
+
+#### create-artifact-worker (1.4.0)
+
+New changes in create-artifact-worker since 1.3.2:
+
+##### Bug Fixes
+
+* Provide default value for CREATE_ARTIFACT_DEPLOYMENTS_URL
+  ([MEN-6237](https://northerntech.atlassian.net/browse/MEN-6237))
+
+##### Other
+
+* enabled multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+
+#### deployments (4.6.0)
+
+New changes in deployments since 4.5.2:
+
+##### Bug Fixes
+
+* perform automigration only if the service was configured to perform it
+* Collection scan retrieving deployments for device
+
+  This commit fixes a collection scan on the deployments collection if
+  there are no device deployments for a device.
+  ([MEN-6724](https://northerntech.atlassian.net/browse/MEN-6724))
+* Added missing name resolution libraries to the scratch container
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* `proxy_uri` not picked up by s3 client
+* Presign client options not applied unless `external_uri` is set
+* convert to tags to lowercase on querying.
+  ([MEN-6786](https://northerntech.atlassian.net/browse/MEN-6786))
+* new field: Started in the device deployment struct.
+  ([MEN-6793](https://northerntech.atlassian.net/browse/MEN-6793))
+* fix documentation of /statistics/list endpoint
+  ([MEN-6865](https://northerntech.atlassian.net/browse/MEN-6865))
+
+##### Features
+
+* make releases persistent in the database
+  ([MEN-5180](https://northerntech.atlassian.net/browse/MEN-5180))
+* New configuration parameter `storage.proxy_uri`
+
+  The new configuration parameter rewrites presigned URLs to target the
+  specified proxy URL instead of the direct link. This allows setting
+  application level proxies in front of s3/azure blob storage.
+  ([MEN-6562](https://northerntech.atlassian.net/browse/MEN-6562))
+* Add tags property to releases
+
+  Releases now optionally contain user-defined tags.
+  To update release tags, there's a new v2 endpoint for assigning tags to
+  releases:
+    PUT /api/management/v2/deployments/releases/{release_name}/tags
+  ([MEN-6348](https://northerntech.atlassian.net/browse/MEN-6348))
+* Endpoint for listing all release tag key names
+
+  The new endpoint is exposed as:
+    GET /api/management/v2/deployments/releases/all/tags
+  ([MEN-6348](https://northerntech.atlassian.net/browse/MEN-6348))
+* release notes: update and store.
+  ([MEN-6593](https://northerntech.atlassian.net/browse/MEN-6593))
+* remove release when last artifact is removed
+  ([MEN-6616](https://northerntech.atlassian.net/browse/MEN-6616))
+* query releases by update type
+  ([MEN-6592](https://northerntech.atlassian.net/browse/MEN-6592))
+* save and get the update types
+  ([MEN-6623](https://northerntech.atlassian.net/browse/MEN-6623))
+* sort releases by artifacts_count and tags
+  ([MEN-6353](https://northerntech.atlassian.net/browse/MEN-6353))
+* enable multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* deprecate the `/v1/deployments/releases/list` end-point, replaced by the new end-point `/v2/deployments/releases`
+  ([MEN-6349](https://northerntech.atlassian.net/browse/MEN-6349))
+* add support for filtering releases by tags
+  ([MEN-6349](https://northerntech.atlassian.net/browse/MEN-6349))
+* introduce disable_new_releases_feature setting
+
+  With this setting set to true, service can work with minimum version of
+  database (1.2.14), but with limited functionality - new v2/releases
+  endpoint will not work.
+  ([MEN-6773](https://northerntech.atlassian.net/browse/MEN-6773))
+* disable end-points manipulating artifacts if new releases feature is disabled
+  ([MEN-6773](https://northerntech.atlassian.net/browse/MEN-6773))
+* endpoint for bulk removal of releases by names
+  ([MEN-6354](https://northerntech.atlassian.net/browse/MEN-6354))
+
+##### Other
+
+* use release name as an _id in the release collection
+  ([MEN-5180](https://northerntech.atlassian.net/browse/MEN-5180))
+* change the way we check if artifact is part of any deployment
+* specification of the endpoint for bulk removal of releases
+  ([MEN-6354](https://northerntech.atlassian.net/browse/MEN-6354))
+* endpoint for bulk removal of releases by names tests
+  ([MEN-6354](https://northerntech.atlassian.net/browse/MEN-6354))
+* move release related tests to separate file
+
+#### deployments-enterprise (4.6.0)
+
+New changes in deployments-enterprise since 4.5.2:
+
+##### Bug Fixes
+
+* perform automigration only if the service was configured to perform it
+* Collection scan retrieving deployments for device
+
+  This commit fixes a collection scan on the deployments collection if
+  there are no device deployments for a device.
+  ([MEN-6724](https://northerntech.atlassian.net/browse/MEN-6724))
+* Added missing name resolution libraries to the scratch container
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* Added missing name resolution libraries to the scratch container
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* `proxy_uri` not picked up by s3 client
+* Presign client options not applied unless `external_uri` is set
+* convert to tags to lowercase on querying.
+  ([MEN-6786](https://northerntech.atlassian.net/browse/MEN-6786))
+* new field: Started in the device deployment struct.
+  ([MEN-6793](https://northerntech.atlassian.net/browse/MEN-6793))
+* align GenerateDeltaJobStatusFailure const.
+  ([MEN-6791](https://northerntech.atlassian.net/browse/MEN-6791))
+* fix documentation of /statistics/list endpoint
+  ([MEN-6865](https://northerntech.atlassian.net/browse/MEN-6865))
+
+##### Features
+
+* make releases persistent in the database
+  ([MEN-5180](https://northerntech.atlassian.net/browse/MEN-5180))
+* New configuration parameter `storage.proxy_uri`
+
+  The new configuration parameter rewrites presigned URLs to target the
+  specified proxy URL instead of the direct link. This allows setting
+  application level proxies in front of s3/azure blob storage.
+  ([MEN-6562](https://northerntech.atlassian.net/browse/MEN-6562))
+* Add tags property to releases
+
+  Releases now optionally contain user-defined tags.
+  To update release tags, there's a new v2 endpoint for assigning tags to
+  releases:
+    PUT /api/management/v2/deployments/releases/{release_name}/tags
+  ([MEN-6348](https://northerntech.atlassian.net/browse/MEN-6348))
+* Endpoint for listing all release tag key names
+
+  The new endpoint is exposed as:
+    GET /api/management/v2/deployments/releases/all/tags
+  ([MEN-6348](https://northerntech.atlassian.net/browse/MEN-6348))
+* release notes: update and store.
+  ([MEN-6593](https://northerntech.atlassian.net/browse/MEN-6593))
+* remove release when last artifact is removed
+  ([MEN-6616](https://northerntech.atlassian.net/browse/MEN-6616))
+* query releases by update type
+  ([MEN-6592](https://northerntech.atlassian.net/browse/MEN-6592))
+* save and get the update types
+  ([MEN-6623](https://northerntech.atlassian.net/browse/MEN-6623))
+* sort releases by artifacts_count and tags
+  ([MEN-6353](https://northerntech.atlassian.net/browse/MEN-6353))
+* enable multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* enable multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* deprecate the `/v1/deployments/releases/list` end-point, replaced by the new end-point `/v2/deployments/releases`
+  ([MEN-6349](https://northerntech.atlassian.net/browse/MEN-6349))
+* add support for filtering releases by tags
+  ([MEN-6349](https://northerntech.atlassian.net/browse/MEN-6349))
+* introduce disable_new_releases_feature setting
+
+  With this setting set to true, service can work with minimum version of
+  database (1.2.14), but with limited functionality - new v2/releases
+  endpoint will not work.
+  ([MEN-6773](https://northerntech.atlassian.net/browse/MEN-6773))
+* introduce disable_new_releases_feature setting
+
+  With this setting set to true, service can work with minimum version of
+  database (1.2.14), but with limited functionality - new v2/releases
+  endpoint will not work.
+  ([MEN-6773](https://northerntech.atlassian.net/browse/MEN-6773))
+* disable end-points manipulating artifacts if new releases feature is disabled
+  ([MEN-6773](https://northerntech.atlassian.net/browse/MEN-6773))
+* get the status of the server side delta generation job
+  ([MEN-6791](https://northerntech.atlassian.net/browse/MEN-6791))
+* endpoint for bulk removal of releases by names
+  ([MEN-6354](https://northerntech.atlassian.net/browse/MEN-6354))
+
+##### Other
+
+* use release name as an _id in the release collection
+  ([MEN-5180](https://northerntech.atlassian.net/browse/MEN-5180))
+* change the way we check if artifact is part of any deployment
+* specification of the endpoint for bulk removal of releases
+  ([MEN-6354](https://northerntech.atlassian.net/browse/MEN-6354))
+* endpoint for bulk removal of releases by names tests
+  ([MEN-6354](https://northerntech.atlassian.net/browse/MEN-6354))
+* move release related tests to separate file
+
+#### deviceauth (3.6.0)
+
+New changes in deviceauth since 3.5.0:
+
+##### Bug Fixes
+
+* propagate id data to inventory for all tenants case.
+* Redis key prefix configuration not applied
+  ([MEN-6926](https://northerntech.atlassian.net/browse/MEN-6926))
+
+##### Features
+
+* Allow tenant token to be an opaque string
+  ([MEN-6502](https://northerntech.atlassian.net/browse/MEN-6502))
+* Added multiplaform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* feat: optimize the authentication requests checking the `X-MEN-Signature` value only for successful authentication requests
+  ([MEN-5497](https://northerntech.atlassian.net/browse/MEN-5497))
+* feat: optimize the token verification end-point delaying the JWT token signature and claims validation after the cache look-up
+  ([MEN-5497](https://northerntech.atlassian.net/browse/MEN-5497))
+* support for Ed25519 server keys for signing the JWT tokens
+  ([MEN-6775](https://northerntech.atlassian.net/browse/MEN-6775))
+* make service compatible with redis cluster
+
+  Changes:
+  - do not use redis databases;
+  - use service/version specific prefix for all the keys;
+  - change redis configuration - use connection string to create redis
+    client;
+
+  BREAKING CHANGE: Old redis_* configuration parameters are deprecated
+  and most of them will not work. Use redis_connection_string and
+  redis_key_prefix to configure redis cache client.
+  ([MC-7056](https://northerntech.atlassian.net/browse/MC-7056))
+* replace method for flushing database with method for suspending tenant
+
+  We achive cache invalidation by incrementing tenant key version.
+  Each tenant related key in the cache has to contain tenant key version.
+  This way, by incrementing tenant key version, we invalidate all tenant
+  related keys.
+  ([MC-7056](https://northerntech.atlassian.net/browse/MC-7056))
+
+##### Other
+
+* fix cli acceptance tests
+* use Pipeline instead of TxPipeline in the Throttle method
+
+  Use of transaction in this particular case is unnecessary.
+
+#### deviceauth-enterprise (3.6.0)
+
+New changes in deviceauth-enterprise since 3.5.0:
+
+##### Bug Fixes
+
+* propagate id data to inventory for all tenants case.
+* Redis key prefix configuration not applied
+  ([MEN-6926](https://northerntech.atlassian.net/browse/MEN-6926))
+
+##### Features
+
+* Allow tenant token to be an opaque string
+  ([MEN-6502](https://northerntech.atlassian.net/browse/MEN-6502))
+* Added multiplaform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* save external identity and track its status
+* cache unauthorized responses when processing device authentication requests
+  ([MEN-5497](https://northerntech.atlassian.net/browse/MEN-5497))
+* cache the tenant data by tenant token
+  ([MEN-5497](https://northerntech.atlassian.net/browse/MEN-5497))
+* feat: optimize the authentication requests checking the `X-MEN-Signature` value only for successful authentication requests
+  ([MEN-5497](https://northerntech.atlassian.net/browse/MEN-5497))
+* feat: optimize the token verification end-point delaying the JWT token signature and claims validation after the cache look-up
+  ([MEN-5497](https://northerntech.atlassian.net/browse/MEN-5497))
+* support for Ed25519 server keys for signing the JWT tokens
+  ([MEN-6775](https://northerntech.atlassian.net/browse/MEN-6775))
+* make service compatible with redis cluster
+
+  Changes:
+  - do not use redis databases;
+  - use service/version specific prefix for all the keys;
+  - change redis configuration - use connection string to create redis
+    client;
+
+  BREAKING CHANGE: Old redis_* configuration parameters are deprecated
+  and most of them will not work. Use redis_connection_string and
+  redis_key_prefix to configure redis cache client.
+  ([MC-7056](https://northerntech.atlassian.net/browse/MC-7056))
+* replace method for flushing database with method for suspending tenant
+
+  We achive cache invalidation by incrementing tenant key version.
+  Each tenant related key in the cache has to contain tenant key version.
+  This way, by incrementing tenant key version, we invalidate all tenant
+  related keys.
+  ([MC-7056](https://northerntech.atlassian.net/browse/MC-7056))
+
+##### Other
+
+* extend device API documentation
+
+  The authentication set object has been extended by new field which
+  allows to provide external identification of the device.
+
+  Ticket: ALV-73
+* update tests after extending auth set endpoint functionality
+* reduce cyclomatic complexity of the processPreAuth method
+* fix cli acceptance tests
+* use Pipeline instead of TxPipeline in the Throttle method
+
+  Use of transaction in this particular case is unnecessary.
+
+#### deviceconfig (1.4.0)
+
+New changes in deviceconfig since 1.3.2:
+
+##### Bug Fixes
+
+* do not use deprecated types and methods from bson package
+
+##### Features
+
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+
+#### deviceconnect (1.5.0)
+
+New changes in deviceconnect since 1.4.1:
+
+##### Bug Fixes
+
+* do not use deprecated types and methods from bson package
+
+##### Features
+
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* feat: graceful shutdown of websockets on signal SIGUSR1 with a configurable timeout `graceful_shutdown_timeout`, with a default of `60s`
+  ([MC-7039](https://northerntech.atlassian.net/browse/MC-7039))
+* new internal API end-point to gracefully shutdown the service
+  ([MC-7039](https://northerntech.atlassian.net/browse/MC-7039))
+* Add support for HEAD to download API endpoint
+
+#### devicemonitor (1.5.0)
+
+New changes in devicemonitor since 1.4.1:
+
+##### Bug Fixes
+
+* do not use deprecated types and methods from bson package
+
+##### Features
+
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+
+#### generate-delta-worker (1.1.0)
+
+New changes in generate-delta-worker since 1.0.2:
+
+* Fix multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+
+#### gui (3.7.0)
+
+New changes in gui since 3.6.2:
+
+##### Bug Fixes
+
+* fixed an issue that could show configuration deployments without a name
+* fixed faulty interpretation of granular role definitions that prevented the UI from showing accessible sections
+* re-enabled deletion of custom roles
+* fixed an error that would prevent accurate role creation
+* fixed an issue that could cause the app to freeze when selecting a release
+* fixed deployment phase size calculation for single device deployments
+  ([MEN-6489](https://northerntech.atlassian.net/browse/MEN-6489))
+* fixed an issue that would cause too many search request
+  ([MEN-6682](https://northerntech.atlassian.net/browse/MEN-6682))
+* fixed an issue that would readd existing filters
+* fixed an issue that could crash the ui for users without auditlogs enabled when looking at auditlogs
+* fixed an issue that could cause auditlog details for device changes to crash the ui
+* fixed an issue that would cause the ui to crash when listing single object related entries
+* fixed an issue that made the link to target devices in a deployment report unreliable
+  ([MEN-6718](https://northerntech.atlassian.net/browse/MEN-6718))
+* fixed an issue that would prevent the dashboard issues widget from pointing to the intended location
+  ([MEN-6720](https://northerntech.atlassian.net/browse/MEN-6720))
+* removed auth requests from device issue widget as it requires reporting which is not available yet
+* fixed an issue that would cause the UI to freeze when looking at webhook activity
+  ([MEN-6759](https://northerntech.atlassian.net/browse/MEN-6759))
+* worked around an issue that would render the ui mostly unclickable due to a dangling background
+  ([MEN-6749](https://northerntech.atlassian.net/browse/MEN-6749))
+* fixed onboarding showing up even if cancelled
+  ([MEN-6748](https://northerntech.atlassian.net/browse/MEN-6748))
+* fixed an issue that made resizing device list columns unpredictable
+  ([MEN-6744](https://northerntech.atlassian.net/browse/MEN-6744))
+* fixed a regression that prevented filtering by release tags
+  ([MEN-6785](https://northerntech.atlassian.net/browse/MEN-6785))
+* made remote terminal slightly wider to accomodate at least 80 chars
+* fixed an issue that could reset delta config settings to their default values
+  ([MEN-6790](https://northerntech.atlassian.net/browse/MEN-6790))
+* fixed an issue that caused the integrated terminal to render too frequent & never settle on a size
+  ([MEN-6800](https://northerntech.atlassian.net/browse/MEN-6800))
+* fixed an issue that would prevent oauth based signup
+* fixed an issue that would overwrite device inventory update timestamps with other services' times
+  ([MEN-6811](https://northerntech.atlassian.net/browse/MEN-6811))
+* fixed deployment report init by fixing open state detection
+  ([MEN-6792](https://northerntech.atlassian.net/browse/MEN-6792))
+* made use of newly added information about when a device actually started a deployment
+  ([MEN-6793](https://northerntech.atlassian.net/browse/MEN-6793))
+* update the timestamp labels in the deployment detail view
+  ([MEN-6793](https://northerntech.atlassian.net/browse/MEN-6793))
+* Fixed the infinite page redirects when the back button is pressed
+  ([MEN-6796](https://northerntech.atlassian.net/browse/MEN-6796), [MEN-6847](https://northerntech.atlassian.net/browse/MEN-6847))
+
+##### Features
+
+* moved existing helptips to updated design & allowing per tip visibility toggling
+  ([MEN-5414](https://northerntech.atlassian.net/browse/MEN-5414))
+* made role management actions more explicit
+  ([MEN-6689](https://northerntech.atlassian.net/browse/MEN-6689))
+* removed limitation of 5 custom columns
+  ([MEN-6603](https://northerntech.atlassian.net/browse/MEN-6603))
+* added support for release tags & update type filtering
+  ([MEN-6455](https://northerntech.atlassian.net/browse/MEN-6455))
+* reworked filtering setup in auditlogs & finished deployments to align with releases & updated designs
+
+  - this also removes the timerange selection in deployments & auditlogs in order to streamline date related filtering to a single selector
+  - this should also address filter settings parsing on refresh
+  ([MEN-6456](https://northerntech.atlassian.net/browse/MEN-6456))
+* allowed resizing name column
+  ([MEN-6600](https://northerntech.atlassian.net/browse/MEN-6600))
+* added warning about the nature of tenant tokens to reduce chance of this being shared
+  ([MEN-6768](https://northerntech.atlassian.net/browse/MEN-6768))
+* rename `artifact_name` column to `Current artifact` in device list
+
+##### Other
+
+* adjusted floating action buttons to open/close on click
+* gave terminal slightly more room to improve usability
+
+#### integration (3.7.0)
+
+New changes in integration since 3.6.3:
+
+##### Bug Fixes
+
+* Disable authentication for the new signup endpoint
+
+##### Features
+
+* Bump MongoDB version 4.4 -> 5.0
+  ([MC-6324](https://northerntech.atlassian.net/browse/MC-6324))
+* enable redis cache in the inventory-enterprise service
+* change redis configuration
+
+##### Other
+
+* test(full integration): fix the check if the devices reported inventory
+* Upgrade auditlogs to 3.2.0.
+* Upgrade create-artifact-worker to 1.4.0.
+* Upgrade deployments-enterprise to 4.6.0.
+* Upgrade deployments to 4.6.0.
+* Upgrade deviceauth-enterprise to 3.6.0.
+* Upgrade deviceauth to 3.6.0.
+* Upgrade deviceconfig to 1.4.0.
+* Upgrade deviceconnect to 1.5.0.
+* Upgrade devicemonitor to 1.5.0.
+* Upgrade generate-delta-worker to 1.1.0.
+* Upgrade gui to 3.7.0.
+* Upgrade integration to 3.7.0.
+* Upgrade inventory-enterprise to 4.4.0.
+* Upgrade inventory to 4.4.0.
+* Upgrade iot-manager to 1.3.0.
+* Upgrade mender-artifact to 3.11.0.
+* Upgrade mender-cli to 1.12.0.
+* Upgrade mender-connect to 2.2.0.
+* Upgrade mender-convert to 4.1.0.
+* Upgrade mender-gateway to 1.2.0.
+* Upgrade mender to 3.5.2.
+* Upgrade mtls-ambassador to 1.3.0.
+* Upgrade tenantadm to 4.1.0.
+* Upgrade useradm-enterprise to 1.22.0.
+* Upgrade useradm to 1.22.0.
+* Upgrade workflows-enterprise to 2.6.0.
+* Upgrade workflows to 2.6.0.
+
+#### inventory (4.4.0)
+
+New changes in inventory since 4.3.2:
+
+##### Bug Fixes
+
+* attributes changed: compare timestamps with configurable threshold.
+  ([MEN-6643](https://northerntech.atlassian.net/browse/MEN-6643))
+* do not use deprecated methods from bson package
+
+##### Features
+
+* update inventory only when changed or outdated.
+  ([MEN-6425](https://northerntech.atlassian.net/browse/MEN-6425))
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* update device inventory only when changed but at least daily
+  ([MEN-6643](https://northerntech.atlassian.net/browse/MEN-6643))
+
+##### Other
+
+* fix(management api): fix value returned by /filters/attributes endpoint
+
+  In the /filters/attributes endpoint, in case there are no attributes,
+  return empty list instead of null.
+  ([MEN-6477](https://northerntech.atlassian.net/browse/MEN-6477))
+* add clinet for management API v2
+  ([MEN-6477](https://northerntech.atlassian.net/browse/MEN-6477))
+* check returned value of /filters/attributes
+  ([MEN-6477](https://northerntech.atlassian.net/browse/MEN-6477))
+
+#### inventory-enterprise (4.4.0)
+
+New changes in inventory-enterprise since 4.3.2:
+
+##### Bug Fixes
+
+* attributes changed: compare timestamps with configurable threshold.
+  ([MEN-6643](https://northerntech.atlassian.net/browse/MEN-6643))
+* do not use deprecated methods from bson package
+* do not use deprecated types and methods from bson package
+* sort inventory attributes when detecting duplicated updates
+* Updating attributes no longer panics if cache is not configured
+  ([MEN-6864](https://northerntech.atlassian.net/browse/MEN-6864))
+
+##### Features
+
+* update inventory only when changed or outdated.
+  ([MEN-6425](https://northerntech.atlassian.net/browse/MEN-6425))
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* update device inventory only when changed but at least daily
+  ([MEN-6643](https://northerntech.atlassian.net/browse/MEN-6643))
+* detect duplicated device inventory updates and cache responses
+* remove checks for enterprise plan in some of the endpoint handlers
+
+  Access to this endpoints is restricted by applying access rules in
+  useradm.
+* Redis cache changes:
+  - do not use redis databases;
+  - use service/version specific prefix for all the keys;
+  - use connection string to create redis client;
+  - BREAKING CHANGE: Old redis_* configuration parameters will not work.
+  Use redis_connection_string and redis_key_prefix to configure redis
+  cache client.
+  ([MC-7057](https://northerntech.atlassian.net/browse/MC-7057))
+* support redis_addr setting for backward compatibility
+
+##### Other
+
+* fix(management api): fix value returned by /filters/attributes endpoint
+
+  In the /filters/attributes endpoint, in case there are no attributes,
+  return empty list instead of null.
+  ([MEN-6477](https://northerntech.atlassian.net/browse/MEN-6477))
+* add clinet for management API v2
+  ([MEN-6477](https://northerntech.atlassian.net/browse/MEN-6477))
+* check returned value of /filters/attributes
+  ([MEN-6477](https://northerntech.atlassian.net/browse/MEN-6477))
+
+#### iot-manager (1.3.0)
+
+New changes in iot-manager since 1.2.1:
+
+##### Bug Fixes
+
+* do not use deprecated types and methods from bson package
+
+##### Features
+
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+
+##### Other
+
+* adjust tests after introducing support for Azure authentication
+
+#### mtls-ambassador (1.3.0)
+
+New changes in mtls-ambassador since 1.2.1:
+
+##### Features
+
+* expose an HTTP server on port `8081` with the `/status` end-point
+  ([MEN-6700](https://northerntech.atlassian.net/browse/MEN-6700))
+
+#### tenantadm (4.1.0)
+
+New changes in tenantadm since 4.0.0:
+
+##### Bug Fixes
+
+* HubSpot: update contact if exists
+  ([MEN-6778](https://northerntech.atlassian.net/browse/MEN-6778))
+* Signup requests accept integer values for login
+
+##### Features
+
+* Marketing sync: moving to HubSpot
+  ([MEN-6420](https://northerntech.atlassian.net/browse/MEN-6420))
+* remove data synchronization between useradm and tenantadm
+  ([MEN-5733](https://northerntech.atlassian.net/browse/MEN-5733))
+* remove old and unused signup API end-points with support for Stripe
+  ([MEN-5742](https://northerntech.atlassian.net/browse/MEN-5742))
+* create users instead of relying on the create_organization workflow
+  ([MEN-5733](https://northerntech.atlassian.net/browse/MEN-5733))
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* New signup endpoint supporting subscription managed by Azure
+
+  The new endpoint extends the existing sign-up endpoint
+  `POST /api/management/v2/tenantadm/tenants/trial` with the ability to
+  sign up using an existing subscription managed by Azure.
+
+  Ticket: ALV-149
+* Initial implementation of the Microsoft marketplace webhook
+
+  The webhook does nothing but logging the raw event to the database.
+
+  Ticket: ALV-133
+* Implement webhook API to handle events from Microsoft marketplace
+* Integrate Azure market subscriptions with plan change requests
+* Integrate Azure Marketplace with cancel tenant API
+* introduce plan bindings
+* method for setting plan binding for given tenant
+* method for setting limits for given tenant
+* set plan binding and limits when creating/updating tenants
+* Add option `disable_legacy_addons` to disable addons
+
+#### useradm (1.22.0)
+
+New changes in useradm since 1.21.0:
+
+##### Bug Fixes
+
+* removed jwt cookie transmission to minimize potential leakage of auth info
+* describe plan_definitions_path setting
+
+##### Features
+
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* introduce plans API
+* support for Ed25519 server keys for signing the JWT tokens
+  ([MEN-5676](https://northerntech.atlassian.net/browse/MEN-5676))
+* add file_transfer feature flag to plan definitions
+* introduce new feature flag - reporting
+* "kid" support in JWT header and multiple keys.
+  ([MEN-6804](https://northerntech.atlassian.net/browse/MEN-6804))
+
+##### Other
+
+* add "reporting" feature flag to API spec
+
+#### useradm-enterprise (1.22.0)
+
+New changes in useradm-enterprise since 1.21.2:
+
+##### Bug Fixes
+
+* fix Troubleshooting role definition
+
+  User with "Troubleshooting" role should be able to see devices.
+  To achive that add "ReadDevices" permission set to the troubleshooting
+  role definition.
+  ([MEN-6615](https://northerntech.atlassian.net/browse/MEN-6615))
+* fix error handling when creating users
+
+  In case the limit on number of users has been exceeded, endpoint for
+  creating users should return proper error.
+
+  Ticket: ALV-129
+* return limit with user count from GET /limits endpoint even when there is no limit
+* do not return Internal Server Error if the user doesn't exist on login
+* removed jwt cookie transmission to minimize potential leakage of auth info
+* fix status code returned from PUT /plan_bindings endpoint
+* describe plan_definitions_path setting
+* Redis key prefix configuration not applied
+  ([MEN-6927](https://northerntech.atlassian.net/browse/MEN-6927))
+
+##### Features
+
+* remove data synchronization between useradm and tenantadm
+  ([MEN-5733](https://northerntech.atlassian.net/browse/MEN-5733))
+* Allow overriding the built-in RBAC definitions at startup
+
+  If the configuration `rbac_override_path` is set, the built-in roles are
+  replaced with the definitions parsed from the override file. The new
+  rules can be specified in YAML or JSON and follows the API schema:
+  ```yaml
+  type: object
+    properties:
+      roles:
+        type: object
+        description: |
+          Built-in roles; keys are role names, values are Role from the
+          API
+        additionalProperties:
+          $ref: '#/components/schemas/Role'
+      permissions:
+        type: object
+        description: |
+          Built-in permissions; keys are role names, values are
+          PermissionSetsWithScope from the API
+        additionalProperties:
+          $ref: '#/components/schemas/PermissionSetsWithScope'
+  ```
+
+  Ticket: ALV-67
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* new configuration setting `audit_logs_min_plan` to specify the minimum plan to enable audit logs; it defaults to `enterprise`
+  Ticket: ALV-115
+* introduce limit for maximum number of users
+* new configuration setting `rbac_min_plan` to specify the minimum plan to enable RBAC; it defaults to `enterprise`
+  Ticket: ALV-135
+* Add OIDC integration with Azure Marketplace
+* introduce plans API
+* support for Ed25519 server keys for signing the JWT tokens
+  ([MEN-5676](https://northerntech.atlassian.net/browse/MEN-5676))
+* restrict access to dynamic groups and SSO
+* remove checks for enterprise plan in some endpoint handlers
+
+  Access to this endpoints is restricted by applying access rules.
+* add file_transfer feature flag to plan definitions
+* introduce new feature flag - reporting
+* "kid" support in JWT header and multiple keys.
+  ([MEN-6804](https://northerntech.atlassian.net/browse/MEN-6804))
+* extend basic permissions with access to /plans and /plan_binding endpoints
+* make service compatible with redis cluster
+
+  Changes:
+  - do not use redis databases;
+  - use service/version specific prefix for all the keys;
+  - change redis configuration - use connection string to create redis
+    client;
+  - do not use flush db command;
+
+  BREAKING CHANGE: Old redis_* configuration parameters are deprecated
+  and most of them will not work. Use redis_connection_string and
+  redis_key_prefix to configure redis cache client.
+  ([MC-6926](https://northerntech.atlassian.net/browse/MC-6926))
+* replace method for flushing database with method for suspending tenant
+
+  We achive cache invalidation by incrementing tenant key version.
+  Each tenant related key in the cache has to contain tenant key version.
+  This way, by incrementing tenant key version, we invalidate all tenant
+  related keys.
+  ([MC-6926](https://northerntech.atlassian.net/browse/MC-6926))
+* allow empty POST to sso/idp/metadata and later PUT of metadata.
+  ([MEN-6340](https://northerntech.atlassian.net/browse/MEN-6340))
+
+##### Other
+
+* improve the SSO filter implementation
+  ([MEN-5733](https://northerntech.atlassian.net/browse/MEN-5733))
+* add "reporting" feature flag to API spec
+
+#### workflows (2.6.0)
+
+New changes in workflows since 2.5.1:
+
+##### Bug Fixes
+
+* do not use deprecated types and methods from bson package
+
+##### Features
+
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* get job status by id
+  ([MEN-6791](https://northerntech.atlassian.net/browse/MEN-6791))
+
+#### workflows-enterprise (2.6.0)
+
+New changes in workflows-enterprise since 2.5.1:
+
+##### Bug Fixes
+
+* fixed an issue on publishing the workflows-worker container
+  image ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+* do not use deprecated types and methods from bson package
+* do not use deprecated types and methods from bson package
+* demo artifact generation
+  ([MEN-6857](https://northerntech.atlassian.net/browse/MEN-6857))
+* Missing path prefix from hubspot URLs
+
+##### Features
+
+* do not create the user in the create_organization workflow
+  ([MEN-5733](https://northerntech.atlassian.net/browse/MEN-5733))
+* Added multiplatform build
+  ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
+
+* workflow for setting tenant limits
+* get job status by id
+  ([MEN-6791](https://northerntech.atlassian.net/browse/MEN-6791))
+
+##### Other
+
+* use aiosmtpd instead of smtpd
+
+##### Dependabot bumps
+
 
 ## Mender 3.6.3
 

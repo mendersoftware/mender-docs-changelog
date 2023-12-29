@@ -7,6 +7,72 @@ shortcode-core:
 github: false
 ---
 
+## mender-convert 4.1.0
+
+_Released 12.28.2023_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 5 (29.4%) |
+| Kristian Amlie | 5 (29.4%) |
+| Michael Mugnai | 2 (11.8%) |
+| Julien Roland | 1 (5.9%) |
+| Lorenzo Ruffati | 1 (5.9%) |
+| Josef Holzmayr | 1 (5.9%) |
+| Tom Callahan | 1 (5.9%) |
+| Krzysztof Jaskiewicz | 1 (5.9%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 106 (45.9%) |
+| Lluis Campos | 76 (32.9%) |
+| Michael Mugnai | 33 (14.3%) |
+| Lorenzo Ruffati | 5 (2.2%) |
+| Josef Holzmayr | 5 (2.2%) |
+| Julien Roland | 2 (0.9%) |
+| Tom Callahan | 2 (0.9%) |
+| Krzysztof Jaskiewicz | 2 (0.9%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 12 (70.6%) |
+| michael.mugnai@gmail.com | 2 (11.8%) |
+| Unikie oy | 1 (5.9%) |
+| juroland@gmail.com | 1 (5.9%) |
+| 78968887+tcallahan14@users.noreply.github.com | 1 (5.9%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 189 (81.8%) |
+| michael.mugnai@gmail.com | 33 (14.3%) |
+| Unikie oy | 5 (2.2%) |
+| juroland@gmail.com | 2 (0.9%) |
+| 78968887+tcallahan14@users.noreply.github.com | 2 (0.9%) |
+
+| Employers with the most hackers (total 8) | |
+|---|---|
+| Northern.tech | 4 (50.0%) |
+| michael.mugnai@gmail.com | 1 (12.5%) |
+| Unikie oy | 1 (12.5%) |
+| juroland@gmail.com | 1 (12.5%) |
+| 78968887+tcallahan14@users.noreply.github.com | 1 (12.5%) |
+
+### Changelogs
+
+#### mender-convert (4.1.0)
+
+New changes in mender-convert since 4.0.3:
+
+##### Bug Fixes
+
+* hosted bootstrap script syntax error
+
+##### Features
+
+* add support for BTRFS filesystems
+
 
 ## mender-convert 4.0.3
 
