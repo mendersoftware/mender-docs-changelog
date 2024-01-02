@@ -11,39 +11,6 @@ github: false
 
 _Released 12.28.2023_
 
-### Statistics
-
-| Developers with the most changesets | |
-|---|---|
-| Lluis Campos | 6 (46.2%) |
-| Fabio Tranchitella | 4 (30.8%) |
-| Krzysztof Jaskiewicz | 2 (15.4%) |
-| Manuel Zedel | 1 (7.7%) |
-
-| Developers with the most changed lines | |
-|---|---|
-| Lluis Campos | 910 (53.0%) |
-| Krzysztof Jaskiewicz | 715 (41.7%) |
-| Fabio Tranchitella | 87 (5.1%) |
-| Manuel Zedel | 4 (0.2%) |
-
-| Developers with the most lines removed | |
-|---|---|
-| Krzysztof Jaskiewicz | 695 (88.2%) |
-| Manuel Zedel | 3 (0.4%) |
-
-| Top changeset contributors by employer | |
-|---|---|
-| Northern.tech | 13 (100.0%) |
-
-| Top lines changed by employer | |
-|---|---|
-| Northern.tech | 1716 (100.0%) |
-
-| Employers with the most hackers (total 4) | |
-|---|---|
-| Northern.tech | 4 (100.0%) |
-
 ### Changelogs
 
 #### mender-gateway (1.2.0)
