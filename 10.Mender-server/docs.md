@@ -7,6 +7,74 @@ shortcode-core:
 github: false
 ---
 
+## Mender 3.7.1
+
+_Released 01.15.2024_
+
+### Statistics
+
+A total of 1338 lines added, 1636 removed (delta -298)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 67 (65.7%) |
+| Ole Petter Orhagen | 28 (27.5%) |
+| Alf-Rune Siqveland | 3 (2.9%) |
+| Kristian Amlie | 2 (2.0%) |
+| Roberto Giovanardi | 1 (1.0%) |
+| Fabio Tranchitella | 1 (1.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 1274 (58.0%) |
+| Ole Petter Orhagen | 858 (39.1%) |
+| Roberto Giovanardi | 53 (2.4%) |
+| Alf-Rune Siqveland | 5 (0.2%) |
+| Kristian Amlie | 5 (0.2%) |
+| Fabio Tranchitella | 2 (0.1%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Ole Petter Orhagen | 405 (24.8%) |
+| Kristian Amlie | 3 (0.2%) |
+| Alf-Rune Siqveland | 2 (0.1%) |
+| Fabio Tranchitella | 1 (0.1%) |
+
+| Developers with the most signoffs (total 1) | |
+|---|---|
+| Lluis Campos | 1 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 102 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 2197 (100.0%) |
+
+| Employers with the most signoffs (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Employers with the most hackers (total 6) | |
+|---|---|
+| Northern.tech | 6 (100.0%) |
+
+### Changelogs
+
+#### integration (3.7.1)
+
+New changes in integration since 3.7.0:
+
+* Upgrade integration to 3.7.1.
+* Upgrade mender-artifact to 3.11.1.
+* Upgrade mender-configure-module to 1.1.2.
+* Upgrade mender-convert to 4.1.1.
+* Upgrade mender-setup to 1.0.0.
+* Upgrade mender-snapshot to 1.0.0.
+* Upgrade mender to 4.0.0.
+
+
 ## Mender 3.7.0
 
 _Released 12.28.2023_

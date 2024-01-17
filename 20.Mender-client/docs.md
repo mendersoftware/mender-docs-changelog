@@ -7,6 +7,152 @@ shortcode-core:
 github: false
 ---
 
+## mender 4.0.0
+
+_Released 01.15.2024_
+
+### Statistics
+
+A total of 70335 lines added, 61546 removed (delta 8789)
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 478 (47.5%) |
+| Ole Petter Orhagen | 246 (24.4%) |
+| Vratislav Podzimek | 155 (15.4%) |
+| Lluis Campos | 104 (10.3%) |
+| Peter Grzybowski | 4 (0.4%) |
+| Lars Erik Wik | 4 (0.4%) |
+| Lukasz Finster | 3 (0.3%) |
+| Adam Duskett | 2 (0.2%) |
+| Alan | 2 (0.2%) |
+| Alf-Rune Siqveland | 2 (0.2%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Kristian Amlie | 78431 (66.4%) |
+| Ole Petter Orhagen | 15419 (13.1%) |
+| Vratislav Podzimek | 14779 (12.5%) |
+| Lluis Campos | 7198 (6.1%) |
+| Peter Grzybowski | 1055 (0.9%) |
+| Adam Duskett | 535 (0.5%) |
+| Lars Erik Wik | 330 (0.3%) |
+| Lukasz Finster | 138 (0.1%) |
+| Josef Holzmayr | 114 (0.1%) |
+| Alf-Rune Siqveland | 42 (0.0%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Kristian Amlie | 19656 (31.9%) |
+| Adam Duskett | 132 (0.2%) |
+| Josef Holzmayr | 81 (0.1%) |
+| Fabio Tranchitella | 1 (0.0%) |
+
+| Developers with the most signoffs (total 6) | |
+|---|---|
+| Vratislav Podzimek | 3 (50.0%) |
+| Ole Petter Orhagen | 2 (33.3%) |
+| Kristian Amlie | 1 (16.7%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1001 (99.4%) |
+| Tronel | 3 (0.3%) |
+| aduskett@gmail.com | 2 (0.2%) |
+| BlackBerry Limited | 1 (0.1%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 117379 (99.4%) |
+| aduskett@gmail.com | 535 (0.5%) |
+| Tronel | 138 (0.1%) |
+| BlackBerry Limited | 32 (0.0%) |
+
+| Employers with the most signoffs (total 6) | |
+|---|---|
+| Northern.tech | 6 (100.0%) |
+
+| Employers with the most hackers (total 16) | |
+|---|---|
+| Northern.tech | 13 (81.2%) |
+| aduskett@gmail.com | 1 (6.2%) |
+| Tronel | 1 (6.2%) |
+| BlackBerry Limited | 1 (6.2%) |
+
+### Changelogs
+
+#### mender (4.0.0)
+
+New changes in mender since 3.5.2:
+
+##### Bug Fixes
+
+* disabled implicit conversion form Error to bool
+  ([MEN-6409](https://northerntech.atlassian.net/browse/MEN-6409))
+* README: add build instructions for C++-client
+* latest openssl reports "no such file" if the cert doesn't exist
+* Rootfs scripts in the C++ client are checked in the same way as
+  `Artifact` scripts, and hence, we are now moving it to support only `version 3`.
+  While in the old `Golang` client both version `2` and `3` were supported.
+  ([MEN-6671](https://northerntech.atlassian.net/browse/MEN-6671))
+* The client no longer erronously commits a rootfs-image
+  artifact after being restarted using `systemctl restart` in the
+  `ArtifactReboot` state.
+  ([MEN-6633](https://northerntech.atlassian.net/browse/MEN-6633))
+
+##### Features
+
+* build and test using the latest version of golang (1.21 today)
+  ([QA-614](https://northerntech.atlassian.net/browse/QA-614))
+* The client's HSM crypto-module support is changed so that the
+  `PrivateKey` used for `authentication` is always taken from the configurations:
+  `security.AuthPrivateKey`, and the `HttpsClient.private_key` is only used as the
+  key for the associated certificate `HttpsClient.client_certificate`. The two can
+  still use the same key, but this means now that you add the same key `url` in
+  both places.
+  ([MEN-6668](https://northerntech.atlassian.net/browse/MEN-6668))
+
+##### Other
+
+* The rootfs-image updater is no longer built in, but is an
+  Update Module, available under the name `rootfs-image`.
+* Remove `DbusEnabled` config option.
+
+  Mender now always depends on DBus.
+  ([MEN-6662](https://northerntech.atlassian.net/browse/MEN-6662))
+* Remove `BootUtilitiesGetNextActivePart` and
+  `BootUtilitiesSetActivePart` config options. These are not necessary
+  anymore since the choice of tool, including its calling arguments, can
+  be programmed directly into each update module instead.
+  ([MEN-6662](https://northerntech.atlassian.net/browse/MEN-6662))
+* Update Control support has been removed from the client.
+  ([MEN-6647](https://northerntech.atlassian.net/browse/MEN-6647))
+* `--forcebootstrap` is not a global cli option anymore,
+  but an option specific to `mender-auth daemon` and `mender-auth
+  bootstrap` commands.
+  ([MEN-6679](https://northerntech.atlassian.net/browse/MEN-6679))
+* Mender daemon does not anymore integrate with `syslog`,
+  handling the logs is responsibility of `systemd` or the caller.
+  ([MEN-6679](https://northerntech.atlassian.net/browse/MEN-6679))
+* Global flag `--no-syslog` is removed.
+  ([MEN-6679](https://northerntech.atlassian.net/browse/MEN-6679))
+* Remove `--passphrase-file` option from command scopes where
+  it has no use. Move it to `mender-auth daemon` and `mender-auth
+  bootstrap` commands.
+  ([MEN-6679](https://northerntech.atlassian.net/browse/MEN-6679))
+* mention the deprecation of control maps
+  ([MEN-6648](https://northerntech.atlassian.net/browse/MEN-6648))
+* Mender client does not use HTTP Keep-Alive anymore. The
+  related configuration option `Connectivity` is deprecated. The TCP
+  connection will be terminated as soon as the HTTP request/response is
+  finished, and every subsequent HTTP request will open a new TCP
+  connection.
+  ([MEN-6862](https://northerntech.atlassian.net/browse/MEN-6862))
+* systemd service `mender-client` does not exist anymore.
+  Dependencies shall depend either `mender-authd` or `mender-updated`.
+  ([MEN-6858](https://northerntech.atlassian.net/browse/MEN-6858))
+
+
 ## mender 3.5.2
 
 _Released 12.28.2023_
