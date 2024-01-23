@@ -7,6 +7,46 @@ shortcode-core:
 github: false
 ---
 
+## mender-configure-module 1.1.2
+
+_Released 01.15.2024_
+
+### Statistics
+
+A total of 68 lines added, 55 removed (delta 13)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 5 (83.3%) |
+| Josef Holzmayr | 1 (16.7%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 42 (61.8%) |
+| Josef Holzmayr | 26 (38.2%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 6 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 68 (100.0%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+### Changelogs
+
+#### mender-configure-module (1.1.2)
+
+New changes in mender-configure-module since 1.1.1:
+
+##### Bug Fixes
+
+* make systemd installation systemd_unitdir aware
+
 
 ## mender-configure-module 1.1.1
 

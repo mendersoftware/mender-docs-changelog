@@ -7,6 +7,45 @@ shortcode-core:
 github: false
 ---
 
+## mender-convert 4.1.1
+
+_Released 01.15.2024_
+
+### Statistics
+
+A total of 4 lines added, 3 removed (delta 1)
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 2 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Lluis Campos | 4 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 4 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-convert (4.1.1)
+
+New changes in mender-convert since 4.1.0:
+
+* Set default `MENDER_CLIENT_VERSION` to 3.5.2.
+  `mender-convert` is not yet integrated with upcoming client v4.
+  ([MEN-6948](https://northerntech.atlassian.net/browse/MEN-6948))
+
+
 ## mender-convert 4.1.0
 
 _Released 12.28.2023_

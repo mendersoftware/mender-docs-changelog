@@ -7,6 +7,48 @@ shortcode-core:
 github: false
 ---
 
+## mender-artifact 3.11.1
+
+_Released 01.15.2024_
+
+### Statistics
+
+A total of 82 lines added, 32 removed (delta 50)
+
+| Developers with the most changesets | |
+|---|---|
+| Daniel Skinstad Drabitzius | 2 (66.7%) |
+| Lluis Campos | 1 (33.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Daniel Skinstad Drabitzius | 80 (97.6%) |
+| Lluis Campos | 2 (2.4%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 82 (100.0%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.11.1)
+
+New changes in mender-artifact since 3.11.0:
+
+##### Bug Fixes
+
+* signing an existing artifact now preserves file permissions and owner/group
+  ([MEN-3409](https://northerntech.atlassian.net/browse/MEN-3409))
+
+
 ## mender-artifact 3.11.0
 
 _Released 12.28.2023_
