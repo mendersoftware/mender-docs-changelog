@@ -83,6 +83,12 @@ A total of 70335 lines added, 61546 removed (delta 8789)
 
 #### mender (4.0.0)
 
+Mender client version 4.0.0 has been completely rewritten from scratch in C++. To ensure a
+successful migration, there are a number of changes which are important to pay attention to. The
+complete list of changes is below, but for a more user friendly migration guide, please see the
+[Upgrading guide](https://docs.mender.io/3.7/client-installation/upgrading) in the Mender
+documentation.
+
 New changes in mender since 3.5.2:
 
 ##### Bug Fixes
@@ -102,8 +108,6 @@ New changes in mender since 3.5.2:
 
 ##### Features
 
-* build and test using the latest version of golang (1.21 today)
-  ([QA-614](https://northerntech.atlassian.net/browse/QA-614))
 * The client's HSM crypto-module support is changed so that the
   `PrivateKey` used for `authentication` is always taken from the configurations:
   `security.AuthPrivateKey`, and the `HttpsClient.private_key` is only used as the
