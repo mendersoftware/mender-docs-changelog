@@ -7,6 +7,64 @@ shortcode-core:
 github: false
 ---
 
+## Mender 3.7.2
+
+_Released 02.12.2024_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Lluis Campos | 3 (42.9%) |
+| Roberto Giovanardi | 1 (14.3%) |
+| Fabio Tranchitella | 1 (14.3%) |
+| Ole Petter Orhagen | 1 (14.3%) |
+| Alf-Rune Siqveland | 1 (14.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Fabio Tranchitella | 62 (42.5%) |
+| Ole Petter Orhagen | 45 (30.8%) |
+| Lluis Campos | 28 (19.2%) |
+| Alf-Rune Siqveland | 10 (6.8%) |
+| Roberto Giovanardi | 1 (0.7%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 7 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 146 (100.0%) |
+
+| Employers with the most hackers (total 5) | |
+|---|---|
+| Northern.tech | 5 (100.0%) |
+
+### Changelogs
+
+#### integration (3.7.2)
+
+New changes in integration since 3.7.1:
+
+* Upgrade gui to 3.7.1.
+* Upgrade integration to 3.7.2.
+* Upgrade inventory-enterprise to 4.4.1.
+* Upgrade inventory to 4.4.1.
+* Upgrade mender-artifact to 3.11.2.
+* Upgrade mender-connect to 2.2.1.
+* Upgrade mender to 4.0.1.
+
+#### inventory-enterprise (4.4.1)
+
+New changes in inventory-enterprise since 4.4.0:
+
+##### Bug Fixes
+
+* Index out of bounds on empty regular expression
+  ([MEN-6930](https://northerntech.atlassian.net/browse/MEN-6930))
+
+
 ## Mender 3.7.1
 
 _Released 01.15.2024_
