@@ -7,6 +7,54 @@ shortcode-core:
 github: false
 ---
 
+## mender 4.0.1
+
+_Released 02.12.2024_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Kristian Amlie | 2 (66.7%) |
+| Sebastian Opsahl | 1 (33.3%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Sebastian Opsahl | 54 (94.7%) |
+| Kristian Amlie | 3 (5.3%) |
+
+| Developers with the most lines removed | |
+|---|---|
+| Sebastian Opsahl | 7 (12.3%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 3 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 57 (100.0%) |
+
+| Employers with the most hackers (total 2) | |
+|---|---|
+| Northern.tech | 2 (100.0%) |
+
+### Changelogs
+
+#### mender (4.0.1)
+
+New changes in mender since 4.0.0:
+
+##### Bug Fixes
+
+* Unify meta-data element support in mender-artifact and C++ parser, and relax to accept all valid JSON
+  ([MEN-6199](https://northerntech.atlassian.net/browse/MEN-6199))
+* Artifact name is now properly marked as "INCONSISTENT" if
+  there is an error in the `ArtifactFailure_Leave` script during an
+  installation.
+* Update incorrect default value for `--data` flag in help screen.
+
+
 ## mender 4.0.0
 
 _Released 01.15.2024_

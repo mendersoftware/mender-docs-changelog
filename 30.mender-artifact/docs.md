@@ -7,6 +7,44 @@ shortcode-core:
 github: false
 ---
 
+## mender-artifact 3.11.2
+
+_Released 02.12.2024_
+
+### Statistics
+
+| Developers with the most changesets | |
+|---|---|
+| Sebastian Opsahl | 1 (100.0%) |
+
+| Developers with the most changed lines | |
+|---|---|
+| Sebastian Opsahl | 87 (100.0%) |
+
+| Top changeset contributors by employer | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+| Top lines changed by employer | |
+|---|---|
+| Northern.tech | 87 (100.0%) |
+
+| Employers with the most hackers (total 1) | |
+|---|---|
+| Northern.tech | 1 (100.0%) |
+
+### Changelogs
+
+#### mender-artifact (3.11.2)
+
+New changes in mender-artifact since 3.11.1:
+
+##### Bug Fixes
+
+* Unify meta-data element support in mender-artifact and C++ parser, and relax to accept all valid JSON
+  ([MEN-6199](https://northerntech.atlassian.net/browse/MEN-6199))
+
+
 ## mender-artifact 3.11.1
 
 _Released 01.15.2024_
