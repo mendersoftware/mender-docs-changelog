@@ -134,8 +134,8 @@ A total of 70335 lines added, 61546 removed (delta 8789)
 Mender client version 4.0.0 has been completely rewritten from scratch in C++. To ensure a
 successful migration, there are a number of changes which are important to pay attention to. The
 complete list of changes is below, but for a more user friendly migration guide, please see the
-[Upgrading guide](https://docs.mender.io/3.7/client-installation/upgrading) in the Mender
-documentation.
+[Upgrading guide](https://docs.mender.io/3.7/client-installation/install-with-debian-package/upgrading)
+in the Mender documentation.
 
 New changes in mender since 3.5.2:
 
