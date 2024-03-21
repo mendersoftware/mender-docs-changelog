@@ -7,6 +7,52 @@ shortcode-core:
 github: false
 ---
 
+## Mender 3.7.3
+
+_Released 03.21.2024_
+
+### Changelogs
+
+#### deployments-enterprise (4.6.1)
+
+New changes in deployments-enterprise since 4.6.0:
+
+##### Features
+
+* device API end-points for the artifacts list, show and download
+  ([MEN-6916](https://northerntech.atlassian.net/browse/MEN-6916))
+
+#### gui (3.7.2)
+
+New changes in gui since 3.7.1:
+
+##### Bug Fixes
+
+* fixed gateway and monitor links on the Downloads page
+  ([MEN-7004](https://northerntech.atlassian.net/browse/MEN-7004))
+* display removed groups in the role defenitions
+  ([MEN-6891](https://northerntech.atlassian.net/browse/MEN-6891))
+* fixed the final onboarding step not being displayed
+  ([MEN-6949](https://northerntech.atlassian.net/browse/MEN-6949))
+
+##### Features
+
+* explicitly install mender-client4 in bash snippets, for onboarding tutorial and 'Connect a new device'
+  ([MEN-6976](https://northerntech.atlassian.net/browse/MEN-6976))
+
+#### integration (3.7.3)
+
+New changes in integration since 3.7.2:
+
+* Upgrade deployments-enterprise to 4.6.1.
+* Upgrade deployments to 4.6.1.
+* Upgrade gui to 3.7.2.
+* Upgrade integration to 3.7.3.
+* Upgrade mender-binary-delta to 1.5.0.
+* Upgrade mender-convert to 4.2.0.
+* Upgrade mender to 4.0.2.
+
+
 ## Mender 3.7.2
 
 _Released 02.12.2024_
