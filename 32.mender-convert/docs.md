@@ -7,6 +7,56 @@ shortcode-core:
 github: false
 ---
 
+## mender-convert 4.2.0
+
+_Released 03.21.2024_
+
+### Changelogs
+
+#### mender-convert (4.2.0)
+
+New changes in mender-convert since 4.1.1:
+
+##### Bug Fixes
+
+* Remove unneeded `mender_grub_storage_device` assignment
+  which could boot from the wrong device if a USB stick was inserted.
+
+##### Features
+
+* From Mender client v4 onwards, the client is distributed in
+  two separate packages: `mender-auth` and `mender-update`. Now
+  `mender-convert` installs these two when installing the client.
+  ([MEN-6282](https://northerntech.atlassian.net/browse/MEN-6282))
+* Install `mender-flash` when installing the Mender client
+  ([MEN-6282](https://northerntech.atlassian.net/browse/MEN-6282))
+* Switch to install packages using Debian package manager.
+  This means that the files are no longer simply extracted into place,
+  which has been a big source of conflict with the package manager when
+  doing later upgrades. It also means that a default `mender.conf` file
+  will be provided if `mender-setup` is installed, since it installs it
+  by default.
+  ([MEN-6935](https://northerntech.atlassian.net/browse/MEN-6935))
+* Install mender-setup and mender-snapshot by default when
+  Mender client 4.0 or later is selected. Previously they were built-in,
+  but are now optional and can be turned off with:
+  ```
+  MENDER_SETUP_INSTALL=n
+  MENDER_SNAPSHOT_INSTALL=n
+  ```
+  to save space.
+  ([MEN-6935](https://northerntech.atlassian.net/browse/MEN-6935))
+* add support for `MENDER_CLIENT_VERSION="auto"`, which installs the Mender Client 3.x series for Debian bullseye and buster and for Ubuntu jammy and focal, the Mender Client 4.x series for all the other distributions
+  ([MEN-6976](https://northerntech.atlassian.net/browse/MEN-6976))
+
+##### Other
+
+* The `mender-client-data-dir.service` has been renamed to
+  `mender-data-dir.service`. This is used as a dependency for the mender
+  update client, and most users should not notice the change.
+* Update the rpi bullseye image to the 2023-05-03 release.
+
+
 ## mender-convert 4.1.1
 
 _Released 01.15.2024_

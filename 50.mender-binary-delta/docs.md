@@ -8,6 +8,29 @@ github: false
 ---
 
 
+## mender-binary-delta 1.5.0
+
+_Released 03.21.2024_
+
+### Changelogs
+
+#### mender-binary-delta (1.5.0)
+
+New changes in mender-binary-delta since 1.4.1:
+
+##### Bug Fixes
+
+* Fix a few memory leaks.
+
+##### Features
+
+* Implement support for UBIFS. This requires either
+  mender-flash or ubiupdatevol to be installed on the device. The
+  `FlashTool` option decides which one to use. Currently the default is
+  to not use either, but build systems may provide their own defaults.
+  ([MEN-6774](https://northerntech.atlassian.net/browse/MEN-6774))
+
+
 ## mender-binary-delta 1.4.1
 
 _Released 09.25.2022_

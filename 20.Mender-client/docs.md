@@ -7,6 +7,25 @@ shortcode-core:
 github: false
 ---
 
+## mender 4.0.2
+
+_Released 03.21.2024_
+
+### Changelogs
+
+#### mender (4.0.2)
+
+New changes in mender since 4.0.1:
+
+##### Bug Fixes
+
+* Submit inventory as soon as the device is accepted.
+* Fix line processing of data when reading a single byte
+
+  When reading a single byte it was not being saved in the trailing line
+  and, eventually, lost.
+
+
 ## mender 4.0.1
 
 _Released 02.12.2024_
