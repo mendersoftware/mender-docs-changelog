@@ -7,6 +7,179 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender (kirkstone-v2024.04)
+
+_Released: 04.26.2024_
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2024.04)
+
+New changes in meta-mender since kirkstone-v2023.12:
+
+##### Bug Fixes
+
+* Fix the install path for the D-Bus interface files shipped in
+  `mender-client-dev` package. It was `$(datadir)/dbus-1/interface` but it
+  should be `interfaces` instead.
+* Fix mender-client version 3.5.2 for Kirkstone
+* pass prefix and systemd_unitdir to mender-configure installation
+* Fix broken Git builds for mender-client < 4.0.
+* remove "mender.bmap" IMAGE_FSTYPE
+* Remove `has_journal` flag from mkfs.ext4 when
+  `read-only-rootfs` flag is enabled, which causes issues in certain
+  configurations. Specifically it solves these problems:
+  * Checksum is not stable which can cause issues with binary delta
+    updates. This is an in-memory effect only, the physical checksum on
+    disk is unaffected.
+  * Mender-snapshot can generate corrupted rootfs dumps, for the same
+    reason as the previous point.
+* Fix rare mounting errors like these:
+  ```
+  kernel: EXT4-fs error (device mmcblk0p6): ext4_mb_generate_buddy:1141: group 35, block bitmap and bg descriptor inconsistent: 32766 vs 32768 free clusters
+  ```
+  ([MEN-6027](https://northerntech.atlassian.net/browse/MEN-6027))
+* Fix path to mender-client-systemd-machine-id service/scripts
+
+##### Features
+
+* add recipe for Application Updates Module
+  ([MEN-6084](https://northerntech.atlassian.net/browse/MEN-6084))
+* Add the `mender` recipe in
+  `meta-mender-core/recipes/mender/mender-client/` while still keeping
+  support for the old golang client builds. The new `mender` recipe
+  creates two packages, `mender-auth` and `mender-update`, to provide
+  the C++ implementations of the given functionality. The given client
+  implementation can be chosen using the Yocto `PREFERRED_PROVIDER` and
+  `PREFERRED_RPROVIDER` variables, by using the 'mender' prefix for the
+  C++ client, and 'mender-client' for the Golang client. For example
+  like this:
+  ```
+  PREFERRED_PROVIDER_mender-native = "mender-client-native"
+  PREFERRED_RPROVIDER_mender-auth = "mender-client"
+  PREFERRED_RPROVIDER_mender-update = "mender-client"
+  ```
+  Remove `-client` to go from the Golang to the C++ implementation. Note
+  that you should always set all of them. The default on this branch is
+  the Golang client.
+* Add `mender-flash` git recipe
+* `mender-update` recommends `mender-flash`, which is
+  the standalone tool used for rootfs updates.
+* Add recipe for mender-flash-1.0.0.
+
+  This tool will be used by Mender client 4.0.0 and later to do
+  rootfs-image updates.
+  ([MEN-6279](https://northerntech.atlassian.net/browse/MEN-6279))
+* Add `MENDER_FLASH_TOOL` variable to mender-binary-delta.
+
+  This has no effect for mender-binary-delta versions older than 1.5.
+  ([MEN-6774](https://northerntech.atlassian.net/browse/MEN-6774))
+
+##### Other
+
+* Automatically define `mender-auth-install` and
+  `mender-update-install` when `mender-client-install` is set. The
+  two former features have been added to accomodate the new Mender
+  client written in C++, where the auth and update functionality has
+  been split into separate daemons which can be installed individually.
+* The mender update client 4.0 and later comes with a
+  `rootfs-image` Update Module, instead of having this functionality
+  built in.
+* Standardize on new names that follow the C++ client rewrite.
+  The build component is now called `mender` instead of `mender-client`,
+  because it contains the two independent `mender-auth` and
+  `mender-update` runtime components. Other recipes should either use
+  `DEPENDS = "mender"` for a build time dependency, or
+  `RDEPENDS:${PN} = "mender-auth | mender-update"` for a runtime
+  dependency.
+* mender-client: Move DBus xml files to dev package.
+
+  They do not influence production, and thus they belong in the dev
+  package.
+* In `meta-mender-demo` layer, `mender-update` recommends
+  `mender-snapshot`, which an standalone tool to make snapshots of a live
+  rootfs image. Prior to v4.0, this functionality used to be part of the
+  core `mender` binary.
+* Add recipe for `mender` 4.0.0
+* Add recipe for `mender-artifact` 3.11.1
+* Add recipe for `mender-configure` 1.1.2
+* Add recipe for `mender-snapshot` 1.0.0
+* Add recipe for `mender` 4.0.1
+* Add recipe for `mender-artifact` 3.11.2
+* Add recipe for `mender-connect` 2.2.1
+* Add recipe for `mender-binary-delta` 1.5.0
+* Add recipe for `mender` 4.0.2
+
+
+## meta-mender (kirkstone-v2023.12)
+
+_Released: _01.01.2024_
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2023.12)
+
+New changes in meta-mender since kirkstone-v2023.10:
+
+##### Features
+
+* add recipes for the client components in Mender 3.7.0
+
+
+## meta-mender (kirkstone-v2023.10)
+
+_Released: 10.01.2023_
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2023.10)
+
+New changes in meta-mender since kirkstone-v2023.08:
+
+##### Bug Fixes
+
+* mv image files instead of install, to avoid corrupting the image.
+
+##### Features
+
+* add recipe for Application Updates Module
+  ([MEN-6084](https://northerntech.atlassian.net/browse/MEN-6084))
+
+##### Other
+
+* Add recipe for mender-connect 2.1.1
+* Add recipe for mender-artifact 3.10.2
+
+
+## meta-mender (kirkstone-v2023.08)
+
+_Released: 09.05.2023_
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2023.08)
+
+New changes in meta-mender since kirkstone-v2023.03:
+
+##### Bug Fixes
+
+* boot-partition-devicetree use proper SPDX License GPL-2.0-only
+* wic-tools does not need grub when using uboot
+* Replace gpt partition type 8300 with full UUID
+* mender-configure: Don't break if libdir is set to `lib64`.
+
+##### Features
+
+* Make the build succeed if gateway examples aren't present
+
+##### Other
+
+* Add recipe for mender-client 3.5.1
+* Add recipe for mender-artifact 3.10.1
+* Add recipe for mender-configure 1.1.0
+* Add recipe for mender-monitor 1.3.0
+
+
 ## meta-mender (kirkstone-v2023.03)
 
 _Released: 03.10.2023_
