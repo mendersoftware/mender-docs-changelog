@@ -7,6 +7,29 @@ shortcode-core:
 github: false
 ---
 
+## mender-convert 4.2.1
+
+_Released 05.16.2024_
+
+### Changelogs
+
+#### mender-convert (4.2.1)
+
+New changes in mender-convert since 4.2.0:
+
+##### Bug Fixes
+
+* Fix occasional failure when handling service files.
+  ([MEN-7143](https://northerntech.atlassian.net/browse/MEN-7143))
+* Fix boot problems on RaspiOS images.
+  ([MEN-7143](https://northerntech.atlassian.net/browse/MEN-7143))
+* Make sure rootfs-image updates also updates the kernel.
+* Fix boot failure on Ubuntu image for Raspberry Pi.
+* Missing DTB inclusion in armbian-based images
+* Remove incorrect warning about `64bit` ext4 flag.
+  ([MEN-6027](https://northerntech.atlassian.net/browse/MEN-6027))
+
+
 ## mender-convert 4.2.0
 
 _Released 03.21.2024_
