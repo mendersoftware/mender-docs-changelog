@@ -7,6 +7,70 @@ shortcode-core:
 github: false
 ---
 
+## Mender 3.7.4
+
+_Released 05.01.2024_
+
+### Changelogs
+
+#### integration (3.7.4)
+
+New changes in integration since 3.7.3:
+
+* Upgrade integration to 3.7.4.
+* Upgrade useradm-enterprise to 1.22.1.
+* Upgrade useradm to 1.22.1.
+
+#### useradm-enterprise (1.22.1)
+
+New changes in useradm-enterprise since 1.22.0:
+
+##### Bug Fixes
+
+* Fixed CVE-2024-37019. See the official announcement for more information:
+  https://mender.io/blog/cve-2024-37019-account-takeover-using-saml
+
+  When assigning SSO configuration to the user, check if the SSO with
+  given Id is configured for the tenant the user has access to.
+  ([SEC-1106](https://northerntech.atlassian.net/browse/SEC-1106))
+
+##### Other
+
+* add method for assigning SSO config to user
+
+
+## Mender 3.6.4
+
+_Released 05.01.2024_
+
+### Changelogs
+
+#### integration (3.6.4)
+
+New changes in integration since 3.6.3:
+
+* Upgrade integration to 3.6.4.
+* Upgrade useradm-enterprise to 1.21.3.
+* Upgrade useradm to 1.21.3.
+
+#### useradm-enterprise (1.21.3)
+
+New changes in useradm-enterprise since 1.21.2:
+
+##### Bug Fixes
+
+* Fixed CVE-2024-37019. See the official announcement for more information:
+  https://mender.io/blog/cve-2024-37019-account-takeover-using-saml
+
+  When assigning SSO configuration to the user, check if the SSO with
+  given Id is configured for the tenant the user has access to.
+  ([SEC-1106](https://northerntech.atlassian.net/browse/SEC-1106))
+
+##### Other
+
+* add method for assigning SSO config to user
+
+
 ## Mender 3.7.3
 
 _Released 03.21.2024_
