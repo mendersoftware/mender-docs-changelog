@@ -7,6 +7,62 @@ shortcode-core:
 github: false
 ---
 
+## Mender 3.7.5
+
+_Released 06.12.2024_
+
+### Changelogs
+
+#### integration (3.7.5)
+
+New changes in integration since 3.7.4:
+
+* Upgrade integration to 3.7.5.
+* Upgrade mender-convert to 4.2.2.
+* Upgrade mender to 4.0.3.
+* Upgrade useradm-enterprise to 1.22.2.
+* Upgrade useradm to 1.22.2.
+* Upgrade workflows-enterprise to 2.6.1.
+* Upgrade workflows to 2.6.1.
+
+#### useradm-enterprise (1.22.2)
+
+New changes in useradm-enterprise since 1.22.1:
+
+##### Bug Fixes
+
+* do not allow users with access to given device groups to list all the devices
+  ([ME-267](https://northerntech.atlassian.net/browse/ME-267))
+
+#### workflows (2.6.1)
+
+New changes in workflows since 2.6.0:
+
+##### Bug Fixes
+
+* Use context and add TTL to prevent sidecar blocking forever
+  ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
+
+##### Other
+
+* Fix deadlock in worker Go routines.
+  ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
+
+#### workflows-enterprise (2.6.1)
+
+New changes in workflows-enterprise since 2.6.0:
+
+##### Bug Fixes
+
+* Use context and add TTL to prevent sidecar blocking forever
+  ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
+
+##### Other
+
+* Fix deadlock in worker Go routines.
+  ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
+
+
 ## Mender 3.7.4
 
 _Released 05.01.2024_
@@ -37,6 +93,66 @@ New changes in useradm-enterprise since 1.22.0:
 ##### Other
 
 * add method for assigning SSO config to user
+
+
+## Mender 3.6.5
+
+_Released 06.12.2024_
+
+### Changelogs
+
+#### integration (3.6.5)
+
+New changes in integration since 3.6.4:
+
+* Upgrade integration to 3.6.5.
+* Upgrade mender-artifact to 3.11.2.
+* Upgrade mender-configure-module to 1.1.2.
+* Upgrade mender-connect to 2.1.2.
+* Upgrade mender-convert to 4.2.2.
+* Upgrade mender to 3.5.3.
+* Upgrade mtls-ambassador to 1.2.2.
+* Upgrade useradm-enterprise to 1.21.4.
+* Upgrade useradm to 1.21.4.
+* Upgrade workflows-enterprise to 2.5.2.
+* Upgrade workflows to 2.5.2.
+
+#### useradm-enterprise (1.21.4)
+
+New changes in useradm-enterprise since 1.21.3:
+
+##### Bug Fixes
+
+* do not allow users with access to given device groups to list all the devices
+  ([ME-267](https://northerntech.atlassian.net/browse/ME-267))
+
+#### workflows (2.5.2)
+
+New changes in workflows since 2.5.1:
+
+##### Bug Fixes
+
+* Use context and add TTL to prevent sidecar blocking forever
+  ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
+
+##### Other
+
+* Fix deadlock in worker Go routines.
+  ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
+
+#### workflows-enterprise (2.5.2)
+
+New changes in workflows-enterprise since 2.5.1:
+
+##### Bug Fixes
+
+* Use context and add TTL to prevent sidecar blocking forever
+  ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
+
+##### Other
+
+* Fix deadlock in worker Go routines.
+  ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
 
 
 ## Mender 3.6.4
