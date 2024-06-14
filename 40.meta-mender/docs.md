@@ -1217,6 +1217,67 @@ New changes in meta-mender since dunfell-v2022.09:
       ```
 
 
+## meta-mender (dunfell-v2024.06)
+
+_Released: 06.14.2024_
+
+### Changelogs
+
+#### meta-mender (dunfell-v2024.06)
+
+New changes in meta-mender since dunfell-v2023.03:
+
+##### Bug Fixes
+
+* mender-configure: Don't break if libdir is set to `lib64`.
+* pass prefix and systemd_unitdir to mender-configure installation
+* add coreutils as a runtime dependency for Mender monitor
+* boot-partition-devicetree use proper SPDX License GPL-2.0-only
+* Replace gpt partition type 8300 with full UUID
+* wic-tools does not need grub when using uboot
+* mv image files instead of install, to avoid corrupting the image.
+* Fix the install path for the D-Bus interface files shipped in
+  `mender-client-dev` package. It was `$(datadir)/dbus-1/interface` but it
+  should be `interfaces` instead.
+* remove "mender.bmap" IMAGE_FSTYPE
+* Remove `has_journal` flag from mkfs.ext4 when
+  `read-only-rootfs` flag is enabled, which causes issues in certain
+  configurations. Specifically it solves these problems:
+  * Checksum is not stable which can cause issues with binary delta
+    updates. This is an in-memory effect only, the physical checksum on
+    disk is unaffected.
+  * Mender-snapshot can generate corrupted rootfs dumps, for the same
+    reason as the previous point.
+* Fix typo in fstab options for extra partitions.
+* Correctly handle `mender-partuuid` feature for `dunfell`
+* Make the build succeed if gateway examples aren't present
+
+##### Features
+
+* Add `MENDER_FLASH_TOOL` variable to mender-binary-delta.
+  This has no effect for mender-binary-delta versions older than 1.5.
+  ([MEN-6774](https://northerntech.atlassian.net/browse/MEN-6774))
+
+##### Other
+
+* Add recipe for mender-client 3.5.1
+* Add recipe for mender-artifact 3.10.1
+* Add recipe for mender-configure 1.1.0
+* Add recipe for mender-connect 2.1.1
+* Add recipe for mender-artifact 3.10.2
+* Add recipe for `mender-client` 3.5.2
+* Add recipe for `mender-configure` 1.1.1
+* Add recipe for `mender-configure` 1.1.2
+* Add recipe for mender-monitor 1.3.0
+* Add recipe for `mender-binary-delta` 1.5.0
+* Remove git versions for the Mender recipes `mender-client`,
+  `mender-connect`, `mender-configure`, `mender-artifact`,
+  `mender-monitor` and `mender-gateway`. These won't build in `dunfell`
+  and are not meant to be used from an LTS yocto release.
+* Add Mender client 3.5.3 recipe.
+* Add mender-connect 2.1.2 recipe.
+
+
 ## meta-mender (dunfell-v2023.03)
 
 _Released: 03.13.2023_
