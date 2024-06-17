@@ -7,6 +7,46 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender (kirkstone-v2024.06)
+
+_Released: 06.17.2024_
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2024.06)
+
+New changes in meta-mender since kirkstone-v2024.04:
+
+##### Bug Fixes
+
+* Fix typo in fstab options for extra partitions.
+* Set correct systemd installation dir.
+
+  This is important when usrmerge is enabled, which changes the systemd
+  install location.
+* add coreutils as a runtime dependency for Mender monitor
+* Fix autogeneration of `mender-binary-delta.conf` so
+  that the user value for `MENDER_FLASH` is respected, instead of the
+  previously wrongly hard-coded value of `mender-flash`. Without this
+  fix it is impossible to omit `mender-flash` from UBI systems, even
+  when `ubiupdatevol` would have been sufficient.
+
+##### Features
+
+* Add MENDER_EXTRA_PARTS_MOUNT_LOCATIONS variable
+
+##### Other
+
+* Remove `mender-app-update-module` git recipe. Due to the
+  dependencies on `virtualization` this module has not been fully
+  integrated in `meta-mender-core` layer. Use the one from
+  [`meta-mender-community`
+  instead](https://github.com/mendersoftware/meta-mender-community/blob/master/meta-mender-update-modules/dynamic-layers/virtualization/recipes-mender/mender-update-modules/mender-app-update_git.bb).
+* Add Mender client 3.5.3 recipe.
+* Add mender-connect 2.1.2 recipe.
+* Add Mender client 4.0.3 recipe.
+
+
 ## meta-mender (kirkstone-v2024.04)
 
 _Released: 04.26.2024_
