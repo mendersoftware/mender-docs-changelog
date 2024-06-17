@@ -7,6 +7,38 @@ shortcode-core:
 github: false
 ---
 
+## mender 4.0.3
+
+_Released 06.12.2024_
+
+### Changelogs
+
+#### mender (4.0.3)
+
+New changes in mender since 4.0.2:
+
+##### Bug Fixes
+
+* Amend default paths printed in CLI help pages. Previously
+  they could be modified by user environment variables.
+  ([MEN-7133](https://northerntech.atlassian.net/browse/MEN-7133))
+* Fix committing mender-update artifacts when using mender-partuuid
+* Invalid Range request when content_length is 0 (unknown)
+* Fix error which could sometimes happen with restrictive
+  firewalls, resulting in this output:
+  ```
+  Programming error, should not happen: Assert `deployment_id != ""`
+  ```
+  ([MEN-7327](https://northerntech.atlassian.net/browse/MEN-7327))
+
+##### Features
+
+* Add `SYSTEMD_UNIT_DIR` CMake variable.
+
+  Use it to customize the location of the systemd unit files. Usually it
+  is set to `/lib/systemd/system`.
+
+
 ## mender 4.0.2
 
 _Released 03.21.2024_
@@ -222,6 +254,35 @@ New changes in mender since 3.5.2:
 * systemd service `mender-client` does not exist anymore.
   Dependencies shall depend either `mender-authd` or `mender-updated`.
   ([MEN-6858](https://northerntech.atlassian.net/browse/MEN-6858))
+
+
+## mender 3.5.3
+
+_Released 06.12.2024_
+
+### Changelogs
+
+#### mender (3.5.3)
+
+New changes in mender since 3.5.1:
+
+##### Bug Fixes
+
+* Fix a rare bug which could corrupt the very end of a
+  rootfs-image update on a sudden powerloss. The circumstances where it
+  could happen are quite specific: The filesystem size in the update
+  need to *not* be a multiple of the native sector size, which is very
+  uncommon. The sector size is typically 512 bytes almost everywhere,
+  and hence filesystem also follow this block size, if not bigger. The
+  exception is raw Flash/UBI devices, where the sector size can be much
+  larger, and not a power of two, and hence these platforms may be more
+  susceptible.
+* doing so return 1 in Download_Enter state scripts aborts instead of retrying in an endless loop
+  ([MEN-6319](https://northerntech.atlassian.net/browse/MEN-6319))
+* Fix so the Download_error state script gets executed for failures due to signature
+  ([MEN-6402](https://northerntech.atlassian.net/browse/MEN-6402))
+* recover from a corrupted database renaming it as `broken` and starting with a new empty one
+  ([MEN-6848](https://northerntech.atlassian.net/browse/MEN-6848))
 
 
 ## mender 3.5.2

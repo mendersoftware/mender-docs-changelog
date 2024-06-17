@@ -85,6 +85,45 @@ New changes in mender-connect since 2.1.1:
   ([QA-614](https://northerntech.atlassian.net/browse/QA-614))
 
 
+## mender-connect 2.1.2
+
+_Released 06.12.2024_
+
+### Changelogs
+
+#### mender-connect (2.1.2)
+
+New changes in mender-connect since 2.1.1:
+
+##### Bug Fixes
+
+* In Mender client v4.0, the `mender` binary has been split
+  into `mender-update` and `mender-auth`. Modify `mender-connect` to call
+  the right binary to trigger `check-update` and `send-inventory`
+  ([MEN-6827](https://northerntech.atlassian.net/browse/MEN-6827))
+* `mender-connect` systemd service can use either the old
+  `mender-client` service or the new `mender-authd` service, which is the
+  name of the authentication daemon of new Mender client. They are both
+  kept as `Wants` and not `Require` so that `mender-connect` can run with
+  either.
+  ([MEN-6858](https://northerntech.atlassian.net/browse/MEN-6858))
+* Stop shell after the ping/pong health check fails, so that
+  the `mender-connect` can recover after disruption of connectivity.
+  For already released versions of `mender-connect` the workaround is to
+  force the stop of shells for expired sessions adding to the
+  configuration options the fields:
+  ```
+    "Sessions": {
+      "StopExpired": true,
+      "ExpireAfterIdle": 600
+    }
+  ```
+  Setting a limit for expiration high enough (10 minutes, above) so that it
+  doesn't interfere with regular operations.
+  See https://docs.mender.io/add-ons/mender-connect#remote-terminal-configuration
+  ([MEN-6888](https://northerntech.atlassian.net/browse/MEN-6888))
+
+
 ## mender-connect 2.1.1
 
 _Released 10.18.2023_

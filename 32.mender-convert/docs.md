@@ -7,6 +7,26 @@ shortcode-core:
 github: false
 ---
 
+## mender-convert 4.2.2
+
+_Released 06.12.2024_
+
+### Changelogs
+
+#### mender-convert (4.2.2)
+
+New changes in mender-convert since 4.2.1:
+
+##### Bug Fixes
+
+* Make sure that `/data` mountpoint exists when using a R/O rootfs.
+  ([MEN-7219](https://northerntech.atlassian.net/browse/MEN-7219))
+* Fix installation of Mender client v4 when the user specifies
+  the exact version to use with `MENDER_CLIENT_VERSION=a.b.c`. Using
+  `auto` (default) or `latest` does not trigger this bug.
+  ([MEN-7325](https://northerntech.atlassian.net/browse/MEN-7325))
+
+
 ## mender-convert 4.2.1
 
 _Released 05.16.2024_
