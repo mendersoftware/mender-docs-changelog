@@ -2057,6 +2057,12 @@ New changes in useradm-enterprise since 1.20.0:
 
 _Released 02.20.2023_
 
+### Security fixes
+
+* Fixed CVE-2022-45929 - Low-privileged users can edit their own roles.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users
+
 ### Statistics
 
 A total of 44757 lines added, 18182 removed (delta 26575)
@@ -2826,6 +2832,12 @@ New changes in workflows-enterprise since 2.3.0:
 ## Mender 3.4.0
 
 _Released 09.25.2022_
+
+### Security fixes
+
+* Fixed CVE-2022-41324 - Read-only API access can leak secrets in Mender.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users
 
 ### Statistics
 
@@ -4134,6 +4146,15 @@ New changes in integration since 3.3.0:
 ## Mender 3.3.2
 
 _Released 03.10.2023_
+
+### Security fixes
+
+* Fixed CVE-2022-41324 - Read-only API access can leak secrets in Mender.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users
+* Fixed CVE-2022-45929 - Low-privileged users can edit their own roles.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users
 
 ### Statistics
 
