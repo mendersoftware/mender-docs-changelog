@@ -67,6 +67,12 @@ New changes in workflows-enterprise since 2.6.0:
 
 _Released 05.01.2024_
 
+### Security fixes
+
+* Fixed CVE-2024-37019 - Account takeover using SAML.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2024-37019-account-takeover-using-saml
+
 ### Changelogs
 
 #### integration (3.7.4)
@@ -83,12 +89,8 @@ New changes in useradm-enterprise since 1.22.0:
 
 ##### Bug Fixes
 
-* Fixed CVE-2024-37019. See the official announcement for more information:
-  https://mender.io/blog/cve-2024-37019-account-takeover-using-saml
-
-  When assigning SSO configuration to the user, check if the SSO with
-  given Id is configured for the tenant the user has access to.
-  ([SEC-1106](https://northerntech.atlassian.net/browse/SEC-1106))
+* When assigning SSO configuration to the user, check if the SSO with
+  given Id is configured for the tenant the user has access to. (CVE-2024-37019)
 
 ##### Other
 
@@ -159,6 +161,12 @@ New changes in workflows-enterprise since 2.5.1:
 
 _Released 05.01.2024_
 
+### Security fixes
+
+* Fixed CVE-2024-37019 - Account takeover using SAML.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2024-37019-account-takeover-using-saml
+
 ### Changelogs
 
 #### integration (3.6.4)
@@ -175,12 +183,8 @@ New changes in useradm-enterprise since 1.21.2:
 
 ##### Bug Fixes
 
-* Fixed CVE-2024-37019. See the official announcement for more information:
-  https://mender.io/blog/cve-2024-37019-account-takeover-using-saml
-
-  When assigning SSO configuration to the user, check if the SSO with
-  given Id is configured for the tenant the user has access to.
-  ([SEC-1106](https://northerntech.atlassian.net/browse/SEC-1106))
+* When assigning SSO configuration to the user, check if the SSO with
+  given Id is configured for the tenant the user has access to. (CVE-2024-37019)
 
 ##### Other
 
@@ -8087,11 +8091,18 @@ New changes in integration since 3.2.2:
       ```
 
 
-
 ## Mender 3.2.2
 
-
 _Released 04.21.2022_
+
+### Security fixes
+
+* Fixed CVE-2022-29555 - Cross-Origin WebSocket Hijacking in Mender deviceconnect.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect
+* Fixed CVE-2022-29556 - Server Side Request Forgery in Azure IoT Hub integration
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect
 
 ### Statistics
 
@@ -8137,7 +8148,7 @@ New changes in create-artifact-worker since 1.1.0:
 
 New changes in deviceconnect since 1.3.0:
 
-* fix(security): Add cross-site origin checks for websocket endpoint ([CVE-2022-29555](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29555))
+* fix(security): Add cross-site origin checks for websocket endpoint ([CVE-2022-29555](https://mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect))
 
 #### integration (3.2.2)
 
@@ -8154,7 +8165,7 @@ New changes in integration since 3.2.1:
 New changes in iot-manager since 1.0.0:
 
 * fix: Add domain whitelist configuration for authorizing external domains
-* fix: Do not follow redirects serving integration hooks ([CVE-2022-29556](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29556))
+* fix: Do not follow redirects serving integration hooks ([CVE-2022-29556](https://mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect))
 
 #### integration (3.2.2)
 
