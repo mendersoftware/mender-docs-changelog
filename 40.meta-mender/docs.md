@@ -7,6 +7,86 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender (scarthgap-v2024.07)
+
+_Released: 07.03.2024_
+
+### Changelogs
+
+#### meta-mender (scarthgap-v2024.07)
+
+New changes in meta-mender since kirkstone-v2024.06:
+
+##### Bug Fixes
+
+* remove splash IMAGE_FEATURE from demo layer
+* move test specific settings from demo layer to tests
+* use gitsm:// fetcher for mender-client_git
+* core: add Upstream-Status to U-Boot patches
+* Fix package error for `mender` 4.0.x series when building
+  with usrmerge enabled
+* meta-mender-demo: use /bin/sh as MENDER_CONNECT_SHELL
+* meta-mender-ci: resolve usrmerge conflict
+
+##### Features
+
+* Add the `mender` recipe in
+  `meta-mender-core/recipes/mender/mender-client/` while still keeping
+  support for the old golang client builds. The new `mender` recipe
+  creates two packages.  `mender-auth` and `mender-update` to provide
+  the C++ implementations of the given functionality.
+
+  The default is the C++ client.
+
+  The given client
+  implementation can be chosen using the Yocto `PREFERRED_PROVIDER` and
+  `PREFERRED_RPROVIDER` variables, by using the 'mender' prefix for the
+  C++ client, and 'mender-client' for the Golang client. For example
+  like this:
+  ```
+  PREFERRED_PROVIDER_mender-native = "mender-client-native"
+  PREFERRED_RPROVIDER_mender-auth = "mender-client"
+  PREFERRED_RPROVIDER_mender-update = "mender-client"
+  ```
+  Remove `-client` to go from the Golang to the C++ implementation. Note
+  that you should always set all of them.
+* Add a MENDER_WATCHDOG_SEC variable to control the hardware watchdog
+  timeout seconds in the mender-updated systemd service file.
+* MENDER_ARTIFACT_PROVIDES(_GROUP), MENDER_ARTIFACT_DEPENDS(_GROUPS), and MENDER_ARTIFACT_NAME(_DEPENDS) variables have been supplemented with new "..._BOOTSTRAP" variables whose values will be added to the original variables to build the arguments passed to mender-artifact for the bootstrap artifact
+* Add support to create mender artifact for UEFI capsule
+* Enable UEFI capsule artifact generation
+* Set layer compatibility to `scarthgap`
+
+##### Other
+
+* Remove recipes pre Mender 3.3.x, not supported anymore.
+* Remove recipes from Mender 3.4.x, not supported anymore.
+* Standardize on new names that follow the C++ client rewrite.
+
+  The build component is now called `mender` instead of `mender-client`,
+  because it contains the two independent `mender-auth` and
+  `mender-update` runtime components. Other recipes should either use
+  `DEPENDS = "mender"` for a build time dependency, or
+  `RDEPENDS:${PN} = "mender-auth | mender-update"` for a runtime
+  dependency.
+* The `mender-install` and `mender-install-ubi`
+  Mender features have been removed. Do not use them in
+  `MENDER_FEATURES` variables, but instead one of the alternatives (see
+  Features under Yocto section in the Mender documentation).
+* Remove mender 3.99 alpha recipe.
+* Remove recipes pre Mender 3.6.x, not supported anymore.
+* meta-mender-core: remove unused u-boot patch
+* raspberrypi: refresh u-boot patch
+* core: remove unneeded u-boot patch
+* refresh u-boot patches for 2023.01
+* remove meta-mender-raspberrypi(-demo)
+* Enabling systemd as init manager is no longer done
+  automatically by the meta-mender layer. In order to re-enable it, put
+  `INIT_MANAGER = "systemd"` in your `local.conf` file. Alternatively,
+  use `MENDER_FEATURES_DISABLE = "mender-systemd"`, but be aware that
+  this can break daemon mode.
+
+
 ## meta-mender (kirkstone-v2024.06)
 
 _Released: 06.17.2024_
