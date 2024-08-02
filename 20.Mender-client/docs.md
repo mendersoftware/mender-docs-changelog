@@ -7,6 +7,24 @@ shortcode-core:
 github: false
 ---
 
+## mender 4.0.4
+
+_Released 08.01.2024_
+
+### Changelogs
+
+#### mender (4.0.4)
+
+New changes in mender since 4.0.3:
+
+##### Bug Fixes
+
+* Make crypto load and use the openssl.cnf file
+  ([MEN-7353](https://northerntech.atlassian.net/browse/MEN-7353))
+* Basic authentication (https://user:password@host/) is now supported for proxy URLs and connections
+  ([MEN-7402](https://northerntech.atlassian.net/browse/MEN-7402))
+
+
 ## mender 4.0.3
 
 _Released 06.12.2024_
