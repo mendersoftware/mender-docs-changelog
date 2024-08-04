@@ -7,6 +7,23 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender (scarthgap-v2024.08)
+
+### Changelogs
+
+#### meta-mender (scarthgap-v2024.08)
+
+New changes in meta-mender since scarthgap-v2024.07:
+
+##### Bug Fixes
+
+* persistent machine id support files renamed
+
+##### Other
+
+* Add Mender client 4.0.4 recipe.
+
+
 ## meta-mender (scarthgap-v2024.07)
 
 _Released: 07.03.2024_
@@ -85,6 +102,23 @@ New changes in meta-mender since kirkstone-v2024.06:
   `INIT_MANAGER = "systemd"` in your `local.conf` file. Alternatively,
   use `MENDER_FEATURES_DISABLE = "mender-systemd"`, but be aware that
   this can break daemon mode.
+
+
+## meta-mender (kirkstone-v2024.08)
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2024.08)
+
+New changes in meta-mender since kirkstone-v2024.06:
+
+##### Features
+
+* MENDER_ARTIFACT_PROVIDES(_GROUP), MENDER_ARTIFACT_DEPENDS(_GROUPS), and MENDER_ARTIFACT_NAME(_DEPENDS) variables have been supplemented with new "..._BOOTSTRAP" variables whose values will be added to the original variables to build the arguments passed to mender-artifact for the bootstrap artifact
+
+##### Other
+
+* Add Mender client 4.0.4 recipe.
 
 
 ## meta-mender (kirkstone-v2024.06)
