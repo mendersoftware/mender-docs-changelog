@@ -7,6 +7,60 @@ shortcode-core:
 github: false
 ---
 
+
+## Mender 3.7.7
+
+_Released 08.15.2024_
+
+### Changelogs
+
+#### deviceconnect (1.5.1)
+
+New changes in deviceconnect since 1.5.0:
+
+##### Bug Fixes
+
+* Connection status race on rapid reconnect
+
+  Devices that reconnect too fast may result in a state where the
+  persisted status shows “disconnected” while the device is actually
+  connected. This especially happens when the network latency is very low
+  (< 5ms) which causes the device to establish a new connection before the
+  old request handler had time to mark it as closed.
+  ([MEN-7333](https://northerntech.atlassian.net/browse/MEN-7333))
+
+#### integration (3.7.7)
+
+New changes in integration since 3.7.5:
+
+* Upgrade deviceconnect to 1.5.1.
+* Upgrade integration to 3.7.7.
+* Upgrade inventory-enterprise to 4.4.2.
+* Upgrade inventory to 4.4.2.
+* Upgrade useradm-enterprise to 1.22.3.
+* Upgrade useradm to 1.22.3.
+
+#### useradm-enterprise (1.22.3)
+
+New changes in useradm-enterprise since 1.22.2:
+
+##### Bug Fixes
+
+* Harden HTTP client when resolving SAML Artifact requests
+
+  When making a request to fetch a Security Assertion Markup Language
+  (SAML) ArtifactResolve requests, the backend no longer allows
+  redirects and prevents making request to reserved IP ranges.
+  ([MEN-7365](https://northerntech.atlassian.net/browse/MEN-7365))
+* Replace SSO metadata on PUT requests
+
+  This commit fixes the replacement semantics when updating the SSO
+  metadata document for SAML and OpenID Connect. The former behavior uses
+  a PATCH-like semantic which can lead to unwanted side-effects when
+  changing mode between SAML and OIDC.
+  ([MEN-7377](https://northerntech.atlassian.net/browse/MEN-7377))
+
+
 ## Mender 3.7.5
 
 _Released 06.12.2024_
