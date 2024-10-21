@@ -1,5 +1,5 @@
 ---
-title: Mender client
+title: Mender Client
 taxonomy:
     category: docs
 shortcode-core:
