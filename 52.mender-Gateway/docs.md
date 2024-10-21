@@ -1,5 +1,5 @@
 ---
-title: mender-gateway
+title: Mender Gateway
 taxonomy:
     category: docs
 shortcode-core:

@@ -1,5 +1,5 @@
 ---
-title: Mender server
+title: Mender Server
 taxonomy:
     category: docs
 shortcode-core:
