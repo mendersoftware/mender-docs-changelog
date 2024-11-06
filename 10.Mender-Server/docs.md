@@ -12,6 +12,12 @@ github: false
 
 _Released 08.15.2024_
 
+### Security fixes
+
+* Fixed CVE-2024-46947 - SSRF issues in Mender Enterprise Server.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2024-46947-cve-2024-47190-ssrf-issues-in-mender-enterprise-server
+
 ### Changelogs
 
 #### deviceconnect (1.5.1)
@@ -64,6 +70,12 @@ New changes in useradm-enterprise since 1.22.2:
 ## Mender 3.7.5
 
 _Released 06.12.2024_
+
+### Security fixes
+
+* Fixed CVE-2024-46948 - Missing filtering based on RBAC device groups.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2024-46948
 
 ### Changelogs
 
@@ -154,6 +166,12 @@ New changes in useradm-enterprise since 1.22.0:
 ## Mender 3.6.5
 
 _Released 06.12.2024_
+
+### Security fixes
+
+* Fixed CVE-2024-46948 - Missing filtering based on RBAC device groups.
+  See the official announcement for more information:
+  https://mender.io/blog/cve-2024-46948
 
 ### Changelogs
 
