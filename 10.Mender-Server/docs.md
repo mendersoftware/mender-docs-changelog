@@ -8,6 +8,52 @@ github: false
 ---
 
 
+## Mender 3.7.8
+
+_Released 12.02.2024_
+
+### Changelogs
+
+#### integration (3.7.8)
+
+New changes in integration since 3.7.7:
+
+* Upgrade auditlogs to 3.2.1.
+* Upgrade deployments-enterprise to 4.6.2.
+* Upgrade deployments to 4.6.2.
+* Upgrade deviceauth-enterprise to 3.6.1.
+* Upgrade deviceauth to 3.6.1.
+* Upgrade deviceconfig to 1.4.1.
+* Upgrade devicemonitor to 1.5.1.
+* Upgrade generate-delta-worker to 1.1.1.
+* Upgrade gui to 3.7.3.
+* Upgrade integration to 3.7.8.
+* Upgrade inventory-enterprise to 4.4.3.
+* Upgrade inventory to 4.4.3.
+* Upgrade iot-manager to 1.3.1.
+* Upgrade mender-artifact to 3.11.3.
+* Upgrade mender-convert to 4.2.3.
+* Upgrade mender-gateway to 1.2.1.
+* Upgrade mender to 4.0.5.
+* Upgrade tenantadm to 4.1.1.
+* Upgrade useradm-enterprise to 1.22.4.
+* Upgrade useradm to 1.22.4.
+* Upgrade workflows-enterprise to 2.6.2.
+* Upgrade workflows to 2.6.2.
+
+#### iot-manager (1.3.1)
+
+New changes in iot-manager since 1.3.0:
+
+##### Bug Fixes
+
+* Incosistent serialization format for device private key
+
+  The generated key is serialized using SEC 1 (RFC5915) ASN.1 encoding,
+  but encoded to PEM using PKCS8 (RFC5208) block header/trailer.
+  ([MEN-7478](https://northerntech.atlassian.net/browse/MEN-7478))
+
+
 ## Mender 3.7.7
 
 _Released 08.15.2024_
