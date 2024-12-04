@@ -7,6 +7,79 @@ shortcode-core:
 github: false
 ---
 
+## mender 4.0.5
+
+_Released 12.02.2024_
+
+### Changelogs
+
+#### mender (4.0.5)
+
+New changes in mender since 4.0.4:
+
+##### Bug Fixes
+
+* Fix crash when `Sync_Leave` returns error during a
+  deployment. The error message would be:
+  ```
+  State machine event DeploymentStarted was not handled by any transition
+  ```
+  and would happen on the next deployment following the `Sync_Leave`
+  error. With a long polling interval, this could cause the bug to be
+  latent for quite a while.
+  ([MEN-7379](https://northerntech.atlassian.net/browse/MEN-7379))
+* Fix systemd race condition when restarting mender from
+  `ArtifactReboot` script. The symptom would be an error message like:
+  ```
+  Process returned non-zero exit status: ArtifactReboot: Process exited with status 15
+  ```
+  And the `ArtifactReboot_Error` state scripts would be executed, even
+  though they should not.
+* Progress reader updates the output only when progressing
+  ([MEN-7159](https://northerntech.atlassian.net/browse/MEN-7159))
+* rootfs-image: Add missing filesystem sync when not using mender-flash.
+* rootfs-image: Make it safe to roll back after `ArtifactCommit`.
+* Fix error while loading OpenSSL config file, by explicitly
+  initializing the SSL context prior to loading. Without the explicit
+  initialisation of SSL, the config might not be properly loaded if e.g.
+  it has sections specifying ssl settings. This was the case with the
+  example configuration for OpenSSL 1.1.1w from Debian Bullseye.
+  ([MEN-7549](https://northerntech.atlassian.net/browse/MEN-7549))
+* Invalidate cached inventory data on unauthentication event
+  to prevent an issue with which the client would not send inventory
+  data to the server after being unauthorized and authorized again.
+  ([MEN-7617](https://northerntech.atlassian.net/browse/MEN-7617))
+* Fix possible integer overflow when dealing with large files
+  on 32-bit platforms.
+  ([MEN-7613](https://northerntech.atlassian.net/browse/MEN-7613))
+* During Artifact header parsing, correctly report generic
+  errors instead of returning "Multiple header entries found" error for
+  any kind of error.
+  ([MEN-7721](https://northerntech.atlassian.net/browse/MEN-7721))
+* Verify the integrity of the `version` file content during
+  Artifact parsing.
+  ([MEN-7721](https://northerntech.atlassian.net/browse/MEN-7721))
+* Fix potential integer underflow in Artifact's manifest parsing
+  ([MEN-7722](https://northerntech.atlassian.net/browse/MEN-7722))
+* Limit file name length for the Artifact manifest
+  ([MEN-7722](https://northerntech.atlassian.net/browse/MEN-7722))
+* Ensured strict permissions of private key files created by mender-auth
+  ([MEN-7752](https://northerntech.atlassian.net/browse/MEN-7752))
+
+##### Other
+
+* Clarify in the update module protocol documentation that
+  going into `ArtifactRollback` is still possible after an
+  `ArtifactCommit`, and it must still roll back successfully. While this
+  may seem like it introduces new requirements into a stable protocol,
+  it's important to remember that this was always possible, if the
+  device lost power after having run the steps inside `ArtifactCommit`,
+  but before the device could record having done so. In this case
+  `ArtifactRollback` would be the next step, so this is just formalizing
+  this possibility and subsequent requirement.
+* Add info level messages for inventory sent/skipped
+
+
 ## mender 4.0.4
 
 _Released 08.01.2024_

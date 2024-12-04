@@ -7,6 +7,31 @@ shortcode-core:
 github: false
 ---
 
+## mender-convert 4.2.3
+
+_Released 12.02.2024_
+
+### Changelogs
+
+#### mender-convert (4.2.3)
+
+New changes in mender-convert since 4.2.2:
+
+##### Bug Fixes
+
+* `docker-mender-convert` wrapper updated to support
+  multiple branches pointing to the same reference and
+  detached HEAD
+* Modify the list of available APT distros from where to get
+  Mender software by adding `debian/bookworm` and `ubuntu/noble` and
+  removing `ubuntu/focal`.
+
+##### Other
+
+* Fallback to Debian Bullseye packages when target distribution
+  is not supported, printing a user facing warning when doing so.
+
+
 ## mender-convert 4.2.2
 
 _Released 06.12.2024_

@@ -7,6 +7,23 @@ shortcode-core:
 github: false
 ---
 
+
+## mender-artifact 3.11.3
+
+_Released 12.02.2024_
+
+### Changelogs
+
+#### mender-artifact (3.11.3)
+
+New changes in mender-artifact since 3.11.2:
+
+##### Bug Fixes
+
+* Fixes signature verification with ECDSA keys when the signing has been done externally with PKCS#11. Previously mender-artifact would always assume that the signature has been done with the built-in engine, which then wouldn't validate correctly. The bug affected only ECDSA key pairs.
+  ([MEN-7523](https://northerntech.atlassian.net/browse/MEN-7523))
+
+
 ## mender-artifact 3.11.2
 
 _Released 02.12.2024_

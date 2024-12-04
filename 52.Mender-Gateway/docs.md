@@ -7,6 +7,22 @@ shortcode-core:
 github: false
 ---
 
+## mender-gateway 1.2.1
+
+_Released 12.02.2024_
+
+### Changelogs
+
+#### mender-gateway (1.2.1)
+
+New changes in mender-gateway since 1.2.0:
+
+##### Bug Fixes
+
+* set the correct `Content-Length` when modifying the inventory payload
+  ([MEN-7738](https://northerntech.atlassian.net/browse/MEN-7738))
+
+
 ## mender-gateway 1.2.0
 
 _Released 12.28.2023_
