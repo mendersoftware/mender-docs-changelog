@@ -7,6 +7,31 @@ shortcode-core:
 github: false
 ---
 
+## mender-connect 2.3.0
+
+_Released 12.18.2024_
+
+### Changelogs
+
+#### mender-connect (2.3.0)
+
+New changes in mender-connect since 2.2.1:
+
+##### Bug Fixes
+
+* systemd: Always try restarting the client if it exits.
+
+##### Features
+
+* added back-off in connectionmanager
+  ([MEN-5782](https://northerntech.atlassian.net/browse/MEN-5782))
+
+##### Other
+
+* --version no longer outputs the text "mender-connect version".
+  ([MEN-6965](https://northerntech.atlassian.net/browse/MEN-6965))
+
+
 ## mender-connect 2.2.0
 
 _Released 12.28.2023_

@@ -7,6 +7,94 @@ shortcode-core:
 github: false
 ---
 
+## mender-convert 4.3.0
+
+_Released 12.18.2024_
+
+### Changelogs
+
+#### mender-convert (4.3.0)
+
+New changes in mender-convert since 4.2.3:
+
+##### Bug Fixes
+
+* allow installation of deb packages with spaces
+  ([MEN-7264](https://northerntech.atlassian.net/browse/MEN-7264))
+* correctly check that RASPBERRYPI_OS_REQUIRED_ID is set
+
+##### Features
+
+* Add the possibility to install arbitrary debian packages
+  located in `MENDER_INSTALL_INPUT_PACKAGES_PATH` to the converted image.
+  ([MEN-7264](https://northerntech.atlassian.net/browse/MEN-7264))
+* support assets directory for local data
+* `mender-convert` Docker build is now architecture aware and
+  it will install the native dependencies for the target architecture.
+  This change makes the tool compatible with Apple arm machines. The Docker
+  images will be published for `linux/amd64` and `linux/arm64` platforms.
+* Added ext3 filesystem support
+* make boot partition mount point configurable
+* extend Raspberry Pi support to bookworm
+
+  The Debian release 12 "bookworm" introduced the /boot/firmware
+  mount point for the boot partition, which is a breaking change.
+
+  The upgrade therefore involves these adjustments:
+  - use the "check_image_os" function to check the Linux distribution
+    release requirement on the supplied image
+  - set MENDER_BOOT_PART_MOUNTPOINT to /boot/firmware
+  - remove the /uboot directory creation and related modifications
+    of scripts shipped with the supplied image.
+  - copy the device tree overlays from the boot partition to /boot
+    so they can be accessed from u-boot
+
+  To facilitate maintenance, some functionality has been factored out
+  into the raspberrypi_common_config file.
+
+  Currently checks for the required Linux distribution family and version,
+  e.g. "debian" and "12" (reflects "bookworm") are included. This is
+  common for both the already existing 32bit and upcoming 64bit configs,
+  so it prepares the version bump and aarch64 extension.
+
+  On Debian 11 "bullseye" (or derivatives) and earlier, the boot
+  partition is mounted to /uboot in the u-boot integration path.
+  As several scripts rely on the files located on the patition,
+  we need to adjust those.
+* add support for Raspberry Pi OS 64bit
+
+  Add support for Raspberry Pi OS 64bit, based on Debian 12
+  "bookworm", including configuration for Raspberry Pi 4
+  The logic is very close to the 32bit version, with the
+  exceptions:
+  - the kernel image filename is always kernel8.img, which
+    in the supplied image is in fact a gzipped vmlinux file
+  - the checks are on 64bit binaries, and the enforcement o
+    32bit execution is removed.
+  - No support for non-Debian images.
+
+  Add the initial base 64b configuration and extend with
+  an explicit instatiations of RPi4 "bullseye" and "bookworm"
+  ([MEN-3663](https://northerntech.atlassian.net/browse/MEN-3663))
+* raspberrypi_common: support local assets
+* support Raspberry Pi 5, bookworm 64bit
+* Upgrade Raspberry Pi 3 pre-built image to Debian 12 64bits
+  ([MEN-7759](https://northerntech.atlassian.net/browse/MEN-7759))
+* Support for sparse images to save storage space. It is disabled by default and can be enabled with `MENDER_SPARSE_IMAGE` configuration flag
+
+##### Other
+
+* Remove Beaglebone from supported boards.
+
+  Beaglebone has not worked for quite some time with the latest images,
+  due to problems with booting using UEFI and GRUB. The last version
+  to support it, Debian Buster, has now gone out of support, so
+  therefore we remove support in mender-convert as well.
+* update README for Raspberry Pi OS support
+* Raspberry Pi configs have changed names. Please see the
+  `README.md` files for the new names.
+
+
 ## mender-convert 4.2.3
 
 _Released 12.02.2024_

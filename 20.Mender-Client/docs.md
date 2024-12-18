@@ -7,6 +7,99 @@ shortcode-core:
 github: false
 ---
 
+## mender 5.0.0
+
+_Released 12.18.2024_
+
+### Changelogs
+
+#### mender (5.0.0)
+
+New changes in mender since 4.0.5:
+
+##### Bug Fixes
+
+* Fix a bug where a failure in checking the working directory
+  will not exit cleanly from `Cleanup` state.
+* changed bash to sh and updated code to be compatible with sh
+  and the new parsing of passthrough args.
+* Improve error messages when executable can't be found.
+* Fall back on bootloader when boot env modification tool is broken.
+* Don't hide out-of-space messages when streaming in update modules.
+* Fix download failure to always do a proper
+  cancellation and cleanup of internal HTTP stuctures to avoid
+  breaking future HTTP requests. Fixes `bad_version` error.
+  ([MEN-7810](https://northerntech.atlassian.net/browse/MEN-7810))
+* Fix download resuming to reset the HTTP state and
+  avoid repeatedly hitting the same error in case of a bad state
+  ([MEN-7810](https://northerntech.atlassian.net/browse/MEN-7810))
+* Fix inventory reporting of device_type to correctly select
+  the file based on Mender configuration and Mender environment variables
+* On failures attempting to communicate with the server when
+  submitting inventory or polling for deployment, a backoff mechanism
+  will cancel and take over for the `InventoryPollIntervalSeconds` and
+  `UpdatePollIntervalSeconds` intervals. The maxmimum backoff interval
+  is configured with `RetryPollIntervalSeconds`, and it will retry
+  `RetryPollCount` times. This allows mender-update to recover quicker
+  in case of potential race conditions, such as if mender-update starts
+  polling before mender-auth has generated the key on first boot.
+  ([MEN-7790](https://northerntech.atlassian.net/browse/MEN-7790))
+* Resend the inventory when the device has reauthenticated
+  ([MEN-7820](https://northerntech.atlassian.net/browse/MEN-7820))
+
+##### Features
+
+* Replace `--data` flag with `--datastore` flag. This aligns
+  better with the environment variables with the same names. The old
+  `--data` flag is still accepted for backwards compatibility, but note
+  that it does not have the same meaning as the `MENDER_DATA_DIR`
+  environment variable (hence the rename).
+* Add mender-inventory-inventory script to default install.
+
+  To list configured polling intervals in device inventory.
+* Change the generated key from RSA to ED25519. This is
+  generated if there is no key provided in the configuration file, and if
+  and if there is no previously generated key. Existing keys won't be affected,
+  so this will only affect installation in new devices.
+  The motivation for this change is more efficient computation.
+  ([MEN-7534](https://northerntech.atlassian.net/browse/MEN-7534))
+* Add `--stop-before` flag which can be used with the
+  `install`, `commit`, and `rollback` standalone commands to stop before
+  certain states. Use `resume` to continue, which also supports the same
+  flag. These are the allowed states:
+  * `ArtifactInstall_Enter`
+  * `ArtifactCommit_Enter`
+  * `ArtifactCommit_Leave`
+  * `ArtifactRollback_Enter`
+  * `ArtifactFailure_Enter`
+  * `Cleanup`
+  The flag can be specified multiple times.
+  ([MEN-7115](https://northerntech.atlassian.net/browse/MEN-7115))
+
+##### Other
+
+* Returns an error when passing type, or when passing
+  metadata to docker-artifact gen, and overrides output path
+  and name when passed as passthrough argument.
+  ([MEN-7110](https://northerntech.atlassian.net/browse/MEN-7110))
+* Move `deb`, `docker`, `rpm` and `script` Update Modules out
+  from `mender` repository to `mender-update-modules` repository. From
+  this version on, `mender` will ship by default only with `rootfs`,
+  `file` and `directory` Update Modules (both in `meta-mender` recipes and
+  Debian binary packages).
+  ([MEN-7672](https://northerntech.atlassian.net/browse/MEN-7672))
+* Add systemd mender-data-dir.service optionally installed
+  with MENDER_DATA_DIR_SYSTEMD_UNIT CMake variable. This
+  service historically has been in meta-mender repository and
+  used elsewhere from there. By moving it to the source
+  repository we'll have it better aligned with authd and
+  updated services
+* Fix an issue with tar archive parsing where the client
+  erroneously interpreted zero-filled records at the end of the archive as
+  invalid, throwing `Superfluous data at the end of the archive` error.
+  ([MEN-7810](https://northerntech.atlassian.net/browse/MEN-7810))
+
+
 ## mender 4.0.5
 
 _Released 12.02.2024_

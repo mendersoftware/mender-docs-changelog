@@ -7,6 +7,22 @@ shortcode-core:
 github: false
 ---
 
+## monitor-client 1.4.0
+
+_Released 12.18.2024_
+
+### Changelogs
+
+#### monitor-client (1.4.0)
+
+New changes in monitor-client since 1.3.0:
+
+##### Features
+
+* Implemented an exponential backoff algorithm on 429 and 5xx
+  HTTPS responses from the server.
+  ([MEN-5783](https://northerntech.atlassian.net/browse/MEN-5783))
+
 
 ## monitor-client 1.3.0
 
