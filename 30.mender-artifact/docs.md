@@ -7,6 +7,36 @@ shortcode-core:
 github: false
 ---
 
+## mender-artifact 4.0.0
+
+_Released 12.18.2024_
+
+### Changelogs
+
+#### mender-artifact (4.0.0)
+
+New changes in mender-artifact since 3.11.3:
+
+##### Bug Fixes
+
+* `mender-artifact` now detects if the device has an
+  standalone `mender-snapshot`. From Mender client 4.0 onwards, the
+  `mender` binary won't implement `snapshot` command.
+* `mender-artifact` now detects if the device has an
+  standalone `mender-snapshot`. From Mender client 4.0 onwards, the
+  `mender` binary won't implement `snapshot` command.
+* mender-artifact writes to output file instead of replacing it
+  ([MEN-7660](https://northerntech.atlassian.net/browse/MEN-7660))
+
+##### Features
+
+* adding functionality for adding script using script flag in modify
+  ([MEN-5967](https://northerntech.atlassian.net/browse/MEN-5967))
+* Author initial revision of Keyfactor SignServer Signer interface for Mender Artifact
+* made read output yaml compatible
+* Setting `--output-file` to `-` will write the output to standard out.
+  ([MEN-7661](https://northerntech.atlassian.net/browse/MEN-7661))
+
 
 ## mender-artifact 3.11.3
 
