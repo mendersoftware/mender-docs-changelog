@@ -100,6 +100,38 @@ New changes in mender since 4.0.5:
   ([MEN-7810](https://northerntech.atlassian.net/browse/MEN-7810))
 
 
+## mender 4.0.6
+
+_Released 12.20.2024_
+
+### Changelogs
+
+#### mender (4.0.6)
+
+New changes in mender since 4.0.5:
+
+##### Bug Fixes
+
+* Fix download failure to always do a proper
+  cancellation and cleanup of internal HTTP stuctures to avoid
+  breaking future HTTP requests. Fixes `bad_version` error.
+  ([MEN-7810](https://northerntech.atlassian.net/browse/MEN-7810))
+* Fix download resuming to reset the HTTP state and
+  avoid repeatedly hitting the same error in case of a bad state
+  ([MEN-7810](https://northerntech.atlassian.net/browse/MEN-7810))
+* Fix inventory reporting of device_type to correctly select
+  the file based on Mender configuration and Mender environment variables
+* Resend the inventory when the device has reauthenticated
+  ([MEN-7820](https://northerntech.atlassian.net/browse/MEN-7820))
+
+##### Other
+
+* Fix an issue with tar archive parsing where the client
+  erroneously interpreted zero-filled records at the end of the archive as
+  invalid, throwing `Superfluous data at the end of the archive` error.
+  ([MEN-7810](https://northerntech.atlassian.net/browse/MEN-7810))
+
+
 ## mender 4.0.5
 
 _Released 12.02.2024_
