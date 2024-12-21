@@ -7,6 +7,59 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender scarthgap-v2024.12
+
+### Changelogs
+
+#### meta-mender (scarthgap-v2024.12)
+
+New changes in meta-mender since scarthgap-v2024.08:
+
+##### Bug Fixes
+
+* finish fixing persistent machine id support
+
+  Commit bca6bf7 attempted to fix the issue, but some references were
+  overlooked. This commit addresses the rest.
+* package artifact-verify-key.pem in mender-update
+  ([MEN-7204](https://northerntech.atlassian.net/browse/MEN-7204))
+* guard installation of systemd with mender-systemd feature
+* Fixes parsing error with Mender disabled
+
+##### Features
+
+* add mender-prepopulate-inactive-partition feature
+
+  Add mender-prepopulate-inactive-partition MENDER_FEATURE.
+  Disabled by default for more efficient compression, it can be
+  enabled to have the inactive partition populated with the same
+  contents of the active one.
+
+  This allows to check the bootloader integrations (A/B switching,
+  A/B update, A/B rollback) directly on the generated images
+  without additional modifications or processing.
+
+##### Other
+
+* Add recipe for `mender-flash` 1.0.1
+* Add recipe for `mender-flash` 1.0.2
+* Add recipe for `mender` 4.0.5
+* Add recipe for `mender-artifact` 3.11.3
+* Add recipe for `mender-gateway` 1.2.1
+* Add recipe for `mender` 5.0.0. This recipe is set with
+  `DEFAULT_PREFERENCE = "-1"`. Use `PREFERRED_VERSION` to select it on
+  your build.
+* Add recipe for `mender-gateway` 2.0.0. This recipe is set
+  with `DEFAULT_PREFERENCE = "-1"`. Use `PREFERRED_VERSION` to select it
+  on your build.
+* Add recipe for `mender-connect` 2.3.0
+* Add recipe for `mender-artifact` 4.0.0. This recipe is set
+  with `DEFAULT_PREFERENCE = "-1"`. Use `PREFERRED_VERSION` to select it
+  on your build.
+* Add recipe for `mender-monitor` 1.4.0
+* Add recipe for `mender` 4.0.6
+
+
 ## meta-mender scarthgap-v2024.08
 
 ### Changelogs
@@ -102,6 +155,42 @@ New changes in meta-mender since kirkstone-v2024.06:
   `INIT_MANAGER = "systemd"` in your `local.conf` file. Alternatively,
   use `MENDER_FEATURES_DISABLE = "mender-systemd"`, but be aware that
   this can break daemon mode.
+
+
+## meta-mender kirkstone-v2024.12
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2024.12)
+
+New changes in meta-mender since kirkstone-v2024.08:
+
+##### Bug Fixes
+
+* package artifact-verify-key.pem in mender-update
+  ([MEN-7204](https://northerntech.atlassian.net/browse/MEN-7204))
+* guard installation of systemd with mender-systemd feature
+* Fixes parsing error with Mender disabled
+
+##### Other
+
+* Add recipe for `mender-flash` 1.0.1
+* Add recipe for `mender-flash` 1.0.2
+* Add recipe for `mender` 4.0.5
+* Add recipe for `mender-artifact` 3.11.3
+* Add recipe for `mender-gateway` 1.2.1
+* Add recipe for `mender` 5.0.0. This recipe is set with
+  `DEFAULT_PREFERENCE = "-1"`. Use `PREFERRED_VERSION` to select it on
+  your build.
+* Add recipe for `mender-gateway` 2.0.0. This recipe is set
+  with `DEFAULT_PREFERENCE = "-1"`. Use `PREFERRED_VERSION` to select it
+  on your build.
+* Add recipe for `mender-connect` 2.3.0
+* Add recipe for `mender-artifact` 4.0.0. This recipe is set
+  with `DEFAULT_PREFERENCE = "-1"`. Use `PREFERRED_VERSION` to select it
+  on your build.
+* Add recipe for `mender-monitor` 1.4.0
+* Add recipe for `mender` 4.0.6
 
 
 ## meta-mender kirkstone-v2024.08
