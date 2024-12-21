@@ -7,7 +7,7 @@ shortcode-core:
 github: false
 ---
 
-## meta-mender (scarthgap-v2024.08)
+## meta-mender scarthgap-v2024.08
 
 ### Changelogs
 
@@ -24,7 +24,7 @@ New changes in meta-mender since scarthgap-v2024.07:
 * Add Mender client 4.0.4 recipe.
 
 
-## meta-mender (scarthgap-v2024.07)
+## meta-mender scarthgap-v2024.07
 
 _Released: 07.03.2024_
 
@@ -104,7 +104,7 @@ New changes in meta-mender since kirkstone-v2024.06:
   this can break daemon mode.
 
 
-## meta-mender (kirkstone-v2024.08)
+## meta-mender kirkstone-v2024.08
 
 ### Changelogs
 
@@ -121,7 +121,7 @@ New changes in meta-mender since kirkstone-v2024.06:
 * Add Mender client 4.0.4 recipe.
 
 
-## meta-mender (kirkstone-v2024.06)
+## meta-mender kirkstone-v2024.06
 
 _Released: 06.17.2024_
 
@@ -161,7 +161,7 @@ New changes in meta-mender since kirkstone-v2024.04:
 * Add Mender client 4.0.3 recipe.
 
 
-## meta-mender (kirkstone-v2024.04)
+## meta-mender kirkstone-v2024.04
 
 _Released: 04.26.2024_
 
@@ -265,7 +265,7 @@ New changes in meta-mender since kirkstone-v2023.12:
 * Add recipe for `mender` 4.0.2
 
 
-## meta-mender (kirkstone-v2023.12)
+## meta-mender kirkstone-v2023.12
 
 _Released: _01.01.2024_
 
@@ -280,7 +280,7 @@ New changes in meta-mender since kirkstone-v2023.10:
 * add recipes for the client components in Mender 3.7.0
 
 
-## meta-mender (kirkstone-v2023.10)
+## meta-mender kirkstone-v2023.10
 
 _Released: 10.01.2023_
 
@@ -305,7 +305,7 @@ New changes in meta-mender since kirkstone-v2023.08:
 * Add recipe for mender-artifact 3.10.2
 
 
-## meta-mender (kirkstone-v2023.08)
+## meta-mender kirkstone-v2023.08
 
 _Released: 09.05.2023_
 
@@ -334,7 +334,7 @@ New changes in meta-mender since kirkstone-v2023.03:
 * Add recipe for mender-monitor 1.3.0
 
 
-## meta-mender (kirkstone-v2023.03)
+## meta-mender kirkstone-v2023.03
 
 _Released: 03.10.2023_
 
@@ -373,7 +373,7 @@ New changes in mender-client since kirkstone-v2023.02:
 * Add mender-client 3.3.2 recipe.
 
 
-## meta-mender (kirkstone-v2023.02)
+## meta-mender kirkstone-v2023.02
 
 _Released: 02.24.2023_
 
@@ -483,7 +483,7 @@ New changes in meta-mender since kirkstone-v2022.10:
 * Add recipe for mender-gateway 1.1.0
 
 
-## meta-mender (kirkstone-v2022.10)
+## meta-mender kirkstone-v2022.10
 
 _Released: 10.27.2022_
 
@@ -547,7 +547,7 @@ New changes in meta-mender since kirkstone-v2022.09:
 * Add recipe for mender-connect 2.1.0
 
 
-## meta-mender (kirkstone-v2022.09)
+## meta-mender kirkstone-v2022.09
 
 _Released: 09.12.2022_
 
@@ -1371,7 +1371,7 @@ New changes in meta-mender since dunfell-v2022.09:
       ```
 
 
-## meta-mender (dunfell-v2024.06)
+## meta-mender dunfell-v2024.06
 
 _Released: 06.14.2024_
 
@@ -1432,7 +1432,7 @@ New changes in meta-mender since dunfell-v2023.03:
 * Add mender-connect 2.1.2 recipe.
 
 
-## meta-mender (dunfell-v2023.03)
+## meta-mender dunfell-v2023.03
 
 _Released: 03.13.2023_
 
@@ -1479,7 +1479,7 @@ New changes in meta-mender since dunfell-v2023.02:
 * Add mender-client 3.3.2 recipe.
 
 
-## meta-mender (dunfell-v2023.02)
+## meta-mender dunfell-v2023.02
 
 _Released: 02.24.2023_
 
@@ -1546,7 +1546,7 @@ New changes in meta-mender since dunfell-v2022.12:
 * Add recipe for mender-gateway 1.1.0
 
 
-## meta-mender (dunfell-v2022.12)
+## meta-mender dunfell-v2022.12
 
 _Released: 12.22.2022_
 
@@ -1588,7 +1588,7 @@ New changes in meta-mender since dunfell-v2022.11:
   ([MEN-6122](https://northerntech.atlassian.net/browse/MEN-6122))
 
 
-## meta-mender (dunfell-v2022.11)
+## meta-mender dunfell-v2022.11
 
 _Released: 11.22.2022_
 
@@ -1642,7 +1642,7 @@ New changes in meta-mender since dunfell-v2022.10:
 * Added variables for extra and swap parts UUID
 
 
-## meta-mender (dunfell-v2022.10)
+## meta-mender dunfell-v2022.10
 
 _Released: 10.27.2022_
 
