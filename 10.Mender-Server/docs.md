@@ -62,7 +62,7 @@ _Released 08.15.2024_
 
 * Fixed CVE-2024-46947 - SSRF issues in Mender Enterprise Server.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2024-46947-cve-2024-47190-ssrf-issues-in-mender-enterprise-server
+  [mender.io/blog/cve-2024-46947-cve-2024-47190-ssrf-issues-in-mender-enterprise-server](https://mender.io/blog/cve-2024-46947-cve-2024-47190-ssrf-issues-in-mender-enterprise-server)
 
 ### Changelogs
 
@@ -121,7 +121,7 @@ _Released 06.12.2024_
 
 * Fixed CVE-2024-46948 - Missing filtering based on RBAC device groups.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2024-46948
+  [mender.io/blog/cve-2024-46948](https://mender.io/blog/cve-2024-46948)
 
 ### Changelogs
 
@@ -183,7 +183,7 @@ _Released 05.01.2024_
 
 * Fixed CVE-2024-37019 - Account takeover using SAML.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2024-37019-account-takeover-using-saml
+  [mender.io/blog/cve-2024-37019-account-takeover-using-saml](https://mender.io/blog/cve-2024-37019-account-takeover-using-saml)
 
 ### Changelogs
 
@@ -217,7 +217,7 @@ _Released 06.12.2024_
 
 * Fixed CVE-2024-46948 - Missing filtering based on RBAC device groups.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2024-46948
+  [mender.io/blog/cve-2024-46948](https://mender.io/blog/cve-2024-46948)
 
 ### Changelogs
 
@@ -283,7 +283,7 @@ _Released 05.01.2024_
 
 * Fixed CVE-2024-37019 - Account takeover using SAML.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2024-37019-account-takeover-using-saml
+  [mender.io/blog/cve-2024-37019-account-takeover-using-saml](https://mender.io/blog/cve-2024-37019-account-takeover-using-saml)
 
 ### Changelogs
 
@@ -2183,7 +2183,7 @@ _Released 02.20.2023_
 
 * Fixed CVE-2022-45929 - Low-privileged users can edit their own roles.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users
+  [mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users](https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users)
 
 ### Statistics
 
@@ -2959,7 +2959,7 @@ _Released 09.25.2022_
 
 * Fixed CVE-2022-41324 - Read-only API access can leak secrets in Mender.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users
+  [mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users](https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users)
 
 ### Statistics
 
@@ -4273,10 +4273,10 @@ _Released 03.10.2023_
 
 * Fixed CVE-2022-41324 - Read-only API access can leak secrets in Mender.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users
+  [mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users](https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users)
 * Fixed CVE-2022-45929 - Low-privileged users can edit their own roles.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users
+  [mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users](https://mender.io/blog/cve-2022-45929-cve-2022-41324-improper-access-control-for-low-privileged-users)
 
 ### Statistics
 
@@ -8217,10 +8217,10 @@ _Released 04.21.2022_
 
 * Fixed CVE-2022-29555 - Cross-Origin WebSocket Hijacking in Mender deviceconnect.
   See the official announcement for more information:
-  https://mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect
+  [mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect](https://mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect)
 * Fixed CVE-2022-29556 - Server Side Request Forgery in Azure IoT Hub integration
   See the official announcement for more information:
-  https://mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect
+  [mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect](https://mender.io/blog/cve-2022-29555-and-cve-2022-29556-vulnerabilities-in-iot-manager-and-deviceconnect)
 
 ### Statistics
 
