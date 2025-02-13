@@ -1,11 +1,62 @@
 ---
-title: Mender Server Enterprise
+title: Hosted Mender
 taxonomy:
     category: docs
 shortcode-core:
     active: false
 github: false
 ---
+
+## 4.1.0-saas - 2025-02-13
+
+
+### Bug Fixes
+
+
+- *(gui)* Made user list tracking rely only on backend data instead of local store to prevent duplicate users listed
+([MEN-8049](https://northerntech.atlassian.net/browse/MEN-8049)) ([7d1b060](https://github.com/mendersoftware/mender-server-enterprise/commit/7d1b060d096ff2549305cc0f453d8a35b21257b0))  by @mzedel
+
+- *(gui)* Fixed an issue that would cause the ui to crash when creating phased deployments
+ ([9827ba9](https://github.com/mendersoftware/mender-server-enterprise/commit/9827ba928889f52e7eb4216b68707386c082dc74))  by @mzedel
+
+- *(gui)* Fixed remaining device percentage not being displayed correctly on phased deployment creation
+ ([5600913](https://github.com/mendersoftware/mender-server-enterprise/commit/560091349c778c288ad1bdc5a8bcd9b54c39f399))  by @mzedel
+
+- Update outdated api endpoints in the `inventory` service
+([MEN-7017](https://northerntech.atlassian.net/browse/MEN-7017)) ([73c7149](https://github.com/mendersoftware/mender-server-enterprise/commit/73c714951a61642b2fc100214c61e5f66c27ee0c))  by @bahaa-ghazal
+- Limiting the size of metadata when uploading and generating artifacts
+([MEN-7166](https://northerntech.atlassian.net/browse/MEN-7166)) ([9e80728](https://github.com/mendersoftware/mender-server-enterprise/commit/9e8072874c94da9e7a3659207e08c6a05fc48cc4))  by @bahaa-ghazal
+
+
+
+
+### Documentation
+
+
+- *(deployments)* Clarifications for the GET /deployments version 2 endpoint.
+([MEN-8053](https://northerntech.atlassian.net/browse/MEN-8053)) ([0231b1b](https://github.com/mendersoftware/mender-server-enterprise/commit/0231b1b1786a7c341d0b56544e17e952c4bd5059))  by @merlin-northern
+
+- *(inventory)* Describe inventory webhook events.
+([MEN-8041](https://northerntech.atlassian.net/browse/MEN-8041)) ([66df3f5](https://github.com/mendersoftware/mender-server-enterprise/commit/66df3f5532e8743176365c992f74afa2781bbf15))  by @merlin-northern
+
+
+
+
+
+### Features
+
+
+- *(gui)* Clarified user creation capabilities for non-enterprise users
+([MEN-7883](https://northerntech.atlassian.net/browse/MEN-7883)) ([d2fd192](https://github.com/mendersoftware/mender-server-enterprise/commit/d2fd192e8c09443dabb694288d73636853b02d86))  by @mzedel
+
+- *(gui)* Added automatic refresh to get webhook events
+([MEN-8045](https://northerntech.atlassian.net/browse/MEN-8045)) ([502e06a](https://github.com/mendersoftware/mender-server-enterprise/commit/502e06aab96f3ce980cd6fe197a2fd6d7e99233a))  by @mzedel
+
+
+
+
+
+
 
 ## 4.0.0-rc.9 - 2025-01-30
 
