@@ -7,6 +7,39 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.0-saas.1 - 2025-02-20
+
+
+### Bug Fixes
+
+
+- *(gui)* Fixed date parsing & formatting issues after dayjs migation
+([95dd540](https://github.com/mendersoftware/mender-server-enterprise/commit/95dd5400cc14888ae965feeba48c21bef7e4b901))  by @mzedel
+
+- *(gui)* Fixed an issue that would prevent showing phased deployments
+([1e73ba7](https://github.com/mendersoftware/mender-server-enterprise/commit/1e73ba734acbb33f2432d0b209a4baafd669651d))  by @mzedel
+
+- Fix(gui): ensured deployment phase information stays inside its boundaries
+([MEN-7995](https://northerntech.atlassian.net/browse/MEN-7995)) ([87fe82d](https://github.com/mendersoftware/mender-server-enterprise/commit/87fe82d7467cdcaf95397f0e37889167456f105b))  by @mzedel
+
+- Fix(gui): fixed an issue that prevented upload progress from being shown
+  aligning upload progress tracking with updated payload structure after rtk migration
+([MEN-8074](https://northerntech.atlassian.net/browse/MEN-8074)) ([1b715c8](https://github.com/mendersoftware/mender-server-enterprise/commit/1b715c82aa75e016a681038459bfadb6f3ae89cd))  by @mzedel
+
+
+
+
+### Features
+
+
+- Count devices deviceauth command line and workflow
+([MEN-8058](https://northerntech.atlassian.net/browse/MEN-8058)) ([7128716](https://github.com/mendersoftware/mender-server-enterprise/commit/7128716912a562e28e52f1638ee6224273bb0dc5))  by @merlin-northern
+
+
+
+
+
+
 ## 4.1.0-saas - 2025-02-13
 
 
