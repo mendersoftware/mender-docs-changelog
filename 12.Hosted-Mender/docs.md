@@ -7,6 +7,177 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.0-saas.3 - 2025-03-20
+
+
+### Bug Fixes
+
+
+- *(deployment)* Ignore false errors when deleting data that does not exist
+([MEN-8213](https://northerntech.atlassian.net/browse/MEN-8213)) ([532d95a](https://github.com/mendersoftware/mender-server-enterprise/commit/532d95ab87f1bea1027d7ff83b3281c7d4740f26))  by @bahaa-ghazal
+
+- *(gui)* Removed border on active tab in left nav bar
+([MEN-8113](https://northerntech.atlassian.net/browse/MEN-8113)) ([a5d5df4](https://github.com/mendersoftware/mender-server-enterprise/commit/a5d5df49f70a34427edcde7348858fbb9d18c4b7))  by @mineralsfree
+
+- *(gui)* Fixed time filter in past deployments
+([MEN-7989](https://northerntech.atlassian.net/browse/MEN-7989)) ([25cdee0](https://github.com/mendersoftware/mender-server-enterprise/commit/25cdee07a5e6f76942f8b0dcaa67a4f76b1b2ecb))  by @mineralsfree
+
+- *(gui)* Fixed location not being changed on device status filter change
+([MEN-8118](https://northerntech.atlassian.net/browse/MEN-8118)) ([36eb469](https://github.com/mendersoftware/mender-server-enterprise/commit/36eb4695544a0fdc2559d4178b9e0cfa5c647691))  by @mineralsfree
+
+- *(gui)* Restored rspack to license generator compatible version
+ ([1280dc7](https://github.com/mendersoftware/mender-server-enterprise/commit/1280dc7363135444575611f32f5011935557f01b))  by @mzedel
+
+- *(gui)* Fixed default roles being shown before loading ones from backend
+([MEN-8095](https://northerntech.atlassian.net/browse/MEN-8095)) ([d934020](https://github.com/mendersoftware/mender-server-enterprise/commit/d9340200ce40229fab441e2334117906ab18e103))  by @mineralsfree
+
+- *(gui)* Fixed an issue that would prevent new signups from using the onboarding
+ ([fbaa329](https://github.com/mendersoftware/mender-server-enterprise/commit/fbaa329fb66bb3dc687db463a7cc507f8643a6b8))  by @mzedel
+
+- *(gui)* Default to eu in eu.hosted domain during signup
+([MEN-7925](https://northerntech.atlassian.net/browse/MEN-7925)) ([0512d24](https://github.com/mendersoftware/mender-server-enterprise/commit/0512d24b7b6ddbf8e90677f737da4625d95c5e6f))  by @mineralsfree
+
+- *(gui)* Fixed webhook configuration checks by subscription
+ ([6b5989d](https://github.com/mendersoftware/mender-server-enterprise/commit/6b5989d8b61fc05bde9b788b69b60474f99983f2))  by @mzedel
+
+- *(gui)* Ensured form validation is applied during validation phase only
+ ([b6b870c](https://github.com/mendersoftware/mender-server-enterprise/commit/b6b870c9c39a3e5a24f42ef9bec02184fc830bb0))  by @mzedel
+
+- *(gui)* Fixed permission extension issue in roles form
+([MEN-8108](https://northerntech.atlassian.net/browse/MEN-8108)) ([0a41d0d](https://github.com/mendersoftware/mender-server-enterprise/commit/0a41d0dd4fec2a82ab8e746fa6a8a748843dc1a3))  by @mineralsfree
+
+- *(gui)* Fixed an issue that prevented phased deployments when reusing phase definitions
+([MEN-8192](https://northerntech.atlassian.net/browse/MEN-8192)) ([f9b735f](https://github.com/mendersoftware/mender-server-enterprise/commit/f9b735f250a41db9e073546fc69a6a471028a50a))  by @mzedel
+
+- *(gui)* Fixed an issue that could clear search queries
+ ([c308b2b](https://github.com/mendersoftware/mender-server-enterprise/commit/c308b2bd72f915c11521af236f9fd4ed6659f4e4))  by @mzedel
+
+
+  - when search was run multiple times in non-search searchfields
+
+- *(gui)* Provide more context on failed 2fa enabled login
+ ([dfcb767](https://github.com/mendersoftware/mender-server-enterprise/commit/dfcb767e33c054bdca64aba209eb8ce05902a89a))  by @mzedel
+
+- *(gui)* Fixed an issue that would prevent some info messages from showing
+ ([e1277bd](https://github.com/mendersoftware/mender-server-enterprise/commit/e1277bdf3c289d2c383ce4303da4567606193bf5))  by @mzedel
+
+- *(gui)* Restored group creation notification
+ ([3bdb3f3](https://github.com/mendersoftware/mender-server-enterprise/commit/3bdb3f34c8b1e6aa3c2e1cf34a619933684d4f04))  by @mzedel
+
+- *(iot-manager)* Do not store events if there are no integrations
+([MEN-7868](https://northerntech.atlassian.net/browse/MEN-7868)) ([0c0ee9d](https://github.com/mendersoftware/mender-server-enterprise/commit/0c0ee9d3e497d04cbf43e4693fbdd17c30f1edb3))  by @merlin-northern
+
+- *(iot-manager)* Creating new integration creates a new ID
+([MEN-7801](https://northerntech.atlassian.net/browse/MEN-7801)) ([c52491e](https://github.com/mendersoftware/mender-server-enterprise/commit/c52491eb648fa6ab6550ca39386327b1ae2de4df))  by @merlin-northern
+
+- *(tenantadm)* Emit structured logs on request panic
+ ([6c67dc3](https://github.com/mendersoftware/mender-server-enterprise/commit/6c67dc36b07e41cbef1367f241a2637fcf311bab))  by @alfrunes
+
+
+  The former request middleware handling Go panics would emit the panic
+  stack trace in an unstructured format. This commit lets the accesslog
+  handle it and emit it in the `trace` log context key.
+
+- *(tenantadm)* Waiting for workflow does not abort immediately when it is not yet scheduled
+([MEN-8165](https://northerntech.atlassian.net/browse/MEN-8165)) ([6dc0790](https://github.com/mendersoftware/mender-server-enterprise/commit/6dc0790b8c000eba3203fcc36ff9ccd303102ba0))  by @bahaa-ghazal
+
+- Race when provisioning and connecting a device
+([MEN-8164](https://northerntech.atlassian.net/browse/MEN-8164)) ([eae5bf2](https://github.com/mendersoftware/mender-server-enterprise/commit/eae5bf230060838f6b93d656ba19d68c609bb425))  by @alfrunes
+
+
+  If a device gets provisioned and submits a connection request while the
+  device is getting provisioned, the device might end up in an
+  inconsistent state where the connection status gets overwritten to
+  "unknown".
+  The issue was discovered in a test where the system was under load
+  and the device was running on the same network (artificially low RTT).
+- Prevent demoting a service provider with children
+([MEN-7841](https://northerntech.atlassian.net/browse/MEN-7841)) ([b342ada](https://github.com/mendersoftware/mender-server-enterprise/commit/b342adae3f343fcc4c82381732fbe33d91d318eb))  by @bahaa-ghazal
+- Clear `auditlogs` when promoting a tenant to SP
+([MEN-7787](https://northerntech.atlassian.net/browse/MEN-7787)) ([5ab72dc](https://github.com/mendersoftware/mender-server-enterprise/commit/5ab72dc60b6d3a0247c8774e13ff0a54dd8ea474))  by @bahaa-ghazal
+- Stop deviceconnect's `/connect` endpoints from sending ping
+([MEN-8061](https://northerntech.atlassian.net/browse/MEN-8061)) ([79a32a6](https://github.com/mendersoftware/mender-server-enterprise/commit/79a32a6f12fd1b90be3560a896e50d8d63516210))  by @bahaa-ghazal
+- Generate delta worker aborting before artifact upload completes
+([MEN-8177](https://northerntech.atlassian.net/browse/MEN-8177)) ([4901878](https://github.com/mendersoftware/mender-server-enterprise/commit/4901878b6eb41dd208ead2f55027b633749b2732))  by @alfrunes
+
+
+  The artifact generator aborts uploading an artifact prematurely once
+  either of the input files are processed and returns exit code 0. This
+  results in a very confusing error where the API reports a successfully
+  generated artifact, but the artifact is never fully uploaded and
+  available through the APIs.
+- Generate delta worker for custom S3 bucket
+([MEN-8202](https://northerntech.atlassian.net/browse/MEN-8202)) ([0ac2923](https://github.com/mendersoftware/mender-server-enterprise/commit/0ac2923e0261a53a69f298b543e460143558c3e6))  by @alfrunes
+- Skip IoT Core/IoT Hub integration if device is not yet provisioned
+([MEN-8230](https://northerntech.atlassian.net/browse/MEN-8230)) ([eeffe42](https://github.com/mendersoftware/mender-server-enterprise/commit/eeffe42fd158956bb531c916639b84c93d6d4e63))  by @alfrunes
+
+
+  If a device has not previously been provisioned, it is not part of the
+  integration and should be excluded from the sync.
+
+
+
+
+### Documentation
+
+
+- Migrate deployments specs to OpenAPI 3.0
+ ([4631b2f](https://github.com/mendersoftware/mender-server-enterprise/commit/4631b2fc3f16a53490089b273c708a0ffee3b345))  by @alfrunes
+- Correct spelling errors and incorrect descriptions
+ ([001407c](https://github.com/mendersoftware/mender-server-enterprise/commit/001407c4538f1cc7147c950ef73f27892c732476))  by @alfrunes
+- Migrate deployments specs to OpenAPI 3 and align with open-source
+ ([297b808](https://github.com/mendersoftware/mender-server-enterprise/commit/297b808bf43bfb04d6f17e7d5ec3405a5360aff8))  by @alfrunes
+
+
+
+
+### Features
+
+
+- *(gui)* Added year to timeframe picker
+([MEN-8136](https://northerntech.atlassian.net/browse/MEN-8136)) ([48a5e98](https://github.com/mendersoftware/mender-server-enterprise/commit/48a5e98cdfc7793fac653f80d1dbe7ae6172956c))  by @mineralsfree
+
+- *(gui)* Changed login form to a more stepwise approach in order to reduce confusion
+([MEN-7761](https://northerntech.atlassian.net/browse/MEN-7761)) ([543bf7a](https://github.com/mendersoftware/mender-server-enterprise/commit/543bf7a7d0e6b2cd0badf20be9a9ecdb0ce2bc6c))  by @mzedel
+
+
+  - this relies on an as of yet unreleased bugfix release of RHF
+  Ticket: MEN-7761
+
+- *(gui)* Made password forgotten flow more informative to reduce confusion
+([MEN-7761](https://northerntech.atlassian.net/browse/MEN-7761)) ([ed81bc6](https://github.com/mendersoftware/mender-server-enterprise/commit/ed81bc69f2d809be0f95f060042c7762bd3855c6))  by @mzedel
+
+- *(iot-manager)* Allowed disabling address verification during webhook configuration
+ ([e05997c](https://github.com/mendersoftware/mender-server-enterprise/commit/e05997c7c7846c5fec9049a1b937461431687b3a))  by @mzedel
+
+- *(iot-manager)* Added integration_id query parameter to API for getting events
+([MEN-7801](https://northerntech.atlassian.net/browse/MEN-7801)) ([bc0dae3](https://github.com/mendersoftware/mender-server-enterprise/commit/bc0dae393ecf61edba3c71555248c2fef25cd2ac))  by @merlin-northern
+
+
+  Allows to:
+  * get device events from iot-manager by integration ID
+  * maintains backward compatibility for GET /event
+  * with UI calling the new endpoint this fixes the showing
+    of events from old webhooks in the integraiton details
+
+- Accept `null` to unset suspend and trial expiration date
+([MEN-7727](https://northerntech.atlassian.net/browse/MEN-7727)) ([13046eb](https://github.com/mendersoftware/mender-server-enterprise/commit/13046ebdcb11607186f2a5e88b051e405ace9dc2))  by @bahaa-ghazal
+
+
+
+
+### Refac
+
+
+- *(gui)* Extraced login related form elements to isolate form handling
+ ([0088e78](https://github.com/mendersoftware/mender-server-enterprise/commit/0088e78dac5aa9d8512809fb8a197428201e8a38))  by @mzedel
+
+
+
+
+
+
+
 ## 4.1.0-saas.2 - 2025-02-25
 
 
