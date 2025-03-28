@@ -7,6 +7,25 @@ shortcode-core:
 github: false
 ---
 
+## monitor-client 1.4.1
+
+_Released 03.27.2025_
+
+### Changelogs
+
+#### monitor-client (1.4.1)
+
+New changes in monitor-client since 1.4.0:
+
+##### Bug Fixes
+
+* Fix a bug in detection of flapping that can make the device
+  erroneously trigger alerts continuously.
+  ([MEN-8068](https://northerntech.atlassian.net/browse/MEN-8068))
+* Incorrect value for STATUS_BY_LOG_NAME
+  ([ME-474](https://northerntech.atlassian.net/browse/ME-474))
+
+
 ## monitor-client 1.4.0
 
 _Released 12.18.2024_
@@ -22,6 +41,25 @@ New changes in monitor-client since 1.3.0:
 * Implemented an exponential backoff algorithm on 429 and 5xx
   HTTPS responses from the server.
   ([MEN-5783](https://northerntech.atlassian.net/browse/MEN-5783))
+
+
+## monitor-client 1.3.1
+
+_Released 03.27.2025_
+
+### Changelogs
+
+#### monitor-client (1.3.1)
+
+New changes in monitor-client since 1.3.0:
+
+##### Bug Fixes
+
+* Fix a bug in detection of flapping that can make the device
+  erroneously trigger alerts continuously.
+  ([MEN-8068](https://northerntech.atlassian.net/browse/MEN-8068))
+* Incorrect value for STATUS_BY_LOG_NAME
+  ([ME-474](https://northerntech.atlassian.net/browse/ME-474))
 
 
 ## monitor-client 1.3.0

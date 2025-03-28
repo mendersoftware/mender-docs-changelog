@@ -8,6 +8,22 @@ github: false
 ---
 
 
+## mender-binary-delta 1.5.1
+
+_Released 03.27.2025_
+
+### Changelogs
+
+#### mender-binary-delta (1.5.1)
+
+New changes in mender-binary-delta since 1.5.0:
+
+##### Bug Fixes
+
+* Convert the boot partition numbers to int before comparison.
+  ([MEN-8043](https://northerntech.atlassian.net/browse/MEN-8043))
+
+
 ## mender-binary-delta 1.5.0
 
 _Released 03.21.2024_

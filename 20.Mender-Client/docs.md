@@ -7,6 +7,40 @@ shortcode-core:
 github: false
 ---
 
+## mender 5.0.1
+
+_Released 03.27.2025_
+
+### Changelogs
+
+#### mender (5.0.1)
+
+New changes in mender since 5.0.0:
+
+##### Bug Fixes
+
+* Clear the inventory data hash on re-authentication
+  ([MEN-7873](https://northerntech.atlassian.net/browse/MEN-7873))
+* All errors on attempts to communicate with the server
+  are retried with an exponential backoff. This aligns the behavior
+  of the state machine with Mender Client 3.
+  ([MEN-7938](https://northerntech.atlassian.net/browse/MEN-7938))
+* Fix issue where any error in Sync state (triggered for
+  example with an error in Sync_Enter state scripts) leaves the client
+  stuck in idle state forever and no new polls for update nor submit of
+  inventory would be attempted again.
+  ([MEN-7900](https://northerntech.atlassian.net/browse/MEN-7900))
+* Compile with Boost 1.87
+  ([MEN-8051](https://northerntech.atlassian.net/browse/MEN-8051))
+* Fix deployment on 32 bit systems when rootfs is larger than 4Gb
+  ([MEN-8062](https://northerntech.atlassian.net/browse/MEN-8062))
+* Use EscapeString when generating JSON for supplied artifact data
+  ([MEN-7974](https://northerntech.atlassian.net/browse/MEN-7974))
+* Set a maximum of two tries for `mender-inventory-geo` when
+  gathering geo info to avoid hanging for many tries when gathering the
+  inventory.
+
+
 ## mender 5.0.0
 
 _Released 12.18.2024_
@@ -98,6 +132,31 @@ New changes in mender since 4.0.5:
   erroneously interpreted zero-filled records at the end of the archive as
   invalid, throwing `Superfluous data at the end of the archive` error.
   ([MEN-7810](https://northerntech.atlassian.net/browse/MEN-7810))
+
+
+## mender 4.0.7
+
+_Released 03.27.2025_
+
+### Changelogs
+
+#### mender (4.0.7)
+
+New changes in mender since 4.0.6:
+
+##### Bug Fixes
+
+* Clear the inventory data hash on re-authentication
+  ([MEN-7873](https://northerntech.atlassian.net/browse/MEN-7873))
+* Compile with Boost 1.87
+  ([MEN-8051](https://northerntech.atlassian.net/browse/MEN-8051))
+* Fix deployment on 32 bit systems when rootfs is larger than 4Gb
+  ([MEN-8062](https://northerntech.atlassian.net/browse/MEN-8062))
+* Use EscapeString when generating JSON for supplied artifact data
+  ([MEN-7974](https://northerntech.atlassian.net/browse/MEN-7974))
+* Set a maximum of two tries for `mender-inventory-geo` when
+  gathering geo info to avoid hanging for many tries when gathering the
+  inventory.
 
 
 ## mender 4.0.6
