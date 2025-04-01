@@ -7,6 +7,42 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender scarthgap-v2025.04
+
+### Changelogs
+
+#### meta-mender (scarthgap-v2025.04)
+
+New changes in meta-mender since scarthgap-v2024.12:
+
+##### Bug Fixes
+
+* Restore GRUB integration for ARMv7 boards (Beaglebone Black)
+  ([MEN-7854](https://northerntech.atlassian.net/browse/MEN-7854))
+* Fixes an issue with Mender GRUB integration when using rootfs
+  partitions definitions with leading `0` (ie partition `02`) and the GRUB
+  integration was not correctly doing integers comparisons.
+  ([ME-458](https://northerntech.atlassian.net/browse/ME-458))
+
+##### Features
+
+* Support setting the u-boot redundant environment in a
+  separate storage with the variable
+  `MENDER_UBOOT_MMC_ENV_LINUX_DEVICE_PATH_REDUND`. This feature is
+  backwards compatible.
+
+##### Other
+
+* Add recipe for `grub-efi-precompiled` for GRUB v2.12
+  ([MEN-7854](https://northerntech.atlassian.net/browse/MEN-7854))
+* Prevent secondary rootfs from being mounted by udev-extraconf.
+* Add recipe for `mender` 4.0.7
+* Add recipe for `mender` 5.0.1
+* Add recipe for `mender-binary-delta` 1.5.1
+* Add recipe for `mender-monitor` 1.3.1
+* Add recipe for `mender-monitor` 1.4.1
+
+
 ## meta-mender scarthgap-v2024.12
 
 ### Changelogs
@@ -155,6 +191,44 @@ New changes in meta-mender since kirkstone-v2024.06:
   `INIT_MANAGER = "systemd"` in your `local.conf` file. Alternatively,
   use `MENDER_FEATURES_DISABLE = "mender-systemd"`, but be aware that
   this can break daemon mode.
+
+
+## meta-mender kirkstone-v2025.04
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2025.04)
+
+New changes in meta-mender since kirkstone-v2024.12:
+
+##### Bug Fixes
+
+* Fixes an issue with Mender GRUB integration when using rootfs
+  partitions definitions with leading `0` (ie partition `02`) and the GRUB
+  integration was not correctly doing integers comparisons.
+  ([ME-458](https://northerntech.atlassian.net/browse/ME-458))
+
+##### Features
+
+* add mender-prepopulate-inactive-partition feature
+
+  Add mender-prepopulate-inactive-partition MENDER_FEATURE.
+  Disabled by default for more efficient compression, it can be
+  enabled to have the inactive partition populated with the same
+  contents of the active one.
+
+  This allows to check the bootloader integrations (A/B switching,
+  A/B update, A/B rollback) directly on the generated images
+  without additional modifications or processing.
+
+##### Other
+
+* Prevent secondary rootfs from being mounted by udev-extraconf.
+* Add recipe for `mender` 4.0.7
+* Add recipe for `mender` 5.0.1
+* Add recipe for `mender-binary-delta` 1.5.1
+* Add recipe for `mender-monitor` 1.3.1
+* Add recipe for `mender-monitor` 1.4.1
 
 
 ## meta-mender kirkstone-v2024.12
