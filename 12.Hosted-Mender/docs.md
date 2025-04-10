@@ -7,6 +7,107 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.0-saas.4 - 2025-04-10
+
+
+### Bug Fixes
+
+
+- *(gui)* Fixed an issue where admin existence sometimes wasn't taken into account on tenant creation
+ ([330ac67](https://github.com/mendersoftware/mender-server-enterprise/commit/330ac67ee20b0ffeaf9a20b9f48db5b48a2bd169))  by @mzedel
+
+- *(gui)* Fixed an issue that prevented properly paginating deployments
+([MEN-8212](https://northerntech.atlassian.net/browse/MEN-8212)) ([a20db14](https://github.com/mendersoftware/mender-server-enterprise/commit/a20db1477aab026d60297e789cbbd85e242b8d7c))  by @mzedel
+
+- *(gui)* Fixed an issue on tenant creation that prevented some email addresses from becoming tenant admins
+([ME-470](https://northerntech.atlassian.net/browse/ME-470)) ([20b32f9](https://github.com/mendersoftware/mender-server-enterprise/commit/20b32f90130521dd54d51ff30202e122b298a093))  by @mzedel
+
+- *(gui)* Fixed an issue that would retain passwords on tenant creation across different admins
+ ([a5e2132](https://github.com/mendersoftware/mender-server-enterprise/commit/a5e2132c015bd3a7c296c6848cf136157ffbad1b))  by @mzedel
+
+- *(gui)* Fixed layout issue on tenant list + aligned styling with remainder of codebase
+ ([cc41aee](https://github.com/mendersoftware/mender-server-enterprise/commit/cc41aee501ecd4834c73abc051e51df3a90b8868))  by @mzedel
+
+- *(gui)* Fixed an issue propagating password validation errors
+ ([d1d8827](https://github.com/mendersoftware/mender-server-enterprise/commit/d1d882768d39b7cca657cd091c5bcedd8e416f57))  by @mzedel
+
+- *(gui)* Ensured errormessages get propagated in forms
+ ([b19f8b3](https://github.com/mendersoftware/mender-server-enterprise/commit/b19f8b33727fd0aab573ebf677a93a3a7811ae39))  by @mzedel
+
+- *(gui)* Fixed an issue that could hinder pagination in very frequently created deployments
+ ([34ca4ea](https://github.com/mendersoftware/mender-server-enterprise/commit/34ca4eab7332388e3ddd5a830b8458890315ee42))  by @mzedel
+
+- *(useradm)* Added missing permission scope option to allow generating correct types
+ ([e956965](https://github.com/mendersoftware/mender-server-enterprise/commit/e9569657d3fd7dbf638879c320d79029e814ed48))  by @mzedel
+
+- *(useradm)* Added missing permission information in API specs
+ ([1f534d1](https://github.com/mendersoftware/mender-server-enterprise/commit/1f534d15c382da7fc3e0498bd064f2c9f6291814))  by @mzedel
+
+- *(deployments)* Use the read preference in FindOldestActiveDeviceDeployment
+ ([10f8b55](https://github.com/mendersoftware/mender-server-enterprise/commit/10f8b5503fa2901cb1ecdc374117b513ed9b841b))  by @merlin-northern
+
+
+
+
+### Documentation
+
+
+- *(deployments)* GET delta/jobs endpoint API docs
+([MEN-8199](https://northerntech.atlassian.net/browse/MEN-8199)) ([8bec3b5](https://github.com/mendersoftware/mender-server-enterprise/commit/8bec3b59c805b55a52df77765bd794064e52d089))  by @merlin-northern
+
+- *(deviceauth)* Enhance description of the /devices/count endpoint
+([MEN-8255](https://northerntech.atlassian.net/browse/MEN-8255)) ([c9e3633](https://github.com/mendersoftware/mender-server-enterprise/commit/c9e3633f10d6439b8e6e19b49607ebb0d2c83c76))  by @kjaskiewiczz
+
+
+
+
+
+### Features
+
+
+- *(deployments)* Get the list of delta generation jobs
+([MEN-8199](https://northerntech.atlassian.net/browse/MEN-8199)) ([a0ed3b0](https://github.com/mendersoftware/mender-server-enterprise/commit/a0ed3b08a5b91cadc6e334789aa205b57eab7694))  by @merlin-northern
+
+- *(gui)* Made subtenant creation a bit more comfortable in case of errors
+([ME-469](https://northerntech.atlassian.net/browse/ME-469)) ([e01171f](https://github.com/mendersoftware/mender-server-enterprise/commit/e01171fe5aa9434cad9eefb16f52a6c785657bbe))  by @mzedel
+
+- *(gui)* Added more user visible context on tenant creation failures
+ ([c027064](https://github.com/mendersoftware/mender-server-enterprise/commit/c02706471c536f15e844fd5806deb999dbdbb5d2))  by @mzedel
+
+
+  - also centralized mui alert styling to account for increased usage
+
+- *(gui)* Made login form less reactive when entering login info
+([MEN-8221](https://northerntech.atlassian.net/browse/MEN-8221)) ([00b4d7b](https://github.com/mendersoftware/mender-server-enterprise/commit/00b4d7be55cfaebdbcd787e308a720d01a40362d))  by @mzedel
+
+- *(gui)* Added sentry integration
+ ([0fe2ad0](https://github.com/mendersoftware/mender-server-enterprise/commit/0fe2ad0682fc250f75947f8eda690663a3ad2b7d))  by @mzedel
+
+- *(gui)* Enhanced debugging info to help track down user issues
+ ([c559467](https://github.com/mendersoftware/mender-server-enterprise/commit/c559467c461470e66d7d3a68674511c1215a8cc2))  by @mzedel
+
+- *(gui)* Allowed enabling fine grained state debug information to be sent
+ ([298059d](https://github.com/mendersoftware/mender-server-enterprise/commit/298059dff2d29cb8367b50753e0b7421ceb28341))  by @mzedel
+
+
+
+
+
+### Refac
+
+
+- *(gui)* Split signup in separate forms to ease handling validation mode differences
+ ([620592b](https://github.com/mendersoftware/mender-server-enterprise/commit/620592bea038b835990e7625db7ae7f736f3f6e4))  by @mzedel
+
+- *(gui)* Rely on externally gzipping build files to use sourcemaps in sentry
+ ([24bdd2f](https://github.com/mendersoftware/mender-server-enterprise/commit/24bdd2f3f048e8088daf40fffd92afc7eed15dbc))  by @mzedel
+
+
+
+
+
+
+
 ## 4.1.0-saas.3 - 2025-03-20
 
 
