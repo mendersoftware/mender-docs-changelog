@@ -7,6 +7,46 @@ shortcode-core:
 github: false
 ---
 
+## mender-artifact 4.1.0
+
+_Released 04.12.2025_
+
+### Changelogs
+
+#### mender-artifact (4.1.0)
+
+New changes in mender-artifact since 4.0.0:
+
+##### Bug Fixes
+
+* Fix an issue with writing Artifact from a remote ssh
+  connection where the user terminal was left with no echo if the `ssh`
+  subprocess exited prematurely.
+  ([MEN-7876](https://northerntech.atlassian.net/browse/MEN-7876))
+* fixed signing artifact via symlink
+  ([MEN-3410](https://northerntech.atlassian.net/browse/MEN-3410))
+* Include all provides with prefix rootfs when writing artifact via SSH
+  ([MEN-7225](https://northerntech.atlassian.net/browse/MEN-7225))
+* Improve the error message when verifying ECDSA keys supplied via PKCS#11
+  ([MEN-7941](https://northerntech.atlassian.net/browse/MEN-7941))
+* Correct the signature length check for ECDSA keys supplied via PKCS#11
+  ([MEN-7941](https://northerntech.atlassian.net/browse/MEN-7941))
+* Add progress bar to command `write module-image`
+  ([MEN-8127](https://northerntech.atlassian.net/browse/MEN-8127))
+
+##### Features
+
+* Add support for signing/validating artifacts with Azure Key Vault
+  ([MEN-7829](https://northerntech.atlassian.net/browse/MEN-7829))
+
+##### Other
+
+* Warn about missing `blkid` before establishing SSH connection
+  ([MEN-4977](https://northerntech.atlassian.net/browse/MEN-4977))
+* `mender-artifact` requires now go version 1.22
+  ([MEN-8141](https://northerntech.atlassian.net/browse/MEN-8141))
+
+
 ## mender-artifact 4.0.0
 
 _Released 12.18.2024_
