@@ -7,6 +7,162 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.0-saas.5 - 2025-05-09
+
+
+### Bug Fixes
+
+
+- *(deployments)* Invalid Location header when returning 201 Created
+ ([cfccf2a](https://github.com/mendersoftware/mender-server-enterprise/commit/cfccf2a8e71814d8fca40e9135aa6afe06f15344))  by @alfrunes
+
+
+  The location strips the `/api` path prefix and returns the remaining
+  absolute path as relative. Instead, always return the absolute path.
+
+- *(deployments)* Validate configuration on updates
+([MEN-8287](https://northerntech.atlassian.net/browse/MEN-8287)) ([ccad883](https://github.com/mendersoftware/mender-server-enterprise/commit/ccad883d7336da2e6181c995f4f09348220f4778))  by @kjaskiewiczz
+
+
+  With this commit, when doing configuration update using internal
+  endpoint, we validate the configuration.
+
+- *(gui)* Fixed an issue that would prevent showing unassigned static group devices
+([ME-519](https://northerntech.atlassian.net/browse/ME-519)) ([cf7f15d](https://github.com/mendersoftware/mender-server-enterprise/commit/cf7f15d7cc1b2761ec1ad2804387cb62e155504a))  by @mineralsfree
+
+- *(gui)* Fixed an issue that would add device filter automatically
+([MEN-8309](https://northerntech.atlassian.net/browse/MEN-8309)) ([8d0233c](https://github.com/mendersoftware/mender-server-enterprise/commit/8d0233cadf69f6930888c7820579f02611841a02))  by @mineralsfree
+
+- *(gui)* Fixed an issue with a filter input not reset after save
+([MEN-8309](https://northerntech.atlassian.net/browse/MEN-8309)) ([ed6b9f9](https://github.com/mendersoftware/mender-server-enterprise/commit/ed6b9f97d1d55bef11b50b880b9fd14a488d9d94))  by @mineralsfree
+
+- *(gui)* Fixed an issue with 'true' value being set after selecting 'exists' operator
+([MEN-8309](https://northerntech.atlassian.net/browse/MEN-8309)) ([b8c8d8a](https://github.com/mendersoftware/mender-server-enterprise/commit/b8c8d8a9fea896dccc1add172816ebbb5b85ebfd))  by @mineralsfree
+
+- *(gui)* Ensured selection filter is reset when attribute or value input are emptied
+([MEN-8309](https://northerntech.atlassian.net/browse/MEN-8309)) ([9cb2ff3](https://github.com/mendersoftware/mender-server-enterprise/commit/9cb2ff3e002d045a225c4a3de30be0cd51e6fc0e))  by @mineralsfree
+
+- *(gui)* Restored global settings layout after general input layout adjustments
+ ([f83c94e](https://github.com/mendersoftware/mender-server-enterprise/commit/f83c94eb38a1a425e8031d0693262120bb48db6b))  by @mzedel
+
+- *(gui)* Fixed an issue that prevented showing deployment calendar entries
+ ([a7d386f](https://github.com/mendersoftware/mender-server-enterprise/commit/a7d386fdcaa19f81db059d709e52d998c0e99ea8))  by @mzedel
+
+- *(useradm)* RBAC - fix permissions related to inventory filters
+([ME-510](https://northerntech.atlassian.net/browse/ME-510)) ([c38ab7f](https://github.com/mendersoftware/mender-server-enterprise/commit/c38ab7f5a024d2bdeffaff1d0a3ca06f0083d11a))  by @kjaskiewiczz
+
+
+  Users without access to all devices should not be able to delete
+  inventory filers.
+
+- *(useradm)* Fix permissions for assigning users to tenants
+([ME-507](https://northerntech.atlassian.net/browse/ME-507)) ([0efc65e](https://github.com/mendersoftware/mender-server-enterprise/commit/0efc65e970f2cb75fda55be534c13580d99dd239))  by @kjaskiewiczz
+
+
+  User with multiple roles, where one of the roles is Admin role, should
+  be able to assign users to tenants.
+
+- Check if deployment was found when updating device deployment status
+([MEN-7749](https://northerntech.atlassian.net/browse/MEN-7749)) ([6b15227](https://github.com/mendersoftware/mender-server-enterprise/commit/6b15227135cc38dd96813c204c3a12d494f0313f))  by @bahaa-ghazal
+- Ensure email is always encoded in lowercase when stored
+([MEN-8328](https://northerntech.atlassian.net/browse/MEN-8328)) ([d80c818](https://github.com/mendersoftware/mender-server-enterprise/commit/d80c818eed43765387cfe81445e187f9c1833156))  by @alfrunes
+
+
+  Added a bson codec for model.Email that will ensure that emails are
+  always encoded in lowercase in the database to ensure case insensitive
+  queries.
+
+
+
+
+### Documentation
+
+
+- *(deployments)* Fix API specification
+([QA-990](https://northerntech.atlassian.net/browse/QA-990)) ([4f8d069](https://github.com/mendersoftware/mender-server-enterprise/commit/4f8d069d054761479abad32b2c1630581be3a422))  by @kjaskiewiczz
+
+
+  Remove type properties from fields where value is not strictly defined.
+
+- *(inventory)* Migrate API specs to OpenAPI v3.0.1
+([QA-886](https://northerntech.atlassian.net/browse/QA-886)) ([e7ce7e5](https://github.com/mendersoftware/mender-server-enterprise/commit/e7ce7e5762405732e9cb02ee32447dc1073ee369))  by @kjaskiewiczz
+
+- Fix API specifications to be compliant with OpenAPI 3 format
+([QA-990](https://northerntech.atlassian.net/browse/QA-990)) ([26e9fd2](https://github.com/mendersoftware/mender-server-enterprise/commit/26e9fd22c9e3a7c34b4564703842f8b7d7282948))  by @kjaskiewiczz
+- Covert enterprise API docs to OpenAPI v3
+([QA-886](https://northerntech.atlassian.net/browse/QA-886)) ([f44166c](https://github.com/mendersoftware/mender-server-enterprise/commit/f44166c8edf5a9c54e28631075511bbea0651721))  by @alfrunes
+
+
+
+
+### Features
+
+
+- *(deviceauth)* Rate limit authenticated devices API
+([MEN-7744](https://northerntech.atlassian.net/browse/MEN-7744)) ([8c80280](https://github.com/mendersoftware/mender-server-enterprise/commit/8c8028081a54a62ba8673071350414b096aa87b0))  by @alfrunes
+
+
+  Added adaptive ratelimiting for devices APIs based on the `max_devices`
+  limit. Two new configuration options are exposed:
+   * `ratelimits.interval` - duration until the quota resets
+   * `ratelimits.quotas` - mapping plan names to quota weights. The final
+     burst limit is computed as `ratelimits.quotas[plan] * max_devices`
+  
+  The rate limiting counter is independent for each API path (independent
+  of method and version).
+
+- *(deviceauth)* Rate limit device requests
+([MEN-7744](https://northerntech.atlassian.net/browse/MEN-7744)) ([9c3041f](https://github.com/mendersoftware/mender-server-enterprise/commit/9c3041f5d54ea06c920ae0cc977c8af594133fb2))  by @alfrunes
+
+
+  Added adaptive ratelimiting for devices APIs based on the `max_devices`
+  limit. Two new configuration options are exposed:
+   * `ratelimits.devices.enable` - enable device level rate limit
+   * `ratelimits.devices.interval` - duration until the quota resets
+   * `ratelimits.devices.quota_plan` - mapping plan names to quota
+      weights. The final burst limit is computed as
+      `ratelimits.quotas[plan] * max_devices`
+   * `ratelimits.devices.quota_default` - rate limit fallback for plans
+     with undefined limits.
+  
+  The rate limiting counter is independent for each API path (independent
+  of method and version).
+
+- *(generate-delta-worker)* Update `mender-artifact` to latest v4.1.0
+([MEN-8337](https://northerntech.atlassian.net/browse/MEN-8337)) ([294c6dd](https://github.com/mendersoftware/mender-server-enterprise/commit/294c6dd8c2e9bef4c1907559f0f7fe8fd0583125))  by @lluiscampos
+
+
+  Modifying also the integration to build the tool from source instead or
+  repurposing the upstream Debian package. This has the main advantage
+  that we can compile it statically (by disabling a feature that we don't
+  use) and that we have control of the compatibility aspects of the
+  binary.
+
+- Add caching for device limits
+([MEN-7760](https://northerntech.atlassian.net/browse/MEN-7760)) ([5466c62](https://github.com/mendersoftware/mender-server-enterprise/commit/5466c626ca1437ed366151263c3bc03686c58853))  by @alfrunes
+- Delta generation job details view API support
+([MEN-8289](https://northerntech.atlassian.net/browse/MEN-8289)) ([00fb186](https://github.com/mendersoftware/mender-server-enterprise/commit/00fb1864b6edf4db1f0037a34beb446d72503114))  by @merlin-northern
+- Implemented content type checker middleware for gin framework
+([MEN-8327](https://northerntech.atlassian.net/browse/MEN-8327)) ([9016554](https://github.com/mendersoftware/mender-server-enterprise/commit/9016554b702297ad00f1a748d0824fdf19d05678))  by @bahaa-ghazal
+
+
+
+
+### Revert
+
+
+- Gin utility for applying middleware to routes
+ ([9f5c79c](https://github.com/mendersoftware/mender-server-enterprise/commit/9f5c79cc30a4ee2576ef39f650b3a161c5996548))  by @alfrunes
+
+
+  The func does not implement what it is intended to do and instead
+  applies the middleware to all routes in the group.
+
+
+
+
+
+
 ## 4.1.0-saas.4 - 2025-04-10
 
 
