@@ -7,6 +7,60 @@ shortcode-core:
 github: false
 ---
 
+## 4.0.1 - 2025-05-19
+
+
+### Bug Fixes
+
+
+- *(gui)* Fixed an issue that would prevent showing unassigned static group devices
+([ME-519](https://northerntech.atlassian.net/browse/ME-519)) ([b595a57](https://github.com/mendersoftware/mender-server-enterprise/commit/b595a574d2e3d2d4fb61757198007ff4bc308f56)) 
+
+- *(useradm)* RBAC - fix permissions related to inventory filters
+([ME-513](https://northerntech.atlassian.net/browse/ME-513)) ([b3f4676](https://github.com/mendersoftware/mender-server-enterprise/commit/b3f467629d38f2d6ee4fdd391990f2b82bffb43d)) 
+
+
+  Users without access to all devices should not be able to get
+  inventory filers by Id.
+
+- Generate delta worker aborting before artifact upload completes
+([MEN-8177](https://northerntech.atlassian.net/browse/MEN-8177)) ([a683253](https://github.com/mendersoftware/mender-server-enterprise/commit/a683253c3c8db9bd6404ce35f1145ffc0c3a4cfd)) 
+
+
+  The artifact generator aborts uploading an artifact prematurely once
+  either of the input files are processed and returns exit code 0. This
+  results in a very confusing error where the API reports a successfully
+  generated artifact, but the artifact is never fully uploaded and
+  available through the APIs.
+- Race when provisioning and connecting a device
+([MEN-8164](https://northerntech.atlassian.net/browse/MEN-8164)) ([5535078](https://github.com/mendersoftware/mender-server-enterprise/commit/5535078d027b213fb0ee6d37dd4c4934b075e51c)) 
+
+
+  If a device gets provisioned and submits a connection request while the
+  device is getting provisioned, the device might end up in an
+  inconsistent state where the connection status gets overwritten to
+  "unknown".
+  The issue was discovered in a test where the system was under load
+  and the device was running on the same network (artificially low RTT).
+- Generate delta worker for custom S3 bucket
+([MEN-8202](https://northerntech.atlassian.net/browse/MEN-8202)) ([aa65818](https://github.com/mendersoftware/mender-server-enterprise/commit/aa658185aade268a633d83ad814b7cbbc2e63c07)) 
+- Ensure email is always encoded in lowercase when stored
+([MEN-8328](https://northerntech.atlassian.net/browse/MEN-8328)) ([0568d2e](https://github.com/mendersoftware/mender-server-enterprise/commit/0568d2e09699961cb8aabc0faa16813a4928bc44)) 
+
+
+  Added a bson codec for model.Email that will ensure that emails are
+  always encoded in lowercase in the database to ensure case insensitive
+  queries.
+
+
+
+
+### Documentation
+
+
+- Add missing breaking changes to changelog
+ ([d1be2c2](https://github.com/mendersoftware/mender-server-enterprise/commit/d1be2c26bc6dd9024f4b8956a669a2a4b5600112)) 
+
 ## 4.0.0 - 2025-02-10
 
 
