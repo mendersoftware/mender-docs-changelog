@@ -7,6 +7,791 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.7 - 2025-06-18
+
+
+### Bug Fixes
+
+
+- *(generate-delta-worker)* Stuck when generating to local path
+([MEN-8484](https://northerntech.atlassian.net/browse/MEN-8484)) ([a7e27ca](https://github.com///commit/a7e27cad64ebb403766ca8bdfa05389c17affd87)) 
+
+
+  Only used in tests. The generate-delta command fails when the output is
+  a local path.
+
+- *(gui)* Restored error handling on user edits
+([ME-522](https://northerntech.atlassian.net/browse/ME-522)) ([882a5c7](https://github.com///commit/882a5c7f6bc03325a4fd5875d2b92d22fe6d7e29)) 
+
+
+  - regression from 5888d3e3ee47b764b256e89da9419f903936e4f3 in the prior repo
+
+- *(gui)* Fixed an issue that would prevent showing all webhook activity
+ ([70d9eda](https://github.com///commit/70d9eda75dd1cf955daa892bcc86a9760743be5f)) 
+
+- *(gui)* Fixed wording and position of onboarding tooltip
+([MEN-8407](https://northerntech.atlassian.net/browse/MEN-8407)) ([69c1a6d](https://github.com///commit/69c1a6ddd185ed1277fdbb66b194d6f09c4b06a0)) 
+
+- *(gui)* Aligned supported OS versions in download section with tool support
+([ME-499](https://northerntech.atlassian.net/browse/ME-499)) ([c256688](https://github.com///commit/c256688950a0f81fdb63326f6fb524e035969ab3)) 
+
+- *(gui)* Fixed billing profile not being fetched
+ ([9042c6b](https://github.com///commit/9042c6be7ccc445a5affca63b65559bb562e6597)) 
+
+- Ensure email is always encoded in lowercase when stored
+([MEN-8328](https://northerntech.atlassian.net/browse/MEN-8328)) ([d80c818](https://github.com///commit/d80c818eed43765387cfe81445e187f9c1833156)) 
+
+
+  Added a bson codec for model.Email that will ensure that emails are
+  always encoded in lowercase in the database to ensure case insensitive
+  queries.
+
+
+
+
+### Documentation
+
+
+- *(auditlogs)* Replace swagger 2.0 specs with Openapi 3.0.1
+ ([d624916](https://github.com///commit/d6249166af2c6b2aa6dcaf29780bc6a47519ba8d)) 
+
+- *(auditlogs)* Consolidate API specifications into a single OAS file
+ ([e47649f](https://github.com///commit/e47649f1d9309dd1fbca5bce72b5757548e8b103)) 
+
+- *(auditlogs)* Move OAS to new location and provide symlink
+ ([7e55fc3](https://github.com///commit/7e55fc3b196fb340080cacc202f1a730aa560632)) 
+
+- *(auditlogs)* Add content type to export endpoint
+ ([3f681c7](https://github.com///commit/3f681c73959cfce5f8aed81adc10d419ac1eabab)) 
+
+- *(deviceauth)* Rename operation id for removing device authentication
+ ([3f99b91](https://github.com///commit/3f99b91c57c52214e01a70caa78ed47912956c9f)) 
+
+
+  "Reject" is in the UI associated with updating the authentication status
+  where as "dismiss" is used for removing authentication.
+
+- *(tenantadm)* Consolidate OAS into a single definition
+ ([bd79510](https://github.com///commit/bd7951099cfbd7f59ae6a6e9d41a74d560a4e910)) 
+
+- *(tenantadm)* Fixup Tenant examples in OAS specs
+ ([cf8ac9b](https://github.com///commit/cf8ac9b3f21f94fc77f2a58d0391c0b0094c4829)) 
+
+- *(tenantadm)* Fix incorrect type for integer in OAS
+ ([2b4c082](https://github.com///commit/2b4c0820b88f31dae88d54cd4a1254f6e43bba9a)) 
+
+- *(tenantadm)* Update OAS info section
+ ([1e60f1e](https://github.com///commit/1e60f1ecef093efb67e9dec1149fa57afda42e96)) 
+
+- *(tenantadm)* Fix invalid objects in `allOf` overrides for Address
+ ([eb48e23](https://github.com///commit/eb48e2348e1ab3abb73ca3de285a622a772cba5c)) 
+
+- *(tenantadm)* Fix inconsistent schema definitions
+ ([fd48cc5](https://github.com///commit/fd48cc5e89925e26935ec3c6f594e1d80957e5be)) 
+
+
+
+
+
+### Features
+
+
+- *(gui)* Made device tags functionality available in all device auth states
+([ME-528](https://northerntech.atlassian.net/browse/ME-528)) ([7b1f3c6](https://github.com///commit/7b1f3c61e4b4151cb81a8aab5c4a22c581e01cb3)) 
+
+- *(gui)* Let tenant token not be visible by default
+([MEN-8397](https://northerntech.atlassian.net/browse/MEN-8397)) ([b70e0b4](https://github.com///commit/b70e0b44cf627d6b0621da92f0d0a154588aafb1)) 
+
+- *(useradm)* Change user roles handling for plans different than Enterprise
+([MEN-8168](https://northerntech.atlassian.net/browse/MEN-8168)) ([1ee0b84](https://github.com///commit/1ee0b84a6be11bf2dd2ce28785b64031f1c2f52d)) 
+
+- Implemented content type checker middleware for gin framework
+([MEN-8327](https://northerntech.atlassian.net/browse/MEN-8327)) ([9016554](https://github.com///commit/9016554b702297ad00f1a748d0824fdf19d05678)) 
+
+
+
+
+### Performance
+
+
+- Put routing path and parameters in separate accesslog fields
+ ([51832b6](https://github.com///commit/51832b685d70d6dbe2f8cdf8442b96d6eec843fb)) 
+
+
+  By separating the two, it is much less complex to index paths in the log
+  parser.
+
+
+
+
+### Refactor
+
+
+- *(deviceauth)* Move api urls and router maker to `routing.go`
+([MEN-8235](https://northerntech.atlassian.net/browse/MEN-8235)) ([7ecd14e](https://github.com///commit/7ecd14e37aca2d0a8c61b6382e5593a9038b8921)) 
+
+- *(deviceauth)* Migrate enterprise deviceauth service to gin
+([MEN-8235](https://northerntech.atlassian.net/browse/MEN-8235)) ([f0b43c4](https://github.com///commit/f0b43c47b1c6cab50ff7bfea401f50bc16719d94)) 
+
+- *(gui)* Isolated organization information in settings to align with design
+([MEN-8411](https://northerntech.atlassian.net/browse/MEN-8411)) ([2d0eb79](https://github.com///commit/2d0eb79e1c51eb31c7a9c1df83754f0aee663a70)) 
+
+
+  + made settings items customizable from outside
+
+- *(gui)* Moved billing data to separate settings section & aligned with design
+([MEN-8411](https://northerntech.atlassian.net/browse/MEN-8411)) ([bf7578b](https://github.com///commit/bf7578b3966c82d293127d4d9a0cf6d98d90008e)) 
+
+- *(gui)* Centralized support contact component
+ ([0dd79cb](https://github.com///commit/0dd79cb8d2cdd8bc96d4f5c47ef0f7d3f58175a4)) 
+
+- *(inventory)* Migrate from ant0nie/go-json-rest to gin-gonic/gin
+([MEN-8236](https://northerntech.atlassian.net/browse/MEN-8236)) ([f6899d4](https://github.com///commit/f6899d44129b892708bbe0bfcc485fbf8f705166)) 
+
+- *(tenantadm)* Move `middleware.go` to the http package
+ ([3f5f338](https://github.com///commit/3f5f338d1415a4f11c346d6c157753545c3fbf74)) 
+
+- *(tenantadm)* Move api handler and router to their corresponding file
+ ([24e22ae](https://github.com///commit/24e22ae3d0129a6b423e9940bd8bc441dd6e1be4)) 
+
+- *(tenantadm)* Expect status 404 instead of 405 when sign-up is disabled
+ ([0a48ab1](https://github.com///commit/0a48ab1729d20fd1876fa44920c98749e6923f3a)) 
+
+
+  Update the docs and the acceptence tests to expect 404 instead of 405
+
+- Put MakeTestRequest in dedicated testing package
+ ([7597129](https://github.com///commit/7597129bd6336a8542ec9357dbf4d105de371269)) 
+
+
+  Utilities for testing should be separate from application code.
+- Remove ant0ine/go-json-rest dependency from `requestid.GetReqId()`
+ ([863e415](https://github.com///commit/863e41536cd65293b79f65dd127a7100c9d0f569)) 
+- Migrate enterprise inventory service to gin
+([MEN-8236](https://northerntech.atlassian.net/browse/MEN-8236)) ([77b1268](https://github.com///commit/77b126808baeeea03fc67f77a9b6c99131fce943)) 
+
+
+  Migrate the enterprise-only components from ant0nie/go-json-rest to gin-gonic/gin
+
+
+
+
+### Security
+
+
+- Bump vite from 6.2.6 to 6.3.4 in /frontend
+ ([03506da](https://github.com///commit/03506da1dfa189da0a062f03c178e0d67fc69d0d)) 
+
+
+  Bumps [vite](https://github.com/vitejs/vite/tree/HEAD/packages/vite) from 6.2.6 to 6.3.4.
+  - [Release notes](https://github.com/vitejs/vite/releases)
+  - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
+  - [Commits](https://github.com/vitejs/vite/commits/v6.3.4/packages/vite)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: vite
+    dependency-version: 6.3.4
+    dependency-type: indirect
+  ...
+- Bump the development-dependencies group across 1 directory with 12 updates
+ ([30cc04b](https://github.com///commit/30cc04b5c9794066440094afdec1ef2a47edf461)) 
+
+
+  Bumps the development-dependencies group with 10 updates in the /frontend directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [@northern.tech/eslint-config](https://github.com/NorthernTechHQ/nt-gui) | `0.4.0` | `0.5.0` |
+  | [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli) | `1.3.8` | `1.3.13` |
+  | [@rspack/core](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack) | `1.3.8` | `1.3.13` |
+  | [@sentry/webpack-plugin](https://github.com/getsentry/sentry-javascript-bundler-plugins) | `3.3.1` | `3.5.0` |
+  | [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) | `22.15.3` | `22.15.29` |
+  | [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/tree/HEAD/packages/plugin-react) | `4.4.1` | `4.5.0` |
+  | [@vitest/coverage-v8](https://github.com/vitest-dev/vitest/tree/HEAD/packages/coverage-v8) | `3.1.2` | `3.1.4` |
+  | [lint-staged](https://github.com/lint-staged/lint-staged) | `15.5.1` | `16.1.0` |
+  | [msw](https://github.com/mswjs/msw) | `2.7.5` | `2.8.7` |
+  | [undici](https://github.com/nodejs/undici) | `7.8.0` | `7.10.0` |
+  
+  
+  
+  Updates `@northern.tech/eslint-config` from 0.4.0 to 0.5.0
+  - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
+  - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
+  - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/eslint-config-0.4.0...@northern.tech/eslint-config-0.5.0)
+  
+  Updates `@rspack/cli` from 1.3.8 to 1.3.13
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.13/packages/rspack-cli)
+  
+  Updates `@rspack/core` from 1.3.8 to 1.3.13
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.13/packages/rspack)
+  
+  Updates `@sentry/webpack-plugin` from 3.3.1 to 3.5.0
+  - [Release notes](https://github.com/getsentry/sentry-javascript-bundler-plugins/releases)
+  - [Changelog](https://github.com/getsentry/sentry-javascript-bundler-plugins/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/getsentry/sentry-javascript-bundler-plugins/compare/3.3.1...3.5.0)
+  
+  Updates `@types/node` from 22.15.3 to 22.15.29
+  - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+  - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+  
+  Updates `@typescript-eslint/eslint-plugin` from 8.32.1 to 8.33.0
+  - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
+  - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
+  - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.33.0/packages/eslint-plugin)
+  
+  Updates `@vitejs/plugin-react` from 4.4.1 to 4.5.0
+  - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
+  - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
+  - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@4.5.0/packages/plugin-react)
+  
+  Updates `@vitest/coverage-v8` from 3.1.2 to 3.1.4
+  - [Release notes](https://github.com/vitest-dev/vitest/releases)
+  - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.4/packages/coverage-v8)
+  
+  Updates `lint-staged` from 15.5.1 to 16.1.0
+  - [Release notes](https://github.com/lint-staged/lint-staged/releases)
+  - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/lint-staged/lint-staged/compare/v15.5.1...v16.1.0)
+  
+  Updates `msw` from 2.7.5 to 2.8.7
+  - [Release notes](https://github.com/mswjs/msw/releases)
+  - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/mswjs/msw/compare/v2.7.5...v2.8.7)
+  
+  Updates `undici` from 7.8.0 to 7.10.0
+  - [Release notes](https://github.com/nodejs/undici/releases)
+  - [Commits](https://github.com/nodejs/undici/compare/v7.8.0...v7.10.0)
+  
+  Updates `vitest` from 3.1.2 to 3.1.4
+  - [Release notes](https://github.com/vitest-dev/vitest/releases)
+  - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.4/packages/vitest)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@northern.tech/eslint-config"
+    dependency-version: 0.5.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/cli"
+    dependency-version: 1.3.13
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/core"
+    dependency-version: 1.3.13
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@sentry/webpack-plugin"
+    dependency-version: 3.5.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@types/node"
+    dependency-version: 22.15.29
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    dependency-version: 8.33.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@vitejs/plugin-react"
+    dependency-version: 4.5.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@vitest/coverage-v8"
+    dependency-version: 3.1.4
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: lint-staged
+    dependency-version: 16.1.0
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: development-dependencies
+  - dependency-name: msw
+    dependency-version: 2.8.7
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: undici
+    dependency-version: 7.10.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: vitest
+    dependency-version: 3.1.4
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  ...
+- Bump the mui group across 1 directory with 3 updates
+ ([96d55d3](https://github.com///commit/96d55d3f34b37fa17ef593d310c1e6e9a0a80a2d)) 
+
+
+  Bumps the mui group with 3 updates in the /frontend directory: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
+  
+  
+  Updates `@mui/icons-material` from 7.1.0 to 7.1.1
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.1.1/packages/mui-icons-material)
+  
+  Updates `@mui/material` from 7.1.0 to 7.1.1
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.1.1/packages/mui-material)
+  
+  Updates `@mui/x-date-pickers` from 8.2.0 to 8.5.0
+  - [Release notes](https://github.com/mui/mui-x/releases)
+  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/mui-x/commits/v8.5.0/packages/x-date-pickers)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@mui/icons-material"
+    dependency-version: 7.1.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/material"
+    dependency-version: 7.1.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.5.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  ...
+- Bump the backend-golang-dependencies group
+ ([a834409](https://github.com///commit/a834409d316b166dba470fdd36cf8ce13f28d59a)) 
+
+
+  Bumps the backend-golang-dependencies group in /backend with 9 updates:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [github.com/aws/aws-sdk-go-v2/service/s3](https://github.com/aws/aws-sdk-go-v2) | `1.79.3` | `1.80.0` |
+  | [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) | `1.10.0` | `1.10.1` |
+  | [github.com/nats-io/nats-server/v2](https://github.com/nats-io/nats-server) | `2.11.3` | `2.11.4` |
+  | [github.com/nats-io/nats.go](https://github.com/nats-io/nats.go) | `1.41.2` | `1.42.0` |
+  | [github.com/redis/go-redis/v9](https://github.com/redis/go-redis) | `9.8.0` | `9.9.0` |
+  | [golang.org/x/crypto](https://github.com/golang/crypto) | `0.37.0` | `0.38.0` |
+  | [golang.org/x/net](https://github.com/golang/net) | `0.39.0` | `0.40.0` |
+  | [golang.org/x/sys](https://github.com/golang/sys) | `0.32.0` | `0.33.0` |
+  | [golang.org/x/term](https://github.com/golang/term) | `0.31.0` | `0.32.0` |
+  
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.79.3 to 1.80.0
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.79.3...service/s3/v1.80.0)
+  
+  Updates `github.com/gin-gonic/gin` from 1.10.0 to 1.10.1
+  - [Release notes](https://github.com/gin-gonic/gin/releases)
+  - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/gin-gonic/gin/compare/v1.10.0...v1.10.1)
+  
+  Updates `github.com/nats-io/nats-server/v2` from 2.11.3 to 2.11.4
+  - [Release notes](https://github.com/nats-io/nats-server/releases)
+  - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
+  - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.3...v2.11.4)
+  
+  Updates `github.com/nats-io/nats.go` from 1.41.2 to 1.42.0
+  - [Release notes](https://github.com/nats-io/nats.go/releases)
+  - [Commits](https://github.com/nats-io/nats.go/compare/v1.41.2...v1.42.0)
+  
+  Updates `github.com/redis/go-redis/v9` from 9.8.0 to 9.9.0
+  - [Release notes](https://github.com/redis/go-redis/releases)
+  - [Changelog](https://github.com/redis/go-redis/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/redis/go-redis/compare/v9.8.0...v9.9.0)
+  
+  Updates `golang.org/x/crypto` from 0.37.0 to 0.38.0
+  - [Commits](https://github.com/golang/crypto/compare/v0.37.0...v0.38.0)
+  
+  Updates `golang.org/x/net` from 0.39.0 to 0.40.0
+  - [Commits](https://github.com/golang/net/compare/v0.39.0...v0.40.0)
+  
+  Updates `golang.org/x/sys` from 0.32.0 to 0.33.0
+  - [Commits](https://github.com/golang/sys/compare/v0.32.0...v0.33.0)
+  
+  Updates `golang.org/x/term` from 0.31.0 to 0.32.0
+  - [Commits](https://github.com/golang/term/compare/v0.31.0...v0.32.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/s3
+    dependency-version: 1.80.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/gin-gonic/gin
+    dependency-version: 1.10.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats-server/v2
+    dependency-version: 2.11.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats.go
+    dependency-version: 1.42.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/redis/go-redis/v9
+    dependency-version: 9.9.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/crypto
+    dependency-version: 0.38.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/net
+    dependency-version: 0.40.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/sys
+    dependency-version: 0.33.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/term
+    dependency-version: 0.32.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  ...
+- Bump the backend-tests-python-dependencies group across 1 directory with 5 updates
+ ([bfc4838](https://github.com///commit/bfc4838fefe59382cb747f5745f8b59f23bc4a71)) 
+
+
+  Bumps the backend-tests-python-dependencies group with 5 updates in the /backend/tests directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [boto3](https://github.com/boto/boto3) | `1.38.6` | `1.38.27` |
+  | [cryptography](https://github.com/pyca/cryptography) | `44.0.2` | `45.0.3` |
+  | [pluggy](https://github.com/pytest-dev/pluggy) | `1.5.0` | `1.6.0` |
+  | [redis](https://github.com/redis/redis-py) | `5.2.1` | `6.2.0` |
+  | [pytest-xdist](https://github.com/pytest-dev/pytest-xdist) | `3.6.1` | `3.7.0` |
+  
+  
+  
+  Updates `boto3` from 1.38.6 to 1.38.27
+  - [Release notes](https://github.com/boto/boto3/releases)
+  - [Commits](https://github.com/boto/boto3/compare/1.38.6...1.38.27)
+  
+  Updates `cryptography` from 44.0.2 to 45.0.3
+  - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+  - [Commits](https://github.com/pyca/cryptography/compare/44.0.2...45.0.3)
+  
+  Updates `pluggy` from 1.5.0 to 1.6.0
+  - [Changelog](https://github.com/pytest-dev/pluggy/blob/main/CHANGELOG.rst)
+  - [Commits](https://github.com/pytest-dev/pluggy/compare/1.5.0...1.6.0)
+  
+  Updates `redis` from 5.2.1 to 6.2.0
+  - [Release notes](https://github.com/redis/redis-py/releases)
+  - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
+  - [Commits](https://github.com/redis/redis-py/compare/v5.2.1...v6.2.0)
+  
+  Updates `pytest-xdist` from 3.6.1 to 3.7.0
+  - [Release notes](https://github.com/pytest-dev/pytest-xdist/releases)
+  - [Changelog](https://github.com/pytest-dev/pytest-xdist/blob/master/CHANGELOG.rst)
+  - [Commits](https://github.com/pytest-dev/pytest-xdist/compare/v3.6.1...v3.7.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: boto3
+    dependency-version: 1.38.27
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: cryptography
+    dependency-version: 45.0.3
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pluggy
+    dependency-version: 1.6.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: redis
+    dependency-version: 6.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pytest-xdist
+    dependency-version: 3.7.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  ...
+- Bump webpack-dev-server and @rspack/cli in /frontend
+ ([ff4bc85](https://github.com///commit/ff4bc85de991a11e258ba0a1e4a6e1fbd81592f5)) 
+
+
+  Bumps [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to 5.2.2 and updates ancestor dependency [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli). These dependencies need to be updated together.
+  
+  
+  Updates `webpack-dev-server` from 5.2.0 to 5.2.2
+  - [Release notes](https://github.com/webpack/webpack-dev-server/releases)
+  - [Changelog](https://github.com/webpack/webpack-dev-server/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/webpack/webpack-dev-server/compare/v5.2.0...v5.2.2)
+  
+  Updates `@rspack/cli` from 1.3.13 to 1.3.15
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.15/packages/rspack-cli)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: webpack-dev-server
+    dependency-version: 5.2.2
+    dependency-type: indirect
+  - dependency-name: "@rspack/cli"
+    dependency-version: 1.3.15
+    dependency-type: direct:development
+  ...
+- Bump requests in /backend/services/iot-manager/tests
+ ([695983a](https://github.com///commit/695983abeeaf65400923ec435f2738d7475d7cf5)) 
+
+
+  Bumps [requests](https://github.com/psf/requests) from 2.32.3 to 2.32.4.
+  - [Release notes](https://github.com/psf/requests/releases)
+  - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
+  - [Commits](https://github.com/psf/requests/compare/v2.32.3...v2.32.4)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: requests
+    dependency-version: 2.32.4
+    dependency-type: direct:production
+  ...
+- Bump the backend-docker-dependencies group across 10 directories with 1 update
+ ([f39b7fb](https://github.com///commit/f39b7fb012b5b92cd74e8042f4fedd12e95ed394)) 
+
+
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/create-artifact-worker directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deployments directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceauth directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceconfig directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceconnect directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/inventory directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/iot-manager directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/reporting directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/useradm directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/workflows directory: golang.
+  
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  Updates `golang` from 1.24.3 to 1.24.4
+  
+  ---
+  updated-dependencies:
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  ...
+- Bump @mui/x-date-pickers in /frontend in the mui group
+ ([0b07854](https://github.com///commit/0b07854d18232ca6bc0f31235ee04db9055c7081)) 
+
+
+  Bumps the mui group in /frontend with 1 update: [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
+  
+  
+  Updates `@mui/x-date-pickers` from 8.5.0 to 8.5.1
+  - [Release notes](https://github.com/mui/mui-x/releases)
+  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/mui-x/commits/v8.5.1/packages/x-date-pickers)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.5.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  ...
+- Bump the production-dependencies group
+ ([ef7e609](https://github.com///commit/ef7e609525b582ae01d05d33d36f7aa456e09c09)) 
+
+
+  Bumps the production-dependencies group in /frontend with 3 updates: [@sentry/react](https://github.com/getsentry/sentry-javascript), [react-hook-form](https://github.com/react-hook-form/react-hook-form) and [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom).
+  
+  
+  Updates `@sentry/react` from 9.24.0 to 9.28.1
+  - [Release notes](https://github.com/getsentry/sentry-javascript/releases)
+  - [Changelog](https://github.com/getsentry/sentry-javascript/blob/develop/CHANGELOG.md)
+  - [Commits](https://github.com/getsentry/sentry-javascript/compare/9.24.0...9.28.1)
+  
+  Updates `react-hook-form` from 7.56.4 to 7.57.0
+  - [Release notes](https://github.com/react-hook-form/react-hook-form/releases)
+  - [Changelog](https://github.com/react-hook-form/react-hook-form/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/react-hook-form/react-hook-form/compare/v7.56.4...v7.57.0)
+  
+  Updates `react-router-dom` from 7.6.1 to 7.6.2
+  - [Release notes](https://github.com/remix-run/react-router/releases)
+  - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)
+  - [Commits](https://github.com/remix-run/react-router/commits/7.6.2/packages/react-router-dom)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@sentry/react"
+    dependency-version: 9.28.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-hook-form
+    dependency-version: 7.57.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-router-dom
+    dependency-version: 7.6.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: production-dependencies
+  ...
+- Bump @playwright/test
+ ([be22a5f](https://github.com///commit/be22a5fd353920f7c195bc1866e7dba38564f116)) 
+
+
+  Bumps the playwright group in /frontend/tests/e2e_tests with 1 update: [@playwright/test](https://github.com/microsoft/playwright).
+  
+  
+  Updates `@playwright/test` from 1.52.0 to 1.53.0
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.52.0...v1.53.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@playwright/test"
+    dependency-version: 1.53.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: playwright
+  ...
+
+
+
+
+### Build
+
+
+- Change default make target to test for backend/pkg
+ ([5ba3fd7](https://github.com///commit/5ba3fd7deda6421612029b31317cc61c2b1ef373)) 
+- Add make target for pkg unit tests to test-unit root target
+ ([5c2e23a](https://github.com///commit/5c2e23a6ff9b073b38cad1ef56e8845264369817)) 
+
+
+
+
+### Revert
+
+
+- *(tenantadm)* Restore swagger specifications for generating types
+ ([c06ad4e](https://github.com///commit/c06ad4e61f39c5c982596db72036cd3e1b7e1d0c)) 
+
+
+  ... and remove symlink to new specifications.
+
+- Gin utility for applying middleware to routes
+ ([9f5c79c](https://github.com///commit/9f5c79cc30a4ee2576ef39f650b3a161c5996548)) 
+
+
+  The func does not implement what it is intended to do and instead
+  applies the middleware to all routes in the group.
+- "ci: Debug mongodb in backend unit tests"
+ ([441c1ea](https://github.com///commit/441c1eaa43cc79737468aef3068784f0bfadef28)) 
+
+
+  Enabling logging just overflows the log buffer.
+  
+  This reverts commit 6d164c4c70d1fff7d28e88a50390f8afb676c814.
+
+
+
+
+
+
 ## v4.1.0-saas.6 - 2025-06-05
 
 
