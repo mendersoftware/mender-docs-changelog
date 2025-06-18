@@ -7,6 +7,21 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.9 - 2025-06-18
+
+
+### Bug Fixes
+
+
+- *(gui)* Fixed another situation that could cause the organization token to overflow
+ ([555cb1e](https://github.com///commit/555cb1e7ec1571bd5ed02104c1185138b6e25d4a)) 
+
+
+
+
+
+
+
 ## v4.1.0-saas.8 - 2025-06-18
 
 
