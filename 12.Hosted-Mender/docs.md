@@ -7,6 +7,24 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.8 - 2025-06-18
+
+
+### Bug Fixes
+
+
+- *(gui)* Fixed a problem that could apply RBAC restrictions on non-RBAC plans
+([MEN-8498](https://northerntech.atlassian.net/browse/MEN-8498)) ([c870092](https://github.com///commit/c87009221163505732cb677e44a9c159233c3d68)) 
+
+- *(gui)* Fixed an issue that could cause the organization token to overflow for older tenants
+ ([e04f0e9](https://github.com///commit/e04f0e99df3c4edcd932034bc3d0aad31bd8467f)) 
+
+
+
+
+
+
+
 ## v4.1.0-saas.7 - 2025-06-18
 
 
