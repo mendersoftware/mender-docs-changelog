@@ -16,7 +16,7 @@ github: false
   [mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server](https://mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server)
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Fixed an issue that would prevent showing unassigned static group devices
@@ -70,7 +70,7 @@ github: false
 ## 4.0.0 - 2025-02-10
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(deployments)* Deprecate v1 endpoint for listing deployments
@@ -1171,7 +1171,7 @@ New changes in useradm since 1.22.4:
 
 New changes in useradm-enterprise since 1.22.4:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix GenerateTFASecret using insecure RNG
 
@@ -1227,7 +1227,7 @@ New changes in integration since 3.7.7:
 
 New changes in iot-manager since 1.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Incosistent serialization format for device private key
 
@@ -1252,7 +1252,7 @@ _Released 08.15.2024_
 
 New changes in deviceconnect since 1.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Connection status race on rapid reconnect
 
@@ -1278,7 +1278,7 @@ New changes in integration since 3.7.5:
 
 New changes in useradm-enterprise since 1.22.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Harden HTTP client when resolving SAML Artifact requests
 
@@ -1323,7 +1323,7 @@ New changes in integration since 3.7.4:
 
 New changes in useradm-enterprise since 1.22.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not allow users with access to given device groups to list all the devices
   ([ME-267](https://northerntech.atlassian.net/browse/ME-267))
@@ -1332,7 +1332,7 @@ New changes in useradm-enterprise since 1.22.1:
 
 New changes in workflows since 2.6.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Use context and add TTL to prevent sidecar blocking forever
   ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
@@ -1346,7 +1346,7 @@ New changes in workflows since 2.6.0:
 
 New changes in workflows-enterprise since 2.6.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Use context and add TTL to prevent sidecar blocking forever
   ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
@@ -1381,7 +1381,7 @@ New changes in integration since 3.7.3:
 
 New changes in useradm-enterprise since 1.22.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * When assigning SSO configuration to the user, check if the SSO with
   given Id is configured for the tenant the user has access to. (CVE-2024-37019)
@@ -1423,7 +1423,7 @@ New changes in integration since 3.6.4:
 
 New changes in useradm-enterprise since 1.21.3:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not allow users with access to given device groups to list all the devices
   ([ME-267](https://northerntech.atlassian.net/browse/ME-267))
@@ -1432,7 +1432,7 @@ New changes in useradm-enterprise since 1.21.3:
 
 New changes in workflows since 2.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Use context and add TTL to prevent sidecar blocking forever
   ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
@@ -1446,7 +1446,7 @@ New changes in workflows since 2.5.1:
 
 New changes in workflows-enterprise since 2.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Use context and add TTL to prevent sidecar blocking forever
   ([MEN-7214](https://northerntech.atlassian.net/browse/MEN-7214))
@@ -1481,7 +1481,7 @@ New changes in integration since 3.6.3:
 
 New changes in useradm-enterprise since 1.21.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * When assigning SSO configuration to the user, check if the SSO with
   given Id is configured for the tenant the user has access to. (CVE-2024-37019)
@@ -1510,7 +1510,7 @@ New changes in deployments-enterprise since 4.6.0:
 
 New changes in gui since 3.7.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fixed gateway and monitor links on the Downloads page
   ([MEN-7004](https://northerntech.atlassian.net/browse/MEN-7004))
@@ -1589,7 +1589,7 @@ New changes in integration since 3.7.1:
 
 New changes in inventory-enterprise since 4.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Index out of bounds on empty regular expression
   ([MEN-6930](https://northerntech.atlassian.net/browse/MEN-6930))
@@ -1731,7 +1731,7 @@ _Released 12.28.2023_
 
 New changes in auditlogs since 3.1.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Terminate application on unexpected server shutdown
   ([MEN-6596](https://northerntech.atlassian.net/browse/MEN-6596))
@@ -1746,7 +1746,7 @@ New changes in auditlogs since 3.1.1:
 
 New changes in create-artifact-worker since 1.3.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Provide default value for CREATE_ARTIFACT_DEPLOYMENTS_URL
   ([MEN-6237](https://northerntech.atlassian.net/browse/MEN-6237))
@@ -1760,7 +1760,7 @@ New changes in create-artifact-worker since 1.3.2:
 
 New changes in deployments since 4.5.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * perform automigration only if the service was configured to perform it
 * Collection scan retrieving deployments for device
@@ -1843,7 +1843,7 @@ New changes in deployments since 4.5.2:
 
 New changes in deployments-enterprise since 4.5.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * perform automigration only if the service was configured to perform it
 * Collection scan retrieving deployments for device
@@ -1940,7 +1940,7 @@ New changes in deployments-enterprise since 4.5.2:
 
 New changes in deviceauth since 3.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * propagate id data to inventory for all tenants case.
 * Redis key prefix configuration not applied
@@ -1989,7 +1989,7 @@ New changes in deviceauth since 3.5.0:
 
 New changes in deviceauth-enterprise since 3.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * propagate id data to inventory for all tenants case.
 * Redis key prefix configuration not applied
@@ -2051,7 +2051,7 @@ New changes in deviceauth-enterprise since 3.5.0:
 
 New changes in deviceconfig since 1.3.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not use deprecated types and methods from bson package
 
@@ -2064,7 +2064,7 @@ New changes in deviceconfig since 1.3.2:
 
 New changes in deviceconnect since 1.4.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not use deprecated types and methods from bson package
 
@@ -2082,7 +2082,7 @@ New changes in deviceconnect since 1.4.1:
 
 New changes in devicemonitor since 1.4.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not use deprecated types and methods from bson package
 
@@ -2102,7 +2102,7 @@ New changes in generate-delta-worker since 1.0.2:
 
 New changes in gui since 3.6.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fixed an issue that could show configuration deployments without a name
 * fixed faulty interpretation of granular role definitions that prevented the UI from showing accessible sections
@@ -2179,7 +2179,7 @@ New changes in gui since 3.6.2:
 
 New changes in integration since 3.6.3:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Disable authentication for the new signup endpoint
 
@@ -2225,7 +2225,7 @@ New changes in integration since 3.6.3:
 
 New changes in inventory since 4.3.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * attributes changed: compare timestamps with configurable threshold.
   ([MEN-6643](https://northerntech.atlassian.net/browse/MEN-6643))
@@ -2256,7 +2256,7 @@ New changes in inventory since 4.3.2:
 
 New changes in inventory-enterprise since 4.3.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * attributes changed: compare timestamps with configurable threshold.
   ([MEN-6643](https://northerntech.atlassian.net/browse/MEN-6643))
@@ -2305,7 +2305,7 @@ New changes in inventory-enterprise since 4.3.2:
 
 New changes in iot-manager since 1.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not use deprecated types and methods from bson package
 
@@ -2331,7 +2331,7 @@ New changes in mtls-ambassador since 1.2.1:
 
 New changes in tenantadm since 4.0.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * HubSpot: update contact if exists
   ([MEN-6778](https://northerntech.atlassian.net/browse/MEN-6778))
@@ -2374,7 +2374,7 @@ New changes in tenantadm since 4.0.0:
 
 New changes in useradm since 1.21.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * removed jwt cookie transmission to minimize potential leakage of auth info
 * describe plan_definitions_path setting
@@ -2399,7 +2399,7 @@ New changes in useradm since 1.21.0:
 
 New changes in useradm-enterprise since 1.21.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fix Troubleshooting role definition
 
@@ -2503,7 +2503,7 @@ New changes in useradm-enterprise since 1.21.2:
 
 New changes in workflows since 2.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not use deprecated types and methods from bson package
 
@@ -2518,7 +2518,7 @@ New changes in workflows since 2.5.1:
 
 New changes in workflows-enterprise since 2.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fixed an issue on publishing the workflows-worker container
   image ([QA-613](https://northerntech.atlassian.net/browse/QA-613))
@@ -2606,7 +2606,7 @@ Top lines changed by employer | |
 
 New changes in deployments since 4.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * db.Find: look for phrases (escape the $text elements)
   ([MEN-6730](https://northerntech.atlassian.net/browse/MEN-6730))
@@ -2620,7 +2620,7 @@ New changes in deployments since 4.5.0:
 
 New changes in deployments-enterprise since 4.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * db.Find: look for phrases (escape the $text elements)
   ([MEN-6730](https://northerntech.atlassian.net/browse/MEN-6730))
@@ -2654,7 +2654,7 @@ New changes in integration since 3.6.2:
 
 New changes in inventory since 4.3.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * update `updated_ts` only if we are updating the inventory scope
   ([MEN-6705](https://northerntech.atlassian.net/browse/MEN-6705))
@@ -2663,7 +2663,7 @@ New changes in inventory since 4.3.1:
 
 New changes in inventory-enterprise since 4.3.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * update `updated_ts` only if we are updating the inventory scope
   ([MEN-6705](https://northerntech.atlassian.net/browse/MEN-6705))
@@ -2672,7 +2672,7 @@ New changes in inventory-enterprise since 4.3.1:
 
 New changes in mtls-ambassador since 1.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * update the API docs for the `/status` internal endpoint
   ([MEN-6700](https://northerntech.atlassian.net/browse/MEN-6700))
@@ -2683,7 +2683,7 @@ New changes in mtls-ambassador since 1.2.0:
 
 New changes in useradm-enterprise since 1.21.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * SAML authentication not case insensitive
   ([MEN-6750](https://northerntech.atlassian.net/browse/MEN-6750))
@@ -2692,7 +2692,7 @@ New changes in useradm-enterprise since 1.21.1:
 
 New changes in workflows since 2.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * `migrate` command tries to create Jetstream consumer before stream
   ([MEN-6698](https://northerntech.atlassian.net/browse/MEN-6698))
@@ -2701,7 +2701,7 @@ New changes in workflows since 2.5.0:
 
 New changes in workflows-enterprise since 2.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * `migrate` command tries to create Jetstream consumer before stream
   ([MEN-6698](https://northerntech.atlassian.net/browse/MEN-6698))
@@ -2789,7 +2789,7 @@ New changes in create-artifact-worker since 1.3.1:
 
 New changes in deployments-enterprise since 4.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * ignore artifact_name when checking if an artifact is already installed
   ([MEN-6644](https://northerntech.atlassian.net/browse/MEN-6644))
@@ -2798,7 +2798,7 @@ New changes in deployments-enterprise since 4.5.0:
 
 New changes in gui since 3.6.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fixed an issue that prevented deselecting a release selection during deployment creation
 * ensured current software alias is more reliably shown in column customization dialog
@@ -2819,7 +2819,7 @@ New changes in integration since 3.6.0:
 
 New changes in useradm-enterprise since 1.21.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * add directupload API endpoints to the `UploadArtifacts` permission set
   ([MEN-6642](https://northerntech.atlassian.net/browse/MEN-6642))
@@ -2886,7 +2886,7 @@ A total of 34993 lines added, 21314 removed (delta 13679)
 
 New changes in deployments since 4.4.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * increment deployment total size only if new artifact has been assigned
 * add undocumented groups field to deployment object
@@ -2960,7 +2960,7 @@ New changes in deployments since 4.4.1:
 
 New changes in deployments-enterprise since 4.4.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * increment deployment total size only if new artifact has been assigned
 * increment deployment total size only if new artifact has been assigned
@@ -3038,7 +3038,7 @@ New changes in deployments-enterprise since 4.4.1:
 
 New changes in deviceauth since 3.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Do not terminate process if Redis is unavailable
   ([MEN-6399](https://northerntech.atlassian.net/browse/MEN-6399))
@@ -3054,7 +3054,7 @@ New changes in deviceauth since 3.4.0:
 
 New changes in deviceauth-enterprise since 3.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Do not terminate process if Redis is unavailable
   ([MEN-6399](https://northerntech.atlassian.net/browse/MEN-6399))
@@ -3072,7 +3072,7 @@ New changes in deviceauth-enterprise since 3.4.0:
 
 New changes in gui since 3.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fixed an issue that would prevent properly clearing device group selection on deployment creation
 * fixed an issue that would cause the devices view to go to device details when filtering multiple devices by id
@@ -3132,7 +3132,7 @@ New changes in gui since 3.5.1:
 
 New changes in integration since 3.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * test: test_compat: UTC TZ does not need +hh:mm
 
@@ -3173,7 +3173,7 @@ New changes in integration since 3.5.1:
 
 New changes in useradm since 1.20.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Return 400 for malformed JSON schema to POST /auth/login
   ([MEN-6411](https://northerntech.atlassian.net/browse/MEN-6411))
@@ -3193,7 +3193,7 @@ New changes in useradm since 1.20.1:
 
 New changes in useradm-enterprise since 1.20.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * update `login_ts` when logging in using SAML and OAuth2
   ([ME-66](https://northerntech.atlassian.net/browse/ME-66))
@@ -3232,7 +3232,7 @@ New changes in useradm-enterprise since 1.20.1:
 
 New changes in workflows since 2.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Make Jetstream initialization contextual on `server` and `worker` commands
   ([MEN-6459](https://northerntech.atlassian.net/browse/MEN-6459))
@@ -3246,7 +3246,7 @@ New changes in workflows since 2.4.0:
 
 New changes in workflows-enterprise since 2.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Make Jetstream initialization contextual on `server` and `worker` commands
   ([MEN-6459](https://northerntech.atlassian.net/browse/MEN-6459))
@@ -3307,7 +3307,7 @@ A total of 279 lines added, 143 removed (delta 136)
 
 New changes in deployments since 4.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Use separate object storage path for raw file and artifact
   ([MEN-6091](https://northerntech.atlassian.net/browse/MEN-6091))
@@ -3316,7 +3316,7 @@ New changes in deployments since 4.4.0:
 
 New changes in deployments-enterprise since 4.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Use separate object storage path for raw file and artifact
   ([MEN-6091](https://northerntech.atlassian.net/browse/MEN-6091))
@@ -3338,7 +3338,7 @@ New changes in integration since 3.5.0:
 
 New changes in reporting since 1.0.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * update `/deployments` API end-points to `deployments/devices`
   ([MEN-6331](https://northerntech.atlassian.net/browse/MEN-6331))
@@ -3351,7 +3351,7 @@ New changes in reporting since 1.0.0:
 
 New changes in useradm-enterprise since 1.20.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not allow password reset for SSO users
   ([ME-60](https://northerntech.atlassian.net/browse/ME-60))
@@ -3423,7 +3423,7 @@ A total of 44757 lines added, 18182 removed (delta 26575)
 
 New changes in auditlogs since 3.0.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * update API specs and validation to accept all object types as filters
   ([MEN-6247](https://northerntech.atlassian.net/browse/MEN-6247))
@@ -3485,7 +3485,7 @@ New changes in create-artifact-worker since 1.2.0:
 
 New changes in deployments since 4.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Enforce setting validation constraints for internal PUT settings endpoint
   ([MEN-5908](https://northerntech.atlassian.net/browse/MEN-5908))
@@ -3555,7 +3555,7 @@ New changes in deployments since 4.3.0:
 
 New changes in deployments-enterprise since 4.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Enforce setting validation constraints for internal PUT settings endpoint
   ([MEN-5908](https://northerntech.atlassian.net/browse/MEN-5908))
@@ -3690,7 +3690,7 @@ New changes in deployments-enterprise since 4.3.0:
 
 New changes in deviceauth since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * data inconsistency
   ([ME-41](https://northerntech.atlassian.net/browse/ME-41))
@@ -3706,7 +3706,7 @@ New changes in deviceauth since 3.3.0:
 
 New changes in deviceauth-enterprise since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * data inconsistency
   ([ME-41](https://northerntech.atlassian.net/browse/ME-41))
@@ -3795,7 +3795,7 @@ New changes in deviceconnect since 1.3.3:
 
 #### generate-delta-worker (1.0.0)
 
-##### Bug Fixes
+##### Bug fixes
 
 * missing publish stage after move to custom docker build
 * ci: correct image reference.
@@ -3813,7 +3813,7 @@ New changes in deviceconnect since 1.3.3:
 
 New changes in gui since 3.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fixed an issue that caused retrying deployments to not work for non-enterprise users
 * fixed an issue that prevented config of users using SSO to log in
@@ -3891,7 +3891,7 @@ New changes in gui since 3.4.0:
 
 New changes in integration since 3.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Do not double count integration in changelogs and statistics.
 
@@ -3946,7 +3946,7 @@ New changes in integration since 3.4.0:
 
 New changes in inventory since 4.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * update_ts field when searching devices and selecting attributes
   ([ME-50](https://northerntech.atlassian.net/browse/ME-50))
@@ -3969,7 +3969,7 @@ New changes in inventory since 4.2.1:
 
 New changes in inventory-enterprise since 4.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * update_ts field when searching devices and selecting attributes
   ([ME-50](https://northerntech.atlassian.net/browse/ME-50))
@@ -4003,7 +4003,7 @@ New changes in inventory-enterprise since 4.2.1:
 
 New changes in iot-manager since 1.1.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * wait for principal detachment to propagate when deleting device
 
@@ -4046,7 +4046,7 @@ New changes in tenantadm since 3.5.0:
 
 New changes in useradm since 1.19.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Protect user updates from concurrent updates
   ([MEN-6003](https://northerntech.atlassian.net/browse/MEN-6003))
@@ -4064,7 +4064,7 @@ New changes in useradm since 1.19.0:
 
 New changes in useradm-enterprise since 1.19.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Proper parsing of XFF header with configurable depth strategy
   ([MEN-5980](https://northerntech.atlassian.net/browse/MEN-5980))
@@ -4096,7 +4096,7 @@ New changes in useradm-enterprise since 1.19.0:
 
 New changes in workflows since 2.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Remove hard-coded default read/write concern
   ([MEN-6029](https://northerntech.atlassian.net/browse/MEN-6029))
@@ -4116,7 +4116,7 @@ New changes in workflows since 2.3.0:
 
 New changes in workflows-enterprise since 2.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Remove hard-coded default read/write concern
   ([MEN-6029](https://northerntech.atlassian.net/browse/MEN-6029))
@@ -4270,7 +4270,7 @@ New changes in create-artifact-worker since 1.1.2:
 
 New changes in deployments since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix bad indexing from database versions 1.2.8 and 1.2.9
   ([MEN-5695](https://northerntech.atlassian.net/browse/MEN-5695))
@@ -4309,7 +4309,7 @@ New changes in deployments since 4.2.0:
 
 New changes in deployments-enterprise since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix bad indexing from database versions 1.2.8 and 1.2.9
   ([MEN-5695](https://northerntech.atlassian.net/browse/MEN-5695))
@@ -4352,7 +4352,7 @@ New changes in deployments-enterprise since 4.2.0:
 
 New changes in deviceauth since 3.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Support PKCS#8 PEM format for JWT Signing key
   ([MEN-5673](https://northerntech.atlassian.net/browse/MEN-5673))
@@ -4417,7 +4417,7 @@ New changes in deviceauth since 3.2.1:
 
 New changes in deviceauth-enterprise since 3.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Support PKCS#8 PEM format for JWT Signing key
   ([MEN-5673](https://northerntech.atlassian.net/browse/MEN-5673))
@@ -4492,7 +4492,7 @@ New changes in deviceauth-enterprise since 3.2.1:
 
 New changes in deviceconfig since 1.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix borken migration.
   ([MEN-5719](https://northerntech.atlassian.net/browse/MEN-5719))
@@ -4506,7 +4506,7 @@ New changes in deviceconfig since 1.2.1:
 
 New changes in deviceconnect since 1.3.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Correct broken document migration in 2.0.0
   ([MEN-5718](https://northerntech.atlassian.net/browse/MEN-5718))
@@ -4524,7 +4524,7 @@ New changes in deviceconnect since 1.3.2:
 
 New changes in devicemonitor since 1.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Reduce the maximum number of alerts/configurations per request
   ([MEN-5854](https://northerntech.atlassian.net/browse/MEN-5854))
@@ -4552,7 +4552,7 @@ New changes in devicemonitor since 1.2.0:
 
 New changes in gui since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * prevented scheduling deployments earlier in the day
   ([MEN-5639](https://northerntech.atlassian.net/browse/MEN-5639))
@@ -4627,7 +4627,7 @@ New changes in gui since 3.3.0:
 
 New changes in integration since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * don't allow to use openssl lower than v.1.1.1
   ([MEN-5746](https://northerntech.atlassian.net/browse/MEN-5746))
@@ -4671,7 +4671,7 @@ New changes in integration since 3.3.0:
 
 New changes in inventory since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * replace colon with hash for path params modifiers in URLs
   ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
@@ -4680,7 +4680,7 @@ New changes in inventory since 4.2.0:
 
 New changes in inventory-enterprise since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * replace colon with hash for path params modifiers in URLs
   ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
@@ -4689,7 +4689,7 @@ New changes in inventory-enterprise since 4.2.0:
 
 New changes in iot-manager since 1.0.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fix GET /integrations returned object definition
 * Fire webhook independent if device was provisioned
@@ -4793,7 +4793,7 @@ New changes in iot-manager since 1.0.2:
 
 New changes in mtls-ambassador since 1.0.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Improve public certificate key comparison
 
@@ -4932,7 +4932,7 @@ New changes in mtls-ambassador since 1.0.2:
 
 New changes in tenantadm since 3.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Make username/emails case insensitive
   ([MEN-3524](https://northerntech.atlassian.net/browse/MEN-3524))
@@ -4968,7 +4968,7 @@ New changes in tenantadm since 3.4.0:
 
 New changes in useradm since 1.18.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * delete user tokens when deleting user
 * Make username/email case-insensitive
@@ -5073,7 +5073,7 @@ New changes in useradm since 1.18.0:
 
 New changes in useradm-enterprise since 1.18.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * delete user tokens when deleting user
 * Make username/email case-insensitive
@@ -5259,7 +5259,7 @@ New changes in useradm-enterprise since 1.18.0:
 
 New changes in workflows since 2.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
   ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
@@ -5300,7 +5300,7 @@ New changes in workflows since 2.2.1:
 
 New changes in workflows-enterprise since 2.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * aligned ui links with updated url scheme
   ([MEN-5734](https://northerntech.atlassian.net/browse/MEN-5734))
@@ -5406,7 +5406,7 @@ New changes in workflows-enterprise since 2.2.1:
 
 New changes in integration since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * don't allow to use openssl lower than v.1.1.1
   ([MEN-5746](https://northerntech.atlassian.net/browse/MEN-5746))
@@ -5546,7 +5546,7 @@ New changes in integration since 3.3.1:
 
 New changes in iot-manager since 1.0.3:
 
-##### Bug Fixes
+##### Bug fixes
 
 * wrong capitalization for `Type`
   ([QA-481](https://northerntech.atlassian.net/browse/QA-481))
@@ -5555,7 +5555,7 @@ New changes in iot-manager since 1.0.3:
 
 New changes in useradm since 1.18.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * allow privileged users to change email address of another user
   ([MEN-5829](https://northerntech.atlassian.net/browse/MEN-5829))
@@ -5568,7 +5568,7 @@ New changes in useradm since 1.18.1:
 
 New changes in useradm-enterprise since 1.18.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * user should not be able to modify all his data
   ([MEN-6012](https://northerntech.atlassian.net/browse/MEN-6012))
@@ -5684,7 +5684,7 @@ New changes in auditlogs since 3.0.1:
 
 New changes in deployments since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix bad indexing from database versions 1.2.8 and 1.2.9
   ([MEN-5695](https://northerntech.atlassian.net/browse/MEN-5695))
@@ -5697,7 +5697,7 @@ New changes in deployments since 4.2.0:
 
 New changes in deployments-enterprise since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix bad indexing from database versions 1.2.8 and 1.2.9
   ([MEN-5695](https://northerntech.atlassian.net/browse/MEN-5695))
@@ -5710,7 +5710,7 @@ New changes in deployments-enterprise since 4.2.0:
 
 New changes in deviceauth since 3.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * replace colon with hash for path params modifiers in URLs
   ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
@@ -5725,7 +5725,7 @@ New changes in deviceauth since 3.2.1:
 
 New changes in deviceauth-enterprise since 3.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * replace colon with hash for path params modifiers in URLs
   ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
@@ -5742,7 +5742,7 @@ New changes in deviceauth-enterprise since 3.2.1:
 
 New changes in deviceconfig since 1.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix borken migration.
   ([MEN-5719](https://northerntech.atlassian.net/browse/MEN-5719))
@@ -5756,7 +5756,7 @@ New changes in deviceconfig since 1.2.1:
 
 New changes in deviceconnect since 1.3.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Correct broken document migration in 2.0.0
   ([MEN-5718](https://northerntech.atlassian.net/browse/MEN-5718))
@@ -5774,7 +5774,7 @@ New changes in deviceconnect since 1.3.2:
 
 New changes in devicemonitor since 1.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Reduce the maximum number of alerts/configurations per request
   ([MEN-5854](https://northerntech.atlassian.net/browse/MEN-5854))
@@ -5783,7 +5783,7 @@ New changes in devicemonitor since 1.2.0:
 
 New changes in gui since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fixed an issue that caused the device list to crash on group selection if a device was selected at the time
 * added missing check for plan availability for auditlogs
@@ -5799,7 +5799,7 @@ New changes in gui since 3.3.0:
 
 New changes in integration since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Correctly pass mender client version to GUI env
   ([MEN-5901](https://northerntech.atlassian.net/browse/MEN-5901))
@@ -5837,7 +5837,7 @@ New changes in integration since 3.3.0:
 
 New changes in inventory since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * replace colon with hash for path params modifiers in URLs
   ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
@@ -5846,7 +5846,7 @@ New changes in inventory since 4.2.0:
 
 New changes in inventory-enterprise since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * replace colon with hash for path params modifiers in URLs
   ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
@@ -5862,7 +5862,7 @@ New changes in iot-manager since 1.0.2:
 
 New changes in tenantadm since 3.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * replace colon with hash for path params modifiers in URLs
   ([MEN-5713](https://northerntech.atlassian.net/browse/MEN-5713))
@@ -5871,7 +5871,7 @@ New changes in tenantadm since 3.4.0:
 
 New changes in useradm since 1.18.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * invalidate user sessions but the current one on user updates
   ([MEN-5731](https://northerntech.atlassian.net/browse/MEN-5731))
@@ -5882,7 +5882,7 @@ New changes in useradm since 1.18.0:
 
 New changes in useradm-enterprise since 1.18.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * invalidate user sessions but the current one on user updates
   ([MEN-5731](https://northerntech.atlassian.net/browse/MEN-5731))
@@ -5894,7 +5894,7 @@ New changes in useradm-enterprise since 1.18.0:
 
 New changes in workflows since 2.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
   ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
@@ -5910,7 +5910,7 @@ New changes in workflows since 2.2.1:
 
 New changes in workflows-enterprise since 2.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Support for flags insize the ${workflow.input.identifier} via ${encoding=url;workflow.input.identifier}
   ([MEN-5819](https://northerntech.atlassian.net/browse/MEN-5819))
@@ -6000,7 +6000,7 @@ A total of 52292 lines added, 17854 removed (delta 34438)
 
 New changes in deployments since 4.1.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * change the error handling when the device is reporting wrong artifact name
 
@@ -6073,7 +6073,7 @@ New changes in deployments since 4.1.0:
 
 New changes in deployments-enterprise since 4.1.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * change the error handling when the device is reporting wrong artifact name
 
@@ -6191,7 +6191,7 @@ New changes in deployments-enterprise since 4.1.0:
 
 New changes in devicemonitor since 1.1.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Invalid OpenAPI schema for configuration endpoints
 
@@ -6225,7 +6225,7 @@ New changes in devicemonitor since 1.1.0:
 
 New changes in gui since 3.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * disable the update control map control if not enterprise
   ([MEN-5424](https://northerntech.atlassian.net/browse/MEN-5424))
@@ -8673,7 +8673,7 @@ New changes in gui since 3.2.0:
 
 New changes in integration since 3.2.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * wrong path for the useradm private key in the prod yaml templates
   ([MEN-5641](https://northerntech.atlassian.net/browse/MEN-5641))
@@ -8997,7 +8997,7 @@ New changes in inventory-enterprise since 4.1.0:
 
 New changes in mtls-ambassador since 1.0.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * replace host header when proxying requests
   ([MEN-5495](https://northerntech.atlassian.net/browse/MEN-5495))
@@ -9006,7 +9006,7 @@ New changes in mtls-ambassador since 1.0.1:
 
 New changes in tenantadm since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Implement enable_sign_up setting which restricts access to create organization functionalities
 
@@ -9103,7 +9103,7 @@ New changes in useradm since 1.17.0:
 
 New changes in useradm-enterprise since 1.17.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * extend the RBAC roles to support iot-manager
   ([MEN-5386](https://northerntech.atlassian.net/browse/MEN-5386))
@@ -9170,7 +9170,7 @@ New changes in useradm-enterprise since 1.17.0:
 
 New changes in integration since 3.2.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * wrong path for the useradm private key in the prod yaml templates
   ([MEN-5641](https://northerntech.atlassian.net/browse/MEN-5641))

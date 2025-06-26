@@ -18,7 +18,7 @@ _Released 03.27.2025_
 
 New changes in mender-binary-delta since 1.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Convert the boot partition numbers to int before comparison.
   ([MEN-8043](https://northerntech.atlassian.net/browse/MEN-8043))
@@ -34,7 +34,7 @@ _Released 03.21.2024_
 
 New changes in mender-binary-delta since 1.4.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix a few memory leaks.
 
@@ -73,7 +73,7 @@ _Released 07.06.2022_
 
 New changes in mender-binary-delta since 1.3.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Delta Artifacts should now be significantly faster to apply, since
   the extra checksum check done by Mender has been removed, and only the checksum

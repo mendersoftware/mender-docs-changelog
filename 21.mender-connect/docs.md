@@ -17,7 +17,7 @@ _Released 12.18.2024_
 
 New changes in mender-connect since 2.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * systemd: Always try restarting the client if it exits.
 
@@ -91,7 +91,7 @@ _Released 12.28.2023_
 
 New changes in mender-connect since 2.1.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * In Mender client v4.0, the `mender` binary has been split
   into `mender-update` and `mender-auth`. Modify `mender-connect` to call
@@ -120,7 +120,7 @@ _Released 06.12.2024_
 
 New changes in mender-connect since 2.1.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * In Mender client v4.0, the `mender` binary has been split
   into `mender-update` and `mender-auth`. Modify `mender-connect` to call
@@ -205,7 +205,7 @@ _Released 10.18.2023_
 
 New changes in mender-connect since 2.1.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fix unstable unit test
 

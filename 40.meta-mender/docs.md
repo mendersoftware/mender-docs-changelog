@@ -15,7 +15,7 @@ github: false
 
 New changes in meta-mender since scarthgap-v2024.12:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Restore GRUB integration for ARMv7 boards (Beaglebone Black)
   ([MEN-7854](https://northerntech.atlassian.net/browse/MEN-7854))
@@ -51,7 +51,7 @@ New changes in meta-mender since scarthgap-v2024.12:
 
 New changes in meta-mender since scarthgap-v2024.08:
 
-##### Bug Fixes
+##### Bug fixes
 
 * finish fixing persistent machine id support
 
@@ -104,7 +104,7 @@ New changes in meta-mender since scarthgap-v2024.08:
 
 New changes in meta-mender since scarthgap-v2024.07:
 
-##### Bug Fixes
+##### Bug fixes
 
 * persistent machine id support files renamed
 
@@ -123,7 +123,7 @@ _Released: 07.03.2024_
 
 New changes in meta-mender since kirkstone-v2024.06:
 
-##### Bug Fixes
+##### Bug fixes
 
 * remove splash IMAGE_FEATURE from demo layer
 * move test specific settings from demo layer to tests
@@ -201,7 +201,7 @@ New changes in meta-mender since kirkstone-v2024.06:
 
 New changes in meta-mender since kirkstone-v2024.12:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fixes an issue with Mender GRUB integration when using rootfs
   partitions definitions with leading `0` (ie partition `02`) and the GRUB
@@ -239,7 +239,7 @@ New changes in meta-mender since kirkstone-v2024.12:
 
 New changes in meta-mender since kirkstone-v2024.08:
 
-##### Bug Fixes
+##### Bug fixes
 
 * package artifact-verify-key.pem in mender-update
   ([MEN-7204](https://northerntech.atlassian.net/browse/MEN-7204))
@@ -294,7 +294,7 @@ _Released: 06.17.2024_
 
 New changes in meta-mender since kirkstone-v2024.04:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix typo in fstab options for extra partitions.
 * Set correct systemd installation dir.
@@ -334,7 +334,7 @@ _Released: 04.26.2024_
 
 New changes in meta-mender since kirkstone-v2023.12:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix the install path for the D-Bus interface files shipped in
   `mender-client-dev` package. It was `$(datadir)/dbus-1/interface` but it
@@ -453,7 +453,7 @@ _Released: 10.01.2023_
 
 New changes in meta-mender since kirkstone-v2023.08:
 
-##### Bug Fixes
+##### Bug fixes
 
 * mv image files instead of install, to avoid corrupting the image.
 
@@ -478,7 +478,7 @@ _Released: 09.05.2023_
 
 New changes in meta-mender since kirkstone-v2023.03:
 
-##### Bug Fixes
+##### Bug fixes
 
 * boot-partition-devicetree use proper SPDX License GPL-2.0-only
 * wic-tools does not need grub when using uboot
@@ -531,7 +531,7 @@ A total of 3 lines added, 3 removed (delta 0)
 
 New changes in mender-client since kirkstone-v2023.02:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Add mender-client 3.3.2 recipe.
 
@@ -609,7 +609,7 @@ A total of 686 lines added, 376 removed (delta 310)
 
 New changes in meta-mender since kirkstone-v2022.10:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Add missing licenses checksums, set right preference, and
   correct dependencies syntax for mender-client 3.3.1 recipe
@@ -688,7 +688,7 @@ A total of 432 lines added, 113 removed (delta 319)
 
 New changes in meta-mender since kirkstone-v2022.09:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Upgrade grub-mender-grubenv to include the XFS module in the default installation.
 * Pre-3.5 mender-client recipes needs dependency on mender-artifact-info.
@@ -818,7 +818,7 @@ A total of 12574 lines added, 14375 removed (delta -1801)
 
 New changes in meta-mender since dunfell-v2022.09:
 
-##### Bug Fixes
+##### Bug fixes
 
 * bootfiles renamed to rpi-bootfiles in upstream
   ([MEN-5689](https://northerntech.atlassian.net/browse/MEN-5689))
@@ -1544,7 +1544,7 @@ _Released: 06.14.2024_
 
 New changes in meta-mender since dunfell-v2023.03:
 
-##### Bug Fixes
+##### Bug fixes
 
 * mender-configure: Don't break if libdir is set to `lib64`.
 * pass prefix and systemd_unitdir to mender-configure installation
@@ -1637,7 +1637,7 @@ A total of 23 lines added, 9 removed (delta 14)
 
 New changes in meta-mender since dunfell-v2023.02:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Add mender-client 3.3.2 recipe.
 
@@ -1685,7 +1685,7 @@ A total of 472 lines added, 61 removed (delta 411)
 
 New changes in meta-mender since dunfell-v2022.12:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Patch `mender-artifact` _next_ recipe to be compatible with
   `dunfell` which builds with golang 1.14.
@@ -1743,7 +1743,7 @@ A total of 1 lines added, 1 removed (delta 0)
 
 New changes in meta-mender since dunfell-v2022.11:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix the regression in which Dunfell started providing the 3.3.x
   client as the default. This was an unintentional change, and this
@@ -1790,7 +1790,7 @@ A total of 157 lines added, 18 removed (delta 139)
 
 New changes in meta-mender since dunfell-v2022.10:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Add missing licenses checksums and set right preference for
   mender-client 3.3.1 recipe
@@ -1849,7 +1849,7 @@ A total of 461 lines added, 62 removed (delta 399)
 
 New changes in meta-mender since dunfell-v2022.09:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix occasional pseudo abort issue when building certain
   images, especially in parallel. The symptom was this message:
@@ -1940,7 +1940,7 @@ A total of 799 lines added, 175 removed (delta 624)
 
 New changes in meta-mender since dunfell-v2022.04:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Add mender-artifact 3.7.1 recipe.
 * Force building in separate build directory, even with `externalsrc`.

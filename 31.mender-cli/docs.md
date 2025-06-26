@@ -72,7 +72,7 @@ Developers with the most signoffs (total 1)
 
 New changes in mender-cli since 1.11.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Keep stdout clean
 * Use term's built-in IsTerminal
@@ -181,7 +181,7 @@ A total of 494 lines added, 1194 removed (delta -700)
 
 New changes in mender-cli since 1.10.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Hide errors when help flag is present
   ([MEN-6357](https://northerntech.atlassian.net/browse/MEN-6357))
@@ -246,7 +246,7 @@ A total of 11 lines added, 10 removed (delta 1)
 
 New changes in mender-cli since 1.9.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * allow to get the server from mender-clirc configuration file
 
@@ -297,7 +297,7 @@ A total of 171 lines added, 188 removed (delta -17)
 
 New changes in mender-cli since 1.8.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * stop the port-forward command on errors when reading the websocket
   ([MEN-5565](https://northerntech.atlassian.net/browse/MEN-5565))
@@ -351,7 +351,7 @@ A total of 17 lines added, 4 removed (delta 13)
 
 New changes in mender-cli since 1.8.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * allow to get the server from mender-clirc configuration file
 
@@ -390,7 +390,7 @@ A total of 57 lines added, 30 removed (delta 27)
 
 New changes in mender-cli since 1.8.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * stop the port-forward command on errors when reading the websocket
   ([MEN-5565](https://northerntech.atlassian.net/browse/MEN-5565))

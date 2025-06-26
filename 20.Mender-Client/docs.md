@@ -17,7 +17,7 @@ _Released 03.27.2025_
 
 New changes in mender since 5.0.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Clear the inventory data hash on re-authentication
   ([MEN-7873](https://northerntech.atlassian.net/browse/MEN-7873))
@@ -51,7 +51,7 @@ _Released 12.18.2024_
 
 New changes in mender since 4.0.5:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix a bug where a failure in checking the working directory
   will not exit cleanly from `Cleanup` state.
@@ -144,7 +144,7 @@ _Released 03.27.2025_
 
 New changes in mender since 4.0.6:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Clear the inventory data hash on re-authentication
   ([MEN-7873](https://northerntech.atlassian.net/browse/MEN-7873))
@@ -169,7 +169,7 @@ _Released 12.20.2024_
 
 New changes in mender since 4.0.5:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix download failure to always do a proper
   cancellation and cleanup of internal HTTP stuctures to avoid
@@ -208,7 +208,7 @@ _Released 12.02.2024_
 
 New changes in mender since 4.0.4:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix crash when `Sync_Leave` returns error during a
   deployment. The error message would be:
@@ -281,7 +281,7 @@ _Released 08.01.2024_
 
 New changes in mender since 4.0.3:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Make crypto load and use the openssl.cnf file
   ([MEN-7353](https://northerntech.atlassian.net/browse/MEN-7353))
@@ -299,7 +299,7 @@ _Released 06.12.2024_
 
 New changes in mender since 4.0.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Amend default paths printed in CLI help pages. Previously
   they could be modified by user environment variables.
@@ -331,7 +331,7 @@ _Released 03.21.2024_
 
 New changes in mender since 4.0.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Submit inventory as soon as the device is accepted.
 * Fix line processing of data when reading a single byte
@@ -378,7 +378,7 @@ _Released 02.12.2024_
 
 New changes in mender since 4.0.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Unify meta-data element support in mender-artifact and C++ parser, and relax to accept all valid JSON
   ([MEN-6199](https://northerntech.atlassian.net/browse/MEN-6199))
@@ -472,7 +472,7 @@ in the Mender documentation.
 
 New changes in mender since 3.5.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * disabled implicit conversion form Error to bool
   ([MEN-6409](https://northerntech.atlassian.net/browse/MEN-6409))
@@ -548,7 +548,7 @@ _Released 06.12.2024_
 
 New changes in mender since 3.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix a rare bug which could corrupt the very end of a
   rootfs-image update on a sudden powerloss. The circumstances where it
@@ -603,7 +603,7 @@ _Released 12.28.2023_
 
 New changes in mender since 3.5.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix a rare bug which could corrupt the very end of a
   rootfs-image update on a sudden powerloss. The circumstances where it
@@ -670,7 +670,7 @@ A total of 1119 lines added, 1075 removed (delta 44)
 
 New changes in mender since 3.5.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Authmanager can blocks forever on unbuffered chan
   ([MEN-6621](https://northerntech.atlassian.net/browse/MEN-6621))
@@ -758,7 +758,7 @@ A total of 2751 lines added, 849 removed (delta 1902)
 
 New changes in mender since 3.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * The daemon no longer exits in the edge case where it cannot bring
   down the proxy server due to timeouts.
@@ -916,7 +916,7 @@ A total of 1308 lines added, 668 removed (delta 640)
 
 New changes in mender since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * setenv: Fix script input syntax.
 * rootfs-image-v2: Make sure to set mender_boot_part_hex
@@ -1001,7 +1001,7 @@ A total of 599 lines added, 142 removed (delta 457)
 
 New changes in mender since 3.3.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Expand the check for new openssl version
 * systemd: Always try restarting the client if it exits.
@@ -1082,7 +1082,7 @@ A total of 628 lines added, 238 removed (delta 390)
 
 New changes in mender since 3.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Upgrade openssl dependency to fix cast error in recent Go.
 * If paused before ArtifactReboot, and then manually
@@ -1168,7 +1168,7 @@ A total of 928 lines added, 608 removed (delta 320)
 
 New changes in mender since 3.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Only fall back to older endpoints on HTTP 404's
 

@@ -17,7 +17,7 @@ _Released 12.18.2024_
 
 New changes in mender-convert since 4.2.3:
 
-##### Bug Fixes
+##### Bug fixes
 
 * allow installation of deb packages with spaces
   ([MEN-7264](https://northerntech.atlassian.net/browse/MEN-7264))
@@ -105,7 +105,7 @@ _Released 12.02.2024_
 
 New changes in mender-convert since 4.2.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * `docker-mender-convert` wrapper updated to support
   multiple branches pointing to the same reference and
@@ -130,7 +130,7 @@ _Released 06.12.2024_
 
 New changes in mender-convert since 4.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Make sure that `/data` mountpoint exists when using a R/O rootfs.
   ([MEN-7219](https://northerntech.atlassian.net/browse/MEN-7219))
@@ -150,7 +150,7 @@ _Released 05.16.2024_
 
 New changes in mender-convert since 4.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix occasional failure when handling service files.
   ([MEN-7143](https://northerntech.atlassian.net/browse/MEN-7143))
@@ -173,7 +173,7 @@ _Released 03.21.2024_
 
 New changes in mender-convert since 4.1.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Remove unneeded `mender_grub_storage_device` assignment
   which could boot from the wrong device if a USB stick was inserted.
@@ -310,7 +310,7 @@ _Released 12.28.2023_
 
 New changes in mender-convert since 4.0.3:
 
-##### Bug Fixes
+##### Bug fixes
 
 * hosted bootstrap script syntax error
 
@@ -361,7 +361,7 @@ _Released 10.18.2023_
 
 New changes in mender-convert since 4.0.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Reorder operation to move data directory before rootfs size is estimated
 * fix: hosted bootstrap support for 'eu' region
@@ -410,7 +410,7 @@ A total of 13 lines added, 36 removed (delta -23)
 
 New changes in mender-convert since 4.0.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Remove trailing forward slash in overlay path.
 
@@ -458,7 +458,7 @@ A total of 1 lines added, 1 removed (delta 0)
 
 New changes in mender-convert since 4.0.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * grub-mender-grubenv: Fix boot failure because
   `mender_grub_storage_device` is not exported correctly.
@@ -536,7 +536,7 @@ A total of 888 lines added, 770 removed (delta 118)
 
 New changes in mender-convert since 3.0.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * The prebuilt Mender Grub integration now comes with the XFS module
   installed by default. ([ME-6](https://northerntech.atlassian.net/browse/ME-6))
@@ -642,7 +642,7 @@ A total of 115 lines added, 26 removed (delta 89)
 
 New changes in mender-convert since 3.0.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Support Mender integration in
   `raspberrypi-sys-mods/firstboot` script included in recent Raspberry Pi
@@ -724,7 +724,7 @@ A total of 269 lines added, 203 removed (delta 66)
 
 New changes in mender-convert since 3.0.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Detect when EFI is not available and disable grub.d integration.
 * Amend error message for optional parameters

@@ -17,7 +17,7 @@ _Released 12.18.2024_
 
 New changes in mender-gateway since 1.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * allow different keys for auth request and client certificate.
   ([MEN-7046](https://northerntech.atlassian.net/browse/MEN-7046))
@@ -93,7 +93,7 @@ _Released 12.02.2024_
 
 New changes in mender-gateway since 1.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * set the correct `Content-Length` when modifying the inventory payload
   ([MEN-7738](https://northerntech.atlassian.net/browse/MEN-7738))

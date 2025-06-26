@@ -17,7 +17,7 @@ _Released 04.12.2025_
 
 New changes in mender-artifact since 4.0.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix an issue with writing Artifact from a remote ssh
   connection where the user terminal was left with no echo if the `ssh`
@@ -57,7 +57,7 @@ _Released 12.18.2024_
 
 New changes in mender-artifact since 3.11.3:
 
-##### Bug Fixes
+##### Bug fixes
 
 * `mender-artifact` now detects if the device has an
   standalone `mender-snapshot`. From Mender client 4.0 onwards, the
@@ -88,7 +88,7 @@ _Released 12.02.2024_
 
 New changes in mender-artifact since 3.11.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fixes signature verification with ECDSA keys when the signing has been done externally with PKCS#11. Previously mender-artifact would always assume that the signature has been done with the built-in engine, which then wouldn't validate correctly. The bug affected only ECDSA key pairs.
   ([MEN-7523](https://northerntech.atlassian.net/browse/MEN-7523))
@@ -126,7 +126,7 @@ _Released 02.12.2024_
 
 New changes in mender-artifact since 3.11.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Unify meta-data element support in mender-artifact and C++ parser, and relax to accept all valid JSON
   ([MEN-6199](https://northerntech.atlassian.net/browse/MEN-6199))
@@ -168,7 +168,7 @@ A total of 82 lines added, 32 removed (delta 50)
 
 New changes in mender-artifact since 3.11.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * signing an existing artifact now preserves file permissions and owner/group
   ([MEN-3409](https://northerntech.atlassian.net/browse/MEN-3409))
@@ -221,7 +221,7 @@ _Released 12.28.2023_
 
 New changes in mender-artifact since 3.10.2:
 
-##### Bug Fixes
+##### Bug fixes
 
 * `mender-artifact` now detects if the device has an
   standalone `mender-snapshot`. From Mender client 4.0 onwards, the
@@ -307,7 +307,7 @@ A total of 426 lines added, 608 removed (delta -182)
 
 New changes in mender-artifact since 3.10.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix path seperator to "/". Restores functionality for
   windows.
@@ -510,7 +510,7 @@ A total of 21 lines added, 9 removed (delta 12)
 
 New changes in mender-artifact since 3.8.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * fixed an issue that prevented the makefile from working
   with newer docker versions
@@ -563,7 +563,7 @@ A total of 1326 lines added, 66 removed (delta 1260)
 
 New changes in mender-artifact since 3.7.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * signing not working together with `module-image`.
 
