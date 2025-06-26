@@ -9,6 +9,12 @@ github: false
 
 ## 4.0.1 - 2025-05-19
 
+### Security fixes
+
+* Fixed CVE-2025-49603 - Improper access control of device groups in Mender Server.
+  See the official announcement for more information:
+  [mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server](https://mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server)
+
 
 ### Bug Fixes
 
@@ -1059,6 +1065,12 @@ using the same URL as deployments service.
 ## Mender 3.7.11
 
 _Released 05.22.2025_
+
+### Security fixes
+
+* Fixed CVE-2025-49603 - Improper access control of device groups in Mender Server.
+  See the official announcement for more information:
+  [mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server](https://mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server)
 
 ### Changelogs
 
