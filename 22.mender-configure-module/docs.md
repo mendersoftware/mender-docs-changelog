@@ -43,7 +43,7 @@ A total of 68 lines added, 55 removed (delta 13)
 
 New changes in mender-configure-module since 1.1.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * make systemd installation systemd_unitdir aware
 

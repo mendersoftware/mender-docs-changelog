@@ -10,7 +10,7 @@ github: false
 ## v4.1.0-saas.9 - 2025-06-18
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Fixed another situation that could cause the organization token to overflow
@@ -25,7 +25,7 @@ github: false
 ## v4.1.0-saas.8 - 2025-06-18
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Fixed a problem that could apply RBAC restrictions on non-RBAC plans
@@ -43,7 +43,7 @@ github: false
 ## v4.1.0-saas.7 - 2025-06-18
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(generate-delta-worker)* Stuck when generating to local path
@@ -828,7 +828,7 @@ github: false
 ## v4.1.0-saas.6 - 2025-06-05
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Changed cancel button in device configuration edit to close the form
@@ -1403,7 +1403,7 @@ github: false
 ## 4.1.0-saas.5 - 2025-05-09
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(deployments)* Invalid Location header when returning 201 Created
@@ -1559,7 +1559,7 @@ github: false
 ## 4.1.0-saas.4 - 2025-04-10
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Fixed an issue where admin existence sometimes wasn't taken into account on tenant creation
@@ -1660,7 +1660,7 @@ github: false
 ## 4.1.0-saas.3 - 2025-03-20
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(deployment)* Ignore false errors when deleting data that does not exist
@@ -1831,7 +1831,7 @@ github: false
 ## 4.1.0-saas.2 - 2025-02-25
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Let read-only user no longer think they could act on selected releases
@@ -1904,7 +1904,7 @@ github: false
 ## 4.1.0-saas.1 - 2025-02-20
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Fixed date parsing & formatting issues after dayjs migation
@@ -1937,7 +1937,7 @@ github: false
 ## 4.1.0-saas - 2025-02-13
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Made user list tracking rely only on backend data instead of local store to prevent duplicate users listed
@@ -1988,7 +1988,7 @@ github: false
 ## 4.0.0-rc.9 - 2025-01-30
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Ensured target directory is nonempty on artifact generation
@@ -2037,7 +2037,7 @@ github: false
 ## 4.0.0-rc.8 - 2025-01-27
 
 
-### Bug Fixes
+### Bug fixes
 
 
 - *(gui)* Aligned webhook details behaviour w/ rest of UI

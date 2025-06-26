@@ -17,7 +17,7 @@ _Released 03.27.2025_
 
 New changes in monitor-client since 1.4.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix a bug in detection of flapping that can make the device
   erroneously trigger alerts continuously.
@@ -53,7 +53,7 @@ _Released 03.27.2025_
 
 New changes in monitor-client since 1.3.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix a bug in detection of flapping that can make the device
   erroneously trigger alerts continuously.
@@ -107,7 +107,7 @@ A total of 202 lines added, 89 removed (delta 113)
 
 New changes in monitor-client since 1.2.1:
 
-##### Bug Fixes
+##### Bug fixes
 
 * do not remove the check for not built in subsystems.
   ([MEN-6559](https://northerntech.atlassian.net/browse/MEN-6559))
@@ -123,7 +123,7 @@ _Released 09.25.2022_
 
 New changes in monitor-client since 1.2.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * `mender-monitord` detects not valid patterns when calling any log related checks. `mender-monitorctl` prevents creation of checks that lead to errors in pattern matching.
   ([MEN-5748](https://northerntech.atlassian.net/browse/MEN-5748))
@@ -168,7 +168,7 @@ A total of 168 lines added, 114 removed (delta 54)
 
 New changes in monitor-client since 1.1.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Use and honour ALERT_OFFLINE_STORE_MAX_COUNT setting.
 * Increasing read timeout in the pattern expiration worker.

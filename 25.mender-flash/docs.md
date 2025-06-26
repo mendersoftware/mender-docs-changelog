@@ -28,7 +28,7 @@ _Released 10.17.2024_
 
 New changes in mender-flash since 1.0.0:
 
-##### Bug Fixes
+##### Bug fixes
 
 * Fix detection of UBI devices.
   ([MEN-7156](https://northerntech.atlassian.net/browse/MEN-7156))
