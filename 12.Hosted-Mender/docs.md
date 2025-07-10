@@ -7,6 +7,571 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.10 - 2025-07-09
+
+
+### Bug fixes
+
+
+- *(deviceauth)* Fix the pagination logic in devices search endpoint
+([MEN-8521](https://northerntech.atlassian.net/browse/MEN-8521)) ([5431bc1](https://github.com///commit/5431bc1f6b91379021c633cc2c7d3e29ad31c1d9)) 
+
+- *(gui)* Fixed an issue that would not show progress in the final phase of phased deployments
+ ([5f3be23](https://github.com///commit/5f3be23d2aa35f4503979294d8e165c6ca7a9f60)) 
+
+- *(gui)* Fixed an issue that prevented reactivating highlighted tooltips in the UI
+ ([4babe2e](https://github.com///commit/4babe2e0a390dd4e7482692c1217342b2c645de2)) 
+
+- *(gui)* Improved likelyhood of getting all device report related data from backend
+ ([f429a5d](https://github.com///commit/f429a5ddf0166ffe563ace806a33084003a65746)) 
+
+- *(gui)* Fixed an issue that could limit release selection during deployment creation
+([MEN-8421](https://northerntech.atlassian.net/browse/MEN-8421)) ([a7e5352](https://github.com///commit/a7e5352aa2b2491bb61d15142bebab172d906905)) 
+
+- *(gui)* Made RBAC roles visible again for non-enterprise users
+ ([43f829b](https://github.com///commit/43f829b6ec0e44bef0ed1de1a1b83e4e56077afd)) 
+
+- *(gui)* Restored role removal prevention for built-in roles
+ ([89a1c43](https://github.com///commit/89a1c431af488c7c07577ff5ea4f06b96ef2362d)) 
+
+- *(gui)* Aligned Roles & Users drawer closing behaviour
+([MEN-8063](https://northerntech.atlassian.net/browse/MEN-8063)) ([346fd97](https://github.com///commit/346fd976cfd026e4b8c85cdf7765f4593a94598b)) 
+
+- *(gui)* Fixed closing animation for deployment drawer
+([MEN-8063](https://northerntech.atlassian.net/browse/MEN-8063)) ([a9bca65](https://github.com///commit/a9bca657c31002b053297d0c371a191f1369f4e3)) 
+
+- *(gui)* Restored error handling on user edits
+([ME-522](https://northerntech.atlassian.net/browse/ME-522)) ([882a5c7](https://github.com///commit/882a5c7f6bc03325a4fd5875d2b92d22fe6d7e29)) 
+
+
+  - regression from 5888d3e3ee47b764b256e89da9419f903936e4f3 in the prior repo
+
+- *(inventory)* Broken links for legacy endpoints for listing devices
+([MEN-8517](https://northerntech.atlassian.net/browse/MEN-8517)) ([9cf39b3](https://github.com///commit/9cf39b34f5ec6fb313a1b0e3c9afe30b5abce73e)) 
+
+
+  When using the /api/managment/v1/inventory/devices to list devices, the
+  path prefix is rewritten to /api/0.1.0/devices. This commit fixes the
+  regression.
+
+- *(tenantadm)* Return application/json in case of no route/method
+([MEN-8523](https://northerntech.atlassian.net/browse/MEN-8523)) ([1e4a923](https://github.com///commit/1e4a923ead44470b198df26bfcc5d1dfaa50b965)) 
+
+
+  This is a regression from the migration to gin HTTP framework which
+  returns text/plain by default.
+
+- *(useradm)* Use contenttype middleware for login endpoint
+ ([1f5bc7d](https://github.com///commit/1f5bc7d624d7bd57b9ee9a7d6fbecdfb88650bd7)) 
+
+- Ensure email is always encoded in lowercase when stored
+([MEN-8328](https://northerntech.atlassian.net/browse/MEN-8328)) ([d80c818](https://github.com///commit/d80c818eed43765387cfe81445e187f9c1833156)) 
+
+
+  Added a bson codec for model.Email that will ensure that emails are
+  always encoded in lowercase in the database to ensure case insensitive
+  queries.
+
+
+
+
+### Documentation
+
+
+- *(tenantadm)* Add API documentation for preview invoice API
+ ([1d14dc9](https://github.com///commit/1d14dc93fe6db09baa6d187ca7d70d924a53fc5c)) 
+
+- *(useradm)* Add security section to two-factor APIs
+ ([cc0736a](https://github.com///commit/cc0736a9d3ad90bf8954277a65f371770515d22f)) 
+
+
+  The endpoints require authentication.
+
+
+
+
+
+### Features
+
+
+- *(gui)* Staggered device report retrieval to further minimize hitting rate limits
+ ([02f85ff](https://github.com///commit/02f85ff88f4baf77d445a8c1ae6194d748e1a028)) 
+
+- *(gui)* Let UI aggregate all device software again - not just rootfs info
+ ([cfa3712](https://github.com///commit/cfa3712ecfd833c0c31151e114b4dd2456665666)) 
+
+
+  - due to the continued absence of the reporting backend this is re-introduced, but now in combination with the report scoped device retrieval
+
+- *(tenantadm)* Stripe webhooks handle payed subscription invoices
+ ([aa1dece](https://github.com///commit/aa1dece3b93dc4e074a385b162d6276ed3a10788)) 
+
+- *(tenantadm)* Add option to disable downgrades when submitting subscription changes
+([MEN-8347](https://northerntech.atlassian.net/browse/MEN-8347)) ([35edaca](https://github.com///commit/35edaca5fbf33820580b7a14e343dc2722665463)) 
+
+- *(tenantadm)* Create invoice preview
+([MEN-8349](https://northerntech.atlassian.net/browse/MEN-8349)) ([cb3bea8](https://github.com///commit/cb3bea882d2c55c45ac80313546398419477c3e9)) 
+
+- *(tenantadm)* Get stripe subscription
+([MEN-8148](https://northerntech.atlassian.net/browse/MEN-8148)) ([7b7d04f](https://github.com///commit/7b7d04fdbf047199aafe2afaf0104496d88e8767)) 
+
+- Implemented content type checker middleware for gin framework
+([MEN-8327](https://northerntech.atlassian.net/browse/MEN-8327)) ([9016554](https://github.com///commit/9016554b702297ad00f1a748d0824fdf19d05678)) 
+
+
+
+
+### Performance
+
+
+- Put routing path and parameters in separate accesslog fields
+ ([51832b6](https://github.com///commit/51832b685d70d6dbe2f8cdf8442b96d6eec843fb)) 
+
+
+  By separating the two, it is much less complex to index paths in the log
+  parser.
+
+
+
+
+### Refactor
+
+
+- *(deployments)* Migrate from ant0nie/go-json-rest to gin-gonic/gin
+([MEN-8234](https://northerntech.atlassian.net/browse/MEN-8234)) ([e8c3289](https://github.com///commit/e8c32890c9905f6f5099d9faadc1b2168af9ff99)) 
+
+- *(deployments)* Migrate deployments enterprise from ant0nie/go-json-rest to gin
+([MEN-8234](https://northerntech.atlassian.net/browse/MEN-8234)) ([3ff31a8](https://github.com///commit/3ff31a8ef060e381bddd7d696fbdc3e086fd15c1)) 
+
+- *(gui)* Let chart adding + editing rely on rhf
+ ([1f5f43f](https://github.com///commit/1f5f43f83c97808fd08ac29388947d88ecda255c)) 
+
+- *(gui)* Let report data retrieval + generation work per single report
+ ([049437f](https://github.com///commit/049437f4410cc51a5a4f76bc90b5b8ed2fc53385)) 
+
+- *(gui)* Let each device report handle data retrieval separately
+([ME-542](https://northerntech.atlassian.net/browse/ME-542)) ([23e16b2](https://github.com///commit/23e16b2dc95ce3fd4f5b94ed97198c2d9b0a8e5a)) 
+
+
+  + limit report retrieval + visibility to reasonably safe request counts
+  - this might reduce availability of dashboard widgets for more users, but until backend support arrives we'll remain limited
+  - in order to handle the reduced availability & measure interest a support note was added
+  
+  - to account for the improbability of return of the reporting service the reliance on this was removed too
+
+- *(gui)* Aligned delta artifact generation settings w/ updated design
+ ([b3e0587](https://github.com///commit/b3e0587833dade80d103d6db166bcd5cb58683ae)) 
+
+
+  + moved form to RHF to ease working w/ the changed UX
+
+- *(tenantadm)* Increase type safety and consolidate Stripe iterators
+ ([99063d4](https://github.com///commit/99063d49928a456da9d8e52c7ea789df155cb0a4)) 
+
+
+  Removed the redundant listIter type as it is covered by the firstBatch
+  of the stripeIter type. Also added a comment to provide clarity of the
+  generic return argument from stripeIter.Next.
+
+- *(useradm)* Remove the redundant authz middleware
+ ([49c629d](https://github.com///commit/49c629d0a8bd50314c0c462211e1ea1d29c5dc8d)) 
+
+- *(useradm)* Make the http pkg structure more consistent
+ ([f645fe7](https://github.com///commit/f645fe7ce6216cc42a5b11145ff183263c175979)) 
+
+
+  Move the endpoints to `router.go` and rename `middleware.go` to `utils.go`
+
+- *(useradm)* Migrate useradm enterprise from ant0nie/go-json-rest to gin
+([MEN-8237](https://northerntech.atlassian.net/browse/MEN-8237)) ([f313b66](https://github.com///commit/f313b662a022550e85d65dd95579a46280d833fe)) 
+
+- *(useradm)* Move enterprise endpoints uris to `routing.go`
+ ([16fcd7b](https://github.com///commit/16fcd7be25adae3e27a7270953926117965280c1)) 
+
+- Remove unused ant0ine/go-json-rest utilities from deployments
+ ([42f090b](https://github.com///commit/42f090ba9a5f7fd2a0529688943d3d76646a1cab)) 
+- Swap ant0ine/go-json-rest with gin-gonic/gin in routing pkg
+ ([b53abcd](https://github.com///commit/b53abcd60631dcbf9a7895af8de2bcdfcc007460)) 
+
+
+
+
+### Security
+
+
+- Bump urllib3 from 2.4.0 to 2.5.0 in /backend/tests
+ ([f7fcb02](https://github.com///commit/f7fcb0283b29b4bb1d56c52e247581d0d486dc67)) 
+
+
+  Bumps [urllib3](https://github.com/urllib3/urllib3) from 2.4.0 to 2.5.0.
+  - [Release notes](https://github.com/urllib3/urllib3/releases)
+  - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+  - [Commits](https://github.com/urllib3/urllib3/compare/2.4.0...2.5.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: urllib3
+    dependency-version: 2.5.0
+    dependency-type: direct:production
+  ...
+- Bump github.com/go-viper/mapstructure/v2 in /backend
+ ([777d367](https://github.com///commit/777d3673eb1bb9b9a3d82aa48cbf8091417f8bb4)) 
+
+
+  Bumps [github.com/go-viper/mapstructure/v2](https://github.com/go-viper/mapstructure) from 2.2.1 to 2.3.0.
+  - [Release notes](https://github.com/go-viper/mapstructure/releases)
+  - [Changelog](https://github.com/go-viper/mapstructure/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/go-viper/mapstructure/compare/v2.2.1...v2.3.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/go-viper/mapstructure/v2
+    dependency-version: 2.3.0
+    dependency-type: indirect
+  ...
+- Bump pillow from 11.2.1 to 11.3.0 in /backend/tests
+ ([8aef575](https://github.com///commit/8aef575eb2aa55e2ea26cbc5595181166281a639)) 
+
+
+  Bumps [pillow](https://github.com/python-pillow/Pillow) from 11.2.1 to 11.3.0.
+  - [Release notes](https://github.com/python-pillow/Pillow/releases)
+  - [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
+  - [Commits](https://github.com/python-pillow/Pillow/compare/11.2.1...11.3.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: pillow
+    dependency-version: 11.3.0
+    dependency-type: direct:production
+  ...
+- Bump the backend-tests-python-dependencies group across 2 directories with 10 updates
+ ([85a6aeb](https://github.com///commit/85a6aebda942e11894a5b1908cf12969d2fcd600)) 
+
+
+  ---
+  updated-dependencies:
+  - dependency-name: opensearch-py
+    dependency-version: 3.0.0
+    dependency-type: direct:production
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pytest
+    dependency-version: 8.4.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pymongo
+    dependency-version: 4.13.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: certifi
+    dependency-version: 2025.6.15
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: opensearch-py
+    dependency-version: 3.0.0
+    dependency-type: direct:production
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: boto3
+    dependency-version: 1.39.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: kubernetes
+    dependency-version: 33.1.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pillow
+    dependency-version: 11.3.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pytest-xdist
+    dependency-version: 3.8.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: stripe
+    dependency-version: 12.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pydantic
+    dependency-version: 2.11.7
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  ...
+- Bump the mui group in /frontend with 3 updates
+ ([f799717](https://github.com///commit/f799717b655060d17d4565e01c7d48ab8842cb46)) 
+
+
+  Bumps the mui group in /frontend with 3 updates: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
+  
+  
+  Updates `@mui/icons-material` from 7.0.1 to 7.0.2
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.0.2/packages/mui-icons-material)
+  
+  Updates `@mui/material` from 7.0.1 to 7.0.2
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.0.2/packages/mui-material)
+  
+  Updates `@mui/x-date-pickers` from 7.28.2 to 8.2.0
+  - [Release notes](https://github.com/mui/mui-x/releases)
+  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/mui-x/commits/v8.2.0/packages/x-date-pickers)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@mui/icons-material"
+    dependency-version: 7.0.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/material"
+    dependency-version: 7.0.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: mui
+  ...
+- Bump the backend-golang-dependencies group
+ ([3068589](https://github.com///commit/3068589de1ccdb2539fcf247a32bc3b71dcefa60)) 
+
+
+  Bumps the backend-golang-dependencies group in /backend with 14 updates:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [github.com/Azure/azure-sdk-for-go/sdk/azcore](https://github.com/Azure/azure-sdk-for-go) | `1.17.1` | `1.18.0` |
+  | [github.com/Azure/azure-sdk-for-go/sdk/storage/azblob](https://github.com/Azure/azure-sdk-for-go) | `1.6.0` | `1.6.1` |
+  | [github.com/aws/aws-sdk-go-v2/config](https://github.com/aws/aws-sdk-go-v2) | `1.29.12` | `1.29.14` |
+  | [github.com/aws/aws-sdk-go-v2/credentials](https://github.com/aws/aws-sdk-go-v2) | `1.17.65` | `1.17.67` |
+  | [github.com/aws/aws-sdk-go-v2/service/iot](https://github.com/aws/aws-sdk-go-v2) | `1.64.1` | `1.64.2` |
+  | [github.com/aws/aws-sdk-go-v2/service/iotdataplane](https://github.com/aws/aws-sdk-go-v2) | `1.27.1` | `1.27.2` |
+  | [github.com/aws/aws-sdk-go-v2/service/s3](https://github.com/aws/aws-sdk-go-v2) | `1.79.0` | `1.79.3` |
+  | [github.com/nats-io/nats-server/v2](https://github.com/nats-io/nats-server) | `2.11.1` | `2.11.3` |
+  | [github.com/nats-io/nats.go](https://github.com/nats-io/nats.go) | `1.40.1` | `1.41.2` |
+  | [github.com/redis/go-redis/v9](https://github.com/redis/go-redis) | `9.7.3` | `9.8.0` |
+  | [golang.org/x/crypto](https://github.com/golang/crypto) | `0.36.0` | `0.37.0` |
+  | [golang.org/x/net](https://github.com/golang/net) | `0.38.0` | `0.39.0` |
+  | [golang.org/x/sys](https://github.com/golang/sys) | `0.31.0` | `0.32.0` |
+  | [golang.org/x/term](https://github.com/golang/term) | `0.30.0` | `0.31.0` |
+  
+  
+  Updates `github.com/Azure/azure-sdk-for-go/sdk/azcore` from 1.17.1 to 1.18.0
+  - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
+  - [Changelog](https://github.com/Azure/azure-sdk-for-go/blob/main/documentation/release.md)
+  - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.17.1...sdk/azcore/v1.18.0)
+  
+  Updates `github.com/Azure/azure-sdk-for-go/sdk/storage/azblob` from 1.6.0 to 1.6.1
+  - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
+  - [Changelog](https://github.com/Azure/azure-sdk-for-go/blob/main/documentation/release.md)
+  - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.6.0...sdk/azcore/v1.6.1)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/config` from 1.29.12 to 1.29.14
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.29.12...config/v1.29.14)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.17.65 to 1.17.67
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/credentials/v1.17.65...credentials/v1.17.67)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.64.1 to 1.64.2
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.64.1...service/iot/v1.64.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.27.1 to 1.27.2
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.27.1...v1.27.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.79.0 to 1.79.3
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.79.0...service/s3/v1.79.3)
+  
+  Updates `github.com/nats-io/nats-server/v2` from 2.11.1 to 2.11.3
+  - [Release notes](https://github.com/nats-io/nats-server/releases)
+  - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
+  - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.1...v2.11.3)
+  
+  Updates `github.com/nats-io/nats.go` from 1.40.1 to 1.41.2
+  - [Release notes](https://github.com/nats-io/nats.go/releases)
+  - [Commits](https://github.com/nats-io/nats.go/compare/v1.40.1...v1.41.2)
+  
+  Updates `github.com/redis/go-redis/v9` from 9.7.3 to 9.8.0
+  - [Release notes](https://github.com/redis/go-redis/releases)
+  - [Changelog](https://github.com/redis/go-redis/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/redis/go-redis/compare/v9.7.3...v9.8.0)
+  
+  Updates `golang.org/x/crypto` from 0.36.0 to 0.37.0
+  - [Commits](https://github.com/golang/crypto/compare/v0.36.0...v0.37.0)
+  
+  Updates `golang.org/x/net` from 0.38.0 to 0.39.0
+  - [Commits](https://github.com/golang/net/compare/v0.38.0...v0.39.0)
+  
+  Updates `golang.org/x/sys` from 0.31.0 to 0.32.0
+  - [Commits](https://github.com/golang/sys/compare/v0.31.0...v0.32.0)
+  
+  Updates `golang.org/x/term` from 0.30.0 to 0.31.0
+  - [Commits](https://github.com/golang/term/compare/v0.30.0...v0.31.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/azcore
+    dependency-version: 1.18.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/storage/azblob
+    dependency-version: 1.6.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/config
+    dependency-version: 1.29.14
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/credentials
+    dependency-version: 1.17.67
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iot
+    dependency-version: 1.64.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iotdataplane
+    dependency-version: 1.27.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/s3
+    dependency-version: 1.79.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats-server/v2
+    dependency-version: 2.11.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats.go
+    dependency-version: 1.41.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/redis/go-redis/v9
+    dependency-version: 9.8.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/crypto
+    dependency-version: 0.37.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/net
+    dependency-version: 0.39.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/sys
+    dependency-version: 0.32.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/term
+    dependency-version: 0.31.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  ...
+- Bump vite from 6.2.6 to 6.3.4 in /frontend
+ ([03506da](https://github.com///commit/03506da1dfa189da0a062f03c178e0d67fc69d0d)) 
+
+
+  Bumps [vite](https://github.com/vitejs/vite/tree/HEAD/packages/vite) from 6.2.6 to 6.3.4.
+  - [Release notes](https://github.com/vitejs/vite/releases)
+  - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
+  - [Commits](https://github.com/vitejs/vite/commits/v6.3.4/packages/vite)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: vite
+    dependency-version: 6.3.4
+    dependency-type: indirect
+  ...
+
+
+
+
+### Build
+
+
+- Change default make target to test for backend/pkg
+ ([5ba3fd7](https://github.com///commit/5ba3fd7deda6421612029b31317cc61c2b1ef373)) 
+- Add make target for pkg unit tests to test-unit root target
+ ([5c2e23a](https://github.com///commit/5c2e23a6ff9b073b38cad1ef56e8845264369817)) 
+
+
+
+
+### Revert
+
+
+- "test: Unit tests for configuring rate limits"
+ ([4ef01b1](https://github.com///commit/4ef01b1a66d5f20e10d587fbdfc9d3febe14ee8e)) 
+
+
+  This reverts commit 16caca6ae355f2dfa843c019f31f0722456b1c96.
+- "test: Unit tests for rate limit parameters and applying rate limits"
+ ([4102778](https://github.com///commit/4102778ea46ac4bda13db499177cb491362b6000)) 
+
+
+  This reverts commit 4bf8462399128586238c734fdd14c90ad7ce0479.
+- "feat(deviceauth): Rate limit device requests"
+ ([9c158a3](https://github.com///commit/9c158a3377fe6b9ac9f98f2b7cb15936237b6de1)) 
+
+
+  This reverts commit 9c3041f5d54ea06c920ae0cc977c8af594133fb2.
+- "feat(deviceauth): Rate limit authenticated devices API"
+ ([aa7eff8](https://github.com///commit/aa7eff8de394de13f53008e2aaa5273bf7939a5c)) 
+
+
+  This reverts commit 8c8028081a54a62ba8673071350414b096aa87b0.
+- "test: Fix deviceauth.cache tests after changing client initialization"
+ ([9d21a83](https://github.com///commit/9d21a83e05444189a51e197d4d5945d148e2a7f6)) 
+
+
+  This reverts commit 721a2f760a38a9c25c38e5aa95fbd9f6f180ea7f.
+- Gin utility for applying middleware to routes
+ ([9f5c79c](https://github.com///commit/9f5c79cc30a4ee2576ef39f650b3a161c5996548)) 
+
+
+  The func does not implement what it is intended to do and instead
+  applies the middleware to all routes in the group.
+
+
+
+
+
+
 ## v4.1.0-saas.9 - 2025-06-18
 
 
