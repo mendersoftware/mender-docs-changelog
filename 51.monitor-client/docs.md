@@ -7,11 +7,27 @@ shortcode-core:
 github: false
 ---
 
-## monitor-client 1.4.1
+## monitor-client 1.4.2
 
 _Released 03.27.2025_
 
 ### Changelogs
+
+## monitor-client 1.4.2
+
+_Released 07.24.2025_
+
+### Changelogs
+
+#### monitor-client (1.4.2)
+
+New changes in monitor-client since 1.4.1:
+
+##### Bug Fixes
+
+* Redirect USB disconnect log to journal instead of log file
+  ([MEN-8348](https://northerntech.atlassian.net/browse/MEN-8348))
+
 
 #### monitor-client (1.4.1)
 

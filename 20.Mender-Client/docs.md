@@ -7,11 +7,31 @@ shortcode-core:
 github: false
 ---
 
-## mender 5.0.1
+## mender 5.0.2
 
 _Released 03.27.2025_
 
 ### Changelogs
+
+## mender 5.0.2
+
+_Released 07.24.2025_
+
+### Changelogs
+
+#### mender (5.0.2)
+
+New changes in mender since 5.0.1:
+
+##### Bug Fixes
+
+* Fix issue where trailing bytes in an HTTP response
+  break parsing of the future HTTP responses, resulting in `bad
+  version` errors and failed HTTP requests
+  ([MEN-8554](https://northerntech.atlassian.net/browse/MEN-8554))
+* Make mender-inventory-geo work with both wget provided by busybox and full version of wget
+  ([MEN-8548](https://northerntech.atlassian.net/browse/MEN-8548))
+
 
 #### mender (5.0.1)
 
