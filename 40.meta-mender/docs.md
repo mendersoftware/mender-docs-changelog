@@ -203,9 +203,18 @@ New changes in meta-mender since kirkstone-v2024.06:
   this can break daemon mode.
 
 
-## meta-mender kirkstone-v2025.04
+## meta-mender kirkstone-v2025.07
 
 ### Changelogs
+
+#### meta-mender (kirkstone-v2025.07)
+
+New changes in meta-mender since kirkstone-v2025.04:
+
+* Add recipe for `mender` 5.0.2
+* Add recipe for `mender-connect` 2.3.1
+* Add recipe for `mender-monitor` 1.4.2
+
 
 #### meta-mender (kirkstone-v2025.04)
 
