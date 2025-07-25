@@ -7,11 +7,28 @@ shortcode-core:
 github: false
 ---
 
-## mender-connect 2.3.0
+## mender-connect 2.3.1
 
 _Released 12.18.2024_
 
 ### Changelogs
+
+## mender-connect 2.3.1
+
+_Released 07.24.2025_
+
+### Changelogs
+
+#### mender-connect (2.3.1)
+
+New changes in mender-connect since 2.3.0:
+
+##### Bug Fixes
+
+* Preserve group assignments by retrieving GIDs for users
+  and adding them when executing a shell.
+  ([ME-530](https://northerntech.atlassian.net/browse/ME-530))
+
 
 #### mender-connect (2.3.0)
 
