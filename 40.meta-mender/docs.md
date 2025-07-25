@@ -7,9 +7,19 @@ shortcode-core:
 github: false
 ---
 
-## meta-mender scarthgap-v2025.04
+## meta-mender scarthgap-v2025.07
 
 ### Changelogs
+
+#### meta-mender (scarthgap-v2025.07)
+
+New changes in meta-mender since scarthgap-v2025.04:
+
+* Add recipe for `mender-artifact` 4.1.0
+* Add recipe for `mender` 5.0.2
+* Add recipe for `mender-connect` 2.3.1
+* Add recipe for `mender-monitor` 1.4.2
+
 
 #### meta-mender (scarthgap-v2025.04)
 
