@@ -9,12 +9,6 @@ github: false
 
 ## monitor-client 1.4.2
 
-_Released 03.27.2025_
-
-### Changelogs
-
-## monitor-client 1.4.2
-
 _Released 07.24.2025_
 
 ### Changelogs

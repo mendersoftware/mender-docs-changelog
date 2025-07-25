@@ -9,12 +9,6 @@ github: false
 
 ## mender 5.0.2
 
-_Released 03.27.2025_
-
-### Changelogs
-
-## mender 5.0.2
-
 _Released 07.24.2025_
 
 ### Changelogs

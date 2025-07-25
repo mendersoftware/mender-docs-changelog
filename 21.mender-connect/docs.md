@@ -9,12 +9,6 @@ github: false
 
 ## mender-connect 2.3.1
 
-_Released 12.18.2024_
-
-### Changelogs
-
-## mender-connect 2.3.1
-
 _Released 07.24.2025_
 
 ### Changelogs
