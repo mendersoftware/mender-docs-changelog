@@ -7,6 +7,496 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.11 - 2025-07-28
+
+
+### Bug fixes
+
+
+- *(deviceauth)* Fix the pagination logic in devices search endpoint
+([MEN-8521](https://northerntech.atlassian.net/browse/MEN-8521)) ([5431bc1](https://github.com///commit/5431bc1f6b91379021c633cc2c7d3e29ad31c1d9)) 
+
+- *(deviceconnect)* Increase the file upload size limit
+ ([6ff38c3](https://github.com///commit/6ff38c39c3a04a37e52098a7d21225bb310c6e1f)) 
+
+- *(gui)* Fixed billing profile not being fetched
+ ([9042c6b](https://github.com///commit/9042c6be7ccc445a5affca63b65559bb562e6597)) 
+
+- *(gui)* Fixed a problem that could apply RBAC restrictions on non-RBAC plans
+([MEN-8498](https://northerntech.atlassian.net/browse/MEN-8498)) ([c870092](https://github.com///commit/c87009221163505732cb677e44a9c159233c3d68)) 
+
+- *(gui)* Fixed an issue that could cause the organization token to overflow for older tenants
+ ([e04f0e9](https://github.com///commit/e04f0e99df3c4edcd932034bc3d0aad31bd8467f)) 
+
+- *(gui)* Fixed another situation that could cause the organization token to overflow
+ ([555cb1e](https://github.com///commit/555cb1e7ec1571bd5ed02104c1185138b6e25d4a)) 
+
+- *(gui)* Restricted to use id when adding users on trial plan
+([ME-532](https://northerntech.atlassian.net/browse/ME-532)) ([20f8936](https://github.com///commit/20f89367ae97779489c2decfc5d38b9b59d9cf02)) 
+
+- *(tenantadm)* Aligned api specs w/ code it should represent
+ ([d6b4c7f](https://github.com///commit/d6b4c7f1b23f4e448108c73c3f396f7a7d636d59)) 
+
+- *(useradm)* Always generate a unique user ID for newly created users
+([MEN-8514](https://northerntech.atlassian.net/browse/MEN-8514)) ([85e0ea9](https://github.com///commit/85e0ea9351a6afc981f0719e66b69a73aad0a0b9)) 
+
+- Make all routes response with JSON when route or method missing
+([MEN-8523](https://northerntech.atlassian.net/browse/MEN-8523)) ([0825b4d](https://github.com///commit/0825b4d8bcaf40e9e747247f7f7f5a5031c37c8a)) 
+- Ensure that middlewares are set in the correct order
+([MEN-8587](https://northerntech.atlassian.net/browse/MEN-8587)) ([e3d1101](https://github.com///commit/e3d1101bf5dcdf41090ed50ae8c52920b162734e)) 
+- Allow user to see devices info when having read permission
+([MEN-8473](https://northerntech.atlassian.net/browse/MEN-8473)) ([758214b](https://github.com///commit/758214b50388aa996707caf088db2c3023a86196)) 
+
+
+  If user have a read permission to a device group, allow the user to see
+  the devices information in a deployment sent to the device group.
+- Ensure the enterprise backend to return JSON on no method or route
+([MEN-8523](https://northerntech.atlassian.net/browse/MEN-8523)) ([b5426ae](https://github.com///commit/b5426ae6d89292e3e4fc414c4f30d355db3783e7)) 
+
+
+
+
+### Documentation
+
+
+- *(deployments)* Deprecate v1 GET `/artifacts/list` management endpoint
+([MEN-8183](https://northerntech.atlassian.net/browse/MEN-8183)) ([2b308d5](https://github.com///commit/2b308d55b0f08bde3a6d845fa260587bac328d7f)) 
+
+- *(tenantadm)* Add API specification for billing profile registration
+ ([fb1e172](https://github.com///commit/fb1e1720d05662c8b36f24576ed0fb7fc4d8ccaa)) 
+
+
+
+
+
+### Features
+
+
+- *(deployments)* Implement new v2 GET `/artifacts` endpoint
+([MEN-8181](https://northerntech.atlassian.net/browse/MEN-8181)) ([8e3e25c](https://github.com///commit/8e3e25c4446630e49cf5b4f9a0e8cb68fb645827)) 
+
+- *(deployments)* New internal endpoint to get deployment device groups
+([MEN-8473](https://northerntech.atlassian.net/browse/MEN-8473)) ([1e2e380](https://github.com///commit/1e2e380cdddee6b0450b62fa0869ab631d0d94e5)) 
+
+- *(gui)* Let UI aggregate all device software again - not just rootfs info
+ ([cfa3712](https://github.com///commit/cfa3712ecfd833c0c31151e114b4dd2456665666)) 
+
+
+  - due to the continued absence of the reporting backend this is re-introduced, but now in combination with the report scoped device retrieval
+
+- *(tenantadm)* New endpoint to view current subscription
+ ([3a5ceec](https://github.com///commit/3a5ceecac585a4c887b5dede7c6cc715de17de0b)) 
+
+
+  The new endpoint GET /api/management/v2/billing/subscription
+  retrieves the current Subscription.
+
+- *(tenantadm)* API endpoint for registering billing profile
+([MEN-8455](https://northerntech.atlassian.net/browse/MEN-8455)) ([ba80ea3](https://github.com///commit/ba80ea345ac2ef3bf320f8e752f967355b049b26)) 
+
+
+  This is a replacement for the previous /upgrade API.
+
+- *(useradm)* Add rate limiting configuration for authenticated requests
+([MEN-7745](https://northerntech.atlassian.net/browse/MEN-7745)) ([172e232](https://github.com///commit/172e23249bfe8bb42d411e584a5a9f3d332e02cf)) 
+
+
+  Added the following configuration parameters:
+  
+  ```yaml
+  ratelimits:
+   # auth configures ratelimits for authenticated requests.
+    auth:
+      # enable rate limiting also requires redis_connection_string to be effective.
+      enable: false
+      # default rate limit group is the default ratelimiting parameters used when
+      # no group `match`es the expressions.
+      default:
+        quota: 100    # number of request per
+        interval: 60s # interval
+        # event_expression is a go template for grouping requests.
+        # The following attributes are available in the context:
+        # Identity - contains a subset of the JWT claims:
+          - .Subject  (jwt:"sub")          string
+          - .Tenant   (jwt:"mender.tenant) string
+          - .Plan     (jwt:"mender.plan)   string
+          - .Addons   (jwt:"mender.addons) struct{Enabled bool; Name string}
+          - .IsUser   (jwt:"mender.user)   bool
+          - .IsDevice (jwt:"mender.device) bool
+          - .Trial    (jwt:"mender.trial)  bool
+        event_expression: "{{with .Identity}}{{.Subject}}{{end}}"
+      # groups specify rate limiting groups that overrides the parameters in the
+      # default group.
+      groups: []
+      # Example:
+      # - name: "slow"
+      #   quota: 1
+      #   interval: 30s
+      #   event_expression: "{{with .Identity}}{{.Tenant}}{{end}}"
+      # match specifies matching expressions for mapping API requests to rate
+      # limiting groups.
+      match: []
+      # Example:
+      #   # api_pattern specifies an API path pattern as defined by http.ServeMux
+      #   # https://pkg.go.dev/net/http#hdr-Patterns-ServeMux
+      # - api_pattern: /api/management/v1/useradm/slow/api
+      #   # group_expression defines the group for this matching expression.
+      #   # a group can be selected dynamically using Go templates.
+      #   # The template context is the same as ratelimits.default.event_expression
+      #   group_expression: "slow"
+  ```
+
+- *(useradm)* Add a deployments client with `AreInDeploymentGroups` method
+([MEN-8473](https://northerntech.atlassian.net/browse/MEN-8473)) ([519ba94](https://github.com///commit/519ba94902f3075f50e4bee8bd5d9222a8bd49bb)) 
+
+- Integrate requestsize middleware into deployments
+ ([c957f12](https://github.com///commit/c957f1210db1de0e2d748cfff2f348f63d64edd6)) 
+- Integrate requestsize middleware into deviceauth
+ ([a67ade9](https://github.com///commit/a67ade9d1ea7609df515a44396680e4101c9f5e9)) 
+- Integrate requestsize middleware into deviceconfig
+ ([5cac8ca](https://github.com///commit/5cac8ca0f260f16966ad3cb5e605dd193833dcb1)) 
+- Integrate requestsize middleware into deviceconnect
+ ([7ca1025](https://github.com///commit/7ca10258c293d32fdc8e1567811b5ffe1f4a23fb)) 
+- Integrate requestsize middleware into inventory
+ ([9b2ed08](https://github.com///commit/9b2ed083119aaea30226f1e9cd80025cbd0b4001)) 
+- Integrate requestsize middleware into iot-manager
+ ([7135c16](https://github.com///commit/7135c16f1fbdcfd75b3eda787d0146b3e0ed3ac8)) 
+- Integrate requestsize middleware into reporting
+ ([0a1797a](https://github.com///commit/0a1797a636c8400b6027d46f6d703351aa586d32)) 
+- Integrate requestsize middleware into useradm
+ ([bf7b3b5](https://github.com///commit/bf7b3b591599962839178ce0dc712911a449bd8e)) 
+
+
+
+
+### Refactor
+
+
+- *(deployments)* Migrate from ant0nie/go-json-rest to gin-gonic/gin
+([MEN-8234](https://northerntech.atlassian.net/browse/MEN-8234)) ([a03820f](https://github.com///commit/a03820f22f542b67d8ecb9b37b28faaf57f34df3)) 
+
+- *(gui)* Let chart adding + editing rely on rhf
+ ([1f5f43f](https://github.com///commit/1f5f43f83c97808fd08ac29388947d88ecda255c)) 
+
+- *(useradm)* Create utility function to load JWT PKI
+ ([e1e9c31](https://github.com///commit/e1e9c31d4f14a906e3c76aba522e2d7c3143ead5)) 
+
+
+  ... to lower cyclomatic complexity for main.RunServer.
+
+- Remove rest_utils pkg and migrate existing utils to rest.utils
+([MEN-8233](https://northerntech.atlassian.net/browse/MEN-8233)) ([b25a5f9](https://github.com///commit/b25a5f944e3c25e6f7552d705c78351a7ce796ae)) 
+- Remove unused ant0ine/go-json-rest utilities from deployments
+ ([90dd5f8](https://github.com///commit/90dd5f80af8bf35df2461dfe60939700062af8a0)) 
+- Move integration fixtures to conftest.py and remove unused imports
+ ([dae51c6](https://github.com///commit/dae51c61cbf7a03b487c3307cbcb3c52ebbce44c)) 
+
+
+
+
+### Security
+
+
+- Bump on-headers, express-session and morgan
+ ([873c2c0](https://github.com///commit/873c2c001696c19965980485deb1c9fbcb7eb50f)) 
+
+
+  Bumps [on-headers](https://github.com/jshttp/on-headers), [express-session](https://github.com/expressjs/session) and [morgan](https://github.com/expressjs/morgan). These dependencies needed to be updated together.
+  
+  Updates `on-headers` from 1.0.2 to 1.1.0
+  - [Release notes](https://github.com/jshttp/on-headers/releases)
+  - [Changelog](https://github.com/jshttp/on-headers/blob/master/HISTORY.md)
+  - [Commits](https://github.com/jshttp/on-headers/compare/v1.0.2...v1.1.0)
+  
+  Updates `express-session` from 1.18.1 to 1.18.2
+  - [Release notes](https://github.com/expressjs/session/releases)
+  - [Changelog](https://github.com/expressjs/session/blob/master/HISTORY.md)
+  - [Commits](https://github.com/expressjs/session/compare/v1.18.1...v1.18.2)
+  
+  Updates `morgan` from 1.10.0 to 1.10.1
+  - [Release notes](https://github.com/expressjs/morgan/releases)
+  - [Changelog](https://github.com/expressjs/morgan/blob/master/HISTORY.md)
+  - [Commits](https://github.com/expressjs/morgan/compare/1.10.0...1.10.1)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: on-headers
+    dependency-version: 1.1.0
+    dependency-type: indirect
+  - dependency-name: express-session
+    dependency-version: 1.18.2
+    dependency-type: indirect
+  - dependency-name: morgan
+    dependency-version: 1.10.1
+    dependency-type: indirect
+  ...
+- Bump on-headers and compression in /frontend
+ ([11cd11c](https://github.com///commit/11cd11c4dce26cc951a7b261cec7efc65b5479c9)) 
+
+
+  Bumps [on-headers](https://github.com/jshttp/on-headers) and [compression](https://github.com/expressjs/compression). These dependencies needed to be updated together.
+  
+  Updates `on-headers` from 1.0.2 to 1.1.0
+  - [Release notes](https://github.com/jshttp/on-headers/releases)
+  - [Changelog](https://github.com/jshttp/on-headers/blob/master/HISTORY.md)
+  - [Commits](https://github.com/jshttp/on-headers/compare/v1.0.2...v1.1.0)
+  
+  Updates `compression` from 1.8.0 to 1.8.1
+  - [Release notes](https://github.com/expressjs/compression/releases)
+  - [Changelog](https://github.com/expressjs/compression/blob/master/HISTORY.md)
+  - [Commits](https://github.com/expressjs/compression/compare/1.8.0...v1.8.1)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: on-headers
+    dependency-version: 1.1.0
+    dependency-type: indirect
+  - dependency-name: compression
+    dependency-version: 1.8.1
+    dependency-type: indirect
+  ...
+- Bump github.com/go-viper/mapstructure/v2 in /backend
+ ([777d367](https://github.com///commit/777d3673eb1bb9b9a3d82aa48cbf8091417f8bb4)) 
+
+
+  Bumps [github.com/go-viper/mapstructure/v2](https://github.com/go-viper/mapstructure) from 2.2.1 to 2.3.0.
+  - [Release notes](https://github.com/go-viper/mapstructure/releases)
+  - [Changelog](https://github.com/go-viper/mapstructure/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/go-viper/mapstructure/compare/v2.2.1...v2.3.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/go-viper/mapstructure/v2
+    dependency-version: 2.3.0
+    dependency-type: indirect
+  ...
+- Bump the production-dependencies group
+ ([8ff713b](https://github.com///commit/8ff713b6206aaa16285056bc693c97a2d022c383)) 
+
+
+  ---
+  updated-dependencies:
+  - dependency-name: "@sentry/react"
+    dependency-version: 9.34.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@stripe/stripe-js"
+    dependency-version: 7.4.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: axios
+    dependency-version: 1.10.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-big-calendar
+    dependency-version: 1.19.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: production-dependencies
+  - dependency-name: react-hook-form
+    dependency-version: 7.59.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-router-dom
+    dependency-version: 7.6.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: production-dependencies
+  ...
+- Bump @playwright/test
+ ([0d169e8](https://github.com///commit/0d169e861652ed22ec56df20737d2d51a233b787)) 
+
+
+  Bumps the playwright group in /frontend/tests/e2e_tests with 1 update: [@playwright/test](https://github.com/microsoft/playwright).
+  
+  
+  Updates `@playwright/test` from 1.53.0 to 1.53.2
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.53.0...v1.53.2)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@playwright/test"
+    dependency-version: 1.53.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: playwright
+  ...
+- Bump urllib3 from 2.4.0 to 2.5.0 in /backend/tests
+ ([f7fcb02](https://github.com///commit/f7fcb0283b29b4bb1d56c52e247581d0d486dc67)) 
+
+
+  Bumps [urllib3](https://github.com/urllib3/urllib3) from 2.4.0 to 2.5.0.
+  - [Release notes](https://github.com/urllib3/urllib3/releases)
+  - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+  - [Commits](https://github.com/urllib3/urllib3/compare/2.4.0...2.5.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: urllib3
+    dependency-version: 2.5.0
+    dependency-type: direct:production
+  ...
+- Bump pbkdf2 from 3.1.2 to 3.1.3 in /frontend
+ ([00e44b0](https://github.com///commit/00e44b08654f8d2c3dedc22159db53fa98e88444)) 
+
+
+  Bumps [pbkdf2](https://github.com/crypto-browserify/pbkdf2) from 3.1.2 to 3.1.3.
+  - [Changelog](https://github.com/browserify/pbkdf2/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/crypto-browserify/pbkdf2/compare/v3.1.2...v3.1.3)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: pbkdf2
+    dependency-version: 3.1.3
+    dependency-type: indirect
+  ...
+- Bump form-data from 4.0.1 to 4.0.4 in /frontend
+ ([1de20af](https://github.com///commit/1de20af63d14ffcad40a756f3e5d65ec6a923dfd)) 
+
+
+  Bumps [form-data](https://github.com/form-data/form-data) from 4.0.1 to 4.0.4.
+  - [Release notes](https://github.com/form-data/form-data/releases)
+  - [Changelog](https://github.com/form-data/form-data/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/form-data/form-data/compare/v4.0.1...v4.0.4)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: form-data
+    dependency-version: 4.0.4
+    dependency-type: indirect
+  ...
+- Bump axios from 1.10.0 to 1.11.0 in /frontend
+ ([ec258ce](https://github.com///commit/ec258ce841a5c473515533267253a063db056b7e)) 
+
+
+  Bumps [axios](https://github.com/axios/axios) from 1.10.0 to 1.11.0.
+  - [Release notes](https://github.com/axios/axios/releases)
+  - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
+  - [Commits](https://github.com/axios/axios/compare/v1.10.0...v1.11.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: axios
+    dependency-version: 1.11.0
+    dependency-type: direct:production
+  ...
+- Bump mender-artifact to the latest version
+ ([5091cc4](https://github.com///commit/5091cc426c67b6140e7864bb9eedc7629cbed715)) 
+- Bump the development-dependencies group across 1 directory with 14 updates
+ ([f47ef65](https://github.com///commit/f47ef651009e85b7574879e8702bbc704f1b7348)) 
+
+
+  ---
+  updated-dependencies:
+  - dependency-name: "@rspack/cli"
+    dependency-version: 1.4.8
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/core"
+    dependency-version: 1.4.8
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@sentry/webpack-plugin"
+    dependency-version: 4.0.0
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: development-dependencies
+  - dependency-name: "@types/node"
+    dependency-version: 24.0.15
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: development-dependencies
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    dependency-version: 8.37.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@vitejs/plugin-react"
+    dependency-version: 4.7.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@vitest/coverage-v8"
+    dependency-version: 3.2.4
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: core-js
+    dependency-version: 3.44.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: globals
+    dependency-version: 16.3.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: lint-staged
+    dependency-version: 16.1.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: msw
+    dependency-version: 2.10.4
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: prettier
+    dependency-version: 3.6.2
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: undici
+    dependency-version: 7.12.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: vitest
+    dependency-version: 3.2.4
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  ...
+- Bump the mui group in /frontend with 4 updates
+ ([0b504f6](https://github.com///commit/0b504f67457dda2b09426895ff0ed2362f865429)) 
+
+
+  ---
+  updated-dependencies:
+  - dependency-name: "@emotion/styled"
+    dependency-version: 11.14.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/icons-material"
+    dependency-version: 7.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  - dependency-name: "@mui/material"
+    dependency-version: 7.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.6.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  ...
+
+
+
+
+
+
 ## v4.1.0-saas.10 - 2025-07-09
 
 
