@@ -7,6 +7,684 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.12 - 2025-08-12
+
+
+### Bug fixes
+
+
+- *(gui)* Reject configuration deployment with too long field length
+([MEN-8123](https://northerntech.atlassian.net/browse/MEN-8123)) ([c95e30f](https://github.com///commit/c95e30fae4687dbf1b17e742c0ef3c5900384b01)) 
+
+- *(gui)* Prevented a situation that created the appearance we support multiple integrations
+ ([1dba715](https://github.com///commit/1dba715184b01835b42dc09001fab29d506b4754)) 
+
+- *(gui)* Let artifact type filtering no longer autoselect an option to reduce user confusion
+ ([f77aaee](https://github.com///commit/f77aaeeaf164d7310f2456c629c03cc3ab416192)) 
+
+- *(gui)* Fixed an issue that prevented showing details of a auditlogged portforward session
+ ([a807849](https://github.com///commit/a807849137af0a2470e2a0bbb4d53d1f3e7b25a2)) 
+
+
+  - extracted the shared logic to a reusable hook to improve reusability of the working approach
+
+- *(gui)* Adjusted price parsing for the new stripe configuration
+([MEN-8412](https://northerntech.atlassian.net/browse/MEN-8412)) ([951d3af](https://github.com///commit/951d3af8c1509fb7bfebaa913428d9c5466e672a)) 
+
+- *(gui)* Adjusted billing page for older customers to exclude upgrade page
+([MEN-8412](https://northerntech.atlassian.net/browse/MEN-8412)) ([2c0de68](https://github.com///commit/2c0de680085518b5cabea33db73543986de61725)) 
+
+- *(gui)* Aligned license report download location w/ backend expectation
+([MEN-8447](https://northerntech.atlassian.net/browse/MEN-8447)) ([4a638e2](https://github.com///commit/4a638e2bb9f48b7802fb4d5366a9cbc7bac7716f)) 
+
+- *(gui)* Fixed an issue that would prevent showing updated pagination info in some situations
+ ([989d785](https://github.com///commit/989d78577f7e79aa67508ed94f0da3fdb418b750)) 
+
+- *(tenantadm)* `create-org` CLI correctly handles 404 response from workflows
+ ([96b2ae2](https://github.com///commit/96b2ae2b58e2536997afb054e437384e4849225b)) 
+
+- *(tenantadm)* Make plan bindings config path optional
+ ([becc5f8](https://github.com///commit/becc5f8e170be87376ee4d406877e6876e10e65f)) 
+
+
+  Hard-coded the defaults instead of always loading the file which may
+  cause unnecessary headaches when trying to execute the binary without
+  the config file in the right path.
+
+- *(tenantadm)* Prevent creating child tenant without users
+([MEN-8261](https://northerntech.atlassian.net/browse/MEN-8261)) ([01c3fee](https://github.com///commit/01c3fee5a5329eac587fa754f229a815d1282e35)) 
+
+- *(useradm)* Validate User `sso` values with configured providers
+([MEN-8513](https://northerntech.atlassian.net/browse/MEN-8513)) ([83e5abf](https://github.com///commit/83e5abf49da0b0f296d870cd9f320c693ae0a99f)) 
+
+- *(useradm)* Use configured base URL for OAuth2 redirects
+([MEN-8502](https://northerntech.atlassian.net/browse/MEN-8502)) ([aeb7deb](https://github.com///commit/aeb7deba0a88a77a835fa59d32fb0dc1f2d45072)) 
+
+
+  Removes the use of X-Forwarded-Host when generating the redirect URL for
+  OAuth2 login and instead rely on the configured value `base_url` (env:
+  USERADM_BASE_URL).
+
+- Allow user to see devices info when having read permission
+([MEN-8473](https://northerntech.atlassian.net/browse/MEN-8473)) ([758214b](https://github.com///commit/758214b50388aa996707caf088db2c3023a86196)) 
+
+
+  If user have a read permission to a device group, allow the user to see
+  the devices information in a deployment sent to the device group.
+- Ensure the enterprise backend to return JSON on no method or route
+([MEN-8523](https://northerntech.atlassian.net/browse/MEN-8523)) ([b5426ae](https://github.com///commit/b5426ae6d89292e3e4fc414c4f30d355db3783e7)) 
+
+
+
+
+### Documentation
+
+
+- *(deployments)* Deprecate v1 GET `/artifacts/list` management endpoint
+([MEN-8183](https://northerntech.atlassian.net/browse/MEN-8183)) ([2b308d5](https://github.com///commit/2b308d55b0f08bde3a6d845fa260587bac328d7f)) 
+
+- *(workflows)* Prepare API specification in OpenAPI format
+([QA-893](https://northerntech.atlassian.net/browse/QA-893)) ([0986835](https://github.com///commit/0986835db0a349d6ac776bc1fc95adc913c2e4f5)) 
+
+- Adjusted documentation for release process
+ ([3f8464f](https://github.com///commit/3f8464fb1e9fbf852d09446021706d91146ccee2)) 
+
+
+  Tried to reword some of the sections as it is quite confusing which
+  sections to follow and which to ignore for a hosted Mender release.
+  I also made the first step optional, requiring only checking for
+  critical fixes for the enterprise sync PRs.
+
+
+
+
+### Features
+
+
+- *(gui)* Added subscription page route
+([MEN-8412](https://northerntech.atlassian.net/browse/MEN-8412)) ([b4980a4](https://github.com///commit/b4980a4e8d63a11c9851ded8e1fcf4937db34155)) 
+
+- *(gui)* Changed upgrade links to the new subscription page
+([MEN-8412](https://northerntech.atlassian.net/browse/MEN-8412)) ([215ae41](https://github.com///commit/215ae4173bc1cb89ecc1b5f6e551ee354de54cc0)) 
+
+- *(gui)* Navigate user to a proper upgrade component depending on the current pricing
+([MEN-8412](https://northerntech.atlassian.net/browse/MEN-8412)) ([a8d66a7](https://github.com///commit/a8d66a7c1ad6ac4aefacb4103c2db5e8093794df)) 
+
+- *(tenantadm)* Extend functionality of internal endpoint for getting tenants
+([MEN-8225](https://northerntech.atlassian.net/browse/MEN-8225)) ([56b77a2](https://github.com///commit/56b77a2f2dc395d2c4c80bbe393b5b4508793f3e)) 
+
+
+  Make it possible to filter tenants by plan and trial fields and to specify which fields
+  resulting objects should contain.
+
+- *(useradm)* Add rate limiting configuration for authenticated requests
+([MEN-7745](https://northerntech.atlassian.net/browse/MEN-7745)) ([07d5b18](https://github.com///commit/07d5b18a1e7df6c710fad94d1d53c6173fadf013)) 
+
+
+  Added the following configuration parameters:
+  
+  ```yaml
+  ratelimits:
+    # auth configures ratelimits for authenticated requests.
+    auth:
+      # enable rate limiting also requires redis_connection_string to be effective.
+      enable: false
+      # reject_unmatched rejects requests that does not resolve to a
+      # ratelimit group. That is, if either there's no api_pattern matching
+      # the request or if the group_expression does not match a group.
+      # Defaults to false - disable ratelimiting for unmatched requests.
+      reject_unmatched: false
+      # groups specify rate limiting groups that overrides the parameters in the
+      # default group.
+      groups:
+          # name defines the name of the group. The name is used in
+          # match.group_expression to match an api_pattern with a group.
+        - name: default
+          # interval is the time interval when the rate limiter resets.
+          interval: 1m
+          # quota is the number of requests allowed in an interval.
+          quota: 300
+          # event_expression is a go template for grouping requests.
+          # The following attributes are available in the context:
+          # Identity - contains a subset of the JWT claims:
+          # .Subject  (jwt:"sub")          string
+          # .Tenant   (jwt:"mender.tenant") string
+          # .Plan     (jwt:"mender.plan")   string
+          # .Addons   (jwt:"mender.addons") []struct{Enabled bool; Name string}
+          # .IsUser   (jwt:"mender.user")   bool
+          # .IsDevice (jwt:"mender.device") bool
+          # .Trial    (jwt:"mender.trial")  bool
+          event_expression: "{{with .Identity}}{{.Subject}}{{end}}"
+          # More example groups:
+      # - name: "example_slow_group_by_tenant"
+      #   quota: 1
+      #   interval: 30s
+      #   event_expression: "{{with .Identity}}{{.Tenant}}{{end}}"
+      # match specifies matching expressions for mapping API requests to rate
+      # limiting groups.
+      match:
+          # api_pattern specifies an API path pattern as defined by http.ServeMux
+          # https://pkg.go.dev/net/http#hdr-Patterns-ServeMux
+        - api_pattern: /
+          # group_expression defines  the group for this matching expression.
+          # A group can be selected dynamically using Go templates or statically
+          # with a literal string.
+          # See group.event_expression for template context attributes.
+          group_expression: "default"
+          # More example match rules:
+      # - api_pattern: /api/management/v1/useradm/expample/slow/api/
+      #   group_expression: "example_slow_group_by_tenant"
+      # - api_pattern: /api/management/v1/useradm/expample/slow/api/
+      #   group_expression: >
+      #     {{-if .Identity.Trial-}}
+      #     example_slow_group_by_tenant
+      #     {{-else-}}
+      #     default
+      #     {{-end-}}
+  ```
+
+- *(useradm)* CLI command for getting and exporting usage statistics
+([MEN-8225](https://northerntech.atlassian.net/browse/MEN-8225)) ([2c81c3b](https://github.com///commit/2c81c3b1b7d5e174c96dc4161cd0b218f3ca94de)) 
+
+- *(workflows)* New workflow for exporting useradm stats into google spreadsheet
+([MEN-8225](https://northerntech.atlassian.net/browse/MEN-8225)) ([a29fdd6](https://github.com///commit/a29fdd66a94c7a074193a59b07bd7b8e5510443f)) 
+
+- Restrict the child tenants SSO changes to the parent tenant SSO
+([ME-535](https://northerntech.atlassian.net/browse/ME-535)) ([d704951](https://github.com///commit/d704951a865664f066139466a46d35434f5fcce5)) 
+
+
+  Support locking the SSO configuration for the child tenants
+  to the configuration given by the parent.
+
+
+
+
+### Refactor
+
+
+- *(gui)* Unified session details display for device connect sessions
+ ([8d526ae](https://github.com///commit/8d526ae8433393c7f7095fea299e44d17e7ab588)) 
+
+- *(tenantadm)* Do not embed stripe.API inside internal client
+ ([341719d](https://github.com///commit/341719d0bd5298e5998c7b5cf6c2b4cea3eebfa6)) 
+
+- *(useradm)* Rename ErrForbidden to ErrFeatureUnavailableForPlan
+ ([224639d](https://github.com///commit/224639d2f0cdf70b3d7e531dcf44dfcf4ca58d8f)) 
+
+
+  It's too easy to use this error variable in places where it shouldn't
+  be.
+
+- *(useradm)* Bake some new consts for oauth2 signup cookies
+ ([f5e5afd](https://github.com///commit/f5e5afdbc8cd8188834badc3a8c9424434dac248)) 
+
+
+
+
+
+### Security
+
+
+- Bump pbkdf2 from 3.1.2 to 3.1.3 in /frontend
+ ([00e44b0](https://github.com///commit/00e44b08654f8d2c3dedc22159db53fa98e88444)) 
+
+
+  Bumps [pbkdf2](https://github.com/crypto-browserify/pbkdf2) from 3.1.2 to 3.1.3.
+  - [Changelog](https://github.com/browserify/pbkdf2/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/crypto-browserify/pbkdf2/compare/v3.1.2...v3.1.3)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: pbkdf2
+    dependency-version: 3.1.3
+    dependency-type: indirect
+  ...
+- Bump mender-artifact to the latest version
+ ([5091cc4](https://github.com///commit/5091cc426c67b6140e7864bb9eedc7629cbed715)) 
+- Bump the development-dependencies group across 1 directory with 14 updates
+ ([f47ef65](https://github.com///commit/f47ef651009e85b7574879e8702bbc704f1b7348)) 
+
+
+  ---
+  updated-dependencies:
+  - dependency-name: "@rspack/cli"
+    dependency-version: 1.4.8
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/core"
+    dependency-version: 1.4.8
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@sentry/webpack-plugin"
+    dependency-version: 4.0.0
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: development-dependencies
+  - dependency-name: "@types/node"
+    dependency-version: 24.0.15
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: development-dependencies
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    dependency-version: 8.37.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@vitejs/plugin-react"
+    dependency-version: 4.7.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@vitest/coverage-v8"
+    dependency-version: 3.2.4
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: core-js
+    dependency-version: 3.44.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: globals
+    dependency-version: 16.3.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: lint-staged
+    dependency-version: 16.1.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: msw
+    dependency-version: 2.10.4
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: prettier
+    dependency-version: 3.6.2
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: undici
+    dependency-version: 7.12.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: vitest
+    dependency-version: 3.2.4
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  ...
+- Bump the mui group in /frontend with 4 updates
+ ([0b504f6](https://github.com///commit/0b504f67457dda2b09426895ff0ed2362f865429)) 
+
+
+  ---
+  updated-dependencies:
+  - dependency-name: "@emotion/styled"
+    dependency-version: 11.14.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/icons-material"
+    dependency-version: 7.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  - dependency-name: "@mui/material"
+    dependency-version: 7.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.6.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  ...
+- Bump @playwright/test
+ ([4cfded4](https://github.com///commit/4cfded4336983d99e3a09433e9d48893abee1b4a)) 
+
+
+  Bumps the playwright group in /frontend/tests/e2e_tests with 1 update: [@playwright/test](https://github.com/microsoft/playwright).
+  
+  
+  Updates `@playwright/test` from 1.53.2 to 1.54.2
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.53.2...v1.54.2)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@playwright/test"
+    dependency-version: 1.54.2
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: playwright
+  ...
+- Bump typescript
+ ([72c1988](https://github.com///commit/72c19882bc010834c45e144d61591bcc2b6338ee)) 
+
+
+  Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 1 update: [typescript](https://github.com/microsoft/TypeScript).
+  
+  
+  Updates `typescript` from 5.8.3 to 5.9.2
+  - [Release notes](https://github.com/microsoft/TypeScript/releases)
+  - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release-publish.yml)
+  - [Commits](https://github.com/microsoft/TypeScript/compare/v5.8.3...v5.9.2)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: typescript
+    dependency-version: 5.9.2
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: e2e-test-dependencies
+  ...
+- Bump @mui/x-date-pickers in /frontend in the mui group
+ ([89980f5](https://github.com///commit/89980f56cdf3d84e4e28a034f49caea1a56464fa)) 
+
+
+  Bumps the mui group in /frontend with 1 update: [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
+  
+  
+  Updates `@mui/x-date-pickers` from 8.6.0 to 8.9.2
+  - [Release notes](https://github.com/mui/mui-x/releases)
+  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/mui-x/commits/v8.9.2/packages/x-date-pickers)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.9.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  ...
+- Bump the backend-docker-dependencies group across 10 directories with 2 updates
+ ([0ce201b](https://github.com///commit/0ce201b6acee13f14559f49f3bc1cf73bc584917)) 
+
+
+  Bumps the backend-docker-dependencies group with 2 updates in the /backend/services/create-artifact-worker directory: golang and alpine.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deployments directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceauth directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceconfig directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceconnect directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/inventory directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/iot-manager directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/reporting directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/useradm directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/workflows directory: golang.
+  
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `alpine` from 3.22.0 to 3.22.1
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  Updates `golang` from 1.24.4 to 1.24.5
+  
+  ---
+  updated-dependencies:
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: alpine
+    dependency-version: 3.22.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.24.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  ...
+- Bump the backend-golang-dependencies group
+ ([ea75028](https://github.com///commit/ea750287738af93cf168f3e6229684c3d00e796e)) 
+
+
+  Bumps the backend-golang-dependencies group in /backend with 15 updates:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [github.com/Azure/azure-sdk-for-go/sdk/azcore](https://github.com/Azure/azure-sdk-for-go) | `1.18.0` | `1.18.2` |
+  | [github.com/Azure/azure-sdk-for-go/sdk/storage/azblob](https://github.com/Azure/azure-sdk-for-go) | `1.6.1` | `1.6.2` |
+  | [github.com/aws/aws-sdk-go-v2](https://github.com/aws/aws-sdk-go-v2) | `1.36.5` | `1.37.1` |
+  | [github.com/aws/aws-sdk-go-v2/config](https://github.com/aws/aws-sdk-go-v2) | `1.29.17` | `1.30.2` |
+  | [github.com/aws/aws-sdk-go-v2/credentials](https://github.com/aws/aws-sdk-go-v2) | `1.17.70` | `1.18.2` |
+  | [github.com/aws/aws-sdk-go-v2/service/iot](https://github.com/aws/aws-sdk-go-v2) | `1.64.4` | `1.66.0` |
+  | [github.com/aws/aws-sdk-go-v2/service/iotdataplane](https://github.com/aws/aws-sdk-go-v2) | `1.27.4` | `1.28.1` |
+  | [github.com/aws/aws-sdk-go-v2/service/s3](https://github.com/aws/aws-sdk-go-v2) | `1.82.0` | `1.85.1` |
+  | [github.com/go-viper/mapstructure/v2](https://github.com/go-viper/mapstructure) | `2.3.0` | `2.4.0` |
+  | [github.com/nats-io/nats-server/v2](https://github.com/nats-io/nats-server) | `2.11.6` | `2.11.7` |
+  | [github.com/nats-io/nats.go](https://github.com/nats-io/nats.go) | `1.43.0` | `1.44.0` |
+  | [golang.org/x/crypto](https://github.com/golang/crypto) | `0.39.0` | `0.40.0` |
+  | [golang.org/x/net](https://github.com/golang/net) | `0.41.0` | `0.42.0` |
+  | [golang.org/x/sys](https://github.com/golang/sys) | `0.33.0` | `0.34.0` |
+  | [golang.org/x/term](https://github.com/golang/term) | `0.32.0` | `0.33.0` |
+  
+  
+  Updates `github.com/Azure/azure-sdk-for-go/sdk/azcore` from 1.18.0 to 1.18.2
+  - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
+  - [Changelog](https://github.com/Azure/azure-sdk-for-go/blob/main/documentation/go-mgmt-sdk-release-guideline.md)
+  - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.18.0...sdk/azcore/v1.18.2)
+  
+  Updates `github.com/Azure/azure-sdk-for-go/sdk/storage/azblob` from 1.6.1 to 1.6.2
+  - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
+  - [Changelog](https://github.com/Azure/azure-sdk-for-go/blob/main/documentation/go-mgmt-sdk-release-guideline.md)
+  - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.6.1...sdk/storage/azblob/v1.6.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2` from 1.36.5 to 1.37.1
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.36.5...v1.37.1)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/config` from 1.29.17 to 1.30.2
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.29.17...v1.30.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.17.70 to 1.18.2
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/config/v1.18.2/CHANGELOG.md)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/credentials/v1.17.70...config/v1.18.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.64.4 to 1.66.0
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/iot/v1.64.4...service/s3/v1.66.0)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.27.4 to 1.28.1
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.27.4...config/v1.28.1)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.82.0 to 1.85.1
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.82.0...service/s3/v1.85.1)
+  
+  Updates `github.com/go-viper/mapstructure/v2` from 2.3.0 to 2.4.0
+  - [Release notes](https://github.com/go-viper/mapstructure/releases)
+  - [Changelog](https://github.com/go-viper/mapstructure/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/go-viper/mapstructure/compare/v2.3.0...v2.4.0)
+  
+  Updates `github.com/nats-io/nats-server/v2` from 2.11.6 to 2.11.7
+  - [Release notes](https://github.com/nats-io/nats-server/releases)
+  - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
+  - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.6...v2.11.7)
+  
+  Updates `github.com/nats-io/nats.go` from 1.43.0 to 1.44.0
+  - [Release notes](https://github.com/nats-io/nats.go/releases)
+  - [Commits](https://github.com/nats-io/nats.go/compare/v1.43.0...v1.44.0)
+  
+  Updates `golang.org/x/crypto` from 0.39.0 to 0.40.0
+  - [Commits](https://github.com/golang/crypto/compare/v0.39.0...v0.40.0)
+  
+  Updates `golang.org/x/net` from 0.41.0 to 0.42.0
+  - [Commits](https://github.com/golang/net/compare/v0.41.0...v0.42.0)
+  
+  Updates `golang.org/x/sys` from 0.33.0 to 0.34.0
+  - [Commits](https://github.com/golang/sys/compare/v0.33.0...v0.34.0)
+  
+  Updates `golang.org/x/term` from 0.32.0 to 0.33.0
+  - [Commits](https://github.com/golang/term/compare/v0.32.0...v0.33.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/azcore
+    dependency-version: 1.18.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/storage/azblob
+    dependency-version: 1.6.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2
+    dependency-version: 1.37.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/config
+    dependency-version: 1.30.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/credentials
+    dependency-version: 1.18.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iot
+    dependency-version: 1.66.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iotdataplane
+    dependency-version: 1.28.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/s3
+    dependency-version: 1.85.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/go-viper/mapstructure/v2
+    dependency-version: 2.4.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats-server/v2
+    dependency-version: 2.11.7
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats.go
+    dependency-version: 1.44.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/crypto
+    dependency-version: 0.40.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/net
+    dependency-version: 0.42.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/sys
+    dependency-version: 0.34.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/term
+    dependency-version: 0.33.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  ...
+
+
+
+
+### Build
+
+
+- *(gui)* Added HMR enabled dev option
+ ([4eb4d22](https://github.com///commit/4eb4d22f357acf104e083d9c2477a1b5aac79f18)) 
+
+
+
+
+
+
+
 ## v4.1.0-saas.11 - 2025-07-28
 
 
