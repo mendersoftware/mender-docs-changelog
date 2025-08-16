@@ -7,6 +7,105 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.13 - 2025-08-16
+
+
+### Bug fixes
+
+
+- *(deployments)* Wrong version on delta/jobs endpoints
+ ([5c64290](https://github.com///commit/5c6429007b7331a49c137c95ab3fed5d9deaf09b)) 
+
+- *(workflows)* Move inventory to end of decommission workflow
+ ([355fcd9](https://github.com///commit/355fcd91eeb0a0e3cd5d2fb4005d213b00b2a524)) 
+
+
+  To lower the probability of failed decommission causing the device not
+  to show up in the UI. By not removing the device from inventory it is
+  possible to initiate the retry from the UI.
+
+
+
+
+
+### Documentation
+
+
+- *(useradm)* Move API specification to single file
+([QA-1094](https://northerntech.atlassian.net/browse/QA-1094)) ([9bcf6cf](https://github.com///commit/9bcf6cf82123f35dc0a0ff7869d0bcd30869aeff)) 
+
+
+
+
+
+### Features
+
+
+- *(workflows)* Support both pull and push mode consumer
+([MEN-8326](https://northerntech.atlassian.net/browse/MEN-8326)) ([4a93316](https://github.com///commit/4a9331623ffcd19435620ff845c788d3a0e869e2)) 
+
+- *(workflows)* Add CLI flag to migrate consumers from push to pull mode
+ ([8b9a9a2](https://github.com///commit/8b9a9a2aeb9dc9406dab6497594d94d156f510e1)) 
+
+
+
+
+
+### Security
+
+
+- Bump the backend-tests-python-dependencies group across 1 directory with 4 updates
+ ([43f7d7f](https://github.com///commit/43f7d7f647d31124d0d6497e8d10862202f66536)) 
+
+
+  Bumps the backend-tests-python-dependencies group with 4 updates in the /backend/tests directory: [boto3](https://github.com/boto/boto3), [certifi](https://github.com/certifi/python-certifi), [cryptography](https://github.com/pyca/cryptography) and [stripe](https://github.com/stripe/stripe-python).
+  
+  
+  Updates `boto3` from 1.39.0 to 1.40.0
+  - [Release notes](https://github.com/boto/boto3/releases)
+  - [Commits](https://github.com/boto/boto3/compare/1.39.0...1.40.0)
+  
+  Updates `certifi` from 2025.6.15 to 2025.7.14
+  - [Commits](https://github.com/certifi/python-certifi/compare/2025.06.15...2025.07.14)
+  
+  Updates `cryptography` from 45.0.4 to 45.0.5
+  - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+  - [Commits](https://github.com/pyca/cryptography/compare/45.0.4...45.0.5)
+  
+  Updates `stripe` from 12.2.0 to 12.4.0
+  - [Release notes](https://github.com/stripe/stripe-python/releases)
+  - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/stripe/stripe-python/compare/v12.2.0...v12.4.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: boto3
+    dependency-version: 1.40.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: certifi
+    dependency-version: 2025.7.14
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: cryptography
+    dependency-version: 45.0.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: stripe
+    dependency-version: 12.4.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  ...
+
+
+
+
+
+
 ## v4.1.0-saas.12 - 2025-08-12
 
 
