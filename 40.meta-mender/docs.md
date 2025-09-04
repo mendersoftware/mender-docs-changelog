@@ -7,6 +7,19 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender scarthgap-v2025.09
+
+### Changelogs
+
+#### meta-mender (scarthgap-v2025.09)
+
+New changes in meta-mender since scarthgap-v2025.07:
+
+##### Bug Fixes
+
+* mender-part-images handling of inactive partition
+
+
 ## meta-mender scarthgap-v2025.07
 
 ### Changelogs
@@ -201,6 +214,19 @@ New changes in meta-mender since kirkstone-v2024.06:
   `INIT_MANAGER = "systemd"` in your `local.conf` file. Alternatively,
   use `MENDER_FEATURES_DISABLE = "mender-systemd"`, but be aware that
   this can break daemon mode.
+
+
+## meta-mender kirkstone-v2025.09
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2025.09)
+
+New changes in meta-mender since kirkstone-v2025.07:
+
+##### Bug Fixes
+
+* mender-part-images handling of inactive partition
 
 
 ## meta-mender kirkstone-v2025.07
