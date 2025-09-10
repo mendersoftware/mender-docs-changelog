@@ -6,6 +6,62 @@ shortcode-core:
     active: false
 github: false
 ---
+## 4.1.4 - 2025-09-10
+
+
+### Bug fixes
+
+
+- Remove curl call
+ ([2d231e0](https://github.com/mendersoftware/QA-985-ccc-release-test--delete-me/commit/2d231e0da97c84854a88a2448f3af488ed394abd))  by @lluiscampos
+
+
+
+
+
+
+## 4.1.3 - 2025-09-10
+
+
+### Bug fixes
+
+
+- Fix yaml syntax
+ ([120722f](https://github.com/mendersoftware/QA-985-ccc-release-test--delete-me/commit/120722fa5ca6d26720910f6f884fe82904c5bfae))  by @lluiscampos
+
+
+
+
+
+
+## 4.1.2 - 2025-09-10
+
+
+### Bug fixes
+
+
+- Fix typo in CI
+ ([499fe4e](https://github.com/mendersoftware/QA-985-ccc-release-test--delete-me/commit/499fe4e5283d736a1a1e6acdb2804848982e3608))  by @lluiscampos
+
+
+
+
+
+
+## 4.1.1 - 2025-09-10
+
+
+### Bug fixes
+
+
+- Hotfixes for the pipeline
+ ([d8f73d4](https://github.com/mendersoftware/QA-985-ccc-release-test--delete-me/commit/d8f73d4c078f7413d5d4b6b2d7df5ce8b52d2575))  by @lluiscampos
+
+
+
+
+
+
 
 ## mender-artifact 4.1.0
 
@@ -1600,5 +1656,4 @@ _(Never released publicly)_
 #### mender-artifact (2.0.2)
 * Fix broken header checksum verification.
 ([MEN-1412](https://northerntech.atlassian.net/browse/MEN-1412))
-
 
