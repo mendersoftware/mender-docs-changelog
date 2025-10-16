@@ -7,6 +7,30 @@ shortcode-core:
 github: false
 ---
 
+## mender 5.0.3-build3
+
+_Released 10.14.2025_
+
+### Changelogs
+
+#### mender (5.0.3-build3)
+
+New changes in mender since 5.0.2:
+
+##### Bug Fixes
+
+* Fix an issue where a user-aborted deployment would reboot and rollback
+  during e.g. download. This is fixed by adding a new state event, `DeploymentAborted`,
+  which is posted when sending status updates to the server. Each state that sends
+  deployment status now explicitly checks if the deployment is aborted and handles
+  it accordingly.
+  ([ME-527](https://northerntech.atlassian.net/browse/ME-527))
+* Fix an issue where mender-update hangs when network connection is
+  lost during artifact download. Implement a 5-minute timeout in `AsyncReadNextBodyPart`
+  to allow the HTTP resumer to resume the download.
+  ([MEN-8717](https://northerntech.atlassian.net/browse/MEN-8717))
+
+
 ## mender 5.0.2
 
 _Released 07.24.2025_

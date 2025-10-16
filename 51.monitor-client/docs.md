@@ -7,6 +7,22 @@ shortcode-core:
 github: false
 ---
 
+## monitor-client 1.4.3-build3
+
+_Released 10.14.2025_
+
+### Changelogs
+
+#### monitor-client (1.4.3-build3)
+
+New changes in monitor-client since 1.4.2:
+
+##### Bug Fixes
+
+* Fixed case where mender-monitor alert descriptions were cleared
+  ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
+
+
 ## monitor-client 1.4.2
 
 _Released 07.24.2025_

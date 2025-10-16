@@ -7,6 +7,37 @@ shortcode-core:
 github: false
 ---
 
+## mender-binary-delta 1.5.2-build3
+
+_Released 10.14.2025_
+
+### Changelogs
+
+#### mender-binary-delta (1.5.2-build3)
+
+New changes in mender-binary-delta since 1.5.1:
+
+##### Bug Fixes
+
+* Fix segfault when failing to get part number during install
+
+  This was a hidden bug that surfaced now while fixing the support for
+  PARTUUID and PARTLABEL. Or, in other words, when handling Mender
+  configuration with partitions that do not end with a number. In this
+  case pass_num is NULL and xasprintf will try to dereference it.
+* Correctly apply deltas with PARTUUID and PARTLABEL configuration
+
+  This fixes the bug where mender-binary-delta fails to apply the delta
+  when partitions are configured with PARTUUID or PARTLABEL options.
+
+  Fixes the issue by first resolving the device symlinks like
+  /dev/disk/by-partuuid/*, /dev/disk/by-partlabel/*, and /dev/root to
+  their actual device paths (e.g., /dev/sda2, /dev/mmcblk0p2) and then
+  extracting the partition numbers.
+
+  Related to https://github.com/mendersoftware/mender/pull/1613
+  ([MEN-7160](https://northerntech.atlassian.net/browse/MEN-7160))
+
 
 ## mender-binary-delta 1.5.1
 
