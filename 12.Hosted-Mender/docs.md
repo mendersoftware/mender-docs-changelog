@@ -7,6 +7,69 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.16 - 2025-10-23
+
+
+### Bug fixes
+
+
+- *(tenantadm)* Make subscription parameters required for preview recurring invoice
+([MEN-8835](https://northerntech.atlassian.net/browse/MEN-8835)) ([3bfa95c](https://github.com///commit/3bfa95c74ef3e515487913ea1bebe59eb50d2b98)) 
+
+
+  The recurring preview mode does not work in some edge cases. Since the
+  request is always sent from the UI with a subscription request we'll
+  enforce this requirement and remove the dependency on the subscription
+  when doing the upstream request.
+
+
+
+
+
+### Documentation
+
+
+- *(deviceauth)* Update and deprecate /limits/max_devices endpoints
+([MEN-8570](https://northerntech.atlassian.net/browse/MEN-8570)) ([a70bcda](https://github.com///commit/a70bcdae3485615d31d7b999c2d9023e73136bd7)) 
+
+- *(deviceauth)* Add missing spec for limits/devices to backend docs
+ ([2212874](https://github.com///commit/22128746d51cadd01da6942426c16ba7737d59f1)) 
+
+- *(deviceauth)* Document unlimited limits in API docs
+([MEN-8886](https://northerntech.atlassian.net/browse/MEN-8886)) ([fff5975](https://github.com///commit/fff5975d3a1163fa31d97f34412eef8ffa50c40e)) 
+
+
+
+
+
+### Features
+
+
+- *(deviceauth)* Support unlimited device tier limits
+([MEN-8886](https://northerntech.atlassian.net/browse/MEN-8886)) ([0e17a1f](https://github.com///commit/0e17a1f4f196b905b478624eced1edecb3776f88)) 
+
+- *(deviceauth)* DEVICEAUTH_ENABLE_TIERS to enable device tiers support
+ ([b3bffb4](https://github.com///commit/b3bffb4c75da6d57841bbe99b4ec63ab0f0e71c2)) 
+
+
+
+
+
+### Refactor
+
+
+- *(deviceauth)* Remove unused limits function and fix comment
+([MEN-8886](https://northerntech.atlassian.net/browse/MEN-8886)) ([347ddc7](https://github.com///commit/347ddc71d5d09ad09238f90167eebd29ce66d62d)) 
+
+- *(deviceauth)* Rename MaxDevicesCount constant
+([MEN-8886](https://northerntech.atlassian.net/browse/MEN-8886)) ([05775fd](https://github.com///commit/05775fdca4e8dea754defd8864b9774231f8562d)) 
+
+
+
+
+
+
+
 ## v4.1.0-saas.14 - 2025-09-30
 
 
