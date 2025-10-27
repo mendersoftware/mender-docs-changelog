@@ -7,6 +7,277 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.16 - 2025-10-23
+
+
+### Bug fixes
+
+
+- *(tenantadm)* Make subscription parameters required for preview recurring invoice
+([MEN-8835](https://northerntech.atlassian.net/browse/MEN-8835)) ([3bfa95c](https://github.com///commit/3bfa95c74ef3e515487913ea1bebe59eb50d2b98)) 
+
+
+  The recurring preview mode does not work in some edge cases. Since the
+  request is always sent from the UI with a subscription request we'll
+  enforce this requirement and remove the dependency on the subscription
+  when doing the upstream request.
+
+- *(deployments)* Throw error when `per_page` exceeds maximum allowed value
+([MEN-8841](https://northerntech.atlassian.net/browse/MEN-8841)) ([e7c966c](https://github.com///commit/e7c966cb9311b2866b13570a97efa3e54c06ad9c)) 
+
+- *(deployments)* Aligned update metadata understanding w/ mender-artifact
+ ([33fae57](https://github.com///commit/33fae571932e14ca5b16afd26bc8e410b5c2a92b)) 
+
+
+  - api responses represented the content as a list, whereas the proper representation is the object
+
+- *(deviceauth)* Count current devices for max_devices limit
+([MEN-8767](https://northerntech.atlassian.net/browse/MEN-8767)) ([3041965](https://github.com///commit/3041965d6788744c8484f35498c9c0854ad9d6bd)) 
+
+- *(deviceauth)* `request_size_limit` configuration not applied
+([MEN-8788](https://northerntech.atlassian.net/browse/MEN-8788)) ([93d82a5](https://github.com///commit/93d82a59001e23650efb8d5d2518b4b0b9534206)) 
+
+- *(deviceauth)* Always exit with non-zero exit code on error
+ ([c486a45](https://github.com///commit/c486a4520bdfdd4402134a2cdfe4ac6a4a206d7a)) 
+
+- *(deviceauth)* Tier in authreq for devices with external id
+([MEN-8563](https://northerntech.atlassian.net/browse/MEN-8563)) ([2de6766](https://github.com///commit/2de67665323269be3d5afc3632b8d3aafc45b169)) 
+
+- *(deviceconnect)* SetReadDeadline when setting up ping handler
+([MEN-8843](https://northerntech.atlassian.net/browse/MEN-8843)) ([b10a3a8](https://github.com///commit/b10a3a8dd0b1b4c85c6b33184b9f9ed6b5fa8b86)) 
+
+- *(gui)* Fixed an issue that prevented showing billing errors
+ ([06f0cec](https://github.com///commit/06f0cecd067917479b8249b362d5edfa317b89e4)) 
+
+- *(gui)* Let theme switch also be reflected via external style definitions
+ ([2485bf1](https://github.com///commit/2485bf1a8c00b2060797b0977284980fd420fd63)) 
+
+- *(gui)* Fixed contact descriptions
+([MEN-8644](https://northerntech.atlassian.net/browse/MEN-8644)) ([a013a00](https://github.com///commit/a013a0074da904d19d1ca01c9ad8dfef0382d083)) 
+
+- *(gui)* Fall back to delta job count while pagination total isn't available
+ ([79360cc](https://github.com///commit/79360cc0e91249c86e867eb766b9216dcd3f2fa9)) 
+
+- *(gui)* Fixed an issue that could cause the deployment device limit to be ignored
+([ME-568](https://northerntech.atlassian.net/browse/ME-568)) ([64974ec](https://github.com///commit/64974ec50a534fc690c9ce0ea91c80dbb3407607)) 
+
+- *(gui)* Reduce situations deployments to specific devices won't find releases
+ ([bd4e361](https://github.com///commit/bd4e361f8e0fa34f7d479237f3b17a1d24de6675)) 
+
+- *(gui)* Limited chances a set deployment device limit gets changed unintended
+ ([1f12d38](https://github.com///commit/1f12d38249ac4bba72bbbc7ebb92ffdcf4fe9b09)) 
+
+- *(gui)* Fixed an issue that could prevent the billing overview from working
+ ([4d1f0f3](https://github.com///commit/4d1f0f3f41ece22b75310d76f2015ff7576f4a8c)) 
+
+- *(gui)* Fixed an issue that prevented editing SSO configurations
+ ([3005bea](https://github.com///commit/3005beaad9511b5c4768eff7438fc009fd8b567f)) 
+
+- *(gui)* Fixed faulty check to see if user settings info can be relied on
+ ([9251747](https://github.com///commit/92517472e60c29c5025ea4b948525aeb45d04599)) 
+
+- *(tenantadm)* Proxy invalid user error from useradm
+([MEN-8857](https://northerntech.atlassian.net/browse/MEN-8857)) ([050bd72](https://github.com///commit/050bd72961194684fe2e924636cba63b9427520a)) 
+
+- *(tenantadm)* Properly handle duplicate Stripe webhook events
+ ([90e88c7](https://github.com///commit/90e88c7e7dd093ac629454089b640f8ff9403ac4)) 
+
+- *(useradm)* Fix command for collecting user stats
+([MEN-8862](https://northerntech.atlassian.net/browse/MEN-8862)) ([e1c70d4](https://github.com///commit/e1c70d45d45e5fbe7de7874e96c28cc790500493)) 
+
+- *(workflows)* Remove Retries
+ ([3e5b281](https://github.com///commit/3e5b281e26b98c7d5cf9cf7c05bf1d56abe515be)) 
+
+
+  This retry mechanism has no automatic Delay, so the retries are made in
+  sequence, and this is useless and detrimental to the load.
+  
+  Removing the retries, while waiting for a more robust approach, like
+  retries with delays and workflows autoscaling.
+
+- *(workflows)* Expose Jetstream `replicas` parameter
+([MEN-7164](https://northerntech.atlassian.net/browse/MEN-7164)) ([b87100e](https://github.com///commit/b87100eb5aa12fec6ac83dd59329e1742a6fbfa9)) 
+
+- Adjusted burst limiting to work w/ updated miniredis
+ ([8158efa](https://github.com///commit/8158efa8a1a814cc0b31051cd77bdf8bf8960801)) 
+
+
+  - prior it was "every request extends the window" => now: "first request wins the window"
+- Validate rate limit config when setting up redis
+([MEN-8864](https://northerntech.atlassian.net/browse/MEN-8864)) ([186f750](https://github.com///commit/186f7505048c8404fdf646b6a669ad02b27b8aea)) 
+- Check release tags when fetching a release by name
+([MEN-8422](https://northerntech.atlassian.net/browse/MEN-8422)) ([cf4a45b](https://github.com///commit/cf4a45b4affc4d583fb6d2bf13c9607000661a02)) 
+
+
+
+
+### Documentation
+
+
+- *(deviceauth)* Update and deprecate /limits/max_devices endpoints
+([MEN-8570](https://northerntech.atlassian.net/browse/MEN-8570)) ([a70bcda](https://github.com///commit/a70bcdae3485615d31d7b999c2d9023e73136bd7)) 
+
+- *(deviceauth)* Add missing spec for limits/devices to backend docs
+ ([2212874](https://github.com///commit/22128746d51cadd01da6942426c16ba7737d59f1)) 
+
+- *(deviceauth)* Document unlimited limits in API docs
+([MEN-8886](https://northerntech.atlassian.net/browse/MEN-8886)) ([fff5975](https://github.com///commit/fff5975d3a1163fa31d97f34412eef8ffa50c40e)) 
+
+- *(api)* Unified path structure + servers across specs
+ ([2a73980](https://github.com///commit/2a739800ae8694fa5d210365fceac50413696f44)) 
+
+- *(api)* Deduplicated schema definitions across service specs
+ ([a7f31cb](https://github.com///commit/a7f31cbd2e9c48bd28a23bc624297d628fd7b145)) 
+
+- *(deployments)* Aligned docs based specs w/ services based specs
+ ([f84f39b](https://github.com///commit/f84f39b702a6ba3301ca475b7c5914ee350d09fa)) 
+
+
+  - to also publish delta job endpoints
+
+- *(deployments)* Clarify V2 `/artifacts` endpoint usage
+([MEN-8842](https://northerntech.atlassian.net/browse/MEN-8842)) ([d5a1a0f](https://github.com///commit/d5a1a0f471fd51fc82d07fcf41082abd74b42b9c)) 
+
+- *(inventory)* Add clarity to list devices api docs
+ ([c460380](https://github.com///commit/c46038013ba60510d2a45fcea66917be29642976)) 
+
+- *(useradm)* Make API specs more consistent with enterprise
+([MEN-8345](https://northerntech.atlassian.net/browse/MEN-8345)) ([1022949](https://github.com///commit/1022949e7df31ccb90b624d1c6ba411950c98634)) 
+
+- Aligned enterprise only services w/ file naming scheme + structure
+ ([b9c4ccd](https://github.com///commit/b9c4ccd07abaf8921332b0e1e16660647c61118c)) 
+- Aligned more error responses w/ existing shared response definitions
+ ([d5596d5](https://github.com///commit/d5596d572c1a0621e87b973549fc86d4542d5b69)) 
+- Aligned unauthorized errors definitions w/ shared definition
+ ([9d26fd7](https://github.com///commit/9d26fd700a572600bba631291102eb1dc34baba3)) 
+- Aligned update metadata w/ defined type to allow parsing
+ ([f306fac](https://github.com///commit/f306fac4caac94f14daed287def36f0b375d1069)) 
+
+
+
+
+### Features
+
+
+- *(deviceauth)* Support unlimited device tier limits
+([MEN-8886](https://northerntech.atlassian.net/browse/MEN-8886)) ([0e17a1f](https://github.com///commit/0e17a1f4f196b905b478624eced1edecb3776f88)) 
+
+- *(deviceauth)* DEVICEAUTH_ENABLE_TIERS to enable device tiers support
+ ([b3bffb4](https://github.com///commit/b3bffb4c75da6d57841bbe99b4ec63ab0f0e71c2)) 
+
+- *(deployments)* Rate limit new device deployments per tenant
+([MEN-8840](https://northerntech.atlassian.net/browse/MEN-8840)) ([1ab79a5](https://github.com///commit/1ab79a5e810bca03354ae5ceb5085b2e05ad2183)) 
+
+
+  Introduce a rate limiter that can be configured to only allow a certain
+  number of new device deployments to be created within a specific time
+  interval.
+
+- *(deployments)* Configure new device deployments rate limiter
+([MEN-8840](https://northerntech.atlassian.net/browse/MEN-8840)) ([70211e7](https://github.com///commit/70211e7e2b8c2a4e8cf917c97b0343222d1e6bd2)) 
+
+- *(deviceauth)* Support for device tier parameter in the authset
+([MEN-8558](https://northerntech.atlassian.net/browse/MEN-8558)) ([fa03730](https://github.com///commit/fa037303fe5be4a822fd6d5315aa4f4440f61807)) 
+
+
+  We introduce a new [authset](https://docs.mender.io/overview/device-authentication)
+  parameter: device tier: a string of letters describing a device kind.
+  Currently supported values: micro, system, standard.
+
+- *(deviceauth)* Check device tier limit when accepting device
+([MEN-8563](https://northerntech.atlassian.net/browse/MEN-8563)) ([8bb262f](https://github.com///commit/8bb262f02fb5f3e9e6a2b3546b4eca61de619cd3)) 
+
+- *(deviceauth)* Maintain device tier from auth set
+([MEN-8563](https://northerntech.atlassian.net/browse/MEN-8563)) ([6390f63](https://github.com///commit/6390f63ba4e567c3193b02292cb4e44dcdbca86a)) 
+
+
+  Maintain the tier of a device based on the latest accepted auth
+
+- *(deviceauth)* Count tenant device limits by tier
+([MEN-8563](https://northerntech.atlassian.net/browse/MEN-8563)) ([4084a26](https://github.com///commit/4084a26c21caf51e6244bae4bf94b53c6af55d63)) 
+
+- *(deviceauth)* Management api to get device limit per tier
+([MEN-8563](https://northerntech.atlassian.net/browse/MEN-8563)) ([5e9c2e2](https://github.com///commit/5e9c2e2786a6c3499d09f02ff2e3f7c578b9abfb)) 
+
+- *(generate-delta-worker)* GENERATE_DELTA_USE_FIFOS env var control the named pipes usage
+([MEN-8762](https://northerntech.atlassian.net/browse/MEN-8762)) ([71dbd6e](https://github.com///commit/71dbd6e411b88c0a794d38d38a5a68573704b03c)) 
+
+
+  A new setting via an environment variable GENERATE_DELTA_USE_FIFOS
+  is introduced to control the use of named pipes in the binary delta
+  generation on the server side via generate-delta-worker. This setting
+  should be set to false for enviornments where the resources permit
+  safe usage of regular files for the delta generation. By defaut it is set
+  to false.
+
+- *(gui)* Added chinese server to login notifications
+([MEN-8770](https://northerntech.atlassian.net/browse/MEN-8770)) ([ac933a0](https://github.com///commit/ac933a083e936486673d0eb8dc8c544350304493)) 
+
+- *(gui)* Added special handling for non-stripe non-enterprise customers
+([MEN-8644](https://northerntech.atlassian.net/browse/MEN-8644)) ([3e99e17](https://github.com///commit/3e99e17765e2010f4feb95f30ce9658a398a36d0)) 
+
+- *(gui)* Utilized AddonSelect for enterprise/non-stripe users
+([MEN-8644](https://northerntech.atlassian.net/browse/MEN-8644)) ([13b7c79](https://github.com///commit/13b7c798a8d2815b33fb838bd021ca8541ed81f0)) 
+
+- *(gui)* Added improved success payment modal
+([MEN-8703](https://northerntech.atlassian.net/browse/MEN-8703)) ([f56e4c6](https://github.com///commit/f56e4c64333876fce83b484baed36b0d7a27069b)) 
+
+- *(gui)* Let confirmation modal to delay the logout after token invalidation
+([MEN-8703](https://northerntech.atlassian.net/browse/MEN-8703)) ([2a1a71e](https://github.com///commit/2a1a71e76e4d029d030d01ea09e1c0753d783890)) 
+
+- *(gui)* Added delta artifact generation job retrieval functionality
+ ([66e577a](https://github.com///commit/66e577ad3872122a10f81627fa6518a2d985c3f5)) 
+
+- *(gui)* Added a way to see details about delta generation jobs
+([MEN-8250](https://northerntech.atlassian.net/browse/MEN-8250)) ([36c6adf](https://github.com///commit/36c6adfdaa51ff5a3ca243d691e290afbbcf9fce)) 
+
+- *(gui)* Added overview of recent delta generation jobs
+([MEN-8251](https://northerntech.atlassian.net/browse/MEN-8251)) ([0ca8799](https://github.com///commit/0ca8799dae18dca14f513fcb3ea48ca6335082f9)) 
+
+- *(gui)* Let release upload be focused on releases view to reduce confusion
+([MEN-8248](https://northerntech.atlassian.net/browse/MEN-8248)) ([22bc53c](https://github.com///commit/22bc53c41293450cb880c58fa5fda847f861ffa5)) 
+
+- *(gui)* Let device deployments history access our log viewer as well
+([MEN-8727](https://northerntech.atlassian.net/browse/MEN-8727)) ([f1753f7](https://github.com///commit/f1753f74d684e448176f062dc1d93b0258b2b68d)) 
+
+- *(gui)* Let timeframe filter elements also show context dependent notifications
+ ([59cac13](https://github.com///commit/59cac137acd21daf69ea8f54dddb6f1fde0da7b2)) 
+
+- *(gui)* Added notification about auditlog retention time to explain missing entries
+([MEN-8153](https://northerntech.atlassian.net/browse/MEN-8153)) ([51c8fa1](https://github.com///commit/51c8fa1fa4ba9e020a0a385272c4e531216bfd8e)) 
+
+
+
+
+### Refactor
+
+
+- *(deviceauth)* Remove unused limits function and fix comment
+([MEN-8886](https://northerntech.atlassian.net/browse/MEN-8886)) ([347ddc7](https://github.com///commit/347ddc71d5d09ad09238f90167eebd29ce66d62d)) 
+
+- *(deviceauth)* Rename MaxDevicesCount constant
+([MEN-8886](https://northerntech.atlassian.net/browse/MEN-8886)) ([05775fd](https://github.com///commit/05775fdca4e8dea754defd8864b9774231f8562d)) 
+
+- *(deviceauth)* Remove tenantadm related code from OS
+([MEN-8649](https://northerntech.atlassian.net/browse/MEN-8649)) ([31b9d2b](https://github.com///commit/31b9d2beeb60a4485449f620ca58df580ba1cae9)) 
+
+- *(gui)* Made use of store + testing package in codebase
+ ([2d90e96](https://github.com///commit/2d90e9682eeaf53f45612b7c13b70c2abcc580ed)) 
+
+- *(gui)* Made use of testing package & utils in tests
+ ([f416d68](https://github.com///commit/f416d68d89986df4b446f6bca9955c392cee8d34)) 
+
+- *(gui)* Aligned thunk spying w/ updated store package format
+ ([ab1ee33](https://github.com///commit/ab1ee331199ec1bab9183d9ebb0568a2a2ffa136)) 
+
+- *(gui)* Let email check be done in thunk to align msw handler location
+ ([eaae614](https://github.com///commit/eaae614b8ae7b9b4ed46a9f5fd630ff54e8c746e)) 
+
+
+
+
+
+
 ## v4.1.0-saas.14 - 2025-09-30
 
 
@@ -910,6 +1181,562 @@ github: false
     dependency-type: direct:production
     update-type: version-update:semver-minor
     dependency-group: backend-docker-compose-dependencies
+  ...
+
+- Bump axios from 1.11.0 to 1.12.0 in /frontend
+ ([b460d89](https://github.com///commit/b460d8916f2562686675b8d327a7974901a0ddc4)) 
+
+
+  Bumps [axios](https://github.com/axios/axios) from 1.11.0 to 1.12.0.
+  - [Release notes](https://github.com/axios/axios/releases)
+  - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
+  - [Commits](https://github.com/axios/axios/compare/v1.11.0...v1.12.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: axios
+    dependency-version: 1.12.0
+    dependency-type: direct:production
+  ...
+- Bump the e2e-test-dependencies group
+ ([116338d](https://github.com///commit/116338df1b4a36e2f9d339bd0e608c5826ddd00f)) 
+
+
+  Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 6 updates:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [chalk](https://github.com/chalk/chalk) | `5.5.0` | `5.6.2` |
+  | [commander](https://github.com/tj/commander.js) | `14.0.0` | `14.0.1` |
+  | [docker-compose](https://github.com/PDMLab/docker-compose) | `1.2.0` | `1.3.0` |
+  | [inquirer](https://github.com/SBoudrias/Inquirer.js) | `12.9.1` | `12.9.6` |
+  | [ora](https://github.com/sindresorhus/ora) | `8.2.0` | `9.0.0` |
+  | [uuid](https://github.com/uuidjs/uuid) | `11.1.0` | `13.0.0` |
+  
+  
+  Updates `chalk` from 5.5.0 to 5.6.2
+  - [Release notes](https://github.com/chalk/chalk/releases)
+  - [Commits](https://github.com/chalk/chalk/compare/v5.5.0...v5.6.2)
+  
+  Updates `commander` from 14.0.0 to 14.0.1
+  - [Release notes](https://github.com/tj/commander.js/releases)
+  - [Changelog](https://github.com/tj/commander.js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/tj/commander.js/compare/v14.0.0...v14.0.1)
+  
+  Updates `docker-compose` from 1.2.0 to 1.3.0
+  - [Changelog](https://github.com/PDMLab/docker-compose/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/PDMLab/docker-compose/compare/v1.2.0...v1.3.0)
+  
+  Updates `inquirer` from 12.9.1 to 12.9.6
+  - [Release notes](https://github.com/SBoudrias/Inquirer.js/releases)
+  - [Commits](https://github.com/SBoudrias/Inquirer.js/compare/inquirer@12.9.1...inquirer@12.9.6)
+  
+  Updates `ora` from 8.2.0 to 9.0.0
+  - [Release notes](https://github.com/sindresorhus/ora/releases)
+  - [Commits](https://github.com/sindresorhus/ora/compare/v8.2.0...v9.0.0)
+  
+  Updates `uuid` from 11.1.0 to 13.0.0
+  - [Release notes](https://github.com/uuidjs/uuid/releases)
+  - [Changelog](https://github.com/uuidjs/uuid/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/uuidjs/uuid/compare/v11.1.0...v13.0.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: chalk
+    dependency-version: 5.6.2
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: e2e-test-dependencies
+  - dependency-name: commander
+    dependency-version: 14.0.1
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: e2e-test-dependencies
+  - dependency-name: docker-compose
+    dependency-version: 1.3.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: e2e-test-dependencies
+  - dependency-name: inquirer
+    dependency-version: 12.9.6
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: e2e-test-dependencies
+  - dependency-name: ora
+    dependency-version: 9.0.0
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: e2e-test-dependencies
+  - dependency-name: uuid
+    dependency-version: 13.0.0
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: e2e-test-dependencies
+  ...
+- Bump the backend-docker-compose-dependencies group across 2 directories with 4 updates
+ ([020619a](https://github.com///commit/020619a35768dd1682f5128a8a98bcaa07e59819)) 
+
+
+  Bumps the backend-docker-compose-dependencies group with 2 updates in the / directory: traefik and nats.
+  Bumps the backend-docker-compose-dependencies group with 2 updates in the /compose directory: redis and chrislusf/seaweedfs.
+  
+  
+  Updates `traefik` from v3.1 to 3.5
+  
+  Updates `nats` from 2.10 to 2.11
+  
+  Updates `redis` from 7.2 to 8.2
+  
+  Updates `chrislusf/seaweedfs` from 3.85 to 3.97
+  
+  ---
+  updated-dependencies:
+  - dependency-name: traefik
+    dependency-version: '3.5'
+    dependency-type: direct:production
+    dependency-group: backend-docker-compose-dependencies
+  - dependency-name: nats
+    dependency-version: '2.11'
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-docker-compose-dependencies
+  - dependency-name: redis
+    dependency-version: '8.2'
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-docker-compose-dependencies
+  - dependency-name: chrislusf/seaweedfs
+    dependency-version: '3.97'
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-docker-compose-dependencies
+  ...
+- Bump the development-dependencies group
+ ([6787079](https://github.com///commit/6787079c949751de4246b708078cabbd10a6d602)) 
+
+
+  Bumps the development-dependencies group in /frontend with 9 updates:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [@northern.tech/themes](https://github.com/NorthernTechHQ/nt-gui) | `0.6.1` | `0.6.2` |
+  | [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli) | `1.5.3` | `1.5.6` |
+  | [@rspack/core](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack) | `1.5.3` | `1.5.6` |
+  | [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) | `24.3.1` | `24.5.2` |
+  | [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/tree/HEAD/packages/plugin-react) | `5.0.2` | `5.0.3` |
+  | [eslint](https://github.com/eslint/eslint) | `9.35.0` | `9.36.0` |
+  | [jsdom](https://github.com/jsdom/jsdom) | `26.1.0` | `27.0.0` |
+  | [lint-staged](https://github.com/lint-staged/lint-staged) | `16.1.6` | `16.2.0` |
+  | [msw](https://github.com/mswjs/msw) | `2.11.2` | `2.11.3` |
+  
+  
+  Updates `@northern.tech/themes` from 0.6.1 to 0.6.2
+  - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
+  - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
+  - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/themes-0.6.1...@northern.tech/themes-0.6.2)
+  
+  Updates `@rspack/cli` from 1.5.3 to 1.5.6
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.5.6/packages/rspack-cli)
+  
+  Updates `@rspack/core` from 1.5.3 to 1.5.6
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.5.6/packages/rspack)
+  
+  Updates `@types/node` from 24.3.1 to 24.5.2
+  - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+  - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+  
+  Updates `@vitejs/plugin-react` from 5.0.2 to 5.0.3
+  - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
+  - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
+  - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@5.0.3/packages/plugin-react)
+  
+  Updates `eslint` from 9.35.0 to 9.36.0
+  - [Release notes](https://github.com/eslint/eslint/releases)
+  - [Changelog](https://github.com/eslint/eslint/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/eslint/eslint/compare/v9.35.0...v9.36.0)
+  
+  Updates `jsdom` from 26.1.0 to 27.0.0
+  - [Release notes](https://github.com/jsdom/jsdom/releases)
+  - [Changelog](https://github.com/jsdom/jsdom/blob/main/Changelog.md)
+  - [Commits](https://github.com/jsdom/jsdom/compare/26.1.0...27.0.0)
+  
+  Updates `lint-staged` from 16.1.6 to 16.2.0
+  - [Release notes](https://github.com/lint-staged/lint-staged/releases)
+  - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/lint-staged/lint-staged/compare/v16.1.6...v16.2.0)
+  
+  Updates `msw` from 2.11.2 to 2.11.3
+  - [Release notes](https://github.com/mswjs/msw/releases)
+  - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/mswjs/msw/compare/v2.11.2...v2.11.3)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@northern.tech/themes"
+    dependency-version: 0.6.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/cli"
+    dependency-version: 1.5.6
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/core"
+    dependency-version: 1.5.6
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@types/node"
+    dependency-version: 24.5.2
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@vitejs/plugin-react"
+    dependency-version: 5.0.3
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: eslint
+    dependency-version: 9.36.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: jsdom
+    dependency-version: 27.0.0
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: development-dependencies
+  - dependency-name: lint-staged
+    dependency-version: 16.2.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: msw
+    dependency-version: 2.11.3
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  ...
+- Bump the mui group in /frontend with 3 updates
+ ([544749d](https://github.com///commit/544749d86c093b643f1ebd2e5aa8f4b473a70f69)) 
+
+
+  Bumps the mui group in /frontend with 3 updates: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
+  
+  
+  Updates `@mui/icons-material` from 7.3.1 to 7.3.2
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.3.2/packages/mui-icons-material)
+  
+  Updates `@mui/material` from 7.3.1 to 7.3.2
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.3.2/packages/mui-material)
+  
+  Updates `@mui/x-date-pickers` from 8.11.0 to 8.11.3
+  - [Release notes](https://github.com/mui/mui-x/releases)
+  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/mui-x/commits/v8.11.3/packages/x-date-pickers)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@mui/icons-material"
+    dependency-version: 7.3.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/material"
+    dependency-version: 7.3.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.11.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  ...
+- Bump the backend-tests-python-dependencies group across 1 directory with 2 updates
+ ([b1fb007](https://github.com///commit/b1fb0078c69f82c459bcfe5753f84d72355556f2)) 
+
+
+  Bumps the backend-tests-python-dependencies group with 2 updates in the /backend/tests directory: [pytest](https://github.com/pytest-dev/pytest) and [boto3](https://github.com/boto/boto3).
+  
+  
+  Updates `pytest` from 8.4.1 to 8.4.2
+  - [Release notes](https://github.com/pytest-dev/pytest/releases)
+  - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+  - [Commits](https://github.com/pytest-dev/pytest/compare/8.4.1...8.4.2)
+  
+  Updates `boto3` from 1.40.21 to 1.40.24
+  - [Release notes](https://github.com/boto/boto3/releases)
+  - [Commits](https://github.com/boto/boto3/compare/1.40.21...1.40.24)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: pytest
+    dependency-version: 8.4.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: boto3
+    dependency-version: 1.40.24
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  ...
+- Bump @playwright/test
+ ([7489159](https://github.com///commit/748915946dc8b598ce2918fa65df8fdbc8fc945c)) 
+
+
+  Bumps the playwright group in /frontend/tests/e2e_tests with 1 update: [@playwright/test](https://github.com/microsoft/playwright).
+  
+  
+  Updates `@playwright/test` from 1.55.0 to 1.55.1
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.55.0...v1.55.1)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@playwright/test"
+    dependency-version: 1.55.1
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: playwright
+  ...
+- Bump nats
+ ([6ef8f84](https://github.com///commit/6ef8f840f0b80bddfcaf20b5a3a13bf112873d68)) 
+
+
+  Bumps the backend-docker-compose-dependencies group with 1 update in the / directory: nats.
+  
+  
+  Updates `nats` from 2.11 to 2.12
+  
+  ---
+  updated-dependencies:
+  - dependency-name: nats
+    dependency-version: '2.12'
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-docker-compose-dependencies
+  ...
+- Bump the backend-golang-dependencies group across 1 directory with 17 updates
+ ([9e22c80](https://github.com///commit/9e22c80c9521fb3d9e782f7922e97610f6e361f5)) 
+
+
+  Bumps the backend-golang-dependencies group with 12 updates in the /backend directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [github.com/Azure/azure-sdk-for-go/sdk/azcore](https://github.com/Azure/azure-sdk-for-go) | `1.19.0` | `1.19.1` |
+  | [github.com/aws/aws-sdk-go-v2](https://github.com/aws/aws-sdk-go-v2) | `1.38.3` | `1.39.2` |
+  | [github.com/aws/aws-sdk-go-v2/config](https://github.com/aws/aws-sdk-go-v2) | `1.31.6` | `1.31.12` |
+  | [github.com/aws/aws-sdk-go-v2/service/iot](https://github.com/aws/aws-sdk-go-v2) | `1.69.1` | `1.69.5` |
+  | [github.com/aws/aws-sdk-go-v2/service/iotdataplane](https://github.com/aws/aws-sdk-go-v2) | `1.32.2` | `1.32.6` |
+  | [github.com/aws/aws-sdk-go-v2/service/s3](https://github.com/aws/aws-sdk-go-v2) | `1.87.3` | `1.88.3` |
+  | [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) | `1.10.1` | `1.11.0` |
+  | [github.com/nats-io/nats-server/v2](https://github.com/nats-io/nats-server) | `2.11.8` | `2.12.0` |
+  | [github.com/nats-io/nats.go](https://github.com/nats-io/nats.go) | `1.45.0` | `1.46.1` |
+  | [github.com/redis/go-redis/v9](https://github.com/redis/go-redis) | `9.13.0` | `9.14.0` |
+  | [github.com/spf13/viper](https://github.com/spf13/viper) | `1.20.1` | `1.21.0` |
+  | [golang.org/x/net](https://github.com/golang/net) | `0.43.0` | `0.44.0` |
+  
+  
+  
+  Updates `github.com/Azure/azure-sdk-for-go/sdk/azcore` from 1.19.0 to 1.19.1
+  - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
+  - [Changelog](https://github.com/Azure/azure-sdk-for-go/blob/main/documentation/sdk-breaking-changes-guide-migration.md)
+  - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.19.0...sdk/azcore/v1.19.1)
+  
+  Updates `github.com/aws/aws-sdk-go-v2` from 1.38.3 to 1.39.2
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.38.3...v1.39.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/config` from 1.31.6 to 1.31.12
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.31.6...config/v1.31.12)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.18.10 to 1.18.16
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.18.10...config/v1.18.16)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.69.1 to 1.69.5
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/iot/v1.69.1...service/iot/v1.69.5)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.32.2 to 1.32.6
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.32.2...v1.32.6)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.87.3 to 1.88.3
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.87.3...service/s3/v1.88.3)
+  
+  Updates `github.com/gin-gonic/gin` from 1.10.1 to 1.11.0
+  - [Release notes](https://github.com/gin-gonic/gin/releases)
+  - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/gin-gonic/gin/compare/v1.10.1...v1.11.0)
+  
+  Updates `github.com/nats-io/nats-server/v2` from 2.11.8 to 2.12.0
+  - [Release notes](https://github.com/nats-io/nats-server/releases)
+  - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
+  - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.8...v2.12.0)
+  
+  Updates `github.com/nats-io/nats.go` from 1.45.0 to 1.46.1
+  - [Release notes](https://github.com/nats-io/nats.go/releases)
+  - [Commits](https://github.com/nats-io/nats.go/compare/v1.45.0...v1.46.1)
+  
+  Updates `github.com/redis/go-redis/v9` from 9.13.0 to 9.14.0
+  - [Release notes](https://github.com/redis/go-redis/releases)
+  - [Changelog](https://github.com/redis/go-redis/blob/master/RELEASE-NOTES.md)
+  - [Commits](https://github.com/redis/go-redis/compare/v9.13.0...v9.14.0)
+  
+  Updates `github.com/spf13/viper` from 1.20.1 to 1.21.0
+  - [Release notes](https://github.com/spf13/viper/releases)
+  - [Commits](https://github.com/spf13/viper/compare/v1.20.1...v1.21.0)
+  
+  Updates `golang.org/x/crypto` from 0.41.0 to 0.42.0
+  - [Commits](https://github.com/golang/crypto/compare/v0.41.0...v0.42.0)
+  
+  Updates `golang.org/x/net` from 0.43.0 to 0.44.0
+  - [Commits](https://github.com/golang/net/compare/v0.43.0...v0.44.0)
+  
+  Updates `golang.org/x/sys` from 0.35.0 to 0.36.0
+  - [Commits](https://github.com/golang/sys/compare/v0.35.0...v0.36.0)
+  
+  Updates `golang.org/x/term` from 0.34.0 to 0.35.0
+  - [Commits](https://github.com/golang/term/compare/v0.34.0...v0.35.0)
+  
+  Updates `golang.org/x/time` from 0.12.0 to 0.13.0
+  - [Commits](https://github.com/golang/time/compare/v0.12.0...v0.13.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/azcore
+    dependency-version: 1.19.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2
+    dependency-version: 1.39.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/config
+    dependency-version: 1.31.12
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/credentials
+    dependency-version: 1.18.16
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iot
+    dependency-version: 1.69.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iotdataplane
+    dependency-version: 1.32.6
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/s3
+    dependency-version: 1.88.3
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/gin-gonic/gin
+    dependency-version: 1.11.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats-server/v2
+    dependency-version: 2.12.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats.go
+    dependency-version: 1.46.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/redis/go-redis/v9
+    dependency-version: 9.14.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/spf13/viper
+    dependency-version: 1.21.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/crypto
+    dependency-version: 0.42.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/net
+    dependency-version: 0.44.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/sys
+    dependency-version: 0.36.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/term
+    dependency-version: 0.35.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/time
+    dependency-version: 0.13.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  ...
+- Bump github.com/quic-go/quic-go from 0.54.0 to 0.54.1 in /backend
+ ([27df7d6](https://github.com///commit/27df7d6bee416bec25b8fda09c445ad0740bca6a)) 
+
+
+  Bumps [github.com/quic-go/quic-go](https://github.com/quic-go/quic-go) from 0.54.0 to 0.54.1.
+  - [Release notes](https://github.com/quic-go/quic-go/releases)
+  - [Commits](https://github.com/quic-go/quic-go/compare/v0.54.0...v0.54.1)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/quic-go/quic-go
+    dependency-version: 0.54.1
+    dependency-type: indirect
+  ...
+- Bump vite from 7.1.5 to 7.1.11 in /frontend
+ ([0839758](https://github.com///commit/08397583bcd1c3e9df9efdc054a05137bec9f9bc)) 
+
+
+  Bumps [vite](https://github.com/vitejs/vite/tree/HEAD/packages/vite) from 7.1.5 to 7.1.11.
+  - [Release notes](https://github.com/vitejs/vite/releases)
+  - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
+  - [Commits](https://github.com/vitejs/vite/commits/v7.1.11/packages/vite)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: vite
+    dependency-version: 7.1.11
+    dependency-type: indirect
   ...
 
 
