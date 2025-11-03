@@ -7,6 +7,39 @@ shortcode-core:
 github: false
 ---
 
+## monitor-client 1.4.3
+
+_Released 11.03.2025_
+
+### Changelogs
+
+#### monitor-client (1.4.3)
+
+New changes in monitor-client since 1.4.2:
+
+##### Bug Fixes
+
+* Fix USB monitoring regex pattern to work with journalctl's format.
+  ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
+* Fix for mender-monitor occasionally producing malformed entries for false positives
+  ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
+* Full fix for USB monitoring, by better handling of starting log monitors.
+  ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
+* Fix for mender-monitor occasionally producing malformed entries for false positives
+  ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
+
+##### Other
+
+* Add handshake to pattern_expiration_sweep, so that log monitoring command
+  makes sure that it is working before sending data to it.
+  ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
+* Cleanup routine improvements to make it faster.
+  ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
+* Add handshake to pattern_expiration_sweep, so that log monitoring command
+  makes sure that it is working before sending data to it.
+  ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
+
+
 ## monitor-client 1.4.2
 
 _Released 07.24.2025_
