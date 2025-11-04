@@ -7,6 +7,21 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.18 - 2025-11-04
+
+
+### Bug fixes
+
+
+- *(gui)* Fixed an issue that prevented updating existing sso configs
+ ([d022d1a](https://github.com///commit/d022d1a78ba2f2b60cc1670b0015451c01c5734e)) 
+
+
+
+
+
+
+
 ## v4.1.0-saas.17 - 2025-11-03
 
 
