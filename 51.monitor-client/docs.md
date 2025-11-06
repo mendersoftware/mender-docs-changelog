@@ -29,7 +29,7 @@ New changes in monitor-client since 1.4.2:
   for a log collector that uses a command (as opposed to log file) while `mender-monitor` was
   running already, the command was not started, and 2) log regex was wrong for use with journalctl.
   ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
-* Fix for mender-monitor occasionally producing malformed entries for false positives
+* Fix an issue where short reads produced malformed entries for false positives
   ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
 
 ##### Other
