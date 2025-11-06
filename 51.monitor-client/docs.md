@@ -19,18 +19,24 @@ New changes in monitor-client since 1.4.2:
 
 ##### Bug Fixes
 
-* Fix USB monitoring regex pattern to work with journalctl's format.
+* Fix USB monitoring regex pattern to correctly match journalctl's format.
   ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
-* Full fix for USB monitoring, by better handling of starting log monitors.
+* Fix log monitoring at startup, which was affecting Monitor USB disconnects
+  tutorial from Get Started guide
+
+  USB monitoring was not working with getting started because of 1) the log collecting commands
+  were started only once at `mender-monitor` startup - if `mender-monitorctl enable` was called
+  for a log collector that uses a command (as opposed to log file) while `mender-monitor` was
+  running already, the command was not started, and 2) log regex was wrong for use with journalctl.
   ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
-* Fix for mender-monitor occasionally producing malformed entries for false positives
+* Fix an issue where short reads produced malformed entries for false positives
   ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
 
 ##### Other
 
 * Cleanup routine improvements to make it faster.
   ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
-* Add handshake to pattern_expiration_sweep, so that log monitoring command
+* Add handshake to `pattern_expiration_sweep`, so that log monitoring command
   makes sure that it is working before sending data to it.
   ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
 

@@ -20,8 +20,8 @@ New changes in mender-configure-module since 1.1.2:
 ##### Bug Fixes
 
 * Exit with returncode 0 in `mender-inventory-mender-configure`
-  if no jwt token is obtained over dbus. This stops mender-update from logging
-  errors from the inventory script before mender-auth is ready or if the
+  if no JWT token is obtained over D-Bus. This stops `mender-update` from logging
+  errors from the inventory script before `mender-auth` is ready or if the
   device isn't accepted.
   ([MEN-8591](https://northerntech.atlassian.net/browse/MEN-8591))
 

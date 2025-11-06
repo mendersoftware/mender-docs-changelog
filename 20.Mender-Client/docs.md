@@ -30,7 +30,7 @@ New changes in mender since 5.0.2:
   lost during artifact download. Implement a 5-minute timeout in `AsyncReadNextBodyPart`
   to allow the HTTP resumer to resume the download.
   ([MEN-8717](https://northerntech.atlassian.net/browse/MEN-8717))
-* Added warning and instruction to use space for separating multiple NO_PROXY values
+* Add warning and instruction to use space for separating multiple `NO_PROXY` values
   ([ME-586](https://northerntech.atlassian.net/browse/ME-586))
 
 ##### Other
