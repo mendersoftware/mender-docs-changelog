@@ -36,7 +36,7 @@ New changes in monitor-client since 1.4.2:
 
 * Cleanup routine improvements to make it faster.
   ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
-* Add handshake to pattern_expiration_sweep, so that log monitoring command
+* Add handshake to `pattern_expiration_sweep`, so that log monitoring command
   makes sure that it is working before sending data to it.
   ([MEN-8710](https://northerntech.atlassian.net/browse/MEN-8710))
 
