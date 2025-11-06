@@ -19,7 +19,7 @@ New changes in mender-binary-delta since 1.5.1:
 
 ##### Bug Fixes
 
-* Fix segfault when failing to get part number during install
+* Fix segfault when configured with partitions that do not end with a number
 
   This was a hidden bug that surfaced now while fixing the support for
   PARTUUID and PARTLABEL. Or, in other words, when handling Mender
