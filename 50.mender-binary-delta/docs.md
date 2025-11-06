@@ -24,15 +24,15 @@ New changes in mender-binary-delta since 1.5.1:
   This was a hidden bug that surfaced now while fixing the support for
   PARTUUID and PARTLABEL. Or, in other words, when handling Mender
   configuration with partitions that do not end with a number. In this
-  case pass_num is NULL and xasprintf will try to dereference it.
+  case `pass_num` is `NULL` and `xasprintf` will try to dereference it.
 * Correctly apply deltas with PARTUUID and PARTLABEL configuration
 
-  This fixes the bug where mender-binary-delta fails to apply the delta
+  This fixes the bug where `mender-binary-delta` fails to apply the delta
   when partitions are configured with PARTUUID or PARTLABEL options.
 
   Fixes the issue by first resolving the device symlinks like
-  /dev/disk/by-partuuid/*, /dev/disk/by-partlabel/*, and /dev/root to
-  their actual device paths (e.g., /dev/sda2, /dev/mmcblk0p2) and then
+  `/dev/disk/by-partuuid/*`, `/dev/disk/by-partlabel/*`, and `/dev/root` to
+  their actual device paths (e.g., `/dev/sda2`, `/dev/mmcblk0p2`) and then
   extracting the partition numbers.
 
   Related to https://github.com/mendersoftware/mender/pull/1613
