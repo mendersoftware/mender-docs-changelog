@@ -35,7 +35,7 @@ New changes in mender-binary-delta since 1.5.1:
   their actual device paths (e.g., `/dev/sda2`, `/dev/mmcblk0p2`) and then
   extracting the partition numbers.
 
-  Related to https://github.com/mendersoftware/mender/pull/1613
+  Related to (https://github.com/mendersoftware/mender/pull/1613)
   ([MEN-7160](https://northerntech.atlassian.net/browse/MEN-7160))
 
 
