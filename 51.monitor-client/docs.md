@@ -19,7 +19,7 @@ New changes in monitor-client since 1.4.2:
 
 ##### Bug Fixes
 
-* Fix USB monitoring regex pattern to work with journalctl's format.
+* Fix USB monitoring regex pattern to correctly match journalctl's format.
   ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
 * Full fix for USB monitoring, by better handling of starting log monitors.
   ([MEN-8704](https://northerntech.atlassian.net/browse/MEN-8704))
