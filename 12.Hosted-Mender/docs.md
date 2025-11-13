@@ -7,6 +7,149 @@ shortcode-core:
 github: false
 ---
 
+## v4.1.0-saas.19 - 2025-11-12
+
+
+### Bug fixes
+
+
+- *(gui)* Increased reliance on theme defined button colors to align more w/ updated theme
+ ([28cd0fd](https://github.com///commit/28cd0fd1a2e5c976d16769a25daff75125748035)) 
+
+- *(useradm)* Handle tenant not found in login endpoints
+ ([cc35fac](https://github.com///commit/cc35fac4a77bd74bff1e84667c11b5d6ec9c1156)) 
+
+- Validate rate limit config when setting up redis
+([MEN-8864](https://northerntech.atlassian.net/browse/MEN-8864)) ([39b60a7](https://github.com///commit/39b60a7a28133ed621c8f72a0e0e9fa15e9252e4)) 
+
+
+
+
+### Documentation
+
+
+- *(deployments)* Add artifact_too_big device deployment status
+([MEN-8573](https://northerntech.atlassian.net/browse/MEN-8573)) ([da06093](https://github.com///commit/da0609333b510e508047e330207e9b9c4c552c13)) 
+
+- *(deployments)* Document 'sort' option in the internal endpoint for getting deployments
+([MEN-8914](https://northerntech.atlassian.net/browse/MEN-8914)) ([7165f58](https://github.com///commit/7165f58eec679b36e0a83f5a4d4b71595c62aa30)) 
+
+
+
+
+
+### Features
+
+
+- *(deployments)* Add 'artifact too big' device deployment status
+([MEN-8573](https://northerntech.atlassian.net/browse/MEN-8573)) ([d4a2115](https://github.com///commit/d4a21156026382d54d4d8cf6d9d0bb22e3551d7a)) 
+
+- *(deployments)* Add max artifact size limit for micro devices
+([MEN-8573](https://northerntech.atlassian.net/browse/MEN-8573)) ([91a6788](https://github.com///commit/91a678800810bea55596e0b547e3fbfe7b0ab33d)) 
+
+- *(deployments)* Limit max deployment artifact size for micro devices
+([MEN-8573](https://northerntech.atlassian.net/browse/MEN-8573)) ([54a4f0d](https://github.com///commit/54a4f0da572e0499a8f62cdc693e7877b1afa471)) 
+
+- *(deviceauth)* Internal endpoints for device limits
+([MEN-8904](https://northerntech.atlassian.net/browse/MEN-8904)) ([66f2a77](https://github.com///commit/66f2a778b8793bd9eb3855b14902fee76a099756)) 
+
+
+  Support for all device tiers for set, get, delete operations.
+
+- *(deviceauth)* Rate limit deployments/next for micro tier devices
+([MEN-8580](https://northerntech.atlassian.net/browse/MEN-8580)) ([346acec](https://github.com///commit/346acec4857be4ee659f8add445655e91b0d9b9f)) 
+
+- *(deviceauth)* Adjusted rate limits to account for device tier
+ ([6e6c73f](https://github.com///commit/6e6c73f18ee750444864f20167030868abb7b847)) 
+
+
+  The new device tier for standard devices are:
+   - 15 requests/minute for checkUpdate
+   - 15 requests/minute for submitInventory
+   - 30 requests/minute for all other operations
+  
+   For micro device tier the ratelimits are:
+   - 1 request/day for checkUpdate
+   - 1 requests/14days for submitInventory
+   - 30 requests/day for all other operations
+
+- *(pkg)* Add device tier to identity
+([MEN-8580](https://northerntech.atlassian.net/browse/MEN-8580)) ([de321eb](https://github.com///commit/de321ebdb4235bd1bed6d749fe5e774781137dbd)) 
+
+- *(tenantadm)* Device tier limits support for create_organization workflow
+([MEN-8906](https://northerntech.atlassian.net/browse/MEN-8906)) ([00996c8](https://github.com///commit/00996c8a8e385fd9bca7763aa82e88cccc994c7c)) 
+
+- *(useradm)* Add rate limiting configuration for authenticated requests
+([MEN-7745](https://northerntech.atlassian.net/browse/MEN-7745)) ([64ca71f](https://github.com///commit/64ca71f162901bb4dce096f14da416a23495dfbc)) 
+
+
+  Added the following configuration parameters:
+  ```yaml
+  rate_limits:
+    # auth configures rate limits for authenticated requests.
+    auth:
+      # enable rate limiting also requires redis_connection_string to be effective.
+      enable: false
+      # reject_unmatched rejects requests that does not resolve to a
+      # rate limit group. That is, if either there's no api_pattern matching
+      # the request or if the group_expression does not match a group.
+      # Defaults to false - disable rate limiting for unmatched requests.
+      reject_unmatched: false
+      # groups specify rate limiting groups that overrides the parameters in the
+      # default group.
+      groups:
+          # name defines the name of the group. The name is used in
+          # match.group_expression to match an api_pattern with a group.
+        - name: default
+          # interval is the time interval when the rate limiter resets.
+          interval: 1m
+          # quota is the number of requests allowed in an interval.
+          quota: 300
+          # event_expression is a go template for grouping requests.
+          # The following attributes are available in the context:
+          # Identity - contains a subset of the JWT claims:
+          # .Subject  (jwt:"sub")          string
+          # .Tenant   (jwt:"mender.tenant") string
+          # .Plan     (jwt:"mender.plan")   string
+          # .Addons   (jwt:"mender.addons") []struct{Enabled bool; Name string}
+          # .IsUser   (jwt:"mender.user")   bool
+          # .IsDevice (jwt:"mender.device") bool
+          # .Trial    (jwt:"mender.trial")  bool
+          event_expression: "{{with .Identity}}{{.Subject}}{{end}}"
+      match:
+          # api_pattern specifies an API path pattern as defined by http.ServeMux
+          # https://pkg.go.dev/net/http#hdr-Patterns-ServeMux
+        - api_pattern: /
+          # group_expression defines  the group for this matching expression.
+          # A group can be selected dynamically using Go templates or statically
+          # with a literal string.
+          # See group.event_expression for template context attributes.
+          group_expression: "default"
+          # More example match rules:
+  ```
+
+- *(workflows)* Add device tier limits to create_organization workflows
+([MEN-8906](https://northerntech.atlassian.net/browse/MEN-8906)) ([fd4d469](https://github.com///commit/fd4d469e9f896e6f90a95da47862000b6dbabb29)) 
+
+
+
+
+
+### Refactor
+
+
+- *(ratelimits)* Move ratelimits default configs to service config
+ ([f5af7f3](https://github.com///commit/f5af7f30fdd67235a0532c0989617db9505bdc61)) 
+
+
+  The defaults will differ so we need to decentralize them.
+
+
+
+
+
+
+
 ## v4.1.0-saas.18 - 2025-11-04
 
 
