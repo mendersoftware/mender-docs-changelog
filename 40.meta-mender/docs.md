@@ -7,6 +7,45 @@ shortcode-core:
 github: false
 ---
 
+## meta-mender scarthgap-v2025.11
+
+### Changelogs
+
+#### meta-mender (scarthgap-v2025.11)
+
+New changes in meta-mender since scarthgap-v2025.09:
+
+##### Bug Fixes
+
+* Fix image name for custom WIC imager
+* Fix a circular dependency in uboot recipe
+* Fix an invalid condition check when generating
+  fw_env.config.default.
+* Add missing `curl` dependency to `mender-monitor` recipes
+  ([MEN-8986](https://northerntech.atlassian.net/browse/MEN-8986))
+* Clear warning on `mender-migrate-configuration`
+
+##### Other
+
+* Add recipe for `mender-artifact` 4.1.1
+* Add recipe `mender` 5.0.3
+  ([MEN-8870](https://northerntech.atlassian.net/browse/MEN-8870))
+* Add recipe `mender-binary-delta` 1.5.2
+  ([MEN-8870](https://northerntech.atlassian.net/browse/MEN-8870))
+* Add recipe `mender-configure` 1.1.3
+  ([MEN-8870](https://northerntech.atlassian.net/browse/MEN-8870))
+* Add recipe `mender-monitor` 1.4.3
+  ([MEN-8870](https://northerntech.atlassian.net/browse/MEN-8870))
+* **Warning**: Forced upgrade to `mender` v5 when using default
+  versions. There was an oversight at the time of releasing `mender` 5.0.2
+  in `scarthgap` which, in effect, sets the default `mender` recipe for
+  the build to the v5 series, forcing a major upgrade on users that did
+  not pin `mender` to an specific version or series. This change adds a
+  warning. A revert was considered but deemed more risky, as forcing a
+  downgrade is a known path for breakage
+  ([MEN-8977](https://northerntech.atlassian.net/browse/MEN-8977))
+
+
 ## meta-mender scarthgap-v2025.09
 
 ### Changelogs
@@ -214,6 +253,46 @@ New changes in meta-mender since kirkstone-v2024.06:
   `INIT_MANAGER = "systemd"` in your `local.conf` file. Alternatively,
   use `MENDER_FEATURES_DISABLE = "mender-systemd"`, but be aware that
   this can break daemon mode.
+
+
+## meta-mender kirkstone-v2025.11
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2025.11)
+
+New changes in meta-mender since kirkstone-v2025.09:
+
+##### Bug Fixes
+
+* Clear warning on `mender-client-migrate-configuration`
+* Fix image name for custom WIC imager
+* Fix a circular dependency in uboot recipe
+* Fix an invalid condition check when generating
+  fw_env.config.default.
+* Add missing `curl` dependency to `mender-monitor` recipes
+  ([MEN-8986](https://northerntech.atlassian.net/browse/MEN-8986))
+
+##### Other
+
+* Add recipe `mender` 5.0.3
+  ([MEN-8870](https://northerntech.atlassian.net/browse/MEN-8870))
+* Add recipe `mender-binary-delta` 1.5.2
+  ([MEN-8870](https://northerntech.atlassian.net/browse/MEN-8870))
+* Add recipe `mender-configure` 1.1.3
+  ([MEN-8870](https://northerntech.atlassian.net/browse/MEN-8870))
+* Add recipe `mender-monitor` 1.4.3
+  ([MEN-8870](https://northerntech.atlassian.net/browse/MEN-8870))
+* **Warning**: Forced upgrade to `mender` v5 when selecting
+  `mender` recipe for the client provider but keeping default versions.
+  There was an oversight at the time of releasing `mender` 5.0.2 in
+  `kirkstone` which, in effect, sets the default `mender` recipe for
+  builds using `mender` provider to the v5 series, forcing a major upgrade
+  on users that did select `mender` for the client provider and did not
+  pin `mender` to an specific version or series. This change adds a
+  warning. A revert was considered but deemed more risky, as forcing a
+  downgrade is a known path for breakage
+  ([MEN-8977](https://northerntech.atlassian.net/browse/MEN-8977))
 
 
 ## meta-mender kirkstone-v2025.09
