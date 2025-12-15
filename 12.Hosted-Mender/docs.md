@@ -7,6 +7,986 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.0-saas.22 - 2025-12-15
+
+
+### Bug fixes
+
+
+- *(deployments)* Allow releases of finished deployments to be deleted
+([MEN-8923](https://northerntech.atlassian.net/browse/MEN-8923)) ([d4ad1cb](https://github.com/mendersoftware/mender-server-enterprise/commit/d4ad1cb9bb38083fcaaae91ab43907e38c6b5cfa))  by @frodeha
+
+
+
+
+
+  Only consider active deployments when we check if a release is "in use"
+  before deleting it.
+
+- *(deployments)* Add missing delta generation status fields
+([MEN-9064](https://northerntech.atlassian.net/browse/MEN-9064)) ([2396356](https://github.com/mendersoftware/mender-server-enterprise/commit/23963560684c567c0e4df933078973798ab8b49b))  by @alfrunes
+
+
+
+
+
+  Populate the fields for when the delta generation job transitions to
+  finished, and compute the total time from start to finish.
+
+- *(deviceauth)* Fixes for hitting the cached limits
+ ([8a95a55](https://github.com/mendersoftware/mender-server-enterprise/commit/8a95a55740c6b2dcf2bf77ced4f4c6152e913fa6))  by @merlin-northern
+
+
+
+
+
+
+- *(deviceauth)* Do not drop the old index for 2.0.1 migration
+([MEN-8995](https://northerntech.atlassian.net/browse/MEN-8995)) ([ca27ee9](https://github.com/mendersoftware/mender-server-enterprise/commit/ca27ee9ba21eb510c33f734e735d1911f2835699))  by @merlin-northern
+
+
+
+
+
+
+- *(deviceauth)* Use mongo's error code to check for record duplication in AddDevice
+ ([52e8023](https://github.com/mendersoftware/mender-server-enterprise/commit/52e8023a2573ca9db060f90bdadb71c3db15a398))  by @OlliMartin
+
+
+
+- *(deviceauth)* Handle empty id data in maintenance sync command
+ ([1aa101c](https://github.com/mendersoftware/mender-server-enterprise/commit/1aa101c1f94f99e1ccfcc868d5fa3c742995ef05))  by @alfrunes
+
+
+
+- *(deviceauth)* Maintenance sync stringfy incompatible inventory data
+ ([d8f2039](https://github.com/mendersoftware/mender-server-enterprise/commit/d8f20390e2dfcaca748a0c91cca5bc89380567c5))  by @alfrunes
+
+
+
+- *(deviceauth)* Aligned api response w/ current common format
+ ([e081aad](https://github.com/mendersoftware/mender-server-enterprise/commit/e081aadf1e47a8ae38b7b36aac13feb240d6e3ec))  by @mzedel
+
+
+
+- *(deviceauth)* Return 503 when redis is unavailabe
+([MEN-9079](https://northerntech.atlassian.net/browse/MEN-9079)) ([6277610](https://github.com/mendersoftware/mender-server-enterprise/commit/6277610d78022db1254a15a94969a6dc3e4e95d4))  by @bahaa-ghazal
+
+
+
+
+- *(deviceauth)* Prevent race condition re-caching invalid value
+([MEN-9071](https://northerntech.atlassian.net/browse/MEN-9071)) ([16ab568](https://github.com/mendersoftware/mender-server-enterprise/commit/16ab5689a623f3305aae9b52b7f26bd6905cee39))  by @bahaa-ghazal
+
+
+
+
+- *(deviceconnect)* Device ping/pong handler causes timeouts
+([MEN-9029](https://northerntech.atlassian.net/browse/MEN-9029)) ([9b318f8](https://github.com/mendersoftware/mender-server-enterprise/commit/9b318f82587bab341e15b96a2843d61012505881))  by @alfrunes
+
+
+
+
+
+  When there's traffic on the websocket connection, the ping/pong handler
+  is never called and therefore SetReadDeadline is never called which in
+  turn causes the connection to terminate.
+  This PR removes the calls to Conn.SetReadDeadline to rely on TCP
+  keep-alive instead.
+
+- *(gui)* Ensured we always try to get the billing profiles - even when there might not be one yet
+ ([b42932d](https://github.com/mendersoftware/mender-server-enterprise/commit/b42932d946926543a4ab3b2d5ee27546f9c34969))  by @mzedel
+
+
+
+
+  - this is to allow user with an unfinished signup process to proceed
+
+- *(gui)* Fixed an issue that would prevent sorting the list of ∆ artifact generations
+ ([a13b3b9](https://github.com/mendersoftware/mender-server-enterprise/commit/a13b3b96d77eb9e0eddf4d1e78ea068fa77eabe5))  by @mzedel
+
+
+
+- *(gui)* Made use of additional backend info about delta jobs
+ ([e4be1aa](https://github.com/mendersoftware/mender-server-enterprise/commit/e4be1aa36675a05f01d4bfe7c4e4a5f2978d082d))  by @mzedel
+
+
+
+- *(gui)* Fixed an issue that prevented trial users from short feedback loops during onboarding
+ ([fbf60fd](https://github.com/mendersoftware/mender-server-enterprise/commit/fbf60fdbc59fc6099c5c90619565d7a82e02c17f))  by @mzedel
+
+
+
+
+  - the shorter device intervals would not be shown in the device configuration snippet
+
+- *(tenantadm)* Let checking billing profiles  existence not cause an error when uninitialized
+ ([913dd70](https://github.com/mendersoftware/mender-server-enterprise/commit/913dd70550d8dc1fbfccb1daa63315f10e5a9646))  by @mzedel
+
+
+
+- *(tenantadm)* Check only standard tier when going to service provider
+ ([9ef6d1c](https://github.com/mendersoftware/mender-server-enterprise/commit/9ef6d1c069ad070a3d8e1abc1324226779bacadc))  by @merlin-northern
+
+
+
+
+
+  After recent changes we return all the tiers set to 0 from deviceauth.
+  With this fix we only verify the standard tier when we upgrade
+  to SP tenant.
+
+- Invalid Go template comment for send sso notification
+ ([ae31b06](https://github.com/mendersoftware/mender-server-enterprise/commit/ae31b06f7b302120f766e6e5c6d1ec4aef75e503))  by @alfrunes
+
+
+- Check if ratelimits is enabled without redis
+([MEN-8863](https://northerntech.atlassian.net/browse/MEN-8863)) ([a896ebf](https://github.com/mendersoftware/mender-server-enterprise/commit/a896ebfb3373ee518fe98e1a5dbcb9bb3064779f))  by @bahaa-ghazal
+
+
+
+- Fixed another set of api spec inconsistencies
+ ([88352b4](https://github.com/mendersoftware/mender-server-enterprise/commit/88352b406136fbaa89da0b24f7ef44623b514572))  by @mzedel
+
+
+
+
+
+
+### Documentation
+
+
+- *(deployments)* Updated spec for internal get and put limit endpoints
+([MEN-8848](https://northerntech.atlassian.net/browse/MEN-8848)) ([4d64fdf](https://github.com/mendersoftware/mender-server-enterprise/commit/4d64fdfc4f5b5227222ccb3f3ca088ae44d807eb))  by @frodeha
+
+
+
+
+
+  Updated the existing API specification to be usable for limits other
+  than only "storage". Also adjusted the request and response definitions
+  to match the reality of the server endpoints.
+
+- *(deployments)* Update delta objects to reflect consolidated objects
+ ([40e7451](https://github.com/mendersoftware/mender-server-enterprise/commit/40e74510ade457b212e88d7ae87f2b296b568e08))  by @alfrunes
+
+
+
+
+  Now DeltaJobDetails inherits the list item to reflect the actual
+  response from the API.
+
+- *(devicemonitor)* Remove required constraints on config models
+ ([798e8ad](https://github.com/mendersoftware/mender-server-enterprise/commit/798e8ad31d9b04d9cf7032e08c6ec9f7c5fb7889))  by @alfrunes
+
+
+
+
+  The tests reveal that the properties are not required.
+
+- *(tenantadm)* Support for device tiers
+([MEN-8907](https://northerntech.atlassian.net/browse/MEN-8907)) ([a8ea0e5](https://github.com/mendersoftware/mender-server-enterprise/commit/a8ea0e5059d5d773cb14a9102418af855926d377))  by @merlin-northern
+
+
+
+
+
+
+- Regenerate OpenAPI specs for distribution
+ ([c225d83](https://github.com/mendersoftware/mender-server-enterprise/commit/c225d83209a76858cd5fa0946583b6fda8b7fd09))  by @alfrunes
+
+
+
+
+
+
+### Features
+
+
+- *(deployments)* Added internal get and put limit endpoints
+([MEN-8848](https://northerntech.atlassian.net/browse/MEN-8848)) ([7fef6ae](https://github.com/mendersoftware/mender-server-enterprise/commit/7fef6ae4b637848a387ab61ab39939b372680f97))  by @frodeha
+
+
+
+
+- *(deployments)* Added support for -1 (unlimited) limits
+([MEN-8848](https://northerntech.atlassian.net/browse/MEN-8848)) ([248635e](https://github.com/mendersoftware/mender-server-enterprise/commit/248635ecd12bf262553824e1a8988eef32465fda))  by @frodeha
+
+
+
+
+- *(devicemonitor)* Send security notifications on email toggle
+([MEN-9101](https://northerntech.atlassian.net/browse/MEN-9101)) ([588ac34](https://github.com/mendersoftware/mender-server-enterprise/commit/588ac34867b5eb75146f2627439c5ce1bc87be85))  by @merlin-northern
+
+
+
+
+
+
+- *(gui)* Added a warning when trying to deploy too large artifacts to mcu devices
+ ([f171dde](https://github.com/mendersoftware/mender-server-enterprise/commit/f171dded412e4010a579648a679e1769d9dd4575))  by @mzedel
+
+
+
+- *(gui)* Delayed feedback form for 3h after first login
+([MEN-8896](https://northerntech.atlassian.net/browse/MEN-8896)) ([4ec610b](https://github.com/mendersoftware/mender-server-enterprise/commit/4ec610bc922e19c68a2e0b76da9b85d39d53ace4))  by @mineralsfree
+
+
+
+
+- *(pkg)* OpenAPI3 generated client for deviceauth internal API
+([MEN-8907](https://northerntech.atlassian.net/browse/MEN-8907)) ([fffc55f](https://github.com/mendersoftware/mender-server-enterprise/commit/fffc55f30394eb3dc6c6497df8c47080584b254f))  by @merlin-northern
+
+
+
+
+
+
+- *(tenantadm)* Support for device tiers
+([MEN-8907](https://northerntech.atlassian.net/browse/MEN-8907)) ([4a13e8c](https://github.com/mendersoftware/mender-server-enterprise/commit/4a13e8cb9a4ad300172fe883f3fe2269b3f1d277))  by @merlin-northern
+
+
+
+
+
+
+- *(useradm)* Send an email on PAT management events
+([MEN-8969](https://northerntech.atlassian.net/browse/MEN-8969)) ([57e5810](https://github.com/mendersoftware/mender-server-enterprise/commit/57e5810534e451fbffff49c169c9b6500e76e396))  by @merlin-northern
+
+
+
+
+
+
+- *(workflows)* Send security notifications: email_notification workflow
+([MEN-9101](https://northerntech.atlassian.net/browse/MEN-9101)) ([c9f2ad8](https://github.com/mendersoftware/mender-server-enterprise/commit/c9f2ad830e8b3763fb00b5dd11e69bedadd3bcdc))  by @merlin-northern
+
+
+
+
+
+
+- Add `bytesprocessed` field to accesslog entries
+ ([11c11d5](https://github.com/mendersoftware/mender-server-enterprise/commit/11c11d54a55c721aa23c44ed88b30fedd6084e40))  by @alfrunes
+
+
+
+
+  The `bytesprocessed` field reflects the number of bytes consumed from
+  the request body.
+
+
+
+
+### Refactor
+
+
+- *(deployments)* Rename GetDeploymentIDsByArtifactNames
+([MEN-8923](https://northerntech.atlassian.net/browse/MEN-8923)) ([fd9137e](https://github.com/mendersoftware/mender-server-enterprise/commit/fd9137eee0e63c2a52ebf13bdc9864ec7b3388fe))  by @frodeha
+
+
+
+
+
+  Rename GetDeploymentIDsByArtifactNames to GetActiveDeploymentIDsByArtifactNames to
+  better reflect that only artifact names of active deployments are
+  searched.
+
+- *(deployments)* Consolidate generate delta jobs and details
+ ([885f9b1](https://github.com/mendersoftware/mender-server-enterprise/commit/885f9b11cc7037946ee619112b9f70fd61cb9d88))  by @alfrunes
+
+
+
+
+
+
+
+### Security
+
+
+- Bump node-forge from 1.3.1 to 1.3.2 in /frontend
+ ([02a2734](https://github.com/mendersoftware/mender-server-enterprise/commit/02a27346cabf1e936f8f82362da106729b4c4ec4))  by @dependabot[bot]
+
+
+
+
+  Bumps [node-forge](https://github.com/digitalbazaar/forge) from 1.3.1 to 1.3.2.
+  - [Changelog](https://github.com/digitalbazaar/forge/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/digitalbazaar/forge/compare/v1.3.1...v1.3.2)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: node-forge
+    dependency-version: 1.3.2
+    dependency-type: indirect
+  ...
+- Bump the mui group in /frontend with 3 updates
+ ([b6520f9](https://github.com/mendersoftware/mender-server-enterprise/commit/b6520f9d9ca70dec8dbfcc7f1677fb1b2626dd17))  by @dependabot[bot]
+
+
+
+
+  Bumps the mui group in /frontend with 3 updates: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
+  
+  
+  Updates `@mui/icons-material` from 7.3.4 to 7.3.5
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.3.5/packages/mui-icons-material)
+  
+  Updates `@mui/material` from 7.3.4 to 7.3.5
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.3.5/packages/mui-material)
+  
+  Updates `@mui/x-date-pickers` from 8.16.0 to 8.19.0
+  - [Release notes](https://github.com/mui/mui-x/releases)
+  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/mui-x/commits/v8.19.0/packages/x-date-pickers)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@mui/icons-material"
+    dependency-version: 7.3.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/material"
+    dependency-version: 7.3.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.19.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  ...
+- Bump @playwright/test
+ ([d37c563](https://github.com/mendersoftware/mender-server-enterprise/commit/d37c563978cd065db93f82756d43b172726df9f8))  by @dependabot[bot]
+
+
+
+
+  Bumps the playwright group in /frontend/tests/e2e_tests with 1 update: [@playwright/test](https://github.com/microsoft/playwright).
+  
+  
+  Updates `@playwright/test` from 1.56.1 to 1.57.0
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.56.1...v1.57.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@playwright/test"
+    dependency-version: 1.57.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: playwright
+  ...
+- Bump the e2e-test-dependencies group
+ ([79ce5c0](https://github.com/mendersoftware/mender-server-enterprise/commit/79ce5c06ee2c8b64b2d653246b6b2c171580977c))  by @dependabot[bot]
+
+
+
+
+  Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 3 updates: [inquirer](https://github.com/SBoudrias/Inquirer.js), [validator](https://github.com/validatorjs/validator.js) and [yaml](https://github.com/eemeli/yaml).
+  
+  
+  Updates `inquirer` from 12.10.0 to 13.0.1
+  - [Release notes](https://github.com/SBoudrias/Inquirer.js/releases)
+  - [Commits](https://github.com/SBoudrias/Inquirer.js/compare/inquirer@12.10.0...inquirer@13.0.1)
+  
+  Updates `validator` from 13.15.20 to 13.15.23
+  - [Release notes](https://github.com/validatorjs/validator.js/releases)
+  - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.20...13.15.23)
+  
+  Updates `yaml` from 2.8.1 to 2.8.2
+  - [Release notes](https://github.com/eemeli/yaml/releases)
+  - [Commits](https://github.com/eemeli/yaml/compare/v2.8.1...v2.8.2)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: inquirer
+    dependency-version: 13.0.1
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: e2e-test-dependencies
+  - dependency-name: validator
+    dependency-version: 13.15.23
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: e2e-test-dependencies
+  - dependency-name: yaml
+    dependency-version: 2.8.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: e2e-test-dependencies
+  ...
+- Bump node in /frontend
+ ([7d80f97](https://github.com/mendersoftware/mender-server-enterprise/commit/7d80f9750af574d2109b8986fa9cfa31107e7f4e))  by @dependabot[bot]
+
+
+
+
+  Bumps node from 24.11.0-alpine3.22 to 25.2.1-alpine3.22.
+  
+  ---
+  updated-dependencies:
+  - dependency-name: node
+    dependency-version: 25.2.1-alpine3.22
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+  ...
+- Bump express from 4.21.1 to 4.22.1 in /frontend/tests/e2e_tests
+ ([fccca78](https://github.com/mendersoftware/mender-server-enterprise/commit/fccca78112f5c374984403e814666faffd440bf2))  by @dependabot[bot]
+
+
+
+
+  Bumps [express](https://github.com/expressjs/express) from 4.21.1 to 4.22.1.
+  - [Release notes](https://github.com/expressjs/express/releases)
+  - [Changelog](https://github.com/expressjs/express/blob/v4.22.1/History.md)
+  - [Commits](https://github.com/expressjs/express/compare/4.21.1...v4.22.1)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: express
+    dependency-version: 4.22.1
+    dependency-type: indirect
+  ...
+- Bump validator from 13.15.20 to 13.15.23 in /frontend
+ ([358ea27](https://github.com/mendersoftware/mender-server-enterprise/commit/358ea27f761edb79f22e190ae63f7736b196f955))  by @dependabot[bot]
+
+
+
+
+  Bumps [validator](https://github.com/validatorjs/validator.js) from 13.15.20 to 13.15.23.
+  - [Release notes](https://github.com/validatorjs/validator.js/releases)
+  - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.20...13.15.23)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: validator
+    dependency-version: 13.15.23
+    dependency-type: direct:production
+  ...
+- Bump the production-dependencies group across 1 directory with 7 updates
+ ([a78af2c](https://github.com/mendersoftware/mender-server-enterprise/commit/a78af2c90dde238613c205b8c56111f6de40defd))  by @dependabot[bot]
+
+
+
+
+  Bumps the production-dependencies group with 7 updates in the /frontend directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit) | `2.9.2` | `2.11.0` |
+  | [@sentry/react](https://github.com/getsentry/sentry-javascript) | `10.22.0` | `10.28.0` |
+  | [@stripe/react-stripe-js](https://github.com/stripe/react-stripe-js) | `5.3.0` | `5.4.1` |
+  | [@stripe/stripe-js](https://github.com/stripe/stripe-js) | `8.2.0` | `8.5.3` |
+  | [axios](https://github.com/axios/axios) | `1.13.1` | `1.13.2` |
+  | [react-hook-form](https://github.com/react-hook-form/react-hook-form) | `7.66.0` | `7.67.0` |
+  | [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom) | `7.9.5` | `7.10.0` |
+  
+  
+  
+  Updates `@reduxjs/toolkit` from 2.9.2 to 2.11.0
+  - [Release notes](https://github.com/reduxjs/redux-toolkit/releases)
+  - [Commits](https://github.com/reduxjs/redux-toolkit/compare/v2.9.2...v2.11.0)
+  
+  Updates `@sentry/react` from 10.22.0 to 10.28.0
+  - [Release notes](https://github.com/getsentry/sentry-javascript/releases)
+  - [Changelog](https://github.com/getsentry/sentry-javascript/blob/10.28.0/CHANGELOG.md)
+  - [Commits](https://github.com/getsentry/sentry-javascript/compare/10.22.0...10.28.0)
+  
+  Updates `@stripe/react-stripe-js` from 5.3.0 to 5.4.1
+  - [Release notes](https://github.com/stripe/react-stripe-js/releases)
+  - [Changelog](https://github.com/stripe/react-stripe-js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/stripe/react-stripe-js/compare/v5.3.0...v5.4.1)
+  
+  Updates `@stripe/stripe-js` from 8.2.0 to 8.5.3
+  - [Release notes](https://github.com/stripe/stripe-js/releases)
+  - [Commits](https://github.com/stripe/stripe-js/compare/v8.2.0...v8.5.3)
+  
+  Updates `axios` from 1.13.1 to 1.13.2
+  - [Release notes](https://github.com/axios/axios/releases)
+  - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
+  - [Commits](https://github.com/axios/axios/compare/v1.13.1...v1.13.2)
+  
+  Updates `react-hook-form` from 7.66.0 to 7.67.0
+  - [Release notes](https://github.com/react-hook-form/react-hook-form/releases)
+  - [Changelog](https://github.com/react-hook-form/react-hook-form/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/react-hook-form/react-hook-form/compare/v7.66.0...v7.67.0)
+  
+  Updates `react-router-dom` from 7.9.5 to 7.10.0
+  - [Release notes](https://github.com/remix-run/react-router/releases)
+  - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)
+  - [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.10.0/packages/react-router-dom)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@reduxjs/toolkit"
+    dependency-version: 2.11.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@sentry/react"
+    dependency-version: 10.28.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@stripe/react-stripe-js"
+    dependency-version: 5.4.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@stripe/stripe-js"
+    dependency-version: 8.5.3
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: axios
+    dependency-version: 1.13.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: production-dependencies
+  - dependency-name: react-hook-form
+    dependency-version: 7.67.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-router-dom
+    dependency-version: 7.10.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  ...
+- Bump the development-dependencies group across 1 directory with 15 updates
+ ([68ed960](https://github.com/mendersoftware/mender-server-enterprise/commit/68ed96028a4e8ab33d18b6cca3c3bc5ed93af079))  by @dependabot[bot]
+
+
+
+
+  Bumps the development-dependencies group with 14 updates in the /frontend directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli) | `1.6.0` | `1.6.6` |
+  | [@rspack/core](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack) | `1.6.1` | `1.6.6` |
+  | [@rspack/plugin-react-refresh](https://github.com/rspack-contrib/rspack-plugin-react-refresh) | `1.5.2` | `1.5.3` |
+  | [@sentry/webpack-plugin](https://github.com/getsentry/sentry-javascript-bundler-plugins) | `4.6.0` | `4.6.1` |
+  | [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) | `24.10.0` | `24.10.1` |
+  | [@types/react](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/react) | `19.2.2` | `19.2.7` |
+  | [@types/react-dom](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/react-dom) | `19.2.2` | `19.2.3` |
+  | [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/tree/HEAD/packages/plugin-react) | `5.1.0` | `5.1.1` |
+  | [@vitest/coverage-v8](https://github.com/vitest-dev/vitest/tree/HEAD/packages/coverage-v8) | `4.0.12` | `4.0.15` |
+  | [core-js](https://github.com/zloirock/core-js/tree/HEAD/packages/core-js) | `3.46.0` | `3.47.0` |
+  | [jsdom](https://github.com/jsdom/jsdom) | `27.0.0` | `27.2.0` |
+  | [lint-staged](https://github.com/lint-staged/lint-staged) | `16.2.6` | `16.2.7` |
+  | [msw](https://github.com/mswjs/msw) | `2.12.1` | `2.12.3` |
+  | [prettier](https://github.com/prettier/prettier) | `3.6.2` | `3.7.4` |
+  
+  
+  
+  Updates `@rspack/cli` from 1.6.0 to 1.6.6
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.6.6/packages/rspack-cli)
+  
+  Updates `@rspack/core` from 1.6.1 to 1.6.6
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.6.6/packages/rspack)
+  
+  Updates `@rspack/plugin-react-refresh` from 1.5.2 to 1.5.3
+  - [Release notes](https://github.com/rspack-contrib/rspack-plugin-react-refresh/releases)
+  - [Commits](https://github.com/rspack-contrib/rspack-plugin-react-refresh/compare/v1.5.2...v1.5.3)
+  
+  Updates `@sentry/webpack-plugin` from 4.6.0 to 4.6.1
+  - [Release notes](https://github.com/getsentry/sentry-javascript-bundler-plugins/releases)
+  - [Changelog](https://github.com/getsentry/sentry-javascript-bundler-plugins/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/getsentry/sentry-javascript-bundler-plugins/compare/4.6.0...4.6.1)
+  
+  Updates `@types/node` from 24.10.0 to 24.10.1
+  - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+  - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+  
+  Updates `@types/react` from 19.2.2 to 19.2.7
+  - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+  - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/react)
+  
+  Updates `@types/react-dom` from 19.2.2 to 19.2.3
+  - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+  - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/react-dom)
+  
+  Updates `@vitejs/plugin-react` from 5.1.0 to 5.1.1
+  - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
+  - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
+  - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@5.1.1/packages/plugin-react)
+  
+  Updates `@vitest/coverage-v8` from 4.0.12 to 4.0.15
+  - [Release notes](https://github.com/vitest-dev/vitest/releases)
+  - [Commits](https://github.com/vitest-dev/vitest/commits/v4.0.15/packages/coverage-v8)
+  
+  Updates `core-js` from 3.46.0 to 3.47.0
+  - [Release notes](https://github.com/zloirock/core-js/releases)
+  - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/zloirock/core-js/commits/v3.47.0/packages/core-js)
+  
+  Updates `jsdom` from 27.0.0 to 27.2.0
+  - [Release notes](https://github.com/jsdom/jsdom/releases)
+  - [Changelog](https://github.com/jsdom/jsdom/blob/main/Changelog.md)
+  - [Commits](https://github.com/jsdom/jsdom/compare/27.0.0...27.2.0)
+  
+  Updates `lint-staged` from 16.2.6 to 16.2.7
+  - [Release notes](https://github.com/lint-staged/lint-staged/releases)
+  - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/lint-staged/lint-staged/compare/v16.2.6...v16.2.7)
+  
+  Updates `msw` from 2.12.1 to 2.12.3
+  - [Release notes](https://github.com/mswjs/msw/releases)
+  - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/mswjs/msw/compare/v2.12.1...v2.12.3)
+  
+  Updates `prettier` from 3.6.2 to 3.7.4
+  - [Release notes](https://github.com/prettier/prettier/releases)
+  - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/prettier/prettier/compare/3.6.2...3.7.4)
+  
+  Updates `vitest` from 4.0.12 to 4.0.15
+  - [Release notes](https://github.com/vitest-dev/vitest/releases)
+  - [Commits](https://github.com/vitest-dev/vitest/commits/v4.0.15/packages/vitest)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@rspack/cli"
+    dependency-version: 1.6.6
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/core"
+    dependency-version: 1.6.6
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/plugin-react-refresh"
+    dependency-version: 1.5.3
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@sentry/webpack-plugin"
+    dependency-version: 4.6.1
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@types/node"
+    dependency-version: 24.10.1
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@types/react"
+    dependency-version: 19.2.7
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@types/react-dom"
+    dependency-version: 19.2.3
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@vitejs/plugin-react"
+    dependency-version: 5.1.1
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@vitest/coverage-v8"
+    dependency-version: 4.0.15
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: core-js
+    dependency-version: 3.47.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: jsdom
+    dependency-version: 27.2.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: lint-staged
+    dependency-version: 16.2.7
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: msw
+    dependency-version: 2.12.3
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: prettier
+    dependency-version: 3.7.4
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: vitest
+    dependency-version: 4.0.15
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  ...
+- Bump the backend-golang-dependencies group
+ ([b2ac870](https://github.com/mendersoftware/mender-server-enterprise/commit/b2ac870e0f1fac66a78b717330362db6ddda5195))  by @dependabot[bot]
+
+
+
+
+  Bumps the backend-golang-dependencies group in /backend with 9 updates:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [github.com/Azure/azure-sdk-for-go/sdk/azcore](https://github.com/Azure/azure-sdk-for-go) | `1.19.1` | `1.20.0` |
+  | [github.com/aws/aws-sdk-go-v2](https://github.com/aws/aws-sdk-go-v2) | `1.39.5` | `1.40.0` |
+  | [github.com/aws/aws-sdk-go-v2/config](https://github.com/aws/aws-sdk-go-v2) | `1.31.16` | `1.32.2` |
+  | [github.com/aws/aws-sdk-go-v2/credentials](https://github.com/aws/aws-sdk-go-v2) | `1.18.20` | `1.19.2` |
+  | [github.com/aws/aws-sdk-go-v2/service/iot](https://github.com/aws/aws-sdk-go-v2) | `1.69.8` | `1.69.13` |
+  | [github.com/aws/aws-sdk-go-v2/service/iotdataplane](https://github.com/aws/aws-sdk-go-v2) | `1.32.9` | `1.32.14` |
+  | [github.com/aws/aws-sdk-go-v2/service/s3](https://github.com/aws/aws-sdk-go-v2) | `1.89.1` | `1.92.1` |
+  | [github.com/nats-io/nats-server/v2](https://github.com/nats-io/nats-server) | `2.12.1` | `2.12.2` |
+  | [github.com/redis/go-redis/v9](https://github.com/redis/go-redis) | `9.16.0` | `9.17.2` |
+  
+  
+  Updates `github.com/Azure/azure-sdk-for-go/sdk/azcore` from 1.19.1 to 1.20.0
+  - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
+  - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.19.1...sdk/azcore/v1.20.0)
+  
+  Updates `github.com/aws/aws-sdk-go-v2` from 1.39.5 to 1.40.0
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.39.5...v1.40.0)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/config` from 1.31.16 to 1.32.2
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.31.16...v1.32.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.18.20 to 1.19.2
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.18.20...service/m2/v1.19.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.69.8 to 1.69.13
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/iot/v1.69.8...service/iot/v1.69.13)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.32.9 to 1.32.14
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/mgn/v1.32.9...service/mgn/v1.32.14)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.89.1 to 1.92.1
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.89.1...service/s3/v1.92.1)
+  
+  Updates `github.com/nats-io/nats-server/v2` from 2.12.1 to 2.12.2
+  - [Release notes](https://github.com/nats-io/nats-server/releases)
+  - [Commits](https://github.com/nats-io/nats-server/compare/v2.12.1...v2.12.2)
+  
+  Updates `github.com/redis/go-redis/v9` from 9.16.0 to 9.17.2
+  - [Release notes](https://github.com/redis/go-redis/releases)
+  - [Changelog](https://github.com/redis/go-redis/blob/v9.17.2/RELEASE-NOTES.md)
+  - [Commits](https://github.com/redis/go-redis/compare/v9.16.0...v9.17.2)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/azcore
+    dependency-version: 1.20.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2
+    dependency-version: 1.40.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/config
+    dependency-version: 1.32.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/credentials
+    dependency-version: 1.19.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iot
+    dependency-version: 1.69.13
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iotdataplane
+    dependency-version: 1.32.14
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/s3
+    dependency-version: 1.92.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats-server/v2
+    dependency-version: 2.12.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/redis/go-redis/v9
+    dependency-version: 9.17.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  ...
+- Bumped openapi-generator version
+ ([bb7fe70](https://github.com/mendersoftware/mender-server-enterprise/commit/bb7fe704af1634ba9164816014ab4cec09944dc1))  by @mzedel
+
+
+- Bump the backend-tests-python-dependencies group across 1 directory with 9 updates
+ ([be7ba09](https://github.com/mendersoftware/mender-server-enterprise/commit/be7ba09f4ae0a56451264226ab2374bb26208b59))  by @dependabot[bot]
+
+
+
+
+  Bumps the backend-tests-python-dependencies group with 9 updates in the /backend/tests directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [pytest](https://github.com/pytest-dev/pytest) | `8.4.2` | `9.0.1` |
+  | [pymongo](https://github.com/mongodb/mongo-python-driver) | `4.15.3` | `4.15.4` |
+  | [certifi](https://github.com/certifi/python-certifi) | `2025.10.5` | `2025.11.12` |
+  | [urllib3](https://github.com/urllib3/urllib3) | `2.3.0` | `2.5.0` |
+  | [boto3](https://github.com/boto/boto3) | `1.40.64` | `1.42.0` |
+  | [execnet](https://github.com/pytest-dev/execnet) | `2.1.1` | `2.1.2` |
+  | [stripe](https://github.com/stripe/stripe-python) | `13.1.1` | `14.0.1` |
+  | [redis](https://github.com/redis/redis-py) | `7.0.1` | `7.1.0` |
+  | [pydantic](https://github.com/pydantic/pydantic) | `2.12.3` | `2.12.5` |
+  
+  
+  
+  Updates `pytest` from 8.4.2 to 9.0.1
+  - [Release notes](https://github.com/pytest-dev/pytest/releases)
+  - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+  - [Commits](https://github.com/pytest-dev/pytest/compare/8.4.2...9.0.1)
+  
+  Updates `pymongo` from 4.15.3 to 4.15.4
+  - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
+  - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
+  - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.15.3...4.15.4)
+  
+  Updates `certifi` from 2025.10.5 to 2025.11.12
+  - [Commits](https://github.com/certifi/python-certifi/compare/2025.10.05...2025.11.12)
+  
+  Updates `urllib3` from 2.3.0 to 2.5.0
+  - [Release notes](https://github.com/urllib3/urllib3/releases)
+  - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+  - [Commits](https://github.com/urllib3/urllib3/compare/2.3.0...2.5.0)
+  
+  Updates `boto3` from 1.40.64 to 1.42.0
+  - [Release notes](https://github.com/boto/boto3/releases)
+  - [Commits](https://github.com/boto/boto3/compare/1.40.64...1.42.0)
+  
+  Updates `execnet` from 2.1.1 to 2.1.2
+  - [Changelog](https://github.com/pytest-dev/execnet/blob/master/CHANGELOG.rst)
+  - [Commits](https://github.com/pytest-dev/execnet/compare/v2.1.1...v2.1.2)
+  
+  Updates `stripe` from 13.1.1 to 14.0.1
+  - [Release notes](https://github.com/stripe/stripe-python/releases)
+  - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/stripe/stripe-python/compare/v13.1.1...v14.0.1)
+  
+  Updates `redis` from 7.0.1 to 7.1.0
+  - [Release notes](https://github.com/redis/redis-py/releases)
+  - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
+  - [Commits](https://github.com/redis/redis-py/compare/v7.0.1...v7.1.0)
+  
+  Updates `pydantic` from 2.12.3 to 2.12.5
+  - [Release notes](https://github.com/pydantic/pydantic/releases)
+  - [Changelog](https://github.com/pydantic/pydantic/blob/main/HISTORY.md)
+  - [Commits](https://github.com/pydantic/pydantic/compare/v2.12.3...v2.12.5)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: pytest
+    dependency-version: 9.0.1
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pymongo
+    dependency-version: 4.15.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: certifi
+    dependency-version: 2025.11.12
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: urllib3
+    dependency-version: 2.5.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: boto3
+    dependency-version: 1.42.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: execnet
+    dependency-version: 2.1.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: stripe
+    dependency-version: 14.0.1
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: redis
+    dependency-version: 7.1.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pydantic
+    dependency-version: 2.12.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  ...
+- Bump golang container image to 1.25.5
+ ([7f700b7](https://github.com/mendersoftware/mender-server-enterprise/commit/7f700b7c20381232299f848285eaac4c78b5ecb3))  by @alfrunes
+
+
+
+
+
+
+### Revert
+
+
+- Feat(pkg): added request content length to access logs
+ ([5ef9bbd](https://github.com/mendersoftware/mender-server-enterprise/commit/5ef9bbd626a09b35f1879f1292511d3938f2efbe))  by @alfrunes
+
+
+
+
+  Reverting in favor of logging the number of bytes processed.
+  
+  This reverts commit 137da33ab3056aa80eca0dc4226dddd24b84e7bc.
+
+
+
+
+
 ## v4.1.0-saas.21 - 2025-11-27
 
 
