@@ -7,7 +7,149 @@ shortcode-core:
 github: false
 ---
 
-## 4.1.0-saas.22 - 2025-12-15
+## v4.1.0-saas.23 - 2025-12-18
+
+
+### Bug fixes
+
+
+- *(deployments)* Only show delta size in details once finished
+([MEN-9152](https://northerntech.atlassian.net/browse/MEN-9152)) ([8840f3c](https://github.com/mendersoftware/mender-server-enterprise/commit/8840f3c39152ecd0f3a59b5e8b6302cd7112fd07))  by @alfrunes
+
+
+
+
+
+  The endpoint getting the delta job details tried to retrieve target
+  artifact size without considering the existence of the artifact. Now,
+  the size details is only available once the artifact is generated.
+
+- *(deployments)* Prevent race condition re-caching invalid value
+([MEN-9071](https://northerntech.atlassian.net/browse/MEN-9071)) ([e657a4d](https://github.com/mendersoftware/mender-server-enterprise/commit/e657a4dd3c46c5e7fb8ce5b5a87aae141894b8ce))  by @bahaa-ghazal
+
+
+
+
+- *(pkg)* `bytesprocessed` field not present for public APIs
+ ([d044021](https://github.com/mendersoftware/mender-server-enterprise/commit/d044021dd6e0dfe7f1bcfa4ea5b5ff8c296f2dad))  by @alfrunes
+
+
+
+
+  Public facing endpoints wraps the body with a io.LimitReader which
+  causes the bytesprocessed field to be omitted. This PR ensures that the
+  field is always present for all accesslogs.
+
+- *(tenantadm)* Wait for `create_tenant` workflow to complete
+([MEN-9041](https://northerntech.atlassian.net/browse/MEN-9041)) ([5e9488c](https://github.com/mendersoftware/mender-server-enterprise/commit/5e9488c06bcccc882e74728743725155c37e0f52))  by @bahaa-ghazal
+
+
+
+
+- *(tenantadm)* Prevent child tenant creation from exceeding parent device limit
+([MEN-9041](https://northerntech.atlassian.net/browse/MEN-9041)) ([fd53899](https://github.com/mendersoftware/mender-server-enterprise/commit/fd53899cefc190a000b9f9ef2b5335109bd21cf4))  by @bahaa-ghazal
+
+
+
+
+
+
+
+
+### Documentation
+
+
+- *(inventory)* Tenants/{tenant_id}/device/{device_id}/attributes intenral spec
+([MEN-9096](https://northerntech.atlassian.net/browse/MEN-9096)) ([052eb13](https://github.com/mendersoftware/mender-server-enterprise/commit/052eb137969d10dce0e78a6263d629b65134b1d2))  by @merlin-northern
+
+
+
+
+
+
+- *(inventory)* Added inventory statistics api documentation
+([MEN-9082](https://northerntech.atlassian.net/browse/MEN-9082)) ([235d57a](https://github.com/mendersoftware/mender-server-enterprise/commit/235d57a761bd893feb28669d99bf857132497da6))  by @frodeha
+
+
+
+
+
+
+
+
+### Features
+
+
+- *(inventory)* Internal patch /tenants/:tenant_id/device/:device_id/attributes
+([MEN-9096](https://northerntech.atlassian.net/browse/MEN-9096)) ([eddc85e](https://github.com/mendersoftware/mender-server-enterprise/commit/eddc85e4355a29be622847359fab0d3918bcf297))  by @merlin-northern
+
+
+
+
+
+
+  The new endpoint PATCH /tenants/:tenant_id/device/:device_id/attributes
+  works exactly like /tenants/:tenant_id/device/:device_id/attribute/scope/:scope
+  with the exception that it does not override the given attributes scope.
+  In other words: what you give in the body will maintain the scope.
+
+- *(inventory)* Added endpoint for retrieving device statistics
+([MEN-9082](https://northerntech.atlassian.net/browse/MEN-9082)) ([15fec13](https://github.com/mendersoftware/mender-server-enterprise/commit/15fec13fab1c94a5e4920a429bfdcc2c80dd2c8a))  by @frodeha
+
+
+
+
+- *(tenantadm)* Add billing support for micro device tiers
+ ([958f3a0](https://github.com/mendersoftware/mender-server-enterprise/commit/958f3a01e9ca613386ec2c92f3781a7a689fe38d))  by @alfrunes
+
+
+
+
+  Tied the business logic to changing device limit on subscription change
+  events when a `mender_micro` product is purchased.
+
+- *(workflows)* Support for accessing data from objects via json
+([MEN-9096](https://northerntech.atlassian.net/browse/MEN-9096)) ([e4532de](https://github.com/mendersoftware/mender-server-enterprise/commit/e4532de552438807b3ae64b2167a41efceffb4fc))  by @merlin-northern
+
+
+
+
+
+
+  With this change the input parameters that are objects with json
+  representation can be referenced via `identifier.jsonInput.field` syntax.
+  For instance: in a device is passed as an input parameter, then
+  anywhere you use `device.jsonInput.tier` you will refer to the Device.Tier
+  field, since it is decoreated with json `tier`.
+
+
+
+
+
+### Refactor
+
+
+- *(gui)* Aligned statistics based device count retrieval
+ ([231e982](https://github.com/mendersoftware/mender-server-enterprise/commit/231e982ba57537e4fb097e12af850d12844a3d86))  by @mzedel
+
+
+
+- *(inventory)* Shared device status definitions
+([MEN-9082](https://northerntech.atlassian.net/browse/MEN-9082)) ([be02d28](https://github.com/mendersoftware/mender-server-enterprise/commit/be02d287fcecb8ab03cdd567544ff6b237bacd86))  by @frodeha
+
+
+
+
+
+[MEN-9152]: https://northerntech.atlassian.net/browse/MEN-9152?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+[MEN-9071]: https://northerntech.atlassian.net/browse/MEN-9071?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+[MEN-9041]: https://northerntech.atlassian.net/browse/MEN-9041?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+
+
+
+
+
+## v4.1.0-saas.22 - 2025-12-15
 
 
 ### Bug fixes
