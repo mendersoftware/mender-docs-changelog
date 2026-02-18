@@ -7,6 +7,28 @@ shortcode-core:
 github: false
 ---
 
+## mender-configure-module 1.1.4
+
+_Released 02.17.2026_
+
+### Changelogs
+
+#### mender-configure-module (1.1.4)
+
+New changes in mender-configure-module since 1.1.3:
+
+##### Bug Fixes
+
+* Updated path to LED on raspberrypi to allow for blinking LED
+  demo.
+  ([MEN-9002](https://northerntech.atlassian.net/browse/MEN-9002))
+* Fixed an issue where passing either `on` or `off` to
+  mender-demo-raspberrypi-led resulted in an invalid config error. The
+  previous value for the trigger was `gpio` which is no longer valid.
+  Set the LED config to `default-on` when passing `on` and `none` when passing
+  off. ([MEN-9375](https://northerntech.atlassian.net/browse/MEN-9375))
+
+
 ## mender-configure-module 1.1.3
 
 _Released 11.03.2025_
