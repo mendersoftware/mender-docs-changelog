@@ -1,9 +1,11 @@
+----
 title: Hosted Mender
 taxonomy:
     category: docs
 shortcode-core:
     active: false
 github: false
+----
 
 ## 4.2.0-saas.2 - 2026-02-19
 
