@@ -1,11 +1,812 @@
----
 title: Hosted Mender
 taxonomy:
     category: docs
 shortcode-core:
     active: false
 github: false
----
+
+## 4.2.0-saas.2 - 2026-02-19
+
+
+### Bug fixes
+
+
+- *(auditlogs)* Filtering logs by actor email use correct email validation
+ ([85cf5e4](https://github.com/mendersoftware/mender-server-enterprise/commit/85cf5e4fe93ea72fbf38791f56ac4dfa2d3f074d))  by @alfrunes
+
+
+
+- *(deployments)* Aligned empty delta jobs list representation w/ documentation
+ ([70069b4](https://github.com/mendersoftware/mender-server-enterprise/commit/70069b4c58f7b7d619ee018c5ac855a61df7f12b))  by @mzedel
+
+
+
+
+  - the returned `null` is another spec alignment issue the ui ran into
+
+- *(deviceauth)* Replace unique authset index to include tier
+([MEN-9039](https://northerntech.atlassian.net/browse/MEN-9039)) ([243c17b](https://github.com/mendersoftware/mender-server-enterprise/commit/243c17bf453851784e1073a41303ee2e18f880f4))  by @alfrunes
+
+
+
+
+
+  Loosen the uniqueness constraint to allow multiple auth sets across
+  different tiers to allow switching tiers if limits permits.
+
+- *(deviceauth)* Prevent SP/child tenants from having unlimited limits
+([MEN-9273](https://northerntech.atlassian.net/browse/MEN-9273)) ([d5fbdeb](https://github.com/mendersoftware/mender-server-enterprise/commit/d5fbdeb4ac9d35d969b21cbbe640f9dc3df3f1f1))  by @bahaa-ghazal
+
+
+
+
+- *(generate-delta-worker)* Use absolute path for binaries
+ ([9e60b37](https://github.com/mendersoftware/mender-server-enterprise/commit/9e60b37d8e5ae6953b4da8f0decb56d3de4dbdf3))  by @bahaa-ghazal
+
+
+
+- *(generate-delta-worker)* Add delta image ID when reporting success
+([MEN-9168](https://northerntech.atlassian.net/browse/MEN-9168)) ([5ce1a29](https://github.com/mendersoftware/mender-server-enterprise/commit/5ce1a29f115859cfc5fb0dad655d92258b77bc9e))  by @alfrunes
+
+
+
+
+- *(gui)* Fixed an issue that could hinder re-opening a troubleshoot connection to a device
+ ([79a4cbf](https://github.com/mendersoftware/mender-server-enterprise/commit/79a4cbf2b705096388d93e108abfadc6d1cd08f0))  by @mzedel
+
+
+
+- *(gui)* Prevented key column in short data displays from breaking views by overflowing
+ ([cefdc48](https://github.com/mendersoftware/mender-server-enterprise/commit/cefdc480296cb2c21ffed9ac163f2f08b3b1652b))  by @mzedel
+
+
+
+- *(gui)* Made internal browser navigation explicit to prevent disagreements in app & url state
+ ([41519b2](https://github.com/mendersoftware/mender-server-enterprise/commit/41519b293266b6edc20df0463ffdc4eb2261dde8))  by @mzedel
+
+
+
+- *(gui)* Aligned link behaviour in deployment report
+ ([19fe6e5](https://github.com/mendersoftware/mender-server-enterprise/commit/19fe6e5b233b7be5cb7d1e393ed5342eb6e67165))  by @mzedel
+
+
+
+- *(gui)* Fixed an issue that would prevent importing config data into a partly populated editor
+([ME-614](https://northerntech.atlassian.net/browse/ME-614)) ([c14d30a](https://github.com/mendersoftware/mender-server-enterprise/commit/c14d30af802aeb5bd441605897f0695a7816fd06))  by @mzedel
+
+
+
+
+- *(gui)* Removed the automatic pie-chart height adjustment
+ ([7ca60aa](https://github.com/mendersoftware/mender-server-enterprise/commit/7ca60aa5baaba19dd99b4d7ecf5f0eeaa24e885c))  by @mineralsfree
+
+
+
+- *(gui)* Fixed the email verification flow for oauth2 users
+ ([df03220](https://github.com/mendersoftware/mender-server-enterprise/commit/df032208bb6a7e82a576fefaf6a92fb90e985cc9))  by @mineralsfree
+
+
+
+- *(gui)* Fixed an issue that prevented seeing devices linked to if multiple devices were targeted
+ ([fb41635](https://github.com/mendersoftware/mender-server-enterprise/commit/fb4163513015daf69bad33a946c578bcf6e605c6))  by @mzedel
+
+
+
+- *(gui)* Fixed an issue that might confuse tenants without a device limit by showing a limit
+ ([c866e3a](https://github.com/mendersoftware/mender-server-enterprise/commit/c866e3a5204690f570dda3a92722089369bb577d))  by @mzedel
+
+
+
+- *(gui)* Removed the state from billing address form
+([MEN-9275](https://northerntech.atlassian.net/browse/MEN-9275)) ([a1b53aa](https://github.com/mendersoftware/mender-server-enterprise/commit/a1b53aae7f3890ffb2da55833b9957d8814a3779))  by @mineralsfree
+
+
+
+
+- *(gui)* Subscription drawer fixes
+([MEN-9275](https://northerntech.atlassian.net/browse/MEN-9275)) ([c30f731](https://github.com/mendersoftware/mender-server-enterprise/commit/c30f731f07a288acdda46177e1b3d798d9ab44cb))  by @mineralsfree
+
+
+
+
+- *(gui)* Fixed the artifact select changing height issue
+([MEN-9248](https://northerntech.atlassian.net/browse/MEN-9248)) ([fcea9b7](https://github.com/mendersoftware/mender-server-enterprise/commit/fcea9b738398650f17beb7e1169b320b5a6aa804))  by @mineralsfree
+
+
+
+
+- *(gui)* Added placeholder when 0 releases found in filter
+([MEN-9248](https://northerntech.atlassian.net/browse/MEN-9248)) ([f0916d0](https://github.com/mendersoftware/mender-server-enterprise/commit/f0916d0e6169c8de33c5bc20c460d08dfae28b4c))  by @mineralsfree
+
+
+
+
+- *(gui)* Added selected state for release in the filter
+([MEN-9248](https://northerntech.atlassian.net/browse/MEN-9248)) ([1a9aff1](https://github.com/mendersoftware/mender-server-enterprise/commit/1a9aff1da76dca821aba0015acd4b1fa4e7120f8))  by @mineralsfree
+
+
+
+
+
+  + display release note instead of 1st artifact description
+
+- *(gui)* Let subscription page handle products retrieval to prevent erroneous on-prem requests
+ ([0239183](https://github.com/mendersoftware/mender-server-enterprise/commit/02391837ec03c9e13515eb19e5d9e6dd1466aade))  by @mzedel
+
+
+
+- *(iot-manager)* Fix re-encrypt to encrypt ALL secrets
+ ([edea736](https://github.com/mendersoftware/mender-server-enterprise/commit/edea73654f23e984e99c2ae5f9805896cf011a80))  by @alfrunes
+
+
+
+- *(tenantadm)* Validate device tier limits when changing subscription
+([MEN-9208](https://northerntech.atlassian.net/browse/MEN-9208)) ([353fb05](https://github.com/mendersoftware/mender-server-enterprise/commit/353fb0583374007ee22f7823e2f1a32209068305))  by @bahaa-ghazal
+
+
+
+
+- *(tenantadm)* Set limit to 0 for unspecified tier products
+ ([2047178](https://github.com/mendersoftware/mender-server-enterprise/commit/20471786ea60626c4d6a25ceba9ac1cc4ee70368))  by @bahaa-ghazal
+
+
+
+- *(tenantadm)* Make BillingProfile.state optional
+ ([0fe48cc](https://github.com/mendersoftware/mender-server-enterprise/commit/0fe48cc55ba51ecf157fa52af990a1dcba0526f9))  by @alfrunes
+
+
+
+
+- *(tenantadm)* Block upgrading tenants with unlimited limits to Service Provider
+([MEN-9273](https://northerntech.atlassian.net/browse/MEN-9273)) ([0114b79](https://github.com/mendersoftware/mender-server-enterprise/commit/0114b793c0b51276bb6c4156a66ebb8227f37d19))  by @bahaa-ghazal
+
+
+
+
+- *(tenantadm)* Prevent assigning tenants with unlimited limts as children tenants
+([MEN-9273](https://northerntech.atlassian.net/browse/MEN-9273)) ([fdc35c5](https://github.com/mendersoftware/mender-server-enterprise/commit/fdc35c5162d646e7cca67e5a2cc05cb49bb98ec5))  by @bahaa-ghazal
+
+
+
+
+- *(tenantadm)* Create tenant before setting limits in deviceauth
+ ([d085644](https://github.com/mendersoftware/mender-server-enterprise/commit/d08564472c8077f1cf6b3e0cf3c169bd020700de))  by @bahaa-ghazal
+
+
+
+
+  This is important so deviceauth can evaluate if limits is valid
+
+- *(tenantadm)* Set new default trial device limits
+ ([ebe1212](https://github.com/mendersoftware/mender-server-enterprise/commit/ebe12125f904d37aab615a7e92c56e17050161f6))  by @frodeha
+
+
+
+
+
+  Trial tenants are from now given a limit of:
+     * 5 standard devices
+     * 5 micro devices
+  
+  When we release support for system devices they will be given a limit of
+  5 of those as well.
+
+- *(useradm)* Internal API not deleting users with inconsistent tenant data
+([MEN-9274](https://northerntech.atlassian.net/browse/MEN-9274)) ([f5c4574](https://github.com/mendersoftware/mender-server-enterprise/commit/f5c45745a2018c09295af67507ab78b6524b553d))  by @alfrunes
+
+
+
+
+- *(useradm)* Mask private fields from user creation endpoint
+([MEN-9249](https://northerntech.atlassian.net/browse/MEN-9249)) ([9ae3ef1](https://github.com/mendersoftware/mender-server-enterprise/commit/9ae3ef1429d85fc88486825bae4da1db98f31475))  by @alfrunes
+
+
+
+
+
+  Constraints the create user input to the properties defined in the API
+  specification. Masking `login_ts`, `tfa_enabled` and `verified` from the
+  user creation API endpoint.
+
+- *(useradm)* Prevent invalid security email about disabled two-factor
+([MEN-9281](https://northerntech.atlassian.net/browse/MEN-9281)) ([be114f5](https://github.com/mendersoftware/mender-server-enterprise/commit/be114f573d90645f70dff03f09ba6788e4c34722))  by @alfrunes
+
+
+
+
+
+  When changing email address and two-factor was already disabled, do not
+  send an additional security email about disabling two-factor.
+
+- *(useradm)* Stop sending emails to all admin users when PAT changes
+([MEN-9244](https://northerntech.atlassian.net/browse/MEN-9244)) ([bf887fc](https://github.com/mendersoftware/mender-server-enterprise/commit/bf887fcd1cad4c2d5877be043d9318773cbc5a16))  by @bahaa-ghazal
+
+
+
+
+
+  Only the user who owns the PAT should receive the email.
+
+- *(useradm)* Use "send_pat_changed_email" workflow to send emails about PAT changes
+ ([8ff784f](https://github.com/mendersoftware/mender-server-enterprise/commit/8ff784fb4195ab91ebf11db2c1271f97ae838dee))  by @bahaa-ghazal
+
+
+
+- *(useradm)* Bind oauth2 login to browser session
+ ([51d5ea7](https://github.com/mendersoftware/mender-server-enterprise/commit/51d5ea70dc03bb7a991024301d9c318455df8a3e))  by @alfrunes
+
+
+
+
+  Sets a session cookie when initiating the redirect to the identity
+  provider and validates the session ID on return.
+
+- *(useradm)* Use RBAC middleware with legacy API
+ ([b45e011](https://github.com/mendersoftware/mender-server-enterprise/commit/b45e01154ab107acb11510962467c26a1dec4f8e))  by @kjaskiewiczz
+
+
+
+- *(useradm)* Absolute path for created user
+ ([7618cce](https://github.com/mendersoftware/mender-server-enterprise/commit/7618cceae051dd242ddea06b1ce112e9c79648a8))  by @alfrunes
+
+
+
+
+  The relative location resolves to a non-existing API path.
+
+- *(useradm)* Use base URL from configuration for OpenID callback URL
+([MEN-9374](https://northerntech.atlassian.net/browse/MEN-9374)) ([3d934a3](https://github.com/mendersoftware/mender-server-enterprise/commit/3d934a3d61f4c2b315e873d44c632fb2d4f2ff57))  by @alfrunes
+
+
+
+
+
+  Instead of parsing `X-Forwarded-Host`, use the constant base URL from
+  configuration.
+
+- *(workflows)* Restrict which binary can be executed by workers
+([QA-903](https://northerntech.atlassian.net/browse/QA-903)) ([3012e6a](https://github.com/mendersoftware/mender-server-enterprise/commit/3012e6a16b8dc7da50a16ce1c87b0da4191231ca))  by @bahaa-ghazal
+
+
+
+
+
+  This is done to satisfy gosec G204.
+
+- *(workflows)* Update verify email template to context neutral message
+([MEN-9183](https://northerntech.atlassian.net/browse/MEN-9183)) ([4ad9327](https://github.com/mendersoftware/mender-server-enterprise/commit/4ad932776ae610b42476a2633fcdaec30a0fcc32))  by @alfrunes
+
+
+
+
+- *(workflows)* Re-introduce retries in workflows for setting inventory data
+([MEN-9176](https://northerntech.atlassian.net/browse/MEN-9176)) ([84a19bb](https://github.com/mendersoftware/mender-server-enterprise/commit/84a19bbc4a733d153be095b4a66b3ee0b1108bc3))  by @kjaskiewiczz
+
+
+
+
+- Remove the unlimited limits when testing SP and child tenants
+ ([24c267a](https://github.com/mendersoftware/mender-server-enterprise/commit/24c267a1da3f624fa64a5713caf964d5e8c665db))  by @bahaa-ghazal
+
+
+
+
+
+
+### Documentation
+
+
+- *(deviceauth)* Updated description of unlimited limits in api docs
+([MEN-9180](https://northerntech.atlassian.net/browse/MEN-9180)) ([7e7dc5a](https://github.com/mendersoftware/mender-server-enterprise/commit/7e7dc5a5bfc5b52ab2d7fa83ae332b1e8a739ad8))  by @frodeha
+
+
+
+
+- *(inventory)* Aligned the attribute type used by the patch endpoint
+([MEN-9143](https://northerntech.atlassian.net/browse/MEN-9143)) ([29d0954](https://github.com/mendersoftware/mender-server-enterprise/commit/29d09547ee4c32e33499ec2f1872cdf376f12bf5))  by @merlin-northern
+
+
+
+
+
+
+- *(tenantadm)* GET /billing/products
+([MEN-8561](https://northerntech.atlassian.net/browse/MEN-8561)) ([3207f42](https://github.com/mendersoftware/mender-server-enterprise/commit/3207f428fcec4fe934d06ec04f0662489c829cc2))  by @merlin-northern
+
+
+
+
+
+
+- *(tenantadm)* Clarified relationship between product references in api docs
+ ([029b9ac](https://github.com/mendersoftware/mender-server-enterprise/commit/029b9ac7d2b766d09c89ed49e6bd2caea7fc3541))  by @mzedel
+
+
+
+- *(useradm)* Fix invalid property name for EmailVerificationComplete
+ ([0bd12fe](https://github.com/mendersoftware/mender-server-enterprise/commit/0bd12fe1d44cc16349dedca5cbec45f1fd91a063))  by @alfrunes
+
+
+
+- *(workflows)* Fix wrong path for health check API
+ ([ec490e3](https://github.com/mendersoftware/mender-server-enterprise/commit/ec490e334545b305059215d9f7f65c6ceb2f0c57))  by @alfrunes
+
+
+
+- Clarify release workflow
+ ([469a048](https://github.com/mendersoftware/mender-server-enterprise/commit/469a04862498a5188ada7997ae8502ae6c3fc3f3))  by @oldgiova
+
+
+
+
+  And remove the checklist, which is maintained in the Jira tickets only.
+- Required fix for the OpenAPI3 specs
+([QA-1097](https://northerntech.atlassian.net/browse/QA-1097)) ([625964b](https://github.com/mendersoftware/mender-server-enterprise/commit/625964bd5d19e67155b27f9155659ad40890aed3))  by @merlin-northern
+
+
+
+
+
+- /api/internal/v1/devauth/tenant/{tid}/limits does not return tenant_id
+([MEN-8571](https://northerntech.atlassian.net/browse/MEN-8571)) ([452d5f0](https://github.com/mendersoftware/mender-server-enterprise/commit/452d5f0084a047d4976a4d4a486f9cf72394c251))  by @merlin-northern
+
+
+
+
+
+
+
+
+
+### Features
+
+
+- *(deployments)* New configuration: `aws.literal_bucket_uri`
+ ([27ac487](https://github.com/mendersoftware/mender-server-enterprise/commit/27ac487b2b43170c70f55abe2d645f3634f04af6))  by @alfrunes
+
+
+
+
+  The configuration, if set, will treat the `aws.uri` and
+  `aws.external_uri` as absolute URLs to the bucket without decorating the
+  host name with the bucket name and region.
+
+- *(deviceauth)* Added migration to make unlimited limits consistent
+([MEN-9180](https://northerntech.atlassian.net/browse/MEN-9180)) ([0ec5e62](https://github.com/mendersoftware/mender-server-enterprise/commit/0ec5e62aeca3b3d5a83c2a25cd42694d0d20b770))  by @frodeha
+
+
+
+
+- *(deviceauth)* Removed support for `0` as unlimited in max_devices
+([MEN-9180](https://northerntech.atlassian.net/browse/MEN-9180)) ([2467601](https://github.com/mendersoftware/mender-server-enterprise/commit/2467601ac7f65adfcbb53b689fb02360a0a29991))  by @frodeha
+
+
+
+
+- *(deviceauth)* Ensured consistent handling of missing max_devices limits
+([MEN-9180](https://northerntech.atlassian.net/browse/MEN-9180)) ([46d7b1e](https://github.com/mendersoftware/mender-server-enterprise/commit/46d7b1e70dfd3d10c24c6a48a0a48af1e1d6fa60))  by @frodeha
+
+
+
+
+- *(gui)* Ensured log analysis insights can benefit entire userbase by default
+ ([54dda92](https://github.com/mendersoftware/mender-server-enterprise/commit/54dda92a14c29e1c888440af88871fc170780bd6))  by @mzedel
+
+
+
+- *(gui)* Enabled updated theme for everyone by default
+ ([5377ae1](https://github.com/mendersoftware/mender-server-enterprise/commit/5377ae18412fd40e94f9618e3f81578951286201))  by @mzedel
+
+
+
+
+  - disabling is still possible via feature flag
+
+- *(gui)* Added tier support to subscription page
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([7060a08](https://github.com/mendersoftware/mender-server-enterprise/commit/7060a084e31a9d0fdb68aa6e3047ff8fe35a89d7))  by @mineralsfree
+
+
+
+
+- *(gui)* Auto-select enabled tier based on current usage
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([5ee75bd](https://github.com/mendersoftware/mender-server-enterprise/commit/5ee75bd5fab66c8a4f56a1c84c76b6724646a348))  by @mineralsfree
+
+
+
+
+- *(gui)* Adjusted add-on selection input for tiers
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([c584b2e](https://github.com/mendersoftware/mender-server-enterprise/commit/c584b2e40ff54de0a4cfeb09f8fab97618c027f8))  by @mineralsfree
+
+
+
+
+- *(gui)* Adjusted subscription summary for tiers supports
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([f054b5e](https://github.com/mendersoftware/mender-server-enterprise/commit/f054b5e4bd16283dba02e624d25de4aaa91edafb))  by @mineralsfree
+
+
+
+
+- *(gui)* Adjusted subscription drawer for tiers supports
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([49ff2f5](https://github.com/mendersoftware/mender-server-enterprise/commit/49ff2f5a9e3b2be1fca27484af14abd4b2dfd590))  by @mineralsfree
+
+
+
+
+- *(gui)* Adjusted subscription confirmation for tiers supports
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([8993b7e](https://github.com/mendersoftware/mender-server-enterprise/commit/8993b7eeb9f1d9e4dfa81d96be07defcba297387))  by @mineralsfree
+
+
+
+
+- *(gui)* Adjusted billing page to support tiers
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([878518f](https://github.com/mendersoftware/mender-server-enterprise/commit/878518f103c6e6fac23a4d306be90c139823021f))  by @mineralsfree
+
+
+
+
+- *(gui)* Added tiers tooltips
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([3fcdbab](https://github.com/mendersoftware/mender-server-enterprise/commit/3fcdbab516909acd1666083ddbd813fe1b58e4a6))  by @mineralsfree
+
+
+
+
+
+  + prevent default to stop event propagation when clicked
+
+- *(gui)* Hidden MCU in subscription via feature flag
+([MEN-9205](https://northerntech.atlassian.net/browse/MEN-9205)) ([20b58d3](https://github.com/mendersoftware/mender-server-enterprise/commit/20b58d300b4e2acb7e94cb3e8fbb53f4b187a8d6))  by @mineralsfree
+
+
+
+
+- *(gui)* Added unlimited devices handling to billing page
+([MEN-8878](https://northerntech.atlassian.net/browse/MEN-8878)) ([27db50b](https://github.com/mendersoftware/mender-server-enterprise/commit/27db50b145b2baacbd1db34b1f09a8ef8c3024df))  by @mineralsfree
+
+
+
+
+- *(gui)* Added user warn about PAT invalidation after upgrade
+([MEN-8885](https://northerntech.atlassian.net/browse/MEN-8885)) ([74bca85](https://github.com/mendersoftware/mender-server-enterprise/commit/74bca85a098ba56d853581e30cf4e55d5f318642))  by @mineralsfree
+
+
+
+
+- *(gui)* Refactored device inventory display to more structured table like format
+ ([bc0a980](https://github.com/mendersoftware/mender-server-enterprise/commit/bc0a98001ce6d0f1549f5a850cdcc9eeaa8beba2))  by @mzedel
+
+
+
+- *(gui)* Added data display sync functionality to align multiple instances across one view
+ ([fcaa9ff](https://github.com/mendersoftware/mender-server-enterprise/commit/fcaa9ffd7da281e029b6c6802cdacf6aaf4a749e))  by @mzedel
+
+
+
+- *(gui)* Ensured multiple data display instances align in appropriate views
+ ([684fcf7](https://github.com/mendersoftware/mender-server-enterprise/commit/684fcf7773b0ef5740783702109074a5caca25a0))  by @mzedel
+
+
+
+- *(gui)* Added device tier limits to header
+([MEN-8879](https://northerntech.atlassian.net/browse/MEN-8879)) ([8031e08](https://github.com/mendersoftware/mender-server-enterprise/commit/8031e088d34d8c54cf68edb702ff0c7ddd0c6491))  by @mineralsfree
+
+
+
+
+- *(gui)* Added support for unlimited devices
+([MEN-8879](https://northerntech.atlassian.net/browse/MEN-8879)) ([9f800ac](https://github.com/mendersoftware/mender-server-enterprise/commit/9f800ac81a7a8a410e780e396ec80afcab2bdffb))  by @mineralsfree
+
+
+
+
+- *(gui)* Added compact device limit property
+([MEN-8882](https://northerntech.atlassian.net/browse/MEN-8882)) ([2bcb91f](https://github.com/mendersoftware/mender-server-enterprise/commit/2bcb91fa793c3b30c0a0df6220f4fab83b534163))  by @mineralsfree
+
+
+
+
+- *(gui)* Added tiers support to accepted device dashboard widget
+([MEN-8882](https://northerntech.atlassian.net/browse/MEN-8882)) ([13b77ed](https://github.com/mendersoftware/mender-server-enterprise/commit/13b77ed66703ae5fffece5e2e9b9e5df616d587d))  by @mineralsfree
+
+
+
+
+- *(gui)* Added security notification to the dashboard
+([MEN-9095](https://northerntech.atlassian.net/browse/MEN-9095)) ([8685508](https://github.com/mendersoftware/mender-server-enterprise/commit/8685508d4ed9e7711fbeb43487a171f69f9ee30f))  by @mineralsfree
+
+
+
+
+- *(gui)* Aligned the email verification flow with new design
+([MEN-9095](https://northerntech.atlassian.net/browse/MEN-9095)) ([48ad7a3](https://github.com/mendersoftware/mender-server-enterprise/commit/48ad7a3eb80a1a9938048c49324c57e9ad394f83))  by @mineralsfree
+
+
+
+
+- *(gui)* Show verify email confirmation instead of expanding 2fa
+([MEN-9095](https://northerntech.atlassian.net/browse/MEN-9095)) ([74f9f62](https://github.com/mendersoftware/mender-server-enterprise/commit/74f9f624fda0f4d6279393a3e99d90166a466eaa))  by @mineralsfree
+
+
+
+
+- *(gui)* Added confirm button customization prop for confirm modal
+([MEN-9095](https://northerntech.atlassian.net/browse/MEN-9095)) ([afc1a1b](https://github.com/mendersoftware/mender-server-enterprise/commit/afc1a1bc55121f4c44b1a89aabe9c73935b2533f))  by @mineralsfree
+
+
+
+
+
+  + made type input optional
+
+- *(gui)* Adjusted 2fa setup to a new design and flow
+([MEN-9095](https://northerntech.atlassian.net/browse/MEN-9095)) ([21fc003](https://github.com/mendersoftware/mender-server-enterprise/commit/21fc0038f3190ff01ce8a1079e840e590822e6d9))  by @mineralsfree
+
+
+
+
+- *(gui)* Adjusted profile page to include alerts & aligned with design
+([MEN-9095](https://northerntech.atlassian.net/browse/MEN-9095)) ([1b7fffc](https://github.com/mendersoftware/mender-server-enterprise/commit/1b7fffcdb1ce4397ff199cce89acb213b8a19f79))  by @mineralsfree
+
+
+
+
+- *(gui)* Adjusted 2fa form to align with new design
+([MEN-9095](https://northerntech.atlassian.net/browse/MEN-9095)) ([d46851d](https://github.com/mendersoftware/mender-server-enterprise/commit/d46851d9376a85d9af7831dd450a3eb8a9da6ae1))  by @mineralsfree
+
+
+
+
+- *(gui)* Disable add/edit user functionality for unverified users
+([MEN-8965](https://northerntech.atlassian.net/browse/MEN-8965)) ([418571e](https://github.com/mendersoftware/mender-server-enterprise/commit/418571ec60aa4e2f493037b887f48bdbe74b0b42))  by @mineralsfree
+
+
+
+
+- *(gui)* Let device attributes be shown in a more useful order, prioritizing recent usage
+ ([edddc47](https://github.com/mendersoftware/mender-server-enterprise/commit/edddc472b8923e84ea76fcc8122d9b34456c7a5c))  by @mzedel
+
+
+
+- *(gui)* Added reset adornment icon for search input
+([MEN-9248](https://northerntech.atlassian.net/browse/MEN-9248)) ([221ea1b](https://github.com/mendersoftware/mender-server-enterprise/commit/221ea1beee47ccc1545f136c22e9ce81e4e17d64))  by @mineralsfree
+
+
+
+
+- *(gui)* Added alert for RBAC not available in non-enterprise plans
+([MEN-8610](https://northerntech.atlassian.net/browse/MEN-8610)) ([52be372](https://github.com/mendersoftware/mender-server-enterprise/commit/52be37238b9117fadbac721f4e45a79a032441f9))  by @mineralsfree
+
+
+
+
+- *(gui)* Defer render until products loaded
+([MEN-9277](https://northerntech.atlassian.net/browse/MEN-9277)) ([3ac968d](https://github.com/mendersoftware/mender-server-enterprise/commit/3ac968da366aea1972b5cf4471e83de574f42c7e))  by @mineralsfree
+
+
+
+
+- *(gui)* Integrated dynamic tiers from backend API
+([MEN-9277](https://northerntech.atlassian.net/browse/MEN-9277)) ([69e44c2](https://github.com/mendersoftware/mender-server-enterprise/commit/69e44c274bd0c26e60db38e8a53647a7bb33d86f))  by @mineralsfree
+
+
+
+
+- *(gui)* Added support for addons in tiers for summary
+([MEN-9277](https://northerntech.atlassian.net/browse/MEN-9277)) ([82a6f33](https://github.com/mendersoftware/mender-server-enterprise/commit/82a6f3324e1109c0ed7c9d9eb93b5a33cb5ae971))  by @mineralsfree
+
+
+
+
+- *(tenantadm)* GET /billing/products static endpoint
+([MEN-8561](https://northerntech.atlassian.net/browse/MEN-8561)) ([352959d](https://github.com/mendersoftware/mender-server-enterprise/commit/352959d6cd78c04fcb3f7bfeaca4f7710fdb6664))  by @merlin-northern
+
+
+
+
+
+
+- *(tenantadm)* Set default max_micro_devices for trial tenants to 10
+([MEN-8572](https://northerntech.atlassian.net/browse/MEN-8572)) ([ce0086d](https://github.com/mendersoftware/mender-server-enterprise/commit/ce0086dd3af91c0f61c6c50ec9aa07b6afd6eb9e))  by @frodeha
+
+
+
+
+- *(tenantadm)* Changed enterprise default max_devices to `-1`
+([MEN-9180](https://northerntech.atlassian.net/browse/MEN-9180)) ([b6d4d30](https://github.com/mendersoftware/mender-server-enterprise/commit/b6d4d30a2db793c9b239812a8f1109a2a3857a64))  by @frodeha
+
+
+
+
+
+  Changed the default max_devices limit for enterprise plans from 0
+  (unlimited) to -1 (also unlimited) as part standardizing on the value
+  -1 as the definition of an unlimited limit.
+
+- *(tenantadm)* Changed `update-tenant` command to use `-1` as unlimited
+([MEN-9180](https://northerntech.atlassian.net/browse/MEN-9180)) ([c62189f](https://github.com/mendersoftware/mender-server-enterprise/commit/c62189f1f38fce91c76be5529c90dcb115fe10c5))  by @frodeha
+
+
+
+
+- *(useradm)* New configuration: `insecure_disable_email_verification`
+([MEN-8966](https://northerntech.atlassian.net/browse/MEN-8966)) ([82bbfab](https://github.com/mendersoftware/mender-server-enterprise/commit/82bbfabc86c7ee42245ea631dd733fa077ec91da))  by @alfrunes
+
+
+
+
+
+  The configuration option disable email verification for account
+  administration APIs.
+
+- *(useradm)* Require email verification for creating or modifying user email
+([MEN-8966](https://northerntech.atlassian.net/browse/MEN-8966)) ([7dca408](https://github.com/mendersoftware/mender-server-enterprise/commit/7dca408d19e7fc0ce8e5ac20b29ec4e2c23933bf))  by @alfrunes
+
+
+
+
+
+  If configuration `insecure_disable_email_verification` is not set, creating
+  or modifying other users email require the subject email to be verified.
+
+- *(useradm)* New flag for command create-user: --email-verified
+ ([c75e8c1](https://github.com/mendersoftware/mender-server-enterprise/commit/c75e8c15a3966e745735b251842542cdfe656f49))  by @alfrunes
+
+
+
+
+  The flag marks the user as a trusted email without explicitly having to
+  verify the email.
+
+- *(workflows)* Updated default max_devices in create_tenant workflow
+([MEN-9180](https://northerntech.atlassian.net/browse/MEN-9180)) ([d75e4e6](https://github.com/mendersoftware/mender-server-enterprise/commit/d75e4e65dd6d16b08cc1feefb39577405c2095b2))  by @frodeha
+
+
+
+
+- *(workflows)* Add a workflow for sending email when PAT changes
+ ([03df0f0](https://github.com/mendersoftware/mender-server-enterprise/commit/03df0f0548ead5f4c958bb3106ea1c0f874bca98))  by @bahaa-ghazal
+
+
+
+
+
+
+
+### Refactor
+
+
+- *(deviceconfig)* Migrate mongo-driver to v2
+([QA-1448](https://northerntech.atlassian.net/browse/QA-1448)) ([38620fb](https://github.com/mendersoftware/mender-server-enterprise/commit/38620fb27d5b94910d04c62a519e250efee8b197))  by @bahaa-ghazal
+
+
+
+
+- *(gui)* Streamlined data displays for small amounts of data + simplified component structure
+ ([0af7b2a](https://github.com/mendersoftware/mender-server-enterprise/commit/0af7b2a957635b4a5b27301bfb5556965cfb00c7))  by @mzedel
+
+
+
+- *(gui)* Replaced the device limit stats selector
+([MEN-8882](https://northerntech.atlassian.net/browse/MEN-8882)) ([6eef456](https://github.com/mendersoftware/mender-server-enterprise/commit/6eef45655fa511d4d6df7a4ff6f042109f4304d5))  by @mineralsfree
+
+
+
+
+- *(tenantadm)* Use same convention when retrieving unknown values
+ ([c7ed296](https://github.com/mendersoftware/mender-server-enterprise/commit/c7ed296dede7f149855c73b73d1a27d8024c3b12))  by @bahaa-ghazal
+
+
+
+- *(tenantadm)* Make ChangeSubscription preconditions tier aware
+ ([687302b](https://github.com/mendersoftware/mender-server-enterprise/commit/687302ba50a040f4f425c81127dbfe8446360046))  by @alfrunes
+
+
+
+
+- *(tenantadm)* Properly enforce required tenantadm CLI flags
+ ([b3dda33](https://github.com/mendersoftware/mender-server-enterprise/commit/b3dda33f2369b8a69b56565bff717edf5a27a4e3))  by @LudvigAnderson
+
+
+
+
+
+  Previously, the tenantadm commands did not have required flags marked as such. If missing multiple flags, the user would only be notified of one. Now, all mising flags will be shown immediately to the user.
+
+- *(useradm)* Change OAuth2.CreateLoginURL to take entire State as arg
+ ([ae586ef](https://github.com/mendersoftware/mender-server-enterprise/commit/ae586ef5701bd89706d47c5033eb5237b9e0ed2f))  by @alfrunes
+
+
+
+- *(useradm)* Lower cyclo complexity for UserAdmApiHandlers.OpenIdConnectLogin
+ ([b35ce6c](https://github.com/mendersoftware/mender-server-enterprise/commit/b35ce6c433ffaae14adeaa78fa5380472b015ebf))  by @alfrunes
+
+
+
+- *(useradm)* Properly enforce required useradm CLI flags
+ ([d6a11e8](https://github.com/mendersoftware/mender-server-enterprise/commit/d6a11e8321a118f6090f5c7340c0594d15aadba6))  by @LudvigAnderson
+
+
+
+
+
+  Previously, the useradm commands did not have required flags marked as such. If missing multiple flags, the user would only be notified of one. Now, all mising flags will be shown immediately to the user.
+
+- *(workflows)* Extend `JobProcessor` to include all job processing logic
+ ([d16b893](https://github.com/mendersoftware/mender-server-enterprise/commit/d16b893649fe3356b153d042132cec2cdf9a2497))  by @bahaa-ghazal
+
+
+
+
+  Move all job processing logic to the processor folder, and make them methods to
+  the struct `JobProcessor`.
+
+- *(workflows)* Move google sheets processing logic to processor
+ ([86fb5bd](https://github.com/mendersoftware/mender-server-enterprise/commit/86fb5bdb9fb6450e7bd29e6d0221682f63486dd4))  by @bahaa-ghazal
+
+
+
+- Restructure (flatten) integration test pytest module tree
+ ([9d30541](https://github.com/mendersoftware/mender-server-enterprise/commit/9d305419d07f22e44918c2f1cdde851761d4ad60))  by @alfrunes
+
+
+
+
+  Will make it easier to reuse the generated openapi client and test
+  utilities with other pytest environments.
+- Move tenant utils from pkg/store to pkg/mongo
+ ([da34190](https://github.com/mendersoftware/mender-server-enterprise/commit/da34190f4176ff856ecf4bb786c63fc0017bea03))  by @bahaa-ghazal
+
+
+- Ues the tenant utils from pkg/mongo instead of pkg/store
+ ([b593cfa](https://github.com/mendersoftware/mender-server-enterprise/commit/b593cfa1fdb9f434301d1cd4e137f27d59a54a74))  by @bahaa-ghazal
+
+
+
+
+
+
+### Security
+
+
+- Bump integration-tester container tag
+ ([7993c77](https://github.com/mendersoftware/mender-server-enterprise/commit/7993c7723e6da99354bb260f94968bfb1ce125b7))  by @alfrunes
+
+
+
+
+  To force a rebuild on local runs.
+- Bump lodash from 4.17.21 to 4.17.23 in /frontend
+ ([c56ee37](https://github.com/mendersoftware/mender-server-enterprise/commit/c56ee37a1cd90bb7aa9bbf84d4b2de7f623848da))  by @dependabot[bot]
+
+
+
+
+  Bumps [lodash](https://github.com/lodash/lodash) from 4.17.21 to 4.17.23.
+  - [Release notes](https://github.com/lodash/lodash/releases)
+  - [Commits](https://github.com/lodash/lodash/compare/4.17.21...4.17.23)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: lodash
+    dependency-version: 4.17.23
+    dependency-type: indirect
+  ...
+- Bump github.com/aws/aws-sdk-go-v2/service/bedrockruntime@v1.48.0
+ ([215bf05](https://github.com/mendersoftware/mender-server-enterprise/commit/215bf056283ff97e2afec048fe75a35b182423a4))  by @alfrunes
+
+
+- Bump golang.org/x/oauth2 v0.34.0
+ ([24b12f6](https://github.com/mendersoftware/mender-server-enterprise/commit/24b12f6846f2b4cc8f1988429cf9f7f611bca863))  by @alfrunes
+
+
+- Bump google.golang.org/api@v0.264.0
+ ([6151fd8](https://github.com/mendersoftware/mender-server-enterprise/commit/6151fd8d5065ed83b33af995e9824daa24e8a687))  by @alfrunes
+
+
+
+
+
+
+
 
 ## 4.2.0-saas.1 - 2026-01-20
 
