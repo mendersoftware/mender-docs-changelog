@@ -5142,6 +5142,1680 @@ github: false
 
 
 
+## 4.1.0 - 2026-01-14
+
+
+### Bug fixes
+
+
+- *(deployments)* Backwards compatible artifact metadata
+ ([8110c52](https://github.com///commit/8110c5251b1025bc00a9b7c56e42500715c477d0)) 
+
+
+
+
+- *(deployments)* Panic on database errors on DELETE /artifacts
+ ([f3c9bda](https://github.com///commit/f3c9bda8eb050ceb744f0ce7f45c58c44934c861)) 
+
+
+
+- *(deviceconnect)* SetReadDeadline when setting up ping handler
+([MEN-8843](https://northerntech.atlassian.net/browse/MEN-8843)) ([b10a3a8](https://github.com///commit/b10a3a8dd0b1b4c85c6b33184b9f9ed6b5fa8b86)) 
+
+
+
+
+
+
+- *(gui)* Fixed an issue that left notch in outlined w/o a background
+ ([1673cff](https://github.com///commit/1673cff934be78a379d9123f93317336ee83bfe0)) 
+
+
+
+- *(gui)* Removed error messages shown when subscribing or showing billing info as trial user
+ ([231d4e3](https://github.com///commit/231d4e34a0d376a2b963e4e01a4a393a975f2668)) 
+
+
+
+
+  - NB: this lets the frontend rely on trial signups to always provide a new billing profile when signing up
+
+- *(gui)* Fixed an issue that prevented updating existing sso configs
+ ([d022d1a](https://github.com///commit/d022d1a78ba2f2b60cc1670b0015451c01c5734e)) 
+
+
+
+- *(gui)* Limited chances a set deployment device limit gets changed unintended
+ ([1f12d38](https://github.com///commit/1f12d38249ac4bba72bbbc7ebb92ffdcf4fe9b09)) 
+
+
+
+- *(gui)* Fixed an issue that could prevent the billing overview from working
+ ([4d1f0f3](https://github.com///commit/4d1f0f3f41ece22b75310d76f2015ff7576f4a8c)) 
+
+
+
+- *(gui)* Increased reliance on theme defined button colors to align more w/ updated theme
+ ([28cd0fd](https://github.com///commit/28cd0fd1a2e5c976d16769a25daff75125748035)) 
+
+
+
+- *(gui)* Fixed pagination in device search results
+([MEN-8196](https://northerntech.atlassian.net/browse/MEN-8196)) ([62c4de2](https://github.com///commit/62c4de2b2a73c22bac716a368e6b70701fa5b652)) 
+
+
+
+
+- Introduce docker-compose healthcheck for mongo, nats and traefik
+ ([e3aea0b](https://github.com///commit/e3aea0bd890ac71c18ba08be9e80dd59b4ad3da5)) 
+
+
+
+
+  Introducing healthcheck allow to monitor services.
+  This permits a better dependency when mender services are starting,
+  waiting for mongo, nats, traefik to be heatlhy before starting.
+- Increase docker-compose restart
+ ([d687f66](https://github.com///commit/d687f664183da924d5be642c6ced14ebe0e5dfd5)) 
+
+
+
+
+  Some services still fails after the introduction of the healthcheck on
+  slow machines. Increase the number restarts allowed to solve it, no
+  better mechanisms found.
+
+
+
+
+### Documentation
+
+
+- *(deployments)* Mark release meta_data as deprecated
+ ([33563c6](https://github.com///commit/33563c6ac639c4fdba1471eb0c1e65e66e2e4f80)) 
+
+
+
+
+- *(deployments)* Use array type for deprecated meta_data attribute
+ ([0135305](https://github.com///commit/0135305d78d95038ff7c3bfadcdd8d34d7a8a8df)) 
+
+
+
+
+- *(deployments)* Document 'sort' option in the internal endpoint for getting deployments
+([MEN-8914](https://northerntech.atlassian.net/browse/MEN-8914)) ([7165f58](https://github.com///commit/7165f58eec679b36e0a83f5a4d4b71595c62aa30)) 
+
+
+
+
+- Aligned more error responses w/ existing shared response definitions
+ ([d5596d5](https://github.com///commit/d5596d572c1a0621e87b973549fc86d4542d5b69)) 
+
+
+- Aligned unauthorized errors definitions w/ shared definition
+ ([9d26fd7](https://github.com///commit/9d26fd700a572600bba631291102eb1dc34baba3)) 
+
+
+- Add documentation that `retries` is restricted to professional and enterprise plans
+ ([02e404a](https://github.com///commit/02e404a7e1754c02450bf762ef268d69b9ca52a2)) 
+
+
+
+
+
+
+### Features
+
+
+- *(gui)* Ensured progress gets updated when monitoring a delta generation job
+ ([7487d8f](https://github.com///commit/7487d8f0dc6b921ede11ddac6ab3bae392a1ffff)) 
+
+
+
+- *(pkg)* Added request content length to access logs
+([MEN-8935](https://northerntech.atlassian.net/browse/MEN-8935)) ([137da33](https://github.com///commit/137da33ab3056aa80eca0dc4226dddd24b84e7bc)) 
+
+
+
+
+- *(useradm)* Add rate limiting configuration for authenticated requests
+([MEN-7745](https://northerntech.atlassian.net/browse/MEN-7745)) ([64ca71f](https://github.com///commit/64ca71f162901bb4dce096f14da416a23495dfbc)) 
+
+
+
+
+
+
+
+  Added the following configuration parameters:
+  ```yaml
+  rate_limits:
+    # auth configures rate limits for authenticated requests.
+    auth:
+      # enable rate limiting also requires redis_connection_string to be effective.
+      enable: false
+      # reject_unmatched rejects requests that does not resolve to a
+      # rate limit group. That is, if either there's no api_pattern matching
+      # the request or if the group_expression does not match a group.
+      # Defaults to false - disable rate limiting for unmatched requests.
+      reject_unmatched: false
+      # groups specify rate limiting groups that overrides the parameters in the
+      # default group.
+      groups:
+          # name defines the name of the group. The name is used in
+          # match.group_expression to match an api_pattern with a group.
+        - name: default
+          # interval is the time interval when the rate limiter resets.
+          interval: 1m
+          # quota is the number of requests allowed in an interval.
+          quota: 300
+          # event_expression is a go template for grouping requests.
+          # The following attributes are available in the context:
+          # Identity - contains a subset of the JWT claims:
+          # .Subject  (jwt:"sub")          string
+          # .Tenant   (jwt:"mender.tenant") string
+          # .Plan     (jwt:"mender.plan")   string
+          # .Addons   (jwt:"mender.addons") []struct{Enabled bool; Name string}
+          # .IsUser   (jwt:"mender.user")   bool
+          # .IsDevice (jwt:"mender.device") bool
+          # .Trial    (jwt:"mender.trial")  bool
+          event_expression: "{{with .Identity}}{{.Subject}}{{end}}"
+      match:
+          # api_pattern specifies an API path pattern as defined by http.ServeMux
+          # https://pkg.go.dev/net/http#hdr-Patterns-ServeMux
+        - api_pattern: /
+          # group_expression defines  the group for this matching expression.
+          # A group can be selected dynamically using Go templates or statically
+          # with a literal string.
+          # See group.event_expression for template context attributes.
+          group_expression: "default"
+          # More example match rules:
+  ```
+
+- Update traefik version
+ ([106f570](https://github.com///commit/106f570bc67613071f276bb69dad42ba47d83d07)) 
+
+
+
+
+  Update of traefik version to support Docker 29.x with API >= 1.44.
+
+
+
+
+### Refactor
+
+
+- *(deviceauth)* Extend RejectAuthSetsForDevice to exclude AuthSets
+ ([4411524](https://github.com///commit/4411524fdf7e718f71013c9126ccc2a9ece7e02b)) 
+
+
+
+
+- *(gui)* Refactored subscription form to be a RHF form & reduce faulty billing calls
+ ([5938972](https://github.com///commit/59389724fd85802e50dc6ce951814a5d8d4beeb0)) 
+
+
+
+- *(gui)* Let email check be done in thunk to align msw handler location
+ ([eaae614](https://github.com///commit/eaae614b8ae7b9b4ed46a9f5fd630ff54e8c746e)) 
+
+
+
+
+
+
+
+### Security
+
+
+- Bump @playwright/test
+ ([28a4805](https://github.com///commit/28a48056a49a56847807b947dec81661d1f29dee)) 
+
+
+
+
+  Bumps the playwright group in /frontend/tests/e2e_tests with 1 update: [@playwright/test](https://github.com/microsoft/playwright).
+  
+  
+  Updates `@playwright/test` from 1.55.1 to 1.56.1
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.55.1...v1.56.1)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@playwright/test"
+    dependency-version: 1.56.1
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: playwright
+  ...
+- Bump validator from 13.15.15 to 13.15.20 in /frontend
+ ([94a0d8a](https://github.com///commit/94a0d8ad6f672f011e922ce1813632887499a301)) 
+
+
+
+
+  Bumps [validator](https://github.com/validatorjs/validator.js) from 13.15.15 to 13.15.20.
+  - [Release notes](https://github.com/validatorjs/validator.js/releases)
+  - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.15...13.15.20)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: validator
+    dependency-version: 13.15.20
+    dependency-type: direct:production
+  ...
+- Bump the e2e-test-dependencies group
+ ([d8d93f9](https://github.com///commit/d8d93f9b8edf2193fd78fa5541712bf613a9c28a)) 
+
+
+
+
+  Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 3 updates: [commander](https://github.com/tj/commander.js), [dayjs](https://github.com/iamkun/dayjs) and [inquirer](https://github.com/SBoudrias/Inquirer.js).
+  
+  
+  Updates `commander` from 14.0.1 to 14.0.2
+  - [Release notes](https://github.com/tj/commander.js/releases)
+  - [Changelog](https://github.com/tj/commander.js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/tj/commander.js/compare/v14.0.1...v14.0.2)
+  
+  Updates `dayjs` from 1.11.18 to 1.11.19
+  - [Release notes](https://github.com/iamkun/dayjs/releases)
+  - [Changelog](https://github.com/iamkun/dayjs/blob/dev/CHANGELOG.md)
+  - [Commits](https://github.com/iamkun/dayjs/compare/v1.11.18...v1.11.19)
+  
+  Updates `inquirer` from 12.9.6 to 12.10.0
+  - [Release notes](https://github.com/SBoudrias/Inquirer.js/releases)
+  - [Commits](https://github.com/SBoudrias/Inquirer.js/compare/inquirer@12.9.6...inquirer@12.10.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: commander
+    dependency-version: 14.0.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: e2e-test-dependencies
+  - dependency-name: dayjs
+    dependency-version: 1.11.19
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: e2e-test-dependencies
+  - dependency-name: inquirer
+    dependency-version: 12.10.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: e2e-test-dependencies
+  ...
+- Bump the mui group in /frontend with 3 updates
+ ([13fccec](https://github.com///commit/13fccec266e96898aaed7723cec06278ffceaa9d)) 
+
+
+
+
+  Bumps the mui group in /frontend with 3 updates: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
+  
+  
+  Updates `@mui/icons-material` from 7.3.3 to 7.3.4
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.3.4/packages/mui-icons-material)
+  
+  Updates `@mui/material` from 7.3.3 to 7.3.4
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.3.4/packages/mui-material)
+  
+  Updates `@mui/x-date-pickers` from 8.12.0 to 8.16.0
+  - [Release notes](https://github.com/mui/mui-x/releases)
+  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/mui-x/commits/v8.16.0/packages/x-date-pickers)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@mui/icons-material"
+    dependency-version: 7.3.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/material"
+    dependency-version: 7.3.4
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.16.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  ...
+- Bump the production-dependencies group
+ ([49e08c8](https://github.com///commit/49e08c8f076748a6cc90eee4f0e2f004ed6663ab)) 
+
+
+
+
+  Bumps the production-dependencies group in /frontend with 12 updates:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [@northern.tech/store](https://github.com/NorthernTechHQ/nt-gui) | `0.7.0` | `0.8.0` |
+  | [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit) | `2.8.2` | `2.9.2` |
+  | [@sentry/react](https://github.com/getsentry/sentry-javascript) | `10.17.0` | `10.22.0` |
+  | [@stripe/react-stripe-js](https://github.com/stripe/react-stripe-js) | `3.9.0` | `5.3.0` |
+  | [@stripe/stripe-js](https://github.com/stripe/stripe-js) | `7.8.0` | `8.2.0` |
+  | [axios](https://github.com/axios/axios) | `1.12.0` | `1.13.1` |
+  | [dayjs](https://github.com/iamkun/dayjs) | `1.11.13` | `1.11.19` |
+  | [react](https://github.com/facebook/react/tree/HEAD/packages/react) | `19.1.1` | `19.2.0` |
+  | [react-dom](https://github.com/facebook/react/tree/HEAD/packages/react-dom) | `19.1.1` | `19.2.0` |
+  | [react-hook-form](https://github.com/react-hook-form/react-hook-form) | `7.62.0` | `7.66.0` |
+  | [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom) | `7.8.1` | `7.9.5` |
+  | [uuid](https://github.com/uuidjs/uuid) | `11.1.0` | `13.0.0` |
+  
+  
+  Updates `@northern.tech/store` from 0.7.0 to 0.8.0
+  - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
+  - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
+  - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/store-0.7.0...@northern.tech/store-0.8.0)
+  
+  Updates `@reduxjs/toolkit` from 2.8.2 to 2.9.2
+  - [Release notes](https://github.com/reduxjs/redux-toolkit/releases)
+  - [Commits](https://github.com/reduxjs/redux-toolkit/compare/v2.8.2...v2.9.2)
+  
+  Updates `@sentry/react` from 10.17.0 to 10.22.0
+  - [Release notes](https://github.com/getsentry/sentry-javascript/releases)
+  - [Changelog](https://github.com/getsentry/sentry-javascript/blob/develop/CHANGELOG.md)
+  - [Commits](https://github.com/getsentry/sentry-javascript/compare/10.17.0...10.22.0)
+  
+  Updates `@stripe/react-stripe-js` from 3.9.0 to 5.3.0
+  - [Release notes](https://github.com/stripe/react-stripe-js/releases)
+  - [Changelog](https://github.com/stripe/react-stripe-js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/stripe/react-stripe-js/compare/v3.9.0...v5.3.0)
+  
+  Updates `@stripe/stripe-js` from 7.8.0 to 8.2.0
+  - [Release notes](https://github.com/stripe/stripe-js/releases)
+  - [Commits](https://github.com/stripe/stripe-js/compare/v7.8.0...v8.2.0)
+  
+  Updates `axios` from 1.12.0 to 1.13.1
+  - [Release notes](https://github.com/axios/axios/releases)
+  - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
+  - [Commits](https://github.com/axios/axios/compare/v1.12.0...v1.13.1)
+  
+  Updates `dayjs` from 1.11.13 to 1.11.19
+  - [Release notes](https://github.com/iamkun/dayjs/releases)
+  - [Changelog](https://github.com/iamkun/dayjs/blob/dev/CHANGELOG.md)
+  - [Commits](https://github.com/iamkun/dayjs/compare/v1.11.13...v1.11.19)
+  
+  Updates `react` from 19.1.1 to 19.2.0
+  - [Release notes](https://github.com/facebook/react/releases)
+  - [Changelog](https://github.com/facebook/react/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/facebook/react/commits/v19.2.0/packages/react)
+  
+  Updates `react-dom` from 19.1.1 to 19.2.0
+  - [Release notes](https://github.com/facebook/react/releases)
+  - [Changelog](https://github.com/facebook/react/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/facebook/react/commits/v19.2.0/packages/react-dom)
+  
+  Updates `react-hook-form` from 7.62.0 to 7.66.0
+  - [Release notes](https://github.com/react-hook-form/react-hook-form/releases)
+  - [Changelog](https://github.com/react-hook-form/react-hook-form/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/react-hook-form/react-hook-form/compare/v7.62.0...v7.66.0)
+  
+  Updates `react-router-dom` from 7.8.1 to 7.9.5
+  - [Release notes](https://github.com/remix-run/react-router/releases)
+  - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)
+  - [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.9.5/packages/react-router-dom)
+  
+  Updates `uuid` from 11.1.0 to 13.0.0
+  - [Release notes](https://github.com/uuidjs/uuid/releases)
+  - [Changelog](https://github.com/uuidjs/uuid/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/uuidjs/uuid/compare/v11.1.0...v13.0.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@northern.tech/store"
+    dependency-version: 0.8.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@reduxjs/toolkit"
+    dependency-version: 2.9.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@sentry/react"
+    dependency-version: 10.22.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@stripe/react-stripe-js"
+    dependency-version: 5.3.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: production-dependencies
+  - dependency-name: "@stripe/stripe-js"
+    dependency-version: 8.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: production-dependencies
+  - dependency-name: axios
+    dependency-version: 1.13.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: dayjs
+    dependency-version: 1.11.19
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: production-dependencies
+  - dependency-name: react
+    dependency-version: 19.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-dom
+    dependency-version: 19.2.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-hook-form
+    dependency-version: 7.66.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-router-dom
+    dependency-version: 7.9.5
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: uuid
+    dependency-version: 13.0.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: production-dependencies
+  ...
+- Bump nats
+ ([6ef8f84](https://github.com///commit/6ef8f840f0b80bddfcaf20b5a3a13bf112873d68)) 
+
+
+
+
+  Bumps the backend-docker-compose-dependencies group with 1 update in the / directory: nats.
+  
+  
+  Updates `nats` from 2.11 to 2.12
+  
+  ---
+  updated-dependencies:
+  - dependency-name: nats
+    dependency-version: '2.12'
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-docker-compose-dependencies
+  ...
+- Bump the backend-golang-dependencies group across 1 directory with 17 updates
+ ([9e22c80](https://github.com///commit/9e22c80c9521fb3d9e782f7922e97610f6e361f5)) 
+
+
+
+
+  Bumps the backend-golang-dependencies group with 12 updates in the /backend directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [github.com/Azure/azure-sdk-for-go/sdk/azcore](https://github.com/Azure/azure-sdk-for-go) | `1.19.0` | `1.19.1` |
+  | [github.com/aws/aws-sdk-go-v2](https://github.com/aws/aws-sdk-go-v2) | `1.38.3` | `1.39.2` |
+  | [github.com/aws/aws-sdk-go-v2/config](https://github.com/aws/aws-sdk-go-v2) | `1.31.6` | `1.31.12` |
+  | [github.com/aws/aws-sdk-go-v2/service/iot](https://github.com/aws/aws-sdk-go-v2) | `1.69.1` | `1.69.5` |
+  | [github.com/aws/aws-sdk-go-v2/service/iotdataplane](https://github.com/aws/aws-sdk-go-v2) | `1.32.2` | `1.32.6` |
+  | [github.com/aws/aws-sdk-go-v2/service/s3](https://github.com/aws/aws-sdk-go-v2) | `1.87.3` | `1.88.3` |
+  | [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin) | `1.10.1` | `1.11.0` |
+  | [github.com/nats-io/nats-server/v2](https://github.com/nats-io/nats-server) | `2.11.8` | `2.12.0` |
+  | [github.com/nats-io/nats.go](https://github.com/nats-io/nats.go) | `1.45.0` | `1.46.1` |
+  | [github.com/redis/go-redis/v9](https://github.com/redis/go-redis) | `9.13.0` | `9.14.0` |
+  | [github.com/spf13/viper](https://github.com/spf13/viper) | `1.20.1` | `1.21.0` |
+  | [golang.org/x/net](https://github.com/golang/net) | `0.43.0` | `0.44.0` |
+  
+  
+  
+  Updates `github.com/Azure/azure-sdk-for-go/sdk/azcore` from 1.19.0 to 1.19.1
+  - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
+  - [Changelog](https://github.com/Azure/azure-sdk-for-go/blob/main/documentation/sdk-breaking-changes-guide-migration.md)
+  - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.19.0...sdk/azcore/v1.19.1)
+  
+  Updates `github.com/aws/aws-sdk-go-v2` from 1.38.3 to 1.39.2
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.38.3...v1.39.2)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/config` from 1.31.6 to 1.31.12
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.31.6...config/v1.31.12)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.18.10 to 1.18.16
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.18.10...config/v1.18.16)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.69.1 to 1.69.5
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/iot/v1.69.1...service/iot/v1.69.5)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.32.2 to 1.32.6
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.32.2...v1.32.6)
+  
+  Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.87.3 to 1.88.3
+  - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
+  - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
+  - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.87.3...service/s3/v1.88.3)
+  
+  Updates `github.com/gin-gonic/gin` from 1.10.1 to 1.11.0
+  - [Release notes](https://github.com/gin-gonic/gin/releases)
+  - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/gin-gonic/gin/compare/v1.10.1...v1.11.0)
+  
+  Updates `github.com/nats-io/nats-server/v2` from 2.11.8 to 2.12.0
+  - [Release notes](https://github.com/nats-io/nats-server/releases)
+  - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
+  - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.8...v2.12.0)
+  
+  Updates `github.com/nats-io/nats.go` from 1.45.0 to 1.46.1
+  - [Release notes](https://github.com/nats-io/nats.go/releases)
+  - [Commits](https://github.com/nats-io/nats.go/compare/v1.45.0...v1.46.1)
+  
+  Updates `github.com/redis/go-redis/v9` from 9.13.0 to 9.14.0
+  - [Release notes](https://github.com/redis/go-redis/releases)
+  - [Changelog](https://github.com/redis/go-redis/blob/master/RELEASE-NOTES.md)
+  - [Commits](https://github.com/redis/go-redis/compare/v9.13.0...v9.14.0)
+  
+  Updates `github.com/spf13/viper` from 1.20.1 to 1.21.0
+  - [Release notes](https://github.com/spf13/viper/releases)
+  - [Commits](https://github.com/spf13/viper/compare/v1.20.1...v1.21.0)
+  
+  Updates `golang.org/x/crypto` from 0.41.0 to 0.42.0
+  - [Commits](https://github.com/golang/crypto/compare/v0.41.0...v0.42.0)
+  
+  Updates `golang.org/x/net` from 0.43.0 to 0.44.0
+  - [Commits](https://github.com/golang/net/compare/v0.43.0...v0.44.0)
+  
+  Updates `golang.org/x/sys` from 0.35.0 to 0.36.0
+  - [Commits](https://github.com/golang/sys/compare/v0.35.0...v0.36.0)
+  
+  Updates `golang.org/x/term` from 0.34.0 to 0.35.0
+  - [Commits](https://github.com/golang/term/compare/v0.34.0...v0.35.0)
+  
+  Updates `golang.org/x/time` from 0.12.0 to 0.13.0
+  - [Commits](https://github.com/golang/time/compare/v0.12.0...v0.13.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/azcore
+    dependency-version: 1.19.1
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2
+    dependency-version: 1.39.2
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/config
+    dependency-version: 1.31.12
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/credentials
+    dependency-version: 1.18.16
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iot
+    dependency-version: 1.69.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/iotdataplane
+    dependency-version: 1.32.6
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/aws/aws-sdk-go-v2/service/s3
+    dependency-version: 1.88.3
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/gin-gonic/gin
+    dependency-version: 1.11.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats-server/v2
+    dependency-version: 2.12.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/nats-io/nats.go
+    dependency-version: 1.46.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/redis/go-redis/v9
+    dependency-version: 9.14.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: github.com/spf13/viper
+    dependency-version: 1.21.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/crypto
+    dependency-version: 0.42.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/net
+    dependency-version: 0.44.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/sys
+    dependency-version: 0.36.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/term
+    dependency-version: 0.35.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  - dependency-name: golang.org/x/time
+    dependency-version: 0.13.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-golang-dependencies
+  ...
+- Bump the backend-docker-dependencies group across 10 directories with 2 updates
+ ([26854ec](https://github.com///commit/26854ec71cfb181948696f1bbb0d5505114306c9)) 
+
+
+
+
+  Bumps the backend-docker-dependencies group with 2 updates in the /backend/services/create-artifact-worker directory: golang and alpine.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deployments directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceauth directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceconfig directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/deviceconnect directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/inventory directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/iot-manager directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/reporting directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/useradm directory: golang.
+  Bumps the backend-docker-dependencies group with 1 update in the /backend/services/workflows directory: golang.
+  
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `alpine` from 3.22.1 to 3.22.2
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  Updates `golang` from 1.25.0 to 1.25.3
+  
+  ---
+  updated-dependencies:
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: alpine
+    dependency-version: 3.22.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  - dependency-name: golang
+    dependency-version: 1.25.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-dependencies
+  ...
+- Bump the backend-tests-python-dependencies group across 1 directory with 17 updates
+ ([2cae646](https://github.com///commit/2cae6466e34d2928760bcb6a55df3f351b63d33b)) 
+
+
+
+
+  Bumps the backend-tests-python-dependencies group with 17 updates in the /backend/tests directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [attrs](https://github.com/sponsors/hynek) | `25.3.0` | `25.4.0` |
+  | [boto3](https://github.com/boto/boto3) | `1.40.24` | `1.40.58` |
+  | [certifi](https://github.com/certifi/python-certifi) | `2025.8.3` | `2025.10.5` |
+  | [cffi](https://github.com/python-cffi/cffi) | `1.17.1` | `2.0.0` |
+  | [cryptography](https://github.com/pyca/cryptography) | `45.0.7` | `46.0.3` |
+  | [filelock](https://github.com/tox-dev/py-filelock) | `3.19.1` | `3.20.0` |
+  | [idna](https://github.com/kjd/idna) | `3.10` | `3.11` |
+  | [iniconfig](https://github.com/pytest-dev/iniconfig) | `2.1.0` | `2.3.0` |
+  | [kubernetes](https://github.com/kubernetes-client/python) | `33.1.0` | `34.1.0` |
+  | [pillow](https://github.com/python-pillow/Pillow) | `11.3.0` | `12.0.0` |
+  | [pycparser](https://github.com/eliben/pycparser) | `2.22` | `2.23` |
+  | [pymongo](https://github.com/mongodb/mongo-python-driver) | `4.14.1` | `4.15.3` |
+  | [pyparsing](https://github.com/pyparsing/pyparsing) | `3.2.3` | `3.2.5` |
+  | [pyyaml](https://github.com/yaml/pyyaml) | `6.0.2` | `6.0.3` |
+  | [stripe](https://github.com/stripe/stripe-python) | `12.5.0` | `13.0.1` |
+  | [redis](https://github.com/redis/redis-py) | `6.4.0` | `7.0.0` |
+  | [pydantic](https://github.com/pydantic/pydantic) | `2.11.7` | `2.12.3` |
+  
+  
+  
+  Updates `attrs` from 25.3.0 to 25.4.0
+  - [Commits](https://github.com/sponsors/hynek/commits)
+  
+  Updates `boto3` from 1.40.24 to 1.40.58
+  - [Release notes](https://github.com/boto/boto3/releases)
+  - [Commits](https://github.com/boto/boto3/compare/1.40.24...1.40.58)
+  
+  Updates `certifi` from 2025.8.3 to 2025.10.5
+  - [Commits](https://github.com/certifi/python-certifi/compare/2025.08.03...2025.10.05)
+  
+  Updates `cffi` from 1.17.1 to 2.0.0
+  - [Release notes](https://github.com/python-cffi/cffi/releases)
+  - [Commits](https://github.com/python-cffi/cffi/compare/v1.17.1...v2.0.0)
+  
+  Updates `cryptography` from 45.0.7 to 46.0.3
+  - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
+  - [Commits](https://github.com/pyca/cryptography/compare/45.0.7...46.0.3)
+  
+  Updates `filelock` from 3.19.1 to 3.20.0
+  - [Release notes](https://github.com/tox-dev/py-filelock/releases)
+  - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
+  - [Commits](https://github.com/tox-dev/py-filelock/compare/3.19.1...3.20.0)
+  
+  Updates `idna` from 3.10 to 3.11
+  - [Release notes](https://github.com/kjd/idna/releases)
+  - [Changelog](https://github.com/kjd/idna/blob/master/HISTORY.rst)
+  - [Commits](https://github.com/kjd/idna/compare/v3.10...v3.11)
+  
+  Updates `iniconfig` from 2.1.0 to 2.3.0
+  - [Release notes](https://github.com/pytest-dev/iniconfig/releases)
+  - [Changelog](https://github.com/pytest-dev/iniconfig/blob/main/CHANGELOG)
+  - [Commits](https://github.com/pytest-dev/iniconfig/compare/v2.1.0...v2.3.0)
+  
+  Updates `kubernetes` from 33.1.0 to 34.1.0
+  - [Release notes](https://github.com/kubernetes-client/python/releases)
+  - [Changelog](https://github.com/kubernetes-client/python/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/kubernetes-client/python/compare/v33.1.0...v34.1.0)
+  
+  Updates `pillow` from 11.3.0 to 12.0.0
+  - [Release notes](https://github.com/python-pillow/Pillow/releases)
+  - [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
+  - [Commits](https://github.com/python-pillow/Pillow/compare/11.3.0...12.0.0)
+  
+  Updates `pycparser` from 2.22 to 2.23
+  - [Release notes](https://github.com/eliben/pycparser/releases)
+  - [Changelog](https://github.com/eliben/pycparser/blob/main/CHANGES)
+  - [Commits](https://github.com/eliben/pycparser/compare/release_v2.22...release_v2.23)
+  
+  Updates `pymongo` from 4.14.1 to 4.15.3
+  - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
+  - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
+  - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.14.1...4.15.3)
+  
+  Updates `pyparsing` from 3.2.3 to 3.2.5
+  - [Release notes](https://github.com/pyparsing/pyparsing/releases)
+  - [Changelog](https://github.com/pyparsing/pyparsing/blob/master/CHANGES)
+  - [Commits](https://github.com/pyparsing/pyparsing/compare/3.2.3...3.2.5)
+  
+  Updates `pyyaml` from 6.0.2 to 6.0.3
+  - [Release notes](https://github.com/yaml/pyyaml/releases)
+  - [Changelog](https://github.com/yaml/pyyaml/blob/6.0.3/CHANGES)
+  - [Commits](https://github.com/yaml/pyyaml/compare/6.0.2...6.0.3)
+  
+  Updates `stripe` from 12.5.0 to 13.0.1
+  - [Release notes](https://github.com/stripe/stripe-python/releases)
+  - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/stripe/stripe-python/compare/v12.5.0...v13.0.1)
+  
+  Updates `redis` from 6.4.0 to 7.0.0
+  - [Release notes](https://github.com/redis/redis-py/releases)
+  - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
+  - [Commits](https://github.com/redis/redis-py/compare/v6.4.0...v7.0.0)
+  
+  Updates `pydantic` from 2.11.7 to 2.12.3
+  - [Release notes](https://github.com/pydantic/pydantic/releases)
+  - [Changelog](https://github.com/pydantic/pydantic/blob/main/HISTORY.md)
+  - [Commits](https://github.com/pydantic/pydantic/compare/v2.11.7...v2.12.3)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: attrs
+    dependency-version: 25.4.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: boto3
+    dependency-version: 1.40.58
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: certifi
+    dependency-version: 2025.10.5
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: cffi
+    dependency-version: 2.0.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: cryptography
+    dependency-version: 46.0.3
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: filelock
+    dependency-version: 3.20.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: idna
+    dependency-version: '3.11'
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: iniconfig
+    dependency-version: 2.3.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: kubernetes
+    dependency-version: 34.1.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pillow
+    dependency-version: 12.0.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pycparser
+    dependency-version: '2.23'
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pymongo
+    dependency-version: 4.15.3
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pyparsing
+    dependency-version: 3.2.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pyyaml
+    dependency-version: 6.0.3
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: stripe
+    dependency-version: 13.0.1
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: redis
+    dependency-version: 7.0.0
+    dependency-type: direct:production
+    update-type: version-update:semver-major
+    dependency-group: backend-tests-python-dependencies
+  - dependency-name: pydantic
+    dependency-version: 2.12.3
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: backend-tests-python-dependencies
+  ...
+- Bump js-yaml from 4.1.0 to 4.1.1 in /frontend
+ ([b0b6165](https://github.com///commit/b0b6165551dce4310f78b63d6081ca0ae35f8d5f)) 
+
+
+
+
+  Bumps [js-yaml](https://github.com/nodeca/js-yaml) from 4.1.0 to 4.1.1.
+  - [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/nodeca/js-yaml/compare/4.1.0...4.1.1)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: js-yaml
+    dependency-version: 4.1.1
+    dependency-type: indirect
+  ...
+- Bump golang.org/x/crypto from 0.43.0 to 0.45.0 in /backend
+ ([8981e10](https://github.com///commit/8981e10742a4e097df46534fe5c314bc11ea2de7)) 
+
+
+
+
+  Bumps [golang.org/x/crypto](https://github.com/golang/crypto) from 0.43.0 to 0.45.0.
+  - [Commits](https://github.com/golang/crypto/compare/v0.43.0...v0.45.0)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: golang.org/x/crypto
+    dependency-version: 0.45.0
+    dependency-type: direct:production
+  ...
+
+
+
+
+### Revert
+
+
+- "chore(iot-manager): replace deprecated cipher NewCFBDecrypter and NewCFBEncrypter (...)"
+ ([b9f3810](https://github.com///commit/b9f38101319e9e118d724c0d1d18a6c4db7a5111)) 
+
+
+
+
+  This reverts commit 8baa94e909df4b39f55e8ac31653d5b490cf918c.
+
+
+
+
+
+
 ## 4.0.1 - 2025-05-19
 
 
@@ -29878,8 +31552,8 @@ artifact description
 * Fix bug that caused the update not to be retried after failing during
 previous attempt (#193)
 
----
+
 ## Mender v1.0.0
 _Released 02.20.2017_
 
----
+
