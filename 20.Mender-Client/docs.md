@@ -7,6 +7,188 @@ shortcode-core:
 github: false
 ---
 
+# Mender Client 6.0.0
+
+| Repository | Version |
+| --- | --- |
+| [mender](https://github.com/mendersoftware/mender) | 5.1.0 |
+| [mender-connect](https://github.com/mendersoftware/mender-connect) | 3.0.0 |
+| [monitor-client](https://github.com/mendersoftware/monitor-client) | 1.5.0 |
+| [mender-flash](https://github.com/mendersoftware/mender-flash) | 1.1.0 |
+| [mender-configure-module](https://github.com/mendersoftware/mender-configure-module) | 1.1.4 |
+| [mender-binary-delta](https://github.com/mendersoftware/mender-binary-delta) | 1.5.3 |
+| [mender-container-modules](https://github.com/mendersoftware/mender-container-modules) | 1.0.0 |
+
+## mender 5.1.0 (2026-03-09)
+
+### 5.1.0 - 2026-03-09
+
+##### Bug Fixes
+
+* Use /proc/cmdline for root device detection instead of stat in rootfs update module
+* Make Update modules generators POSIX compatible
+  ([MEN-8818](https://northerntech.atlassian.net/browse/MEN-8818))
+* mender-update with embedded authentication (experimental) now generates a new private key if needed
+  ([MEN-9132](https://northerntech.atlassian.net/browse/MEN-9132))
+* Prevent segfault by correctly handling dbus restarts in mender-update and mender-auth.
+  Previously when systemctl stop dbus.socket or systemctl stop dbus was called, it resulted in mender-update segfault.
+  ([MEN-9144](https://northerntech.atlassian.net/browse/MEN-9144))
+* Fix a hang when polling for deployment failed early causing no handler of API response
+  to be called. Added handler call for this case, causing the deployment polling
+  to continue.
+  ([MEN-9144](https://northerntech.atlassian.net/browse/MEN-9144))
+* Correctly handle HTTP 429 responses that contain a body
+  ([MEN-9342](https://northerntech.atlassian.net/browse/MEN-9342))
+
+##### Features
+
+* Add User-Agent header to HTTP requests
+  ([MEN-1979](https://northerntech.atlassian.net/browse/MEN-1979))
+* add DeviceTier configuration option
+  ([MEN-8650](https://northerntech.atlassian.net/browse/MEN-8650))
+* Enable `MENDER_USE_YAML_CPP` by default. This is done in order
+  to allow parsing the `system_type` from the topology yaml used by
+  mender-orchestrator.
+  ([MEN-8650](https://northerntech.atlassian.net/browse/MEN-8650))
+* Add system_type support for System devices. Devices with
+  DeviceTier set to "system" use system_type from topology.yaml instead
+  of device_type for deployment polling and manifest artifact compatibility
+  checking.
+  ([MEN-8650](https://northerntech.atlassian.net/browse/MEN-8650))
+* Add device tier support to authentication requests. The client now
+  sends a 'tier' parameter in authentication requests, supporting "standard"
+  (default), "micro", and "system" tiers. The tier is configurable via the
+  DeviceTier configuration option, with "standard" as the default.
+  ([MEN-8636](https://northerntech.atlassian.net/browse/MEN-8636))
+* Mender now errors if a comma is found in the NO_PROXY environment variable and explains that it only accepts space separated values.
+  ([ME-586](https://northerntech.atlassian.net/browse/ME-586))
+* delegate `mender_client_version` inventory key to external script
+
+  Mender Client is introducing a new package/recipe
+  `mender-client-version-inventory-script` which will provide the Mender
+  Client version not only based on `mender-update` version, but in the
+  Mender Client as a whole, as documented in our official docs.
+
+  Hence `mender-update` now expects the key to exist, and it will fallback
+  to the old behaviour if not present.
+
+  A new inventory attribute `mender_client_version_provider` is added to
+  distinguish the two cases.
+  ([MEN-9016](https://northerntech.atlassian.net/browse/MEN-9016))
+* Add configuration option RetryDownloadCount. It allows setting the number of
+  retry attempts when artifact downloading is interrupted e.g. due to network issues.
+  ([ME-589](https://northerntech.atlassian.net/browse/ME-589))
+* Handle HTTP 429 Too Many Requests in deployment polling
+  ([MEN-8850](https://northerntech.atlassian.net/browse/MEN-8850))
+* Handle HTTP 429 Too Many Requests in inventory polling
+  ([MEN-8850](https://northerntech.atlassian.net/browse/MEN-8850))
+* Handle HTTP 429 Too Many Requests in deployment status and logs pushing
+  ([MEN-8850](https://northerntech.atlassian.net/browse/MEN-8850))
+
+##### Other
+
+* Log message with version now says it's the mender-update version it reports
+  ([MEN-9114](https://northerntech.atlassian.net/browse/MEN-9114))
+* mender-auth version is now reported in its logs
+  ([MEN-9114](https://northerntech.atlassian.net/browse/MEN-9114))
+* mender-authd is now auto-started when called over DBus
+  ([MEN-9118](https://northerntech.atlassian.net/browse/MEN-9118), [MEN-9144](https://northerntech.atlassian.net/browse/MEN-9144))
+* libarchive can now be fetched, built and statically linked as part of the build
+  ([MEN-9130](https://northerntech.atlassian.net/browse/MEN-9130))
+
+## mender-connect 3.0.0 (2026-02-27)
+
+### 3.0.0 - 2026-02-27
+
+##### Features
+
+* lower backoff intervals
+
+  The previous backoff had a starting interval at 1
+  minute and a max backoff at 60 minutes. When it reached 60 minutes it
+  would linearly increase to 120 minutes minutes where it would keep
+  retrying.
+
+  The backoff will now start at 1 second and exponentially increase after
+  3 retries until it reaches 30 minutes where it will keep retrying.
+  For each interval a jitter between 0 and 5 seconds will be added.
+  ([ME-546](https://northerntech.atlassian.net/browse/ME-546))
+* Session expiration is now enabled by default:
+  * `StopExpired` defaults to true
+  * `ExpireAfterIdle` defaults to 10 minutes
+  Note that this is a behavioral change; `StopExpired` previously defaulted
+  to false and no default value was previously assigned to `ExpireAfterIdle`.
+  ([MEN-8260](https://northerntech.atlassian.net/browse/MEN-8260))
+
+## monitor-client 1.5.0 (2026-02-23)
+
+### 1.5.0 - 2026-02-23
+
+##### Bug Fixes
+
+* Add user warning when possible message flood is detected.
+  ([MEN-7216](https://northerntech.atlassian.net/browse/MEN-7216))
+
+##### Features
+
+* Add support for `version` argument in monitor ctl tool
+  ([MEN-8249](https://northerntech.atlassian.net/browse/MEN-8249))
+
+## mender-flash 1.1.0 (2026-02-27)
+
+### 1.1.0 - 2026-02-27
+
+##### Bug Fixes
+
+* Fixed handling of the '-f' short option for '--fsync-interval'
+
+##### Features
+
+* Two new CLI options are now supported:
+  --write-everything to force write of all bytes instead of comparing blocks and only writing the ones that differ, and
+  --fsync-interval to specify the interval (in bytes) after which the written bytes should be synced to the target device/file.
+  ([MEN-7862](https://northerntech.atlassian.net/browse/MEN-7862))
+* In-kernel copying utilizing the sendfile() and
+  splice() syscalls to avoid user-space buffers and
+  unnecessary context-switching is now used when possible.
+  ([MEN-7862](https://northerntech.atlassian.net/browse/MEN-7862))
+
+##### Other
+
+* No dependencies are now needed (no submodules)
+  and the builds are faster.
+  ([MEN-7862](https://northerntech.atlassian.net/browse/MEN-7862))
+* The binary is now smaller, less than 10 KiB big.
+  ([MEN-7862](https://northerntech.atlassian.net/browse/MEN-7862))
+
+## mender-configure-module 1.1.4 (2026-02-16)
+
+No changes
+
+## mender-binary-delta 1.5.3 (2026-02-02)
+
+No changes
+
+## mender-container-modules 1.0.0 (2026-01-13)
+
+First release of mender-container-modules
+
+
+---
+
+# Older releases (pre Mender Client 6.0)
+
+The release notes & changelogs can be found in the pages for the individual components:
+
+* [mender](20.Mender-Client/docs.md)
+* [mender-connect](21.mender-connect/docs.md)
+* [mender-configure-module](22.mender-configure-module/docs.md)
+* [mender-flash](25.mender-flash/docs.md)
+* [mender-binary-delta](50.mender-binary-delta/docs.md)
+* [monitor-client](51.monitor-client/docs.md)
+
+The following release notes & changelogs are for the `mender` repository alone.
+
 ## mender 5.0.4
 
 _Released 02.17.2026_
