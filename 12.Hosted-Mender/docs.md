@@ -7,6 +7,305 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.3 - 2026-03-17
+
+
+### Bug fixes
+
+
+- *(create-artifact-worker)* Hardened single file generation input validations
+ ([484cc2a](https://github.com/mendersoftware/mender-server-enterprise/commit/484cc2a13ad44d93cdf0f3c2ea9155b9bac4a969))  by @mzedel
+
+
+
+
+  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
+
+- *(deployments)* Reject deployments names longer than 256 characters
+([MEN-9222](https://northerntech.atlassian.net/browse/MEN-9222)) ([4983b46](https://github.com/mendersoftware/mender-server-enterprise/commit/4983b46f115a3a52b5bda1c6f9628e1826d5c603))  by @bahaa-ghazal
+
+
+
+
+- *(deployments)* Nil pointer dereference getting non-existing deployment
+([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([647084b](https://github.com/mendersoftware/mender-server-enterprise/commit/647084be4e3298534daba7474607347efb2ec7b6))  by @alfrunes
+
+
+
+
+- *(deviceauth)* Set correct rate limits for micro devices
+([MEN-9308](https://northerntech.atlassian.net/browse/MEN-9308)) ([7651ee1](https://github.com/mendersoftware/mender-server-enterprise/commit/7651ee10c656b8aed37df6c302e2029421272d59))  by @frodeha
+
+
+
+
+- *(gui)* Fixed typo in integration removal confirmation
+ ([a37fdd4](https://github.com/mendersoftware/mender-server-enterprise/commit/a37fdd4f2d0c5bb007f217a75885f2f2ab44e3dd))  by @mzedel
+
+
+
+- *(gui)* Fixed an issue that could misrepresent progress in a phased deployment
+ ([049aff5](https://github.com/mendersoftware/mender-server-enterprise/commit/049aff51ac7ecdc7c8ce7baa2aece7fffba7bde6))  by @mzedel
+
+
+
+- *(gui)* Show alert if dynamic group is removed after deployment
+([ME-550](https://northerntech.atlassian.net/browse/ME-550)) ([43b717e](https://github.com/mendersoftware/mender-server-enterprise/commit/43b717efe1ffeddf302d1a16fdd6bcc7ec515492))  by @mineralsfree
+
+
+
+
+- *(gui)* Fixed an issue that could hinder the device config difference view if none were found
+ ([36f4395](https://github.com/mendersoftware/mender-server-enterprise/commit/36f43953f9b8fc5addb3b7ac12317c304af357da))  by @mzedel
+
+
+
+- *(gui)* Restored copying values via the copy indicator after switch to new data display
+ ([c956de6](https://github.com/mendersoftware/mender-server-enterprise/commit/c956de65518a37c2b69441c4358301b78b40342c))  by @mzedel
+
+
+
+- *(gui)* Added handling of `artifact_too_big` deployment sub-status
+([MEN-9456](https://northerntech.atlassian.net/browse/MEN-9456)) ([c17104d](https://github.com/mendersoftware/mender-server-enterprise/commit/c17104dcc4bb168ea89e61ca20ab5ddf8db243d5))  by @frodeha
+
+
+
+
+- *(gui)* Fixed an issue that could lead the ui to a faulty state when handling `noauth` devices
+ ([0ee4eb3](https://github.com/mendersoftware/mender-server-enterprise/commit/0ee4eb30fc7b72b468677afae9e3abc2f8a66367))  by @mzedel
+
+
+
+- *(gui)* Ensured all filtering options have a readable title
+([MEN-9485](https://northerntech.atlassian.net/browse/MEN-9485)) ([c40e077](https://github.com/mendersoftware/mender-server-enterprise/commit/c40e077abfc47857a4c62a5dd27fc728c493e16f))  by @mzedel
+
+
+
+
+- *(inventory)* Reject group names longer than 256 characters
+([MEN-9222](https://northerntech.atlassian.net/browse/MEN-9222)) ([3fa1208](https://github.com/mendersoftware/mender-server-enterprise/commit/3fa1208839159f3f755d5f9ce37bdbf106bc4187))  by @bahaa-ghazal
+
+
+
+
+- *(tenantadm)* Do not clear authentication tokens when adding disabled addon to tenant
+([MEN-9428](https://northerntech.atlassian.net/browse/MEN-9428)) ([a7c7701](https://github.com/mendersoftware/mender-server-enterprise/commit/a7c77012e9802bb0db92e6f7662431d82356617f))  by @kjaskiewiczz
+
+
+
+
+- *(useradm)* Reject role names longer than 256 characters
+([MEN-9222](https://northerntech.atlassian.net/browse/MEN-9222)) ([db912de](https://github.com/mendersoftware/mender-server-enterprise/commit/db912de5abc8599e0ceabc8c45a27a8b7c4ded58))  by @bahaa-ghazal
+
+
+
+
+- *(workflows)* Set correct verification request expiration in e-mail
+([MEN-9259](https://northerntech.atlassian.net/browse/MEN-9259)) ([4193f59](https://github.com/mendersoftware/mender-server-enterprise/commit/4193f59fe5637b4a461cfbde418dbec6e4b43ef8))  by @frodeha
+
+
+
+
+- Unmarshal `interface{}` as bson.M using v2 mongo-driver
+([MEN-9419](https://northerntech.atlassian.net/browse/MEN-9419)) ([dff3e6a](https://github.com/mendersoftware/mender-server-enterprise/commit/dff3e6a6ba26dfcd75cb3dcd6312fb2be25f592b))  by @bahaa-ghazal
+
+
+
+- Return standard tier form inventory and device-auth if unset (#1022)
+([MEN-9365](https://northerntech.atlassian.net/browse/MEN-9365)) ([fa817b2](https://github.com/mendersoftware/mender-server-enterprise/commit/fa817b2f49dd088b102b32619113199757e25aa3))  by @merlin-northern in #1022
+
+
+
+
+
+
+
+
+
+### Documentation
+
+
+- *(useradm)* Updated email verification API docs
+([MEN-9259](https://northerntech.atlassian.net/browse/MEN-9259)) ([a5e206b](https://github.com/mendersoftware/mender-server-enterprise/commit/a5e206bd9cd73d25a4dd9e330aaaf990d3738fb0))  by @frodeha
+
+
+
+
+- Added explanation for e2e test usage
+ ([3990a32](https://github.com/mendersoftware/mender-server-enterprise/commit/3990a323aadcd67f74df6673663f2bc2bf48c5f1))  by @mzedel
+
+
+
+
+
+
+### Features
+
+
+- *(deployments)* Aligned deployment filtering w/ ux expectations
+([MEN-9407](https://northerntech.atlassian.net/browse/MEN-9407)) ([40465c8](https://github.com/mendersoftware/mender-server-enterprise/commit/40465c8ea836e4594ace29eda5d7ab61eacbb0bb))  by @mzedel
+
+
+
+
+- *(deviceauth)* Support for tiers in preauthorization
+([MEN-9457](https://northerntech.atlassian.net/browse/MEN-9457)) ([3e14ea2](https://github.com/mendersoftware/mender-server-enterprise/commit/3e14ea251ef175e059badbd4b7a800b792489385))  by @merlin-northern
+
+
+
+
+
+
+- *(gui)* Enabled dark mode support for saml + other editors
+([MEN-9060](https://northerntech.atlassian.net/browse/MEN-9060)) ([5abebe7](https://github.com/mendersoftware/mender-server-enterprise/commit/5abebe71a900be81377ab680b3411b5c8ab7a938))  by @mzedel
+
+
+
+
+
+  - made use of common editor wrapper to do so
+
+- *(gui)* Added time limited announcement for ai analysis feature to let more users benefit from it
+ ([a6ee288](https://github.com/mendersoftware/mender-server-enterprise/commit/a6ee28892f6e4897e88da68d449e610ddf86f1d7))  by @mzedel
+
+
+
+- *(gui)* Added tier support to sp tenant dashboard
+([MEN-8880](https://northerntech.atlassian.net/browse/MEN-8880)) ([ba67fb3](https://github.com/mendersoftware/mender-server-enterprise/commit/ba67fb3d8bed4bb50e3179795c5c097bc1561b5c))  by @mineralsfree
+
+
+
+
+- *(gui)* Added tier support to child tenant creation form
+([MEN-8880](https://northerntech.atlassian.net/browse/MEN-8880)) ([88e7d08](https://github.com/mendersoftware/mender-server-enterprise/commit/88e7d08d37d5be0e40e594339719a95cd323503b))  by @mineralsfree
+
+
+
+
+- *(gui)* Added tier support to child view and edit drawer
+([MEN-8880](https://northerntech.atlassian.net/browse/MEN-8880)) ([ab45bda](https://github.com/mendersoftware/mender-server-enterprise/commit/ab45bdac0b80d6e515d61a661f40fb34efc75fbe))  by @mineralsfree
+
+
+
+
+- *(gui)* Added sp tenant support request form
+([MEN-8880](https://northerntech.atlassian.net/browse/MEN-8880)) ([02bbdd6](https://github.com/mendersoftware/mender-server-enterprise/commit/02bbdd633065edeb1cd14b403763d8aaba5fcc9c))  by @mineralsfree
+
+
+
+
+- *(gui)* Added new Activate page for email verification
+([MEN-9260](https://northerntech.atlassian.net/browse/MEN-9260)) ([7ab20bc](https://github.com/mendersoftware/mender-server-enterprise/commit/7ab20bc103f47bd6f61214ce105c63560035d648))  by @mineralsfree
+
+
+
+
+- *(gui)* Added tiers to device auth set list item and identity
+([ME-634](https://northerntech.atlassian.net/browse/ME-634)) ([eea0409](https://github.com/mendersoftware/mender-server-enterprise/commit/eea0409573c465317595e10bc08b6ecac4e95d4f))  by @mineralsfree
+
+
+
+
+- *(gui)* Extract SettingsItem as reusable common-ui component
+([MEN-9311](https://northerntech.atlassian.net/browse/MEN-9311)) ([485375b](https://github.com/mendersoftware/mender-server-enterprise/commit/485375b2ed596706ef36bce584bd6cee5b7c5102))  by @mzedel
+
+
+
+
+- *(gui)* Added filtering by tiers on device list page
+([MEN-9465](https://northerntech.atlassian.net/browse/MEN-9465)) ([8bcf567](https://github.com/mendersoftware/mender-server-enterprise/commit/8bcf567452619563e736152b68448fcfd6c25e6e))  by @mineralsfree
+
+
+
+
+- *(gui)* Let device/release selections no longer persist when navigating to a new page
+ ([3d0eec4](https://github.com/mendersoftware/mender-server-enterprise/commit/3d0eec44e49b6d07c4b5f6ba5e491df350b95658))  by @mzedel
+
+
+
+- *(gui)* Add DocsTextLink variant for inline documentation links
+([MEN-9321](https://northerntech.atlassian.net/browse/MEN-9321)) ([5441af8](https://github.com/mendersoftware/mender-server-enterprise/commit/5441af8acb765ae1347d5a12b4cf9c880adf1621))  by @mzedel
+
+
+
+
+- *(useradm)* Added handling of expired verification links
+([MEN-9259](https://northerntech.atlassian.net/browse/MEN-9259)) ([8ccf0db](https://github.com/mendersoftware/mender-server-enterprise/commit/8ccf0db4e1ab32f458b3dbdae77c14f4734423c2))  by @frodeha
+
+
+
+
+- *(useradm)* Invalidate password reset tokens on email change
+([MEN-9198](https://northerntech.atlassian.net/browse/MEN-9198)) ([4cb7677](https://github.com/mendersoftware/mender-server-enterprise/commit/4cb7677aeee6c0d49182b4f494425557e5ea7a51))  by @bahaa-ghazal
+
+
+
+
+- *(useradm)* Add configuration parameters for HubSpot integration
+([MEN-9459](https://northerntech.atlassian.net/browse/MEN-9459)) ([79967cf](https://github.com/mendersoftware/mender-server-enterprise/commit/79967cf4d8b920203c5862ad26fd0edae51b1931))  by @kjaskiewiczz
+
+
+
+
+
+
+
+
+### Refactor
+
+
+- Migrate mongo-driver to v2
+([QA-1448](https://northerntech.atlassian.net/browse/QA-1448)) ([73425d5](https://github.com/mendersoftware/mender-server-enterprise/commit/73425d59fa6268842be7d6cbeb40e6f100cc62c8))  by @bahaa-ghazal
+
+
+
+
+- *(deviceauth)* Remove dead code
+ ([bbdcc10](https://github.com/mendersoftware/mender-server-enterprise/commit/bbdcc10144a3b9dec4ac58f83a5dd6c2ae641ef7))  by @kjaskiewiczz
+
+
+
+- *(gui)* Unified deployment progress rendering
+ ([0f2507a](https://github.com/mendersoftware/mender-server-enterprise/commit/0f2507a5e04f0fcb5e198c46273d1c1800601d87))  by @mzedel
+
+
+
+
+  - single entrypoint component to decide on what to render based on deployment state according to a passed variant
+  - isolated synchronized deployments sections
+  - increased separation between presentation & phase data deduction to try and improve clarity
+  - expanded type coverage
+
+- *(gui)* Made deployments list rendering handle screen sizes by itself
+ ([f39e0ae](https://github.com/mendersoftware/mender-server-enterprise/commit/f39e0ae052babf62a90379a49b74318e05a342fd))  by @mzedel
+
+
+
+
+  - increased reliance on deployment progress renderer
+  - ensured intended column alignment for date/ time columns
+
+
+
+
+
+### Security
+
+
+- *(gui)* Updated backend interaction package
+ ([ebf7509](https://github.com/mendersoftware/mender-server-enterprise/commit/ebf75098bb0d18ff2e1947e644e52b3957806a87))  by @mzedel
+
+
+
+
+  - to bring in new deployment substate, device & release selection behaviour changes, adjusted security nudging
+
+
+
+
+
+
+
 ## 4.2.0-saas.2 - 2026-02-19
 
 
