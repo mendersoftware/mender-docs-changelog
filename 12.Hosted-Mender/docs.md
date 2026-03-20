@@ -7,6 +7,58 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.4 - 2026-03-20
+
+
+### Bug fixes
+
+
+- *(deployments)* Treat `artifact_too_big` as finished state
+([MEN-9456](https://northerntech.atlassian.net/browse/MEN-9456)) ([460a280](https://github.com/mendersoftware/mender-server-enterprise/commit/460a2809258f21d5c8cedb2271dc8da1ef2166a5))  by @frodeha
+
+
+
+
+- Deserialization of Setting preventing use of AI summary
+ ([45ccf0a](https://github.com/mendersoftware/mender-server-enterprise/commit/45ccf0ac91426795ca51916f3e6642f95b308d98))  by @alfrunes
+
+
+
+
+  A change in the default deserialization of bson document in the mongo v2
+  driver blocks the consent check to use AI feature.
+
+
+
+
+### Features
+
+
+- *(tenantadm)* New command for synchronizing data with HubSpot
+([MEN-8832](https://northerntech.atlassian.net/browse/MEN-8832)) ([0e6fcbe](https://github.com/mendersoftware/mender-server-enterprise/commit/0e6fcbed81751e58cc71da69829040174ad3998e))  by @kjaskiewiczz
+
+
+
+
+
+  This commit introduces only part of the functionality of this new
+  command.
+  With this commit it's possible to create custom tenant object in HubSpot
+  (--init flag).
+  Data synchronization will be added in the next iteration.
+
+- *(useradm)* Invalidate password reset tokens on password change
+([MEN-9199](https://northerntech.atlassian.net/browse/MEN-9199)) ([e6f92ac](https://github.com/mendersoftware/mender-server-enterprise/commit/e6f92ac8a577581b1de09b06c3dde9e7ba7cd420))  by @bahaa-ghazal
+
+
+
+
+
+
+
+
+
+
 ## 4.2.0-saas.3 - 2026-03-17
 
 
