@@ -7,6 +7,67 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.5 - 2026-03-23
+
+
+### Bug fixes
+
+
+- *(gui)* Made ai analysis depend on ai feature activation
+ ([ec3fdb8](https://github.com/mendersoftware/mender-server-enterprise/commit/ec3fdb826feeb4962c2f27ae2abae13aa05d1c67))  by @mzedel
+
+
+
+- *(inventory)* Correcting order of operations in aggregation in SearchDevices
+([ME-642](https://northerntech.atlassian.net/browse/ME-642)) ([e5459d4](https://github.com/mendersoftware/mender-server-enterprise/commit/e5459d4c730662e2dcfbd476c204a56f461f3a44))  by @merlin-northern
+
+
+
+
+
+
+
+
+
+
+### Features
+
+
+- *(gui)* Adjusted the max limit in group and role definition
+([MEN-9223](https://northerntech.atlassian.net/browse/MEN-9223)) ([272b13e](https://github.com/mendersoftware/mender-server-enterprise/commit/272b13eab729b7db2d00a69f05a77ac6a9c5c259))  by @mineralsfree
+
+
+
+
+
+
+
+
+### Refactor
+
+
+- *(deployments)* Move common part of releases to new model
+ ([31e5ece](https://github.com/mendersoftware/mender-server-enterprise/commit/31e5ecec03e0c34d5ad45591b4dec17697cfeb9d))  by @alfrunes
+
+
+
+
+  To make room for ReleaseManifests (enterprise) sharing most of the same structure.
+
+- *(useradm)* Remove sso/login parameters from POST /api/management/v1/useradm/users
+([MEN-9295](https://northerntech.atlassian.net/browse/MEN-9295)) ([c72bd1b](https://github.com/mendersoftware/mender-server-enterprise/commit/c72bd1b009c44a20d20d625463f8a90295babee9))  by @LudvigAnderson
+
+
+
+
+
+
+
+
+
+
+
+
 ## 4.2.0-saas.4 - 2026-03-20
 
 
