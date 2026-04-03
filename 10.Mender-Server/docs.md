@@ -7,6 +7,32 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.1 - 2026-04-01
+
+
+### Bug fixes
+
+
+- *(create-artifact-worker)* Hardened single file generation input validations
+ ([dfb1523](https://github.com///commit/dfb15237b45876e01afe02e9ecef842454985015)) 
+
+
+
+
+  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
+
+- *(deployments)* Nil pointer dereference getting non-existing deployment
+([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([8f3c672](https://github.com///commit/8f3c672cf62d63ccb2339615ecc7ed3073a9daf4)) 
+
+
+
+
+
+
+
+
+
+
 ## 4.0.2 - 2026-04-01
 
 
