@@ -7,6 +7,512 @@ shortcode-core:
 github: false
 ---
 
+## 4.0.2 - 2026-04-07
+
+
+### Bug fixes
+
+
+- *(create-artifact-worker)* Hardened single file generation input validations
+ ([1090ac3](https://github.com///commit/1090ac3c89d523124e7edd596404526f391053c2)) 
+
+
+
+
+  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
+
+- *(deployments)* Nil pointer dereference getting non-existing deployment
+([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([a690b40](https://github.com///commit/a690b40ac304cfc5e2821a41a709ef3f9d2437ce)) 
+
+
+
+
+- *(deviceauth)* Use mongo's error code to check for record duplication in AddDevice
+ ([3f91f6e](https://github.com///commit/3f91f6e7621d3d4ce01ba87357cd0be16933636f)) 
+
+
+
+- *(useradm)* Mask private fields from user creation endpoint
+([MEN-9249](https://northerntech.atlassian.net/browse/MEN-9249)) ([18d1e4b](https://github.com///commit/18d1e4bcb52a9414b9b13a75c5cd0c07782eef9a)) 
+
+
+
+
+
+
+  Constraints the create user input to the properties defined in the API
+  specification. Masking `login_ts`, `tfa_enabled` and `verified` from the
+  user creation API endpoint.
+
+- Introduce docker-compose healthcheck for mongo, nats and traefik
+ ([d15626c](https://github.com///commit/d15626c63908fa4e70e67ef0d1db3dc031307498)) 
+
+
+
+
+  Introducing healthcheck allow to monitor services.
+  This permits a better dependency when mender services are starting,
+  waiting for mongo, nats, traefik to be heatlhy before starting.
+- Increase docker-compose restart
+ ([5923299](https://github.com///commit/59232993063ab8a00679fe7811718054dbf60546)) 
+
+
+
+
+  Some services still fails after the introduction of the healthcheck on
+  slow machines. Increase the number restarts allowed to solve it, no
+  better mechanisms found.
+
+
+
+
+### Security
+
+
+
+- Update traefik version
+ ([65b91f3](https://github.com///commit/65b91f35f6f1ff06583d02b9bc936eb603bfde90)) 
+
+
+
+
+  Update of traefik version to support Docker 29.x with API >= 1.44.
+
+
+
+
+
+- Bump the playwright group
+ ([32c9bf0](https://github.com///commit/32c9bf09df73219722a0a3d730c32ae627d3b473)) 
+
+
+
+
+  Bumps the playwright group in /frontend/tests/e2e_tests with 3 updates: [@playwright/test](https://github.com/microsoft/playwright), [playwright](https://github.com/microsoft/playwright) and [playwright-chromium](https://github.com/microsoft/playwright).
+  
+  
+  Updates `@playwright/test` from 1.55.1 to 1.56.1
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.55.1...v1.56.1)
+  
+  Updates `playwright` from 1.55.1 to 1.56.1
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.55.1...v1.56.1)
+  
+  Updates `playwright-chromium` from 1.55.1 to 1.56.1
+  - [Release notes](https://github.com/microsoft/playwright/releases)
+  - [Commits](https://github.com/microsoft/playwright/compare/v1.55.1...v1.56.1)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@playwright/test"
+    dependency-version: 1.56.1
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: playwright
+  - dependency-name: playwright
+    dependency-version: 1.56.1
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: playwright
+  - dependency-name: playwright-chromium
+    dependency-version: 1.56.1
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: playwright
+  ...
+- Bump the e2e-test-dependencies group
+ ([78ea349](https://github.com///commit/78ea349e12b938fe123b0d82860dbfa26259cdde)) 
+
+
+
+
+  Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 2 updates: [axios](https://github.com/axios/axios) and [yaml](https://github.com/eemeli/yaml).
+  
+  
+  Updates `axios` from 1.13.1 to 1.13.2
+  - [Release notes](https://github.com/axios/axios/releases)
+  - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
+  - [Commits](https://github.com/axios/axios/compare/v1.13.1...v1.13.2)
+  
+  Updates `yaml` from 2.8.1 to 2.8.2
+  - [Release notes](https://github.com/eemeli/yaml/releases)
+  - [Commits](https://github.com/eemeli/yaml/compare/v2.8.1...v2.8.2)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: axios
+    dependency-version: 1.13.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: e2e-test-dependencies
+  - dependency-name: yaml
+    dependency-version: 2.8.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: e2e-test-dependencies
+  ...
+- Bump the production-dependencies group
+ ([893f3cc](https://github.com///commit/893f3cc1c16e1af08ca16441f504f4f89d53f0e8)) 
+
+
+
+
+  Bumps the production-dependencies group in /frontend with 7 updates:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit) | `2.9.2` | `2.11.0` |
+  | [@stripe/react-stripe-js](https://github.com/stripe/react-stripe-js) | `5.3.0` | `5.4.1` |
+  | [@stripe/stripe-js](https://github.com/stripe/stripe-js) | `8.2.0` | `8.5.3` |
+  | [axios](https://github.com/axios/axios) | `1.13.1` | `1.13.2` |
+  | [react-hook-form](https://github.com/react-hook-form/react-hook-form) | `7.66.0` | `7.67.0` |
+  | [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom) | `7.9.5` | `7.9.6` |
+  | [validator](https://github.com/validatorjs/validator.js) | `13.15.20` | `13.15.23` |
+  
+  
+  Updates `@reduxjs/toolkit` from 2.9.2 to 2.11.0
+  - [Release notes](https://github.com/reduxjs/redux-toolkit/releases)
+  - [Commits](https://github.com/reduxjs/redux-toolkit/compare/v2.9.2...v2.11.0)
+  
+  Updates `@stripe/react-stripe-js` from 5.3.0 to 5.4.1
+  - [Release notes](https://github.com/stripe/react-stripe-js/releases)
+  - [Changelog](https://github.com/stripe/react-stripe-js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/stripe/react-stripe-js/compare/v5.3.0...v5.4.1)
+  
+  Updates `@stripe/stripe-js` from 8.2.0 to 8.5.3
+  - [Release notes](https://github.com/stripe/stripe-js/releases)
+  - [Commits](https://github.com/stripe/stripe-js/compare/v8.2.0...v8.5.3)
+  
+  Updates `axios` from 1.13.1 to 1.13.2
+  - [Release notes](https://github.com/axios/axios/releases)
+  - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
+  - [Commits](https://github.com/axios/axios/compare/v1.13.1...v1.13.2)
+  
+  Updates `react-hook-form` from 7.66.0 to 7.67.0
+  - [Release notes](https://github.com/react-hook-form/react-hook-form/releases)
+  - [Changelog](https://github.com/react-hook-form/react-hook-form/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/react-hook-form/react-hook-form/compare/v7.66.0...v7.67.0)
+  
+  Updates `react-router-dom` from 7.9.5 to 7.9.6
+  - [Release notes](https://github.com/remix-run/react-router/releases)
+  - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)
+  - [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.9.6/packages/react-router-dom)
+  
+  Updates `validator` from 13.15.20 to 13.15.23
+  - [Release notes](https://github.com/validatorjs/validator.js/releases)
+  - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.20...13.15.23)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@reduxjs/toolkit"
+    dependency-version: 2.11.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@stripe/react-stripe-js"
+    dependency-version: 5.4.1
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: "@stripe/stripe-js"
+    dependency-version: 8.5.3
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: axios
+    dependency-version: 1.13.2
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: production-dependencies
+  - dependency-name: react-hook-form
+    dependency-version: 7.67.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: production-dependencies
+  - dependency-name: react-router-dom
+    dependency-version: 7.9.6
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: production-dependencies
+  - dependency-name: validator
+    dependency-version: 13.15.23
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: production-dependencies
+  ...
+- Bump the mui group in /frontend with 3 updates
+ ([8936b76](https://github.com///commit/8936b7641c13e0eba2e5a88514c069629e98fe8d)) 
+
+
+
+
+  Bumps the mui group in /frontend with 3 updates: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
+  
+  
+  Updates `@mui/icons-material` from 7.3.4 to 7.3.5
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.3.5/packages/mui-icons-material)
+  
+  Updates `@mui/material` from 7.3.4 to 7.3.5
+  - [Release notes](https://github.com/mui/material-ui/releases)
+  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/material-ui/commits/v7.3.5/packages/mui-material)
+  
+  Updates `@mui/x-date-pickers` from 8.16.0 to 8.19.0
+  - [Release notes](https://github.com/mui/mui-x/releases)
+  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/mui/mui-x/commits/v8.19.0/packages/x-date-pickers)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@mui/icons-material"
+    dependency-version: 7.3.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/material"
+    dependency-version: 7.3.5
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: mui
+  - dependency-name: "@mui/x-date-pickers"
+    dependency-version: 8.19.0
+    dependency-type: direct:production
+    update-type: version-update:semver-minor
+    dependency-group: mui
+  ...
+- Bump the development-dependencies group across 1 directory with 16 updates
+ ([ebcb6c9](https://github.com///commit/ebcb6c906134e5bef694f16da1f8756ef22a79f8)) 
+
+
+
+
+  Bumps the development-dependencies group with 16 updates in the /frontend directory:
+  
+  | Package | From | To |
+  | --- | --- | --- |
+  | [@emotion/jest](https://github.com/emotion-js/emotion) | `11.13.0` | `11.14.2` |
+  | [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli) | `1.6.0` | `1.7.1` |
+  | [@rspack/core](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack) | `1.6.0` | `1.7.1` |
+  | [@testing-library/react](https://github.com/testing-library/react-testing-library) | `16.3.0` | `16.3.1` |
+  | [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) | `24.9.2` | `25.0.3` |
+  | [autoprefixer](https://github.com/postcss/autoprefixer) | `10.4.21` | `10.4.23` |
+  | [core-js](https://github.com/zloirock/core-js/tree/HEAD/packages/core-js) | `3.46.0` | `3.47.0` |
+  | [esbuild-loader](https://github.com/privatenumber/esbuild-loader) | `4.4.0` | `4.4.2` |
+  | [eslint-rspack-plugin](https://github.com/rspack-contrib/eslint-rspack-plugin) | `4.2.1` | `4.3.0` |
+  | [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) | `5.6.4` | `5.6.5` |
+  | [less](https://github.com/less/less.js) | `4.4.2` | `4.5.1` |
+  | [lint-staged](https://github.com/lint-staged/lint-staged) | `16.2.6` | `16.2.7` |
+  | [msw](https://github.com/mswjs/msw) | `2.11.6` | `2.12.7` |
+  | [prettier](https://github.com/prettier/prettier) | `3.6.2` | `3.7.4` |
+  | [ts-jest](https://github.com/kulshekhar/ts-jest) | `29.4.5` | `29.4.6` |
+  | [undici](https://github.com/nodejs/undici) | `7.16.0` | `7.18.2` |
+  
+  Updates `@emotion/jest` from 11.13.0 to 11.14.2
+  - [Release notes](https://github.com/emotion-js/emotion/releases)
+  - [Changelog](https://github.com/emotion-js/emotion/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/emotion-js/emotion/compare/@emotion/jest@11.13.0...@emotion/jest@11.14.2)
+  
+  Updates `@rspack/cli` from 1.6.0 to 1.7.1
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.7.1/packages/rspack-cli)
+  
+  Updates `@rspack/core` from 1.6.0 to 1.7.1
+  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
+  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.7.1/packages/rspack)
+  
+  Updates `@testing-library/react` from 16.3.0 to 16.3.1
+  - [Release notes](https://github.com/testing-library/react-testing-library/releases)
+  - [Changelog](https://github.com/testing-library/react-testing-library/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/testing-library/react-testing-library/compare/v16.3.0...v16.3.1)
+  
+  Updates `@types/node` from 24.9.2 to 25.0.3
+  - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+  - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+  
+  Updates `autoprefixer` from 10.4.21 to 10.4.23
+  - [Release notes](https://github.com/postcss/autoprefixer/releases)
+  - [Changelog](https://github.com/postcss/autoprefixer/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/postcss/autoprefixer/compare/10.4.21...10.4.23)
+  
+  Updates `core-js` from 3.46.0 to 3.47.0
+  - [Release notes](https://github.com/zloirock/core-js/releases)
+  - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/zloirock/core-js/commits/v3.47.0/packages/core-js)
+  
+  Updates `esbuild-loader` from 4.4.0 to 4.4.2
+  - [Release notes](https://github.com/privatenumber/esbuild-loader/releases)
+  - [Commits](https://github.com/privatenumber/esbuild-loader/compare/v4.4.0...v4.4.2)
+  
+  Updates `eslint-rspack-plugin` from 4.2.1 to 4.3.0
+  - [Release notes](https://github.com/rspack-contrib/eslint-rspack-plugin/releases)
+  - [Changelog](https://github.com/rstackjs/eslint-rspack-plugin/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/rspack-contrib/eslint-rspack-plugin/compare/v4.2.1...v4.3.0)
+  
+  Updates `html-webpack-plugin` from 5.6.4 to 5.6.5
+  - [Release notes](https://github.com/jantimon/html-webpack-plugin/releases)
+  - [Changelog](https://github.com/jantimon/html-webpack-plugin/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/jantimon/html-webpack-plugin/compare/v5.6.4...v5.6.5)
+  
+  Updates `less` from 4.4.2 to 4.5.1
+  - [Release notes](https://github.com/less/less.js/releases)
+  - [Changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md)
+  - [Commits](https://github.com/less/less.js/commits)
+  
+  Updates `lint-staged` from 16.2.6 to 16.2.7
+  - [Release notes](https://github.com/lint-staged/lint-staged/releases)
+  - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/lint-staged/lint-staged/compare/v16.2.6...v16.2.7)
+  
+  Updates `msw` from 2.11.6 to 2.12.7
+  - [Release notes](https://github.com/mswjs/msw/releases)
+  - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/mswjs/msw/compare/v2.11.6...v2.12.7)
+  
+  Updates `prettier` from 3.6.2 to 3.7.4
+  - [Release notes](https://github.com/prettier/prettier/releases)
+  - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/prettier/prettier/compare/3.6.2...3.7.4)
+  
+  Updates `ts-jest` from 29.4.5 to 29.4.6
+  - [Release notes](https://github.com/kulshekhar/ts-jest/releases)
+  - [Changelog](https://github.com/kulshekhar/ts-jest/blob/main/CHANGELOG.md)
+  - [Commits](https://github.com/kulshekhar/ts-jest/compare/v29.4.5...v29.4.6)
+  
+  Updates `undici` from 7.16.0 to 7.18.2
+  - [Release notes](https://github.com/nodejs/undici/releases)
+  - [Commits](https://github.com/nodejs/undici/compare/v7.16.0...v7.18.2)
+  
+  ---
+  updated-dependencies:
+  - dependency-name: "@emotion/jest"
+    dependency-version: 11.14.2
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/cli"
+    dependency-version: 1.7.1
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@rspack/core"
+    dependency-version: 1.7.1
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: "@testing-library/react"
+    dependency-version: 16.3.1
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: "@types/node"
+    dependency-version: 25.0.3
+    dependency-type: direct:development
+    update-type: version-update:semver-major
+    dependency-group: development-dependencies
+  - dependency-name: autoprefixer
+    dependency-version: 10.4.23
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: core-js
+    dependency-version: 3.47.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: esbuild-loader
+    dependency-version: 4.4.2
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: eslint-rspack-plugin
+    dependency-version: 4.3.0
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: html-webpack-plugin
+    dependency-version: 5.6.5
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: less
+    dependency-version: 4.5.1
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: lint-staged
+    dependency-version: 16.2.7
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: msw
+    dependency-version: 2.12.7
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: prettier
+    dependency-version: 3.7.4
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  - dependency-name: ts-jest
+    dependency-version: 29.4.6
+    dependency-type: direct:development
+    update-type: version-update:semver-patch
+    dependency-group: development-dependencies
+  - dependency-name: undici
+    dependency-version: 7.18.2
+    dependency-type: direct:development
+    update-type: version-update:semver-minor
+    dependency-group: development-dependencies
+  ...
+- Bump enterprise golang versions to 1.25.6
+ ([e026955](https://github.com///commit/e02695526d5ad6b361abe661c619cd308ce0748b)) 
+
+
+- Bump generate-delta-worker alpine to 3.22.2
+ ([fd18543](https://github.com///commit/fd185430723ade04fcbd595983142eee847d543d)) 
+
+
+- Bump the backend-docker-compose-dependencies group across 2 directories with 5 updates
+ ([aa65b13](https://github.com///commit/aa65b13edb80038f461912d2ce056d88cf632159)) 
+
+
+
+
+
+  Bumps the backend-docker-compose-dependencies group with 3 updates in the / directory: traefik, mongo and nats.
+  Bumps the backend-docker-compose-dependencies group with 2 updates in the /compose directory: redis and chrislusf/seaweedfs.
+  
+  Updates `traefik` from 3.6.2 to 3.6.6
+  Updates `nats` from 2.10-alpine to 2.12-alpine
+  Updates `chrislusf/seaweedfs` from 3.85 to 4.04
+  
+  ---
+  updated-dependencies:
+  - dependency-name: traefik
+    dependency-version: 3.6.6
+    dependency-type: direct:production
+    update-type: version-update:semver-patch
+    dependency-group: backend-docker-compose-dependencies
+  - dependency-name: nats
+    dependency-version: 2.12-alpine
+    dependency-type: direct:production
+    dependency-group: backend-docker-compose-dependencies
+  - dependency-name: chrislusf/seaweedfs
+    dependency-version: '4.04'
+    dependency-type: direct:production
+    dependency-group: backend-docker-compose-dependencies
+  ...
+
+
+
+
+
+
 ## 4.1.0 - 2026-01-12
 
 
