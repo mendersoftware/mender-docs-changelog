@@ -7,6 +7,154 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.6 - 2026-04-08
+
+
+### Bug fixes
+
+
+- *(deviceauth)* Check if new limit is less then current usage
+([MEN-9481](https://northerntech.atlassian.net/browse/MEN-9481)) ([08d24e6](https://github.com/mendersoftware/mender-server-enterprise/commit/08d24e6d4576bdabb75186490743bb7164dbd377))  by @bahaa-ghazal
+
+
+
+
+- *(gui)* Ensured deployment target devices are not needlessly wrapped on smaller viewports
+ ([0d3cb6a](https://github.com/mendersoftware/mender-server-enterprise/commit/0d3cb6af0ede6d2e587a855738bd06b82c6dce9e))  by @mzedel
+
+
+
+- *(gui)* Fixed an issue crashing the ui if deploying to a dynamic group targeting only a device id
+ ([40f5aee](https://github.com/mendersoftware/mender-server-enterprise/commit/40f5aee1d7c90dcb9e08f350622bff67b26b3b9a))  by @mzedel
+
+
+
+- *(gui)* Removed invitation to copy in read-only displays if we can't notify about success
+ ([3c84df9](https://github.com/mendersoftware/mender-server-enterprise/commit/3c84df9ccb9c847d53c572fd579a46c1ef93e3b8))  by @mzedel
+
+
+
+- *(gui)* Made artifact downloads less likely to trigger security incident notifications
+ ([488a04b](https://github.com/mendersoftware/mender-server-enterprise/commit/488a04b2e7971953784b7c89484dc7f0e9449a0e))  by @mzedel
+
+
+
+
+  - by getting their download locations only once the user clicks
+
+- *(tenantadm)* Add missing updated_at property to tenant HubSpot object
+([MEN-8832](https://northerntech.atlassian.net/browse/MEN-8832)) ([372d57a](https://github.com/mendersoftware/mender-server-enterprise/commit/372d57a4547af7cfaa76cb92f7e8fb5ab93f4a40))  by @kjaskiewiczz
+
+
+
+
+- *(tenantadm)* Check if new child limit is less then current usage
+([MEN-9481](https://northerntech.atlassian.net/browse/MEN-9481)) ([12da6ce](https://github.com/mendersoftware/mender-server-enterprise/commit/12da6cee1e90dadba583930d191a559323f40bfd))  by @bahaa-ghazal
+
+
+
+
+
+
+
+
+### Documentation
+
+
+- *(deployments)* Extended deployment creation with recurring phases
+ ([d1f9d35](https://github.com/mendersoftware/mender-server-enterprise/commit/d1f9d354b4da15807b22cbbebfd834b390bce45e))  by @alfrunes
+
+
+
+
+  Added recurring phases parameter to deployment object and new deployment
+  parameters.
+
+- *(deployments)* Added docs for experimental endpoints
+([MEN-9400](https://northerntech.atlassian.net/browse/MEN-9400)) ([c2c16b1](https://github.com/mendersoftware/mender-server-enterprise/commit/c2c16b1e0fa8e01753235f61384601de66059af8))  by @mzedel
+
+
+
+
+- *(inventory)* Added internal endpoint for getting usage statistics
+ ([0954761](https://github.com/mendersoftware/mender-server-enterprise/commit/0954761c7f16d0a4cb1ae0d1a82a3b74f83b5a49))  by @alfrunes
+
+
+
+
+
+
+
+### Features
+
+
+- *(deployments)* New rollout strategy `uniform_phases`
+ ([ab691bb](https://github.com/mendersoftware/mender-server-enterprise/commit/ab691bb05d22114f8bb7dd547edeeeb14f47b003))  by @alfrunes
+
+
+
+
+  Extended the deployments API with `uniform_phases` rollout strategy for
+  deploying releases. Uniform phases are defined by number of devices per
+  phase, time interval between consecutive phases and an optional start
+  timestamp for the first phase.
+
+- *(gui)* Let release & related software focused content appear as software in navigation & links
+([MEN-9413](https://northerntech.atlassian.net/browse/MEN-9413)) ([b4d293d](https://github.com/mendersoftware/mender-server-enterprise/commit/b4d293dc6f93d4ab7f8dff68d6fb85a49b0ae485))  by @mzedel
+
+
+
+
+- *(tenantadm)* Add "NT Last Sync" property to HubSpot tenant object schema
+([MEN-8832](https://northerntech.atlassian.net/browse/MEN-8832)) ([b891a3e](https://github.com/mendersoftware/mender-server-enterprise/commit/b891a3e43d367de34aa804b2ca79857a1a36ab3f))  by @kjaskiewiczz
+
+
+
+
+- *(tenantadm)* Extend command for synchronizing tenant
+([MEN-8832](https://northerntech.atlassian.net/browse/MEN-8832)) ([e16113f](https://github.com/mendersoftware/mender-server-enterprise/commit/e16113f2117cd4b6be30b0e3494c9f84e5c1a17c))  by @kjaskiewiczz
+
+
+
+
+
+  With this commit, the command is actually able to synchronize tenants.
+  Tenant synchronization is done in batches and the batch size is dictated
+  by maximum batch size supported by HubSpot.
+
+- *(tenantadm)* Extend command for synchronizing tenants with HubSpot
+([MEN-9463](https://northerntech.atlassian.net/browse/MEN-9463)) ([059a2d3](https://github.com/mendersoftware/mender-server-enterprise/commit/059a2d38e1eef7dcb38fae23ae4e43b3abbf8559))  by @kjaskiewiczz
+
+
+
+
+
+  Add information about first deployment creation date.
+
+
+
+
+
+### Refactor
+
+
+- *(gui)* Cleanup after device id selection dialog extraction & design alignment
+ ([1620eea](https://github.com/mendersoftware/mender-server-enterprise/commit/1620eea43e4ed82a81e75eb03b1c2532529c2193))  by @mzedel
+
+
+
+- *(tenantadm)* Consolidate HubspotObject with upsert input
+([MEN-8832](https://northerntech.atlassian.net/browse/MEN-8832)) ([f9b9338](https://github.com/mendersoftware/mender-server-enterprise/commit/f9b9338676805b5ce797ebae3f9d172c07364251))  by @kjaskiewiczz
+
+
+
+
+
+
+
+
+
+
 ## 4.2.0-saas.5 - 2026-03-23
 
 
