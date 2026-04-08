@@ -7,6 +7,110 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.1 - 2026-04-07
+
+
+### Bug fixes
+
+
+- *(create-artifact-worker)* Hardened single file generation input validations
+ ([dfb1523](https://github.com/mendersoftware/mender-server-enterprise/commit/dfb15237b45876e01afe02e9ecef842454985015)) 
+
+
+
+
+  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
+
+- *(deployments)* Do not reassign phase to device deployment
+([MEN-9196](https://northerntech.atlassian.net/browse/MEN-9196)) ([51f727e](https://github.com/mendersoftware/mender-server-enterprise/commit/51f727e54e6560c47fe8c541975202b6006b420e)) 
+
+
+
+  If the device deployment has been already assing to particular
+  deployment phase, do not reassing it and do not check if it can be part
+  of the deployment phase.
+  
+  (cherry picked from commit 3fb1f7aedd7edff5fcb7e0e41e8ebee6370c27c8)
+  Ticket: MEN-9196
+  Signed-off-by: Krzysztof Jaskiewicz <krzysztof.jaskiewicz@northern.tech>
+
+- *(deployments)* Nil pointer dereference getting non-existing deployment
+([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([8f3c672](https://github.com/mendersoftware/mender-server-enterprise/commit/8f3c672cf62d63ccb2339615ecc7ed3073a9daf4)) 
+
+
+
+
+- *(deployments)* Aligned empty delta jobs list representation w/ documentation
+ ([682a363](https://github.com/mendersoftware/mender-server-enterprise/commit/682a3634a6a684f7be5c09bb06bed0f565a20379)) 
+
+
+
+
+  - the returned `null` is another spec alignment issue the ui ran into
+
+- *(generate-delta-worker)* Add delta image ID when reporting success
+([MEN-9168](https://northerntech.atlassian.net/browse/MEN-9168)) ([78f16ff](https://github.com/mendersoftware/mender-server-enterprise/commit/78f16ff25f47fd18f2cb30071e6657e4ede6b56d)) 
+
+
+
+
+
+- *(tenantadm)* Do not clear authentication tokens when adding disabled addon to tenant
+([MEN-9428](https://northerntech.atlassian.net/browse/MEN-9428)) ([9c63e6b](https://github.com/mendersoftware/mender-server-enterprise/commit/9c63e6b9cd710e29bf7835fb70ffbd3616dd8ec7)) 
+
+
+
+
+- *(useradm)* Mask private fields from user creation endpoint
+([MEN-9249](https://northerntech.atlassian.net/browse/MEN-9249)) ([1bc9079](https://github.com/mendersoftware/mender-server-enterprise/commit/1bc90795840344a4be7436bb40c2f54f99e4ba75)) 
+
+
+
+
+
+
+  Constraints the create user input to the properties defined in the API
+  specification. Masking `login_ts`, `tfa_enabled` and `verified` from the
+  user creation API endpoint.
+
+- *(useradm)* Use RBAC middleware with legacy API
+ ([5e3066f](https://github.com/mendersoftware/mender-server-enterprise/commit/5e3066f057e9468351a0e55cd38f1e297f17de01)) 
+
+
+
+  (cherry picked from commit b45e01154ab107acb11510962467c26a1dec4f8e)
+  Signed-off-by: Krzysztof Jaskiewicz <krzysztof.jaskiewicz@northern.tech>
+
+- *(useradm)* Use base URL from configuration for OpenID callback URL
+([MEN-9374](https://northerntech.atlassian.net/browse/MEN-9374)) ([7b7c003](https://github.com/mendersoftware/mender-server-enterprise/commit/7b7c003c826ebb4c6e51aadbbac2cf7bd9b959d2)) 
+
+
+
+
+
+
+  Instead of parsing `X-Forwarded-Host`, use the constant base URL from
+  configuration.
+
+
+
+
+
+### Refactor
+
+
+- *(deviceauth)* Extend RejectAuthSetsForDevice to exclude AuthSets
+ ([4411524](https://github.com/mendersoftware/mender-server-enterprise/commit/4411524fdf7e718f71013c9126ccc2a9ece7e02b))  by @alfrunes
+
+
+
+
+
+
+
+
+
+
 ## 4.0.2 - 2026-04-07
 
 
