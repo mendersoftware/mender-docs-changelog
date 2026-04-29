@@ -342,6 +342,91 @@ New changes in meta-mender since kirkstone-v2024.06:
   this can break daemon mode.
 
 
+## meta-mender kirkstone-v2026.04
+
+### Changelogs
+
+#### meta-mender (kirkstone-v2026.04)
+
+New changes in meta-mender since kirkstone-v2025.11:
+
+##### Bug Fixes
+
+* Amend condition for "major upgrade warning"
+  Correctly show the warning only when no preferred version is selected,
+  regardless of the user setting with the explicit
+  `PREFERRED_VERSION_mender` variable (recommended) or through an override.
+  ([MEN-9094](https://northerntech.atlassian.net/browse/MEN-9094))
+* Support new file output in do_check_config_efi_stub
+* Extend list of mender variables
+  ([MEN-5271](https://northerntech.atlassian.net/browse/MEN-5271))
+* Increase ssh server limits on connections for the testing QEMU image
+  ([QA-472](https://northerntech.atlassian.net/browse/QA-472))
+* Fix a SDK build issue.
+* Add python3-docker-compose and python3-distutils to RDEPENDS
+  ([MEN-9603](https://northerntech.atlassian.net/browse/MEN-9603))
+* Add mender-container-modules patch to fix an issue
+  where docker-compose v1 can't find manifest files for a composition
+  because we don't cd into the manifest directory.
+  ([MEN-9641](https://northerntech.atlassian.net/browse/MEN-9641))
+
+##### Features
+
+* Add support for specifying MENDER_DEVICE_TIER in the mender conf.
+  ([MEN-8650](https://northerntech.atlassian.net/browse/MEN-8650))
+* Add `mender-client-version-inventory-script` recipe.
+  ([MEN-9018](https://northerntech.atlassian.net/browse/MEN-9018))
+* Add package configuration `version-inventory-script`
+  This new configuration is enabled by default from `mender-update` 5.1
+  on, where the report of the `mender_client_version` inventory attribute
+  is provided through a script.
+  ([MEN-9018](https://northerntech.atlassian.net/browse/MEN-9018))
+* Allow disabling strict dependency checks for
+  mender-client-version-inventory-script. This makes it easier
+  to cherry-pick the recipe to maintenance branches that have
+  conflicting subcomponent versions. When disabled, the
+  build will log a warning instead of failing if a conflict
+  occurs, and the script will not be installed.
+  ([MEN-9502](https://northerntech.atlassian.net/browse/MEN-9502))
+* Add new `meta-mender-extended` layer to group Mender
+  components that have requirements beyond Poky's core layer.
+  ([MEN-8739](https://northerntech.atlassian.net/browse/MEN-8739))
+* Add `mender-container-modules` to provide
+  `mender-docker-comopse` package. To add the package to the build
+  `meta-virtualization` layer is required and a bigger rootfs is
+  recommended. Sample configuration:
+  ```
+  IMAGE_INSTALL:append = " mender-docker-compose"
+  DISTRO_FEATURES:append = " virtualization"
+  MENDER_STORAGE_TOTAL_SIZE_MB_DEFAULT = "2048"
+  ```
+  ([MEN-8739](https://northerntech.atlassian.net/browse/MEN-8739))
+* Add image recipe for meta-mender-extended
+  ([MEN-8871](https://northerntech.atlassian.net/browse/MEN-8871))
+* Add virtualization DISTRO_FEATURE in meta-mender-extended conf
+* Add a variable `MENDER_DOCKER_DATA_ROOT` that allows
+  specifying Docker's `data-root`, i.e. the storage directory the Docker
+  daemon will use.
+  ([MEN-9089](https://northerntech.atlassian.net/browse/MEN-9089))
+
+##### Other
+
+* Add mender-binary-delta_git.bb recipe
+  ([QA-1178](https://northerntech.atlassian.net/browse/QA-1178))
+* Add recipe for `mender` 5.0.4
+* Add recipe for `mender-connect` 2.3.2
+* Add recipe for `mender-configure` 1.1.4
+* Add recipe for `mender-binary-delta` 1.5.3
+* Add recipe for `mender-monitor` 1.4.4
+* Add recipes for Mender Client 6.0.0
+  * `mender-client-version-inventory-script` 6.0.0
+  * `mender` 5.1.0
+  * `mender-connect` 3.0.0
+  * `mender-flash` 1.1.0
+  * `mender-monitor` 1.5.0
+  ([QA-1538](https://northerntech.atlassian.net/browse/QA-1538))
+
+
 ## meta-mender kirkstone-v2025.11
 
 ### Changelogs
