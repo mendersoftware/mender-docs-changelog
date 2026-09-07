@@ -7,6 +7,84 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.16 - 2026-09-04
+
+
+### New features
+
+- *(deviceconnect)* Add thundering herd rate limit to websocket APIs ([MEN-10052](https://northerntech.atlassian.net/browse/MEN-10052)) ([2961745](https://github.com/mendersoftware/mender-server-enterprise/commit/2961745ef4f3f4ee4a65f64f80557510e6acecd4)) by @alfrunes
+- *(gui)* Limited organization token visibility to eligible users to prevent leakage ([MEN-9580](https://northerntech.atlassian.net/browse/MEN-9580)) ([701a2ce](https://github.com/mendersoftware/mender-server-enterprise/commit/701a2cedbd4d0e9655caddbbaafe2407f7a16ad1)) by @mzedel
+- *(useradm)* Add deployment manifest endpoints to RBAC permission sets ([MEN-9900](https://northerntech.atlassian.net/browse/MEN-9900)) ([fe0cc02](https://github.com/mendersoftware/mender-server-enterprise/commit/fe0cc020fd7a12ed396f26a93714eb894d7b4f01)) by @frodeha
+- *(admin-panel)* Add google oauth authentication support ([ab37d74](https://github.com/mendersoftware/mender-server-enterprise/commit/ab37d74a27dc12c0a4d768537ecab5e4c3f8bd16)) by @mzedel
+- *(admin-panel)* Add auth support for google-based sign ins ([6cf3b36](https://github.com/mendersoftware/mender-server-enterprise/commit/6cf3b369b13ebfe7db6a2963ed0bb90dae23daf1)) by @mzedel
+- *(admin-panel)* Move the privileged api onto a sudo prefix ([59f841d](https://github.com/mendersoftware/mender-server-enterprise/commit/59f841dd287dcc5c268fa4fd37d502feec3be05a)) by @mzedel
+- *(deployments)* Support release tag scopes for manifest endpoints ([MEN-9901](https://northerntech.atlassian.net/browse/MEN-9901)) ([dab7925](https://github.com/mendersoftware/mender-server-enterprise/commit/dab7925fd270cd330c0643c10ff1f86fa8a5cbbe)) by @bahaa-ghazal
+- *(gui)* Added deployment phase definition input to align w/ updated design ([154c7f9](https://github.com/mendersoftware/mender-server-enterprise/commit/154c7f9a715bfe331d06f0e07727193da3386458)) by @mzedel
+- *(gui)* Added support for percentage & device count deployment phase definitions ([MEN-9001](https://northerntech.atlassian.net/browse/MEN-9001)) ([81d019a](https://github.com/mendersoftware/mender-server-enterprise/commit/81d019add9c9a254e53299689e988ac427908e72)) by @mzedel
+- *(gui)* Add support for repeating uniform deployment phase patterns ([MEN-9001](https://northerntech.atlassian.net/browse/MEN-9001)) ([9b34b80](https://github.com/mendersoftware/mender-server-enterprise/commit/9b34b8038010da6403bc42c6d5cc28c6bcedab45)) by @mzedel
+- *(gui)* Support device-count rollouts in deployment progress ([8ce9324](https://github.com/mendersoftware/mender-server-enterprise/commit/8ce9324356c4c049e8999569be46778cfde9017c)) by @mzedel
+- *(gui)* Made deployment creation more informative via contextual errors ([3b51f37](https://github.com/mendersoftware/mender-server-enterprise/commit/3b51f372d7bb47df22c04fea97899acdebe9e2ba)) by @mzedel
+- *(gui)* Explained & cleared unavailable deployment options ([MEN-9322](https://northerntech.atlassian.net/browse/MEN-9322)) ([803eaca](https://github.com/mendersoftware/mender-server-enterprise/commit/803eacaf27babad6776a55deba7a7887d42cd0c1)) by @mzedel
+- *(gui)* Add new search component ([MEN-9831](https://northerntech.atlassian.net/browse/MEN-9831)) ([f8365bf](https://github.com/mendersoftware/mender-server-enterprise/commit/f8365bff6a050c39b6016afdf29191d3ef379393)) by @mineralsfree
+
+### Improvements
+
+- Remove dead code from deployments ng tests ([MEN-9900](https://northerntech.atlassian.net/browse/MEN-9900)) ([1354596](https://github.com/mendersoftware/mender-server-enterprise/commit/135459627aa9518c91f745953c9dbde894244b1e)) by @frodeha
+- Restructured RBAC integration-ng test suite ([MEN-9900](https://northerntech.atlassian.net/browse/MEN-9900)) ([dd6e4cb](https://github.com/mendersoftware/mender-server-enterprise/commit/dd6e4cbde60327330e9ff9400bc04446fccbd12b)) by @frodeha
+- *(deployments)* Clean up scope usage when fetching allowed release tags ([ee83e16](https://github.com/mendersoftware/mender-server-enterprise/commit/ee83e16ba2e1575ca83aca1cf21c580253a42d2d)) by @bahaa-ghazal
+- *(deployments)* Simplify release tags rbac logic for software endpoints ([204d54e](https://github.com/mendersoftware/mender-server-enterprise/commit/204d54e8441f2c65d4777b17ea3d7b28f1efc51f)) by @bahaa-ghazal
+- Let admin panel live under a separate domain to ease access handling ([00d7ca2](https://github.com/mendersoftware/mender-server-enterprise/commit/00d7ca2a8a020b0839b31e0bda16f2575ffd67e1)) by @mzedel
+- *(gui)* Track deployment schedule independent of phase definitions ([a8d5206](https://github.com/mendersoftware/mender-server-enterprise/commit/a8d5206c8338c58370e4352df23a562405104d96)) by @mzedel
+- *(gui)* Integrated custom phase pattern support in phase settings ([37d4e40](https://github.com/mendersoftware/mender-server-enterprise/commit/37d4e401d8c9ec5945f7ce556b1a96382b01e420)) by @mzedel
+- *(gui)* Allow deployment creation despite faulty phase definitions ([5029ae8](https://github.com/mendersoftware/mender-server-enterprise/commit/5029ae8fef43203991c39c54e04468876290f0ac)) by @mzedel
+- *(gui)* Integrate rollout modes into deployment creation ([6fff672](https://github.com/mendersoftware/mender-server-enterprise/commit/6fff672b7b54e4be9113e31f9cdcf72554a8a9c3)) by @mzedel
+- *(gui)* Integrated deployment options further into rhf ([0080f95](https://github.com/mendersoftware/mender-server-enterprise/commit/0080f954e87d2ad9fcc59796484bfd0d2fe366c0)) by @mzedel
+- *(gui)* Reduced rendering load during deployment creation ([a781927](https://github.com/mendersoftware/mender-server-enterprise/commit/a78192757b47c07c78e3a1a751728cd04f625f3f)) by @mzedel
+- *(gui)* Dropped the now unused key value editor error text prop ([12ed1b1](https://github.com/mendersoftware/mender-server-enterprise/commit/12ed1b1af754b52aecd19ad1ddbda2bf52372fd8)) by @mzedel
+
+### Bug fixes
+
+- *(deviceauth)* Default rate limit config treats trial as test device ([3f12ca2](https://github.com/mendersoftware/mender-server-enterprise/commit/3f12ca27c4f0235298adf978478895b5dc863972)) by @alfrunes
+- *(deviceauth)* Adjust default rate limits to match documented rate limits ([64b4d1c](https://github.com/mendersoftware/mender-server-enterprise/commit/64b4d1c0bf2ff05c709d8caecf080c579c6362dc)) by @alfrunes
+- *(gui)* Fixed an issue that caused the release deletion confirmation to show up when it shouldn't ([6b99ce1](https://github.com/mendersoftware/mender-server-enterprise/commit/6b99ce19e37dad553ab391c1c20c104793b4929c)) by @mzedel
+- *(inventory)* Handle multi-value attributes when processing identities ([MEN-10107](https://northerntech.atlassian.net/browse/MEN-10107)) ([332f223](https://github.com/mendersoftware/mender-server-enterprise/commit/332f2237b777860a841db52a58980c6c8854061c)) by @frodeha
+- *(gui)* Align the test device tooltip with actual rate limits ([MEN-10069](https://northerntech.atlassian.net/browse/MEN-10069)) ([df73068](https://github.com/mendersoftware/mender-server-enterprise/commit/df730683f8444ee13d9ce309bf9cc13c36e8a13a)) by @mineralsfree
+- *(gui)* Realign retry range w/ backend understanding ([7acd8b5](https://github.com/mendersoftware/mender-server-enterprise/commit/7acd8b50bdb01d9deb9b9f2e6bf584cb623b41fa)) by @mzedel
+- *(gui)* Surfaced failing device preauth requests in the preauth dialog ([a488b9a](https://github.com/mendersoftware/mender-server-enterprise/commit/a488b9a280f5b75f8ace4a8eea439c30b20d9560)) by @mzedel
+- *(gui)* Added missing quick actions for manifest interactions ([MEN-10105](https://northerntech.atlassian.net/browse/MEN-10105)) ([747d8bf](https://github.com/mendersoftware/mender-server-enterprise/commit/747d8bfa9b831bf88d33a2fb3d784d97fe3992b7)) by @mzedel
+- *(gui)* Ensured proper device attribute is used to show installed orchestrator device software ([MEN-10075](https://northerntech.atlassian.net/browse/MEN-10075)) ([d63f3d9](https://github.com/mendersoftware/mender-server-enterprise/commit/d63f3d991d61c1986f1ecbde04a148104fe00bbd)) by @mzedel
+- *(gui)* Let readable device software aliases also apply for nested software installations ([ac23a7a](https://github.com/mendersoftware/mender-server-enterprise/commit/ac23a7a65c2b574aca04339e325ac2a8b834658a)) by @mzedel
+- *(gui)* Fetch tenant token in device onboarding modal ([74f9ad1](https://github.com/mendersoftware/mender-server-enterprise/commit/74f9ad16891333825480da46c3561b5089629038)) by @mineralsfree
+- *(gui)* Let immediate validation run when a deployment gets created w/ device count based phases ([26db064](https://github.com/mendersoftware/mender-server-enterprise/commit/26db0649ea19fd6debebd6f07879f9f3bd33fe03)) by @mzedel
+- *(pkg)* Change default time resolution to milli seconds ([d82d1b0](https://github.com/mendersoftware/mender-server-enterprise/commit/d82d1b098fe428334bceea3c187ae46718ff6f91)) by @alfrunes
+- *(pkg)* Request logger quotes empty fields ([c235b1a](https://github.com/mendersoftware/mender-server-enterprise/commit/c235b1aef4237db1e97c1eb7ec53a9cc1c6ff4eb)) by @alfrunes
+- *(pkg)* Remove redundant "ts" field and defer latency calculation ([5df6c6c](https://github.com/mendersoftware/mender-server-enterprise/commit/5df6c6cfa183d167b59167eb95fa32f9e94b852d)) by @alfrunes
+- *(pkg)* Accesslog uses status code 499 for client closed connection ([f890fd6](https://github.com/mendersoftware/mender-server-enterprise/commit/f890fd64734254c4be20c1ed32b359cde4973605)) by @alfrunes
+
+### Dependency updates
+
+- *(deps)* Update ${mirror_registry:-docker.io}/library/traefik docker tag to v3.7.12 ([ed10ac0](https://github.com/mendersoftware/mender-server-enterprise/commit/ed10ac0ae5236d44121efb4178c38a2df5ec937e)) by @mender-test-bot
+- *(deps)* Update node.js to v26.8.1 ([887db86](https://github.com/mendersoftware/mender-server-enterprise/commit/887db8626c88bd20ee144ff5cd8faf47807971ca)) by @mender-test-bot
+- *(deps)* Update npm-dev-dependencies ([6286d23](https://github.com/mendersoftware/mender-server-enterprise/commit/6286d2372896098259fd9692f922aa63da8dfbe4)) by @mender-test-bot
+- *(deps-dev)* Bump postcss-selector-parser in /frontend ([086054d](https://github.com/mendersoftware/mender-server-enterprise/commit/086054d4f4049180f8acf36a601d2d9d56623c72)) by @dependabot[bot]
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10052](https://northerntech.atlassian.net/browse/MEN-10052) |
+| [MEN-9580](https://northerntech.atlassian.net/browse/MEN-9580) |
+| [MEN-9900](https://northerntech.atlassian.net/browse/MEN-9900) |
+| [MEN-10107](https://northerntech.atlassian.net/browse/MEN-10107) |
+| [MEN-9901](https://northerntech.atlassian.net/browse/MEN-9901) |
+| [MEN-9001](https://northerntech.atlassian.net/browse/MEN-9001) |
+| [MEN-9322](https://northerntech.atlassian.net/browse/MEN-9322) |
+| [MEN-10069](https://northerntech.atlassian.net/browse/MEN-10069) |
+| [MEN-9831](https://northerntech.atlassian.net/browse/MEN-9831) |
+| [MEN-10105](https://northerntech.atlassian.net/browse/MEN-10105) |
+| [MEN-10075](https://northerntech.atlassian.net/browse/MEN-10075) |
+
+
 ## 4.2.0-saas.15 - 2026-08-26
 
 
