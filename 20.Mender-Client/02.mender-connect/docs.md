@@ -31,6 +31,23 @@ github: false
   to false and no default value was previously assigned to `ExpireAfterIdle`.
   ([MEN-8260](https://northerntech.atlassian.net/browse/MEN-8260))
 
+
+## mender-connect 2.3.4
+
+_Released 09.07.2026_
+
+### Changelogs
+
+#### mender-connect (2.3.4)
+
+New changes in mender-connect since 2.3.3:
+
+##### Bug Fixes
+
+* Fix a whole-daemon hang when a pong arrives while a
+  timed-out remote terminal session is being stopped
+
+
 ## mender-connect 2.3.3
 
 _Released 06.17.2026_
