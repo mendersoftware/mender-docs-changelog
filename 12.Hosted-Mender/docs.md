@@ -26,7 +26,6 @@ github: false
 - Harden redis cluster client against stale topology change ([MC-8198](https://northerntech.atlassian.net/browse/MC-8198)) ([36fcdfc](https://github.com/mendersoftware/mender-server-enterprise/commit/36fcdfc94564ca19880e455831953b359a7f5d30)) by @oldgiova
 - Parse the `cluster` connection-string query param correctly ([MC-8198](https://northerntech.atlassian.net/browse/MC-8198)) ([726a8ec](https://github.com/mendersoftware/mender-server-enterprise/commit/726a8ec45c755e243d545f7d6412a752a6ddfb99)) by @oldgiova
 - *(deployments)* Align phase status for custom and uniform phased deployments ([MEN-10058](https://northerntech.atlassian.net/browse/MEN-10058)) ([2fabf88](https://github.com/mendersoftware/mender-server-enterprise/commit/2fabf88506389ee9b79d1d5cabf4e99a0b98b7e8)) by @bahaa-ghazal
-- *(workflows)* Do not evaluate ${...} expressions coming from user-supplied data ([251e891](https://github.com/mendersoftware/mender-server-enterprise/commit/251e8919a8ddb3d4fffff1d46f24d3f420cc8913)) by @kjaskiewiczz
 - *(gui)* Fixed an issue that prevented getting to software info from a device in a deployment ([MEN-10125](https://northerntech.atlassian.net/browse/MEN-10125)) ([8bfe4ee](https://github.com/mendersoftware/mender-server-enterprise/commit/8bfe4eec8af9323c86cf62f89289cf73c3ea6c53)) by @mzedel
 
 ### Dependency updates
