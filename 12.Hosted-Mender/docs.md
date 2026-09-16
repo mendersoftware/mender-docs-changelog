@@ -7,6 +7,54 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.17 - 2026-09-16
+
+
+### New features
+
+- *(useradm)* Optionally block trial when verifying plan ([MEN-10081](https://northerntech.atlassian.net/browse/MEN-10081)) ([3994539](https://github.com/mendersoftware/mender-server-enterprise/commit/3994539c016ab70c3d8e71e7ac109af81cb4b8e5)) by @frodeha
+- *(deployments)* Add request timeout middleware to devices APIs ([MEN-10042](https://northerntech.atlassian.net/browse/MEN-10042)) ([7cd596b](https://github.com/mendersoftware/mender-server-enterprise/commit/7cd596bfab2a3bb4b51db495d01a88d0eb0d5322)) by @alfrunes
+- *(gui)* Let initial theme rendering depend on browser storage until server settings arrive ([8fa3859](https://github.com/mendersoftware/mender-server-enterprise/commit/8fa3859f8df14116420f1edb6d73e92f3a2f2487)) by @mzedel
+- *(deployments)* Include device count in case of percentage-driven phases ([MEN-10057](https://northerntech.atlassian.net/browse/MEN-10057)) ([26da1eb](https://github.com/mendersoftware/mender-server-enterprise/commit/26da1eb6f2ca0d33bbf2ba0e68272ab406473e55)) by @merlin-northern
+
+### Improvements
+
+- *(deployments)* Use sequential numbers for phases IDs ([MEN-10058](https://northerntech.atlassian.net/browse/MEN-10058)) ([700d52d](https://github.com/mendersoftware/mender-server-enterprise/commit/700d52da5d808d3cbf7662dcbb47446a3577efd0)) by @bahaa-ghazal
+
+### Bug fixes
+
+- Harden redis cluster client against stale topology change ([MC-8198](https://northerntech.atlassian.net/browse/MC-8198)) ([36fcdfc](https://github.com/mendersoftware/mender-server-enterprise/commit/36fcdfc94564ca19880e455831953b359a7f5d30)) by @oldgiova
+- Parse the `cluster` connection-string query param correctly ([MC-8198](https://northerntech.atlassian.net/browse/MC-8198)) ([726a8ec](https://github.com/mendersoftware/mender-server-enterprise/commit/726a8ec45c755e243d545f7d6412a752a6ddfb99)) by @oldgiova
+- *(deployments)* Align phase status for custom and uniform phased deployments ([MEN-10058](https://northerntech.atlassian.net/browse/MEN-10058)) ([2fabf88](https://github.com/mendersoftware/mender-server-enterprise/commit/2fabf88506389ee9b79d1d5cabf4e99a0b98b7e8)) by @bahaa-ghazal
+- *(workflows)* Do not evaluate ${...} expressions coming from user-supplied data ([251e891](https://github.com/mendersoftware/mender-server-enterprise/commit/251e8919a8ddb3d4fffff1d46f24d3f420cc8913)) by @kjaskiewiczz
+- *(gui)* Fixed an issue that prevented getting to software info from a device in a deployment ([MEN-10125](https://northerntech.atlassian.net/browse/MEN-10125)) ([8bfe4ee](https://github.com/mendersoftware/mender-server-enterprise/commit/8bfe4eec8af9323c86cf62f89289cf73c3ea6c53)) by @mzedel
+
+### Dependency updates
+
+- *(deps)* Update docker.io/library/golang docker tag to v1.27.1 ([d9cbf27](https://github.com/mendersoftware/mender-server-enterprise/commit/d9cbf27b4874e5b381becb025b1adb41b0a6ab72)) by @mender-test-bot
+- *(deps-dev)* Bump fast-uri from 3.1.5 to 3.1.7 in /frontend ([5b58811](https://github.com/mendersoftware/mender-server-enterprise/commit/5b58811af29a3364a6c26643ebb8899db6cf8ca1)) by @dependabot[bot]
+- *(deps)* Update golang-dependencies ([8cc4928](https://github.com/mendersoftware/mender-server-enterprise/commit/8cc492838ab8768134493eb9f514e7786f53b45d)) by @mender-test-bot
+- *(deps-dev)* Bump @humanfs/node from 0.16.7 to 0.16.8 in /frontend ([1c9a031](https://github.com/mendersoftware/mender-server-enterprise/commit/1c9a0315049e7abc31f7f158b378cfd1caaa8388)) by @dependabot[bot]
+- *(deps)* Update npm-prod-dependencies ([e9f3594](https://github.com/mendersoftware/mender-server-enterprise/commit/e9f3594b85a36de0721e488bdd4b4293ccefa9fc)) by @mender-test-bot
+- *(deps-dev)* Bump svgo from 3.3.4 to 3.3.5 in /frontend ([30a57e1](https://github.com/mendersoftware/mender-server-enterprise/commit/30a57e1248cfbf2ba303e1d846b71e96f221c7f7)) by @dependabot[bot]
+- *(deps)* Bump js-yaml from 4.3.1 to 4.3.2 in /frontend ([07db699](https://github.com/mendersoftware/mender-server-enterprise/commit/07db699a86cb77a3e804173c237d56028d5b316d)) by @dependabot[bot]
+- *(deps-dev)* Bump morgan in /frontend/tests/e2e_tests ([e07b18e](https://github.com/mendersoftware/mender-server-enterprise/commit/e07b18e56cd5949c4c6266c7fad7ad389bebe8e3)) by @dependabot[bot]
+- *(deps)* Update dependency mendersoftware/mender-artifact to v4.4.2 ([564dbf2](https://github.com/mendersoftware/mender-server-enterprise/commit/564dbf27e080f9dbfe7bc86e61e2caab354193b3)) by @mender-test-bot
+- *(deps)* Bump google.golang.org/grpc in /backend/tests/runner ([afbf8df](https://github.com/mendersoftware/mender-server-enterprise/commit/afbf8df0967dc4d281e8aea758c8a7438f604e71)) by @dependabot[bot]
+- *(deps)* Bump github.com/containerd/containerd/v2 ([cff3250](https://github.com/mendersoftware/mender-server-enterprise/commit/cff325034963ef8279577a2e7995b11db3b1eb11)) by @dependabot[bot]
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10081](https://northerntech.atlassian.net/browse/MEN-10081) |
+| [MEN-10042](https://northerntech.atlassian.net/browse/MEN-10042) |
+| [MEN-10057](https://northerntech.atlassian.net/browse/MEN-10057) |
+| [MC-8198](https://northerntech.atlassian.net/browse/MC-8198) |
+| [MEN-10058](https://northerntech.atlassian.net/browse/MEN-10058) |
+| [MEN-10125](https://northerntech.atlassian.net/browse/MEN-10125) |
+
+
 ## 4.2.0-saas.16 - 2026-09-04
 
 
