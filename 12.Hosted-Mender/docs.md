@@ -7,6 +7,61 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.18 - 2026-09-24
+
+
+### New features
+
+- *(gui)* Use invitation flow for adding users to tenant ([MEN-9743](https://northerntech.atlassian.net/browse/MEN-9743)) ([307dbb0](https://github.com/mendersoftware/mender-server-enterprise/commit/307dbb074504798506147187ec0f49521a079512)) by @mineralsfree
+- *(useradm)* Let useradm provide total user number to align w/ tenantadm etc ([fe3c32a](https://github.com/mendersoftware/mender-server-enterprise/commit/fe3c32aeeb5e86342fa45faa3c20512f1a1b48ec)) by @mzedel
+- *(admin-panel)* Rely on returned user count when showing platform stats ([224def9](https://github.com/mendersoftware/mender-server-enterprise/commit/224def94f56e067344e89fb6a98ee85d2697a244)) by @mzedel
+- *(deployments)* Limit the phases count ([MEN-10096](https://northerntech.atlassian.net/browse/MEN-10096)) ([9a3959f](https://github.com/mendersoftware/mender-server-enterprise/commit/9a3959f5d17ddd3425d04abd38625682205c41b2)) by @merlin-northern
+- *(admin-panel)* Added possibility for google group based access limitation ([f85c072](https://github.com/mendersoftware/mender-server-enterprise/commit/f85c07256d62bf38b5259b4905b843021ef9bfc7)) by @mzedel
+
+### Improvements
+
+- *(gui)* Simplified internal userRole selection logic ([MEN-9743](https://northerntech.atlassian.net/browse/MEN-9743)) ([ca89630](https://github.com/mendersoftware/mender-server-enterprise/commit/ca896303545b11f23dcb47aba4af5039ff88c205)) by @mineralsfree
+- *(deployments)* Only assign delta job ID if it changed since last call ([9d73949](https://github.com/mendersoftware/mender-server-enterprise/commit/9d739494abd3305e1562c2a8490ad25daf6c67ac)) by @alfrunes
+- *(deployments)* Propagate errors when handling delta generation ([0085de2](https://github.com/mendersoftware/mender-server-enterprise/commit/0085de22245272e62ccd6354bed4a8e8dd95d94d)) by @alfrunes
+- *(deployments)* Move delta precondition checks to separate func ([b5f65b0](https://github.com/mendersoftware/mender-server-enterprise/commit/b5f65b04b91d73a9bbb43f999efa5a5ca0365252)) by @alfrunes
+- *(admin-panel)* Resolve group & membership centrally as needed only instead of per request ([b4724d4](https://github.com/mendersoftware/mender-server-enterprise/commit/b4724d402d84870b3886812fd9ab82ce9418cb42)) by @mzedel
+- *(useradm)* Lower cyclomatic complexity for UserAdm.UpdateUser ([4645efd](https://github.com/mendersoftware/mender-server-enterprise/commit/4645efd64b178120f8b1af5bb10769b4b695c13f)) by @alfrunes
+
+### Bug fixes
+
+- *(auditlogs)* Neutralize formula characters in CSV export ([ME-761](https://northerntech.atlassian.net/browse/ME-761)) ([75e2f79](https://github.com/mendersoftware/mender-server-enterprise/commit/75e2f7943de05803034d64fd4b881e6e073c7c1e)) by @LudvigAnderson
+- *(deployments)* Fixed an issue that allowed creating a deployment w/ more phases than allowed ([MEN-10096](https://northerntech.atlassian.net/browse/MEN-10096)) ([df35d65](https://github.com/mendersoftware/mender-server-enterprise/commit/df35d652bc52f596d71ae12cc1e0635b25c75858)) by @mzedel
+- *(deployments)* Start delta job if previously generated artifact was deleted ([ec7bdc8](https://github.com/mendersoftware/mender-server-enterprise/commit/ec7bdc8cdec39da56d01cfa2de4697ffd8c896bd)) by @alfrunes
+- *(deployments)* Update status allows setting image ID for other statuses ([3d7b366](https://github.com/mendersoftware/mender-server-enterprise/commit/3d7b3660cfece69edc87e8978a070a14b1c303fe)) by @alfrunes
+- *(deployments)* Updating delta status to pending should not trigger workflow ([eaf36be](https://github.com/mendersoftware/mender-server-enterprise/commit/eaf36bea0507929cc048f0761956ba46a97e7397)) by @alfrunes
+- *(deployments)* Add model validation for delta status updates ([5362298](https://github.com/mendersoftware/mender-server-enterprise/commit/5362298d472033678e2b776cc2c9d454a31979b3)) by @alfrunes
+- *(useradm)* Update user improperly checks if email is being modified ([ME-762](https://northerntech.atlassian.net/browse/ME-762)) ([0506301](https://github.com/mendersoftware/mender-server-enterprise/commit/0506301223510fcb2bea914e2b7b2c624bfcf1a6)) by @alfrunes
+- *(gui)* Fix invalid characters error message ([MEN-9305](https://northerntech.atlassian.net/browse/MEN-9305)) ([ba039ea](https://github.com/mendersoftware/mender-server-enterprise/commit/ba039eacc88b82704145db968dac0f869418f11d)) by @mineralsfree
+
+### Dependency updates
+
+- *(deps)* Update npm-mui ([3bcd367](https://github.com/mendersoftware/mender-server-enterprise/commit/3bcd367275817e09f6704d1412334e50ee8a2272)) by @mender-test-bot
+- *(deps)* Update dependency css-loader to v7.1.5 ([8800135](https://github.com/mendersoftware/mender-server-enterprise/commit/880013592c5950295f65b2fb8ce08d1922a29b2c)) by @mender-test-bot
+- *(deps)* Update dependency @northern.tech/themes to v0.16.9 ([871a27b](https://github.com/mendersoftware/mender-server-enterprise/commit/871a27b9e0a954630426baccd98340e0a91fb011)) by @mender-test-bot
+- *(deps)* Update module google.golang.org/grpc to v1.83.2 [security] ([0802302](https://github.com/mendersoftware/mender-server-enterprise/commit/08023024fe591a1187559b3877a09d7618e85bb5)) by @mender-test-bot
+- *(deps)* Update golang-dependencies ([d980fbf](https://github.com/mendersoftware/mender-server-enterprise/commit/d980fbfe1799324d2e3c3e7a70053435a659ceee)) by @mender-test-bot
+- *(deps)* Bump go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc ([05f81e3](https://github.com/mendersoftware/mender-server-enterprise/commit/05f81e3d418d509ebd0e4cd63af02381394d60fe)) by @dependabot[bot]
+- *(deps)* Bump go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp ([7c8645c](https://github.com/mendersoftware/mender-server-enterprise/commit/7c8645c909b9963c7538d0048f86b1c4527cc607)) by @dependabot[bot]
+- *(deps)* Update docker docker tag to v29.8 ([2829548](https://github.com/mendersoftware/mender-server-enterprise/commit/282954874ad4edb31eb3585f959c4e3ca5574be0)) by @mender-test-bot
+- *(deps)* Bump tornado from 6.5.7 to 6.5.8 in /backend/tests ([77818c3](https://github.com/mendersoftware/mender-server-enterprise/commit/77818c360354a6a48002fa0afbc3952573796fe1)) by @dependabot[bot]
+- *(deps)* Update docker-base-images ([65062a7](https://github.com/mendersoftware/mender-server-enterprise/commit/65062a7a282491f57f6fe530ca95b96780534732)) by @mender-test-bot
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [ME-761](https://northerntech.atlassian.net/browse/ME-761) |
+| [MEN-9743](https://northerntech.atlassian.net/browse/MEN-9743) |
+| [MEN-10096](https://northerntech.atlassian.net/browse/MEN-10096) |
+| [ME-762](https://northerntech.atlassian.net/browse/ME-762) |
+| [MEN-9305](https://northerntech.atlassian.net/browse/MEN-9305) |
+
+
 ## 4.2.0-saas.17 - 2026-09-16
 
 
@@ -26,6 +81,7 @@ github: false
 - Harden redis cluster client against stale topology change ([MC-8198](https://northerntech.atlassian.net/browse/MC-8198)) ([36fcdfc](https://github.com/mendersoftware/mender-server-enterprise/commit/36fcdfc94564ca19880e455831953b359a7f5d30)) by @oldgiova
 - Parse the `cluster` connection-string query param correctly ([MC-8198](https://northerntech.atlassian.net/browse/MC-8198)) ([726a8ec](https://github.com/mendersoftware/mender-server-enterprise/commit/726a8ec45c755e243d545f7d6412a752a6ddfb99)) by @oldgiova
 - *(deployments)* Align phase status for custom and uniform phased deployments ([MEN-10058](https://northerntech.atlassian.net/browse/MEN-10058)) ([2fabf88](https://github.com/mendersoftware/mender-server-enterprise/commit/2fabf88506389ee9b79d1d5cabf4e99a0b98b7e8)) by @bahaa-ghazal
+- *(workflows)* Do not evaluate ${...} expressions coming from user-supplied data ([251e891](https://github.com/mendersoftware/mender-server-enterprise/commit/251e8919a8ddb3d4fffff1d46f24d3f420cc8913)) by @kjaskiewiczz
 - *(gui)* Fixed an issue that prevented getting to software info from a device in a deployment ([MEN-10125](https://northerntech.atlassian.net/browse/MEN-10125)) ([8bfe4ee](https://github.com/mendersoftware/mender-server-enterprise/commit/8bfe4eec8af9323c86cf62f89289cf73c3ea6c53)) by @mzedel
 
 ### Dependency updates
