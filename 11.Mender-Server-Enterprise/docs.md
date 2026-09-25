@@ -7,6 +7,33 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.4 - 2026-09-24
+
+
+### Bug fixes
+
+- *(gui)* Fixed an issue that could lead to unintended dashboard widget removal ([MEN-9865](https://northerntech.atlassian.net/browse/MEN-9865)) ([98f69ea](https://github.com/mendersoftware/mender-server-enterprise/commit/98f69eac1f75e1f3fe3fa1e66d4c315361c078eb))
+- *(gui)* Email verification is required for all multitenant installations ([35dbb2d](https://github.com/mendersoftware/mender-server-enterprise/commit/35dbb2d6eac1ecedd906c4cd2ce43221148adc2f))
+- *(gui)* Require password and gate reset-link checkbox on os ([e6cae2e](https://github.com/mendersoftware/mender-server-enterprise/commit/e6cae2e7a32d59142af24a2624e327e5982eab6d))
+- *(gui)* Ensured data w/ multiple attribute values gets shown in a readable manner ([MEN-10073](https://northerntech.atlassian.net/browse/MEN-10073)) ([4ffdfc5](https://github.com/mendersoftware/mender-server-enterprise/commit/4ffdfc5ff4a7ae964987e0328194d1a8d6170894))
+
+### Dependency updates
+
+- *(deps)* Update module google.golang.org/grpc to v1.82.1 [security] ([3290a62](https://github.com/mendersoftware/mender-server-enterprise/commit/3290a62ba7779574a74ff03fa10a120d5c04ecf4))
+- Bump integration-tester container tag ([b3d148c](https://github.com/mendersoftware/mender-server-enterprise/commit/b3d148c8e362a7cd31b59a9bdafcf0f989346d2f))
+- *(deps)* Update module google.golang.org/grpc to v1.83.2 [security] ([e2aa70b](https://github.com/mendersoftware/mender-server-enterprise/commit/e2aa70b9abf0db8f82ba8e6991d6dd12a9be8053))
+- *(deps)* Update docker-compose ([2726680](https://github.com/mendersoftware/mender-server-enterprise/commit/272668065745f3853b64cbfe1f1089d4f5abbe5c))
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [ME-761](https://northerntech.atlassian.net/browse/ME-761) |
+| [MEN-9865](https://northerntech.atlassian.net/browse/MEN-9865) |
+| [MEN-10073](https://northerntech.atlassian.net/browse/MEN-10073) |
+
+
+
 ## 4.0.5 - 2026-09-22
 
 
