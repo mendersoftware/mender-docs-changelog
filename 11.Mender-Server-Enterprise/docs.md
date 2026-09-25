@@ -37,6 +37,26 @@ github: false
 ## 4.0.5 - 2026-09-22
 
 
+### Bug fixes
+
+- *(auditlogs)* Neutralize formula characters in CSV export ([ME-761](https://northerntech.atlassian.net/browse/ME-761)) ([2b4fec6](https://github.com///commit/2b4fec6200e8445274fea97aad979947f8c6c998))
+
+### Dependency updates
+
+- *(deps)* Update docker-compose ([57829e9](https://github.com///commit/57829e96f4a5f8e530ce673006be3ce2650be01e))
+- *(deps)* Update module google.golang.org/grpc to v1.83.2 [security] ([1a39163](https://github.com///commit/1a391634c73b2f823c7c27442070751f308a419f))
+- *(deps)* Update dependency postcss to v8.5.23 [security] ([7645816](https://github.com///commit/7645816084ffedaee898189634d09dcfde0f88d4))
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [ME-761](https://northerntech.atlassian.net/browse/ME-761) |
+
+
+## 4.0.5 - 2026-09-22
+
+
 ### Dependency updates
 
 - *(deps)* Update docker-compose ([57829e9](https://github.com///commit/57829e96f4a5f8e530ce673006be3ce2650be01e))
