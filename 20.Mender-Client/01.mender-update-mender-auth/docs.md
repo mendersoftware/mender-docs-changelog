@@ -7,6 +7,49 @@ shortcode-core:
 github: false
 ---
 
+## 5.1.1 - 2026-09-21
+
+
+### Bug fixes
+
+- Add an explicit check for 413 Request Body Too Large errors when sending deployment logs in order to not go into an unnecessary retry loop when the deployment logs are too big. ([ME-616](https://northerntech.atlassian.net/browse/ME-616))
+- Handle first timestamp in deployment logs more carefully ([MEN-9427](https://northerntech.atlassian.net/browse/MEN-9427))
+- Inventory generator scripts are now sorted before running, ensuring consistency of inventory data between runs ([MEN-9635](https://northerntech.atlassian.net/browse/MEN-9635))
+- Fail when device tier is invalid ([ME-636](https://northerntech.atlassian.net/browse/ME-636))
+- The /tmp/mender/inventory-geo cache file used by the mender-inventory-geo script now has stricter permissions (600) ([MEN-9752](https://northerntech.atlassian.net/browse/MEN-9752))
+- Fix an issue where leaving RetryPollIntervalSeconds unset in mender.conf causes failed inventory and deployment polls to be retried without any delay. The default is now 300 seconds, with retries backing off from 60 seconds up to this maximum. This aligns the default with the Go client and the example production mender.conf. ([MEN-9719](https://northerntech.atlassian.net/browse/MEN-9719))
+- Fix a segault caused by global variables: common_global_options and common_description_append referencing another global: DefaultPaths. As the initialization order of globals is unspecified in the standard, it caused referencing uninitialized DefaultPaths on Ubuntu 26.04 when using -flto Link-Time Optimization flag. ([MEN-9878](https://northerntech.atlassian.net/browse/MEN-9878))
+- *(modules-artifact-gen)* Check that the file exists before claiming "success".
+- *(modules-artifact-gen)* Previously the generators wouldn't clean up after themselves when exiting half-way due to an error.
+- Fix mender-update hanging indefinitely (never reporting a deployment failure and never returning to the poll loop) when a network outage during artifact download lasted long enough for the download resumer to give up on resuming. ([MEN-9954](https://northerntech.atlassian.net/browse/MEN-9954))
+- *(update-modules)* Fix the directory and single-file Update Modules reporting a deployment as successful when the destination could not be backed up, leaving the destination unchanged. ([MEN-10021](https://northerntech.atlassian.net/browse/MEN-10021))
+- *(auth)* Fix segfault when dbus becomes unavailable and available again ([MEN-9246](https://northerntech.atlassian.net/browse/MEN-9246))
+- Fix deployment log uploads being rejected in case extra deployment logs are produced while being uploaded ([MEN-10017](https://northerntech.atlassian.net/browse/MEN-10017))
+- *(http)* Fixed the client hanging indefinitely when a server accepts a request but never sends a response, which left the device unmanageable until it was restarted. ([MEN-10031](https://northerntech.atlassian.net/browse/MEN-10031))
+- Add missing parameter definition for mender-auth's passphrase-file
+- Send the tunnel destination in the Host header of proxy CONNECT requests
+- Send device tier when authentication is embedded into mender-update
+- Large deployment logs are now trimmed to be accepted by the server ([MEN-9415](https://northerntech.atlassian.net/browse/MEN-9415))
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [ME-616](https://northerntech.atlassian.net/browse/ME-616) |
+| [MEN-9427](https://northerntech.atlassian.net/browse/MEN-9427) |
+| [MEN-9415](https://northerntech.atlassian.net/browse/MEN-9415) |
+| [MEN-9635](https://northerntech.atlassian.net/browse/MEN-9635) |
+| [ME-636](https://northerntech.atlassian.net/browse/ME-636) |
+| [MEN-9752](https://northerntech.atlassian.net/browse/MEN-9752) |
+| [MEN-9719](https://northerntech.atlassian.net/browse/MEN-9719) |
+| [MEN-9878](https://northerntech.atlassian.net/browse/MEN-9878) |
+| [MEN-9954](https://northerntech.atlassian.net/browse/MEN-9954) |
+| [MEN-10021](https://northerntech.atlassian.net/browse/MEN-10021) |
+| [MEN-9246](https://northerntech.atlassian.net/browse/MEN-9246) |
+| [MEN-10017](https://northerntech.atlassian.net/browse/MEN-10017) |
+| [MEN-10031](https://northerntech.atlassian.net/browse/MEN-10031) |
+
+
 ## mender 5.1.0 (2026-03-09)
 
 ### 5.1.0 - 2026-03-09

@@ -7,6 +7,33 @@ shortcode-core:
 github: false
 ---
 
+## 3.0.1 - 2026-09-17
+
+
+### Bug fixes
+
+- Fix a whole-daemon hang when a pong arrives while a timed-out remote terminal session is being stopped
+- Do not ignore terminal ignore terminal port-forwarding error
+  If mender-connect fails to write a message to the connection, treat it
+  as a terminal error instead of ignoring it.
+
+- Handle partial write to port-forwarding connection
+
+### Dependency updates
+
+- *(deps)* Update module github.com/urfave/cli/v2
+  Bump Go version in go.mod from 1.17 to 1.22
+  Update Go module github.com/urfave/cli/v2 from v2.25.0 to v3.12.0
+
+- *(deps)* Update golang-dependencies
+  Updated github.com/go-ozzo/ozzo-validation/v4 from v4.3.0 to v4.4.1
+  Updated github.com/gorilla/websocket from v1.5.1 to v1.5.3
+  Updated github.com/mendersoftware/cli/v2 from v2.1.1-minimal to v2.1.1
+  Updated github.com/mendersoftware/go-lib-micro from e1f941f to f0e3087
+  Updated github.com/stretchr/testify from v1.11.1 to v1.12.1
+  Updated github.com/urfave/cli/v2from v2.25.0 to v2.27.7
+
+
 ## mender-connect 3.0.0 (2026-02-27)
 
 ### 3.0.0 - 2026-02-27
