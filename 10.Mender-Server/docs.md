@@ -7,6 +7,31 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.4 - 2026-09-30
+
+
+### Bug fixes
+
+- *(gui)* Fixed an issue that could lead to unintended dashboard widget removal ([MEN-9865](https://northerntech.atlassian.net/browse/MEN-9865)) ([98f69ea](https://github.com/mendersoftware/mender-server/commit/98f69eac1f75e1f3fe3fa1e66d4c315361c078eb))
+- *(gui)* Don't require email verification to add users on open source builds ([b26c866](https://github.com/mendersoftware/mender-server/commit/b26c8668fbecb9f53b4b9ca0e06aebc267ebb42e))
+- *(gui)* Email verification is required for all multitenant installations ([35dbb2d](https://github.com/mendersoftware/mender-server/commit/35dbb2d6eac1ecedd906c4cd2ce43221148adc2f))
+- *(gui)* Require password and gate reset-link checkbox on os ([e6cae2e](https://github.com/mendersoftware/mender-server/commit/e6cae2e7a32d59142af24a2624e327e5982eab6d))
+- *(gui)* Ensured data w/ multiple attribute values gets shown in a readable manner ([MEN-10073](https://northerntech.atlassian.net/browse/MEN-10073)) ([4ffdfc5](https://github.com/mendersoftware/mender-server/commit/4ffdfc5ff4a7ae964987e0328194d1a8d6170894))
+- *(workflows)* Do not evaluate ${...} expressions coming from user-supplied data ([b7557a2](https://github.com/mendersoftware/mender-server/commit/b7557a231affb2ef24bdaf392d6a901ed426fb5e))
+
+### Dependency updates
+
+- Bump integration-tester container tag ([b3d148c](https://github.com/mendersoftware/mender-server/commit/b3d148c8e362a7cd31b59a9bdafcf0f989346d2f))
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-9865](https://northerntech.atlassian.net/browse/MEN-9865) |
+| [MEN-8965](https://northerntech.atlassian.net/browse/MEN-8965) |
+| [MEN-10073](https://northerntech.atlassian.net/browse/MEN-10073) |
+
+
 ## 4.1.3 - 2026-07-28
 
 
@@ -16,19 +41,6 @@ github: false
 - *(deps)* Upgrade container image golang to 1.26.5
 - *(deps)* Upgrade container image alpine to 3.23.5
 
----
-
-## 4.0.4 - 2026-07-28
-
-
-### Dependency updates
-
-- *(deps)* Update golang dependencies
-- *(deps)* Upgrade golang container image to 1.26.5
-- *(deps)* Upgrade alpine to 3.23.5
-
----
-
 ## 4.1.2 - 2026-07-09
 
 
@@ -36,7 +48,7 @@ github: false
 
 
 - *(deviceconnect)* Only allow one connection per device at a time
- ([69852bc](https://github.com/mendersoftware/mender-server/commit/69852bc17e065df3cfe4c61cb91e3fac8f9fd24b))
+ ([69852bc](https://github.com/mendersoftware/mender-server/commit/69852bc17e065df3cfe4c61cb91e3fac8f9fd24b)) 
 
 
 
@@ -47,99 +59,18 @@ github: false
 
 
 
-## 4.0.3 - 2026-07-10
+## [4.1.1](https://github.com/mendersoftware/mender-server/compare/v4.1.0...v4.1.1) (2026-03-13)
 
 
-### Features
+### Bug Fixes
 
-
-- *(create-artifact-worker)* Update `mender-artifact` to latest v4.1.0
-([MEN-8337](https://northerntech.atlassian.net/browse/MEN-8337)) ([069da10](https://github.com///commit/069da103bf45f88a18a1517d46b3061c02380598)) 
-
-
-
-
-
-  Modifying also the integration to build the tool from source instead or
-  repurposing the upstream Debian package. This has the main advantage
-  that we can compile it statically (by disabling a feature that we don't
-  use) and that we have control of the compatibility aspects of the
-  binary.
-
-
-
-
-
-
-
-## 4.1.1 - 2026-04-01
-
-### Security fixes
-
-- Fixed CVE-2026-49009 - Improper input sanitization in Mender Server
-  See the official announcement for more information:
-  [mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server](https://mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server)
-
-### Bug fixes
-
-
-- *(create-artifact-worker)* Hardened single file generation input validations
- ([dfb1523](https://github.com///commit/dfb15237b45876e01afe02e9ecef842454985015)) 
-
-
-
-
-  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
-
-- *(deployments)* Nil pointer dereference getting non-existing deployment
-([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([8f3c672](https://github.com///commit/8f3c672cf62d63ccb2339615ecc7ed3073a9daf4)) 
-
-
-
-
-
-
-
-
-
-
-## 4.0.2 - 2026-04-01
-
-
-### Security fixes
-
-- Fixed CVE-2026-49009 - Improper input sanitization in Mender Server
-  See the official announcement for more information:
-  [mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server](https://mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server)
-
-
-### Bug fixes
-
-
-- *(create-artifact-worker)* Hardened single file generation input validations
- ([1090ac3](https://github.com///commit/1090ac3c89d523124e7edd596404526f391053c2)) 
-
-
-
-
-  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
-
-- *(deployments)* Nil pointer dereference getting non-existing deployment
-([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([a690b40](https://github.com///commit/a690b40ac304cfc5e2821a41a709ef3f9d2437ce)) 
-
-
-
-
-
-
-
-
+* **create-artifact-worker:** hardened single file generation input validations ([dfb1523](https://github.com/mendersoftware/mender-server/commit/dfb15237b45876e01afe02e9ecef842454985015))
+* **deployments:** nil pointer dereference getting non-existing deployment ([8f3c672](https://github.com/mendersoftware/mender-server/commit/8f3c672cf62d63ccb2339615ecc7ed3073a9daf4))
 
 ## 4.1.0 - 2026-01-14
 
 
 ### Bug fixes
-
 
 
 - *(deployments)* Invalid Location header when returning 201 Created
@@ -5271,32 +5202,6 @@ github: false
 
 
 
-## 4.0.1 - 2025-05-19
-
-
-### Bug fixes
-
-
-- *(gui)* Fixed an issue that would prevent showing unassigned static group devices
-([ME-519](https://northerntech.atlassian.net/browse/ME-519)) ([b595a57](https://github.com/mendersoftware/mender-server/commit/b595a574d2e3d2d4fb61757198007ff4bc308f56)) 
-
-- Race when provisioning and connecting a device
-([MEN-8164](https://northerntech.atlassian.net/browse/MEN-8164)) ([5535078](https://github.com/mendersoftware/mender-server/commit/5535078d027b213fb0ee6d37dd4c4934b075e51c)) 
-
-
-  If a device gets provisioned and submits a connection request while the
-  device is getting provisioned, the device might end up in an
-  inconsistent state where the connection status gets overwritten to
-  "unknown".
-  The issue was discovered in a test where the system was under load
-  and the device was running on the same network (artificially low RTT).
-- Ensure email is always encoded in lowercase when stored
-([MEN-8328](https://northerntech.atlassian.net/browse/MEN-8328)) ([0568d2e](https://github.com/mendersoftware/mender-server/commit/0568d2e09699961cb8aabc0faa16813a4928bc44)) 
-
-
-  Added a bson codec for model.Email that will ensure that emails are
-  always encoded in lowercase in the database to ensure case insensitive
-  queries.
 
 ## 4.0.0 - 2025-02-10
 
@@ -30007,8 +29912,6 @@ artifact description
 * Fix bug that caused the update not to be retried after failing during
 previous attempt (#193)
 
-
 ## Mender v1.0.0
 _Released 02.20.2017_
-
 
