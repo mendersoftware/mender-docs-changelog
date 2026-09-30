@@ -7,6 +7,37 @@ shortcode-core:
 github: false
 ---
 
+
+## meta-mender wrynose-v2026.09
+
+### Changelogs
+
+New changes in meta-mender since wrynose-v2026.07:
+
+##### Bug Fixes
+
+* Derive closed-source S dir from the tarball name instead of
+  PREFERRED_VERSION. This fixes builds where e.g. PREFERRED_VERSION is
+  `main-git%` but the tarball is named `-master`, resulting in the S dir
+  not being found.
+* Do not modify distrooverrides on empty mender_features
+
+##### Features
+
+* Add recipe for the delta-docker-compose update module
+  ([MEN-9448](https://northerntech.atlassian.net/browse/MEN-9448))
+* Add recipe for `mender` 5.0.6
+* Add recipe for `mender-connect` 2.3.4
+* Add recipe for `mender` 5.1.1
+  ([QA-1737](https://northerntech.atlassian.net/browse/QA-1737))
+* Add recipe for `mender-connect` 3.0.1
+  ([QA-1737](https://northerntech.atlassian.net/browse/QA-1737))
+* Add recipe for `mender-container-modules` 1.0.1
+  ([QA-1737](https://northerntech.atlassian.net/browse/QA-1737))
+* Add recipe for `mender-client-version-inventory-script` 6.0.1
+  ([QA-1737](https://northerntech.atlassian.net/browse/QA-1737))
+
+
 ## meta-mender wrynose-v2026.07
 
 ### Changelogs
@@ -118,6 +149,45 @@ New changes in meta-mender since scarthgap-v2026.04:
 * Remove recipes for `mender-artifact` 3.11, 4.0 and 4.1 series
 * Remove recipes for `mender` 4.0 series
 * Remove recipes for `mender-connect` 2.2 series
+
+
+## meta-mender scarthgap-v2026.09
+
+### Changelogs
+
+New changes in meta-mender since scarthgap-v2026.07:
+
+##### Bug Fixes
+
+* Derive closed-source S dir from the tarball name instead of
+  PREFERRED_VERSION. This fixes builds where e.g. PREFERRED_VERSION is
+  `main-git%` but the tarball is named `-master`, resulting in the S dir
+  not being found.
+* Do not modify distrooverrides on empty mender_features
+* Add MENDER_DEVICE_TIER to do_prepare_mender_conf vardeps
+  ([MEN-9052](https://northerntech.atlassian.net/browse/MEN-9052))
+* Fix installing folders to boot directory
+* Copy grow-data template to B before sed substitution. This fixes
+  `mender-growfs-data` not being updated after changing `MENDER_*`
+  variables without a full sstate clean.
+
+##### Features
+
+* Add support for main branches for commercial recipes
+  ([MEN-9583](https://northerntech.atlassian.net/browse/MEN-9583))
+* Add recipe for the delta-docker-compose update module
+  ([MEN-9448](https://northerntech.atlassian.net/browse/MEN-9448))
+* Add recipe for `mender` 5.0.6
+* Add recipe for `mender-connect` 2.3.4
+* Add recipe for `mender` 5.1.1
+  ([QA-1737](https://northerntech.atlassian.net/browse/QA-1737))
+* Add recipe for `mender-connect` 3.0.1
+  ([QA-1737](https://northerntech.atlassian.net/browse/QA-1737))
+* Add recipe for `mender-container-modules` 1.0.1
+  ([QA-1737](https://northerntech.atlassian.net/browse/QA-1737))
+* Add recipe for `mender-client-version-inventory-script` 6.0.1
+  ([QA-1737](https://northerntech.atlassian.net/browse/QA-1737))
+
 
 ## meta-mender scarthgap-v2026.07
 
