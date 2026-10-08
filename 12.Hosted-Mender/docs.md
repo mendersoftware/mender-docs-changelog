@@ -7,6 +7,123 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.19 - 2026-10-08
+
+
+### New features
+
+- *(deviceauth)* Generate audit logs when accepting devices ([MEN-9640](https://northerntech.atlassian.net/browse/MEN-9640)) ([ff2f98f](https://github.com/mendersoftware/mender-server-enterprise/commit/ff2f98fa873caa53eee97b7e270419300d9cec1f)) by @bahaa-ghazal
+- *(deviceauth)* Generate audit logs when preauthorizing devices ([021407b](https://github.com/mendersoftware/mender-server-enterprise/commit/021407b31b9f07b9894db4b1cb70aea558814712)) by @bahaa-ghazal
+- *(generate-delta-worker)* Support for calling gen_delta-docker-compose ([MEN-10145](https://northerntech.atlassian.net/browse/MEN-10145)) ([271a016](https://github.com/mendersoftware/mender-server-enterprise/commit/271a0169566a8a6084c649e59b7a0ec8bdf1ec91)) by @merlin-northern
+- *(deployments)* Return phase_count and current_phase with deployments ([MEN-10137](https://northerntech.atlassian.net/browse/MEN-10137)) ([3357db5](https://github.com/mendersoftware/mender-server-enterprise/commit/3357db5086fe7a0b23b5421c6c296aba399698d8)) by @bahaa-ghazal
+- *(admin-panel)* Surface error messages from the api ([5e9172f](https://github.com/mendersoftware/mender-server-enterprise/commit/5e9172f46ca2b80ed1389a3facaadaf42c16d923)) by @frodeha
+- *(generate-delta-worker)* Support for --use-fifos true/false ([MEN-10145](https://northerntech.atlassian.net/browse/MEN-10145)) ([ebcfaab](https://github.com/mendersoftware/mender-server-enterprise/commit/ebcfaab2e1bc027e6ff2cf3192dd7940ed15c2ae)) by @merlin-northern
+- *(admin-panel)* Added easier navigation & printout identification ([2cf36ab](https://github.com/mendersoftware/mender-server-enterprise/commit/2cf36abab725c6604a5c4ab9201ced4a761c61e6)) by @mzedel
+- *(admin-panel)* Prevent addon additions if plan limits aren't ready for addons yet ([6a48e4b](https://github.com/mendersoftware/mender-server-enterprise/commit/6a48e4b14fd5e9ab205a7cebaa53c4ae2c3a3f58)) by @mzedel
+- *(gui)* Added page titles to ease navigating the browser history ([9d73a52](https://github.com/mendersoftware/mender-server-enterprise/commit/9d73a52ad9b3fea0c67126638626bb7cb4202c7c)) by @mzedel
+- *(iot-manager)* Added X-Total-Count header `List all stored events` ([MEN-5855](https://northerntech.atlassian.net/browse/MEN-5855)) ([14b0e8f](https://github.com/mendersoftware/mender-server-enterprise/commit/14b0e8f7a4a958555046bb22270a67e56b2d0c48)) by @alfrunes
+- *(deviceconnect)* Add filetransfer protocol version negotiation ([a4f737f](https://github.com/mendersoftware/mender-server-enterprise/commit/a4f737fb0bf58458b5b987bf104b8133be78bcda)) by @alfrunes
+- *(deviceconnect)* Implement simplified filetransfer download protocol ([MEN-10085](https://northerntech.atlassian.net/browse/MEN-10085)) ([1188cda](https://github.com/mendersoftware/mender-server-enterprise/commit/1188cdace9e72494c45e2c71c97cb00b5949c5ad)) by @alfrunes
+- *(deviceconnect)* Implement simplified filetransfer upload protocol ([MEN-10086](https://northerntech.atlassian.net/browse/MEN-10086)) ([a982885](https://github.com/mendersoftware/mender-server-enterprise/commit/a9828852b708161145515353f249202872820ba5)) by @alfrunes
+  The new protocol drops the end to end message acknowledgement,
+  leveraging the reliable transmission interconnect part of mender-server
+  v4.1 release.
+  The server will fall back to the previous verison of the protocol if the
+  peer does not announce that it implements the new version of the protocol.
+
+- *(gui)* Enable uniform phases rollout during deployment creation ([MEN-9001](https://northerntech.atlassian.net/browse/MEN-9001)) ([67840e4](https://github.com/mendersoftware/mender-server-enterprise/commit/67840e4ef02e23d100292ac9c51919b98d37c6ba)) by @mzedel
+- *(gui)* Block phased deployments exceeding the phase limit ([82f9eed](https://github.com/mendersoftware/mender-server-enterprise/commit/82f9eedd3dac82fa065ecc2b3caccbbfa736834a)) by @mzedel
+- *(gui)* Improved deployments overview for phased deployments w/ many phases ([MEN-9001](https://northerntech.atlassian.net/browse/MEN-9001)) ([395882c](https://github.com/mendersoftware/mender-server-enterprise/commit/395882c365daaa21e0b44409aa7ad39334a49dc6)) by @mzedel
+- *(gui)* Added basic keyboard navigation for deployment lists ([daed641](https://github.com/mendersoftware/mender-server-enterprise/commit/daed641496ba6175b3bff4a77f47b2f074cb9f3c)) by @mzedel
+- *(admin-panel)* Enable binary delta on tenant upgrade to enterprise plan ([8c5b588](https://github.com/mendersoftware/mender-server-enterprise/commit/8c5b588706f20302b8d9598a3e794c27cb48b121)) by @mzedel
+
+### Improvements
+
+- *(gui)* Use the shared select component across the UI ([MEN-9361](https://northerntech.atlassian.net/browse/MEN-9361)) ([57d2352](https://github.com/mendersoftware/mender-server-enterprise/commit/57d23526957589556fcf097b4cc5467870d7c32f)) by @mineralsfree
+- *(gui)* Adopt new controlled select in software select form ([MEN-9361](https://northerntech.atlassian.net/browse/MEN-9361)) ([17d3688](https://github.com/mendersoftware/mender-server-enterprise/commit/17d3688be6f349febe918bf2c8429d7b7316e81d)) by @mineralsfree
+- *(gui)* Drop the redundant addon select in favor of ControlledSelect ([MEN-9361](https://northerntech.atlassian.net/browse/MEN-9361)) ([3acc8c7](https://github.com/mendersoftware/mender-server-enterprise/commit/3acc8c73376b3f995fb3035a3e6650bf4b307a61)) by @mineralsfree
+- *(deviceconnect)* Filetransfer upload v1, v2 share error handler ([1303303](https://github.com/mendersoftware/mender-server-enterprise/commit/13033034592e46a1471e0583a2efa204caf32de1)) by @alfrunes
+- *(e2e)* Gave deployment creation helper link capabilities ([2dda036](https://github.com/mendersoftware/mender-server-enterprise/commit/2dda0369931e07abcd069788cd65a1793e769a5f)) by @mzedel
+- *(admin-panel)* Use published common-ui package instead of product copies ([e1b5332](https://github.com/mendersoftware/mender-server-enterprise/commit/e1b533207bfe08c1f20afa42924691ec79a41d5d)) by @mzedel
+- *(gui)* Made use of published common-ui variant ([09a8a7b](https://github.com/mendersoftware/mender-server-enterprise/commit/09a8a7b4521d70b86be626f13bdd6f5ab315ee2b)) by @mzedel
+
+### Bug fixes
+
+- *(gui)* Suggest accepted default name when copying Manifest ([0407413](https://github.com/mendersoftware/mender-server-enterprise/commit/040741306fd72ab8df57f6cc8448103e17aade12)) by @frodeha
+- *(deviceconnect)* Proper graceful shutdown with ws handshake ([6d1e7af](https://github.com/mendersoftware/mender-server-enterprise/commit/6d1e7af6580df2cd9fcded65c61c464a2c847080)) by @alfrunes
+  This commit makes the server perform a proper close handshake on
+  graceful shutdown when receiving SIGTERM, SIGQUIT and SIGUSR1. The
+  latter also adds a configurable grace period to rate limit the shutdown
+  period. The internal shutdown API calls SIGUSR1 to trigger shutdown and
+  properly waits for the shutdown handler to finish before returning.
+  Repeated SIGQUIT and SIGTERM will abort the graceful shutdown and stop
+  the server immediately.
+
+- *(gui)* Added missing 2fa state indication for users w/o 2fa enabled ([MEN-10135](https://northerntech.atlassian.net/browse/MEN-10135)) ([342848e](https://github.com/mendersoftware/mender-server-enterprise/commit/342848e36cf04584463df65aad3fc6c45ab22c56)) by @mzedel
+- *(deviceauth)* Upgrade github.com/golang-jwt/jwt v4 -> v5 ([3ab2527](https://github.com/mendersoftware/mender-server-enterprise/commit/3ab2527f756aa04757a6e3aaf912717ab0fd5f32)) by @alfrunes
+- *(useradm)* Upgrade github.com/golang-jwt/jwt v4 -> v5 ([ef524e4](https://github.com/mendersoftware/mender-server-enterprise/commit/ef524e4c14747489bd7b1c98d8e17023a7d8b59b)) by @alfrunes
+- *(generate-delta-worker)* If USE_FIFOS is false wait properly with upload ([MEN-10145](https://northerntech.atlassian.net/browse/MEN-10145)) ([13926a8](https://github.com/mendersoftware/mender-server-enterprise/commit/13926a81e022e7ef6668bcf273715623a0273781)) by @merlin-northern
+- *(inventory)* Allow `.` (period) in group names ([af3cd65](https://github.com/mendersoftware/mender-server-enterprise/commit/af3cd65a903e2e6433c0f793c0e525e4c7ef0a59)) by @alfrunes
+- *(deployments)* Constrain individual tag length to 256 characteres ([5e1690c](https://github.com/mendersoftware/mender-server-enterprise/commit/5e1690c896f244198d703fcb28ab0a1c2b9e03d9)) by @alfrunes
+- *(deployments)* Fix phase generation out of uniform phases config ([MEN-10185](https://northerntech.atlassian.net/browse/MEN-10185)) ([eca500e](https://github.com/mendersoftware/mender-server-enterprise/commit/eca500ed2e086c256ac666fe402e801f68d66644)) by @kjaskiewiczz
+- *(useradm)* Name identifier validation rules for RBAC name identifiers ([e7365af](https://github.com/mendersoftware/mender-server-enterprise/commit/e7365af445bad6c9bdcf3d1ca747a47872905a0f)) by @alfrunes
+- *(deployments)* Use common name identifier validation for manifest name ([849a387](https://github.com/mendersoftware/mender-server-enterprise/commit/849a3876e07b42a787dd3177b7439c686e31cbb5)) by @alfrunes
+- *(gui)* Clarified deployment result notifications to separate skipped deployments from successes ([MEN-10187](https://northerntech.atlassian.net/browse/MEN-10187)) ([2145cf2](https://github.com/mendersoftware/mender-server-enterprise/commit/2145cf22791456060077bf52a206bed3bb4a3a00)) by @mzedel
+- *(inventory)* Non-zero exit code on errors ([5c93862](https://github.com/mendersoftware/mender-server-enterprise/commit/5c9386225d2eaab49a0bf6d7f2689219b1bd3986)) by @alfrunes
+  Errors were previously suppressed and the program would always exit with
+  status code 0.
+
+- *(inventory)* System devices without orchestrator has empty components ([MEN-10200](https://northerntech.atlassian.net/browse/MEN-10200)) ([c9ee11e](https://github.com/mendersoftware/mender-server-enterprise/commit/c9ee11ec0cac3e376eb9f459f8912858a6cf7967)) by @frodeha
+- *(deviceconnect)* Return device error code from filetransfer v2 ([e06f8fd](https://github.com/mendersoftware/mender-server-enterprise/commit/e06f8fda5379030a5c9f40369a35ac5f23a711a5)) by @p-targowicz
+- *(generate-delta-worker)* Copy artifacts in main thread if !c.useFifos ([MEN-10206](https://northerntech.atlassian.net/browse/MEN-10206)) ([d3b0c92](https://github.com/mendersoftware/mender-server-enterprise/commit/d3b0c92dbc067dac0ccf384672a4560283f15b19)) by @merlin-northern
+- *(gui)* Align system type w/ orchestrator reported value instead of relying on regular device type ([MEN-10189](https://northerntech.atlassian.net/browse/MEN-10189)) ([0d03078](https://github.com/mendersoftware/mender-server-enterprise/commit/0d0307823808b262923e0ad23b2cf9942e62294a)) by @mzedel
+- *(deviceconnect)* Upload waits for device to finish before returning ([MEN-10236](https://northerntech.atlassian.net/browse/MEN-10236)) ([c8a9e8b](https://github.com/mendersoftware/mender-server-enterprise/commit/c8a9e8b3fd95cbedbd342ba9d2d32269728dae94)) by @alfrunes
+
+### Dependency updates
+
+- *(deps)* Update dependency mendersoftware/mender-artifact to v4.4.2 ([22c46fa](https://github.com/mendersoftware/mender-server-enterprise/commit/22c46fae04a95f5b27d67bb0f5fd9f6fcd8f9c68)) by @mender-test-bot
+- *(deps)* Update golang-dependencies ([a272bb2](https://github.com/mendersoftware/mender-server-enterprise/commit/a272bb2c935edcc30d77d0444ebe52abe8114ae5)) by @mender-test-bot
+- *(deps)* Bump github.com/containerd/containerd/v2 ([0dd9704](https://github.com/mendersoftware/mender-server-enterprise/commit/0dd9704f63c875627b2ccca76d08f50e3eb80abd)) by @dependabot[bot]
+- *(deps)* Bump github.com/moby/go-archive in /backend/tests/runner ([01e9d2a](https://github.com/mendersoftware/mender-server-enterprise/commit/01e9d2ad75169e573f6a95a736450e219f307829)) by @dependabot[bot]
+- *(deps)* Update npm-dev-dependencies ([d257eed](https://github.com/mendersoftware/mender-server-enterprise/commit/d257eed169e12242ce5e024c33eeb1ce09023a08)) by @mender-test-bot
+- *(deps)* Pinned jsdom to 30.0 for vitest compatibility ([919c9ea](https://github.com/mendersoftware/mender-server-enterprise/commit/919c9ea9d56083946c3fbc89897012b41eff3a9e)) by @mineralsfree
+- *(deps)* Update docker-base-images ([606a304](https://github.com/mendersoftware/mender-server-enterprise/commit/606a304d054a9686cdb21b01d84094f49e4e64f1)) by @mender-test-bot
+- *(deps)* Bump moment from 2.30.1 to 2.31.0 in /frontend ([227ca31](https://github.com/mendersoftware/mender-server-enterprise/commit/227ca317d502e7b5a4831cfd4d9fd1a1f28d7112)) by @dependabot[bot]
+- *(deps)* Bump brace-expansion in /frontend ([5f5776b](https://github.com/mendersoftware/mender-server-enterprise/commit/5f5776be5ad2f36b916cd2ca58ef249b48b16aff)) by @dependabot[bot]
+- *(deps-dev)* Bump morgan in /frontend/tests/e2e_tests ([4b74543](https://github.com/mendersoftware/mender-server-enterprise/commit/4b74543aca03f61e1f5fa27d2b8103fffc952d07)) by @dependabot[bot]
+- *(deps)* Do not install golang in pytest integration test image ([5255ad6](https://github.com/mendersoftware/mender-server-enterprise/commit/5255ad643d74a97ab82d75a8d6ca8c6734c0eb5f)) by @alfrunes
+- *(deps)* Bump pyjwt from 2.13.0 to 2.14.0 in /backend/tests ([772963a](https://github.com/mendersoftware/mender-server-enterprise/commit/772963a51966e80dbf5bbba27c2004c54b382880)) by @dependabot[bot]
+- *(deps)* Bump cryptography from 47.0.0 to 50.0.0 in /backend/tests ([6e565dc](https://github.com/mendersoftware/mender-server-enterprise/commit/6e565dcaf3d0e9d02ae90626e826b9954db8810f)) by @dependabot[bot]
+- *(deps)* Migrate azure tests to use CLI and bump cryptography ([7e0e2e4](https://github.com/mendersoftware/mender-server-enterprise/commit/7e0e2e4312eabedf2f31f9e60af37176424f4817)) by @alfrunes
+- *(deps)* Bump urllib3 from 2.7.0 to 2.8.0 in /backend/tests ([fa8edc7](https://github.com/mendersoftware/mender-server-enterprise/commit/fa8edc7c513591ed608424ce1dbcd39926e832ad)) by @dependabot[bot]
+- *(deps)* Bump tornado from 6.5.8 to 6.5.9 in /backend/tests ([12263f4](https://github.com/mendersoftware/mender-server-enterprise/commit/12263f4d90daa2a3d5492031bb862e92790a916f)) by @dependabot[bot]
+- *(deps)* Bump pyjwt from 2.14.0 to 2.15.0 in /backend/tests ([6a9ea74](https://github.com/mendersoftware/mender-server-enterprise/commit/6a9ea748c6e14c2be3d1e0da96a0edb78684908d)) by @dependabot[bot]
+- *(deps)* Update dependency mendersoftware/mender-orchestrator-support to v0.7.0 ([3b5f219](https://github.com/mendersoftware/mender-server-enterprise/commit/3b5f2196d2b9a87c1494a0346a883378c377a4fa)) by @mender-test-bot
+- *(deps)* Clean up github.com/urfave/cli/v1 and friends ([6ab8ff2](https://github.com/mendersoftware/mender-server-enterprise/commit/6ab8ff288c929c3655fb5802a3e8755a9a9f1410)) by @alfrunes
+- *(deps)* Update dependency axios to v1.20.0 [security] ([2dd90bf](https://github.com/mendersoftware/mender-server-enterprise/commit/2dd90bf02b2f9fab1a73e8c712fed9ad349efa56)) by @mender-test-bot
+- *(deps)* Bump pymongo from 4.17.0 to 4.18.2 in /backend/tests ([8fec5f7](https://github.com/mendersoftware/mender-server-enterprise/commit/8fec5f7345e2660c49c75b7a323fef29882fb531)) by @dependabot[bot]
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-9640](https://northerntech.atlassian.net/browse/MEN-9640) |
+| [MEN-10145](https://northerntech.atlassian.net/browse/MEN-10145) |
+| [MEN-10137](https://northerntech.atlassian.net/browse/MEN-10137) |
+| [MEN-9361](https://northerntech.atlassian.net/browse/MEN-9361) |
+| [MEN-10135](https://northerntech.atlassian.net/browse/MEN-10135) |
+| [MEN-10185](https://northerntech.atlassian.net/browse/MEN-10185) |
+| [MEN-10187](https://northerntech.atlassian.net/browse/MEN-10187) |
+| [MEN-5855](https://northerntech.atlassian.net/browse/MEN-5855) |
+| [MEN-10085](https://northerntech.atlassian.net/browse/MEN-10085) |
+| [MEN-10086](https://northerntech.atlassian.net/browse/MEN-10086) |
+| [MEN-9001](https://northerntech.atlassian.net/browse/MEN-9001) |
+| [MEN-10200](https://northerntech.atlassian.net/browse/MEN-10200) |
+| [MEN-10206](https://northerntech.atlassian.net/browse/MEN-10206) |
+| [MEN-10189](https://northerntech.atlassian.net/browse/MEN-10189) |
+| [MEN-10236](https://northerntech.atlassian.net/browse/MEN-10236) |
+
+
 ## 4.2.0-saas.18 - 2026-09-24
 
 
