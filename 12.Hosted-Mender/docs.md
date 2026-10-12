@@ -7,6 +7,43 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.20 - 2026-10-12
+
+
+### New features
+
+- *(deployments)* Support for docker-compose server-side deltas ([MEN-10145](https://northerntech.atlassian.net/browse/MEN-10145)) ([5b8a2a5](https://github.com/mendersoftware/mender-server-enterprise/commit/5b8a2a5e8c73feeaa60d9aba33e143a1171f1668)) by @merlin-northern
+- *(deployments)* Add decommissioned counter to deployment statistics ([83bf1b8](https://github.com/mendersoftware/mender-server-enterprise/commit/83bf1b8a74f4aadf01a30ce6dd3dcdd1c121eae5)) by @p-targowicz
+- *(inventory)* Identities search now optionally matches on specific attribute ([MEN-10181](https://northerntech.atlassian.net/browse/MEN-10181)) ([7e45104](https://github.com/mendersoftware/mender-server-enterprise/commit/7e45104e33aa587d096adc14404ba7b9987ded6d)) by @frodeha
+- *(inventory)* Remove matching on status in identity search ([MEN-10181](https://northerntech.atlassian.net/browse/MEN-10181)) ([a50d9ec](https://github.com/mendersoftware/mender-server-enterprise/commit/a50d9eca1f3f0b6d45a1a9f66bd4fc98125479f1)) by @frodeha
+- *(gui)* Add identity attribute to the searchbar ([MEN-10180](https://northerntech.atlassian.net/browse/MEN-10180)) ([584a3a4](https://github.com/mendersoftware/mender-server-enterprise/commit/584a3a419c2e38014e4799620c67ec155cd983d4)) by @mineralsfree
+
+### Bug fixes
+
+- *(generate-delta-worker)* Required fixes for the commanline options ([MEN-10145](https://northerntech.atlassian.net/browse/MEN-10145)) ([d5d8aea](https://github.com/mendersoftware/mender-server-enterprise/commit/d5d8aeae6d7daceb12bb92555583a1fa1c4bbcba)) by @merlin-northern
+- *(deployments)* Support both docker-compose and rootfs deltas ([MEN-10145](https://northerntech.atlassian.net/browse/MEN-10145)) ([eced0f6](https://github.com/mendersoftware/mender-server-enterprise/commit/eced0f69a39f6911df4443fec6d74d5e2b0fba82)) by @merlin-northern
+- *(gui)* Fixed an issue that would break the finished deployments page on smaller screens ([b1628cc](https://github.com/mendersoftware/mender-server-enterprise/commit/b1628ccbaac253cac289ca7fb909855cbf60b653)) by @mzedel
+- *(admin-panel)* Gave the sso provider filter an accessible name ([MEN-10120](https://northerntech.atlassian.net/browse/MEN-10120)) ([7ba99e7](https://github.com/mendersoftware/mender-server-enterprise/commit/7ba99e75bcc45aa28d2148f2c394b2675e33c1fc)) by @mzedel
+- *(deployments)* Corrected device_types_compatible naming in delta job specification ([MEN-9169](https://northerntech.atlassian.net/browse/MEN-9169)) ([3414a2a](https://github.com/mendersoftware/mender-server-enterprise/commit/3414a2a4ceda56b98a6a5e3b92bb1835cebd7f51)) by @mzedel
+- *(gui)* Global search opens when pressing slash in monaco editor ([MEN-10138](https://northerntech.atlassian.net/browse/MEN-10138)) ([2fe1eab](https://github.com/mendersoftware/mender-server-enterprise/commit/2fe1eab457f7b86bcb0ca91a94f25cb58da0a76d)) by @mineralsfree
+
+### Dependency updates
+
+- Bump stripe CLI to 1.53.0 ([d2d528b](https://github.com/mendersoftware/mender-server-enterprise/commit/d2d528b65c289a2fc7c19d48d1455193ac949e1d)) by @alfrunes
+- *(deps)* Update docker-base-images ([a9afdd3](https://github.com/mendersoftware/mender-server-enterprise/commit/a9afdd3195e9c4c002db74bdc689dca472a3668c)) by @renovate-ring-mendersoftware[bot]
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10145](https://northerntech.atlassian.net/browse/MEN-10145) |
+| [MEN-10181](https://northerntech.atlassian.net/browse/MEN-10181) |
+| [MEN-10120](https://northerntech.atlassian.net/browse/MEN-10120) |
+| [MEN-9169](https://northerntech.atlassian.net/browse/MEN-9169) |
+| [MEN-10180](https://northerntech.atlassian.net/browse/MEN-10180) |
+| [MEN-10138](https://northerntech.atlassian.net/browse/MEN-10138) |
+
+
 ## 4.2.0-saas.19 - 2026-10-08
 
 
