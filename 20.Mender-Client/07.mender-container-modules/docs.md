@@ -7,6 +7,20 @@ shortcode-core:
 github: false
 ---
 
+## 1.1.0 - 2026-10-13
+
+
+### New features
+
+- *(gen_docker-compose)* Artifacts produced with gen_docker-compose now have an extra provides key-value pair with a checksum identifying the composition ([MEN-9951](https://northerntech.atlassian.net/browse/MEN-9951))
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-9951](https://northerntech.atlassian.net/browse/MEN-9951) |
+
+
 ## 1.0.1 - 2026-09-16
 
 
