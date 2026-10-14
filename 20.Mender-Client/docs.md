@@ -17,6 +17,7 @@ the subsections:
 * [mender-configure-module](05.mender-configure-module/docs.md)
 * [mender-binary-delta](06.mender-binary-delta/docs.md)
 * [mender-container-modules](07.mender-container-modules/docs.md)
+* [mender-delta-container-modules](08.mender-delta-container-modules/docs.md)
 
 See [Supported releases](../../01.Supported-releases/docs.md#mender-client) for
 the subcomponent versions of each Mender Client release.

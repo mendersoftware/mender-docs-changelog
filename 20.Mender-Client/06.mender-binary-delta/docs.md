@@ -7,6 +7,25 @@ shortcode-core:
 github: false
 ---
 
+## 1.6.0 - 2026-10-13
+
+
+### New features
+
+- Bump xdelta3 from 3.1.0 to 3.2.2, which no longer misclassifies block-device sources as non-seekable. ([MEN-9191](https://northerntech.atlassian.net/browse/MEN-9191), [MEN-10124](https://northerntech.atlassian.net/browse/MEN-10124))
+
+### Dependency updates
+
+- Bump libntech from `8b72e12` to `5a62ba4`
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-9191](https://northerntech.atlassian.net/browse/MEN-9191) |
+| [MEN-10124](https://northerntech.atlassian.net/browse/MEN-10124) |
+
+
 ## mender-binary-delta 1.5.3
 
 _Released 02.17.2026_

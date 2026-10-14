@@ -7,6 +7,46 @@ shortcode-core:
 github: false
 ---
 
+## 3.1.0 - 2026-10-13
+
+
+### New features
+
+- Implement port-forwarding protocol v2 ([MEN-5902](https://northerntech.atlassian.net/browse/MEN-5902))
+  The new protocol is identical to v1 except v2 does not stop and wait for
+  message acknowledgement. This immensely speeds up the throughput
+  especially for higher latency. `mender-connect` continues to support the
+  previous version of port-forwarding for backward compatibility.
+  Requires mender-server > 4.1 and mender-cli > 2.0.
+
+- Filetransfer protocol v2 ([MEN-9628](https://northerntech.atlassian.net/browse/MEN-9628))
+  The new protocol version utilize the new reliable websocket
+  interconnect rendering the end-to-end ack redundant and a bottleneck.
+
+  When filetransfer is enabled, announce to the peer that the device
+  supports the v2 filetransfer protocol. The device also announce the
+  v1 protocol version in case the peer (server) to remain backward
+  compatible with older peers (server).
+
+
+### Bug fixes
+
+- *(session)* Guard sessionsMap/sessionsByUserIdMap with a mutex
+- *(session)* Close races and nil-derefs left by the sessionsMutex fix
+
+### Dependency updates
+
+- *(deps)* Update github.com/mendersoftware/go-lib-micro from f0e3087 to 79a6e6f
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-5902](https://northerntech.atlassian.net/browse/MEN-5902) |
+| [MEN-9628](https://northerntech.atlassian.net/browse/MEN-9628) |
+| [MEN-10236](https://northerntech.atlassian.net/browse/MEN-10236) |
+
+
 ## 3.0.1 - 2026-09-17
 
 

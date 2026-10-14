@@ -7,6 +7,37 @@ shortcode-core:
 github: false
 ---
 
+## 5.2.0 - 2026-10-13
+
+
+### New features
+
+- mender-device-identity script now works on both Linux and QNX ([MEN-9133](https://northerntech.atlassian.net/browse/MEN-9133))
+- On a System Device, mender-update now refuses a deployment whose artifact is not a mender-orchestrator-manifest. ([MEN-9655](https://northerntech.atlassian.net/browse/MEN-9655))
+- *(http)* The client no longer requests IPv6 (AAAA) addresses on devices that have no IPv6 address configured, halving DNS query volume on IPv4-only devices and avoiding a per-request connection attempt to an unreachable IPv6 address. ([ME-751](https://northerntech.atlassian.net/browse/ME-751))
+- Entries in the `Servers` configuration option can now set their own `TenantToken`, which takes precedence over the global `TenantToken` when authenticating with that server. The same `ServerURL` can be listed several times with different tokens to fall over between tenants. ([ME-570](https://northerntech.atlassian.net/browse/ME-570))
+
+### Bug fixes
+
+- Escape all control characters in json::EscapeString ([MEN-10098](https://northerntech.atlassian.net/browse/MEN-10098))
+- Handle excessive padding when decoding base64
+
+### Dependency updates
+
+- Bump src/common/vendor/json from `21b5374` to `98386eb`
+- Bump src/common/vendor/yaml-cpp from `05c050c` to `4861d04`
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-9133](https://northerntech.atlassian.net/browse/MEN-9133) |
+| [MEN-9655](https://northerntech.atlassian.net/browse/MEN-9655) |
+| [ME-751](https://northerntech.atlassian.net/browse/ME-751) |
+| [MEN-10098](https://northerntech.atlassian.net/browse/MEN-10098) |
+| [ME-570](https://northerntech.atlassian.net/browse/ME-570) |
+
+
 ## 5.1.1 - 2026-09-21
 
 
