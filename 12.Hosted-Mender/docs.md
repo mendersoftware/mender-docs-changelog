@@ -7,6 +7,56 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.21 - 2026-10-15
+
+
+### New features
+
+- *(gui)* Add All variant to global search ([MEN-10138](https://northerntech.atlassian.net/browse/MEN-10138)) ([46131c3](https://github.com/mendersoftware/mender-server-enterprise/commit/46131c3415e799b04bbd9288eca347937fcb9b64)) by @mineralsfree
+- *(inventory)* Match on device id when searching all identities ([MEN-10181](https://northerntech.atlassian.net/browse/MEN-10181)) ([6582ab2](https://github.com/mendersoftware/mender-server-enterprise/commit/6582ab2acaf458d740d88f9ca68e43d9035d3929)) by @frodeha
+- *(auditlogs)* Add software event object model ([ee73066](https://github.com/mendersoftware/mender-server-enterprise/commit/ee73066664f673c6c75d5fb63a37d611bc47589e)) by @bahaa-ghazal
+- *(deployments)* Submit audit logs for release update and delete events ([MEN-10197](https://northerntech.atlassian.net/browse/MEN-10197)) ([e38ce83](https://github.com/mendersoftware/mender-server-enterprise/commit/e38ce83b1a8c99a653ce6a4cb36e01b836fb27fa)) by @bahaa-ghazal
+- *(deployments)* Submit audit logs for manifest upload, update and delete events ([MEN-10197](https://northerntech.atlassian.net/browse/MEN-10197)) ([77a91e8](https://github.com/mendersoftware/mender-server-enterprise/commit/77a91e8079100e08a20085edfe2ebcf55b44bdf2)) by @bahaa-ghazal
+- *(tenantadm)* Extend internal tenants APIs with ratelimits weights ([MEN-10128](https://northerntech.atlassian.net/browse/MEN-10128)) ([fe5d998](https://github.com/mendersoftware/mender-server-enterprise/commit/fe5d998e8983bc3ca297856dc065350a55dfb6e5)) by @alfrunes
+
+### Improvements
+
+- *(deviceauth)* Use correct internal TenantInternal from OAS ([e485785](https://github.com/mendersoftware/mender-server-enterprise/commit/e48578558d8ff008e32ed53edf73a52456f0506c)) by @alfrunes
+- *(useradm)* Use correct TenantInternal model from OAS ([397b92a](https://github.com/mendersoftware/mender-server-enterprise/commit/397b92a81de72444e57c181dc62c96999ab73407)) by @alfrunes
+- *(admin-panel)* Use TenantInternal from OAS / remove workarounds ([dac95e7](https://github.com/mendersoftware/mender-server-enterprise/commit/dac95e7575e9caa018e89996ff3593dbcac1abb3)) by @alfrunes
+- *(gui)* Moved app init + env parsing + redux store creation back into the product ([21f7a1e](https://github.com/mendersoftware/mender-server-enterprise/commit/21f7a1e77d3b462cfdbe38f626f3576b7b28a683)) by @mzedel
+- *(gui)* Made app init hook responsible for retrieving the initial user information as well ([2c8cb24](https://github.com/mendersoftware/mender-server-enterprise/commit/2c8cb243722fdff57794fece1aae9650218c64ad)) by @mzedel
+
+### Bug fixes
+
+- *(useradm)* Make email change expiration index a TTL index ([MEN-10238](https://northerntech.atlassian.net/browse/MEN-10238)) ([e87322c](https://github.com/mendersoftware/mender-server-enterprise/commit/e87322c77eeba62bd652eae96b2f236fe2561555)) by @kjaskiewiczz
+- *(tenantadm)* Fix parsing arguments in sync-tenants-v2 command ([MEN-10250](https://northerntech.atlassian.net/browse/MEN-10250)) ([1dbe4b2](https://github.com/mendersoftware/mender-server-enterprise/commit/1dbe4b2c45fe929c1ebf6e94e4da9db6968debe4)) by @kjaskiewiczz
+- *(inventory)* Identity search does not require enterprise plan ([MEN-10181](https://northerntech.atlassian.net/browse/MEN-10181)) ([0ddb827](https://github.com/mendersoftware/mender-server-enterprise/commit/0ddb827c8ed9c13fa6c77ce6eaf6728249d26a33)) by @frodeha
+- *(deviceauth)* `maintenance propagate-inventory` batch process 1000 devices ([MEN-9377](https://northerntech.atlassian.net/browse/MEN-9377)) ([e841412](https://github.com/mendersoftware/mender-server-enterprise/commit/e841412acfe41aaebdbc3295fe8bab99f8d9f5ee)) by @alfrunes
+  To avoid precondition failures as the command runs over large data sets,
+  the data is processed in units of 1000, resetting time used for
+  precondition checks after every batch.
+
+- *(deployments)* Use provided artifact id from request when uploading manifest ([c36faf2](https://github.com/mendersoftware/mender-server-enterprise/commit/c36faf26e78c68509dfea431660532c6645785f7)) by @bahaa-ghazal
+
+### Dependency updates
+
+- *(deps)* Update docker-base-images ([dd1cf04](https://github.com/mendersoftware/mender-server-enterprise/commit/dd1cf04de3edccd0aeef05ee8bd625dcfbd3fac7)) by @renovate-ring-mendersoftware[bot]
+- *(deps)* Update npm-dev-dependencies ([d23cbd9](https://github.com/mendersoftware/mender-server-enterprise/commit/d23cbd94457ae996f96869e726a08ef0d7dac794)) by @renovate-ring-mendersoftware[bot]
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10238](https://northerntech.atlassian.net/browse/MEN-10238) |
+| [MEN-10138](https://northerntech.atlassian.net/browse/MEN-10138) |
+| [MEN-10181](https://northerntech.atlassian.net/browse/MEN-10181) |
+| [MEN-10250](https://northerntech.atlassian.net/browse/MEN-10250) |
+| [MEN-9377](https://northerntech.atlassian.net/browse/MEN-9377) |
+| [MEN-10197](https://northerntech.atlassian.net/browse/MEN-10197) |
+| [MEN-10128](https://northerntech.atlassian.net/browse/MEN-10128) |
+
+
 ## 4.2.0-saas.20 - 2026-10-12
 
 
