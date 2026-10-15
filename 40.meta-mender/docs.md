@@ -170,6 +170,7 @@ New changes in meta-mender since scarthgap-v2026.07:
 * Copy grow-data template to B before sed substitution. This fixes
   `mender-growfs-data` not being updated after changing `MENDER_*`
   variables without a full sstate clean.
+* Fail the build when detecting U-Boot environment misalignment
 
 ##### Features
 
