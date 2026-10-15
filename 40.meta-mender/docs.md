@@ -8,6 +8,32 @@ github: false
 ---
 
 
+## meta-mender wrynose-v2026.10
+
+### Changelogs
+
+New changes in meta-mender since wrynose-v2026.09:
+
+##### Bug Fixes
+
+* Fail the build when detecting U-Boot environment misalignment
+
+##### Features
+
+* Recipe for mender 5.2.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-binary-delta 1.6.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-connect 3.1.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-container-modules 1.1.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-delta-container-modules 1.0.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-client-subcomponents 6.1.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+
+
 ## meta-mender wrynose-v2026.09
 
 ### Changelogs
@@ -151,6 +177,28 @@ New changes in meta-mender since scarthgap-v2026.04:
 * Remove recipes for `mender-connect` 2.2 series
 
 
+## meta-mender scarthgap-v2026.10
+
+### Changelogs
+
+New changes in meta-mender since scarthgap-v2026.09:
+
+##### Features
+
+* Recipe for mender 5.2.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-binary-delta 1.6.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-connect 3.1.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-container-modules 1.1.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-delta-container-modules 1.0.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+* Recipe for mender-client-subcomponents 6.1.0
+  ([QA-1765](https://northerntech.atlassian.net/browse/QA-1765))
+
+
 ## meta-mender scarthgap-v2026.09
 
 ### Changelogs
@@ -170,6 +218,7 @@ New changes in meta-mender since scarthgap-v2026.07:
 * Copy grow-data template to B before sed substitution. This fixes
   `mender-growfs-data` not being updated after changing `MENDER_*`
   variables without a full sstate clean.
+* Fail the build when detecting U-Boot environment misalignment
 
 ##### Features
 
