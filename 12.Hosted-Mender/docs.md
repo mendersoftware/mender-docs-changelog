@@ -7,6 +7,66 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.22 - 2026-10-22
+
+
+### New features
+
+- *(pkg)* Make stream.ListenNATS listen subject exclusive ([b8b973b](https://github.com/mendersoftware/mender-server-enterprise/commit/b8b973b9a249c7c13df0a10caca1d941cb02ce64)) by @alfrunes
+- *(inventory)* System component orchestrator attribute ([MEN-10222](https://northerntech.atlassian.net/browse/MEN-10222)) ([a51b93c](https://github.com/mendersoftware/mender-server-enterprise/commit/a51b93cfa0f787d02093206ca8f4407701ea3ab7)) by @frodeha
+- *(inventory)* Validate required orchestrator attributes ([MEN-10222](https://northerntech.atlassian.net/browse/MEN-10222)) ([63d9bbd](https://github.com/mendersoftware/mender-server-enterprise/commit/63d9bbdd346c01a108570570066f6609c05d1808)) by @frodeha
+- Forward the tenant info headers in the API gateway ([MEN-10274](https://northerntech.atlassian.net/browse/MEN-10274)) ([97f31ee](https://github.com/mendersoftware/mender-server-enterprise/commit/97f31ee108eda0ebec0cb167139625fec43dadda)) by @kjaskiewiczz
+- *(useradm)* API for listing single sign-on endpoints ([MEN-10179](https://northerntech.atlassian.net/browse/MEN-10179)) ([625f467](https://github.com/mendersoftware/mender-server-enterprise/commit/625f467d8dda5facfd55f98953833336bfa7c2b5)) by @alfrunes
+- *(pkg)* Support weighted rate limits ([423bd59](https://github.com/mendersoftware/mender-server-enterprise/commit/423bd599d3ff6fb0cecd9c487004877e7b4ae0e4)) by @bahaa-ghazal
+- *(gui)* Adjusted add-on tabs for system devices ([MEN-10219](https://northerntech.atlassian.net/browse/MEN-10219)) ([4a31819](https://github.com/mendersoftware/mender-server-enterprise/commit/4a3181952ba13bda0f731dee958304e2244c24df)) by @mzedel
+- *(deviceauth)* Add support for per-tenant rate limit weights ([MEN-8950](https://northerntech.atlassian.net/browse/MEN-8950)) ([80b5d29](https://github.com/mendersoftware/mender-server-enterprise/commit/80b5d29494cf654ad676c435cba206878d4294d8)) by @bahaa-ghazal
+- *(useradm)* Add support for per-tenant rate limit weights ([MEN-8949](https://northerntech.atlassian.net/browse/MEN-8949)) ([c1029a5](https://github.com/mendersoftware/mender-server-enterprise/commit/c1029a5a8277f5f87d564c3eff77534b61bfb4cc)) by @bahaa-ghazal
+
+### Improvements
+
+- *(gui)* Migrated majority of settings to use unified section appearance/ updated design ([8b2859e](https://github.com/mendersoftware/mender-server-enterprise/commit/8b2859e77deb10d48cf8e9e5d6c98f81663da95f)) by @mzedel
+- *(gui)* Aligned help pages slightly w/ updated design ([d651cc8](https://github.com/mendersoftware/mender-server-enterprise/commit/d651cc88a277361f15a4b47cdb2b64b30c004a94)) by @mzedel
+- *(deviceauth)* Remove unused "per-device ApiLimits" ([094f404](https://github.com/mendersoftware/mender-server-enterprise/commit/094f4044e1ffa9dfa152cb4f327dbdf8e2d39da5)) by @alfrunes
+
+### Bug fixes
+
+- *(deviceconnect)* Make devices websocket connections exclusive ([5482be9](https://github.com/mendersoftware/mender-server-enterprise/commit/5482be9c438849964b23f5386de86e3f8a6429e8)) by @alfrunes
+- *(deviceconnect)* Abort download on error if headers are flushed ([MEN-10237](https://northerntech.atlassian.net/browse/MEN-10237)) ([39fe039](https://github.com/mendersoftware/mender-server-enterprise/commit/39fe0395856db4ee10b087457fa93b3f5f6d521d)) by @alfrunes
+- *(pkg)* Accesslog handles panic(http.ErrAbortHandler) ([24ad54f](https://github.com/mendersoftware/mender-server-enterprise/commit/24ad54f4abebf854384c932342e13baa289fd0b2)) by @alfrunes
+- *(deployments)* Prevent users restricted by tags to manipulate manifest tags ([c36baad](https://github.com/mendersoftware/mender-server-enterprise/commit/c36baad52bf8959c558b27ada11c64d5523d14dc)) by @alfrunes
+- *(deployments)* Allow dynamic deployment with no devices scheduled for the future ([MEN-9207](https://northerntech.atlassian.net/browse/MEN-9207)) ([5c532a2](https://github.com/mendersoftware/mender-server-enterprise/commit/5c532a2143b6c6177b6f9f1e81809fe552a464f8)) by @merlin-northern
+- *(deployments)* Aligned specs w/ reality to allow typed gui support of forced v2 deployments ([MEN-10288](https://northerntech.atlassian.net/browse/MEN-10288)) ([fb63f0a](https://github.com/mendersoftware/mender-server-enterprise/commit/fb63f0a0e571c7152f9a2db8608a26ff2b38e600)) by @mzedel
+- *(useradm)* Use index in GetSamlMetadataRaw loop to apply field updates ([eaa4378](https://github.com/mendersoftware/mender-server-enterprise/commit/eaa437858e3297cdb096180bd52aeac0b085ab03)) by @bahaa-ghazal
+
+### Dependency updates
+
+- *(deps)* Update docker docker tag to v29.9 ([80c2c1f](https://github.com/mendersoftware/mender-server-enterprise/commit/80c2c1f30a80a55ed95570a8bd39d8f2ba02d762)) by @renovate-ring-mendersoftware[bot]
+- *(deps)* Update golang-dependencies ([d64a006](https://github.com/mendersoftware/mender-server-enterprise/commit/d64a0065b098a689090e50c141e52830ed0f2351)) by @renovate-ring-mendersoftware[bot]
+- *(deps)* Update docker-compose ([d22d310](https://github.com/mendersoftware/mender-server-enterprise/commit/d22d310118ea460dd3fb6e40c196852bd4ac67a4)) by @renovate-ring-mendersoftware[bot]
+- *(deps)* Update npm-dev-dependencies ([a2b7e10](https://github.com/mendersoftware/mender-server-enterprise/commit/a2b7e1007dd4566ee71623e05c2ce6b8974e499e)) by @renovate-ring-mendersoftware[bot]
+- *(deps)* Update node.js to v26.12.0 ([b9691f7](https://github.com/mendersoftware/mender-server-enterprise/commit/b9691f7e42bdf8a80942e9f8de64d58bcbacc209)) by @renovate-ring-mendersoftware[bot]
+- *(deps)* Update mongo docker tag to v9 ([eaf29cd](https://github.com/mendersoftware/mender-server-enterprise/commit/eaf29cd65ef3b8c6f280741bcb0e4209cf060f4d)) by @renovate-ring-mendersoftware[bot]
+- *(deps)* Update npm-mui ([0ab50b7](https://github.com/mendersoftware/mender-server-enterprise/commit/0ab50b72da0d7c4a75921896399d7086af0312da)) by @renovate-ring-mendersoftware[bot]
+- *(deps)* Update npm-prod-dependencies ([bd99f44](https://github.com/mendersoftware/mender-server-enterprise/commit/bd99f448df9b988b596ca3ea3ea789ccd1651356)) by @renovate-ring-mendersoftware[bot]
+- *(deps-dev)* Bump proxy-addr in /frontend/tests/e2e_tests ([8d6b8ad](https://github.com/mendersoftware/mender-server-enterprise/commit/8d6b8ad01378dd9d58b87943530e752dcd987d90)) by @dependabot[bot]
+- *(deps-dev)* Bump source-map-js from 1.2.1 to 1.2.2 in /frontend ([b088f66](https://github.com/mendersoftware/mender-server-enterprise/commit/b088f66fc6357dd11b17a403277a1ab47238f904)) by @dependabot[bot]
+- *(deps-dev)* Bump postcss-selector-parser in /frontend ([b4d6d9c](https://github.com/mendersoftware/mender-server-enterprise/commit/b4d6d9cd7f00fc1d3d337554f82bb56a8d9aff60)) by @dependabot[bot]
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10237](https://northerntech.atlassian.net/browse/MEN-10237) |
+| [MEN-10222](https://northerntech.atlassian.net/browse/MEN-10222) |
+| [MEN-10274](https://northerntech.atlassian.net/browse/MEN-10274) |
+| [MEN-10179](https://northerntech.atlassian.net/browse/MEN-10179) |
+| [MEN-9207](https://northerntech.atlassian.net/browse/MEN-9207) |
+| [MEN-10219](https://northerntech.atlassian.net/browse/MEN-10219) |
+| [MEN-10288](https://northerntech.atlassian.net/browse/MEN-10288) |
+| [MEN-8950](https://northerntech.atlassian.net/browse/MEN-8950) |
+| [MEN-8949](https://northerntech.atlassian.net/browse/MEN-8949) |
+
+
 ## 4.2.0-saas.21 - 2026-10-15
 
 
