@@ -7,6 +7,38 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.5 - 2026-10-23
+
+
+### Bug fixes
+
+- *(deviceauth)* Use mongo's error code to check for record duplication in AddDevice ([3779364](https://github.com/mendersoftware/mender-server-enterprise/commit/37793644820d2e20a7954bd397676690cb09c9c5))
+- *(pkg)* Accesslog handles panic(http.ErrAbortHandler) ([803d647](https://github.com/mendersoftware/mender-server-enterprise/commit/803d6474e04ec9e4db904d01ac55b8357b4db5d4))
+- *(deviceconnect)* Abort download on error if headers are flushed ([MEN-10237](https://northerntech.atlassian.net/browse/MEN-10237)) ([f942fcd](https://github.com/mendersoftware/mender-server-enterprise/commit/f942fcd35ab6b00a6840d2e49a28e3affad3b21b))
+
+### Dependency updates
+
+- *(deps)* Migrate azure tests to use CLI and bump cryptography ([80e5c6a](https://github.com/mendersoftware/mender-server-enterprise/commit/80e5c6ae35f4e0bd39f41cf9127499e22e7d3251))
+- *(deps)* Bump cryptography from 47.0.0 to 50.0.0 in /backend/tests ([e32416b](https://github.com/mendersoftware/mender-server-enterprise/commit/e32416b7966dc1674732251787d62ba5e324195b))
+- *(deps)* Update docker-base-images ([45f4d5d](https://github.com/mendersoftware/mender-server-enterprise/commit/45f4d5db2216d54241e8aeeb5743785c382908aa))
+- *(deps)* Update docker docker tag to v29.9 ([ca01b27](https://github.com/mendersoftware/mender-server-enterprise/commit/ca01b2740e2bfa30100ceb8103b4ceab656eede8))
+- *(deps)* Update dependency mendersoftware/mender-artifact to v4.4.2 ([c93f84c](https://github.com/mendersoftware/mender-server-enterprise/commit/c93f84c0ec4581a17751ac3794e15c78ae803fbc))
+- *(deps)* Update mongo docker tag to v8.3 ([f246f98](https://github.com/mendersoftware/mender-server-enterprise/commit/f246f981d13b5ba9fd7804e3cfb2d50f49acd5ca))
+- *(deps)* Update docker-compose ([92f7388](https://github.com/mendersoftware/mender-server-enterprise/commit/92f7388d21910d742f5c955a4d9fbd2277fd858e))
+- *(deps)* Update dependency @mui/x-date-pickers to v8.29.4 ([3535023](https://github.com/mendersoftware/mender-server-enterprise/commit/3535023b95ad24a22689577037e1a5df89aa0a6b))
+- *(deps)* Update npm-dev-dependencies ([c686f5c](https://github.com/mendersoftware/mender-server-enterprise/commit/c686f5cd5af2f4d47f4ae2ad5ac071c5f8ce4edc))
+- *(deps)* Update golang-dependencies ([ba463d8](https://github.com/mendersoftware/mender-server-enterprise/commit/ba463d880428c5fdc731dce18f30a582da0bbeb8))
+- *(deps)* Update traefik docker tag to v3.7.15 ([3ba6b3d](https://github.com/mendersoftware/mender-server-enterprise/commit/3ba6b3d11ae4cdddaa6b29d957e25d01e3b2b51c))
+- *(deps)* Update npm-prod-dependencies ([11effa7](https://github.com/mendersoftware/mender-server-enterprise/commit/11effa7348fabfad5ad8b04384f1544d75c1a793))
+- *(deps)* Update dependency @mui/x-date-pickers to v8.29.5 ([09228e8](https://github.com/mendersoftware/mender-server-enterprise/commit/09228e80c0dfa79ca122cfc9d01f9bf5c30bb4e7))
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10237](https://northerntech.atlassian.net/browse/MEN-10237) |
+
+
 ## 4.1.4 - 2026-09-24
 
 
@@ -33,23 +65,6 @@ github: false
 | [MEN-10073](https://northerntech.atlassian.net/browse/MEN-10073) |
 
 
-
-## 4.0.5 - 2026-09-22
-
-
-### Dependency updates
-
-- *(deps)* Update docker-compose ([57829e9](https://github.com///commit/57829e96f4a5f8e530ce673006be3ce2650be01e))
-- *(deps)* Update module google.golang.org/grpc to v1.83.2 [security] ([1a39163](https://github.com///commit/1a391634c73b2f823c7c27442070751f308a419f))
-- *(deps)* Update dependency postcss to v8.5.23 [security] ([7645816](https://github.com///commit/7645816084ffedaee898189634d09dcfde0f88d4))
-
-### All tickets resolved in this release
-
-| Ticket |
-|---|
-| [ME-761](https://northerntech.atlassian.net/browse/ME-761) |
-
-
 ## 4.1.3 - 2026-07-28
 
 
@@ -68,24 +83,12 @@ github: false
 - *(deps)* Upgrade container image golang to 1.26.5 (enterprise)
 - *(deps)* Upgrade go modules (enterprise)
 
-
 ### All tickets resolved in this release
 
 | Ticket |
 |---|
 | [MEN-9992](https://northerntech.atlassian.net/browse/MEN-9992) |
 
-
-
-## 4.0.4 - 2026-07-28
-
-
-### Dependency updates
-
-- *(deps)* Update golang dependencies
-- *(deps)* Upgrade golang container image to 1.26.5
-- *(deps)* Upgrade alpine to 3.23.5
-- *(deps)* Upgrade container image golang to 1.26.5 (enterprise)
 
 ## 4.1.2 - 2026-07-09
 
@@ -94,47 +97,10 @@ github: false
 
 
 - *(deviceconnect)* Only allow one connection per device at a time
- ([69852bc](https://github.com/mendersoftware/mender-server-enterprise/commit/69852bc17e065df3cfe4c61cb91e3fac8f9fd24b))
+ ([69852bc](https://github.com/mendersoftware/mender-server-enterprise/commit/69852bc17e065df3cfe4c61cb91e3fac8f9fd24b)) 
 
 
 
-
-
-
-
-
-
-
-## 4.0.3 - 2026-07-10
-
-
-### Bug fixes
-
-
-- *(useradm)* Return internal error if SSO descriptor is empty
- ([f86a857](https://github.com///commit/f86a85776d6ce9ce380f6c4b794096368b1d8928)) 
-
-
-
-
-
-
-
-### Features
-
-
-- *(create-artifact-worker)* Update `mender-artifact` to latest v4.1.0
-([MEN-8337](https://northerntech.atlassian.net/browse/MEN-8337)) ([069da10](https://github.com///commit/069da103bf45f88a18a1517d46b3061c02380598)) 
-
-
-
-
-
-  Modifying also the integration to build the tool from source instead or
-  repurposing the upstream Debian package. This has the main advantage
-  that we can compile it statically (by disabling a feature that we don't
-  use) and that we have control of the compatibility aspects of the
-  binary.
 
 
 
@@ -144,15 +110,6 @@ github: false
 
 ## 4.1.1 - 2026-04-07
 
-
-### Security fixes
-
-- Fixed CVE-2026-49009 - Improper input sanitization in Mender Server
-  See the official announcement for more information:
-  [mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server](https://mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server)
-- Fixed CVE-2026-33552 - Improper access control in Device Group RBAC
-  See the official announcement for more information:
-  [mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server](https://mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server)
 
 ### Bug fixes
 
@@ -255,522 +212,6 @@ github: false
 
 
 
-## 4.0.2 - 2026-04-07
-
-
-### Security fixes
-
-- Fixed CVE-2026-49009 - Improper input sanitization in Mender Server
-  See the official announcement for more information:
-  [mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server](https://mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server)
-- Fixed CVE-2026-33552 - Improper access control in Device Group RBAC
-  See the official announcement for more information:
-  [mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server](https://mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server)
-
-
-### Bug fixes
-
-
-- *(create-artifact-worker)* Hardened single file generation input validations
- ([1090ac3](https://github.com///commit/1090ac3c89d523124e7edd596404526f391053c2)) 
-
-
-
-
-  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
-
-- *(deployments)* Nil pointer dereference getting non-existing deployment
-([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([a690b40](https://github.com///commit/a690b40ac304cfc5e2821a41a709ef3f9d2437ce)) 
-
-
-
-
-- *(deviceauth)* Use mongo's error code to check for record duplication in AddDevice
- ([3f91f6e](https://github.com///commit/3f91f6e7621d3d4ce01ba87357cd0be16933636f)) 
-
-
-
-- *(useradm)* Mask private fields from user creation endpoint
-([MEN-9249](https://northerntech.atlassian.net/browse/MEN-9249)) ([18d1e4b](https://github.com///commit/18d1e4bcb52a9414b9b13a75c5cd0c07782eef9a)) 
-
-
-
-
-
-
-  Constraints the create user input to the properties defined in the API
-  specification. Masking `login_ts`, `tfa_enabled` and `verified` from the
-  user creation API endpoint.
-
-- Introduce docker-compose healthcheck for mongo, nats and traefik
- ([d15626c](https://github.com///commit/d15626c63908fa4e70e67ef0d1db3dc031307498)) 
-
-
-
-
-  Introducing healthcheck allow to monitor services.
-  This permits a better dependency when mender services are starting,
-  waiting for mongo, nats, traefik to be heatlhy before starting.
-- Increase docker-compose restart
- ([5923299](https://github.com///commit/59232993063ab8a00679fe7811718054dbf60546)) 
-
-
-
-
-  Some services still fails after the introduction of the healthcheck on
-  slow machines. Increase the number restarts allowed to solve it, no
-  better mechanisms found.
-
-
-
-
-### Security
-
-
-
-- Update traefik version
- ([65b91f3](https://github.com///commit/65b91f35f6f1ff06583d02b9bc936eb603bfde90)) 
-
-
-
-
-  Update of traefik version to support Docker 29.x with API >= 1.44.
-
-
-
-
-
-- Bump the playwright group
- ([32c9bf0](https://github.com///commit/32c9bf09df73219722a0a3d730c32ae627d3b473)) 
-
-
-
-
-  Bumps the playwright group in /frontend/tests/e2e_tests with 3 updates: [@playwright/test](https://github.com/microsoft/playwright), [playwright](https://github.com/microsoft/playwright) and [playwright-chromium](https://github.com/microsoft/playwright).
-  
-  
-  Updates `@playwright/test` from 1.55.1 to 1.56.1
-  - [Release notes](https://github.com/microsoft/playwright/releases)
-  - [Commits](https://github.com/microsoft/playwright/compare/v1.55.1...v1.56.1)
-  
-  Updates `playwright` from 1.55.1 to 1.56.1
-  - [Release notes](https://github.com/microsoft/playwright/releases)
-  - [Commits](https://github.com/microsoft/playwright/compare/v1.55.1...v1.56.1)
-  
-  Updates `playwright-chromium` from 1.55.1 to 1.56.1
-  - [Release notes](https://github.com/microsoft/playwright/releases)
-  - [Commits](https://github.com/microsoft/playwright/compare/v1.55.1...v1.56.1)
-  
-  ---
-  updated-dependencies:
-  - dependency-name: "@playwright/test"
-    dependency-version: 1.56.1
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: playwright
-  - dependency-name: playwright
-    dependency-version: 1.56.1
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: playwright
-  - dependency-name: playwright-chromium
-    dependency-version: 1.56.1
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: playwright
-  ...
-- Bump the e2e-test-dependencies group
- ([78ea349](https://github.com///commit/78ea349e12b938fe123b0d82860dbfa26259cdde)) 
-
-
-
-
-  Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 2 updates: [axios](https://github.com/axios/axios) and [yaml](https://github.com/eemeli/yaml).
-  
-  
-  Updates `axios` from 1.13.1 to 1.13.2
-  - [Release notes](https://github.com/axios/axios/releases)
-  - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
-  - [Commits](https://github.com/axios/axios/compare/v1.13.1...v1.13.2)
-  
-  Updates `yaml` from 2.8.1 to 2.8.2
-  - [Release notes](https://github.com/eemeli/yaml/releases)
-  - [Commits](https://github.com/eemeli/yaml/compare/v2.8.1...v2.8.2)
-  
-  ---
-  updated-dependencies:
-  - dependency-name: axios
-    dependency-version: 1.13.2
-    dependency-type: direct:development
-    update-type: version-update:semver-patch
-    dependency-group: e2e-test-dependencies
-  - dependency-name: yaml
-    dependency-version: 2.8.2
-    dependency-type: direct:development
-    update-type: version-update:semver-patch
-    dependency-group: e2e-test-dependencies
-  ...
-- Bump the production-dependencies group
- ([893f3cc](https://github.com///commit/893f3cc1c16e1af08ca16441f504f4f89d53f0e8)) 
-
-
-
-
-  Bumps the production-dependencies group in /frontend with 7 updates:
-  
-  | Package | From | To |
-  | --- | --- | --- |
-  | [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit) | `2.9.2` | `2.11.0` |
-  | [@stripe/react-stripe-js](https://github.com/stripe/react-stripe-js) | `5.3.0` | `5.4.1` |
-  | [@stripe/stripe-js](https://github.com/stripe/stripe-js) | `8.2.0` | `8.5.3` |
-  | [axios](https://github.com/axios/axios) | `1.13.1` | `1.13.2` |
-  | [react-hook-form](https://github.com/react-hook-form/react-hook-form) | `7.66.0` | `7.67.0` |
-  | [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom) | `7.9.5` | `7.9.6` |
-  | [validator](https://github.com/validatorjs/validator.js) | `13.15.20` | `13.15.23` |
-  
-  
-  Updates `@reduxjs/toolkit` from 2.9.2 to 2.11.0
-  - [Release notes](https://github.com/reduxjs/redux-toolkit/releases)
-  - [Commits](https://github.com/reduxjs/redux-toolkit/compare/v2.9.2...v2.11.0)
-  
-  Updates `@stripe/react-stripe-js` from 5.3.0 to 5.4.1
-  - [Release notes](https://github.com/stripe/react-stripe-js/releases)
-  - [Changelog](https://github.com/stripe/react-stripe-js/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/stripe/react-stripe-js/compare/v5.3.0...v5.4.1)
-  
-  Updates `@stripe/stripe-js` from 8.2.0 to 8.5.3
-  - [Release notes](https://github.com/stripe/stripe-js/releases)
-  - [Commits](https://github.com/stripe/stripe-js/compare/v8.2.0...v8.5.3)
-  
-  Updates `axios` from 1.13.1 to 1.13.2
-  - [Release notes](https://github.com/axios/axios/releases)
-  - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
-  - [Commits](https://github.com/axios/axios/compare/v1.13.1...v1.13.2)
-  
-  Updates `react-hook-form` from 7.66.0 to 7.67.0
-  - [Release notes](https://github.com/react-hook-form/react-hook-form/releases)
-  - [Changelog](https://github.com/react-hook-form/react-hook-form/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/react-hook-form/react-hook-form/compare/v7.66.0...v7.67.0)
-  
-  Updates `react-router-dom` from 7.9.5 to 7.9.6
-  - [Release notes](https://github.com/remix-run/react-router/releases)
-  - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)
-  - [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.9.6/packages/react-router-dom)
-  
-  Updates `validator` from 13.15.20 to 13.15.23
-  - [Release notes](https://github.com/validatorjs/validator.js/releases)
-  - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.20...13.15.23)
-  
-  ---
-  updated-dependencies:
-  - dependency-name: "@reduxjs/toolkit"
-    dependency-version: 2.11.0
-    dependency-type: direct:production
-    update-type: version-update:semver-minor
-    dependency-group: production-dependencies
-  - dependency-name: "@stripe/react-stripe-js"
-    dependency-version: 5.4.1
-    dependency-type: direct:production
-    update-type: version-update:semver-minor
-    dependency-group: production-dependencies
-  - dependency-name: "@stripe/stripe-js"
-    dependency-version: 8.5.3
-    dependency-type: direct:production
-    update-type: version-update:semver-minor
-    dependency-group: production-dependencies
-  - dependency-name: axios
-    dependency-version: 1.13.2
-    dependency-type: direct:production
-    update-type: version-update:semver-patch
-    dependency-group: production-dependencies
-  - dependency-name: react-hook-form
-    dependency-version: 7.67.0
-    dependency-type: direct:production
-    update-type: version-update:semver-minor
-    dependency-group: production-dependencies
-  - dependency-name: react-router-dom
-    dependency-version: 7.9.6
-    dependency-type: direct:production
-    update-type: version-update:semver-patch
-    dependency-group: production-dependencies
-  - dependency-name: validator
-    dependency-version: 13.15.23
-    dependency-type: direct:production
-    update-type: version-update:semver-patch
-    dependency-group: production-dependencies
-  ...
-- Bump the mui group in /frontend with 3 updates
- ([8936b76](https://github.com///commit/8936b7641c13e0eba2e5a88514c069629e98fe8d)) 
-
-
-
-
-  Bumps the mui group in /frontend with 3 updates: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
-  
-  
-  Updates `@mui/icons-material` from 7.3.4 to 7.3.5
-  - [Release notes](https://github.com/mui/material-ui/releases)
-  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/mui/material-ui/commits/v7.3.5/packages/mui-icons-material)
-  
-  Updates `@mui/material` from 7.3.4 to 7.3.5
-  - [Release notes](https://github.com/mui/material-ui/releases)
-  - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/mui/material-ui/commits/v7.3.5/packages/mui-material)
-  
-  Updates `@mui/x-date-pickers` from 8.16.0 to 8.19.0
-  - [Release notes](https://github.com/mui/mui-x/releases)
-  - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/mui/mui-x/commits/v8.19.0/packages/x-date-pickers)
-  
-  ---
-  updated-dependencies:
-  - dependency-name: "@mui/icons-material"
-    dependency-version: 7.3.5
-    dependency-type: direct:production
-    update-type: version-update:semver-patch
-    dependency-group: mui
-  - dependency-name: "@mui/material"
-    dependency-version: 7.3.5
-    dependency-type: direct:production
-    update-type: version-update:semver-patch
-    dependency-group: mui
-  - dependency-name: "@mui/x-date-pickers"
-    dependency-version: 8.19.0
-    dependency-type: direct:production
-    update-type: version-update:semver-minor
-    dependency-group: mui
-  ...
-- Bump the development-dependencies group across 1 directory with 16 updates
- ([ebcb6c9](https://github.com///commit/ebcb6c906134e5bef694f16da1f8756ef22a79f8)) 
-
-
-
-
-  Bumps the development-dependencies group with 16 updates in the /frontend directory:
-  
-  | Package | From | To |
-  | --- | --- | --- |
-  | [@emotion/jest](https://github.com/emotion-js/emotion) | `11.13.0` | `11.14.2` |
-  | [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli) | `1.6.0` | `1.7.1` |
-  | [@rspack/core](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack) | `1.6.0` | `1.7.1` |
-  | [@testing-library/react](https://github.com/testing-library/react-testing-library) | `16.3.0` | `16.3.1` |
-  | [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) | `24.9.2` | `25.0.3` |
-  | [autoprefixer](https://github.com/postcss/autoprefixer) | `10.4.21` | `10.4.23` |
-  | [core-js](https://github.com/zloirock/core-js/tree/HEAD/packages/core-js) | `3.46.0` | `3.47.0` |
-  | [esbuild-loader](https://github.com/privatenumber/esbuild-loader) | `4.4.0` | `4.4.2` |
-  | [eslint-rspack-plugin](https://github.com/rspack-contrib/eslint-rspack-plugin) | `4.2.1` | `4.3.0` |
-  | [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) | `5.6.4` | `5.6.5` |
-  | [less](https://github.com/less/less.js) | `4.4.2` | `4.5.1` |
-  | [lint-staged](https://github.com/lint-staged/lint-staged) | `16.2.6` | `16.2.7` |
-  | [msw](https://github.com/mswjs/msw) | `2.11.6` | `2.12.7` |
-  | [prettier](https://github.com/prettier/prettier) | `3.6.2` | `3.7.4` |
-  | [ts-jest](https://github.com/kulshekhar/ts-jest) | `29.4.5` | `29.4.6` |
-  | [undici](https://github.com/nodejs/undici) | `7.16.0` | `7.18.2` |
-  
-  Updates `@emotion/jest` from 11.13.0 to 11.14.2
-  - [Release notes](https://github.com/emotion-js/emotion/releases)
-  - [Changelog](https://github.com/emotion-js/emotion/blob/main/CHANGELOG.md)
-  - [Commits](https://github.com/emotion-js/emotion/compare/@emotion/jest@11.13.0...@emotion/jest@11.14.2)
-  
-  Updates `@rspack/cli` from 1.6.0 to 1.7.1
-  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
-  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.7.1/packages/rspack-cli)
-  
-  Updates `@rspack/core` from 1.6.0 to 1.7.1
-  - [Release notes](https://github.com/web-infra-dev/rspack/releases)
-  - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.7.1/packages/rspack)
-  
-  Updates `@testing-library/react` from 16.3.0 to 16.3.1
-  - [Release notes](https://github.com/testing-library/react-testing-library/releases)
-  - [Changelog](https://github.com/testing-library/react-testing-library/blob/main/CHANGELOG.md)
-  - [Commits](https://github.com/testing-library/react-testing-library/compare/v16.3.0...v16.3.1)
-  
-  Updates `@types/node` from 24.9.2 to 25.0.3
-  - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
-  - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-  
-  Updates `autoprefixer` from 10.4.21 to 10.4.23
-  - [Release notes](https://github.com/postcss/autoprefixer/releases)
-  - [Changelog](https://github.com/postcss/autoprefixer/blob/main/CHANGELOG.md)
-  - [Commits](https://github.com/postcss/autoprefixer/compare/10.4.21...10.4.23)
-  
-  Updates `core-js` from 3.46.0 to 3.47.0
-  - [Release notes](https://github.com/zloirock/core-js/releases)
-  - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/zloirock/core-js/commits/v3.47.0/packages/core-js)
-  
-  Updates `esbuild-loader` from 4.4.0 to 4.4.2
-  - [Release notes](https://github.com/privatenumber/esbuild-loader/releases)
-  - [Commits](https://github.com/privatenumber/esbuild-loader/compare/v4.4.0...v4.4.2)
-  
-  Updates `eslint-rspack-plugin` from 4.2.1 to 4.3.0
-  - [Release notes](https://github.com/rspack-contrib/eslint-rspack-plugin/releases)
-  - [Changelog](https://github.com/rstackjs/eslint-rspack-plugin/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/rspack-contrib/eslint-rspack-plugin/compare/v4.2.1...v4.3.0)
-  
-  Updates `html-webpack-plugin` from 5.6.4 to 5.6.5
-  - [Release notes](https://github.com/jantimon/html-webpack-plugin/releases)
-  - [Changelog](https://github.com/jantimon/html-webpack-plugin/blob/main/CHANGELOG.md)
-  - [Commits](https://github.com/jantimon/html-webpack-plugin/compare/v5.6.4...v5.6.5)
-  
-  Updates `less` from 4.4.2 to 4.5.1
-  - [Release notes](https://github.com/less/less.js/releases)
-  - [Changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md)
-  - [Commits](https://github.com/less/less.js/commits)
-  
-  Updates `lint-staged` from 16.2.6 to 16.2.7
-  - [Release notes](https://github.com/lint-staged/lint-staged/releases)
-  - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
-  - [Commits](https://github.com/lint-staged/lint-staged/compare/v16.2.6...v16.2.7)
-  
-  Updates `msw` from 2.11.6 to 2.12.7
-  - [Release notes](https://github.com/mswjs/msw/releases)
-  - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
-  - [Commits](https://github.com/mswjs/msw/compare/v2.11.6...v2.12.7)
-  
-  Updates `prettier` from 3.6.2 to 3.7.4
-  - [Release notes](https://github.com/prettier/prettier/releases)
-  - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
-  - [Commits](https://github.com/prettier/prettier/compare/3.6.2...3.7.4)
-  
-  Updates `ts-jest` from 29.4.5 to 29.4.6
-  - [Release notes](https://github.com/kulshekhar/ts-jest/releases)
-  - [Changelog](https://github.com/kulshekhar/ts-jest/blob/main/CHANGELOG.md)
-  - [Commits](https://github.com/kulshekhar/ts-jest/compare/v29.4.5...v29.4.6)
-  
-  Updates `undici` from 7.16.0 to 7.18.2
-  - [Release notes](https://github.com/nodejs/undici/releases)
-  - [Commits](https://github.com/nodejs/undici/compare/v7.16.0...v7.18.2)
-  
-  ---
-  updated-dependencies:
-  - dependency-name: "@emotion/jest"
-    dependency-version: 11.14.2
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  - dependency-name: "@rspack/cli"
-    dependency-version: 1.7.1
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  - dependency-name: "@rspack/core"
-    dependency-version: 1.7.1
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  - dependency-name: "@testing-library/react"
-    dependency-version: 16.3.1
-    dependency-type: direct:development
-    update-type: version-update:semver-patch
-    dependency-group: development-dependencies
-  - dependency-name: "@types/node"
-    dependency-version: 25.0.3
-    dependency-type: direct:development
-    update-type: version-update:semver-major
-    dependency-group: development-dependencies
-  - dependency-name: autoprefixer
-    dependency-version: 10.4.23
-    dependency-type: direct:development
-    update-type: version-update:semver-patch
-    dependency-group: development-dependencies
-  - dependency-name: core-js
-    dependency-version: 3.47.0
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  - dependency-name: esbuild-loader
-    dependency-version: 4.4.2
-    dependency-type: direct:development
-    update-type: version-update:semver-patch
-    dependency-group: development-dependencies
-  - dependency-name: eslint-rspack-plugin
-    dependency-version: 4.3.0
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  - dependency-name: html-webpack-plugin
-    dependency-version: 5.6.5
-    dependency-type: direct:development
-    update-type: version-update:semver-patch
-    dependency-group: development-dependencies
-  - dependency-name: less
-    dependency-version: 4.5.1
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  - dependency-name: lint-staged
-    dependency-version: 16.2.7
-    dependency-type: direct:development
-    update-type: version-update:semver-patch
-    dependency-group: development-dependencies
-  - dependency-name: msw
-    dependency-version: 2.12.7
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  - dependency-name: prettier
-    dependency-version: 3.7.4
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  - dependency-name: ts-jest
-    dependency-version: 29.4.6
-    dependency-type: direct:development
-    update-type: version-update:semver-patch
-    dependency-group: development-dependencies
-  - dependency-name: undici
-    dependency-version: 7.18.2
-    dependency-type: direct:development
-    update-type: version-update:semver-minor
-    dependency-group: development-dependencies
-  ...
-- Bump enterprise golang versions to 1.25.6
- ([e026955](https://github.com///commit/e02695526d5ad6b361abe661c619cd308ce0748b)) 
-
-
-- Bump generate-delta-worker alpine to 3.22.2
- ([fd18543](https://github.com///commit/fd185430723ade04fcbd595983142eee847d543d)) 
-
-
-- Bump the backend-docker-compose-dependencies group across 2 directories with 5 updates
- ([aa65b13](https://github.com///commit/aa65b13edb80038f461912d2ce056d88cf632159)) 
-
-
-
-
-
-  Bumps the backend-docker-compose-dependencies group with 3 updates in the / directory: traefik, mongo and nats.
-  Bumps the backend-docker-compose-dependencies group with 2 updates in the /compose directory: redis and chrislusf/seaweedfs.
-  
-  Updates `traefik` from 3.6.2 to 3.6.6
-  Updates `nats` from 2.10-alpine to 2.12-alpine
-  Updates `chrislusf/seaweedfs` from 3.85 to 4.04
-  
-  ---
-  updated-dependencies:
-  - dependency-name: traefik
-    dependency-version: 3.6.6
-    dependency-type: direct:production
-    update-type: version-update:semver-patch
-    dependency-group: backend-docker-compose-dependencies
-  - dependency-name: nats
-    dependency-version: 2.12-alpine
-    dependency-type: direct:production
-    dependency-group: backend-docker-compose-dependencies
-  - dependency-name: chrislusf/seaweedfs
-    dependency-version: '4.04'
-    dependency-type: direct:production
-    dependency-group: backend-docker-compose-dependencies
-  ...
-
-
-
-
-
-
 ## 4.1.0 - 2026-01-12
 
 
@@ -839,13 +280,13 @@ github: false
   Limit the max length of `name` (aka `Release name` in the gui),
   `type` and `device types compatible` fields in `MultipartGenerateImageMsg`
   (used by single file uploads) to 256 characters.
-
+  
   There has been introduced a limit of 256 characters to the corresponding
   fields in mender-artifact:
       https://github.com/mendersoftware/mender-artifact/commit/ddd821f8a5150fb8a3186b337525f17b2757599c
   causing uploads that do not abide by this limit to fail silently in the
   background when being processed by the workflow worker.
-
+  
   With this input validation we provide an explicit error to the user in
   this case.
 
@@ -920,7 +361,7 @@ github: false
 
 
 - *(deployments)* Add missing delta generation status fields
-([MEN-9064](https://northerntech.atlassian.net/browse/MEN-9064)) ([4acc8c1](https://github.com/mendersoftware/mender-server-enterprise/commit/4acc8c15512d008060f361322fe03872420f6c8e))
+([MEN-9064](https://northerntech.atlassian.net/browse/MEN-9064)) ([4acc8c1](https://github.com/mendersoftware/mender-server-enterprise/commit/4acc8c15512d008060f361322fe03872420f6c8e)) 
 
 
 
@@ -931,7 +372,7 @@ github: false
   finished, and compute the total time from start to finish.
 
 - *(deployments)* Only show delta size in details once finished
-([MEN-9152](https://northerntech.atlassian.net/browse/MEN-9152)) ([4446bdb](https://github.com/mendersoftware/mender-server-enterprise/commit/4446bdb6411d3362f47d72d0ee9330255749dda5))
+([MEN-9152](https://northerntech.atlassian.net/browse/MEN-9152)) ([4446bdb](https://github.com/mendersoftware/mender-server-enterprise/commit/4446bdb6411d3362f47d72d0ee9330255749dda5)) 
 
 
 
@@ -1536,12 +977,12 @@ github: false
 
 
 - *(gui)* Fixed an issue that would prevent sorting the list of ∆ artifact generations
- ([ddf44c7](https://github.com/mendersoftware/mender-server-enterprise/commit/ddf44c754b3cfa57430005adbd53770cf459e3ce))
+ ([ddf44c7](https://github.com/mendersoftware/mender-server-enterprise/commit/ddf44c754b3cfa57430005adbd53770cf459e3ce)) 
 
 
 
 - *(gui)* Made use of additional backend info about delta jobs
- ([90f4114](https://github.com/mendersoftware/mender-server-enterprise/commit/90f4114ab402078fe3248d6a0e54917199cdba26))
+ ([90f4114](https://github.com/mendersoftware/mender-server-enterprise/commit/90f4114ab402078fe3248d6a0e54917199cdba26)) 
 
 
 
@@ -1815,7 +1256,7 @@ github: false
   (resolved by consulting the /.well-known/openid-configuration of the IDP) we
   default to response_mode=query in the URL generated by
   /oidc/:provider/start.
-
+  
   The "query" response_mode implies that the HTTP
   method of the callback request should be `GET` and we must therefore
   support it.
@@ -1873,7 +1314,7 @@ github: false
 
   This retry mechanism has no automatic Delay, so the retries are made in
   sequence, and this is useless and detrimental to the load.
-
+  
   Removing the retries, while waiting for a more robust approach, like
   retries with delays and workflows autoscaling.
 
@@ -1998,7 +1439,7 @@ github: false
   in the /services/ directory (at least on Mac). This leads to test
   execution failing midway. A simple solution is to keep only directories
   using the `dir` function.
-
+  
   In addition, I believe the ordering produced by `wildward` is not
   deterministic, so I added a call to `sort` as well to ensure tests are
   executed in a consistent order (alphabetical).
@@ -2189,7 +1630,7 @@ github: false
 
 
 - *(deployments)* Update delta objects to reflect consolidated objects
- ([b3faf3b](https://github.com/mendersoftware/mender-server-enterprise/commit/b3faf3bc241eb8ae418b44b486a78e7a18b3c338))
+ ([b3faf3b](https://github.com/mendersoftware/mender-server-enterprise/commit/b3faf3bc241eb8ae418b44b486a78e7a18b3c338)) 
 
 
 
@@ -2516,7 +1957,7 @@ github: false
   A new experimental API endpoint is added for invoking LLM to explain
   device logs on failing deployments. The API is only available on consent
   from an admin (provided through useradm global settings).
-
+  
   The feature is experimental and the API may change in the future. For on
   premise instances the feature is disabled by default and requires
   integrating the service with an LLM (see `/etc/deployments/config.yaml`).
@@ -2666,7 +2107,7 @@ github: false
    - 15 requests/minute for checkUpdate
    - 15 requests/minute for submitInventory
    - 30 requests/minute for all other operations
-
+  
    For micro device tier the ratelimits are:
    - 1 request/day for checkUpdate
    - 1 requests/14days for submitInventory
@@ -3177,7 +2618,7 @@ github: false
 
 
   Added the following configuration parameters:
-
+  
   ```yaml
   ratelimits:
     # auth configures ratelimits for authenticated requests.
@@ -3265,7 +2706,7 @@ github: false
 
 
   POST /api/management/v2/useradm/support/feedback/:form_id
-
+  
   The new endpoint accepts a form response with user feedback. There are
   currently two `form_id` defined: "product" and "feat.ai" for general
   product feedback and feedback specific to the experimental AI feature.
@@ -3453,7 +2894,7 @@ github: false
   Support locking the SSO configuration for the child tenants
   to the configuration given by the parent.
 - Enable server-side generation of delta artifacts by default for enterprise tenants
-([MEN-7703](https://northerntech.atlassian.net/browse/MEN-7703)) ([ab2b3cf](https://github.com/mendersoftware/mender-server-enterprise/commit/ab2b3cfe2d53b9fc2ac435565e9c2c4d43adc8a9))
+([MEN-7703](https://northerntech.atlassian.net/browse/MEN-7703)) ([ab2b3cf](https://github.com/mendersoftware/mender-server-enterprise/commit/ab2b3cfe2d53b9fc2ac435565e9c2c4d43adc8a9)) 
 
 
 
@@ -3503,7 +2944,7 @@ github: false
 
 
 - *(deployments)* Consolidate generate delta jobs and details
- ([07cead1](https://github.com/mendersoftware/mender-server-enterprise/commit/07cead1e1af683f02e06212449ad390b6e1bf52c))
+ ([07cead1](https://github.com/mendersoftware/mender-server-enterprise/commit/07cead1e1af683f02e06212449ad390b6e1bf52c)) 
 
 
 
@@ -3578,7 +3019,7 @@ github: false
   + limit report retrieval + visibility to reasonably safe request counts
   - this might reduce availability of dashboard widgets for more users, but until backend support arrives we'll remain limited
   - in order to handle the reduced availability & measure interest a support note was added
-
+  
   - to account for the improbability of return of the reporting service the reliance on this was removed too
 
 - *(gui)* Aligned delta artifact generation settings w/ updated design
@@ -3805,7 +3246,7 @@ github: false
   Bumps [cryptography](https://github.com/pyca/cryptography) from 44.0.0 to 44.0.1.
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/44.0.0...44.0.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: cryptography
@@ -3819,7 +3260,7 @@ github: false
 
   Bumps [elliptic](https://github.com/indutny/elliptic) from 6.5.7 to 6.6.1.
   - [Commits](https://github.com/indutny/elliptic/compare/v6.5.7...v6.6.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: elliptic
@@ -3832,7 +3273,7 @@ github: false
 
 
   Bumps node from 23.7.0-alpine3.20 to 23.8.0-alpine3.20.
-
+  
   ---
   updated-dependencies:
   - dependency-name: node
@@ -3846,7 +3287,7 @@ github: false
 
 
   Bumps the development-dependencies group in /frontend with 7 updates:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core) | `7.26.7` | `7.26.9` |
@@ -3856,42 +3297,42 @@ github: false
   | [esbuild-loader](https://github.com/privatenumber/esbuild-loader) | `4.2.2` | `4.3.0` |
   | [postcss](https://github.com/postcss/postcss) | `8.5.1` | `8.5.2` |
   | [prettier](https://github.com/prettier/prettier) | `3.4.2` | `3.5.1` |
-
-
+  
+  
   Updates `@babel/core` from 7.26.7 to 7.26.9
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.26.9/packages/babel-core)
-
+  
   Updates `@babel/preset-env` from 7.26.7 to 7.26.9
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.26.9/packages/babel-preset-env)
-
+  
   Updates `@northern.tech/eslint-config` from 0.2.0 to 0.3.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/eslint-config-0.2.0...@northern.tech/eslint-config-0.3.0)
-
+  
   Updates `@northern.tech/typescript-config` from 0.1.1 to 0.1.3
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/typescript-config-0.1.1...@northern.tech/typescript-config-0.1.3)
-
+  
   Updates `esbuild-loader` from 4.2.2 to 4.3.0
   - [Release notes](https://github.com/privatenumber/esbuild-loader/releases)
   - [Commits](https://github.com/privatenumber/esbuild-loader/compare/v4.2.2...v4.3.0)
-
+  
   Updates `postcss` from 8.5.1 to 8.5.2
   - [Release notes](https://github.com/postcss/postcss/releases)
   - [Changelog](https://github.com/postcss/postcss/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/postcss/postcss/compare/8.5.1...8.5.2)
-
+  
   Updates `prettier` from 3.4.2 to 3.5.1
   - [Release notes](https://github.com/prettier/prettier/releases)
   - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/prettier/prettier/compare/3.4.2...3.5.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@babel/core"
@@ -3930,21 +3371,21 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 3 updates in the /backend/tests directory: [pymongo](https://github.com/mongodb/mongo-python-driver), [boto3](https://github.com/boto/boto3) and [websockets](https://github.com/python-websockets/websockets).
-
-
+  
+  
   Updates `pymongo` from 4.11 to 4.11.1
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/4.11.1/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.11...4.11.1)
-
+  
   Updates `boto3` from 1.36.11 to 1.36.21
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.36.11...1.36.21)
-
+  
   Updates `websockets` from 14.2 to 15.0
   - [Release notes](https://github.com/python-websockets/websockets/releases)
   - [Commits](https://github.com/python-websockets/websockets/compare/14.2...15.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pymongo
@@ -3967,23 +3408,23 @@ github: false
 
 
   Bumps the mui group in /frontend with 3 updates: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
-
-
+  
+  
   Updates `@mui/icons-material` from 6.4.2 to 6.4.4
   - [Release notes](https://github.com/mui/material-ui/releases)
   - [Changelog](https://github.com/mui/material-ui/blob/v6.4.4/CHANGELOG.md)
   - [Commits](https://github.com/mui/material-ui/commits/v6.4.4/packages/mui-icons-material)
-
+  
   Updates `@mui/material` from 6.4.2 to 6.4.4
   - [Release notes](https://github.com/mui/material-ui/releases)
   - [Changelog](https://github.com/mui/material-ui/blob/v6.4.4/CHANGELOG.md)
   - [Commits](https://github.com/mui/material-ui/commits/v6.4.4/packages/mui-material)
-
+  
   Updates `@mui/x-date-pickers` from 7.25.0 to 7.27.0
   - [Release notes](https://github.com/mui/mui-x/releases)
   - [Changelog](https://github.com/mui/mui-x/blob/v7.27.0/CHANGELOG.md)
   - [Commits](https://github.com/mui/mui-x/commits/v7.27.0/packages/x-date-pickers)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@mui/icons-material"
@@ -4006,18 +3447,18 @@ github: false
 
 
   Bumps the production-dependencies group in /frontend with 2 updates: [@hello-pangea/dnd](https://github.com/hello-pangea/dnd) and [@monaco-editor/react](https://github.com/suren-atoyan/monaco-react).
-
-
+  
+  
   Updates `@hello-pangea/dnd` from 17.0.0 to 18.0.1
   - [Release notes](https://github.com/hello-pangea/dnd/releases)
   - [Changelog](https://github.com/hello-pangea/dnd/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/hello-pangea/dnd/compare/v17.0.0...v18.0.1)
-
+  
   Updates `@monaco-editor/react` from 4.6.0 to 4.7.0
   - [Release notes](https://github.com/suren-atoyan/monaco-react/releases)
   - [Changelog](https://github.com/suren-atoyan/monaco-react/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/suren-atoyan/monaco-react/compare/v4.6.0...v4.7.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@hello-pangea/dnd"
@@ -4045,30 +3486,30 @@ github: false
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/reporting directory: golang.
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/useradm directory: golang.
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/workflows directory: golang.
-
-
+  
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `alpine` from 3.21.2 to 3.21.3
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang
@@ -4123,7 +3564,7 @@ github: false
 
 
   Bumps the backend-golang-dependencies group in /backend with 12 updates:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [github.com/aws/aws-sdk-go-v2](https://github.com/aws/aws-sdk-go-v2) | `1.36.0` | `1.36.1` |
@@ -4138,58 +3579,58 @@ github: false
   | [golang.org/x/net](https://github.com/golang/net) | `0.34.0` | `0.35.0` |
   | [golang.org/x/sys](https://github.com/golang/sys) | `0.29.0` | `0.30.0` |
   | [golang.org/x/term](https://github.com/golang/term) | `0.28.0` | `0.29.0` |
-
-
+  
+  
   Updates `github.com/aws/aws-sdk-go-v2` from 1.36.0 to 1.36.1
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.36.0...v1.36.1)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/config` from 1.29.4 to 1.29.6
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.29.4...config/v1.29.6)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.17.57 to 1.17.59
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/credentials/v1.17.57...credentials/v1.17.59)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.62.7 to 1.62.8
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/iot/v1.62.7...service/iot/v1.62.8)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.26.14 to 1.26.15
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/signer/v1.26.14...service/signer/v1.26.15)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.75.2 to 1.77.0
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.75.2...service/s3/v1.77.0)
-
+  
   Updates `github.com/nats-io/nats.go` from 1.38.0 to 1.39.0
   - [Release notes](https://github.com/nats-io/nats.go/releases)
   - [Commits](https://github.com/nats-io/nats.go/compare/v1.38.0...v1.39.0)
-
+  
   Updates `github.com/spf13/cobra` from 1.8.1 to 1.9.1
   - [Release notes](https://github.com/spf13/cobra/releases)
   - [Commits](https://github.com/spf13/cobra/compare/v1.8.1...v1.9.1)
-
+  
   Updates `golang.org/x/crypto` from 0.32.0 to 0.33.0
   - [Commits](https://github.com/golang/crypto/compare/v0.32.0...v0.33.0)
-
+  
   Updates `golang.org/x/net` from 0.34.0 to 0.35.0
   - [Commits](https://github.com/golang/net/compare/v0.34.0...v0.35.0)
-
+  
   Updates `golang.org/x/sys` from 0.29.0 to 0.30.0
   - [Commits](https://github.com/golang/sys/compare/v0.29.0...v0.30.0)
-
+  
   Updates `golang.org/x/term` from 0.28.0 to 0.29.0
   - [Commits](https://github.com/golang/term/compare/v0.28.0...v0.29.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/aws/aws-sdk-go-v2
@@ -4248,7 +3689,7 @@ github: false
 
 
   Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 5 updates:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@bgotink/playwright-coverage](https://github.com/bgotink/playwright-coverage) | `0.3.0` | `0.3.1` |
@@ -4256,30 +3697,30 @@ github: false
   | [pixelmatch](https://github.com/mapbox/pixelmatch) | `6.0.0` | `7.1.0` |
   | [typescript](https://github.com/microsoft/TypeScript) | `5.7.3` | `5.8.2` |
   | [uuid](https://github.com/uuidjs/uuid) | `11.0.5` | `11.1.0` |
-
-
+  
+  
   Updates `@bgotink/playwright-coverage` from 0.3.0 to 0.3.1
   - [Commits](https://github.com/bgotink/playwright-coverage/compare/v0.3.0...v0.3.1)
-
+  
   Updates `axios` from 1.7.9 to 1.8.1
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.7.9...v1.8.1)
-
+  
   Updates `pixelmatch` from 6.0.0 to 7.1.0
   - [Release notes](https://github.com/mapbox/pixelmatch/releases)
   - [Commits](https://github.com/mapbox/pixelmatch/compare/v6.0.0...v7.1.0)
-
+  
   Updates `typescript` from 5.7.3 to 5.8.2
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.7.3...v5.8.2)
-
+  
   Updates `uuid` from 11.0.5 to 11.1.0
   - [Release notes](https://github.com/uuidjs/uuid/releases)
   - [Changelog](https://github.com/uuidjs/uuid/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/uuidjs/uuid/compare/v11.0.5...v11.1.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@bgotink/playwright-coverage"
@@ -4310,7 +3751,7 @@ github: false
 
 
   Bumps the development-dependencies group with 10 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli) | `1.2.2` | `1.2.6` |
@@ -4323,58 +3764,58 @@ github: false
   | [typescript](https://github.com/microsoft/TypeScript) | `5.7.3` | `5.8.2` |
   | [undici](https://github.com/nodejs/undici) | `7.3.0` | `7.4.0` |
   | [webpack-license-plugin](https://github.com/codepunkt/webpack-license-plugin) | `4.5.0` | `4.5.1` |
-
-
-
+  
+  
+  
   Updates `@rspack/cli` from 1.2.2 to 1.2.6
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.2.6/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.2.2 to 1.2.6
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.2.6/packages/rspack)
-
+  
   Updates `@types/node` from 22.13.4 to 22.13.8
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@vitest/coverage-v8` from 3.0.5 to 3.0.7
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.0.7/packages/coverage-v8)
-
+  
   Updates `core-js` from 3.40.0 to 3.41.0
   - [Release notes](https://github.com/zloirock/core-js/releases)
   - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/zloirock/core-js/commits/v3.41.0/packages/core-js)
-
+  
   Updates `msw` from 2.7.0 to 2.7.3
   - [Release notes](https://github.com/mswjs/msw/releases)
   - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/mswjs/msw/compare/v2.7.0...v2.7.3)
-
+  
   Updates `prettier` from 3.5.1 to 3.5.2
   - [Release notes](https://github.com/prettier/prettier/releases)
   - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/prettier/prettier/compare/3.5.1...3.5.2)
-
+  
   Updates `typescript` from 5.7.3 to 5.8.2
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.7.3...v5.8.2)
-
+  
   Updates `undici` from 7.3.0 to 7.4.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.3.0...v7.4.0)
-
+  
   Updates `vitest` from 3.0.5 to 3.0.7
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.0.7/packages/vitest)
-
+  
   Updates `webpack-license-plugin` from 4.5.0 to 4.5.1
   - [Release notes](https://github.com/codepunkt/webpack-license-plugin/releases)
   - [Changelog](https://github.com/codepunkt/webpack-license-plugin/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/codepunkt/webpack-license-plugin/compare/v4.5.0...v4.5.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@rspack/cli"
@@ -4432,7 +3873,7 @@ github: false
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.8.1...v1.8.2)
-
+  
   ---
   updated-dependencies:
   - dependency-name: axios
@@ -4448,7 +3889,7 @@ github: false
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.8.1...v1.8.2)
-
+  
   ---
   updated-dependencies:
   - dependency-name: axios
@@ -4462,7 +3903,7 @@ github: false
 
   Bumps [golang.org/x/net](https://github.com/golang/net) from 0.35.0 to 0.36.0.
   - [Commits](https://github.com/golang/net/compare/v0.35.0...v0.36.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang.org/x/net
@@ -4478,7 +3919,7 @@ github: false
   - [Release notes](https://github.com/golang-jwt/jwt/releases)
   - [Changelog](https://github.com/golang-jwt/jwt/blob/main/VERSION_HISTORY.md)
   - [Commits](https://github.com/golang-jwt/jwt/compare/v4.5.1...v4.5.2)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/golang-jwt/jwt/v4
@@ -4494,7 +3935,7 @@ github: false
   - [Release notes](https://github.com/node-saml/xml-crypto/releases)
   - [Changelog](https://github.com/node-saml/xml-crypto/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/node-saml/xml-crypto/compare/v2.1.5...v2.1.6)
-
+  
   ---
   updated-dependencies:
   - dependency-name: xml-crypto
@@ -4510,7 +3951,7 @@ github: false
   - [Release notes](https://github.com/redis/go-redis/releases)
   - [Changelog](https://github.com/redis/go-redis/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/redis/go-redis/compare/v9.7.1...v9.7.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/redis/go-redis/v9
@@ -4526,7 +3967,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/v6.2.4/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v6.2.4/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -4539,12 +3980,12 @@ github: false
 
 
   Bumps the playwright group in /frontend/tests/e2e_tests with 1 update: [@playwright/test](https://github.com/microsoft/playwright).
-
-
+  
+  
   Updates `@playwright/test` from 1.50.1 to 1.51.1
   - [Release notes](https://github.com/microsoft/playwright/releases)
   - [Commits](https://github.com/microsoft/playwright/compare/v1.50.1...v1.51.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@playwright/test"
@@ -4569,28 +4010,28 @@ github: false
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/reporting directory: golang.
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/useradm directory: golang.
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/workflows directory: golang.
-
-
+  
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang
@@ -4651,7 +4092,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 10 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [pytest](https://github.com/pytest-dev/pytest) | `8.3.4` | `8.3.5` |
@@ -4664,54 +4105,54 @@ github: false
   | [pillow](https://github.com/python-pillow/Pillow) | `11.1.0` | `11.2.0` |
   | [pyparsing](https://github.com/pyparsing/pyparsing) | `3.2.1` | `3.2.3` |
   | [websockets](https://github.com/python-websockets/websockets) | `15.0` | `15.0.1` |
-
-
-
+  
+  
+  
   Updates `pytest` from 8.3.4 to 8.3.5
   - [Release notes](https://github.com/pytest-dev/pytest/releases)
   - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pytest-dev/pytest/compare/8.3.4...8.3.5)
-
+  
   Updates `pymongo` from 4.11.1 to 4.11.3
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/4.11.3/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.11.1...4.11.3)
-
+  
   Updates `attrs` from 25.1.0 to 25.3.0
   - [Commits](https://github.com/sponsors/hynek/commits)
-
+  
   Updates `boto3` from 1.37.4 to 1.37.24
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.37.4...1.37.24)
-
+  
   Updates `cryptography` from 44.0.1 to 44.0.2
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/44.0.1...44.0.2)
-
+  
   Updates `filelock` from 3.17.0 to 3.18.0
   - [Release notes](https://github.com/tox-dev/py-filelock/releases)
   - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
   - [Commits](https://github.com/tox-dev/py-filelock/compare/3.17.0...3.18.0)
-
+  
   Updates `iniconfig` from 2.0.0 to 2.1.0
   - [Release notes](https://github.com/pytest-dev/iniconfig/releases)
   - [Changelog](https://github.com/pytest-dev/iniconfig/blob/main/CHANGELOG)
   - [Commits](https://github.com/pytest-dev/iniconfig/compare/v2.0.0...v2.1.0)
-
+  
   Updates `pillow` from 11.1.0 to 11.2.0
   - [Release notes](https://github.com/python-pillow/Pillow/releases)
   - [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
   - [Commits](https://github.com/python-pillow/Pillow/compare/11.1.0...11.2.0)
-
+  
   Updates `pyparsing` from 3.2.1 to 3.2.3
   - [Release notes](https://github.com/pyparsing/pyparsing/releases)
   - [Changelog](https://github.com/pyparsing/pyparsing/blob/master/CHANGES)
   - [Commits](https://github.com/pyparsing/pyparsing/compare/3.2.1...3.2.3)
-
+  
   Updates `websockets` from 15.0 to 15.0.1
   - [Release notes](https://github.com/python-websockets/websockets/releases)
   - [Commits](https://github.com/python-websockets/websockets/compare/15.0...15.0.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pytest
@@ -4772,7 +4213,7 @@ github: false
 
 
   Bumps the development-dependencies group with 13 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core) | `7.26.9` | `7.26.10` |
@@ -4788,73 +4229,73 @@ github: false
   | [prettier](https://github.com/prettier/prettier) | `3.5.2` | `3.5.3` |
   | [typescript](https://github.com/microsoft/TypeScript) | `5.7.3` | `5.8.2` |
   | [undici](https://github.com/nodejs/undici) | `7.4.0` | `7.7.0` |
-
-
-
+  
+  
+  
   Updates `@babel/core` from 7.26.9 to 7.26.10
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.26.10/packages/babel-core)
-
+  
   Updates `@babel/preset-typescript` from 7.26.0 to 7.27.0
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.0/packages/babel-preset-typescript)
-
+  
   Updates `@rspack/cli` from 1.2.2 to 1.3.2
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.2/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.2.2 to 1.3.2
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.2/packages/rspack)
-
+  
   Updates `@testing-library/react` from 16.2.0 to 16.3.0
   - [Release notes](https://github.com/testing-library/react-testing-library/releases)
   - [Changelog](https://github.com/testing-library/react-testing-library/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/testing-library/react-testing-library/compare/v16.2.0...v16.3.0)
-
+  
   Updates `@types/node` from 22.13.8 to 22.14.0
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@typescript-eslint/eslint-plugin` from 8.25.0 to 8.29.0
   - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
   - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
   - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.29.0/packages/eslint-plugin)
-
+  
   Updates `@vitest/coverage-v8` from 3.0.7 to 3.1.1
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.1/packages/coverage-v8)
-
+  
   Updates `autoprefixer` from 10.4.20 to 10.4.21
   - [Release notes](https://github.com/postcss/autoprefixer/releases)
   - [Changelog](https://github.com/postcss/autoprefixer/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/postcss/autoprefixer/compare/10.4.20...10.4.21)
-
+  
   Updates `lint-staged` from 15.4.3 to 15.5.0
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v15.4.3...v15.5.0)
-
+  
   Updates `prettier` from 3.5.2 to 3.5.3
   - [Release notes](https://github.com/prettier/prettier/releases)
   - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/prettier/prettier/compare/3.5.2...3.5.3)
-
+  
   Updates `typescript` from 5.7.3 to 5.8.2
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release-publish.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.7.3...v5.8.2)
-
+  
   Updates `undici` from 7.4.0 to 7.7.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.4.0...v7.7.0)
-
+  
   Updates `vitest` from 3.0.7 to 3.1.1
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.1/packages/vitest)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@babel/core"
@@ -4938,7 +4379,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/v6.2.5/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v6.2.5/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -4955,7 +4396,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/v6.2.6/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v6.2.6/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -4972,7 +4413,7 @@ github: false
   - [Release notes](https://github.com/nats-io/nats-server/releases)
   - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
   - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.0...v2.11.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/nats-io/nats-server/v2
@@ -4987,7 +4428,7 @@ github: false
 
   Bumps [golang.org/x/net](https://github.com/golang/net) from 0.37.0 to 0.38.0.
   - [Commits](https://github.com/golang/net/compare/v0.37.0...v0.38.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang.org/x/net
@@ -5004,7 +4445,7 @@ github: false
   - [Release notes](https://github.com/chimurai/http-proxy-middleware/releases)
   - [Changelog](https://github.com/chimurai/http-proxy-middleware/blob/v2.0.9/CHANGELOG.md)
   - [Commits](https://github.com/chimurai/http-proxy-middleware/compare/v2.0.7...v2.0.9)
-
+  
   ---
   updated-dependencies:
   - dependency-name: http-proxy-middleware
@@ -5018,18 +4459,18 @@ github: false
 
 
   Bumps [react-router](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router) to 7.5.2 and updates ancestor dependency [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom). These dependencies need to be updated together.
-
-
+  
+  
   Updates `react-router` from 7.4.1 to 7.5.2
   - [Release notes](https://github.com/remix-run/react-router/releases)
   - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router/CHANGELOG.md)
   - [Commits](https://github.com/remix-run/react-router/commits/react-router@7.5.2/packages/react-router)
-
+  
   Updates `react-router-dom` from 7.4.1 to 7.5.2
   - [Release notes](https://github.com/remix-run/react-router/releases)
   - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)
   - [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.5.2/packages/react-router-dom)
-
+  
   ---
   updated-dependencies:
   - dependency-name: react-router
@@ -5046,7 +4487,7 @@ github: false
 
 
   Bumps the development-dependencies group with 17 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core) | `7.26.10` | `7.27.1` |
@@ -5066,93 +4507,93 @@ github: false
   | [lint-staged](https://github.com/lint-staged/lint-staged) | `15.5.0` | `15.5.1` |
   | [msw](https://github.com/mswjs/msw) | `2.7.3` | `2.7.5` |
   | [undici](https://github.com/nodejs/undici) | `7.7.0` | `7.8.0` |
-
-
-
+  
+  
+  
   Updates `@babel/core` from 7.26.10 to 7.27.1
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.1/packages/babel-core)
-
+  
   Updates `@babel/preset-env` from 7.26.9 to 7.27.1
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.1/packages/babel-preset-env)
-
+  
   Updates `@babel/preset-react` from 7.26.3 to 7.27.1
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.1/packages/babel-preset-react)
-
+  
   Updates `@babel/preset-typescript` from 7.27.0 to 7.27.1
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.1/packages/babel-preset-typescript)
-
+  
   Updates `@rspack/cli` from 1.2.2 to 1.3.8
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.8/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.2.2 to 1.3.8
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.8/packages/rspack)
-
+  
   Updates `@sentry/webpack-plugin` from 3.2.2 to 3.3.1
   - [Release notes](https://github.com/getsentry/sentry-javascript-bundler-plugins/releases)
   - [Changelog](https://github.com/getsentry/sentry-javascript-bundler-plugins/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/getsentry/sentry-javascript-bundler-plugins/compare/3.2.2...3.3.1)
-
+  
   Updates `@types/node` from 22.14.0 to 22.15.3
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@typescript-eslint/eslint-plugin` from 8.29.0 to 8.31.1
   - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
   - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
   - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.31.1/packages/eslint-plugin)
-
+  
   Updates `@vitejs/plugin-react` from 4.3.4 to 4.4.1
   - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
   - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@4.4.1/packages/plugin-react)
-
+  
   Updates `@vitest/coverage-v8` from 3.1.1 to 3.1.2
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.2/packages/coverage-v8)
-
+  
   Updates `core-js` from 3.41.0 to 3.42.0
   - [Release notes](https://github.com/zloirock/core-js/releases)
   - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/zloirock/core-js/commits/v3.42.0/packages/core-js)
-
+  
   Updates `less` from 4.2.2 to 4.3.0
   - [Release notes](https://github.com/less/less.js/releases)
   - [Changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/less/less.js/compare/v4.2.2...v4.3.0)
-
+  
   Updates `less-loader` from 12.2.0 to 12.3.0
   - [Release notes](https://github.com/webpack-contrib/less-loader/releases)
   - [Changelog](https://github.com/webpack-contrib/less-loader/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/webpack-contrib/less-loader/compare/v12.2.0...v12.3.0)
-
+  
   Updates `lint-staged` from 15.5.0 to 15.5.1
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v15.5.0...v15.5.1)
-
+  
   Updates `msw` from 2.7.3 to 2.7.5
   - [Release notes](https://github.com/mswjs/msw/releases)
   - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/mswjs/msw/compare/v2.7.3...v2.7.5)
-
+  
   Updates `undici` from 7.7.0 to 7.8.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.7.0...v7.8.0)
-
+  
   Updates `vitest` from 3.1.1 to 3.1.2
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.2/packages/vitest)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@babel/core"
@@ -5253,13 +4694,13 @@ github: false
 
 
   Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 1 update: [typescript](https://github.com/microsoft/TypeScript).
-
-
+  
+  
   Updates `typescript` from 5.8.2 to 5.8.3
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release-publish.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.8.2...v5.8.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: typescript
@@ -5275,7 +4716,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 7 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [pymongo](https://github.com/mongodb/mongo-python-driver) | `4.11.3` | `4.12.1` |
@@ -5285,41 +4726,41 @@ github: false
   | [packaging](https://github.com/pypa/packaging) | `24.2` | `25.0` |
   | [pytest-httpserver](https://github.com/csernazs/pytest-httpserver) | `1.1.2` | `1.1.3` |
   | [stripe](https://github.com/stripe/stripe-python) | `11.5.0` | `12.0.1` |
-
-
-
+  
+  
+  
   Updates `pymongo` from 4.11.3 to 4.12.1
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.11.3...4.12.1)
-
+  
   Updates `certifi` from 2025.1.31 to 2025.4.26
   - [Commits](https://github.com/certifi/python-certifi/compare/2025.01.31...2025.04.26)
-
+  
   Updates `urllib3` from 2.3.0 to 2.4.0
   - [Release notes](https://github.com/urllib3/urllib3/releases)
   - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
   - [Commits](https://github.com/urllib3/urllib3/compare/2.3.0...2.4.0)
-
+  
   Updates `boto3` from 1.37.24 to 1.38.6
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.37.24...1.38.6)
-
+  
   Updates `packaging` from 24.2 to 25.0
   - [Release notes](https://github.com/pypa/packaging/releases)
   - [Changelog](https://github.com/pypa/packaging/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pypa/packaging/compare/24.2...25.0)
-
+  
   Updates `pytest-httpserver` from 1.1.2 to 1.1.3
   - [Release notes](https://github.com/csernazs/pytest-httpserver/releases)
   - [Changelog](https://github.com/csernazs/pytest-httpserver/blob/master/CHANGES.rst)
   - [Commits](https://github.com/csernazs/pytest-httpserver/compare/1.1.2...1.1.3)
-
+  
   Updates `stripe` from 11.5.0 to 12.0.1
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v11.5.0...v12.0.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pymongo
@@ -5368,7 +4809,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v6.3.4/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -5382,12 +4823,12 @@ github: false
 
 
   Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 1 update: [yaml](https://github.com/eemeli/yaml).
-
-
+  
+  
   Updates `yaml` from 2.7.1 to 2.8.0
   - [Release notes](https://github.com/eemeli/yaml/releases)
   - [Commits](https://github.com/eemeli/yaml/compare/v2.7.1...v2.8.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: yaml
@@ -5403,7 +4844,7 @@ github: false
 
 
   Bumps the development-dependencies group with 10 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@northern.tech/eslint-config](https://github.com/NorthernTechHQ/nt-gui) | `0.4.0` | `0.5.0` |
@@ -5416,63 +4857,63 @@ github: false
   | [lint-staged](https://github.com/lint-staged/lint-staged) | `15.5.1` | `16.1.0` |
   | [msw](https://github.com/mswjs/msw) | `2.7.5` | `2.8.7` |
   | [undici](https://github.com/nodejs/undici) | `7.8.0` | `7.10.0` |
-
-
-
+  
+  
+  
   Updates `@northern.tech/eslint-config` from 0.4.0 to 0.5.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/eslint-config-0.4.0...@northern.tech/eslint-config-0.5.0)
-
+  
   Updates `@rspack/cli` from 1.3.8 to 1.3.13
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.13/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.3.8 to 1.3.13
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.13/packages/rspack)
-
+  
   Updates `@sentry/webpack-plugin` from 3.3.1 to 3.5.0
   - [Release notes](https://github.com/getsentry/sentry-javascript-bundler-plugins/releases)
   - [Changelog](https://github.com/getsentry/sentry-javascript-bundler-plugins/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/getsentry/sentry-javascript-bundler-plugins/compare/3.3.1...3.5.0)
-
+  
   Updates `@types/node` from 22.15.3 to 22.15.29
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@typescript-eslint/eslint-plugin` from 8.32.1 to 8.33.0
   - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
   - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
   - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.33.0/packages/eslint-plugin)
-
+  
   Updates `@vitejs/plugin-react` from 4.4.1 to 4.5.0
   - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
   - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@4.5.0/packages/plugin-react)
-
+  
   Updates `@vitest/coverage-v8` from 3.1.2 to 3.1.4
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.4/packages/coverage-v8)
-
+  
   Updates `lint-staged` from 15.5.1 to 16.1.0
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v15.5.1...v16.1.0)
-
+  
   Updates `msw` from 2.7.5 to 2.8.7
   - [Release notes](https://github.com/mswjs/msw/releases)
   - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/mswjs/msw/compare/v2.7.5...v2.8.7)
-
+  
   Updates `undici` from 7.8.0 to 7.10.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.8.0...v7.10.0)
-
+  
   Updates `vitest` from 3.1.2 to 3.1.4
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.4/packages/vitest)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@northern.tech/eslint-config"
@@ -5543,23 +4984,23 @@ github: false
 
 
   Bumps the mui group with 3 updates in the /frontend directory: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
-
-
+  
+  
   Updates `@mui/icons-material` from 7.1.0 to 7.1.1
   - [Release notes](https://github.com/mui/material-ui/releases)
   - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/material-ui/commits/v7.1.1/packages/mui-icons-material)
-
+  
   Updates `@mui/material` from 7.1.0 to 7.1.1
   - [Release notes](https://github.com/mui/material-ui/releases)
   - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/material-ui/commits/v7.1.1/packages/mui-material)
-
+  
   Updates `@mui/x-date-pickers` from 8.2.0 to 8.5.0
   - [Release notes](https://github.com/mui/mui-x/releases)
   - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/mui-x/commits/v8.5.0/packages/x-date-pickers)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@mui/icons-material"
@@ -5585,7 +5026,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 5 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [boto3](https://github.com/boto/boto3) | `1.38.6` | `1.38.27` |
@@ -5593,31 +5034,31 @@ github: false
   | [pluggy](https://github.com/pytest-dev/pluggy) | `1.5.0` | `1.6.0` |
   | [redis](https://github.com/redis/redis-py) | `5.2.1` | `6.2.0` |
   | [pytest-xdist](https://github.com/pytest-dev/pytest-xdist) | `3.6.1` | `3.7.0` |
-
-
-
+  
+  
+  
   Updates `boto3` from 1.38.6 to 1.38.27
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.38.6...1.38.27)
-
+  
   Updates `cryptography` from 44.0.2 to 45.0.3
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/44.0.2...45.0.3)
-
+  
   Updates `pluggy` from 1.5.0 to 1.6.0
   - [Changelog](https://github.com/pytest-dev/pluggy/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pytest-dev/pluggy/compare/1.5.0...1.6.0)
-
+  
   Updates `redis` from 5.2.1 to 6.2.0
   - [Release notes](https://github.com/redis/redis-py/releases)
   - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
   - [Commits](https://github.com/redis/redis-py/compare/v5.2.1...v6.2.0)
-
+  
   Updates `pytest-xdist` from 3.6.1 to 3.7.0
   - [Release notes](https://github.com/pytest-dev/pytest-xdist/releases)
   - [Changelog](https://github.com/pytest-dev/pytest-xdist/blob/master/CHANGELOG.rst)
   - [Commits](https://github.com/pytest-dev/pytest-xdist/compare/v3.6.1...v3.7.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: boto3
@@ -5653,17 +5094,17 @@ github: false
 
 
   Bumps [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to 5.2.2 and updates ancestor dependency [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli). These dependencies need to be updated together.
-
-
+  
+  
   Updates `webpack-dev-server` from 5.2.0 to 5.2.2
   - [Release notes](https://github.com/webpack/webpack-dev-server/releases)
   - [Changelog](https://github.com/webpack/webpack-dev-server/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/webpack/webpack-dev-server/compare/v5.2.0...v5.2.2)
-
+  
   Updates `@rspack/cli` from 1.3.13 to 1.3.15
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.15/packages/rspack-cli)
-
+  
   ---
   updated-dependencies:
   - dependency-name: webpack-dev-server
@@ -5683,7 +5124,7 @@ github: false
   - [Release notes](https://github.com/psf/requests/releases)
   - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
   - [Commits](https://github.com/psf/requests/compare/v2.32.3...v2.32.4)
-
+  
   ---
   updated-dependencies:
   - dependency-name: requests
@@ -5697,13 +5138,13 @@ github: false
 
 
   Bumps the mui group in /frontend with 1 update: [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
-
-
+  
+  
   Updates `@mui/x-date-pickers` from 8.5.0 to 8.5.1
   - [Release notes](https://github.com/mui/mui-x/releases)
   - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/mui-x/commits/v8.5.1/packages/x-date-pickers)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@mui/x-date-pickers"
@@ -5722,7 +5163,7 @@ github: false
   - [Release notes](https://github.com/urllib3/urllib3/releases)
   - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
   - [Commits](https://github.com/urllib3/urllib3/compare/2.4.0...2.5.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: urllib3
@@ -5739,7 +5180,7 @@ github: false
   - [Release notes](https://github.com/go-viper/mapstructure/releases)
   - [Changelog](https://github.com/go-viper/mapstructure/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/go-viper/mapstructure/compare/v2.2.1...v2.3.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/go-viper/mapstructure/v2
@@ -5756,7 +5197,7 @@ github: false
   - [Release notes](https://github.com/python-pillow/Pillow/releases)
   - [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
   - [Commits](https://github.com/python-pillow/Pillow/compare/11.2.1...11.3.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pillow
@@ -5832,22 +5273,22 @@ github: false
 
 
   Bumps [on-headers](https://github.com/jshttp/on-headers), [express-session](https://github.com/expressjs/session) and [morgan](https://github.com/expressjs/morgan). These dependencies needed to be updated together.
-
+  
   Updates `on-headers` from 1.0.2 to 1.1.0
   - [Release notes](https://github.com/jshttp/on-headers/releases)
   - [Changelog](https://github.com/jshttp/on-headers/blob/master/HISTORY.md)
   - [Commits](https://github.com/jshttp/on-headers/compare/v1.0.2...v1.1.0)
-
+  
   Updates `express-session` from 1.18.1 to 1.18.2
   - [Release notes](https://github.com/expressjs/session/releases)
   - [Changelog](https://github.com/expressjs/session/blob/master/HISTORY.md)
   - [Commits](https://github.com/expressjs/session/compare/v1.18.1...v1.18.2)
-
+  
   Updates `morgan` from 1.10.0 to 1.10.1
   - [Release notes](https://github.com/expressjs/morgan/releases)
   - [Changelog](https://github.com/expressjs/morgan/blob/master/HISTORY.md)
   - [Commits](https://github.com/expressjs/morgan/compare/1.10.0...1.10.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: on-headers
@@ -5867,17 +5308,17 @@ github: false
 
 
   Bumps [on-headers](https://github.com/jshttp/on-headers) and [compression](https://github.com/expressjs/compression). These dependencies needed to be updated together.
-
+  
   Updates `on-headers` from 1.0.2 to 1.1.0
   - [Release notes](https://github.com/jshttp/on-headers/releases)
   - [Changelog](https://github.com/jshttp/on-headers/blob/master/HISTORY.md)
   - [Commits](https://github.com/jshttp/on-headers/compare/v1.0.2...v1.1.0)
-
+  
   Updates `compression` from 1.8.0 to 1.8.1
   - [Release notes](https://github.com/expressjs/compression/releases)
   - [Changelog](https://github.com/expressjs/compression/blob/master/HISTORY.md)
   - [Commits](https://github.com/expressjs/compression/compare/1.8.0...v1.8.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: on-headers
@@ -5896,7 +5337,7 @@ github: false
   Bumps [pbkdf2](https://github.com/crypto-browserify/pbkdf2) from 3.1.2 to 3.1.3.
   - [Changelog](https://github.com/browserify/pbkdf2/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/crypto-browserify/pbkdf2/compare/v3.1.2...v3.1.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pbkdf2
@@ -5913,7 +5354,7 @@ github: false
   - [Release notes](https://github.com/form-data/form-data/releases)
   - [Changelog](https://github.com/form-data/form-data/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/form-data/form-data/compare/v4.0.1...v4.0.4)
-
+  
   ---
   updated-dependencies:
   - dependency-name: form-data
@@ -5930,7 +5371,7 @@ github: false
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.10.0...v1.11.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: axios
@@ -5978,24 +5419,24 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 4 updates in the /backend/tests directory: [boto3](https://github.com/boto/boto3), [certifi](https://github.com/certifi/python-certifi), [cryptography](https://github.com/pyca/cryptography) and [stripe](https://github.com/stripe/stripe-python).
-
-
+  
+  
   Updates `boto3` from 1.39.0 to 1.40.0
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.39.0...1.40.0)
-
+  
   Updates `certifi` from 2025.6.15 to 2025.7.14
   - [Commits](https://github.com/certifi/python-certifi/compare/2025.06.15...2025.07.14)
-
+  
   Updates `cryptography` from 45.0.4 to 45.0.5
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/45.0.4...45.0.5)
-
+  
   Updates `stripe` from 12.2.0 to 12.4.0
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v12.2.0...v12.4.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: boto3
@@ -6026,7 +5467,7 @@ github: false
 
 
   Bumps the development-dependencies group with 16 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@northern.tech/eslint-config](https://github.com/NorthernTechHQ/nt-gui) | `0.5.0` | `0.6.0` |
@@ -6045,85 +5486,85 @@ github: false
   | [msw](https://github.com/mswjs/msw) | `2.10.4` | `2.10.5` |
   | [typescript](https://github.com/microsoft/TypeScript) | `5.7.3` | `5.9.2` |
   | [undici](https://github.com/nodejs/undici) | `7.12.0` | `7.14.0` |
-
-
-
+  
+  
+  
   Updates `@northern.tech/eslint-config` from 0.5.0 to 0.6.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/eslint-config-0.5.0...@northern.tech/eslint-config-0.6.0)
-
+  
   Updates `@northern.tech/prettier-config` from 0.2.0 to 0.2.1
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/prettier-config-0.2.0...@northern.tech/prettier-config-0.2.1)
-
+  
   Updates `@northern.tech/themes` from 0.2.0 to 0.3.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/themes-0.2.0...@northern.tech/themes-0.3.0)
-
+  
   Updates `@northern.tech/typescript-config` from 0.1.3 to 0.2.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/typescript-config-0.1.3...@northern.tech/typescript-config-0.2.0)
-
+  
   Updates `@rspack/cli` from 1.4.8 to 1.4.11
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.4.11/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.4.8 to 1.4.11
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.4.11/packages/rspack)
-
+  
   Updates `@sentry/webpack-plugin` from 4.0.0 to 4.1.1
   - [Release notes](https://github.com/getsentry/sentry-javascript-bundler-plugins/releases)
   - [Changelog](https://github.com/getsentry/sentry-javascript-bundler-plugins/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/getsentry/sentry-javascript-bundler-plugins/compare/4.0.0...4.1.1)
-
+  
   Updates `@testing-library/jest-dom` from 6.6.3 to 6.7.0
   - [Release notes](https://github.com/testing-library/jest-dom/releases)
   - [Changelog](https://github.com/testing-library/jest-dom/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/testing-library/jest-dom/compare/v6.6.3...v6.7.0)
-
+  
   Updates `@types/node` from 24.1.0 to 24.3.0
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@typescript-eslint/eslint-plugin` from 8.38.0 to 8.39.1
   - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
   - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
   - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.39.1/packages/eslint-plugin)
-
+  
   Updates `@vitejs/plugin-react` from 4.7.0 to 5.0.0
   - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
   - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@5.0.0/packages/plugin-react)
-
+  
   Updates `core-js` from 3.44.0 to 3.45.0
   - [Release notes](https://github.com/zloirock/core-js/releases)
   - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/zloirock/core-js/commits/v3.45.0/packages/core-js)
-
+  
   Updates `lint-staged` from 16.1.2 to 16.1.5
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v16.1.2...v16.1.5)
-
+  
   Updates `msw` from 2.10.4 to 2.10.5
   - [Release notes](https://github.com/mswjs/msw/releases)
   - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/mswjs/msw/compare/v2.10.4...v2.10.5)
-
+  
   Updates `typescript` from 5.7.3 to 5.9.2
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release-publish.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.7.3...v5.9.2)
-
+  
   Updates `undici` from 7.12.0 to 7.14.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.12.0...v7.14.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@northern.tech/eslint-config"
@@ -6216,7 +5657,7 @@ github: false
   Bumps [mermaid](https://github.com/mermaid-js/mermaid) from 11.9.0 to 11.10.1.
   - [Release notes](https://github.com/mermaid-js/mermaid/releases)
   - [Commits](https://github.com/mermaid-js/mermaid/compare/mermaid@11.9.0...mermaid@11.10.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: mermaid
@@ -6231,7 +5672,7 @@ github: false
 
   Bumps [github.com/ulikunitz/xz](https://github.com/ulikunitz/xz) from 0.5.12 to 0.5.14.
   - [Commits](https://github.com/ulikunitz/xz/compare/v0.5.12...v0.5.14)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/ulikunitz/xz
@@ -6246,7 +5687,7 @@ github: false
 
   Bumps the backend-tests-python-dependencies group with 1 update in the /backend/services/iot-manager/tests directory: [requests](https://github.com/psf/requests).
   Bumps the backend-tests-python-dependencies group with 9 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [pymongo](https://github.com/mongodb/mongo-python-driver) | `4.13.2` | `4.14.1` |
@@ -6258,54 +5699,54 @@ github: false
   | [filelock](https://github.com/tox-dev/py-filelock) | `3.18.0` | `3.19.1` |
   | [stripe](https://github.com/stripe/stripe-python) | `12.4.0` | `12.5.0` |
   | [redis](https://github.com/redis/redis-py) | `6.2.0` | `6.4.0` |
-
-
-
+  
+  
+  
   Updates `requests` from 2.32.4 to 2.32.5
   - [Release notes](https://github.com/psf/requests/releases)
   - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
   - [Commits](https://github.com/psf/requests/compare/v2.32.4...v2.32.5)
-
+  
   Updates `pymongo` from 4.13.2 to 4.14.1
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.13.2...4.14.1)
-
+  
   Updates `certifi` from 2025.7.14 to 2025.8.3
   - [Commits](https://github.com/certifi/python-certifi/compare/2025.07.14...2025.08.03)
-
+  
   Updates `requests` from 2.32.4 to 2.32.5
   - [Release notes](https://github.com/psf/requests/releases)
   - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
   - [Commits](https://github.com/psf/requests/compare/v2.32.4...v2.32.5)
-
+  
   Updates `azure-iot-hub` from 2.6.1 to 2.7.0
   - [Changelog](https://github.com/Azure/azure-iot-hub-python/blob/main/RELEASE%20INSTRUCTIONS.md)
   - [Commits](https://github.com/Azure/azure-iot-hub-python/commits)
-
+  
   Updates `boto3` from 1.40.0 to 1.40.21
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.40.0...1.40.21)
-
+  
   Updates `cryptography` from 45.0.5 to 45.0.7
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/45.0.5...45.0.7)
-
+  
   Updates `filelock` from 3.18.0 to 3.19.1
   - [Release notes](https://github.com/tox-dev/py-filelock/releases)
   - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
   - [Commits](https://github.com/tox-dev/py-filelock/compare/3.18.0...3.19.1)
-
+  
   Updates `stripe` from 12.4.0 to 12.5.0
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v12.4.0...v12.5.0)
-
+  
   Updates `redis` from 6.2.0 to 6.4.0
   - [Release notes](https://github.com/redis/redis-py/releases)
   - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
   - [Commits](https://github.com/redis/redis-py/compare/v6.2.0...v6.4.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: requests
@@ -6366,13 +5807,13 @@ github: false
 
 
   Bumps the backend-golang-dependencies group in /backend with 1 update: [github.com/redis/go-redis/v9](https://github.com/redis/go-redis).
-
-
+  
+  
   Updates `github.com/redis/go-redis/v9` from 9.12.1 to 9.13.0
   - [Release notes](https://github.com/redis/go-redis/releases)
   - [Changelog](https://github.com/redis/go-redis/blob/master/RELEASE-NOTES.md)
   - [Commits](https://github.com/redis/go-redis/compare/v9.12.1...v9.13.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/redis/go-redis/v9
@@ -6388,17 +5829,17 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 2 updates in the /backend/tests directory: [pytest](https://github.com/pytest-dev/pytest) and [boto3](https://github.com/boto/boto3).
-
-
+  
+  
   Updates `pytest` from 8.4.1 to 8.4.2
   - [Release notes](https://github.com/pytest-dev/pytest/releases)
   - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pytest-dev/pytest/compare/8.4.1...8.4.2)
-
+  
   Updates `boto3` from 1.40.21 to 1.40.24
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.40.21...1.40.24)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pytest
@@ -6422,7 +5863,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v7.1.5/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -6439,7 +5880,7 @@ github: false
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.11.0...v1.12.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: axios
@@ -6454,16 +5895,16 @@ github: false
 
   Bumps the backend-docker-compose-dependencies group with 2 updates in the / directory: traefik and nats.
   Bumps the backend-docker-compose-dependencies group with 2 updates in the /compose directory: redis and chrislusf/seaweedfs.
-
-
+  
+  
   Updates `traefik` from v3.1 to 3.5
-
+  
   Updates `nats` from 2.10 to 2.11
-
+  
   Updates `redis` from 7.2 to 8.2
-
+  
   Updates `chrislusf/seaweedfs` from 3.85 to 3.97
-
+  
   ---
   updated-dependencies:
   - dependency-name: traefik
@@ -6493,10 +5934,10 @@ github: false
 
 
   Bumps the backend-docker-compose-dependencies group with 1 update in the / directory: nats.
-
-
+  
+  
   Updates `nats` from 2.11 to 2.12
-
+  
   ---
   updated-dependencies:
   - dependency-name: nats
@@ -6512,7 +5953,7 @@ github: false
 
 
   Bumps the backend-golang-dependencies group with 12 updates in the /backend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [github.com/Azure/azure-sdk-for-go/sdk/azcore](https://github.com/Azure/azure-sdk-for-go) | `1.19.0` | `1.19.1` |
@@ -6527,82 +5968,82 @@ github: false
   | [github.com/redis/go-redis/v9](https://github.com/redis/go-redis) | `9.13.0` | `9.14.0` |
   | [github.com/spf13/viper](https://github.com/spf13/viper) | `1.20.1` | `1.21.0` |
   | [golang.org/x/net](https://github.com/golang/net) | `0.43.0` | `0.44.0` |
-
-
-
+  
+  
+  
   Updates `github.com/Azure/azure-sdk-for-go/sdk/azcore` from 1.19.0 to 1.19.1
   - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
   - [Changelog](https://github.com/Azure/azure-sdk-for-go/blob/main/documentation/sdk-breaking-changes-guide-migration.md)
   - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.19.0...sdk/azcore/v1.19.1)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2` from 1.38.3 to 1.39.2
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.38.3...v1.39.2)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/config` from 1.31.6 to 1.31.12
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.31.6...config/v1.31.12)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.18.10 to 1.18.16
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.18.10...config/v1.18.16)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.69.1 to 1.69.5
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/iot/v1.69.1...service/iot/v1.69.5)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.32.2 to 1.32.6
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.32.2...v1.32.6)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.87.3 to 1.88.3
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.87.3...service/s3/v1.88.3)
-
+  
   Updates `github.com/gin-gonic/gin` from 1.10.1 to 1.11.0
   - [Release notes](https://github.com/gin-gonic/gin/releases)
   - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/gin-gonic/gin/compare/v1.10.1...v1.11.0)
-
+  
   Updates `github.com/nats-io/nats-server/v2` from 2.11.8 to 2.12.0
   - [Release notes](https://github.com/nats-io/nats-server/releases)
   - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
   - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.8...v2.12.0)
-
+  
   Updates `github.com/nats-io/nats.go` from 1.45.0 to 1.46.1
   - [Release notes](https://github.com/nats-io/nats.go/releases)
   - [Commits](https://github.com/nats-io/nats.go/compare/v1.45.0...v1.46.1)
-
+  
   Updates `github.com/redis/go-redis/v9` from 9.13.0 to 9.14.0
   - [Release notes](https://github.com/redis/go-redis/releases)
   - [Changelog](https://github.com/redis/go-redis/blob/master/RELEASE-NOTES.md)
   - [Commits](https://github.com/redis/go-redis/compare/v9.13.0...v9.14.0)
-
+  
   Updates `github.com/spf13/viper` from 1.20.1 to 1.21.0
   - [Release notes](https://github.com/spf13/viper/releases)
   - [Commits](https://github.com/spf13/viper/compare/v1.20.1...v1.21.0)
-
+  
   Updates `golang.org/x/crypto` from 0.41.0 to 0.42.0
   - [Commits](https://github.com/golang/crypto/compare/v0.41.0...v0.42.0)
-
+  
   Updates `golang.org/x/net` from 0.43.0 to 0.44.0
   - [Commits](https://github.com/golang/net/compare/v0.43.0...v0.44.0)
-
+  
   Updates `golang.org/x/sys` from 0.35.0 to 0.36.0
   - [Commits](https://github.com/golang/sys/compare/v0.35.0...v0.36.0)
-
+  
   Updates `golang.org/x/term` from 0.34.0 to 0.35.0
   - [Commits](https://github.com/golang/term/compare/v0.34.0...v0.35.0)
-
+  
   Updates `golang.org/x/time` from 0.12.0 to 0.13.0
   - [Commits](https://github.com/golang/time/compare/v0.12.0...v0.13.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/azcore
@@ -6700,7 +6141,7 @@ github: false
   Bumps [github.com/quic-go/quic-go](https://github.com/quic-go/quic-go) from 0.54.0 to 0.54.1.
   - [Release notes](https://github.com/quic-go/quic-go/releases)
   - [Commits](https://github.com/quic-go/quic-go/compare/v0.54.0...v0.54.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/quic-go/quic-go
@@ -6717,7 +6158,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v7.1.11/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -6734,7 +6175,7 @@ github: false
   - [Release notes](https://github.com/validatorjs/validator.js/releases)
   - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.15...13.15.20)
-
+  
   ---
   updated-dependencies:
   - dependency-name: validator
@@ -6751,7 +6192,7 @@ github: false
   - [Release notes](https://github.com/validatorjs/validator.js/releases)
   - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.15...13.15.20)
-
+  
   ---
   updated-dependencies:
   - dependency-name: validator
@@ -6765,10 +6206,10 @@ github: false
 
 
   Bumps the backend-docker-compose-dependencies group with 1 update in the /compose directory: chrislusf/seaweedfs.
-
-
+  
+  
   Updates `chrislusf/seaweedfs` from 3.97 to 3.99
-
+  
   ---
   updated-dependencies:
   - dependency-name: chrislusf/seaweedfs
@@ -6784,7 +6225,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 17 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [attrs](https://github.com/sponsors/hynek) | `25.3.0` | `25.4.0` |
@@ -6804,87 +6245,87 @@ github: false
   | [stripe](https://github.com/stripe/stripe-python) | `12.5.0` | `13.0.1` |
   | [redis](https://github.com/redis/redis-py) | `6.4.0` | `7.0.0` |
   | [pydantic](https://github.com/pydantic/pydantic) | `2.11.7` | `2.12.3` |
-
-
-
+  
+  
+  
   Updates `attrs` from 25.3.0 to 25.4.0
   - [Commits](https://github.com/sponsors/hynek/commits)
-
+  
   Updates `boto3` from 1.40.24 to 1.40.58
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.40.24...1.40.58)
-
+  
   Updates `certifi` from 2025.8.3 to 2025.10.5
   - [Commits](https://github.com/certifi/python-certifi/compare/2025.08.03...2025.10.05)
-
+  
   Updates `cffi` from 1.17.1 to 2.0.0
   - [Release notes](https://github.com/python-cffi/cffi/releases)
   - [Commits](https://github.com/python-cffi/cffi/compare/v1.17.1...v2.0.0)
-
+  
   Updates `cryptography` from 45.0.7 to 46.0.3
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/45.0.7...46.0.3)
-
+  
   Updates `filelock` from 3.19.1 to 3.20.0
   - [Release notes](https://github.com/tox-dev/py-filelock/releases)
   - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
   - [Commits](https://github.com/tox-dev/py-filelock/compare/3.19.1...3.20.0)
-
+  
   Updates `idna` from 3.10 to 3.11
   - [Release notes](https://github.com/kjd/idna/releases)
   - [Changelog](https://github.com/kjd/idna/blob/master/HISTORY.rst)
   - [Commits](https://github.com/kjd/idna/compare/v3.10...v3.11)
-
+  
   Updates `iniconfig` from 2.1.0 to 2.3.0
   - [Release notes](https://github.com/pytest-dev/iniconfig/releases)
   - [Changelog](https://github.com/pytest-dev/iniconfig/blob/main/CHANGELOG)
   - [Commits](https://github.com/pytest-dev/iniconfig/compare/v2.1.0...v2.3.0)
-
+  
   Updates `kubernetes` from 33.1.0 to 34.1.0
   - [Release notes](https://github.com/kubernetes-client/python/releases)
   - [Changelog](https://github.com/kubernetes-client/python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/kubernetes-client/python/compare/v33.1.0...v34.1.0)
-
+  
   Updates `pillow` from 11.3.0 to 12.0.0
   - [Release notes](https://github.com/python-pillow/Pillow/releases)
   - [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
   - [Commits](https://github.com/python-pillow/Pillow/compare/11.3.0...12.0.0)
-
+  
   Updates `pycparser` from 2.22 to 2.23
   - [Release notes](https://github.com/eliben/pycparser/releases)
   - [Changelog](https://github.com/eliben/pycparser/blob/main/CHANGES)
   - [Commits](https://github.com/eliben/pycparser/compare/release_v2.22...release_v2.23)
-
+  
   Updates `pymongo` from 4.14.1 to 4.15.3
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.14.1...4.15.3)
-
+  
   Updates `pyparsing` from 3.2.3 to 3.2.5
   - [Release notes](https://github.com/pyparsing/pyparsing/releases)
   - [Changelog](https://github.com/pyparsing/pyparsing/blob/master/CHANGES)
   - [Commits](https://github.com/pyparsing/pyparsing/compare/3.2.3...3.2.5)
-
+  
   Updates `pyyaml` from 6.0.2 to 6.0.3
   - [Release notes](https://github.com/yaml/pyyaml/releases)
   - [Changelog](https://github.com/yaml/pyyaml/blob/6.0.3/CHANGES)
   - [Commits](https://github.com/yaml/pyyaml/compare/6.0.2...6.0.3)
-
+  
   Updates `stripe` from 12.5.0 to 13.0.1
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v12.5.0...v13.0.1)
-
+  
   Updates `redis` from 6.4.0 to 7.0.0
   - [Release notes](https://github.com/redis/redis-py/releases)
   - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
   - [Commits](https://github.com/redis/redis-py/compare/v6.4.0...v7.0.0)
-
+  
   Updates `pydantic` from 2.11.7 to 2.12.3
   - [Release notes](https://github.com/pydantic/pydantic/releases)
   - [Changelog](https://github.com/pydantic/pydantic/blob/main/HISTORY.md)
   - [Commits](https://github.com/pydantic/pydantic/compare/v2.11.7...v2.12.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: attrs
@@ -6982,7 +6423,7 @@ github: false
   Bumps [js-yaml](https://github.com/nodeca/js-yaml) from 4.1.0 to 4.1.1.
   - [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/nodeca/js-yaml/compare/4.1.0...4.1.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: js-yaml
@@ -6997,7 +6438,7 @@ github: false
 
   Bumps [golang.org/x/crypto](https://github.com/golang/crypto) from 0.43.0 to 0.45.0.
   - [Commits](https://github.com/golang/crypto/compare/v0.43.0...v0.45.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang.org/x/crypto
@@ -7076,7 +6517,7 @@ github: false
 
 
   Enabling logging just overflows the log buffer.
-
+  
   This reverts commit 6d164c4c70d1fff7d28e88a50390f8afb676c814.
 - "test: Unit tests for configuring rate limits"
  ([4ef01b1](https://github.com/mendersoftware/mender-server-enterprise/commit/4ef01b1a66d5f20e10d587fbdfc9d3febe14ee8e))  by @alfrunes
@@ -7201,13 +6642,13 @@ github: false
   Limit the max length of `name` (aka `Release name` in the gui),
   `type` and `device types compatible` fields in `MultipartGenerateImageMsg`
   (used by single file uploads) to 256 characters.
-
+  
   There has been introduced a limit of 256 characters to the corresponding
   fields in mender-artifact:
       https://github.com/mendersoftware/mender-artifact/commit/ddd821f8a5150fb8a3186b337525f17b2757599c
   causing uploads that do not abide by this limit to fail silently in the
   background when being processed by the workflow worker.
-
+  
   With this input validation we provide an explicit error to the user in
   this case.
 
@@ -7282,7 +6723,7 @@ github: false
 
 
 - *(deployments)* Add missing delta generation status fields
-([MEN-9064](https://northerntech.atlassian.net/browse/MEN-9064)) ([4acc8c1](https://github.com/mendersoftware/mender-server-enterprise/commit/4acc8c15512d008060f361322fe03872420f6c8e))
+([MEN-9064](https://northerntech.atlassian.net/browse/MEN-9064)) ([4acc8c1](https://github.com/mendersoftware/mender-server-enterprise/commit/4acc8c15512d008060f361322fe03872420f6c8e)) 
 
 
 
@@ -8179,7 +7620,7 @@ github: false
   (resolved by consulting the /.well-known/openid-configuration of the IDP) we
   default to response_mode=query in the URL generated by
   /oidc/:provider/start.
-
+  
   The "query" response_mode implies that the HTTP
   method of the callback request should be `GET` and we must therefore
   support it.
@@ -8237,7 +7678,7 @@ github: false
 
   This retry mechanism has no automatic Delay, so the retries are made in
   sequence, and this is useless and detrimental to the load.
-
+  
   Removing the retries, while waiting for a more robust approach, like
   retries with delays and workflows autoscaling.
 
@@ -8376,7 +7817,7 @@ github: false
   in the /services/ directory (at least on Mac). This leads to test
   execution failing midway. A simple solution is to keep only directories
   using the `dir` function.
-
+  
   In addition, I believe the ordering produced by `wildward` is not
   deterministic, so I added a call to `sort` as well to ensure tests are
   executed in a consistent order (alphabetical).
@@ -8567,7 +8008,7 @@ github: false
 
 
 - *(deployments)* Update delta objects to reflect consolidated objects
- ([b3faf3b](https://github.com/mendersoftware/mender-server-enterprise/commit/b3faf3bc241eb8ae418b44b486a78e7a18b3c338))
+ ([b3faf3b](https://github.com/mendersoftware/mender-server-enterprise/commit/b3faf3bc241eb8ae418b44b486a78e7a18b3c338)) 
 
 
 
@@ -8894,7 +8335,7 @@ github: false
   A new experimental API endpoint is added for invoking LLM to explain
   device logs on failing deployments. The API is only available on consent
   from an admin (provided through useradm global settings).
-
+  
   The feature is experimental and the API may change in the future. For on
   premise instances the feature is disabled by default and requires
   integrating the service with an LLM (see `/etc/deployments/config.yaml`).
@@ -9044,7 +8485,7 @@ github: false
    - 15 requests/minute for checkUpdate
    - 15 requests/minute for submitInventory
    - 30 requests/minute for all other operations
-
+  
    For micro device tier the ratelimits are:
    - 1 request/day for checkUpdate
    - 1 requests/14days for submitInventory
@@ -9571,7 +9012,7 @@ github: false
 
 
   Added the following configuration parameters:
-
+  
   ```yaml
   ratelimits:
     # auth configures ratelimits for authenticated requests.
@@ -9659,7 +9100,7 @@ github: false
 
 
   POST /api/management/v2/useradm/support/feedback/:form_id
-
+  
   The new endpoint accepts a form response with user feedback. There are
   currently two `form_id` defined: "product" and "feat.ai" for general
   product feedback and feedback specific to the experimental AI feature.
@@ -9847,7 +9288,7 @@ github: false
   Support locking the SSO configuration for the child tenants
   to the configuration given by the parent.
 - Enable server-side generation of delta artifacts by default for enterprise tenants
-([MEN-7703](https://northerntech.atlassian.net/browse/MEN-7703)) ([ab2b3cf](https://github.com/mendersoftware/mender-server-enterprise/commit/ab2b3cfe2d53b9fc2ac435565e9c2c4d43adc8a9))
+([MEN-7703](https://northerntech.atlassian.net/browse/MEN-7703)) ([ab2b3cf](https://github.com/mendersoftware/mender-server-enterprise/commit/ab2b3cfe2d53b9fc2ac435565e9c2c4d43adc8a9)) 
 
 
 
@@ -9897,7 +9338,7 @@ github: false
 
 
 - *(deployments)* Consolidate generate delta jobs and details
- ([07cead1](https://github.com/mendersoftware/mender-server-enterprise/commit/07cead1e1af683f02e06212449ad390b6e1bf52c))
+ ([07cead1](https://github.com/mendersoftware/mender-server-enterprise/commit/07cead1e1af683f02e06212449ad390b6e1bf52c)) 
 
 
 
@@ -9972,7 +9413,7 @@ github: false
   + limit report retrieval + visibility to reasonably safe request counts
   - this might reduce availability of dashboard widgets for more users, but until backend support arrives we'll remain limited
   - in order to handle the reduced availability & measure interest a support note was added
-
+  
   - to account for the improbability of return of the reporting service the reliance on this was removed too
 
 - *(gui)* Aligned delta artifact generation settings w/ updated design
@@ -10188,7 +9629,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 6 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [pymongo](https://github.com/mongodb/mongo-python-driver) | `4.10.1` | `4.11` |
@@ -10197,34 +9638,34 @@ github: false
   | [semver](https://github.com/python-semver/python-semver) | `3.0.2` | `3.0.4` |
   | [stripe](https://github.com/stripe/stripe-python) | `11.4.1` | `11.5.0` |
   | [attrs](https://github.com/sponsors/hynek) | `24.3.0` | `25.1.0` |
-
-
-
+  
+  
+  
   Updates `pymongo` from 4.10.1 to 4.11
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.10.1...4.11)
-
+  
   Updates `certifi` from 2024.12.14 to 2025.1.31
   - [Commits](https://github.com/certifi/python-certifi/compare/2024.12.14...2025.01.31)
-
+  
   Updates `boto3` from 1.36.5 to 1.36.11
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.36.5...1.36.11)
-
+  
   Updates `semver` from 3.0.2 to 3.0.4
   - [Release notes](https://github.com/python-semver/python-semver/releases)
   - [Changelog](https://github.com/python-semver/python-semver/blob/master/CHANGELOG.rst)
   - [Commits](https://github.com/python-semver/python-semver/compare/3.0.2...3.0.4)
-
+  
   Updates `stripe` from 11.4.1 to 11.5.0
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v11.4.1...v11.5.0)
-
+  
   Updates `attrs` from 24.3.0 to 25.1.0
   - [Commits](https://github.com/sponsors/hynek/commits)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pymongo
@@ -10259,7 +9700,7 @@ github: false
 
 
   Bumps the backend-golang-dependencies group in /backend with 6 updates:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [github.com/aws/aws-sdk-go-v2](https://github.com/aws/aws-sdk-go-v2) | `1.33.0` | `1.36.0` |
@@ -10268,38 +9709,38 @@ github: false
   | [github.com/aws/aws-sdk-go-v2/service/iot](https://github.com/aws/aws-sdk-go-v2) | `1.62.4` | `1.62.7` |
   | [github.com/aws/aws-sdk-go-v2/service/iotdataplane](https://github.com/aws/aws-sdk-go-v2) | `1.26.11` | `1.26.14` |
   | [github.com/aws/aws-sdk-go-v2/service/s3](https://github.com/aws/aws-sdk-go-v2) | `1.74.0` | `1.75.2` |
-
-
+  
+  
   Updates `github.com/aws/aws-sdk-go-v2` from 1.33.0 to 1.36.0
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.33.0...v1.36.0)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/config` from 1.29.1 to 1.29.4
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.29.1...config/v1.29.4)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.17.54 to 1.17.57
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/credentials/v1.17.54...credentials/v1.17.57)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.62.4 to 1.62.7
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/iot/v1.62.4...service/iot/v1.62.7)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.26.11 to 1.26.14
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.26.11...service/signer/v1.26.14)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.74.0 to 1.75.2
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.74.0...service/s3/v1.75.2)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/aws/aws-sdk-go-v2
@@ -10334,7 +9775,7 @@ github: false
 
 
   Bumps node from 23.6.1-alpine3.20 to 23.7.0-alpine3.20.
-
+  
   ---
   updated-dependencies:
   - dependency-name: node
@@ -10348,20 +9789,20 @@ github: false
 
 
   Bumps the playwright group in /frontend/tests/e2e_tests with 3 updates: [@playwright/test](https://github.com/microsoft/playwright), [playwright](https://github.com/microsoft/playwright) and [playwright-chromium](https://github.com/microsoft/playwright).
-
-
+  
+  
   Updates `@playwright/test` from 1.50.0 to 1.50.1
   - [Release notes](https://github.com/microsoft/playwright/releases)
   - [Commits](https://github.com/microsoft/playwright/compare/v1.50.0...v1.50.1)
-
+  
   Updates `playwright` from 1.50.0 to 1.50.1
   - [Release notes](https://github.com/microsoft/playwright/releases)
   - [Commits](https://github.com/microsoft/playwright/compare/v1.50.0...v1.50.1)
-
+  
   Updates `playwright-chromium` from 1.50.0 to 1.50.1
   - [Release notes](https://github.com/microsoft/playwright/releases)
   - [Commits](https://github.com/microsoft/playwright/compare/v1.50.0...v1.50.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@playwright/test"
@@ -10384,27 +9825,27 @@ github: false
 
 
   Bumps the development-dependencies group in /frontend with 4 updates: [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core), [@babel/preset-env](https://github.com/babel/babel/tree/HEAD/packages/babel-preset-env), [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) and [lint-staged](https://github.com/lint-staged/lint-staged).
-
-
+  
+  
   Updates `@babel/core` from 7.26.0 to 7.26.7
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.26.7/packages/babel-core)
-
+  
   Updates `@babel/preset-env` from 7.26.0 to 7.26.7
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.26.7/packages/babel-preset-env)
-
+  
   Updates `@types/node` from 22.10.10 to 22.13.0
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `lint-staged` from 15.4.2 to 15.4.3
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v15.4.2...v15.4.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@babel/core"
@@ -10431,21 +9872,21 @@ github: false
 
 
   Bumps the production-dependencies group in /frontend with 3 updates: [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit), [@stripe/stripe-js](https://github.com/stripe/stripe-js) and [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom).
-
-
+  
+  
   Updates `@reduxjs/toolkit` from 2.5.0 to 2.5.1
   - [Release notes](https://github.com/reduxjs/redux-toolkit/releases)
   - [Commits](https://github.com/reduxjs/redux-toolkit/compare/v2.5.0...v2.5.1)
-
+  
   Updates `@stripe/stripe-js` from 5.5.0 to 5.6.0
   - [Release notes](https://github.com/stripe/stripe-js/releases)
   - [Commits](https://github.com/stripe/stripe-js/compare/v5.5.0...v5.6.0)
-
+  
   Updates `react-router-dom` from 7.1.3 to 7.1.5
   - [Release notes](https://github.com/remix-run/react-router/releases)
   - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)
   - [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.1.5/packages/react-router-dom)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@reduxjs/toolkit"
@@ -10468,23 +9909,23 @@ github: false
 
 
   Bumps the mui group in /frontend with 3 updates: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
-
-
+  
+  
   Updates `@mui/icons-material` from 6.4.1 to 6.4.2
   - [Release notes](https://github.com/mui/material-ui/releases)
   - [Changelog](https://github.com/mui/material-ui/blob/v6.4.2/CHANGELOG.md)
   - [Commits](https://github.com/mui/material-ui/commits/v6.4.2/packages/mui-icons-material)
-
+  
   Updates `@mui/material` from 6.4.1 to 6.4.2
   - [Release notes](https://github.com/mui/material-ui/releases)
   - [Changelog](https://github.com/mui/material-ui/blob/v6.4.2/CHANGELOG.md)
   - [Commits](https://github.com/mui/material-ui/commits/v6.4.2/packages/mui-material)
-
+  
   Updates `@mui/x-date-pickers` from 7.24.1 to 7.25.0
   - [Release notes](https://github.com/mui/mui-x/releases)
   - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/mui-x/commits/v7.25.0/packages/x-date-pickers)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@mui/icons-material"
@@ -10518,7 +9959,7 @@ github: false
   Bumps [cryptography](https://github.com/pyca/cryptography) from 44.0.0 to 44.0.1.
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/44.0.0...44.0.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: cryptography
@@ -10532,7 +9973,7 @@ github: false
 
   Bumps [elliptic](https://github.com/indutny/elliptic) from 6.5.7 to 6.6.1.
   - [Commits](https://github.com/indutny/elliptic/compare/v6.5.7...v6.6.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: elliptic
@@ -10545,21 +9986,21 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 3 updates in the /backend/tests directory: [pymongo](https://github.com/mongodb/mongo-python-driver), [boto3](https://github.com/boto/boto3) and [websockets](https://github.com/python-websockets/websockets).
-
-
+  
+  
   Updates `pymongo` from 4.11 to 4.11.1
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/4.11.1/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.11...4.11.1)
-
+  
   Updates `boto3` from 1.36.11 to 1.36.21
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.36.11...1.36.21)
-
+  
   Updates `websockets` from 14.2 to 15.0
   - [Release notes](https://github.com/python-websockets/websockets/releases)
   - [Commits](https://github.com/python-websockets/websockets/compare/14.2...15.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pymongo
@@ -10591,30 +10032,30 @@ github: false
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/reporting directory: golang.
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/useradm directory: golang.
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/workflows directory: golang.
-
-
+  
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `alpine` from 3.21.2 to 3.21.3
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   Updates `golang` from 1.23.5 to 1.24.0
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang
@@ -10669,7 +10110,7 @@ github: false
 
 
   Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 5 updates:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@bgotink/playwright-coverage](https://github.com/bgotink/playwright-coverage) | `0.3.0` | `0.3.1` |
@@ -10677,30 +10118,30 @@ github: false
   | [pixelmatch](https://github.com/mapbox/pixelmatch) | `6.0.0` | `7.1.0` |
   | [typescript](https://github.com/microsoft/TypeScript) | `5.7.3` | `5.8.2` |
   | [uuid](https://github.com/uuidjs/uuid) | `11.0.5` | `11.1.0` |
-
-
+  
+  
   Updates `@bgotink/playwright-coverage` from 0.3.0 to 0.3.1
   - [Commits](https://github.com/bgotink/playwright-coverage/compare/v0.3.0...v0.3.1)
-
+  
   Updates `axios` from 1.7.9 to 1.8.1
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.7.9...v1.8.1)
-
+  
   Updates `pixelmatch` from 6.0.0 to 7.1.0
   - [Release notes](https://github.com/mapbox/pixelmatch/releases)
   - [Commits](https://github.com/mapbox/pixelmatch/compare/v6.0.0...v7.1.0)
-
+  
   Updates `typescript` from 5.7.3 to 5.8.2
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.7.3...v5.8.2)
-
+  
   Updates `uuid` from 11.0.5 to 11.1.0
   - [Release notes](https://github.com/uuidjs/uuid/releases)
   - [Changelog](https://github.com/uuidjs/uuid/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/uuidjs/uuid/compare/v11.0.5...v11.1.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@bgotink/playwright-coverage"
@@ -10731,7 +10172,7 @@ github: false
 
 
   Bumps the development-dependencies group with 10 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli) | `1.2.2` | `1.2.6` |
@@ -10744,58 +10185,58 @@ github: false
   | [typescript](https://github.com/microsoft/TypeScript) | `5.7.3` | `5.8.2` |
   | [undici](https://github.com/nodejs/undici) | `7.3.0` | `7.4.0` |
   | [webpack-license-plugin](https://github.com/codepunkt/webpack-license-plugin) | `4.5.0` | `4.5.1` |
-
-
-
+  
+  
+  
   Updates `@rspack/cli` from 1.2.2 to 1.2.6
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.2.6/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.2.2 to 1.2.6
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.2.6/packages/rspack)
-
+  
   Updates `@types/node` from 22.13.4 to 22.13.8
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@vitest/coverage-v8` from 3.0.5 to 3.0.7
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.0.7/packages/coverage-v8)
-
+  
   Updates `core-js` from 3.40.0 to 3.41.0
   - [Release notes](https://github.com/zloirock/core-js/releases)
   - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/zloirock/core-js/commits/v3.41.0/packages/core-js)
-
+  
   Updates `msw` from 2.7.0 to 2.7.3
   - [Release notes](https://github.com/mswjs/msw/releases)
   - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/mswjs/msw/compare/v2.7.0...v2.7.3)
-
+  
   Updates `prettier` from 3.5.1 to 3.5.2
   - [Release notes](https://github.com/prettier/prettier/releases)
   - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/prettier/prettier/compare/3.5.1...3.5.2)
-
+  
   Updates `typescript` from 5.7.3 to 5.8.2
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.7.3...v5.8.2)
-
+  
   Updates `undici` from 7.3.0 to 7.4.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.3.0...v7.4.0)
-
+  
   Updates `vitest` from 3.0.5 to 3.0.7
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.0.7/packages/vitest)
-
+  
   Updates `webpack-license-plugin` from 4.5.0 to 4.5.1
   - [Release notes](https://github.com/codepunkt/webpack-license-plugin/releases)
   - [Changelog](https://github.com/codepunkt/webpack-license-plugin/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/codepunkt/webpack-license-plugin/compare/v4.5.0...v4.5.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@rspack/cli"
@@ -10853,7 +10294,7 @@ github: false
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.8.1...v1.8.2)
-
+  
   ---
   updated-dependencies:
   - dependency-name: axios
@@ -10869,7 +10310,7 @@ github: false
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.8.1...v1.8.2)
-
+  
   ---
   updated-dependencies:
   - dependency-name: axios
@@ -10883,7 +10324,7 @@ github: false
 
   Bumps [golang.org/x/net](https://github.com/golang/net) from 0.35.0 to 0.36.0.
   - [Commits](https://github.com/golang/net/compare/v0.35.0...v0.36.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang.org/x/net
@@ -10899,7 +10340,7 @@ github: false
   - [Release notes](https://github.com/golang-jwt/jwt/releases)
   - [Changelog](https://github.com/golang-jwt/jwt/blob/main/VERSION_HISTORY.md)
   - [Commits](https://github.com/golang-jwt/jwt/compare/v4.5.1...v4.5.2)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/golang-jwt/jwt/v4
@@ -10915,7 +10356,7 @@ github: false
   - [Release notes](https://github.com/node-saml/xml-crypto/releases)
   - [Changelog](https://github.com/node-saml/xml-crypto/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/node-saml/xml-crypto/compare/v2.1.5...v2.1.6)
-
+  
   ---
   updated-dependencies:
   - dependency-name: xml-crypto
@@ -10931,7 +10372,7 @@ github: false
   - [Release notes](https://github.com/redis/go-redis/releases)
   - [Changelog](https://github.com/redis/go-redis/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/redis/go-redis/compare/v9.7.1...v9.7.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/redis/go-redis/v9
@@ -10947,7 +10388,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/v6.2.4/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v6.2.4/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -10960,12 +10401,12 @@ github: false
 
 
   Bumps the playwright group in /frontend/tests/e2e_tests with 1 update: [@playwright/test](https://github.com/microsoft/playwright).
-
-
+  
+  
   Updates `@playwright/test` from 1.50.1 to 1.51.1
   - [Release notes](https://github.com/microsoft/playwright/releases)
   - [Commits](https://github.com/microsoft/playwright/compare/v1.50.1...v1.51.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@playwright/test"
@@ -10990,28 +10431,28 @@ github: false
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/reporting directory: golang.
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/useradm directory: golang.
   Bumps the backend-docker-dependencies group with 1 update in the /backend/services/workflows directory: golang.
-
-
+  
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   Updates `golang` from 1.24.0 to 1.24.2
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang
@@ -11072,7 +10513,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 10 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [pytest](https://github.com/pytest-dev/pytest) | `8.3.4` | `8.3.5` |
@@ -11085,54 +10526,54 @@ github: false
   | [pillow](https://github.com/python-pillow/Pillow) | `11.1.0` | `11.2.0` |
   | [pyparsing](https://github.com/pyparsing/pyparsing) | `3.2.1` | `3.2.3` |
   | [websockets](https://github.com/python-websockets/websockets) | `15.0` | `15.0.1` |
-
-
-
+  
+  
+  
   Updates `pytest` from 8.3.4 to 8.3.5
   - [Release notes](https://github.com/pytest-dev/pytest/releases)
   - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pytest-dev/pytest/compare/8.3.4...8.3.5)
-
+  
   Updates `pymongo` from 4.11.1 to 4.11.3
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/4.11.3/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.11.1...4.11.3)
-
+  
   Updates `attrs` from 25.1.0 to 25.3.0
   - [Commits](https://github.com/sponsors/hynek/commits)
-
+  
   Updates `boto3` from 1.37.4 to 1.37.24
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.37.4...1.37.24)
-
+  
   Updates `cryptography` from 44.0.1 to 44.0.2
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/44.0.1...44.0.2)
-
+  
   Updates `filelock` from 3.17.0 to 3.18.0
   - [Release notes](https://github.com/tox-dev/py-filelock/releases)
   - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
   - [Commits](https://github.com/tox-dev/py-filelock/compare/3.17.0...3.18.0)
-
+  
   Updates `iniconfig` from 2.0.0 to 2.1.0
   - [Release notes](https://github.com/pytest-dev/iniconfig/releases)
   - [Changelog](https://github.com/pytest-dev/iniconfig/blob/main/CHANGELOG)
   - [Commits](https://github.com/pytest-dev/iniconfig/compare/v2.0.0...v2.1.0)
-
+  
   Updates `pillow` from 11.1.0 to 11.2.0
   - [Release notes](https://github.com/python-pillow/Pillow/releases)
   - [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
   - [Commits](https://github.com/python-pillow/Pillow/compare/11.1.0...11.2.0)
-
+  
   Updates `pyparsing` from 3.2.1 to 3.2.3
   - [Release notes](https://github.com/pyparsing/pyparsing/releases)
   - [Changelog](https://github.com/pyparsing/pyparsing/blob/master/CHANGES)
   - [Commits](https://github.com/pyparsing/pyparsing/compare/3.2.1...3.2.3)
-
+  
   Updates `websockets` from 15.0 to 15.0.1
   - [Release notes](https://github.com/python-websockets/websockets/releases)
   - [Commits](https://github.com/python-websockets/websockets/compare/15.0...15.0.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pytest
@@ -11193,7 +10634,7 @@ github: false
 
 
   Bumps the development-dependencies group with 13 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core) | `7.26.9` | `7.26.10` |
@@ -11209,73 +10650,73 @@ github: false
   | [prettier](https://github.com/prettier/prettier) | `3.5.2` | `3.5.3` |
   | [typescript](https://github.com/microsoft/TypeScript) | `5.7.3` | `5.8.2` |
   | [undici](https://github.com/nodejs/undici) | `7.4.0` | `7.7.0` |
-
-
-
+  
+  
+  
   Updates `@babel/core` from 7.26.9 to 7.26.10
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.26.10/packages/babel-core)
-
+  
   Updates `@babel/preset-typescript` from 7.26.0 to 7.27.0
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.0/packages/babel-preset-typescript)
-
+  
   Updates `@rspack/cli` from 1.2.2 to 1.3.2
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.2/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.2.2 to 1.3.2
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.2/packages/rspack)
-
+  
   Updates `@testing-library/react` from 16.2.0 to 16.3.0
   - [Release notes](https://github.com/testing-library/react-testing-library/releases)
   - [Changelog](https://github.com/testing-library/react-testing-library/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/testing-library/react-testing-library/compare/v16.2.0...v16.3.0)
-
+  
   Updates `@types/node` from 22.13.8 to 22.14.0
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@typescript-eslint/eslint-plugin` from 8.25.0 to 8.29.0
   - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
   - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
   - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.29.0/packages/eslint-plugin)
-
+  
   Updates `@vitest/coverage-v8` from 3.0.7 to 3.1.1
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.1/packages/coverage-v8)
-
+  
   Updates `autoprefixer` from 10.4.20 to 10.4.21
   - [Release notes](https://github.com/postcss/autoprefixer/releases)
   - [Changelog](https://github.com/postcss/autoprefixer/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/postcss/autoprefixer/compare/10.4.20...10.4.21)
-
+  
   Updates `lint-staged` from 15.4.3 to 15.5.0
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v15.4.3...v15.5.0)
-
+  
   Updates `prettier` from 3.5.2 to 3.5.3
   - [Release notes](https://github.com/prettier/prettier/releases)
   - [Changelog](https://github.com/prettier/prettier/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/prettier/prettier/compare/3.5.2...3.5.3)
-
+  
   Updates `typescript` from 5.7.3 to 5.8.2
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release-publish.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.7.3...v5.8.2)
-
+  
   Updates `undici` from 7.4.0 to 7.7.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.4.0...v7.7.0)
-
+  
   Updates `vitest` from 3.0.7 to 3.1.1
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.1/packages/vitest)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@babel/core"
@@ -11359,7 +10800,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/v6.2.5/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v6.2.5/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -11376,7 +10817,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/v6.2.6/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v6.2.6/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -11393,7 +10834,7 @@ github: false
   - [Release notes](https://github.com/nats-io/nats-server/releases)
   - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
   - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.0...v2.11.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/nats-io/nats-server/v2
@@ -11408,7 +10849,7 @@ github: false
 
   Bumps [golang.org/x/net](https://github.com/golang/net) from 0.37.0 to 0.38.0.
   - [Commits](https://github.com/golang/net/compare/v0.37.0...v0.38.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang.org/x/net
@@ -11425,7 +10866,7 @@ github: false
   - [Release notes](https://github.com/chimurai/http-proxy-middleware/releases)
   - [Changelog](https://github.com/chimurai/http-proxy-middleware/blob/v2.0.9/CHANGELOG.md)
   - [Commits](https://github.com/chimurai/http-proxy-middleware/compare/v2.0.7...v2.0.9)
-
+  
   ---
   updated-dependencies:
   - dependency-name: http-proxy-middleware
@@ -11439,18 +10880,18 @@ github: false
 
 
   Bumps [react-router](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router) to 7.5.2 and updates ancestor dependency [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom). These dependencies need to be updated together.
-
-
+  
+  
   Updates `react-router` from 7.4.1 to 7.5.2
   - [Release notes](https://github.com/remix-run/react-router/releases)
   - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router/CHANGELOG.md)
   - [Commits](https://github.com/remix-run/react-router/commits/react-router@7.5.2/packages/react-router)
-
+  
   Updates `react-router-dom` from 7.4.1 to 7.5.2
   - [Release notes](https://github.com/remix-run/react-router/releases)
   - [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)
   - [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.5.2/packages/react-router-dom)
-
+  
   ---
   updated-dependencies:
   - dependency-name: react-router
@@ -11467,7 +10908,7 @@ github: false
 
 
   Bumps the development-dependencies group with 17 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@babel/core](https://github.com/babel/babel/tree/HEAD/packages/babel-core) | `7.26.10` | `7.27.1` |
@@ -11487,93 +10928,93 @@ github: false
   | [lint-staged](https://github.com/lint-staged/lint-staged) | `15.5.0` | `15.5.1` |
   | [msw](https://github.com/mswjs/msw) | `2.7.3` | `2.7.5` |
   | [undici](https://github.com/nodejs/undici) | `7.7.0` | `7.8.0` |
-
-
-
+  
+  
+  
   Updates `@babel/core` from 7.26.10 to 7.27.1
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.1/packages/babel-core)
-
+  
   Updates `@babel/preset-env` from 7.26.9 to 7.27.1
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.1/packages/babel-preset-env)
-
+  
   Updates `@babel/preset-react` from 7.26.3 to 7.27.1
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.1/packages/babel-preset-react)
-
+  
   Updates `@babel/preset-typescript` from 7.27.0 to 7.27.1
   - [Release notes](https://github.com/babel/babel/releases)
   - [Changelog](https://github.com/babel/babel/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/babel/babel/commits/v7.27.1/packages/babel-preset-typescript)
-
+  
   Updates `@rspack/cli` from 1.2.2 to 1.3.8
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.8/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.2.2 to 1.3.8
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.8/packages/rspack)
-
+  
   Updates `@sentry/webpack-plugin` from 3.2.2 to 3.3.1
   - [Release notes](https://github.com/getsentry/sentry-javascript-bundler-plugins/releases)
   - [Changelog](https://github.com/getsentry/sentry-javascript-bundler-plugins/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/getsentry/sentry-javascript-bundler-plugins/compare/3.2.2...3.3.1)
-
+  
   Updates `@types/node` from 22.14.0 to 22.15.3
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@typescript-eslint/eslint-plugin` from 8.29.0 to 8.31.1
   - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
   - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
   - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.31.1/packages/eslint-plugin)
-
+  
   Updates `@vitejs/plugin-react` from 4.3.4 to 4.4.1
   - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
   - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@4.4.1/packages/plugin-react)
-
+  
   Updates `@vitest/coverage-v8` from 3.1.1 to 3.1.2
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.2/packages/coverage-v8)
-
+  
   Updates `core-js` from 3.41.0 to 3.42.0
   - [Release notes](https://github.com/zloirock/core-js/releases)
   - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/zloirock/core-js/commits/v3.42.0/packages/core-js)
-
+  
   Updates `less` from 4.2.2 to 4.3.0
   - [Release notes](https://github.com/less/less.js/releases)
   - [Changelog](https://github.com/less/less.js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/less/less.js/compare/v4.2.2...v4.3.0)
-
+  
   Updates `less-loader` from 12.2.0 to 12.3.0
   - [Release notes](https://github.com/webpack-contrib/less-loader/releases)
   - [Changelog](https://github.com/webpack-contrib/less-loader/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/webpack-contrib/less-loader/compare/v12.2.0...v12.3.0)
-
+  
   Updates `lint-staged` from 15.5.0 to 15.5.1
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v15.5.0...v15.5.1)
-
+  
   Updates `msw` from 2.7.3 to 2.7.5
   - [Release notes](https://github.com/mswjs/msw/releases)
   - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/mswjs/msw/compare/v2.7.3...v2.7.5)
-
+  
   Updates `undici` from 7.7.0 to 7.8.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.7.0...v7.8.0)
-
+  
   Updates `vitest` from 3.1.1 to 3.1.2
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.2/packages/vitest)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@babel/core"
@@ -11674,13 +11115,13 @@ github: false
 
 
   Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 1 update: [typescript](https://github.com/microsoft/TypeScript).
-
-
+  
+  
   Updates `typescript` from 5.8.2 to 5.8.3
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release-publish.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.8.2...v5.8.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: typescript
@@ -11696,7 +11137,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 7 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [pymongo](https://github.com/mongodb/mongo-python-driver) | `4.11.3` | `4.12.1` |
@@ -11706,41 +11147,41 @@ github: false
   | [packaging](https://github.com/pypa/packaging) | `24.2` | `25.0` |
   | [pytest-httpserver](https://github.com/csernazs/pytest-httpserver) | `1.1.2` | `1.1.3` |
   | [stripe](https://github.com/stripe/stripe-python) | `11.5.0` | `12.0.1` |
-
-
-
+  
+  
+  
   Updates `pymongo` from 4.11.3 to 4.12.1
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.11.3...4.12.1)
-
+  
   Updates `certifi` from 2025.1.31 to 2025.4.26
   - [Commits](https://github.com/certifi/python-certifi/compare/2025.01.31...2025.04.26)
-
+  
   Updates `urllib3` from 2.3.0 to 2.4.0
   - [Release notes](https://github.com/urllib3/urllib3/releases)
   - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
   - [Commits](https://github.com/urllib3/urllib3/compare/2.3.0...2.4.0)
-
+  
   Updates `boto3` from 1.37.24 to 1.38.6
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.37.24...1.38.6)
-
+  
   Updates `packaging` from 24.2 to 25.0
   - [Release notes](https://github.com/pypa/packaging/releases)
   - [Changelog](https://github.com/pypa/packaging/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pypa/packaging/compare/24.2...25.0)
-
+  
   Updates `pytest-httpserver` from 1.1.2 to 1.1.3
   - [Release notes](https://github.com/csernazs/pytest-httpserver/releases)
   - [Changelog](https://github.com/csernazs/pytest-httpserver/blob/master/CHANGES.rst)
   - [Commits](https://github.com/csernazs/pytest-httpserver/compare/1.1.2...1.1.3)
-
+  
   Updates `stripe` from 11.5.0 to 12.0.1
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v11.5.0...v12.0.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pymongo
@@ -11789,7 +11230,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v6.3.4/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -11803,12 +11244,12 @@ github: false
 
 
   Bumps the e2e-test-dependencies group in /frontend/tests/e2e_tests with 1 update: [yaml](https://github.com/eemeli/yaml).
-
-
+  
+  
   Updates `yaml` from 2.7.1 to 2.8.0
   - [Release notes](https://github.com/eemeli/yaml/releases)
   - [Commits](https://github.com/eemeli/yaml/compare/v2.7.1...v2.8.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: yaml
@@ -11824,7 +11265,7 @@ github: false
 
 
   Bumps the development-dependencies group with 10 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@northern.tech/eslint-config](https://github.com/NorthernTechHQ/nt-gui) | `0.4.0` | `0.5.0` |
@@ -11837,63 +11278,63 @@ github: false
   | [lint-staged](https://github.com/lint-staged/lint-staged) | `15.5.1` | `16.1.0` |
   | [msw](https://github.com/mswjs/msw) | `2.7.5` | `2.8.7` |
   | [undici](https://github.com/nodejs/undici) | `7.8.0` | `7.10.0` |
-
-
-
+  
+  
+  
   Updates `@northern.tech/eslint-config` from 0.4.0 to 0.5.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/eslint-config-0.4.0...@northern.tech/eslint-config-0.5.0)
-
+  
   Updates `@rspack/cli` from 1.3.8 to 1.3.13
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.13/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.3.8 to 1.3.13
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.13/packages/rspack)
-
+  
   Updates `@sentry/webpack-plugin` from 3.3.1 to 3.5.0
   - [Release notes](https://github.com/getsentry/sentry-javascript-bundler-plugins/releases)
   - [Changelog](https://github.com/getsentry/sentry-javascript-bundler-plugins/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/getsentry/sentry-javascript-bundler-plugins/compare/3.3.1...3.5.0)
-
+  
   Updates `@types/node` from 22.15.3 to 22.15.29
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@typescript-eslint/eslint-plugin` from 8.32.1 to 8.33.0
   - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
   - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
   - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.33.0/packages/eslint-plugin)
-
+  
   Updates `@vitejs/plugin-react` from 4.4.1 to 4.5.0
   - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
   - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@4.5.0/packages/plugin-react)
-
+  
   Updates `@vitest/coverage-v8` from 3.1.2 to 3.1.4
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.4/packages/coverage-v8)
-
+  
   Updates `lint-staged` from 15.5.1 to 16.1.0
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v15.5.1...v16.1.0)
-
+  
   Updates `msw` from 2.7.5 to 2.8.7
   - [Release notes](https://github.com/mswjs/msw/releases)
   - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/mswjs/msw/compare/v2.7.5...v2.8.7)
-
+  
   Updates `undici` from 7.8.0 to 7.10.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.8.0...v7.10.0)
-
+  
   Updates `vitest` from 3.1.2 to 3.1.4
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v3.1.4/packages/vitest)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@northern.tech/eslint-config"
@@ -11964,23 +11405,23 @@ github: false
 
 
   Bumps the mui group with 3 updates in the /frontend directory: [@mui/icons-material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-icons-material), [@mui/material](https://github.com/mui/material-ui/tree/HEAD/packages/mui-material) and [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
-
-
+  
+  
   Updates `@mui/icons-material` from 7.1.0 to 7.1.1
   - [Release notes](https://github.com/mui/material-ui/releases)
   - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/material-ui/commits/v7.1.1/packages/mui-icons-material)
-
+  
   Updates `@mui/material` from 7.1.0 to 7.1.1
   - [Release notes](https://github.com/mui/material-ui/releases)
   - [Changelog](https://github.com/mui/material-ui/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/material-ui/commits/v7.1.1/packages/mui-material)
-
+  
   Updates `@mui/x-date-pickers` from 8.2.0 to 8.5.0
   - [Release notes](https://github.com/mui/mui-x/releases)
   - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/mui-x/commits/v8.5.0/packages/x-date-pickers)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@mui/icons-material"
@@ -12006,7 +11447,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 5 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [boto3](https://github.com/boto/boto3) | `1.38.6` | `1.38.27` |
@@ -12014,31 +11455,31 @@ github: false
   | [pluggy](https://github.com/pytest-dev/pluggy) | `1.5.0` | `1.6.0` |
   | [redis](https://github.com/redis/redis-py) | `5.2.1` | `6.2.0` |
   | [pytest-xdist](https://github.com/pytest-dev/pytest-xdist) | `3.6.1` | `3.7.0` |
-
-
-
+  
+  
+  
   Updates `boto3` from 1.38.6 to 1.38.27
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.38.6...1.38.27)
-
+  
   Updates `cryptography` from 44.0.2 to 45.0.3
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/44.0.2...45.0.3)
-
+  
   Updates `pluggy` from 1.5.0 to 1.6.0
   - [Changelog](https://github.com/pytest-dev/pluggy/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pytest-dev/pluggy/compare/1.5.0...1.6.0)
-
+  
   Updates `redis` from 5.2.1 to 6.2.0
   - [Release notes](https://github.com/redis/redis-py/releases)
   - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
   - [Commits](https://github.com/redis/redis-py/compare/v5.2.1...v6.2.0)
-
+  
   Updates `pytest-xdist` from 3.6.1 to 3.7.0
   - [Release notes](https://github.com/pytest-dev/pytest-xdist/releases)
   - [Changelog](https://github.com/pytest-dev/pytest-xdist/blob/master/CHANGELOG.rst)
   - [Commits](https://github.com/pytest-dev/pytest-xdist/compare/v3.6.1...v3.7.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: boto3
@@ -12074,17 +11515,17 @@ github: false
 
 
   Bumps [webpack-dev-server](https://github.com/webpack/webpack-dev-server) to 5.2.2 and updates ancestor dependency [@rspack/cli](https://github.com/web-infra-dev/rspack/tree/HEAD/packages/rspack-cli). These dependencies need to be updated together.
-
-
+  
+  
   Updates `webpack-dev-server` from 5.2.0 to 5.2.2
   - [Release notes](https://github.com/webpack/webpack-dev-server/releases)
   - [Changelog](https://github.com/webpack/webpack-dev-server/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/webpack/webpack-dev-server/compare/v5.2.0...v5.2.2)
-
+  
   Updates `@rspack/cli` from 1.3.13 to 1.3.15
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.3.15/packages/rspack-cli)
-
+  
   ---
   updated-dependencies:
   - dependency-name: webpack-dev-server
@@ -12104,7 +11545,7 @@ github: false
   - [Release notes](https://github.com/psf/requests/releases)
   - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
   - [Commits](https://github.com/psf/requests/compare/v2.32.3...v2.32.4)
-
+  
   ---
   updated-dependencies:
   - dependency-name: requests
@@ -12118,13 +11559,13 @@ github: false
 
 
   Bumps the mui group in /frontend with 1 update: [@mui/x-date-pickers](https://github.com/mui/mui-x/tree/HEAD/packages/x-date-pickers).
-
-
+  
+  
   Updates `@mui/x-date-pickers` from 8.5.0 to 8.5.1
   - [Release notes](https://github.com/mui/mui-x/releases)
   - [Changelog](https://github.com/mui/mui-x/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/mui/mui-x/commits/v8.5.1/packages/x-date-pickers)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@mui/x-date-pickers"
@@ -12143,7 +11584,7 @@ github: false
   - [Release notes](https://github.com/urllib3/urllib3/releases)
   - [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
   - [Commits](https://github.com/urllib3/urllib3/compare/2.4.0...2.5.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: urllib3
@@ -12160,7 +11601,7 @@ github: false
   - [Release notes](https://github.com/go-viper/mapstructure/releases)
   - [Changelog](https://github.com/go-viper/mapstructure/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/go-viper/mapstructure/compare/v2.2.1...v2.3.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/go-viper/mapstructure/v2
@@ -12177,7 +11618,7 @@ github: false
   - [Release notes](https://github.com/python-pillow/Pillow/releases)
   - [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
   - [Commits](https://github.com/python-pillow/Pillow/compare/11.2.1...11.3.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pillow
@@ -12253,22 +11694,22 @@ github: false
 
 
   Bumps [on-headers](https://github.com/jshttp/on-headers), [express-session](https://github.com/expressjs/session) and [morgan](https://github.com/expressjs/morgan). These dependencies needed to be updated together.
-
+  
   Updates `on-headers` from 1.0.2 to 1.1.0
   - [Release notes](https://github.com/jshttp/on-headers/releases)
   - [Changelog](https://github.com/jshttp/on-headers/blob/master/HISTORY.md)
   - [Commits](https://github.com/jshttp/on-headers/compare/v1.0.2...v1.1.0)
-
+  
   Updates `express-session` from 1.18.1 to 1.18.2
   - [Release notes](https://github.com/expressjs/session/releases)
   - [Changelog](https://github.com/expressjs/session/blob/master/HISTORY.md)
   - [Commits](https://github.com/expressjs/session/compare/v1.18.1...v1.18.2)
-
+  
   Updates `morgan` from 1.10.0 to 1.10.1
   - [Release notes](https://github.com/expressjs/morgan/releases)
   - [Changelog](https://github.com/expressjs/morgan/blob/master/HISTORY.md)
   - [Commits](https://github.com/expressjs/morgan/compare/1.10.0...1.10.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: on-headers
@@ -12288,17 +11729,17 @@ github: false
 
 
   Bumps [on-headers](https://github.com/jshttp/on-headers) and [compression](https://github.com/expressjs/compression). These dependencies needed to be updated together.
-
+  
   Updates `on-headers` from 1.0.2 to 1.1.0
   - [Release notes](https://github.com/jshttp/on-headers/releases)
   - [Changelog](https://github.com/jshttp/on-headers/blob/master/HISTORY.md)
   - [Commits](https://github.com/jshttp/on-headers/compare/v1.0.2...v1.1.0)
-
+  
   Updates `compression` from 1.8.0 to 1.8.1
   - [Release notes](https://github.com/expressjs/compression/releases)
   - [Changelog](https://github.com/expressjs/compression/blob/master/HISTORY.md)
   - [Commits](https://github.com/expressjs/compression/compare/1.8.0...v1.8.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: on-headers
@@ -12317,7 +11758,7 @@ github: false
   Bumps [pbkdf2](https://github.com/crypto-browserify/pbkdf2) from 3.1.2 to 3.1.3.
   - [Changelog](https://github.com/browserify/pbkdf2/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/crypto-browserify/pbkdf2/compare/v3.1.2...v3.1.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pbkdf2
@@ -12334,7 +11775,7 @@ github: false
   - [Release notes](https://github.com/form-data/form-data/releases)
   - [Changelog](https://github.com/form-data/form-data/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/form-data/form-data/compare/v4.0.1...v4.0.4)
-
+  
   ---
   updated-dependencies:
   - dependency-name: form-data
@@ -12351,7 +11792,7 @@ github: false
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.10.0...v1.11.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: axios
@@ -12399,24 +11840,24 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 4 updates in the /backend/tests directory: [boto3](https://github.com/boto/boto3), [certifi](https://github.com/certifi/python-certifi), [cryptography](https://github.com/pyca/cryptography) and [stripe](https://github.com/stripe/stripe-python).
-
-
+  
+  
   Updates `boto3` from 1.39.0 to 1.40.0
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.39.0...1.40.0)
-
+  
   Updates `certifi` from 2025.6.15 to 2025.7.14
   - [Commits](https://github.com/certifi/python-certifi/compare/2025.06.15...2025.07.14)
-
+  
   Updates `cryptography` from 45.0.4 to 45.0.5
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/45.0.4...45.0.5)
-
+  
   Updates `stripe` from 12.2.0 to 12.4.0
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v12.2.0...v12.4.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: boto3
@@ -12447,7 +11888,7 @@ github: false
 
 
   Bumps the development-dependencies group with 16 updates in the /frontend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [@northern.tech/eslint-config](https://github.com/NorthernTechHQ/nt-gui) | `0.5.0` | `0.6.0` |
@@ -12466,85 +11907,85 @@ github: false
   | [msw](https://github.com/mswjs/msw) | `2.10.4` | `2.10.5` |
   | [typescript](https://github.com/microsoft/TypeScript) | `5.7.3` | `5.9.2` |
   | [undici](https://github.com/nodejs/undici) | `7.12.0` | `7.14.0` |
-
-
-
+  
+  
+  
   Updates `@northern.tech/eslint-config` from 0.5.0 to 0.6.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/eslint-config-0.5.0...@northern.tech/eslint-config-0.6.0)
-
+  
   Updates `@northern.tech/prettier-config` from 0.2.0 to 0.2.1
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/prettier-config-0.2.0...@northern.tech/prettier-config-0.2.1)
-
+  
   Updates `@northern.tech/themes` from 0.2.0 to 0.3.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/themes-0.2.0...@northern.tech/themes-0.3.0)
-
+  
   Updates `@northern.tech/typescript-config` from 0.1.3 to 0.2.0
   - [Release notes](https://github.com/NorthernTechHQ/nt-gui/releases)
   - [Changelog](https://github.com/NorthernTechHQ/nt-gui/blob/main/release-please-config.json)
   - [Commits](https://github.com/NorthernTechHQ/nt-gui/compare/@northern.tech/typescript-config-0.1.3...@northern.tech/typescript-config-0.2.0)
-
+  
   Updates `@rspack/cli` from 1.4.8 to 1.4.11
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.4.11/packages/rspack-cli)
-
+  
   Updates `@rspack/core` from 1.4.8 to 1.4.11
   - [Release notes](https://github.com/web-infra-dev/rspack/releases)
   - [Commits](https://github.com/web-infra-dev/rspack/commits/v1.4.11/packages/rspack)
-
+  
   Updates `@sentry/webpack-plugin` from 4.0.0 to 4.1.1
   - [Release notes](https://github.com/getsentry/sentry-javascript-bundler-plugins/releases)
   - [Changelog](https://github.com/getsentry/sentry-javascript-bundler-plugins/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/getsentry/sentry-javascript-bundler-plugins/compare/4.0.0...4.1.1)
-
+  
   Updates `@testing-library/jest-dom` from 6.6.3 to 6.7.0
   - [Release notes](https://github.com/testing-library/jest-dom/releases)
   - [Changelog](https://github.com/testing-library/jest-dom/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/testing-library/jest-dom/compare/v6.6.3...v6.7.0)
-
+  
   Updates `@types/node` from 24.1.0 to 24.3.0
   - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
   - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
-
+  
   Updates `@typescript-eslint/eslint-plugin` from 8.38.0 to 8.39.1
   - [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
   - [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
   - [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v8.39.1/packages/eslint-plugin)
-
+  
   Updates `@vitejs/plugin-react` from 4.7.0 to 5.0.0
   - [Release notes](https://github.com/vitejs/vite-plugin-react/releases)
   - [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@5.0.0/packages/plugin-react)
-
+  
   Updates `core-js` from 3.44.0 to 3.45.0
   - [Release notes](https://github.com/zloirock/core-js/releases)
   - [Changelog](https://github.com/zloirock/core-js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/zloirock/core-js/commits/v3.45.0/packages/core-js)
-
+  
   Updates `lint-staged` from 16.1.2 to 16.1.5
   - [Release notes](https://github.com/lint-staged/lint-staged/releases)
   - [Changelog](https://github.com/lint-staged/lint-staged/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/lint-staged/lint-staged/compare/v16.1.2...v16.1.5)
-
+  
   Updates `msw` from 2.10.4 to 2.10.5
   - [Release notes](https://github.com/mswjs/msw/releases)
   - [Changelog](https://github.com/mswjs/msw/blob/main/CHANGELOG.md)
   - [Commits](https://github.com/mswjs/msw/compare/v2.10.4...v2.10.5)
-
+  
   Updates `typescript` from 5.7.3 to 5.9.2
   - [Release notes](https://github.com/microsoft/TypeScript/releases)
   - [Changelog](https://github.com/microsoft/TypeScript/blob/main/azure-pipelines.release-publish.yml)
   - [Commits](https://github.com/microsoft/TypeScript/compare/v5.7.3...v5.9.2)
-
+  
   Updates `undici` from 7.12.0 to 7.14.0
   - [Release notes](https://github.com/nodejs/undici/releases)
   - [Commits](https://github.com/nodejs/undici/compare/v7.12.0...v7.14.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: "@northern.tech/eslint-config"
@@ -12637,7 +12078,7 @@ github: false
   Bumps [mermaid](https://github.com/mermaid-js/mermaid) from 11.9.0 to 11.10.1.
   - [Release notes](https://github.com/mermaid-js/mermaid/releases)
   - [Commits](https://github.com/mermaid-js/mermaid/compare/mermaid@11.9.0...mermaid@11.10.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: mermaid
@@ -12652,7 +12093,7 @@ github: false
 
   Bumps [github.com/ulikunitz/xz](https://github.com/ulikunitz/xz) from 0.5.12 to 0.5.14.
   - [Commits](https://github.com/ulikunitz/xz/compare/v0.5.12...v0.5.14)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/ulikunitz/xz
@@ -12667,7 +12108,7 @@ github: false
 
   Bumps the backend-tests-python-dependencies group with 1 update in the /backend/services/iot-manager/tests directory: [requests](https://github.com/psf/requests).
   Bumps the backend-tests-python-dependencies group with 9 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [pymongo](https://github.com/mongodb/mongo-python-driver) | `4.13.2` | `4.14.1` |
@@ -12679,54 +12120,54 @@ github: false
   | [filelock](https://github.com/tox-dev/py-filelock) | `3.18.0` | `3.19.1` |
   | [stripe](https://github.com/stripe/stripe-python) | `12.4.0` | `12.5.0` |
   | [redis](https://github.com/redis/redis-py) | `6.2.0` | `6.4.0` |
-
-
-
+  
+  
+  
   Updates `requests` from 2.32.4 to 2.32.5
   - [Release notes](https://github.com/psf/requests/releases)
   - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
   - [Commits](https://github.com/psf/requests/compare/v2.32.4...v2.32.5)
-
+  
   Updates `pymongo` from 4.13.2 to 4.14.1
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.13.2...4.14.1)
-
+  
   Updates `certifi` from 2025.7.14 to 2025.8.3
   - [Commits](https://github.com/certifi/python-certifi/compare/2025.07.14...2025.08.03)
-
+  
   Updates `requests` from 2.32.4 to 2.32.5
   - [Release notes](https://github.com/psf/requests/releases)
   - [Changelog](https://github.com/psf/requests/blob/main/HISTORY.md)
   - [Commits](https://github.com/psf/requests/compare/v2.32.4...v2.32.5)
-
+  
   Updates `azure-iot-hub` from 2.6.1 to 2.7.0
   - [Changelog](https://github.com/Azure/azure-iot-hub-python/blob/main/RELEASE%20INSTRUCTIONS.md)
   - [Commits](https://github.com/Azure/azure-iot-hub-python/commits)
-
+  
   Updates `boto3` from 1.40.0 to 1.40.21
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.40.0...1.40.21)
-
+  
   Updates `cryptography` from 45.0.5 to 45.0.7
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/45.0.5...45.0.7)
-
+  
   Updates `filelock` from 3.18.0 to 3.19.1
   - [Release notes](https://github.com/tox-dev/py-filelock/releases)
   - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
   - [Commits](https://github.com/tox-dev/py-filelock/compare/3.18.0...3.19.1)
-
+  
   Updates `stripe` from 12.4.0 to 12.5.0
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v12.4.0...v12.5.0)
-
+  
   Updates `redis` from 6.2.0 to 6.4.0
   - [Release notes](https://github.com/redis/redis-py/releases)
   - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
   - [Commits](https://github.com/redis/redis-py/compare/v6.2.0...v6.4.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: requests
@@ -12787,13 +12228,13 @@ github: false
 
 
   Bumps the backend-golang-dependencies group in /backend with 1 update: [github.com/redis/go-redis/v9](https://github.com/redis/go-redis).
-
-
+  
+  
   Updates `github.com/redis/go-redis/v9` from 9.12.1 to 9.13.0
   - [Release notes](https://github.com/redis/go-redis/releases)
   - [Changelog](https://github.com/redis/go-redis/blob/master/RELEASE-NOTES.md)
   - [Commits](https://github.com/redis/go-redis/compare/v9.12.1...v9.13.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/redis/go-redis/v9
@@ -12809,17 +12250,17 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 2 updates in the /backend/tests directory: [pytest](https://github.com/pytest-dev/pytest) and [boto3](https://github.com/boto/boto3).
-
-
+  
+  
   Updates `pytest` from 8.4.1 to 8.4.2
   - [Release notes](https://github.com/pytest-dev/pytest/releases)
   - [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pytest-dev/pytest/compare/8.4.1...8.4.2)
-
+  
   Updates `boto3` from 1.40.21 to 1.40.24
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.40.21...1.40.24)
-
+  
   ---
   updated-dependencies:
   - dependency-name: pytest
@@ -12843,7 +12284,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v7.1.5/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -12860,7 +12301,7 @@ github: false
   - [Release notes](https://github.com/axios/axios/releases)
   - [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)
   - [Commits](https://github.com/axios/axios/compare/v1.11.0...v1.12.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: axios
@@ -12875,16 +12316,16 @@ github: false
 
   Bumps the backend-docker-compose-dependencies group with 2 updates in the / directory: traefik and nats.
   Bumps the backend-docker-compose-dependencies group with 2 updates in the /compose directory: redis and chrislusf/seaweedfs.
-
-
+  
+  
   Updates `traefik` from v3.1 to 3.5
-
+  
   Updates `nats` from 2.10 to 2.11
-
+  
   Updates `redis` from 7.2 to 8.2
-
+  
   Updates `chrislusf/seaweedfs` from 3.85 to 3.97
-
+  
   ---
   updated-dependencies:
   - dependency-name: traefik
@@ -12914,10 +12355,10 @@ github: false
 
 
   Bumps the backend-docker-compose-dependencies group with 1 update in the / directory: nats.
-
-
+  
+  
   Updates `nats` from 2.11 to 2.12
-
+  
   ---
   updated-dependencies:
   - dependency-name: nats
@@ -12933,7 +12374,7 @@ github: false
 
 
   Bumps the backend-golang-dependencies group with 12 updates in the /backend directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [github.com/Azure/azure-sdk-for-go/sdk/azcore](https://github.com/Azure/azure-sdk-for-go) | `1.19.0` | `1.19.1` |
@@ -12948,82 +12389,82 @@ github: false
   | [github.com/redis/go-redis/v9](https://github.com/redis/go-redis) | `9.13.0` | `9.14.0` |
   | [github.com/spf13/viper](https://github.com/spf13/viper) | `1.20.1` | `1.21.0` |
   | [golang.org/x/net](https://github.com/golang/net) | `0.43.0` | `0.44.0` |
-
-
-
+  
+  
+  
   Updates `github.com/Azure/azure-sdk-for-go/sdk/azcore` from 1.19.0 to 1.19.1
   - [Release notes](https://github.com/Azure/azure-sdk-for-go/releases)
   - [Changelog](https://github.com/Azure/azure-sdk-for-go/blob/main/documentation/sdk-breaking-changes-guide-migration.md)
   - [Commits](https://github.com/Azure/azure-sdk-for-go/compare/sdk/azcore/v1.19.0...sdk/azcore/v1.19.1)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2` from 1.38.3 to 1.39.2
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.38.3...v1.39.2)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/config` from 1.31.6 to 1.31.12
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.31.6...config/v1.31.12)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/credentials` from 1.18.10 to 1.18.16
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/config/v1.18.10...config/v1.18.16)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/iot` from 1.69.1 to 1.69.5
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/iot/v1.69.1...service/iot/v1.69.5)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/iotdataplane` from 1.32.2 to 1.32.6
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/v1.32.2...v1.32.6)
-
+  
   Updates `github.com/aws/aws-sdk-go-v2/service/s3` from 1.87.3 to 1.88.3
   - [Release notes](https://github.com/aws/aws-sdk-go-v2/releases)
   - [Changelog](https://github.com/aws/aws-sdk-go-v2/blob/main/changelog-template.json)
   - [Commits](https://github.com/aws/aws-sdk-go-v2/compare/service/s3/v1.87.3...service/s3/v1.88.3)
-
+  
   Updates `github.com/gin-gonic/gin` from 1.10.1 to 1.11.0
   - [Release notes](https://github.com/gin-gonic/gin/releases)
   - [Changelog](https://github.com/gin-gonic/gin/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/gin-gonic/gin/compare/v1.10.1...v1.11.0)
-
+  
   Updates `github.com/nats-io/nats-server/v2` from 2.11.8 to 2.12.0
   - [Release notes](https://github.com/nats-io/nats-server/releases)
   - [Changelog](https://github.com/nats-io/nats-server/blob/main/.goreleaser.yml)
   - [Commits](https://github.com/nats-io/nats-server/compare/v2.11.8...v2.12.0)
-
+  
   Updates `github.com/nats-io/nats.go` from 1.45.0 to 1.46.1
   - [Release notes](https://github.com/nats-io/nats.go/releases)
   - [Commits](https://github.com/nats-io/nats.go/compare/v1.45.0...v1.46.1)
-
+  
   Updates `github.com/redis/go-redis/v9` from 9.13.0 to 9.14.0
   - [Release notes](https://github.com/redis/go-redis/releases)
   - [Changelog](https://github.com/redis/go-redis/blob/master/RELEASE-NOTES.md)
   - [Commits](https://github.com/redis/go-redis/compare/v9.13.0...v9.14.0)
-
+  
   Updates `github.com/spf13/viper` from 1.20.1 to 1.21.0
   - [Release notes](https://github.com/spf13/viper/releases)
   - [Commits](https://github.com/spf13/viper/compare/v1.20.1...v1.21.0)
-
+  
   Updates `golang.org/x/crypto` from 0.41.0 to 0.42.0
   - [Commits](https://github.com/golang/crypto/compare/v0.41.0...v0.42.0)
-
+  
   Updates `golang.org/x/net` from 0.43.0 to 0.44.0
   - [Commits](https://github.com/golang/net/compare/v0.43.0...v0.44.0)
-
+  
   Updates `golang.org/x/sys` from 0.35.0 to 0.36.0
   - [Commits](https://github.com/golang/sys/compare/v0.35.0...v0.36.0)
-
+  
   Updates `golang.org/x/term` from 0.34.0 to 0.35.0
   - [Commits](https://github.com/golang/term/compare/v0.34.0...v0.35.0)
-
+  
   Updates `golang.org/x/time` from 0.12.0 to 0.13.0
   - [Commits](https://github.com/golang/time/compare/v0.12.0...v0.13.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/Azure/azure-sdk-for-go/sdk/azcore
@@ -13121,7 +12562,7 @@ github: false
   Bumps [github.com/quic-go/quic-go](https://github.com/quic-go/quic-go) from 0.54.0 to 0.54.1.
   - [Release notes](https://github.com/quic-go/quic-go/releases)
   - [Commits](https://github.com/quic-go/quic-go/compare/v0.54.0...v0.54.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: github.com/quic-go/quic-go
@@ -13138,7 +12579,7 @@ github: false
   - [Release notes](https://github.com/vitejs/vite/releases)
   - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)
   - [Commits](https://github.com/vitejs/vite/commits/v7.1.11/packages/vite)
-
+  
   ---
   updated-dependencies:
   - dependency-name: vite
@@ -13155,7 +12596,7 @@ github: false
   - [Release notes](https://github.com/validatorjs/validator.js/releases)
   - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.15...13.15.20)
-
+  
   ---
   updated-dependencies:
   - dependency-name: validator
@@ -13172,7 +12613,7 @@ github: false
   - [Release notes](https://github.com/validatorjs/validator.js/releases)
   - [Changelog](https://github.com/validatorjs/validator.js/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/validatorjs/validator.js/compare/13.15.15...13.15.20)
-
+  
   ---
   updated-dependencies:
   - dependency-name: validator
@@ -13186,10 +12627,10 @@ github: false
 
 
   Bumps the backend-docker-compose-dependencies group with 1 update in the /compose directory: chrislusf/seaweedfs.
-
-
+  
+  
   Updates `chrislusf/seaweedfs` from 3.97 to 3.99
-
+  
   ---
   updated-dependencies:
   - dependency-name: chrislusf/seaweedfs
@@ -13205,7 +12646,7 @@ github: false
 
 
   Bumps the backend-tests-python-dependencies group with 17 updates in the /backend/tests directory:
-
+  
   | Package | From | To |
   | --- | --- | --- |
   | [attrs](https://github.com/sponsors/hynek) | `25.3.0` | `25.4.0` |
@@ -13225,87 +12666,87 @@ github: false
   | [stripe](https://github.com/stripe/stripe-python) | `12.5.0` | `13.0.1` |
   | [redis](https://github.com/redis/redis-py) | `6.4.0` | `7.0.0` |
   | [pydantic](https://github.com/pydantic/pydantic) | `2.11.7` | `2.12.3` |
-
-
-
+  
+  
+  
   Updates `attrs` from 25.3.0 to 25.4.0
   - [Commits](https://github.com/sponsors/hynek/commits)
-
+  
   Updates `boto3` from 1.40.24 to 1.40.58
   - [Release notes](https://github.com/boto/boto3/releases)
   - [Commits](https://github.com/boto/boto3/compare/1.40.24...1.40.58)
-
+  
   Updates `certifi` from 2025.8.3 to 2025.10.5
   - [Commits](https://github.com/certifi/python-certifi/compare/2025.08.03...2025.10.05)
-
+  
   Updates `cffi` from 1.17.1 to 2.0.0
   - [Release notes](https://github.com/python-cffi/cffi/releases)
   - [Commits](https://github.com/python-cffi/cffi/compare/v1.17.1...v2.0.0)
-
+  
   Updates `cryptography` from 45.0.7 to 46.0.3
   - [Changelog](https://github.com/pyca/cryptography/blob/main/CHANGELOG.rst)
   - [Commits](https://github.com/pyca/cryptography/compare/45.0.7...46.0.3)
-
+  
   Updates `filelock` from 3.19.1 to 3.20.0
   - [Release notes](https://github.com/tox-dev/py-filelock/releases)
   - [Changelog](https://github.com/tox-dev/filelock/blob/main/docs/changelog.rst)
   - [Commits](https://github.com/tox-dev/py-filelock/compare/3.19.1...3.20.0)
-
+  
   Updates `idna` from 3.10 to 3.11
   - [Release notes](https://github.com/kjd/idna/releases)
   - [Changelog](https://github.com/kjd/idna/blob/master/HISTORY.rst)
   - [Commits](https://github.com/kjd/idna/compare/v3.10...v3.11)
-
+  
   Updates `iniconfig` from 2.1.0 to 2.3.0
   - [Release notes](https://github.com/pytest-dev/iniconfig/releases)
   - [Changelog](https://github.com/pytest-dev/iniconfig/blob/main/CHANGELOG)
   - [Commits](https://github.com/pytest-dev/iniconfig/compare/v2.1.0...v2.3.0)
-
+  
   Updates `kubernetes` from 33.1.0 to 34.1.0
   - [Release notes](https://github.com/kubernetes-client/python/releases)
   - [Changelog](https://github.com/kubernetes-client/python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/kubernetes-client/python/compare/v33.1.0...v34.1.0)
-
+  
   Updates `pillow` from 11.3.0 to 12.0.0
   - [Release notes](https://github.com/python-pillow/Pillow/releases)
   - [Changelog](https://github.com/python-pillow/Pillow/blob/main/CHANGES.rst)
   - [Commits](https://github.com/python-pillow/Pillow/compare/11.3.0...12.0.0)
-
+  
   Updates `pycparser` from 2.22 to 2.23
   - [Release notes](https://github.com/eliben/pycparser/releases)
   - [Changelog](https://github.com/eliben/pycparser/blob/main/CHANGES)
   - [Commits](https://github.com/eliben/pycparser/compare/release_v2.22...release_v2.23)
-
+  
   Updates `pymongo` from 4.14.1 to 4.15.3
   - [Release notes](https://github.com/mongodb/mongo-python-driver/releases)
   - [Changelog](https://github.com/mongodb/mongo-python-driver/blob/master/doc/changelog.rst)
   - [Commits](https://github.com/mongodb/mongo-python-driver/compare/4.14.1...4.15.3)
-
+  
   Updates `pyparsing` from 3.2.3 to 3.2.5
   - [Release notes](https://github.com/pyparsing/pyparsing/releases)
   - [Changelog](https://github.com/pyparsing/pyparsing/blob/master/CHANGES)
   - [Commits](https://github.com/pyparsing/pyparsing/compare/3.2.3...3.2.5)
-
+  
   Updates `pyyaml` from 6.0.2 to 6.0.3
   - [Release notes](https://github.com/yaml/pyyaml/releases)
   - [Changelog](https://github.com/yaml/pyyaml/blob/6.0.3/CHANGES)
   - [Commits](https://github.com/yaml/pyyaml/compare/6.0.2...6.0.3)
-
+  
   Updates `stripe` from 12.5.0 to 13.0.1
   - [Release notes](https://github.com/stripe/stripe-python/releases)
   - [Changelog](https://github.com/stripe/stripe-python/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/stripe/stripe-python/compare/v12.5.0...v13.0.1)
-
+  
   Updates `redis` from 6.4.0 to 7.0.0
   - [Release notes](https://github.com/redis/redis-py/releases)
   - [Changelog](https://github.com/redis/redis-py/blob/master/CHANGES)
   - [Commits](https://github.com/redis/redis-py/compare/v6.4.0...v7.0.0)
-
+  
   Updates `pydantic` from 2.11.7 to 2.12.3
   - [Release notes](https://github.com/pydantic/pydantic/releases)
   - [Changelog](https://github.com/pydantic/pydantic/blob/main/HISTORY.md)
   - [Commits](https://github.com/pydantic/pydantic/compare/v2.11.7...v2.12.3)
-
+  
   ---
   updated-dependencies:
   - dependency-name: attrs
@@ -13403,7 +12844,7 @@ github: false
   Bumps [js-yaml](https://github.com/nodeca/js-yaml) from 4.1.0 to 4.1.1.
   - [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)
   - [Commits](https://github.com/nodeca/js-yaml/compare/4.1.0...4.1.1)
-
+  
   ---
   updated-dependencies:
   - dependency-name: js-yaml
@@ -13418,7 +12859,7 @@ github: false
 
   Bumps [golang.org/x/crypto](https://github.com/golang/crypto) from 0.43.0 to 0.45.0.
   - [Commits](https://github.com/golang/crypto/compare/v0.43.0...v0.45.0)
-
+  
   ---
   updated-dependencies:
   - dependency-name: golang.org/x/crypto
@@ -13497,7 +12938,7 @@ github: false
 
 
   Enabling logging just overflows the log buffer.
-
+  
   This reverts commit 6d164c4c70d1fff7d28e88a50390f8afb676c814.
 - "test: Unit tests for configuring rate limits"
  ([4ef01b1](https://github.com/mendersoftware/mender-server-enterprise/commit/4ef01b1a66d5f20e10d587fbdfc9d3febe14ee8e))  by @alfrunes
@@ -13544,65 +12985,7 @@ github: false
 
 
 
-## 4.0.1 - 2025-05-19
 
-### Security fixes
-
-* Fixed CVE-2025-49603 - Improper access control of device groups in Mender Server.
-  See the official announcement for more information:
-  [mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server](https://mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server)
-
-
-### Bug fixes
-
-
-- *(gui)* Fixed an issue that would prevent showing unassigned static group devices
-([ME-519](https://northerntech.atlassian.net/browse/ME-519)) ([b595a57](https://github.com/mendersoftware/mender-server-enterprise/commit/b595a574d2e3d2d4fb61757198007ff4bc308f56))
-
-- *(useradm)* RBAC - fix permissions related to inventory filters
-([ME-513](https://northerntech.atlassian.net/browse/ME-513)) ([b3f4676](https://github.com/mendersoftware/mender-server-enterprise/commit/b3f467629d38f2d6ee4fdd391990f2b82bffb43d))
-
-
-  Users without access to all devices should not be able to get
-  inventory filers by Id.
-
-- Generate delta worker aborting before artifact upload completes
-([MEN-8177](https://northerntech.atlassian.net/browse/MEN-8177)) ([a683253](https://github.com/mendersoftware/mender-server-enterprise/commit/a683253c3c8db9bd6404ce35f1145ffc0c3a4cfd))
-
-
-  The artifact generator aborts uploading an artifact prematurely once
-  either of the input files are processed and returns exit code 0. This
-  results in a very confusing error where the API reports a successfully
-  generated artifact, but the artifact is never fully uploaded and
-  available through the APIs.
-- Race when provisioning and connecting a device
-([MEN-8164](https://northerntech.atlassian.net/browse/MEN-8164)) ([5535078](https://github.com/mendersoftware/mender-server-enterprise/commit/5535078d027b213fb0ee6d37dd4c4934b075e51c))
-
-
-  If a device gets provisioned and submits a connection request while the
-  device is getting provisioned, the device might end up in an
-  inconsistent state where the connection status gets overwritten to
-  "unknown".
-  The issue was discovered in a test where the system was under load
-  and the device was running on the same network (artificially low RTT).
-- Generate delta worker for custom S3 bucket
-([MEN-8202](https://northerntech.atlassian.net/browse/MEN-8202)) ([aa65818](https://github.com/mendersoftware/mender-server-enterprise/commit/aa658185aade268a633d83ad814b7cbbc2e63c07))
-- Ensure email is always encoded in lowercase when stored
-([MEN-8328](https://northerntech.atlassian.net/browse/MEN-8328)) ([0568d2e](https://github.com/mendersoftware/mender-server-enterprise/commit/0568d2e09699961cb8aabc0faa16813a4928bc44))
-
-
-  Added a bson codec for model.Email that will ensure that emails are
-  always encoded in lowercase in the database to ensure case insensitive
-  queries.
-
-
-
-
-### Documentation
-
-
-- Add missing breaking changes to changelog
- ([d1be2c2](https://github.com/mendersoftware/mender-server-enterprise/commit/d1be2c26bc6dd9024f4b8956a669a2a4b5600112))
 
 
 ## 4.0.0 - 2025-02-10
@@ -14600,133 +13983,8 @@ using the same URL as deployments service.
   Will create the new signup flow using a reimplementation to prevent
   accidental changes to the old behavior.
 
-## Mender 3.7.11
 
-_Released 05.22.2025_
 
-### Security fixes
-
-* Fixed CVE-2025-49603 - Improper access control of device groups in Mender Server.
-  See the official announcement for more information:
-  [mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server](https://mender.io/blog/cve-2025-49603-improper-access-control-of-device-groups-in-mender-server)
-
-### Changelogs
-
-#### create-artifact-worker (1.4.1)
-
-New changes in create-artifact-worker since 1.4.0:
-
-* Update `mender-artifact` binary used in the container to the
-  latest released to mitigate a set of CVEs in the Go standard library.
-  ([MEN-8337](https://northerntech.atlassian.net/browse/MEN-8337))
-* Upgrade container image `golang` to `1.24.3`
-* Upgrade container image `alpine` to `3.18.12`
-* Update golang dependencies
-
-  - github.com/spf13/cobra v1.8.0 -> v1.9.1
-  - github.com/spf13/viper v1.17.0 -> v1.20.1
-  - github.com/stretchr/testify v1.8.4 -> v1.10.0
-
-#### deployments-enterprise (4.6.3)
-
-New changes in deployments-enterprise since 4.6.2:
-
-* Upgrade container image `golang` to `1.23.9`
-
-#### deviceconnect (1.5.2)
-
-New changes in deviceconnect since 1.5.1:
-
-* Upgrade `golang` container image to `1.23.9`
-* Update go dependencies
-
-  - github.com/gin-gonic/gin v1.9.1 -> v1.10.0
-  - github.com/google/uuid v1.4.0 -> v1.6.0
-  - github.com/gorilla/websocket v1.5.1 -> v1.5.3
-  - github.com/mendersoftware/go-lib-micro v0.0.0-20231031082957-e2bce6ff3edd -> v0.0.0-20250319141021-adca5cc5e022
-  - github.com/nats-io/nats-server/v2 v2.10.4 -> v2.11.3
-  - github.com/nats-io/nats.go v1.31.0 -> v1.42.0
-  - github.com/stretchr/testify v1.8.4 -> v1.10.0
-  - github.com/urfave/cli v1.22.14 -> v1.22.16
-  - go.mongodb.org/mongo-driver v1.13.0 -> v1.17.3
-  - golang.org/x/sys v0.15.0 -> v0.33.0
-
-#### generate-delta-worker (1.1.2)
-
-New changes in generate-delta-worker since 1.1.1:
-
-* Update `mender-artifact` binary used in the container to the
-  latest released to mitigate a set of CVEs in the Go standard library.
-  ([MEN-8337](https://northerntech.atlassian.net/browse/MEN-8337))
-* Upgraded container image `golang` to `1.24.3-alpine3.21`
-* Upgraded container image `alpine` to `3.18.12`
-* Update golang dependencies
-
-  - github.com/spf13/cobra v1.8.0 -> v1.9.1
-  - github.com/spf13/viper v1.17.0 -> v1.20.1
-  - github.com/stretchr/testify v1.8.4 -> v1.10.0
-
-#### gui (3.7.4)
-
-New changes in gui since 3.7.3:
-
-* Upgrade container image `node` to `22.2.15`
-* Upgrade container image `nginx` to `1.27.5`
-
-#### integration (3.7.11)
-
-New changes in integration since 3.7.10:
-
-* Upgrade create-artifact-worker to 1.4.1.
-* Upgrade deployments-enterprise to 4.6.3.
-* Upgrade deployments to 4.6.3.
-* Upgrade deviceconnect to 1.5.2.
-* Upgrade generate-delta-worker to 1.1.2.
-* Upgrade gui to 3.7.4.
-* Upgrade integration to 3.7.11.
-* Upgrade tenantadm to 4.1.2.
-* Upgrade useradm-enterprise to 1.22.5.
-* Upgrade useradm to 1.22.5.
-
-#### useradm (1.22.5)
-
-New changes in useradm since 1.22.4:
-
-* Upgrade container image `golang` to `1.23.9-alpine3.20`
-* Upgrade go dependencies
-
-  - github.com/golang-jwt/jwt/v4 v4.5.0 -> v4.5.2
-  - github.com/google/uuid v1.4.0 -> v1.6.0
-  - github.com/mendersoftware/go-lib-micro v0.0.0-20231016090356-4769be2f2c88 -> v0.0.0-20250319141021-adca5cc5e022
-  - github.com/mendersoftware/go-lib-micro/mongo/codec v0.0.0-20231016090356-4769be2f2c88 -> v0.0.0-20250319141021-adca5cc5e022
-  - github.com/stretchr/testify v1.8.4 -> v1.10.0
-  - github.com/urfave/cli v1.22.14 -> v1.22.16
-  - go.mongodb.org/mongo-driver v1.13.1 -> v1.17.3
-  - golang.org/x/crypto v0.16.0 -> v0.38.0
-  - golang.org/x/term v0.15.0 -> v0.32.0
-
-#### useradm-enterprise (1.22.5)
-
-New changes in useradm-enterprise since 1.22.4:
-
-##### Bug fixes
-
-* Fix GenerateTFASecret using insecure RNG
-
-##### Other
-
-* Upgrade container image `golang` to `1.23.9-alpine3.20`
-* Upgrade go dependencies
-
-  - github.com/golang-jwt/jwt/v4 v4.5.0 -> v4.5.2
-  - github.com/google/uuid v1.4.0 -> v1.6.0
-  - github.com/mendersoftware/go-lib-micro v0.0.0-20231016090356-4769be2f2c88 -> v0.0.0-20250319141021-adca5cc5e022
-  - github.com/mendersoftware/go-lib-micro/mongo/codec v0.0.0-20231016090356-4769be2f2c88 -> v0.0.0-20250319141021-adca5cc5e022
-  - github.com/stretchr/testify v1.8.4 -> v1.10.0
-  - github.com/urfave/cli v1.22.14 -> v1.22.16
-  - go.mongodb.org/mongo-driver v1.13.1 -> v1.17.3
-  - golang.org/x/crypto v0.16.0 -> v0.38.0
-  - golang.org/x/term v0.15.0 -> v0.32.0
 
 ## Mender 3.7.8
 
