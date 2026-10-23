@@ -7,6 +7,38 @@ shortcode-core:
 github: false
 ---
 
+## 4.1.5 - 2026-10-23
+
+
+### Bug fixes
+
+- *(deviceauth)* Use mongo's error code to check for record duplication in AddDevice ([3779364](https://github.com/mendersoftware/mender-server/commit/37793644820d2e20a7954bd397676690cb09c9c5))
+- *(pkg)* Accesslog handles panic(http.ErrAbortHandler) ([803d647](https://github.com/mendersoftware/mender-server/commit/803d6474e04ec9e4db904d01ac55b8357b4db5d4))
+- *(deviceconnect)* Abort download on error if headers are flushed ([MEN-10237](https://northerntech.atlassian.net/browse/MEN-10237)) ([f942fcd](https://github.com/mendersoftware/mender-server/commit/f942fcd35ab6b00a6840d2e49a28e3affad3b21b))
+
+### Dependency updates
+
+- *(deps)* Migrate azure tests to use CLI and bump cryptography ([80e5c6a](https://github.com/mendersoftware/mender-server/commit/80e5c6ae35f4e0bd39f41cf9127499e22e7d3251))
+- *(deps)* Bump cryptography from 47.0.0 to 50.0.0 in /backend/tests ([e32416b](https://github.com/mendersoftware/mender-server/commit/e32416b7966dc1674732251787d62ba5e324195b))
+- *(deps)* Update docker-base-images ([45f4d5d](https://github.com/mendersoftware/mender-server/commit/45f4d5db2216d54241e8aeeb5743785c382908aa))
+- *(deps)* Update docker docker tag to v29.9 ([ca01b27](https://github.com/mendersoftware/mender-server/commit/ca01b2740e2bfa30100ceb8103b4ceab656eede8))
+- *(deps)* Update dependency mendersoftware/mender-artifact to v4.4.2 ([c93f84c](https://github.com/mendersoftware/mender-server/commit/c93f84c0ec4581a17751ac3794e15c78ae803fbc))
+- *(deps)* Update mongo docker tag to v8.3 ([f246f98](https://github.com/mendersoftware/mender-server/commit/f246f981d13b5ba9fd7804e3cfb2d50f49acd5ca))
+- *(deps)* Update docker-compose ([92f7388](https://github.com/mendersoftware/mender-server/commit/92f7388d21910d742f5c955a4d9fbd2277fd858e))
+- *(deps)* Update dependency @mui/x-date-pickers to v8.29.4 ([3535023](https://github.com/mendersoftware/mender-server/commit/3535023b95ad24a22689577037e1a5df89aa0a6b))
+- *(deps)* Update npm-dev-dependencies ([c686f5c](https://github.com/mendersoftware/mender-server/commit/c686f5cd5af2f4d47f4ae2ad5ac071c5f8ce4edc))
+- *(deps)* Update golang-dependencies ([ba463d8](https://github.com/mendersoftware/mender-server/commit/ba463d880428c5fdc731dce18f30a582da0bbeb8))
+- *(deps)* Update traefik docker tag to v3.7.15 ([3ba6b3d](https://github.com/mendersoftware/mender-server/commit/3ba6b3d11ae4cdddaa6b29d957e25d01e3b2b51c))
+- *(deps)* Update npm-prod-dependencies ([11effa7](https://github.com/mendersoftware/mender-server/commit/11effa7348fabfad5ad8b04384f1544d75c1a793))
+- *(deps)* Update dependency @mui/x-date-pickers to v8.29.5 ([09228e8](https://github.com/mendersoftware/mender-server/commit/09228e80c0dfa79ca122cfc9d01f9bf5c30bb4e7))
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10237](https://northerntech.atlassian.net/browse/MEN-10237) |
+
+
 ## 4.1.4 - 2026-09-30
 
 
@@ -32,10 +64,6 @@ github: false
 | [MEN-10073](https://northerntech.atlassian.net/browse/MEN-10073) |
 
 
-
-## 4.0.5 - 2026-09-30
-
-
 ## 4.1.3 - 2026-07-28
 
 
@@ -45,19 +73,6 @@ github: false
 - *(deps)* Upgrade container image golang to 1.26.5
 - *(deps)* Upgrade container image alpine to 3.23.5
 
-
-
-## 4.0.4 - 2026-07-28
-
-
-### Dependency updates
-
-- *(deps)* Update golang dependencies
-- *(deps)* Upgrade golang container image to 1.26.5
-- *(deps)* Upgrade alpine to 3.23.5
-
-
-
 ## 4.1.2 - 2026-07-09
 
 
@@ -65,7 +80,7 @@ github: false
 
 
 - *(deviceconnect)* Only allow one connection per device at a time
- ([69852bc](https://github.com/mendersoftware/mender-server/commit/69852bc17e065df3cfe4c61cb91e3fac8f9fd24b))
+ ([69852bc](https://github.com/mendersoftware/mender-server/commit/69852bc17e065df3cfe4c61cb91e3fac8f9fd24b)) 
 
 
 
@@ -76,99 +91,18 @@ github: false
 
 
 
-## 4.0.3 - 2026-07-10
+## [4.1.1](https://github.com/mendersoftware/mender-server/compare/v4.1.0...v4.1.1) (2026-03-13)
 
 
-### Features
+### Bug Fixes
 
-
-- *(create-artifact-worker)* Update `mender-artifact` to latest v4.1.0
-([MEN-8337](https://northerntech.atlassian.net/browse/MEN-8337)) ([069da10](https://github.com///commit/069da103bf45f88a18a1517d46b3061c02380598)) 
-
-
-
-
-
-  Modifying also the integration to build the tool from source instead or
-  repurposing the upstream Debian package. This has the main advantage
-  that we can compile it statically (by disabling a feature that we don't
-  use) and that we have control of the compatibility aspects of the
-  binary.
-
-
-
-
-
-
-
-## 4.1.1 - 2026-04-01
-
-### Security fixes
-
-- Fixed CVE-2026-49009 - Improper input sanitization in Mender Server
-  See the official announcement for more information:
-  [mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server](https://mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server)
-
-### Bug fixes
-
-
-- *(create-artifact-worker)* Hardened single file generation input validations
- ([dfb1523](https://github.com///commit/dfb15237b45876e01afe02e9ecef842454985015)) 
-
-
-
-
-  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
-
-- *(deployments)* Nil pointer dereference getting non-existing deployment
-([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([8f3c672](https://github.com///commit/8f3c672cf62d63ccb2339615ecc7ed3073a9daf4)) 
-
-
-
-
-
-
-
-
-
-
-## 4.0.2 - 2026-04-01
-
-
-### Security fixes
-
-- Fixed CVE-2026-49009 - Improper input sanitization in Mender Server
-  See the official announcement for more information:
-  [mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server](https://mender.io/blog/cve-2026-49009-cve-2026-33552-input-sanitization-and-access-control-issues-in-mender-server)
-
-
-### Bug fixes
-
-
-- *(create-artifact-worker)* Hardened single file generation input validations
- ([1090ac3](https://github.com///commit/1090ac3c89d523124e7edd596404526f391053c2)) 
-
-
-
-
-  - this should limit path traversal possibilities and reduce possibilities for malicious user inputs
-
-- *(deployments)* Nil pointer dereference getting non-existing deployment
-([MEN-9429](https://northerntech.atlassian.net/browse/MEN-9429)) ([a690b40](https://github.com///commit/a690b40ac304cfc5e2821a41a709ef3f9d2437ce)) 
-
-
-
-
-
-
-
-
+* **create-artifact-worker:** hardened single file generation input validations ([dfb1523](https://github.com/mendersoftware/mender-server/commit/dfb15237b45876e01afe02e9ecef842454985015))
+* **deployments:** nil pointer dereference getting non-existing deployment ([8f3c672](https://github.com/mendersoftware/mender-server/commit/8f3c672cf62d63ccb2339615ecc7ed3073a9daf4))
 
 ## 4.1.0 - 2026-01-14
 
 
 ### Bug fixes
-
 
 
 - *(deployments)* Invalid Location header when returning 201 Created
@@ -5300,32 +5234,6 @@ github: false
 
 
 
-## 4.0.1 - 2025-05-19
-
-
-### Bug fixes
-
-
-- *(gui)* Fixed an issue that would prevent showing unassigned static group devices
-([ME-519](https://northerntech.atlassian.net/browse/ME-519)) ([b595a57](https://github.com/mendersoftware/mender-server/commit/b595a574d2e3d2d4fb61757198007ff4bc308f56)) 
-
-- Race when provisioning and connecting a device
-([MEN-8164](https://northerntech.atlassian.net/browse/MEN-8164)) ([5535078](https://github.com/mendersoftware/mender-server/commit/5535078d027b213fb0ee6d37dd4c4934b075e51c)) 
-
-
-  If a device gets provisioned and submits a connection request while the
-  device is getting provisioned, the device might end up in an
-  inconsistent state where the connection status gets overwritten to
-  "unknown".
-  The issue was discovered in a test where the system was under load
-  and the device was running on the same network (artificially low RTT).
-- Ensure email is always encoded in lowercase when stored
-([MEN-8328](https://northerntech.atlassian.net/browse/MEN-8328)) ([0568d2e](https://github.com/mendersoftware/mender-server/commit/0568d2e09699961cb8aabc0faa16813a4928bc44)) 
-
-
-  Added a bson codec for model.Email that will ensure that emails are
-  always encoded in lowercase in the database to ensure case insensitive
-  queries.
 
 ## 4.0.0 - 2025-02-10
 
@@ -30036,8 +29944,6 @@ artifact description
 * Fix bug that caused the update not to be retried after failing during
 previous attempt (#193)
 
-
 ## Mender v1.0.0
 _Released 02.20.2017_
-
 
