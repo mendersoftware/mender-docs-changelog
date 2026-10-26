@@ -8,6 +8,18 @@ github: false
 ---
 
 
+## meta-mender wryose-v2026.10.02
+
+### Changelogs
+
+New changes in meta-mender since wrynose-v2026.10:
+
+##### Features
+
+* Add recipe for mender-orchestrator 1.0.0
+* Add recipe for mender-orchestrator-support 1.0.0
+
+
 ## meta-mender wrynose-v2026.10
 
 ### Changelogs
@@ -175,6 +187,25 @@ New changes in meta-mender since scarthgap-v2026.04:
 * Remove recipes for `mender-artifact` 3.11, 4.0 and 4.1 series
 * Remove recipes for `mender` 4.0 series
 * Remove recipes for `mender-connect` 2.2 series
+
+
+## meta-mender scarthgap-v2026.10.02
+
+### Changelogs
+
+New changes in meta-mender since scarthgap-v2026.10:
+
+##### Features
+
+* Add recipe for mender-orchestrator 1.0.0
+* Add recipe for mender-orchestrator-support 1.0.0
+* Add support for mender-orchestrator
+* Add support mender-orchestrator-support
+* Add a new `MENDER_FEATURE`, `mender-orchestrator-install`,
+  to make the installation of mender-orchestrator easier. `mender-orchestrator-install`
+  will append mender-orchestrator, mender-orchestrator-support and default
+  the Device tier to `system`.
+  ([MEN-9052](https://northerntech.atlassian.net/browse/MEN-9052))
 
 
 ## meta-mender scarthgap-v2026.10
