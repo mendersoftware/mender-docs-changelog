@@ -7,7 +7,136 @@ shortcode-core:
 github: false
 ---
 
-## 4.2.0-saas.22 - 2026-10-22
+## 4.2.0-saas.23 - 2026-10-26
+
+
+### New features
+
+- *(admin-panel)* Add tenant rate limit weights configuration ([MEN-8961](https://northerntech.atlassian.net/browse/MEN-8961)) ([f3c8fee](https://github.com/mendersoftware/mender-server-enterprise/commit/f3c8fee38d3e1806179ea25157acdd93aed382f2))
+- *(deployments)* Remove orchestrator_manifest.enable feature flag ([MEN-10234](https://northerntech.atlassian.net/browse/MEN-10234)) ([4a44e8c](https://github.com/mendersoftware/mender-server-enterprise/commit/4a44e8cf1deaff57ce35519361417d52931b19f6))
+  The feature is always enabled
+
+- *(inventory)* Remove orchestrator_attributes_processing_enabled feature flag ([MEN-10234](https://northerntech.atlassian.net/browse/MEN-10234)) ([b9d6dcd](https://github.com/mendersoftware/mender-server-enterprise/commit/b9d6dcdd57b681921bd56293c13679e3d96744d6))
+  The feature is always enabled
+
+- *(gui)* Remove feature flag HAVE_MANIFESTS_ENABLED ([MEN-10234](https://northerntech.atlassian.net/browse/MEN-10234)) ([7e1fe07](https://github.com/mendersoftware/mender-server-enterprise/commit/7e1fe079ab2ba3930ed386be52507154cb98f8c8))
+- *(gui)* Added warnings against sharing session & personal access tokens ([MEN-6768](https://northerntech.atlassian.net/browse/MEN-6768)) ([b5a92c5](https://github.com/mendersoftware/mender-server-enterprise/commit/b5a92c53aa94819f9fddf34467188883d58327a8))
+- *(gui)* Added rendering of software auditlog entries ([MEN-10270](https://northerntech.atlassian.net/browse/MEN-10270)) ([f1df637](https://github.com/mendersoftware/mender-server-enterprise/commit/f1df637753bb932d83e1a7b734f66b531b49deb8))
+
+### Bug fixes
+
+- *(deployments)* Emit software type audit log when uploading artifacts and manifests ([MEN-10272](https://northerntech.atlassian.net/browse/MEN-10272)) ([06ac430](https://github.com/mendersoftware/mender-server-enterprise/commit/06ac4307b07cc88c135470608e35185af04854c0))
+  This also affects the generation of artifacts and manifests, changing log type
+  from "artifact" to "software".
+
+- *(admin-panel)* Get the parent tenant id from the parent tenant object ([7104580](https://github.com/mendersoftware/mender-server-enterprise/commit/7104580e236e8dfe56d9aa2abe3622a62f3c6874))
+- *(gui)* Propagate manifest list url changes ([MEN-10193](https://northerntech.atlassian.net/browse/MEN-10193)) ([35b8da6](https://github.com/mendersoftware/mender-server-enterprise/commit/35b8da684e2f7e68f8f44f5bb6736115f3d4eb43))
+- *(gui)* Show compatible device types in delta generation details ([MEN-9169](https://northerntech.atlassian.net/browse/MEN-9169)) ([420cf43](https://github.com/mendersoftware/mender-server-enterprise/commit/420cf434df042aae196ce6ca4497a1282af601ba))
+- *(gui)* Fixed an issue that would leave misleading browser history entries on the devices tab ([f9c401d](https://github.com/mendersoftware/mender-server-enterprise/commit/f9c401ddf8b1589b97ce7aa6159f0b971b280b83))
+- *(gui)* Delayed terminal sizing until the session got established ([MEN-8974](https://northerntech.atlassian.net/browse/MEN-8974)) ([bee3ed4](https://github.com/mendersoftware/mender-server-enterprise/commit/bee3ed48e51d4c7760d958680e1f75ebc1c1062c))
+- *(workflows)* Remove user input from user invitation email subject ([MEN-10325](https://northerntech.atlassian.net/browse/MEN-10325)) ([1006e3d](https://github.com/mendersoftware/mender-server-enterprise/commit/1006e3db5cf074b8720bfc2ab60c6aa5d87a77c3))
+  and truncate and quote the organization name in the email body.
+
+- *(gui)* Prevented links to deleted software in the auditlog ([13adfd5](https://github.com/mendersoftware/mender-server-enterprise/commit/13adfd54bb5406356595a727eccbe4d9e65c1527))
+- *(gui)* Made personal access token changes easier to read in audit log ([75945e3](https://github.com/mendersoftware/mender-server-enterprise/commit/75945e3bf160f452cbb05d79fc729bb3a45112e3))
+- *(gui)* Ensured software links from within the app select the linked software ([127dbac](https://github.com/mendersoftware/mender-server-enterprise/commit/127dbac648bce09c08626db5ed8c5f40565ce06e))
+- *(deviceconnect)* Return device error when chunk send fails during upload ([0d33cb2](https://github.com/mendersoftware/mender-server-enterprise/commit/0d33cb2e1e24b67cb267a819cd39d2a323f3093d))
+
+### Dependency updates
+
+- *(deps)* Update test-dependencies ([f447e11](https://github.com/mendersoftware/mender-server-enterprise/commit/f447e11582475f640475a0955407cda0c195ffa6))
+  - chalk 5.6.2 -> 6.0.1
+  - google-auth-library 10.6.2 -> 11.3.1
+  - googleapis 173.0.0 -> 188.0.0
+  - pixelmatch 7.2.0 -> 8.0.0
+
+- *(deps)* Update npm-mui to v9.16.0 ([e8d8633](https://github.com/mendersoftware/mender-server-enterprise/commit/e8d8633e4610de3e6e15753a80a9032921acc8b2))
+  - @mui/x-charts 9.15.0 -> 9.16.0
+  - @mui/x-date-pickers 9.15.0 -> 9.16.0
+
+- *(deps)* Update dependency @playwright/test to v1.64.1 ([009e390](https://github.com/mendersoftware/mender-server-enterprise/commit/009e39027d00cd3d0bf48048bb62c66624619de9))
+  - @playwright/test 1.60.0 -> 1.64.1
+
+- *(deps)* Update docker-base-images ([8461001](https://github.com/mendersoftware/mender-server-enterprise/commit/8461001abfe73c4674b07a2f9206fa5eceaa3e19))
+  - docker.io/library/alpine 3.24.2 -> 3.24.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/golang 1.27.2 -> 1.27.3
+  - docker.io/library/node 26.12.0 -> 26.12.1
+  - docker.io/library/python 3.14 -> 3.15
+
+- *(deps)* Update dependency filelock to v4 [security] ([6e4a257](https://github.com/mendersoftware/mender-server-enterprise/commit/6e4a2574978f0383305b28c6468b63522759d1cf))
+  - filelock 3.29.0 -> 4.2.1
+
+- *(deps)* Update react monorepo ([89d672a](https://github.com/mendersoftware/mender-server-enterprise/commit/89d672af503ca7b1bc8d8aeb60545b21fd47adf8))
+  - @types/react 19.2.18 -> 19.3.0
+  - @types/react-dom 19.2.5 -> 19.3.0
+  - react 19.2.8 -> 19.3.1
+  - react-dom 19.2.8 -> 19.3.1
+
+- *(deps)* Update material-ui monorepo ([78ec169](https://github.com/mendersoftware/mender-server-enterprise/commit/78ec16971b423eefabba968d51aef9fe390e9cf0))
+  - @mui/icons-material 9.3.1 -> 9.5.0
+  - @mui/material 9.3.1 -> 9.5.0
+  - @mui/x-data-grid 9.12.0 -> 9.16.0
+  - @mui/x-date-pickers 9.14.0 -> 9.16.0
+
+- *(deps)* Update dependency react-hook-form to v7.91.0 ([a59a803](https://github.com/mendersoftware/mender-server-enterprise/commit/a59a80309c2578e9c065e2de04a54f7007dff5e0))
+  - react-hook-form 7.86.0 -> 7.91.0
+
+- *(deps)* Update rspack monorepo to v2.2.9 ([cf4ea73](https://github.com/mendersoftware/mender-server-enterprise/commit/cf4ea73f812317e9a762f43effeb95c500bb4a86))
+  - @rspack/cli 2.1.10 -> 2.2.9
+  - @rspack/core 2.1.10 -> 2.2.9
+
+- *(deps)* Update dependency @northern.tech/typescript-config to v0.3.2 ([7ea632a](https://github.com/mendersoftware/mender-server-enterprise/commit/7ea632a4699dcd76fa5fa7abd7fb0f6f3c752b85))
+  - @northern.tech/typescript-config 0.3.0 -> 0.3.2
+
+- *(deps)* Update dependency @base-ui/react to v1.9.0 ([234f344](https://github.com/mendersoftware/mender-server-enterprise/commit/234f344910c710fd5ac27b46cfd0e5aa35e95347))
+- *(deps)* Update dependency react-router + nt-gui packages ([7695a08](https://github.com/mendersoftware/mender-server-enterprise/commit/7695a08e6b64b566574ca27ac20b8ed210eabd9b))
+  - react-router 8.3.0 -> 8.5.0
+  - @northern.tech/common-ui 0.9.1 -> 0.10.1
+  - @northern.tech/store 0.46.3 -> 0.49.4
+  - @northern.tech/themes 0.16.8 -> 0.18.1
+
+- *(deps)* Update golang-dependencies ([85767b6](https://github.com/mendersoftware/mender-server-enterprise/commit/85767b62be41acfdb8d2c8ad6179c0fa5dcb18c7))
+  - github.com/aws/aws-sdk-go-v2 v1.47.3 -> v1.47.4
+  - github.com/aws/aws-sdk-go-v2/config v1.33.9 -> v1.33.10
+  - github.com/aws/aws-sdk-go-v2/credentials v1.20.9 -> v1.20.10
+  - github.com/aws/aws-sdk-go-v2/service/iot v1.84.4 -> v1.84.6
+  - github.com/aws/aws-sdk-go-v2/service/iotdataplane v1.40.4 -> v1.42.0
+  - github.com/aws/aws-sdk-go-v2/service/s3 v1.114.3 -> v1.114.5
+  - github.com/aws/smithy-go v1.28.5 -> v1.28.6
+  - github.com/compose-spec/compose-go/v2 v2.11.0 -> v2.16.2
+  - github.com/docker/cli v29.5.2+incompatible -> v29.9.2+incompatible
+  - github.com/docker/compose/v5 v5.1.4 -> v5.6.1
+  - github.com/mendersoftware/mender-artifact v0.0.0-20261008095710-3f0b4d469773 -> v0.0.0-20261021105616-273773df8155
+  - github.com/mendersoftware/mender-artifact v0.0.0-20261008095710-3f0b4d469773 -> v0.0.0-20261021105616-273773df8155
+  - github.com/moby/moby/api v1.54.2 -> v1.56.1
+  - github.com/moby/moby/client v0.4.1 -> v0.6.2
+  - github.com/nats-io/nats.go v1.54.0 -> v1.55.0
+
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10272](https://northerntech.atlassian.net/browse/MEN-10272) |
+| [MEN-8961](https://northerntech.atlassian.net/browse/MEN-8961) |
+| [MEN-10234](https://northerntech.atlassian.net/browse/MEN-10234) |
+| [MEN-10193](https://northerntech.atlassian.net/browse/MEN-10193) |
+| [MEN-9169](https://northerntech.atlassian.net/browse/MEN-9169) |
+| [MEN-8974](https://northerntech.atlassian.net/browse/MEN-8974) |
+| [MEN-10325](https://northerntech.atlassian.net/browse/MEN-10325) |
+| [MEN-6768](https://northerntech.atlassian.net/browse/MEN-6768) |
+| [MEN-10270](https://northerntech.atlassian.net/browse/MEN-10270) |
+
+
+## 4.2.0-saas.22 - 2026-10-21
 
 
 ### New features
