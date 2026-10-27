@@ -8,7 +8,7 @@ github: false
 ---
 
 
-## meta-mender wryose-v2026.10.02
+## meta-mender wrynose-v2026.10.02
 
 ### Changelogs
 
