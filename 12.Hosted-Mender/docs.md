@@ -7,6 +7,38 @@ shortcode-core:
 github: false
 ---
 
+## 4.2.0-saas.24 - 2026-10-29
+
+
+### Improvements
+
+- *(gui)* Reused store type to define software tab & location changes ([7c5dbca](https://github.com/mendersoftware/mender-server-enterprise/commit/7c5dbca22e2595bd18f82297e56efc42219f2730)) by @mzedel
+
+### Bug fixes
+
+- *(useradm)* Correctly add SSO context to user invitation email ([96b03b4](https://github.com/mendersoftware/mender-server-enterprise/commit/96b03b4dfc12eaec280ca9f1ae3a4b9e580f0e43)) by @alfrunes
+- *(inventory)* Fixed an issue that would result in misleading information about device components ([MEN-10331](https://northerntech.atlassian.net/browse/MEN-10331)) ([bfbb7bf](https://github.com/mendersoftware/mender-server-enterprise/commit/bfbb7bf237a940ffffd0a8ecee9239ee1b97233c)) by @mzedel
+- *(gui)* Let deployment software point to both deployed manifests & releases ([3cb4971](https://github.com/mendersoftware/mender-server-enterprise/commit/3cb4971b1e92d18deb9f05590607cd2380d8376d)) by @mzedel
+
+### Dependency updates
+
+- *(deps)* Update npm-dev-dependencies ([d5b424a](https://github.com/mendersoftware/mender-server-enterprise/commit/d5b424ac114d693a8dea6cce3e182f04946b10f4)) by @renovate-ring-mendersoftware[bot]
+  - @sentry/webpack-plugin 5.4.1 -> 11.9.0
+  - msw 2.15.0 -> 3.0.3
+
+- *(deps)* Update npm-prod-dependencies ([bccec62](https://github.com/mendersoftware/mender-server-enterprise/commit/bccec6204012d00ac1dafc957e7592142dfebe8b)) by @renovate-ring-mendersoftware[bot]
+  - @sentry/react 10.76.2 -> 11.9.0
+  - @stripe/react-stripe-js 6.12.0 -> 7.0.0
+  - @stripe/stripe-js 9.17.0 -> 10.1.0
+
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10331](https://northerntech.atlassian.net/browse/MEN-10331) |
+
+
 ## 4.2.0-saas.23 - 2026-10-26
 
 
