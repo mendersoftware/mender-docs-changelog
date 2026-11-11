@@ -7,7 +7,190 @@ shortcode-core:
 github: false
 ---
 
-## 4.2.0-saas.24 - 2026-10-29
+## 5.0.0-saas.1 - 2026-11-11
+
+
+### Breaking changes
+
+- *(useradm)* Resolve DISABLE_ADMIN_UPDATING_USER_EMAILS feature flag ([MEN-10163](https://northerntech.atlassian.net/browse/MEN-10163)) ([3b8c339](https://github.com/mendersoftware/mender-server-enterprise/commit/3b8c33947a1047d19c78fa681b4955a0353948a1)) by @bahaa-ghazal
+- *(deviceauth)* Always enable device tiers and test devices ([79f0e30](https://github.com/mendersoftware/mender-server-enterprise/commit/79f0e3007e7b0b45438ac8e8f64d204a22c83911)) by @kjaskiewiczz
+  - **BREAKING**: `DEVICEAUTH_ENABLE_TIERS` and `DEVICEAUTH_FEATURES_DEVICE_FLAGS`
+are removed and device tiers are always enabled. Devices reporting the `micro`
+or `system` tier are now counted against the tenant's `max_micro_devices` /
+`max_system_devices` limits instead of the standard device limit; make sure
+these limits are set before upgrading, otherwise such devices cannot be accepted.
+
+### New features
+
+- *(admin-panel)* Show tenant trial status in user details to ease support request prioritization ([18ab133](https://github.com/mendersoftware/mender-server-enterprise/commit/18ab133a0e4e4cf87b3041725ca430b808d7b08b)) by @mzedel
+- *(admin-panel)* Added expectation management when clearing tenant subscription ids ([57a3a70](https://github.com/mendersoftware/mender-server-enterprise/commit/57a3a7013f4319b929374229ecd9ab116da8ffd8)) by @mzedel
+- *(admin-panel)* Added child tenant device count retrieval for sp tenants ([39870f9](https://github.com/mendersoftware/mender-server-enterprise/commit/39870f9ca8c487a8477da18dd55a01a3d8be6048)) by @mzedel
+- *(gui)* Let monitoring chip open the device monitoring details ([MEN-8488](https://northerntech.atlassian.net/browse/MEN-8488)) ([db2e9da](https://github.com/mendersoftware/mender-server-enterprise/commit/db2e9da06869b89f71800a560156af741720d330)) by @mzedel
+- *(pkg)* Add shared validation limits ([MEN-10129](https://northerntech.atlassian.net/browse/MEN-10129)) ([d45d877](https://github.com/mendersoftware/mender-server-enterprise/commit/d45d877a50f576ce4ba67deb62c628f35a01583c)) by @bahaa-ghazal
+
+### Improvements
+
+- *(admin-panel)* Use the generated models for child tenants and user tenant associations ([9098413](https://github.com/mendersoftware/mender-server-enterprise/commit/9098413421655ccbaa5fa6e26df27e8e516ad7da)) by @mzedel
+- *(gui)* Aligned form input usage w/ name based common-ui identifiers ([MEN-7269](https://northerntech.atlassian.net/browse/MEN-7269)) ([6e46674](https://github.com/mendersoftware/mender-server-enterprise/commit/6e46674612c35d3fb7aa8ede3b7918cc676b16f9)) by @mzedel
+- Made use of enterprise aligned attribute filtering models ([21952b6](https://github.com/mendersoftware/mender-server-enterprise/commit/21952b6afe606e1b98c936b49647c772b21f81bd)) by @mzedel
+
+### Bug fixes
+
+- *(gui)* Fixed an issue that would leave the ui unresponsive when returning to the deployments tab ([ME-781](https://northerntech.atlassian.net/browse/ME-781)) ([c6a340c](https://github.com/mendersoftware/mender-server-enterprise/commit/c6a340ca5009cf41f39e6f3cc35d294caf831a02)) by @mzedel
+- *(gui)* Prevented page reload when pressing enter in the software search of the deployment wizard ([4c7b367](https://github.com/mendersoftware/mender-server-enterprise/commit/4c7b367f35308de6ea6b3ea4f17dd9140b2c85b1)) by @mzedel
+- *(pkg)* Migrate HubSpot client to date-based API version 2026-09 ([d8a5d78](https://github.com/mendersoftware/mender-server-enterprise/commit/d8a5d789498dc90cf4084b897b5dad0654113bc6)) by @kjaskiewiczz
+- *(tenantadm)* Remove tenant when create-org fails to create the user ([08e108d](https://github.com/mendersoftware/mender-server-enterprise/commit/08e108d7d1596201a154f74f5bcbb64854ce905d)) by @kjaskiewiczz
+- Purge plan binding and limits of tenants that failed to be created ([819bc55](https://github.com/mendersoftware/mender-server-enterprise/commit/819bc55a9f865711937f50774b31fb33396d9fbf)) by @kjaskiewiczz
+- *(gui)* Clarified finished deployments filter labels ([MEN-9348](https://northerntech.atlassian.net/browse/MEN-9348)) ([d4c8dda](https://github.com/mendersoftware/mender-server-enterprise/commit/d4c8dda9780e9de3fb79e1b59f956af3c4bdf6dd)) by @mzedel
+- *(gui)* Stopped counting aborted devices as failed deployments in progress summaries ([MEN-9983](https://northerntech.atlassian.net/browse/MEN-9983)) ([e289e0d](https://github.com/mendersoftware/mender-server-enterprise/commit/e289e0d7fe5f22b937c757131eb6083e7e0e6bb6)) by @mzedel
+- *(deviceauth)* Only treat device tier as changed when it differs ([5d1fd40](https://github.com/mendersoftware/mender-server-enterprise/commit/5d1fd408394942a57c0f79f62c503e482181c434)) by @kjaskiewiczz
+- *(gui)* Ensured the pending devices notification points to the start of the related device list ([MEN-10307](https://northerntech.atlassian.net/browse/MEN-10307)) ([5069ecc](https://github.com/mendersoftware/mender-server-enterprise/commit/5069eccb93051e1247be9de23f0246d3f435e3bf)) by @mzedel
+- *(gui)* Stopped offering to unlink federated sso logins in the user profile ([ME-779](https://northerntech.atlassian.net/browse/ME-779)) ([e578bef](https://github.com/mendersoftware/mender-server-enterprise/commit/e578bef5f57d59025b7b1e11b4b5eaf2b0b870e0)) by @mzedel
+
+### Dependency updates
+
+- *(deps)* Update rspack monorepo to v2.3.1 ([e5b7e1c](https://github.com/mendersoftware/mender-server-enterprise/commit/e5b7e1c942d7f31bd9c3a50800b4315845ce8d36)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package      | from  | to    |
+  | ---------- | ------------ | ----- | ----- |
+  | npm        | @rspack/cli  | 2.2.9 | 2.3.1 |
+  | npm        | @rspack/core | 2.2.9 | 2.3.1 |
+
+- *(deps)* Update dependency @northern.tech/prettier-config to v0.2.2 ([3c0f935](https://github.com/mendersoftware/mender-server-enterprise/commit/3c0f93522cb780a3a9fb88418a94cecd4ead668b)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package                        | from  | to    |
+  | ---------- | ------------------------------ | ----- | ----- |
+  | npm        | @northern.tech/prettier-config | 0.2.1 | 0.2.2 |
+
+- *(deps)* Update docker-base-images ([584bc63](https://github.com/mendersoftware/mender-server-enterprise/commit/584bc63a28cf68e814b8547cdc704822ae79c31c)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package                  | from    | to      |
+  | ---------- | ------------------------ | ------- | ------- |
+  | docker     | docker.io/library/alpine | 3.24.3  | 3.24.4  |
+  | docker     | docker.io/library/node   | 26.12.1 | 26.13.0 |
+
+- *(deps)* Update dependency @playwright/test to v1.65.0 ([ba55c93](https://github.com/mendersoftware/mender-server-enterprise/commit/ba55c93f2def59003bd00eaf88b2b47f91a9eda6)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package          | from   | to     |
+  | ---------- | ---------------- | ------ | ------ |
+  | npm        | @playwright/test | 1.64.1 | 1.65.0 |
+
+- *(deps)* Update test-dependencies ([5c97cd3](https://github.com/mendersoftware/mender-server-enterprise/commit/5c97cd33086c4613e3fb1604f816a6c30ba80c6e)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package             | from   | to     |
+  | ---------- | ------------------- | ------ | ------ |
+  | npm        | commander           | 15.0.0 | 15.1.0 |
+  | npm        | google-auth-library | 11.3.1 | 11.3.3 |
+  | npm        | inquirer            | 14.2.4 | 14.2.5 |
+  | npm        | otplib              | 13.5.0 | 13.6.0 |
+
+- *(deps)* Update golang-dependencies ([9e6a272](https://github.com/mendersoftware/mender-server-enterprise/commit/9e6a272304419c9781a53d6192e851c1743e4c06)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package                                              | from                               | to                                 |
+  | ---------- | ---------------------------------------------------- | ---------------------------------- | ---------------------------------- |
+  | go         | github.com/Azure/azure-sdk-for-go/sdk/azcore         | v1.23.3                            | v1.24.0                            |
+  | go         | github.com/Azure/azure-sdk-for-go/sdk/storage/azblob | v1.8.2                             | v1.8.3                             |
+  | go         | github.com/aws/aws-sdk-go-v2                         | v1.47.4                            | v1.47.8                            |
+  | go         | github.com/aws/aws-sdk-go-v2/config                  | v1.33.10                           | v1.33.16                           |
+  | go         | github.com/aws/aws-sdk-go-v2/credentials             | v1.20.10                           | v1.20.16                           |
+  | go         | github.com/aws/aws-sdk-go-v2/service/iot             | v1.84.6                            | v1.84.11                           |
+  | go         | github.com/aws/aws-sdk-go-v2/service/iotdataplane    | v1.42.0                            | v1.42.5                            |
+  | go         | github.com/aws/aws-sdk-go-v2/service/s3              | v1.114.5                           | v1.114.9                           |
+  | go         | github.com/aws/smithy-go                             | v1.28.6                            | v1.28.8                            |
+  | go         | github.com/docker/cli                                | v29.9.2+incompatible               | v29.9.3+incompatible               |
+  | go         | github.com/docker/compose/v5                         | v5.6.1                             | v5.7.0                             |
+  | go         | github.com/go-ozzo/ozzo-validation/v4                | v4.4.1                             | v4.5.0                             |
+  | go         | github.com/mendersoftware/mender-artifact            | v0.0.0-20261021105616-273773df8155 | v0.0.0-20261029122707-b33dd7c4202d |
+  | go         | github.com/nats-io/nats-server/v2                    | v2.15.1                            | v2.15.2                            |
+  | go         | github.com/vektra/mockery/v3                         | v3.8.1                             | v3.9.0                             |
+  | go         | go.mongodb.org/mongo-driver/v2                       | v2.9.2                             | v2.10.0                            |
+
+- *(deps)* Update npm-dev-dependencies ([39e0db1](https://github.com/mendersoftware/mender-server-enterprise/commit/39e0db1fb8a89e31bbd067d5e7e200340ef345f7)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package                        | from    | to      |
+  | ---------- | ------------------------------ | ------- | ------- |
+  | npm        | @mswjs/interceptors            | 0.45.10 | 0.45.11 |
+  | npm        | @northern.tech/prettier-config | 0.2.1   | 0.2.2   |
+  | npm        | @northern.tech/testing         | 0.19.3  | 0.19.4  |
+  | npm        | @northern.tech/types           | 0.7.12  | 0.7.13  |
+  | npm        | @rspack/cli                    | 2.2.9   | 2.3.1   |
+  | npm        | @rspack/core                   | 2.2.9   | 2.3.1   |
+  | npm        | @rspack/dev-server             | 2.2.1   | 2.2.2   |
+  | npm        | @sentry/webpack-plugin         | 11.9.0  | 11.11.0 |
+  | npm        | @vitejs/plugin-react           | 6.1.2   | 6.2.1   |
+  | npm        | @vitest/coverage-v8            | 5.0.5   | 5.1.0   |
+  | npm        | autoprefixer                   | 10.6.1  | 10.6.2  |
+  | npm        | eslint                         | 10.13.0 | 10.14.0 |
+  | npm        | globals                        | 17.13.0 | 17.14.0 |
+  | npm        | msw                            | 3.0.3   | 3.0.4   |
+  | npm        | vitest                         | 5.0.5   | 5.1.0   |
+
+- *(deps)* Update npm-prod-dependencies ([f85cb6f](https://github.com/mendersoftware/mender-server-enterprise/commit/f85cb6fdbfb1ef41e15e12c14623ead2116af1c7)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package                  | from   | to      |
+  | ---------- | ------------------------ | ------ | ------- |
+  | npm        | @northern.tech/common-ui | 0.11.0 | 0.11.1  |
+  | npm        | @northern.tech/store     | 0.49.6 | 0.49.7  |
+  | npm        | @reduxjs/toolkit         | 2.13.0 | 2.14.0  |
+  | npm        | @sentry/react            | 11.9.0 | 11.11.0 |
+  | npm        | @stripe/react-stripe-js  | 7.0.0  | 7.0.1   |
+  | npm        | @stripe/stripe-js        | 10.1.0 | 10.2.1  |
+  | npm        | axios                    | 1.20.0 | 1.21.0  |
+  | npm        | msgpackr                 | 2.1.2  | 2.1.4   |
+  | npm        | react-dropzone           | 20.1.4 | 20.2.0  |
+  | npm        | react-redux              | 9.3.0  | 9.3.1   |
+  | npm        | react-router             | 8.5.0  | 8.5.1   |
+
+- *(deps)* Update docker-compose ([1fa4e0a](https://github.com/mendersoftware/mender-server-enterprise/commit/1fa4e0a03ad807134861ea70cc7a841e36fc4931)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package                       | from    | to      |
+  | ---------- | ----------------------------- | ------- | ------- |
+  | docker     | docker.io/chrislusf/seaweedfs | 4.48    | 4.52    |
+  | docker     | docker.io/jordimartin/mmock   | v2.7.6  | v2.7.9  |
+  | docker     | docker.io/jordimartin/mmock   | v3.0.0  | v3.1.6  |
+  | docker     | docker.io/library/traefik     | v3.7.15 | v3.7.17 |
+  | docker     | docker.io/rnwood/smtp4dev     | 3.15.0  | 3.16.1  |
+  | docker     | docker.io/rustfs/rustfs       | 1.0.3   | 1.0.4   |
+  | docker     | mcr.microsoft.com/azure-cli   | 2.40.0  | 2.92.0  |
+
+- *(deps)* Update python-dependencies ([b4f8c01](https://github.com/mendersoftware/mender-server-enterprise/commit/b4f8c01a04a56871e585e809cbed74408a12d7fc)) by @renovate-ring-mendersoftware[bot]
+  | datasource | package           | from       | to         |
+  | ---------- | ----------------- | ---------- | ---------- |
+  | pypi       | azure-cli         | 2.90.0     | 2.92.0     |
+  | pypi       | boto3             | 1.43.20    | 1.43.126   |
+  | pypi       | certifi           | 2026.10.19 | 2026.10.23 |
+  | pypi       | cffi              | 2.0.0      | 2.1.1      |
+  | pypi       | cryptography      | 50.0.0     | 50.0.2     |
+  | pypi       | docker            | 7.1.0      | 7.2.0      |
+  | pypi       | filelock          | 4.2.1      | 4.2.9      |
+  | pypi       | idna              | 3.18       | 3.20       |
+  | pypi       | iniconfig         | 2.3.0      | 2.3.1      |
+  | pypi       | kubernetes        | 36.0.2     | 36.0.3     |
+  | pypi       | packaging         | 26.2       | 26.3       |
+  | pypi       | pluggy            | 1.6.0      | 1.7.0      |
+  | pypi       | pycparser         | 3.0        | 3.12       |
+  | pypi       | pydantic          | 2.13.4     | 2.14.3     |
+  | pypi       | pyjwt             | 2.15.0     | 2.15.1     |
+  | pypi       | pymongo           | 4.18.3     | 4.19.0     |
+  | pypi       | pyotp             | 2.9.0      | 2.10.0     |
+  | pypi       | pyparsing         | 3.3.2      | 3.3.3      |
+  | pypi       | pytest            | 9.0.3      | 9.2.0      |
+  | pypi       | pytest-forked     | 1.6.0      | 1.7.5      |
+  | pypi       | pytest-httpserver | 1.1.5      | 1.2.0      |
+  | pypi       | redis             | 8.0.0      | 8.1.0      |
+  | pypi       | redo              | 3.0.0      | 3.0.1      |
+  | pypi       | semver            | 3.0.4      | 3.1.0      |
+  | pypi       | stripe            | 15.2.0     | 15.6.2     |
+  | pypi       | websockets        | 16.0       | 16.1.1     |
+
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-10163](https://northerntech.atlassian.net/browse/MEN-10163) |
+| [ME-781](https://northerntech.atlassian.net/browse/ME-781) |
+| [MEN-7269](https://northerntech.atlassian.net/browse/MEN-7269) |
+| [MEN-9348](https://northerntech.atlassian.net/browse/MEN-9348) |
+| [MEN-8488](https://northerntech.atlassian.net/browse/MEN-8488) |
+| [MEN-9983](https://northerntech.atlassian.net/browse/MEN-9983) |
+| [MEN-10129](https://northerntech.atlassian.net/browse/MEN-10129) |
+| [MEN-10307](https://northerntech.atlassian.net/browse/MEN-10307) |
+| [ME-779](https://northerntech.atlassian.net/browse/ME-779) |
+
+
+## 4.2.0-saas.24 - 2026-10-28
 
 
 ### Improvements
