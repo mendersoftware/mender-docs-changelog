@@ -50,28 +50,33 @@ these limits are set before upgrading, otherwise such devices cannot be accepted
 ### Dependency updates
 
 - *(deps)* Update rspack monorepo to v2.3.1 ([e5b7e1c](https://github.com/mendersoftware/mender-server-enterprise/commit/e5b7e1c942d7f31bd9c3a50800b4315845ce8d36)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package      | from  | to    |
   | ---------- | ------------ | ----- | ----- |
   | npm        | @rspack/cli  | 2.2.9 | 2.3.1 |
   | npm        | @rspack/core | 2.2.9 | 2.3.1 |
 
 - *(deps)* Update dependency @northern.tech/prettier-config to v0.2.2 ([3c0f935](https://github.com/mendersoftware/mender-server-enterprise/commit/3c0f93522cb780a3a9fb88418a94cecd4ead668b)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package                        | from  | to    |
   | ---------- | ------------------------------ | ----- | ----- |
   | npm        | @northern.tech/prettier-config | 0.2.1 | 0.2.2 |
 
 - *(deps)* Update docker-base-images ([584bc63](https://github.com/mendersoftware/mender-server-enterprise/commit/584bc63a28cf68e814b8547cdc704822ae79c31c)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package                  | from    | to      |
   | ---------- | ------------------------ | ------- | ------- |
   | docker     | docker.io/library/alpine | 3.24.3  | 3.24.4  |
   | docker     | docker.io/library/node   | 26.12.1 | 26.13.0 |
 
 - *(deps)* Update dependency @playwright/test to v1.65.0 ([ba55c93](https://github.com/mendersoftware/mender-server-enterprise/commit/ba55c93f2def59003bd00eaf88b2b47f91a9eda6)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package          | from   | to     |
   | ---------- | ---------------- | ------ | ------ |
   | npm        | @playwright/test | 1.64.1 | 1.65.0 |
 
 - *(deps)* Update test-dependencies ([5c97cd3](https://github.com/mendersoftware/mender-server-enterprise/commit/5c97cd33086c4613e3fb1604f816a6c30ba80c6e)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package             | from   | to     |
   | ---------- | ------------------- | ------ | ------ |
   | npm        | commander           | 15.0.0 | 15.1.0 |
@@ -80,6 +85,7 @@ these limits are set before upgrading, otherwise such devices cannot be accepted
   | npm        | otplib              | 13.5.0 | 13.6.0 |
 
 - *(deps)* Update golang-dependencies ([9e6a272](https://github.com/mendersoftware/mender-server-enterprise/commit/9e6a272304419c9781a53d6192e851c1743e4c06)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package                                              | from                               | to                                 |
   | ---------- | ---------------------------------------------------- | ---------------------------------- | ---------------------------------- |
   | go         | github.com/Azure/azure-sdk-for-go/sdk/azcore         | v1.23.3                            | v1.24.0                            |
@@ -100,6 +106,7 @@ these limits are set before upgrading, otherwise such devices cannot be accepted
   | go         | go.mongodb.org/mongo-driver/v2                       | v2.9.2                             | v2.10.0                            |
 
 - *(deps)* Update npm-dev-dependencies ([39e0db1](https://github.com/mendersoftware/mender-server-enterprise/commit/39e0db1fb8a89e31bbd067d5e7e200340ef345f7)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package                        | from    | to      |
   | ---------- | ------------------------------ | ------- | ------- |
   | npm        | @mswjs/interceptors            | 0.45.10 | 0.45.11 |
@@ -119,6 +126,7 @@ these limits are set before upgrading, otherwise such devices cannot be accepted
   | npm        | vitest                         | 5.0.5   | 5.1.0   |
 
 - *(deps)* Update npm-prod-dependencies ([f85cb6f](https://github.com/mendersoftware/mender-server-enterprise/commit/f85cb6fdbfb1ef41e15e12c14623ead2116af1c7)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package                  | from   | to      |
   | ---------- | ------------------------ | ------ | ------- |
   | npm        | @northern.tech/common-ui | 0.11.0 | 0.11.1  |
@@ -134,6 +142,7 @@ these limits are set before upgrading, otherwise such devices cannot be accepted
   | npm        | react-router             | 8.5.0  | 8.5.1   |
 
 - *(deps)* Update docker-compose ([1fa4e0a](https://github.com/mendersoftware/mender-server-enterprise/commit/1fa4e0a03ad807134861ea70cc7a841e36fc4931)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package                       | from    | to      |
   | ---------- | ----------------------------- | ------- | ------- |
   | docker     | docker.io/chrislusf/seaweedfs | 4.48    | 4.52    |
@@ -145,6 +154,7 @@ these limits are set before upgrading, otherwise such devices cannot be accepted
   | docker     | mcr.microsoft.com/azure-cli   | 2.40.0  | 2.92.0  |
 
 - *(deps)* Update python-dependencies ([b4f8c01](https://github.com/mendersoftware/mender-server-enterprise/commit/b4f8c01a04a56871e585e809cbed74408a12d7fc)) by @renovate-ring-mendersoftware[bot]
+
   | datasource | package           | from       | to         |
   | ---------- | ----------------- | ---------- | ---------- |
   | pypi       | azure-cli         | 2.90.0     | 2.92.0     |
