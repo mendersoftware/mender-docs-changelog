@@ -7,6 +7,31 @@ shortcode-core:
 github: false
 ---
 
+## mender-ci-workflows 2.0.0
+
+_Released 11.16.2026_
+
+### Changelogs
+
+#### mender-ci-workflows (2.0.0)
+
+New changes in mender-ci-workflows since 1.0.0:
+
+##### Bug Fixes
+
+* mender-artifact requires the libssl3 library, so this is now included in the image
+* Added ca-certficates package to the Dockerfile
+  ([MEN-7830](https://northerntech.atlassian.net/browse/MEN-7830))
+
+##### Features
+
+* Update mender-cli to 2.0.0, mender-artifact to 4.4.2 and the Mender Client
+  Artifact generators to 5.2.0
+* **BREAKING**: `docker-artifact-gen` is no longer included in the mender-ci-tools image
+  ([MEN-7672](https://northerntech.atlassian.net/browse/MEN-7672))
+* The mender-ci-tools image is now built for both amd64 and arm64
+* Update the base image to Debian 13
+
 
 ## mender-ci-workflows 1.0.0
 
