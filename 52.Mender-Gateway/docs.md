@@ -212,8 +212,36 @@ github: false
   Bump golang:1.23.4 to 1.23.9
 
 
+## 2.0.1 - 2026-11-16
 
+### Bug fixes
 
+- Whitelist cloudflarestorage in example conf
+([MEN-8619](https://northerntech.atlassian.net/browse/MEN-8619)) ([1736267](https://github.com/mendersoftware/mender-gateway/commit/1736267a4c07932193cb403e3dbced116e34eda7))  by @danielskinstad
+- Update Golang version for pre-built binaries to Go 1.25 ([SEC-1715](https://northerntech.atlassian.net/browse/SEC-1715)) ([8b76e81](https://github.com/mendersoftware/mender-gateway/commit/8b76e81dbaca24ce7a3f47a5b0c9fe0918cc928c))
+- Check if DeviceSystem is enabled in inventory script ([MEN-8937](https://northerntech.atlassian.net/browse/MEN-8937)) ([fb039e9](https://github.com/mendersoftware/mender-gateway/commit/fb039e9c66ead5b54a9a6752d2e257ad07a8064e))
+- Do not mangle HTTP responses on panic ([8b73ad0](https://github.com/mendersoftware/mender-gateway/commit/8b73ad00d88ccacb89621c81cbe9a84dd4580e25))
+- Fixed error on service restart ([82a3861](https://github.com/mendersoftware/mender-gateway/commit/82a3861f74aa76d29fd9f3bd3d038891abceb3a5))
+
+### Dependency updates
+
+- *(deps)* Update golang-dependencies ([4ec570b](https://github.com/mendersoftware/mender-gateway/commit/4ec570b9d1612e244b1adde63802aee7563f3291))
+
+  - github.com/allegro/bigcache/v3 v3.1.0 -> v3.2.0
+  - github.com/fsnotify/fsnotify v1.7.0 -> v1.9.0
+  - github.com/mendersoftware/go-lib-micro v0.0.0-20240808092732-904477fef2ef -> v0.0.0-20260924120548-79a6e6f20ef9
+  - github.com/sirupsen/logrus v1.9.3 -> v1.9.4
+  - github.com/spf13/pflag v1.0.5 -> v1.1.0
+  - golang.org/x/sync v0.8.0 -> v0.11.0
+  - golang.org/x/sys v0.26.0 -> v0.30.0
+
+### All tickets resolved in this release
+
+| Ticket |
+|---|
+| [MEN-8619](https://northerntech.atlassian.net/browse/MEN-8619) |
+| [SEC-1715](https://northerntech.atlassian.net/browse/SEC-1715) |
+| [MEN-8937](https://northerntech.atlassian.net/browse/MEN-8937) |
 
 
 ## mender-gateway 2.0.0
